@@ -2,18 +2,20 @@
  "protein_summary": {
   "entry_id": "7036",
   "per_window": {
-   "ps-ns": "unresolved for SH3-3. The BMRB 7036 paper, read as an abstract, reports heteronuclear NOE above 0.7 at most SH3-3 residues despite a CD spectrum typical of a largely unstructured protein (R7036-J1, r1); no residues, values or conditions. Other-domain context only: native SH3-1 is ordered apart from its termini, T33 and loop tips (J5, r5), and acidified or 4AlaMut SH3-1 has more fast motion (J6, J7; r6, r7; 278 K, 800 MHz).",
-   "us-ms": "search_insufficient for SH3-3 (J2). The only µs-ms statements concern the SH2 domain with phosphoephrinB2 peptides bound, abstract-only (J10, J11; r2-r4).",
-   "slower_than_ms": "search_insufficient (J3).",
-   "undetermined": "Ultraweak SH3-3/PINCH-1 LIM4 complex (KD about 3 mM, abstract; J4, r11) is binding, not conformational exchange. Acidified and 4AlaMut SH3-1 populate non-native two-helix states (J8, J9; r8, r9). Not judged: the static SH3-1 versus Src SH3 packing comparison (r10), which proposes a folding requirement without kinetics."
+   "ps-ns": "no_evidence_in_window for large fast motion in SH3-3. The BMRB 7036 source paper, now read in full (free SH3-3, 20 °C, pH 6.8, 50 mM phosphate with DTT, 800 MHz), reports heteronuclear NOE above 0.7 at most residues despite a far-UV CD spectrum typical of an unstructured protein, and its model-free analysis failed, returning order parameters no higher than about 0.3 with large exchange terms under every diffusion model (R7036-J1). The SH3-2 domain measured alongside fits cleanly with S2 above 0.8 (J13). Other-domain context: native SH3-1 is ordered apart from its termini, T33 and loop tips (J5), and acidified or 4AlaMut SH3-1 has more fast motion (J6, J7; 278 K, 800 MHz).",
+   "us-ms": "unresolved and contested. In the reference state the average T2 is about 80 ms against about 100 ms for SH3-2 under identical conditions and the HSQC lines are visibly broader, which the authors read as us-ms conformational exchange; only one set of peaks is present, so they place the exchange faster than the chemical-shift timescale (J2). The same authors keep dynamic aggregation as an alternative, undetected by CD and by the protein and DTT concentration checks, and the T1 values exclude a stable dimer but not every oligomer (J12, artefact_suspected, conflicting with J2). In the linked SH3-2-SH3-3 construct resonance loss blocked the assignment and was also ascribed to exchange (J14). The remaining us-ms statements concern the SH2 domain with phosphoephrinB2 peptides bound, abstract only (J10, J11).",
+   "slower_than_ms": "search_insufficient (J3): neither the full text nor any other row gives hydrogen exchange, folding or another slower-than-millisecond rate for SH3-3.",
+   "undetermined": "Peptide titrations lose some peaks and give trajectories a two-site model cannot fit, pooled over domains and peptides (J15). The three SH3-3 structures 2FRY, 1WX6 and 1U5S share a core and differ at the termini of the LIM4 complex (J16). The ultraweak SH3-3/PINCH-1 LIM4 complex (KD about 3 mM, abstract; J4) is binding, not conformational exchange. Acidified and 4AlaMut SH3-1 populate non-native two-helix states (J8, J9). Not judged: the static SH3-1 versus Src SH3 packing comparison (r10), which proposes a folding requirement without kinetics."
   },
-  "wt_apo_answer": "Not measured: for free Nck2 SH3-3 (UniProt 198-256) no row measures µs-ms exchange; the BMRB 7036 paper, read only as an abstract, reports heteronuclear NOE above 0.7 at most residues, which limits fast backbone motion and says nothing about slower exchange or about the missing peaks in the RelaxDB set.",
-  "open_conflicts": [],
+  "wt_apo_answer": "Unknown, with a lead: free Nck2 SH3-3 at 20 °C, pH 6.8 in 50 mM phosphate with 5 mM DTT (800 MHz) has an average T2 of about 80 ms against about 100 ms for the neighbouring SH3-2 domain measured the same way, with visibly broader HSQC lines, which the authors attribute to microsecond-to-millisecond conformational exchange and/or dynamic aggregation; no residue, rate, population or chemical-shift difference is given, the model-free fit failed, and no Rex is reported, and the single set of peaks places any exchange faster than the chemical-shift timescale.",
+  "open_conflicts": [
+   "Free SH3-3, us-ms: conformational exchange (R7036-J2) versus dynamic aggregation (R7036-J12) as the source of the short T2 and the broad lines; the authors raise both and exclude neither, and no concentration-resolved relaxation measurement exists."
+  ],
   "questions_for_gina": [
-   "Can the full text of Liu et al. 2006 (doi:10.1021/bi060091y, the BMRB 7036 citation) be obtained? It holds the SH3-3 relaxation data, conditions and any explanation of missing peaks.",
+   "The source paper's model-free fit of SH3-3 failed (order parameters of about 0.3 with large exchange terms) and the authors could not separate conformational exchange from dynamic aggregation: should the atlas record this entry as exchange detected, or hold it until a concentration series or a dispersion experiment exists?",
    "Should SH3-1 and SH2 rows from other Nck2 domains be kept as inference_from_homolog context, or excluded from this entry altogether?"
   ],
-  "buffer_note": "The entry SH3-3 has only two abstract-level rows (r1, r11); everything else describes SH3-1 (5 mM phosphate, 278 K, 800 MHz, deliberate acid or mutant perturbations) or the SH2 domain with peptides, which never set an SH3-3 verdict. No deposition readback file exists for this entry."
+  "buffer_note": "The BMRB 7036 source paper (doi:10.1021/bi060091y, Liu et al. 2006) was read in full on 2026-10-20 (case S6_r6_7036_20261020223524), superseding the abstract-only row R7036-r1, which is no longer cited. Its SH3-3 samples are in 50 mM sodium phosphate at pH 6.8 and 20 °C with 0.01% azide and 5 mM DTT; the relaxation sample concentration is not stated and the per-residue T1, T2 and NOE profiles exist only in Figures 9 and 10, so no residue list or numerical value can be assigned. The same paper's SH3-2 and the linked SH3-2-SH3-3 construct are different samples, and the SH3-1 rows (5 mM phosphate, 278 K, 800 MHz, deliberate acid or four-alanine mutation) and the SH2 peptide rows are other domains; none sets an SH3-3 verdict. NMR and ITC affinities in that paper disagree and the buffers differ, which is unresolved. No deposition readback file exists for this entry."
  },
  "judgments": [
   {
@@ -21,33 +23,33 @@
    "entry_id": "7036",
    "region": {
     "residues_entry": "unlocalized",
-    "residues_author": "most residues (no list in the abstract)",
-    "numbering_note": "Entry 1-59 = UniProt O43639 198-256 (offset +197); 2FRY adds an N-terminal GS.",
+    "residues_author": "Most residues have hNOE above 0.7 and T1 between about 400 and 500 ms; per-residue values appear only in Figure 10, and the text names no residue",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256; the 2006 paper numbers the same 59 residues 199-257 in its text but plots them 1-59 in Figure 10, so the figure numbering equals the entry numbering. PDB 2FRY adds an N-terminal GS from the cleaved tag.",
     "functional_site": ""
    },
    "time_window": "ps-ns",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "Free SH3-3 (UniProt 198-256); conditions not given in the abstract; the 2FRY structure deposition lists 298 K, pH 6.8; free state inferred from the abstract, which reports the NOE as a property of the domain before the peptide titrations",
+    "conditions": "20 °C; pH 6.8; 50 mM sodium phosphate with 0.01% (w/v) sodium azide and 5 mM DTT; 10% D2O; 15N-labelled isolated SH3-3, no peptide; 800 MHz; relaxation sample concentration not stated (the HSQC checks covered a protein and DTT series)",
     "is_wt_apo": true
    },
    "direction": "measured_not_detected",
    "detection": {
-    "method": "{1H}-15N steady-state heteronuclear NOE",
-    "observable": "heteronuclear NOE",
-    "fit_model": "none",
+    "method": "15N T1, T2 and {1H}-15N steady-state NOE at 800 MHz; model-free analysis attempted with Modelfree 4.15 and Tensor",
+    "observable": "heteronuclear NOE above 0.7 at most residues; the model-free fits with isotropic, axially symmetric and fully asymmetric diffusion all returned order parameters no higher than about 0.3 together with large exchange terms, which the authors call strange and unsatisfactory",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
-    "temperature": "",
-    "detection_window": "Heteronuclear NOE only, abstract-level; field, temperature and per-residue values not given. NOE above 0.7 limits large-amplitude sub-ns backbone motion at most sites and says nothing about µs-ms exchange or about residues not listed."
+    "field": "18.8 T (800 MHz)",
+    "temperature": "20 °C",
+    "detection_window": "15N T1, T2 and NOE at one field, 800 MHz, 20 °C, pH 6.8; the heteronuclear NOE reports motion faster than the tumbling time, so hNOE above 0.7 excludes large-amplitude sub-nanosecond motion at those sites but says nothing about us-ms exchange or about residues whose peaks are too broad or overlapped to measure. No order parameter can be quoted, because the model-free fit did not converge to a physically sensible solution, and the per-residue values exist only as a figure."
    },
-   "verdict": "unresolved",
-   "reason": "Abstract only: SH3-3 has a far-UV CD spectrum typical of a largely unstructured protein yet heteronuclear NOE above 0.7 at most residues, so most of the backbone lacks large fast motion; no residues or values are available.",
+   "verdict": "no_evidence_in_window",
+   "reason": "Full text of the BMRB 7036 source paper (Liu et al. 2006): the isolated SH3-3 domain has heteronuclear NOE above 0.7 at most residues despite a far-UV CD spectrum typical of an unstructured protein, so large fast backbone motion is not detected; the model-free analysis that would give order parameters failed, returning S2 no higher than about 0.3 with large exchange terms under every diffusion model (sources_cache/10.1021_bi060091y.pdf, pp. 7178-7180, 7182, Figure 10).",
    "evidence_rows": [
-    "R7036-r1"
+    "R7036-7036_20261020223524-r1"
    ],
    "conflicts_with": [],
    "evidence_strength": "direct_measurement",
@@ -59,34 +61,39 @@
    "entry_id": "7036",
    "region": {
     "residues_entry": "unlocalized",
-    "residues_author": "whole domain",
-    "numbering_note": "Entry 1-59 = UniProt O43639 198-256 (offset +197); 2FRY adds an N-terminal GS.",
+    "residues_author": "Whole domain: average T2 about 80 ms against about 100 ms for the SH3-2 domain measured in the same study, and visibly broader HSQC peaks; no residue list and no per-residue exchange term is quoted",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256; the 2006 paper numbers the same 59 residues 199-257 in its text but plots them 1-59 in Figure 10, so the figure numbering equals the entry numbering. PDB 2FRY adds an N-terminal GS from the cleaved tag.",
     "functional_site": ""
    },
    "time_window": "us-ms",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "Free SH3-3 (UniProt 198-256); conditions not given in the abstract; the 2FRY structure deposition lists 298 K, pH 6.8",
+    "conditions": "20 °C; pH 6.8; 50 mM sodium phosphate with 0.01% (w/v) sodium azide and 5 mM DTT; 10% D2O; 15N-labelled isolated SH3-3, no peptide; 800 MHz; relaxation sample concentration not stated (the HSQC checks covered a protein and DTT series)",
     "is_wt_apo": true
    },
-   "direction": "search_insufficient",
+   "direction": "detected",
    "detection": {
-    "method": "none in the evidence rows",
-    "observable": "",
-    "fit_model": "none",
+    "method": "15N T2 and HSQC line widths at one field, compared with the SH3-2 domain under the same conditions; model-free fitting attempted but rejected by the authors; no dispersion, R1rho or CEST experiment",
+    "observable": "shortened average T2 (about 80 ms) and broad HSQC lines; large but unreliable exchange terms in the failed model-free fit",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
-    "temperature": "",
+    "field": "18.8 T (800 MHz)",
+    "temperature": "20 °C",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "No row measures dispersion, CEST, R1rho or assigned exchange broadening for SH3-3; the BMRB 7036 paper (PMID 16752908) was read only as an abstract and the method searches were title-abstract only, so µs-ms exchange is neither shown nor excluded.",
-   "evidence_rows": [],
-   "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "reason": "Full text: the authors read the short average T2 and the broad lines of free SH3-3 as conformational exchange on the microsecond-to-millisecond timescale, and note that only one set of HSQC peaks is present, which they take to mean the exchange is faster than the chemical-shift timescale; exchange is detected in the reference state, but no rate, population or chemical-shift difference exists, the model-free exchange terms come with unphysical order parameters, and the authors keep dynamic aggregation as an alternative explanation (R7036-J12). Single-field exchange broadening can also come from anisotropic tumbling; a dispersion experiment would confirm (sources_cache/10.1021_bi060091y.pdf, pp. 7178-7180).",
+   "evidence_rows": [
+    "R7036-7036_20261020223524-r1",
+    "R7036-7036_20261020223524-r3"
+   ],
+   "conflicts_with": [
+    "R7036-J12"
+   ],
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -119,7 +126,7 @@
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "No row gives hydrogen exchange, folding or any other slower-than-ms rate for SH3-3.",
+   "reason": "No row gives hydrogen exchange, folding or any other slower-than-ms rate for SH3-3; the source paper, now read in full, contains no such measurement either.",
    "evidence_rows": [],
    "conflicts_with": [],
    "evidence_strength": "indirect",
@@ -428,6 +435,199 @@
    ],
    "conflicts_with": [],
    "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J12",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole domain; the authors offer dynamic aggregation as an alternative source of the short T2 and the broad lines, and report that it was not detected by CD or by HSQC checks over protein and DTT concentration",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256; the 2006 paper numbers the same 59 residues 199-257 in its text but plots them 1-59 in Figure 10, so the figure numbering equals the entry numbering. PDB 2FRY adds an N-terminal GS from the cleaved tag.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "20 °C; pH 6.8; 50 mM sodium phosphate with 0.01% (w/v) sodium azide and 5 mM DTT; 10% D2O; 15N-labelled isolated SH3-3, no peptide; 800 MHz; relaxation sample concentration not stated (the HSQC checks covered a protein and DTT series)",
+    "is_wt_apo": true
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "HSQC line widths over a protein and DTT concentration series, CD, and comparison of T1 with the SH3-2 domain",
+    "observable": "line broadening that could come from self-association rather than from conformational exchange",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "18.8 T (800 MHz)",
+    "temperature": "20 °C",
+    "detection_window": ""
+   },
+   "verdict": "contested",
+   "reason": "The authors name dynamic aggregation, alongside conformational exchange, as a possible cause of the short T2 and the broad SH3-3 lines; against it they report that CD and the concentration and DTT series showed no significant change and that the T1 values match those of SH3-2, which rules out a stable dimer but not every oligomer. Until a concentration-resolved relaxation measurement exists, the exchange reading of R7036-J2 and this artefact reading stand side by side (sources_cache/10.1021_bi060091y.pdf, pp. 7178-7180).",
+   "evidence_rows": [
+    "R7036-7036_20261020223524-r1",
+    "R7036-7036_20261020223524-r3"
+   ],
+   "conflicts_with": [
+    "R7036-J2"
+   ],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J13",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "SH3-2 (paper residues 115-171): hNOE above 0.7 at most residues, average T2 about 100 ms, model-free order parameters above 0.8 for many residues; per-residue values figure only",
+    "numbering_note": "Different domain (SH3-2, paper residues 115-171); no residue maps to the entry SH3-3.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:human NCK2 second SH3 domain (SH3-2, paper residues 115-171), a different domain from the entry SH3-3",
+    "binding_state": "apo",
+    "conditions": "20 °C; pH 6.8; 50 mM sodium phosphate with 0.01% sodium azide and 5 mM DTT; 10% D2O; 800 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N T1, T2 and NOE at 800 MHz with model-free analysis",
+    "observable": "hNOE above 0.7, S2 above 0.8 for many residues, average T2 about 100 ms",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "18.8 T (800 MHz)",
+    "temperature": "20 °C",
+    "detection_window": "Single-field 15N relaxation at 800 MHz, 20 °C; it reports motion faster than tumbling through hNOE and S2 and cannot see slower exchange; per-residue values exist only as a figure, and this is a different domain from the entry."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The neighbouring SH3-2 domain, measured in the same study under the same conditions, fits the model-free analysis cleanly with order parameters above 0.8 and an average T2 of about 100 ms; it is the comparator that makes the shorter SH3-3 T2 meaningful, but it is another domain and sets nothing for the entry (sources_cache/10.1021_bi060091y.pdf, pp. 7178-7181, Figure 9).",
+   "evidence_rows": [
+    "R7036-7036_20261020223524-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J14",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Linked SH3-2-SH3-3 construct (paper residues 115-257 with the native linker): extensive resonance loss; the missing peaks are not enumerated",
+    "numbering_note": "Longer construct containing the entry domain plus SH3-2 and the native linker; the lost resonances are not identified, so nothing maps to entry residues.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:human NCK2 linked SH3-2-SH3-3 (paper residues 115-257, native linker), His tag removed",
+    "binding_state": "apo",
+    "conditions": "298 K for the general NMR acquisition (the construct-specific temperature is not restated); pH 6.8; 50 mM sodium phosphate with 0.01% sodium azide and 5 mM DTT; 15N/13C-labelled; 800 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "HSQC and triple-resonance spectra of the linked construct",
+    "observable": "extensive disappearance of resonance peaks, attributed by the authors to conformational exchange",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "18.8 T (800 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the two-domain construct so many resonances disappear that the triple-resonance assignment failed, which the authors ascribe to conformational exchange on the microsecond-to-millisecond timescale; the missing peaks are not listed, no rate or population follows, and a longer construct with an extra domain and linker cannot establish the same process in the isolated SH3-3 (sources_cache/10.1021_bi060091y.pdf, p. 7174).",
+   "evidence_rows": [
+    "R7036-7036_20261020223524-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J15",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Peaks that disappear during peptide titrations, reported jointly for SH3-2 and SH3-3 and for several peptides; no residue list and no per-pairing attribution",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256; the 2006 paper numbers the same 59 residues 199-257 in its text but plots them 1-59 in Figure 10, so the figure numbering equals the entry numbering. PDB 2FRY adds an N-terminal GS from the cleaved tag.",
+    "functional_site": "peptide-binding surface"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:proline-rich peptides, pooled (SH3-3 with Nogo-A, Prk2 or Wrch2; SH3-2 with mWrch1 or Wrch2)",
+    "conditions": "pH 6.8; 50 mM sodium phosphate with 0.01% sodium azide and 5 mM DTT; initial screen at about 100 uM protein and a 1:2 protein:peptide ratio; later peptide concentrations and the titration temperature not stated; 500 MHz screening, 800 MHz for the other spectra",
+    "is_wt_apo": false
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "Extended HSQC titration trajectories with proline-rich peptides",
+    "observable": "loss of some peaks and titration trajectories that a two-site model cannot fit",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "18.8 T (800 MHz)",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Some peaks vanish during the peptide titrations and some shift trajectories cannot be fitted with a two-site model, which the authors say points to additional mechanisms, possibly nonspecific binding or binding-induced dynamics; the report pools several domains and peptides, names no residue and gives no rate, so no process is identified (sources_cache/10.1021_bi060091y.pdf, pp. 7174, 7177).",
+   "evidence_rows": [
+    "R7036-7036_20261020223524-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J16",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Core secondary structure of 2FRY compared with the extended construct 1WX6 and the LIM4-bound 1U5S; differences mainly at the N and C termini of the complex, with no residue enumerated",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256; the 2006 paper numbers the same 59 residues 199-257 in its text but plots them 1-59 in Figure 10, so the figure numbering equals the entry numbering. PDB 2FRY adds an N-terminal GS from the cleaved tag.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:isolated SH3-3 (2FRY) compared with the longer constructs 1WX6 and the PINCH-1 LIM4 complex 1U5S",
+    "binding_state": "mixed",
+    "conditions": "2FRY determined at 298 K, pH 6.8, 50 mM phosphate with azide and DTT; comparator structures under their own unstated conditions",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Comparison of three solution structures of SH3-3 in different constructs and ligand states",
+    "observable": "structure difference (similar cores, terminal differences in the LIM4 complex)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The three SH3-3 structures share a very similar core and differ mainly at the termini of the LIM4-bound form, which the authors link to its non-classical binding interface; static differences across constructs and ligand states give no interconversion, timescale or population, and the ensemble spread also reflects restraint density (sources_cache/10.1021_bi060091y.pdf, pp. 7175-7176, Figure 3f).",
+   "evidence_rows": [
+    "R7036-7036_20261020223524-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   }

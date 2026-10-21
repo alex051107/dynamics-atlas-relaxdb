@@ -1,0 +1,13 @@
+{
+ "judgments": [
+  {"entry_id":"TOY_FAST","judgment_id":"toy-J1","detection":{"kex":"10000 s-1","delta_omega":"0.1 ppm","field":"600 MHz"}},
+  {"entry_id":"TOY_SLOW","judgment_id":"toy-J2","detection":{"kex":"10 s-1","delta_omega":"100 Hz","field":"600 MHz"}},
+  {"entry_id":"TOY_SKIP","judgment_id":"toy-J3","detection":{"kex":"not reported","delta_omega":"1 ppm","field":"600 MHz"}},
+  {"entry_id":"TOY_RANGE","judgment_id":"toy-J4","detection":{"kex":"10-10000 s-1","delta_omega":"1 ppm","field":"600 MHz"}}
+ ],
+ "alt": [
+  {"entry":"TOY_FAST","literal_two_peak":"qualifies: synthetic wording"},
+  {"entry":"TOY_SLOW","literal_two_peak":"does not qualify: synthetic wording"},
+  {"entry":"TOY_RANGE","literal_two_peak":"qualifies: synthetic wording"}
+ ]
+}

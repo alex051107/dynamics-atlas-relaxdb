@@ -715,23 +715,29 @@
  {
   "entry": "17266",
   "protein": "Cupriavidus metallidurans CH34 SilB C-terminal domain (SilB 440–521), isolated",
-  "reference_state": "Wild-type apo isolated C-terminal domain; conditions from the 2L55 deposition, not the article: 298 K, pH 6.0, 50 mM MES, 1 mM U-15N protein, 90% H2O/10% D2O",
-  "call": "unknown",
-  "literal_two_peak": "cannot tell: The only relaxation study was read as an abstract, which states no regime and reports no exchange.",
-  "basis": "The isolated apo domain was studied by backbone 15N relaxation (T1, T2, T1rho and NOE listed in the 2L55 deposition), but only the 2011 abstract is readable and it reports no result. Searches for relaxation dispersion and exchange broadening of SilB returned no hits, and the missing peaks in the RelaxDB set cannot be assigned to exchange without the article.",
-  "kex": "not reported (SILB-J2)",
-  "pB": "not reported (SILB-J2)",
-  "regime": "Not stated (SILB-J2).",
-  "residues": "none reported in the abstract (SILB-J2)",
+  "reference_state": "Free wild-type isolated SilB C-terminal domain (SilB440-521, the entry sequence, six-His tag cleaved), no added metal. The RelaxDB source sample (doi:10.1021/bi200005k, now full text): 1.0 mM uniformly 15N-labelled protein, 25 °C, pH 6.0, 50 mM MES, 600 MHz, single field, R2 from an R1rho decay (SILB-J1, J2, J9 marked is_wt_apo). The Ag+- and Cu+-bound samples of the same paper are other sample states.",
+  "call": "possible",
+  "literal_two_peak": "cannot tell: the source states no exchange regime, prints no kex, population or Delta-omega and shows no second peak set for the apo domain; it speaks of slow motions of the metal-binding loop and states that the apo protein does not simply exchange with a conformation close to the metal-bound state (SILB-J2, J4; E-r1, E-r2). Without kex and Delta-omega the E-033 computation cannot be made. The one peak that does disappear, the Met65 methyl in the Ag+-bound sample, is a bound-state observation presumed to be line broadening (SILB-J7).",
+  "basis": "Reference state: in the RelaxDB source sample (apo domain, 25 °C, pH 6.0, 600 MHz) the text names His22, Ala24, Gln29, 'Ala31', Met33 and Met35 as the residues with increased R1rho-derived R2 (Figure 6B: about 11, 15 and 12.5 s-1 at His22, Gln29 and Met35 against a baseline near 8-9 s-1), and the Tensor2 model-free fit returns exchange terms only in the metal-binding loop, at Ala24 (about 1.6 s-1), Gln29 (6.0), Gly31 (2.6), Ala32 (1.5), Met33 (3.3) and Met35 (4.3) in Figure S6C; His22 is fitted with S2 near 1.0 and no exchange term (SILB-J2, E-r1). Under the single-field Rex rule of 2026-10-20 this is exchange detected in the reference state without a population, so the call is 'possible'. The rest of the domain is rigid: S2 above 0.8 for most of the 63 fitted residues, tau_i about 70 ps, lower S2 only at the N terminus and in the loops between strands 3 and 4 and between 4 and 5, and no exchange term outside the loop (SILB-J1, J9). Adding one equivalent of Ag+ removes the excess transverse relaxation while leaving tumbling and fast motion unchanged, and the authors state that the apo protein does not simply exchange with a conformation close to the metal-bound state (SILB-J4, E-r2).",
+  "kex": "not reported: Rex only, read from Figure S6C as about 1.5-6.0 s-1 at six residues, from a single-field R1rho-based fit (SILB-J2)",
+  "pB": "not reported (SILB-J2); no population is fitted for the apo or the Ag+-bound sample",
+  "regime": "Not stated. No Delta-omega is printed and no kex is fitted, so no regime can be computed; the authors call the loop motion slow relative to tumbling (tau_c 6.28 ns isotropic, axially anisotropic tensor preferred) and describe the micro- to millisecond window qualitatively (SILB-J2).",
+  "residues": "Metal-binding loop. Increased apo R2 (Figure 6B, text p. 2200): His22, Ala24, Gln29, 'Ala31' (the sequence has Gly31 and Ala32), Met33, Met35. Fitted Rex (Figure S6C): Ala24, Gln29, Gly31, Ala32, Met33, Met35; none at His22. Entry numbering equals the article numbering (SILB-J2). Exchange is absent elsewhere in the apo domain (SILB-J9) and at these same residues once Ag+ is bound (SILB-J4). ps-ns mobility: N terminus and the surface loops between strands 3 and 4 and between 4 and 5, not enumerated (SILB-J1).",
   "structure_match": [],
-  "fallback_annotation": "No alternate-state annotation is possible: the only relaxation study of the isolated domain was read as abstract only (doi:10.1021/bi200005k).",
+  "fallback_annotation": "May have an alternate apo conformation of the metal-binding loop (residues 20-37, with exchange at His22, Ala24, Gln29, Gly31/Ala32, Met33 and Met35): single-field 15N exchange terms of about 1.5-6 s-1 at 25 °C, pH 6.0, highest at Gln29 and at the Cu+ ligand Met35, abolished by one equivalent of Ag+ (doi:10.1021/bi200005k); no rate or population, and the authors state that the apo state does not simply exchange with a metal-bound-like conformation.",
   "other_conditions": [
-   "Ag+- or Cu+-bound domain: unknown. The abstract maps the metal site by HSQC but gives no dynamics measurement (SILB-J4, SILB-r1).",
-   "Different construct (N-terminal plus membrane-proximal domains, 2016): unknown. The abstract names no probe, motion or timescale; the finding that the C-terminal site fills first during Ag+ titration is binding, not motion (SILB-J5, SILB-J6, SILB-r2)."
+   "Apo domain, 25 °C, pH 6.0, 50 mM MES, 1.0 mM, 600 MHz single field (2011 RelaxDB source, full text): possible. Exchange confined to the metal-binding loop; S2 above 0.8 elsewhere, tau_i about 70 ps (SILB-J1, J2, J9; E-r1).",
+   "Ag+-bound domain (1 equivalent of AgNO3), same buffer and temperature: no detectable loop exchange; R2 of the loop residues falls to the 8-9 s-1 baseline while tumbling and fast motion are unchanged (SILB-J4, E-r2).",
+   "Ag+-bound domain, methyl region: the Met65 1H-13C correlation is broadened below the detection limit, presumed line broadening, process unidentified (SILB-J7, SILB-r3).",
+   "Apo E. coli CusF (1ZEQ) compared with apo SilB440-521: same OB fold, backbone rmsd 1.17 A over 264 atoms; a homolog, not a second state (SILB-J8, SILB-r4).",
+   "Different construct (N-terminal plus membrane-proximal domains, 2016): unknown. The abstract names no probe, motion or timescale; the finding that the C-terminal site fills first during Ag+ titration is binding, not motion (SILB-J5, J6; SILB-r2)."
   ],
   "evidence_rows": [
-   "SILB-r1",
-   "SILB-r2"
+   "SILB-r2",
+   "SILB-r3",
+   "SILB-r4",
+   "SILB-17266_20261020221901-r1",
+   "SILB-17266_20261020221901-r2"
   ],
   "judgments": [
    "SILB-J1",
@@ -739,9 +745,12 @@
    "SILB-J3",
    "SILB-J4",
    "SILB-J5",
-   "SILB-J6"
+   "SILB-J6",
+   "SILB-J7",
+   "SILB-J8",
+   "SILB-J9"
   ],
-  "caveats": "Both SilB papers are closed access here and were read as abstracts only. Sample conditions come from the 2L55 deposition metadata. the NMR collaborator is asked whether the RelaxDB 17266 set is the 2011 apo sample and whether its missing peaks are attributed to exchange, overlap or solvent exchange.",
+  "caveats": "Call raised from unknown to possible on 2026-10-20 after the RelaxDB source paper (doi:10.1021/bi200005k) was read in full: exchange is detected in the reference state as single-field model-free Rex in the metal-binding loop, and under the single-field Rex rule decided that night (ledger/redraft_notes.json, _RULE_single_field_rex) author-reported Rex in the reference state counts as exchange detected without a population. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. That caveat bites harder here than usual, because the preferred diffusion model is axially anisotropic; on the other hand R2 came from an R1rho decay chosen to suppress exchange, which makes the surviving loop terms harder to explain away. All Rex and S2 values are read from Supporting Information Figure S6, a plot; the text gives no table. The text prints 'Ala31' where the sequence has Gly31 and Ala32, so both positions are kept. Thr34 was not fitted and overlapping resonances were excluded (63 apo, 57 Ag+-bound residues). The abstract-only row SILB-r1 is superseded and no longer cited; the 2016 paper on the other construct remains an abstract. Both readers passed all four rows with no flags (ledger/sr_dual/S6_r6_17266_20261020221901_flags.json); the PDF adjudication is in ledger/adjudication_pdf_batch2.json.",
   "set": "RelaxDB-133"
  },
  {
@@ -810,12 +819,12 @@
   "entry": "VCPTH",
   "protein": "Vibrio cholerae peptidyl-tRNA hydrolase (VcPth), full length with His tag (pET-NH6)",
   "reference_state": "Wild-type apo (no substrate), 298 K, pH 6.5, 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3, 0.5 mM 15N; 700 MHz, single field",
-  "call": "unknown",
+  "call": "possible",
   "literal_two_peak": "does not: The only stated regime is the authors' reading of the missing N118 amide as intermediate exchange; no dispersion was recorded and no second peak set is reported.",
-  "basis": "Single-field model-free fits need exchange terms at T22, A79, G115–H117, D147 and H192, and the N118 and K146 amides are missing in the wild type but N118 returns in active-site mutants. The judgments leave both unresolved: single-field Rex cannot be separated from anisotropic tumbling, and a missing peak gives no rate. No relaxation-dispersion study was found, but the dispersion queries used E. coli Pth terms, so this is a search gap.",
+  "basis": "Single-field model-free fits need exchange terms at T22, A79, G115–H117, D147 and H192, and the N118 and K146 amides are missing in the wild type but N118 returns in active-site mutants. The judgments leave both unresolved: single-field Rex cannot be separated from anisotropic tumbling, and a missing peak gives no rate. Under the single-field Rex rule of 2026-10-20 (author-reported Rex in the reference state from a full-text relaxation analysis counts as exchange detected without a population) the call is 'possible'; no new evidence was added. No relaxation-dispersion study was found, but the dispersion queries used E. coli Pth terms, so this is a search gap.",
   "kex": "not measured (VCPTH-J3, VCPTH-J12)",
   "pB": "not measured (VCPTH-J3, VCPTH-J4)",
-  "regime": "Not measured. The authors read the missing N118 amide as intermediate exchange from transient N118–H24 contact; solvent exchange was argued against, not tested (VCPTH-J4, VCPTH-r4). Below pH 6 the N118 peak returns, which fits either H24 protonation or slower base-catalysed solvent exchange (VCPTH-J5, VCPTH-r5).",
+  "regime": "Not measured. The authors read the missing N118 amide as intermediate exchange from transient N118–H24 contact; solvent exchange was argued against, not tested (VCPTH-J4, VCPTH-r4). At pH 6.0 and below (visible on lowering from 6.5 to 6.0; assigned at pH 5.2) the N118 peak returns, which fits either H24 protonation or slower base-catalysed solvent exchange (VCPTH-J5, VCPTH-r5).",
   "residues": "Rex at T22 (next to catalytic H24), A79, base loop G115–H117 at the helix α3 N-terminus, lid D147 and H192 in the C-terminal hairpin (VCPTH-J3); missing amides N118 (helix α3 N-cap) and K146 (lid flap) (VCPTH-J4).",
   "structure_match": [
    {
@@ -854,7 +863,7 @@
    "VCPTH-J11",
    "VCPTH-J12"
   ],
-  "caveats": "The call follows the judgments' unresolved verdicts; the NMR collaborator is asked whether single-field model-free Rex should count as us-ms detection, which would make the call possible. The input card pairs the V. cholerae sequence and 2MJL with UniProt P0A7D1 (E. coli Pth); V. cholerae Pth is treated as the entry. All VcPth NMR uses phosphate, which could occupy the basic 5'-phosphate clamp, with no control. One 2017 paper supplies every VcPth row.",
+  "caveats": "Call changed from unknown to possible on 2026-10-20 by the single-field Rex rule (ledger/redraft_notes.json, _RULE_single_field_rex), not by new evidence: the judgments (VCPTH-J3, J4) stay unresolved, and the only us-ms evidence is still the single-field model-free Rex and the missing N118/K146 amides of the 2017 paper. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. the NMR collaborator is asked whether single-field model-free Rex should count as us-ms detection. The input card pairs the V. cholerae sequence and 2MJL with UniProt P0A7D1 (E. coli Pth); V. cholerae Pth is treated as the entry. All VcPth NMR uses phosphate, which could occupy the basic 5'-phosphate clamp, with no control. One 2017 paper supplies every VcPth row.",
   "set": "RelaxDB-133"
  },
  {
@@ -1166,24 +1175,37 @@
  {
   "entry": "AZURIN",
   "protein": "Pseudomonas aeruginosa azurin (UniProt P00282), mature wild type A1-K128",
-  "reference_state": "Copper-free (apo) wild-type azurin, the entry construct without its metal, as marked is_wt_apo in AZURIN-J18/J19: 298 K, pH 7.0, 100 mM phosphate, 2 mM DTT. The RelaxDB sample's metal state is not stated on the input card; if it is Cu(II) holo azurin no exchange measurement exists for it.",
-  "call": "possible",
-  "literal_two_peak": "does not: for apo azurin the authors attribute the 17 missing amides to intermediate exchange on the chemical-shift timescale (AZURIN-r44); the Cu(I) minor states are seen only through dispersion (AZURIN-J12, J13).",
-  "basis": "In copper-free wild-type azurin at pH 7.0, 17 amides around the metal site (A1–C3, G9–D11, N18, H35–L39, G45, H46, G88–E91) are broadened out by intermediate exchange and 15N CPMG dispersion appears at M44, I87 and neighbouring regions, with no rate or population (AZURIN-J18, J19); T61 is flat (J20). Rates and populations exist only for reduced Cu(I) azurin at pH about 5 (two minor states of 0.39% and 0.45% at 44.8 °C), a different metal state. Nothing measures oxidised Cu(II) azurin.",
-  "kex": "not measured for Cu(II); reduced Cu(I) at 44.8 °C: forward rates 11.7 ± 2.4 s-1 (H35 region, keq 254 ± 31) and 4.1 ± 0.1 s-1 (copper loops, keq 222 ± 7), total kex not printed (AZURIN-J12, AZURIN-J13; AZURIN-r9, AZURIN-r10) keq 254 ± 31 and 222 ± 7 are from Table 3 of the 2003 paper and are not in an evidence row. Copper azurin of unstated oxidation state (RelaxDB source abstract, 41 °C): average exchange rate 45 ± 6 s-1 around H35 by exchange spectroscopy (AZURIN-J38, AZURIN-AZURIN_20261020143153-r2; the evidence row omits the value).",
-  "pB": "not measured for Cu(II); Cu(I) 0.39 ± 0.07% (H35 region) and 0.45 ± 0.02% (copper loops) at 44.8 °C",
-  "regime": "Not stated for Cu(II). Cu(I): no regime statement; the authors fit Carver-Richards and obtain kA much smaller than kB. Apo: 'intermediate exchange' for the missing amides (AZURIN-r44).",
-  "residues": "none for Cu(II). Cu(I): D11, G37, G88-G90 (near H35) and N47, W48, F111-T113, G116, H117, L120, K122 (near copper); apo: A1-C3, G9-D11, N18, H35-L39, G45, H46, G88-E91 missing, dispersion at M44 and I87",
-  "structure_match": [],
-  "fallback_annotation": "No alternate-state annotation is possible for oxidised Cu(II) azurin, which has no exchange measurement in the evidence. Reduced Cu(I) azurin may have low-populated (about 0.4%) alternate conformations near the copper-binding loops (N47, W48, F111-T113, G116, H117, L120, K122) and around H35, based on 15N CPMG at 11.7, 14.1 and 18.8 T (doi:10.1110/ps.0225403).",
+  "reference_state": "The RelaxDB sample: wild-type Pseudomonas aeruginosa azurin with its copper reduced to Cu(I) (dithionite), 2 mM, 20 mM potassium phosphate, pH 5.5, 41 °C, 600 MHz (doi:10.1021/bi990624l, full text; AZURIN-J37, J41-J43 marked is_wt_apo). Changed on 2026-10-20 from copper-free apo, which stays in the table as another sample state (AZURIN-J18 to J26). Reduced Cu(I) holo azurin is the deposited construct's native metal state; the alternate state here is still a metal-bound, protonation-coupled one.",
+  "call": "yes",
+  "literal_two_peak": "qualifies: the source states that the His35 process is slow on the chemical-shift timescale at both pH 7.0 and pH 5.5 and shows two resolved peak sets for the protons and nitrogens around His35 in jump-return HMQC spectra between pH 6.3 and 7.6, connected by EXSY/ROESY cross-peaks at pH 7.0 (AZURIN-J38; D-r4, D-r5). Computed regime (E-033): kex = kAB + kBA = 2k = 90 ± 12 s-1 at pH 7.0 and 120 ± 60 s-1 at pH 5.5; 15N delta-omega 340 Hz (G37) to about 400 Hz (G88, G90) at 60.8 MHz, i.e. 2136-2513 rad/s; kex/delta-omega = 0.04 (pH 7.0) and 0.06 (pH 5.5), slow exchange, matching the authors' wording. At the reference pH 5.5 the minor form is only 2-4%, so the second peak set is documented near pH 7, not shown at pH 5.5.",
+  "basis": "In the RelaxDB sample (reduced Cu(I), pH 5.5, 41 °C) the amides of N10, D11, G37, G45, G88, S89 and G90, all surrounding His35, carry exchange contributions of 2-9.5 Hz; the authors reproduce the broadening of G37, G88 and G90 with the His35 protonation/deprotonation equilibrium: deprotonated minor form 0.02-0.04 (from the pKa of 7.0 ± 0.1), k = 60 ± 30 s-1, lifetime 8 ± 4 ms, 15N shift differences 340-400 Hz (AZURIN-J43, D-r3). At pH 7.0 the two forms are equally populated, give two resolved peak sets and interconvert at k = 45 ± 6 s-1 (lifetime 11 ± 2 ms) by EXSY (AZURIN-J38, D-r4, D-r5). The authors identify the two forms with the pH 5.5 and pH 9.0 crystal conformations, which differ by a P36-G37 peptide flip and the loops 9-12 and 88-91 (AZURIN-J44, D-r6, oxidised crystals, structure_only). The 2003 three-field CPMG study of Cu(I) azurin at pH about 5 sees the same H35 region with a 0.39% minor state and kA 11.7 s-1 at 44.8 °C and a second copper-loop process (0.45%, kA 4.1 s-1) (AZURIN-J12, J13); its kinetic model disagrees with the 1999 rates. The call is 'yes' because the reference-state sample shows exchange that the same paper resolves as two peak sets with a measured rate; the caveat is that the alternate state is a protonation state coupled to a local backbone flip, not a ligand-free conformational excursion.",
+  "kex": "Reference state, pH 5.5: k = 60 ± 30 s-1 printed as (kAB + kBA)/2, so kex = 120 ± 60 s-1, tau_ex 8 ± 4 ms (model estimate from line broadening of G37, G88, G90; AZURIN-J43, D-r3). pH 7.0 EXSY: k = 45 ± 6 s-1 (average rate at the pKa, kAB = kBA), kex = 90 ± 12 s-1, tau_ex 11 ± 2 ms (AZURIN-J38, D-r4). 2003 Cu(I) CPMG at 44.8 °C, pH about 5, 50 mM phosphate: forward rates kA 11.7 ± 2.4 s-1 (H35 region, keq 254 ± 31) and 4.1 ± 0.1 s-1 (copper loops, keq 222 ± 7), total kex not printed (AZURIN-J12, J13; keq values from Table 3 of that paper, not in a row). Not measured for Cu(II) or apo.",
+  "pB": "Reference state, pH 5.5: deprotonated form 0.02-0.04, estimated from the His35 pKa 7.0 ± 0.1, not fitted (D-r3). pH 7.0: 0.5 (equal populations at the pKa, stated by the authors; D-r4). 2003 Cu(I) CPMG: 0.39 ± 0.07% (H35 region) and 0.45 ± 0.02% (copper loops) at 44.8 °C (J12, J13). Not measured for Cu(II) or apo.",
+  "regime": "Authors (1999, Cu(I)): 'slow on the chemical shift time scale' at pH 7.0 and 5.5; two resolved peak sets near the pKa. Computed: kex/delta-omega = 90/2136 = 0.04 at pH 7.0 and 120/2136 = 0.06 at pH 5.5 (delta-omega 340 Hz for G37 at 60.8 MHz 15N; about 400 Hz for G88/G90 gives 0.04-0.05), slow exchange. 2003 Cu(I) CPMG: no regime statement; Carver-Richards fit with kA much smaller than kB (J12, J13). Apo: 'intermediate exchange' for the 17 missing amides (AZURIN-r44). Cu(II): not stated.",
+  "residues": "Reference state Cu(I), pH 5.5: N10, D11, G37, G45, G88, S89, G90 around His35 (Rex 2-9.5 Hz) and F114 in the copper loop (mechanism unassigned); pH 7.0 EXSY: His35 C-epsilon1 H and the amides of G9, G37, G88, E91; the crystal comparison names G9-Q12, P36-G37, M44-G45, G88-E91 (J43, J38, J44). 2003 Cu(I) CPMG: D11, G37, G88-G90 (near H35) and N47, W48, F111-T113, G116, H117, L120, K122 (near copper) (J12, J13). Apo: A1-C3, G9-D11, N18, H35-L39, G45, H46, G88-E91 missing, dispersion at M44 and I87 (J18, J19).",
+  "structure_match": [
+   {
+    "pdb": "not given (oxidised Cu(II) crystals at pH 5.5 and pH 9.0, Nar et al.)",
+    "what": "The authors' model of the two exchanging forms: at low pH the P36 carbonyl accepts a hydrogen bond from protonated His35 N-delta1-H; at high pH the P36-G37 peptide bond flips and G37 HN hydrogen-bonds His35 N-delta1, with loops 9-12 and 88-91 adjusting. Oxidised crystals compared with reduced solution data; no solution structure of either form.",
+    "evidence_row": "AZURIN-AZURIN_20261020202618-r6"
+   }
+  ],
+  "fallback_annotation": "Reduced Cu(I) azurin at pH 5.5 and 41 °C has an alternate state around His35 populated at about 2-4%: the deprotonated His35 form with a flipped P36-G37 peptide plane and adjusted loops 9-12 and 88-91, exchanging with k = 60 ± 30 s-1 (lifetime 8 ± 4 ms) and resolved as two peak sets near pH 7 (EXSY k = 45 ± 6 s-1) (doi:10.1021/bi990624l). The 2003 three-field CPMG study of Cu(I) azurin adds a 0.45% copper-loop state (N47, W48, F111-T113, G116, H117, L120, K122) of unknown structure (doi:10.1110/ps.0225403).",
   "other_conditions": [
-   "Reduced Cu(I) WT, pH about 5, 50 mM phosphate, 25.7-44.8 °C: yes. Two processes with minor states of 0.39% and 0.45% at 44.8 °C and forward rates of 11.7 and 4.1 s-1; the H35 process tracks H35 protonation, the copper-loop process has no known structure; oxidised contamination is ruled out at ≤0.2% (AZURIN-J12 to AZURIN-J16).",
-   "Copper azurin, oxidation state and pH not stated (RelaxDB source paper doi:10.1021/bi990624l, abstract only): exchange broadening around H35 with an exchange-spectroscopy rate of 45 ± 6 s-1 at 41 °C, attributed to H35 protonation/deprotonation; the authors say the pH 5.5 and pH 9.0 crystal conformations coexist in solution and interconvert slowly, which would qualify as a two-peak state if confirmed in full text and if this is the entry's sample; unresolved (AZURIN-J37, AZURIN-J38). A temperature-jump slow phase in the azurin/cytochrome c551 mixture is assigned to the same H35 relaxation, no rate (AZURIN-J39).",
-   "Copper-free apo WT, 298 K, pH 7.0, 100 mM phosphate, 2 mM DTT: possible. 17 amides around the metal site are broadened out by intermediate exchange and CPMG dispersion is seen at M44, I87 and nearby regions, with no rate or population (AZURIN-J18, AZURIN-J19); T61 is flat (AZURIN-J20). Abstract-only leads: two apo crystal forms that differ at H46 and H117 and pH-dependent histidine broadening (AZURIN-J21, AZURIN-J22).",
+   "WT, pH 7.0 (2 mM nonlabelled sample) and pH 6.3-7.6 titration (15N sample), 20 mM phosphate, 41 °C; redox state not restated for these samples, inferred Cu(I) from the sample preparation and the reduced-form pKa (RelaxDB source paper, full text): yes, literal two-peak. Two resolved peak sets around His35, pKa 7.0 ± 0.1, EXSY k = 45 ± 6 s-1, equal populations, lifetime 11 ± 2 ms (AZURIN-J38; D-r4, D-r5).",
+   "Reduced Cu(I) WT, pH about 5, 50 mM phosphate, 25.7-44.8 °C (2003 three-field CPMG): yes. Two processes with minor states of 0.39% and 0.45% at 44.8 °C and forward rates of 11.7 and 4.1 s-1; the H35 process tracks H35 protonation, the copper-loop process has no known structure; oxidised contamination is ruled out at ≤0.2% (AZURIN-J12 to AZURIN-J16). Its kinetic model does not agree with the 1999 rates (open conflict).",
+   "Copper-free apo WT, 298 K, pH 7.0, 100 mM phosphate, 2 mM DTT: possible. 17 amides around the metal site are broadened out by intermediate exchange and CPMG dispersion is seen at M44, I87 and nearby regions, with no rate or population (AZURIN-J18, AZURIN-J19); T61 is flat (AZURIN-J20). Abstract-only leads: two apo crystal forms that differ at H46 and H117 and pH-dependent histidine broadening (AZURIN-J21, AZURIN-J22). Until 2026-10-20 this was the reference state.",
+   "Oxidised Cu(II) WT: unknown; no exchange measurement in the evidence (AZURIN-J2, J3). A temperature-jump slow phase in the azurin/cytochrome c551 mixture is assigned to the H35 relaxation, no rate (AZURIN-J39, abstract).",
    "Zn-, Cd-, Co- and Fe-substituted WT: unknown. Only MD, phosphorescence and static crystals exist (AZURIN-J28 to AZURIN-J32).",
    "Ru- and Re-labelled constructs and the N42C dye-labelled smFRET construct: not assessable; their kinetics are electron transfer and photophysics, not conformational exchange (AZURIN-J33 to AZURIN-J35)."
   ],
   "evidence_rows": [
+   "AZURIN-AZURIN_20261020202618-r1",
+   "AZURIN-AZURIN_20261020202618-r2",
+   "AZURIN-AZURIN_20261020202618-r3",
+   "AZURIN-AZURIN_20261020202618-r4",
+   "AZURIN-AZURIN_20261020202618-r5",
+   "AZURIN-AZURIN_20261020202618-r6",
    "AZURIN-r9",
    "AZURIN-r10",
    "AZURIN-r11",
@@ -1200,8 +1222,6 @@
    "AZURIN-AZURIN_20261020003349-r30",
    "AZURIN-AZURIN_20261020003349-r34",
    "AZURIN-AZURIN_20261020003349-r35",
-   "AZURIN-AZURIN_20261020143153-r1",
-   "AZURIN-AZURIN_20261020143153-r2",
    "AZURIN-AZURIN_20261020143153-r3"
   ],
   "judgments": [
@@ -1225,35 +1245,43 @@
    "AZURIN-J35",
    "AZURIN-J37",
    "AZURIN-J38",
-   "AZURIN-J39"
+   "AZURIN-J39",
+   "AZURIN-J41",
+   "AZURIN-J42",
+   "AZURIN-J43",
+   "AZURIN-J44"
   ],
-  "caveats": "The reference state follows the judgment file (apo = copper-free), so the call stays possible; if the RelaxDB set is Cu(II) holo azurin the call drops to unknown, and if it is Cu(I) it rises to yes. The 2026-10-20 re-read of the RelaxDB source paper (doi:10.1021/bi990624l, abstract only) adds a slow H35 process at 45 ± 6 s-1 (41 °C) with the authors stating slow interconversion of two crystal conformations in solution, but its oxidation state and pH are unknown and its rate disagrees with the 2003 Cu(I) CPMG model, so it does not change the apo call. The apo and Cu(I) samples differ in pH (7.0 versus about 5) and phosphate concentration as well as metal state. The Cu(I) H35 process may be protonation coupled to a peptide flip rather than a purely conformational state. Only the selected papers were searched, all in phosphate or Tris.",
+  "caveats": "Call raised from possible to yes on 2026-10-20 after the RelaxDB source paper (doi:10.1021/bi990624l) was read in full and the reference state was reset to its sample, reduced Cu(I) azurin at pH 5.5 and 41 °C (ledger/redraft_notes.json; adjudication ledger/adjudication_AZURIN_pdf.json). Two caveats for the NMR collaborator: (1) the alternate state is protonation-coupled, a pH-dependent chemical equilibrium of His35 with a local peptide flip, and its 2-4% population at pH 5.5 is estimated from the pKa rather than fitted; (2) the reference state is metal-bound (Cu(I) holo), so this is not a ligand-free alternate conformation in the strict sense. The pH 5.5 rate comes from single-field line broadening with an equal-population equation corrected for unequal populations (k = 60 ± 30 s-1); the two-peak evidence and the EXSY rate come from pH 7.0 samples, where the populations are equal. The 2003 three-field CPMG model of the same Cu(I) H35 process (pB 0.39%, kA 11.7 s-1, kex in the thousands per second) is not reconciled with the 1999 rates. The abstract-only rows of the 1999 paper (AZURIN-AZURIN_20261020143153-r1, r2) are superseded and no longer cited. Only the selected papers were searched, all in phosphate or Tris.",
   "set": "RelaxDB-133"
  },
  {
   "entry": "CD9K",
   "protein": "Bovine calbindin D9k (protein S100-G, UniProt P02633), 75 residues; the entry sequence is the P43G variant",
-  "reference_state": "Ca2+-free (apo) calbindin D9k in the entry construct P43G (the entry sequence carries G43); no row gives the RelaxDB sample's metal state, temperature or buffer.",
-  "call": "unknown",
-  "literal_two_peak": "cannot tell: For apo P43G no row states an exchange regime or shows a second peak set, and P43G removes the Pro43 cis/trans peak doubling (CD9K-r5, CD9K-r10). The two peak sets in slow exchange (3:1, 2D exchange) belong to native Pro43 calbindin in the Ca2+-loaded state (CD9K-r4, CD9K-r9).",
-  "basis": "The only apo relaxation study (11.74 T, variant not stated) was read as an abstract: it reports slower-timescale fluctuations in the empty N-terminal binding loop but no residues, rate or population (CD9K-J13, CD9K-r2). No dispersion, R1rho or CEST study of apo calbindin exists in the evidence, and the millisecond R1rho exchange is reported only for Ca2+-loaded P43M (CD9K-J27, abstract).",
-  "kex": "not reported for apo (CD9K-J13)",
-  "pB": "not reported for apo (CD9K-J13)",
-  "regime": "Not stated for apo (CD9K-J13).",
-  "residues": "unoccupied N-terminal ion-binding loop, residues not listed in the abstract (CD9K-J13)",
+  "reference_state": "Ca2+-free (apo) calbindin D9k in the entry construct P43G (the entry sequence carries G43), as measured in the RelaxDB source paper (doi:10.1021/bi00088a039, full text): 4 mM uniformly 15N P43G, 300 K, pH 6.0 (HCl, no buffer), 95% H2O/5% D2O, 11.74 T, single field (CD9K-J12, J13 marked is_wt_apo). The paper states that all its studies use P43G.",
+  "call": "possible",
+  "literal_two_peak": "cannot tell: for apo P43G the source states no exchange regime, prints no kex or Δω and shows no second peak set; exchange appears only as single-field model-free Rex at 14 amides, and the authors say further kinetic analysis is not possible (CD9K-J13, E-r4). P43G exists as a single isoform, so the two peak sets in slow exchange (3:1, 2D exchange) of native Pro43 calbindin in the Ca2+-loaded state (CD9K-J1; CD9K-r4, r9) do not exist in the entry construct.",
+  "basis": "Reference state: in the RelaxDB source sample (apo P43G, 300 K, pH 6.0, 11.74 T) 14 backbone amides need an exchange term, largest at A15 (2.39 s-1) and D19 (1.32 s-1) in the unoccupied site I loop and at K55 and V61 (1.11 s-1) in loop II, with E17 0.89, I73 0.65 and the rest 0.32-0.56 s-1; the authors attribute it to intrinsic conformational heterogeneity, excluding exchange with the below-0.5% Ca2+-loaded contaminant (koff below 20 s-1), and give no rate, population or substate structure (CD9K-J13, E-r4). Under the single-field Rex rule of 2026-10-20 this is exchange detected in the reference state without a population, so the call is 'possible'. Context from the same paper: with one Cd2+ in site II the unoccupied loop I broadens much more strongly (A14, K16, G18, D19, Q22; E17 and S24 lost), read as more frequent sampling of loop-I substates (CD9K-J15, E-r5), and the Ca2+-loaded protein shows no significant exchange (42 terms at or below 0.33 s-1; CD9K-J37, E-r6). No dispersion, R1rho or CEST study of apo P43G exists in the evidence; the millisecond R1rho exchange is reported only for Ca2+-loaded P43M (CD9K-J27, abstract).",
+  "kex": "not reported for apo P43G; Rex only, 0.32-2.39 s-1 at 14 residues (CD9K-J13, E-r4). The authors' 1 ms CPMG spacing argument (rates comparable to 2000 s-1) is an instrumental sensitivity statement, not a fitted rate.",
+  "pB": "not reported for apo P43G (CD9K-J13); the only population-like numbers are contamination bounds (Ca2+-loaded below 0.5% in apo; Cd2-loaded fraction below 0.05 in (Cd2+)1).",
+  "regime": "Not stated for apo P43G (CD9K-J13). No Δω printed. The authors state that the chemical shifts of the discrete substates cannot be determined, which is why no kinetic analysis follows.",
+  "residues": "Apo P43G (Table I Rex, s-1): G8 0.48, A14 0.44, A15 2.39, K16 0.40, E17 0.89, D19 1.32, L30 0.33, E35 0.56, E51 0.56, D54 0.33, K55 1.11, V61 1.11, V68 0.32, I73 0.65; Q75 R2 excluded for exchange (CD9K-J13). (Cd2+)1 P43G: A14, K16, G18, D19, Q22 substantial; E17, S24 undetected; A15, L23 unfittable; 21 numeric entries in all (CD9K-J15).",
   "structure_match": [],
-  "fallback_annotation": "No alternate-state annotation is possible for apo calbindin D9k: the only apo relaxation study was read as abstract only and gives no residues or rate (doi:10.1021/bi00088a039).",
+  "fallback_annotation": "May have alternate conformations of the unoccupied site I loop (A14-D19) and of loop II (D54-V61) in apo P43G calbindin D9k: single-field 15N model-free exchange terms of up to 2.39 s-1 (A15) at 300 K, pH 6.0, attributed by the authors to intrinsic conformational heterogeneity (doi:10.1021/bi00088a039); no rate, population or substate structure.",
   "other_conditions": [
+   "(Cd2+)1 P43G, 300 K, pH 6.0, 11.74 T (RelaxDB source paper, full text): possible. Strong single-field exchange broadening in the unoccupied site I loop (A14, K16, G18, D19, Q22; E17, S24 lost; A15, L23 unfittable), assigned to substates of the singly loaded protein rather than Cd2+ exchange (Cd2-loaded fraction below 0.05, koff 700 s-1, Rex uncorrelated with shift difference); no rate or population (CD9K-J15, E-r5).",
+   "(Ca2+)2 P43G, single-field reanalysis of the 1992 data: no second peak set and no significant exchange, 42 fitted Rex terms all at or below 0.33 s-1 (CD9K-J37, E-r6; CD9K-J6 abstract).",
    "Native Pro43, Ca2+-loaded: yes for a literal two-peak state. Two folded forms, 3:1 trans:cis at the Gly42-Pro43 bond, interconvert slowly (cis-to-trans 0.2 s-1 at 25 °C, extrapolated from line shapes); abstracts only (CD9K-J1; CD9K-r4, CD9K-r9). This is proline isomerism in the linker, absent from the entry construct.",
    "Native Pro43, apo: cannot tell. The apo P43G assignment abstract says the wild type was set aside for conformational heterogeneity, but no row shows apo peak sets or a rate (CD9K-J7, CD9K-r11).",
-   "P43G, Ca2+-loaded: no second peak set (CD9K-J6); abstract only, other processes untested.",
-   "(Cd2+)1, variant not stated: possible lead only. Slower fluctuations stay in the empty N-terminal loop, with greater apparent rates than apo (CD9K-J15, abstract).",
    "P43M, dicalcium and Ca/La: possible lead only. Millisecond equilibria at S38, G42-S44, L46 and G18, D19 by R1rho, lost in 2 M GdmHCl (CD9K-J27 to CD9K-J29, abstracts).",
    "P43M and Q22N/P43M under crystallization conditions: domain-swapped dimers form over about 30 days, an intermolecular kinetic trap, not a monomer state (CD9K-J31)."
   ],
   "evidence_rows": [
-   "CD9K-r2",
-   "CD9K-r3",
+   "CD9K-CD9K_20261020211504-r1",
+   "CD9K-CD9K_20261020211504-r2",
+   "CD9K-CD9K_20261020211504-r3",
+   "CD9K-CD9K_20261020211504-r4",
+   "CD9K-CD9K_20261020211504-r5",
+   "CD9K-CD9K_20261020211504-r6",
    "CD9K-r4",
    "CD9K-r5",
    "CD9K-r9",
@@ -1275,14 +1303,17 @@
    "CD9K-J11",
    "CD9K-J12",
    "CD9K-J13",
+   "CD9K-J14",
    "CD9K-J15",
    "CD9K-J26",
    "CD9K-J27",
    "CD9K-J28",
    "CD9K-J29",
-   "CD9K-J31"
+   "CD9K-J31",
+   "CD9K-J36",
+   "CD9K-J37"
   ],
-  "caveats": "Every calbindin solution-dynamics row is abstract-only, so conditions, construct and detection limits are unverified. The reference construct (P43G) is inferred from the entry sequence. Deamidation at N56 during urea preparation can create extra species that mimic a second conformer (CD9K-J26). the NMR collaborator is asked whether the RelaxDB set is the apo or Ca2+-loaded P43G relaxation sample.",
+  "caveats": "Call raised from unknown to possible on 2026-10-20 after the RelaxDB source paper (doi:10.1021/bi00088a039) was read in full: exchange is detected in the reference state (apo P43G, 300 K, pH 6.0) as single-field model-free Rex at 14 amides, and under the single-field Rex rule decided that night (ledger/redraft_notes.json, _RULE_single_field_rex) this counts as exchange detected without a population. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. The construct question is settled (P43G for every sample in the paper), and P43G removes the Pro43 cis/trans two-isoform spectra, so no literal two-peak state exists in the entry construct. The apo sample has no buffer solute (pH set with HCl) and the Ca2+-loaded data are a reanalysis of a 1992 sample whose composition is not restated. Deamidation at N56 during urea preparation can create extra species that mimic a second conformer (CD9K-J26). The abstract-only rows CD9K-r2 and CD9K-r3 are superseded and no longer cited. the NMR collaborator is asked whether the RelaxDB set is the apo, (Cd2+)1 or Ca2+-loaded P43G sample.",
   "set": "RelaxDB-133"
  },
  {
@@ -1429,27 +1460,32 @@
  {
   "entry": "15521",
   "protein": "Rat thyroid transcription factor 1 (Nkx2-1) homeodomain (UniProt P23441), 68 residues (1FTT:A; entry = author + 1)",
-  "reference_state": "Free homeodomain, no DNA; 286 K, 11.7 T (abstract); deposition metadata pH 4.3; buffer not given",
-  "call": "unknown",
-  "literal_two_peak": "cannot tell: The only relaxation study was read as an abstract, which names slow conformational exchange at Y25 but states no regime and reports no second peak set.",
-  "basis": "The abstract of the 2008 relaxation study assigns slow conformational exchange to Y25 by both model-free and spectral density mapping and to K21, Q22, I38 and H52 by spectral density mapping only (R15521-J1, R15521-J2). No full text, dispersion, rate or population is available, so both judgments stay unresolved.",
-  "kex": "not measured (R15521-J1, R15521-J2)",
-  "pB": "not measured (R15521-J1)",
-  "regime": "Not stated (R15521-J1).",
-  "residues": "Y25 (entry 26) by both analyses; K21, Q22, I38, H52 (entry 22, 23, 39, 53) by spectral density mapping only (R15521-J1, R15521-J2)",
+  "reference_state": "Free rat TTF-1 homeodomain as deposited (68 residues, segment 160-226 plus Met0), no DNA. The RelaxDB source sample (doi:10.1111/j.1742-4658.2007.06208.x, now full text): about 0.8 mM uniformly 15N-labelled protein, 286 +/- 0.5 K, pH 4.3 (uncorrected, set with HCl, no buffer salt), 95:5 H2O/D2O, 11.7 T, single field (R15521-J1, J2, J3, J9 marked is_wt_apo). The paper names BMRB 15521 as its deposition (p. 445), and the deposition metadata (500 MHz, 286 K, pH 4.3) match this sample.",
+  "call": "possible",
+  "literal_two_peak": "cannot tell: the source states no exchange regime, prints no kex, population or Delta-omega and shows no second peak set; its phrase 'slow conformational exchange' means motion slower than the overall tumbling of 10.5 ns, inferred from one fitted Rex at Tyr25 and from excess J(0), not from an NMR slow-exchange regime (R15521-J1, J2; E-r2). Without kex and Delta-omega the E-033 computation cannot be made.",
+  "basis": "Reference state: in the RelaxDB source sample (free homeodomain, 286 K, pH 4.3, 11.7 T) Tyr25 (entry 26) carries R2 26.39 s-1 where every other residue lies between 8.41 and 16.53 s-1, and its J(0) stands far above the rest; it is the only residue to which both the model-free and the spectral-density analysis assign an exchange contribution (R15521-J1, E-r2). The spectral-density analysis alone adds Lys21, Gln22, Ile38 and His52 (entry 22, 23, 39, 53) at the ends of helices I, II and III, which the authors read as fraying transitions and ascribe to the model-free miss being caused by an overestimated tau_m (R15521-J2). Under the single-field Rex rule of 2026-10-20 this is exchange detected in the reference state without a population, so the call is 'possible'. Context from the same paper: tau_m 10.51 ns (MF) or about 9.85 ns (RSDM); Arg1-Leu7, Arg58-Gln59 and Ala60-Gln67 move far faster than the core, Arg53 is intermediate and looks like a hinge, and the helices Gln10-Gln22, Ala28-Ile38 and Thr43-Gln50 stay ordered (R15521-J3); the paper's own 10 ns MD reproduces this and is too short for the slower process (R15521-J9). The 1H NMR structure and hydrogen-exchange abstracts put a kink or tightening at Asn51-Arg53 in the same helix (R15521-J4, J5).",
+  "kex": "not reported: the paper gives only R2 and spectral densities, with no fitted exchange rate; the quantity printed next to Tyr25 on p. 438 is '14.67 +/- 2.35 ns', a unit that cannot be an exchange rate and is not used here (R15521-J1)",
+  "pB": "not reported (R15521-J1, J2)",
+  "regime": "Not stated. No Delta-omega is printed and no kex is fitted, so no regime can be computed; the authors speak qualitatively of microsecond-to-millisecond motion and propose aromatic side-chain motion at Tyr25 and helix-end fraying for the other four residues (R15521-J1, J2).",
+  "residues": "Tyr25 (entry 26) by both analyses, R2 26.39 s-1 against 8.41-16.53 s-1 elsewhere; Lys21, Gln22, Ile38, His52 (entry 22, 23, 39, 53) by spectral density mapping only (R15521-J1, J2). ps-ns mobility: Arg1-Leu7, Arg58, Gln59, Ala60-Gln67 (entry 2-8, 59, 60, 61-68), with Arg53 (entry 54) intermediate (R15521-J3).",
   "structure_match": [],
-  "fallback_annotation": "May have slow motion at Y25 and near the helix ends (K21, Q22, I38, H52), based on 15N relaxation of the free homeodomain read as abstract only (doi:10.1111/j.1742-4658.2007.06208.x); no rate or population.",
+  "fallback_annotation": "May have slow motion at Tyr25 in the loop between helices I and II and at the helix ends Lys21, Gln22, Ile38 and His52: single-field 15N relaxation of the free homeodomain at 286 K, pH 4.3, gives Tyr25 an R2 of 26.39 s-1 against 8.41-16.53 s-1 elsewhere, with the authors proposing aromatic side-chain motion and helix-end fraying (doi:10.1111/j.1742-4658.2007.06208.x); no rate, population or second peak set, and the same helix carries a kink or tightening at Asn51-Arg53 by structure and hydrogen exchange (doi:10.1006/jmbi.1994.1012 and doi:10.1002/bip.360370106, abstracts).",
   "other_conditions": [
+   "Free homeodomain, 286 K, pH 4.3 (HCl, no buffer), 0.8 mM, 11.7 T single field (2008 RelaxDB source, full text): possible. Tyr25 exchange by both analyses, four helix-end residues by RSDM only; mobile tails and C-terminal helix III, tau_m 10.5 ns; 10 ns MD agrees (R15521-J1, J2, J3, J9; E-r1, E-r2, E-r3).",
+   "Free homeodomain, 1H NMR structure and amide H/D exchange (abstracts, conditions not given): helix III extension 51-59 structured but less rigid, with a discontinuity at Asn51-Arg53 (R15521-J4, J5).",
+   "Free homeodomain at neutral pH, limited proteolysis: the C-terminal region resists proteases, unlike the acidic-pH NMR picture; a condition and method difference (R15521-J6).",
    "DNA-bound rat homeodomain: the C-terminal region becomes more protease-accessible, read as displacement from the core; abstract only (R15521-J7).",
    "DNA-bound human NKX2-1 crystal: same fold and recognition mode as related complexes, no measured exchange (R15521-J8)."
   ],
   "evidence_rows": [
-   "R15521-r1",
    "R15521-r2",
    "R15521-r3",
    "R15521-r8",
    "R15521-r9",
-   "R15521-r10"
+   "R15521-r10",
+   "R15521-15521_20261020220843-r1",
+   "R15521-15521_20261020220843-r2",
+   "R15521-15521_20261020220843-r3"
   ],
   "judgments": [
    "R15521-J1",
@@ -1459,53 +1495,70 @@
    "R15521-J5",
    "R15521-J6",
    "R15521-J7",
-   "R15521-J8"
+   "R15521-J8",
+   "R15521-J9"
   ],
-  "caveats": "Everything on the rat domain is abstract-only. The deposition flags K22, Q23, I39 (author K21, Q22, I38) by R2/R1 and shows the largest R2 at Y26 (author Y25), which agrees with the abstract but does not set the call.",
+  "caveats": "Call raised from unknown to possible on 2026-10-20 after the RelaxDB source paper (doi:10.1111/j.1742-4658.2007.06208.x) was read in full: exchange is detected in the reference state as a single-field model-free Rex at Tyr25 plus four RSDM-only sites, and under the single-field Rex rule decided that night (ledger/redraft_notes.json, _RULE_single_field_rex) author-reported Rex in the reference state counts as exchange detected without a population. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. Four of the five sites rest on the spectral-density analysis alone, which is a different interpretation of the same three measurements, not independent replication, and the authors themselves propose aromatic side-chain motion rather than backbone exchange at Tyr25. The sample has no buffer salt and sits at pH 4.3 and 286 K, conditions far from the physiological state and from the proteolysis and calorimetry rows; the domain unfolds at 32 °C without salt. Glu17, Leu34 and Lys46 were excluded for overlap, and the authors question their own local correlation times. The abstract-only row R15521-r1 is superseded and no longer cited; everything else on the rat domain is still an abstract. Built from cases S6_r6_15521 (earlier screen) and S6_r6_15521_20261020220843, with the PDF adjudication in ledger/adjudication_pdf_batch2.json.",
   "set": "RelaxDB-133"
  },
  {
   "entry": "50020",
   "protein": "Mouse collagen alpha-1(VII) vWFA2 subdomain (UniProt Q63870 1048-1238 with GRAMG prefix; entry = author - 1042)",
-  "reference_state": "Free vWFA2, no partner; 298 K, pH 7.4, 10 mM sodium phosphate, 10% D2O (the paper names BMRB 50020 as its deposition)",
+  "reference_state": "Free vWFA2 as deposited (the entry sequence with its GRAM prefix), no partner; the relaxation and RDC sample is 298 K, pH 7.4, 10 mM sodium phosphate, 10% D2O, 500 MHz, and the paper names BMRB 50020 as its deposition (R50020-J1). The second source (doi:10.1016/j.febslet.2011.04.071, now full text) uses the same buffer and temperature but a pTWIN1 intein construct whose residual tag is not stated, so its rows are kept as another construct (R50020-J6 to J9).",
   "call": "unknown",
-  "literal_two_peak": "cannot tell: No row states an exchange regime or shows two peak sets for vWFA2.",
-  "basis": "The only relaxation study reports ps-ns loop flexibility at N1133, N1219, around A1205 and T1208 (R50020-J1); RDC outliers mark local solution-crystal differences without a timescale (R50020-J2, R50020-J3). No dispersion or exchange-broadening study exists in the rows (R50020-J4).",
-  "kex": "not measured (R50020-J4)",
+  "literal_two_peak": "cannot tell: neither source states an exchange regime for the free domain or shows two peak sets. The only regime word in either paper, fast exchange on the chemical-shift timescale, describes binding to mFNIII-9 (KD 0.8 +/- 0.3 mM by SPR), which is a binding process (R50020-J8).",
+  "basis": "No measurement of conformational exchange exists for free vWFA2. The relaxation study reports ps-ns loop flexibility at N1133, N1219, around A1205 and T1208 (R50020-J1) and the RDC outliers mark local solution-crystal differences without a timescale (R50020-J2, J3); no dispersion, R1rho, CEST or exchange-broadening experiment was done (R50020-J4). The 2011 paper, read in full on 2026-10-20, adds no relaxation data: its flexibility statements are a disagreement between scalar couplings and the TALOS+ prediction over residues 78-87 (entry 83-92), which the authors say 'may be in a flexible loop' (R50020-J6), 16 amides still protected after three days in D2O (R50020-J7), unassigned affinity-tag residues (R50020-J9), and fast-exchange binding to mFNIII-9 (R50020-J8). The single-field Rex rule does not apply, because no Rex is reported in either paper.",
+  "kex": "not measured in either source (R50020-J4); the only kinetic statement is the qualitative fast exchange of mFNIII-9 binding (R50020-J8)",
   "pB": "not measured (R50020-J4)",
-  "regime": "Not stated (R50020-J4).",
-  "residues": "none for µs-ms; ps-ns loops at N1133, N1219, around A1205 and T1208 (entry 91, 177, 163, 166) (R50020-J1)",
+  "regime": "Not stated for any internal process; fast exchange is stated only for mFNIII-9 binding (R50020-J8). No kex and no Delta-omega are printed, so no regime can be computed.",
+  "residues": "none for us-ms. ps-ns loops at N1133, N1219, around A1205 and T1208 (entry 91, 177, 163, 166) (R50020-J1); possible flexible loop at author 78-87 = entry 83-92 (R50020-J6); amides protected after three days: entry 13-18, 38, 39, 119-124, 147, 172 (author D8, V9, V10, F11, L12, L13, L33, V34, V114-V119, M142, F167) (R50020-J7)",
   "structure_match": [],
-  "fallback_annotation": "No alternate-state annotation is possible for free vWFA2: relaxation shows only fast loop motion and RDCs only local solution-crystal differences (doi:10.1002/2211-5463.12807).",
-  "other_conditions": [],
+  "fallback_annotation": "No alternate-state annotation is possible for free vWFA2: relaxation shows only fast loop motion, RDCs only local solution-crystal differences (doi:10.1002/2211-5463.12807), and the second source gives a possible flexible loop at entry 83-92 and a protected sheet core from a two-point hydrogen-exchange experiment without any rate (doi:10.1016/j.febslet.2011.04.071).",
+  "other_conditions": [
+   "Free vWFA2, 298 K, pH 7.4, 10 mM phosphate, 500 MHz (2019 source): unknown. ps-ns loop flexibility only; no exchange experiment (R50020-J1, J4).",
+   "Free mvWFA2 on the intein construct, 298 K, pH 7.4, 10 mM phosphate, 500 MHz (2011 source, full text): unknown. Residues 78-87 may be a flexible loop from a coupling/TALOS+ disagreement; no relaxation measurement (R50020-J6, J9).",
+   "Same construct in 100% D2O: 16 amides of the hydrophobic sheet core still present after three days; protection from two time points, no rate (R50020-J7).",
+   "With mFNIII-9 at about 1:2: fast exchange on the chemical-shift timescale, KD 0.8 +/- 0.3 mM; binding, not a conformational state (R50020-J8).",
+   "In PEG-hexanol or CTAB:PEG-hexanol alignment media: RDC outliers against the 6S4C crystal, outlier set changing with the medium; no timescale (R50020-J2, J3)."
+  ],
   "evidence_rows": [
    "R50020-r1",
    "R50020-r2",
-   "R50020-r3"
+   "R50020-r3",
+   "R50020-50020_20261020215938-r1",
+   "R50020-50020_20261020215938-r2",
+   "R50020-50020_20261020215938-r3",
+   "R50020-50020_20261020215938-r4"
   ],
   "judgments": [
    "R50020-J1",
    "R50020-J2",
    "R50020-J3",
-   "R50020-J4"
+   "R50020-J4",
+   "R50020-J5",
+   "R50020-J6",
+   "R50020-J7",
+   "R50020-J8",
+   "R50020-J9"
   ],
-  "caveats": "The deposition flags seven residues by R2/R1 (author G1085, H1143, V1158, I1178, L1186, G1195, G1222) that the paper does not discuss; a lead only. The poorly defined alpha5-beta6 loop in 6S4C is static crystal evidence, not a second state.",
+  "caveats": "Call stays unknown after the second RelaxDB-linked source (doi:10.1016/j.febslet.2011.04.071) was read in full on 2026-10-20: that paper measures no relaxation and reports no exchange contribution, so the single-field Rex rule has nothing to act on, and its flexibility statements are a secondary-structure disagreement and a two-point hydrogen-exchange protection map. Its construct carries an unstated residual intein tag and the entry's GRAM prefix is not part of its numbered sequence, so those rows are kept as another construct; the entry = author + 5 mapping was fixed from the sequence printed on the Fig. 3a/3b axis (ledger/adjudication_pdf_batch2.json). The hydrogen-exchange sample is in 100% D2O at nominal pH 7.4 without a pD correction. The deposition flags seven residues by R2/R1 (author G1085, H1143, V1158, I1178, L1186, G1195, G1222) that neither paper discusses; a lead only. The poorly defined alpha5-beta6 loop in 6S4C is static crystal evidence, not a second state.",
   "set": "RelaxDB-133"
  },
  {
   "entry": "RNASEHI",
   "protein": "Escherichia coli ribonuclease HI (UniProt P0A7Y4), wild-type 155-residue sequence with C13, C63, C133 (1RCH:A); no BMRB id on the input card",
-  "reference_state": "Free wild-type E. coli RNase HI (entry sequence, Cys-containing), no Mg2+ or nucleic acid. The us-ms evidence is at 14.1 T, 283-310 K, pH 5.5 (2019 methyl study; buffer not restated) and from a multifield backbone reanalysis without restated conditions (2026); the 1995 source abstract is at 27 °C; the side-chain relaxation is at pD 6.2 and the Trp/backbone relaxation at pH 5.5 acetate.",
-  "call": "unknown",
-  "literal_two_peak": "does not: the 2019 methyl analysis treats the handle exchange with the fast-limit two-site expression (populations p1 much greater than p2, stated as a convenience for Delta-Rex and used for the Arrhenius analysis), the 2026 Rex comes from a B0-squared field dependence, and no second peak set, kex or minor population is reported for the free WT enzyme (RNASEHI-J47, RNASEHI-J18); the only exchange-broadening regime statement concerns W85 of the Thermus homolog (RNASEHI-J14).",
-  "basis": "Free cysteine-containing E. coli RNase HI (the entry sequence) has no full-text us-ms measurement. The handle-region exchange is measured in cysteine-free RNase HI*: the V98, V101 and L103 methyls are broadened beyond the exchange-free reference at 283, 300 and 310 K (14.1 T, pH 5.5), read by the authors as open-closed exchange of the handle, with I78 and I82 elevated at 283 K (RNASEHI-J47); a multifield reanalysis of backbone relaxation finds Rex above 1 s-1 at 40 amides with G77 at 4.00 ± 0.38 s-1 (900 MHz) (RNASEHI-J18); a 1998 abstract adds an exchange contribution in helix I (RNASEHI-J42). Solution RDCs and the V101 rotamer population fit open/closed averaging of the handle, and MD samples both handle states (RNASEHI-J11, J10). No rate, population, shift difference or minor-state structure is measured, and exchange in a variant is not exchange in the reference state, so the call is unknown.",
-  "kex": "not measured: the 2019 study gives apparent activation energies of 45.4 ± 1.6 kJ/mol (V98), 23.7 ± 1.9 kJ/mol (V101) and 21.4 ± 3.0 kJ/mol (L103) from the temperature dependence of Delta-Rex under a fast-limit assumption, not kex (RNASEHI-J47); the 2026 reanalysis gives Rex, with G77 at 4.00 ± 0.38 s-1 at 900 MHz (RNASEHI-J18)",
-  "pB": "not measured; the fast-limit treatment assumes a dominant state (RNASEHI-J47); V101 trans chi1 rotamer about 10% in WT and above 30% in V98A is a rotamer population, not the closed-handle population (RNASEHI-J11, RNASEHI-J12)",
-  "regime": "Fast limit assumed by the 2019 analysis (p1 much greater than p2) and implied by the B0-squared Rex fit of 2026; not independently determined. In the T. thermophilus homolog the W85 RDC could not be measured because of exchange broadening (RNASEHI-J14, homolog). No delta omega is printed.",
-  "residues": "Handle region: V98, V101, L103 methyls at all three temperatures, I78 and I82 at 283 K (RNASEHI-J47); G77 and 39 further amides with Rex above 1 s-1, figure only (RNASEHI-J18); helix I, no list (RNASEHI-J42, abstract); RDC probes W85, T92, V101 (RNASEHI-J11); simulated glycine-rich G15/N16 minor state (J9, MD only)",
+  "reference_state": "Free wild-type E. coli RNase HI (entry sequence, Cys-containing), no Mg2+ or nucleic acid. The RelaxDB source sample (doi:10.1021/bi00020a003, full text): about 1 mM 15N protein, 27 °C, pH 5.5, 100 mM deuterated sodium acetate, 600 MHz, single field (RNASEHI-J38, J51, J52). The other us-ms evidence is at 14.1 T, 283-310 K, pH 5.5 (2019 methyl study, cysteine-free) and from a multifield backbone reanalysis without restated conditions (2026, cysteine-free data set).",
+  "call": "possible",
+  "literal_two_peak": "cannot tell: the reference-state source (1995, full text) detects exchange only as a single-field model-free Δex term and states no exchange regime, prints no kex or Δω and shows no second peak set (RNASEHI-J52); the authors speak of 'exchange in the millisecond time scale' as the generic window of the Δex term. The 2019 methyl analysis of the cysteine-free handle exchange assumes the fast limit and the 2026 Rex comes from a B0-squared fit (RNASEHI-J47, J18), which would give 'does not' if those constructs counted; the only exchange-broadening regime statement concerns W85 of the Thermus homolog (RNASEHI-J14).",
+  "basis": "Reference state: in the RelaxDB source sample (free WT, 27 °C, pH 5.5, acetate, 600 MHz) 21 backbone amides need a model-free exchange term, concentrated in helices I (M50, A51, A52, A55, L56, L59) and IV (V101, D102, D103, W104, L107, A109, A110, L111) with I78, I82, W90 (2.61 Hz, largest), K91, N100, W118 and E135; mean Δex 0.71 Hz; the authors read it as millisecond exchange and a possibly cooperative motion of the two adjacent helices, with no rate, population or minor-state structure (RNASEHI-J52, E-r2). Under the single-field Rex rule of 2026-10-20 this is exchange detected in the reference state without a population, so the call is 'possible'. Supporting, other construct: the handle-region exchange in cysteine-free RNase HI* (V98, V101, L103 methyls broadened at 283-310 K; backbone Rex above 1 s-1 at 40 amides with G77 4.00 ± 0.38 s-1 at 900 MHz; RNASEHI-J47, J18) and the 1998 helix-I exchange abstract (J42). Solution RDCs and the V101 rotamer population fit open/closed averaging of the handle, and MD samples both handle states (RNASEHI-J11, J10).",
+  "kex": "not measured in the reference state: the 1995 paper gives Δex (Hz, line-width contribution) only, mean 0.71 Hz over 20 residues and 2.61 Hz at W90 (RNASEHI-J52). Other constructs: the 2019 study gives apparent activation energies of 45.4 ± 1.6 kJ/mol (V98), 23.7 ± 1.9 kJ/mol (V101) and 21.4 ± 3.0 kJ/mol (L103) from the temperature dependence of Delta-Rex under a fast-limit assumption, not kex (RNASEHI-J47); the 2026 reanalysis gives Rex, with G77 at 4.00 ± 0.38 s-1 at 900 MHz (RNASEHI-J18).",
+  "pB": "not measured in the reference state (RNASEHI-J52); the fast-limit treatment of the cysteine-free handle exchange assumes a dominant state (RNASEHI-J47); V101 trans chi1 rotamer about 10% in WT and above 30% in V98A is a rotamer population, not the closed-handle population (RNASEHI-J11, RNASEHI-J12)",
+  "regime": "Not stated for the reference state: single-field Δex with no Δω (RNASEHI-J52). Fast limit assumed by the 2019 analysis of cysteine-free protein (p1 much greater than p2) and implied by the B0-squared Rex fit of 2026; not independently determined. In the T. thermophilus homolog the W85 RDC could not be measured because of exchange broadening (RNASEHI-J14, homolog).",
+  "residues": "Reference state (1995, single-field Δex): M50, A51, A52, A55, L56, L59, I78, I82, W90, K91, N100, V101, D102, D103 (entry L103), W104, L107, A109, A110, L111, W118, E135 (RNASEHI-J52). Cysteine-free handle region: V98, V101, L103 methyls at all three temperatures, I78 and I82 at 283 K (RNASEHI-J47); G77 and 39 further amides with Rex above 1 s-1, figure only (RNASEHI-J18); helix I, no list (RNASEHI-J42, abstract); RDC probes W85, T92, V101 (RNASEHI-J11); simulated glycine-rich G15/N16 minor state (J9, MD only)",
   "structure_match": [],
-  "fallback_annotation": "May have an alternate conformation of the substrate-binding handle region (residues 81-101, closed versus open): methyl exchange broadening at V98, V101 and L103 across 283-310 K (doi:10.1007/s10858-019-00240-w), backbone Rex at G77 and 39 further amides (doi:10.1021/jacs.6c05843), and solution RDCs and valine rotamer populations interpreted with MD (doi:10.1021/acs.biochem.0c00500); no rate or population measured.",
+  "fallback_annotation": "May have an alternate conformation involving helices I (N44-A58) and IV (V101-A110), which carry single-field exchange terms in the free wild-type enzyme at 27 °C, pH 5.5 (mean Δex 0.71 Hz, W90 2.61 Hz; doi:10.1021/bi00020a003), and of the substrate-binding handle region (residues 81-101, closed versus open) measured in cysteine-free RNase HI*: methyl exchange broadening at V98, V101 and L103 across 283-310 K (doi:10.1007/s10858-019-00240-w), backbone Rex at G77 and 39 further amides (doi:10.1021/jacs.6c05843), and solution RDCs and valine rotamer populations interpreted with MD (doi:10.1021/acs.biochem.0c00500); no rate or population measured.",
   "other_conditions": [
+   "Free WT (entry sequence), 27 °C, pH 5.5, 100 mM acetate, 600 MHz single field (1995 RelaxDB source, full text): possible. Model-free Δex at 21 amides in helices I and IV, W90 largest; fast motion at the termini and five loops, rigid secondary structure (RNASEHI-J52, J38, J51; E-r1, E-r2).",
    "Free cysteine-free RNase HI* (construct not stated in the 2019 paper; same pAED4 line), 14.1 T, pH 5.5, 283/300/310 K (2019 methyl Hahn echo): handle methyls V98, V101, L103 exchange-broadened at all temperatures, I78/I82 at 283 K; apparent activation energies only; fast-limit assumed (RNASEHI-J47, RNASEHI-RNASEHI_20261020150655-r13 to r16).",
    "Free cysteine-free RNase HI* (stated for the 2025 data set), 500/700/900 MHz backbone reanalysis, conditions not restated (2026): Rex above 1 s-1 at 40 amides, G77 4.00 ± 0.38 s-1 (RNASEHI-J18, RNASEHI-RNASEHI_20261020150655-r19).",
    "Free WT, 1998 abstract: exchange contribution in helix I, reduced in the quintuple mutant; the mutant gains exchange at the protrusion junction (RNASEHI-J42, J43).",
@@ -1538,7 +1591,10 @@
    "RNASEHI-RNASEHI_20261020150655-r14",
    "RNASEHI-RNASEHI_20261020150655-r15",
    "RNASEHI-RNASEHI_20261020150655-r16",
-   "RNASEHI-RNASEHI_20261020150655-r19"
+   "RNASEHI-RNASEHI_20261020150655-r19",
+   "RNASEHI-RNASEHI_20261020210519-r1",
+   "RNASEHI-RNASEHI_20261020210519-r2",
+   "RNASEHI-RNASEHI_20261020210519-r3"
   ],
   "judgments": [
    "RNASEHI-J9",
@@ -1557,9 +1613,13 @@
    "RNASEHI-J42",
    "RNASEHI-J43",
    "RNASEHI-J47",
-   "RNASEHI-J50"
+   "RNASEHI-J50",
+   "RNASEHI-J38",
+   "RNASEHI-J51",
+   "RNASEHI-J52",
+   "RNASEHI-J53"
   ],
-  "caveats": "The call rose from unknown to possible on 2026-10-20 after the re-read added full-text us-ms evidence (case S6_r6_RNASEHI_20261020150655). The 2026 reanalysis uses the 2025 relaxometry data set, whose paper states a cysteine-free RNase HI* sample (reference 33 of doi:10.1021/jacs.6c05843 = doi:10.1016/j.jmr.2025.107989); the 2019 methyl sample's construct is not stated and comes from the same pAED4 line; the call is therefore unknown for the entry sequence and would be possible for RNase HI*. No rate, population or shift difference is measured, and the 2019 analysis assumes the fast-exchange limit, so whether the closed handle is slow enough for separate peaks is untested. The earlier 15N handle-exchange studies cited as refs 54-56 of the 2019 paper are still not in the evidence. Second-read adjudication B was used for r20, r21, r38-r42, r69 and r80; none of those rows carries the call. Homolog and ancestral-folding rows are kept out of the call.",
+  "caveats": "Call set to possible on 2026-10-20 after the RelaxDB source paper (doi:10.1021/bi00020a003) was read in full: exchange is detected in the reference state (free WT, 27 °C, pH 5.5) as a single-field model-free Δex term at 21 amides, and under the single-field Rex rule decided that night (ledger/redraft_notes.json, _RULE_single_field_rex) author-reported Rex in the reference state counts as exchange detected without a population. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. The 1995 analysis gives no kex, population, Δω or second peak set, so whether the exchanging state is slow enough for separate peaks is untested. The handle-region evidence with temperature dependence (2019, 2026) is from cysteine-free RNase HI* (the 2026 reanalysis uses the 2025 relaxometry data set, which its paper states is cysteine-free; the 2019 sample's construct is not stated) and stays other-construct support. The earlier 15N handle-exchange studies cited as refs 54-56 of the 2019 paper are still not in the evidence. The paper prints Ala131, Asp103, Tyr71, Asn43 and Asp92 where the entry has E131, L103, S71, T43, T92; kept as printed and mapped by number. Second-read adjudication B was used for r20, r21, r38-r42, r69 and r80; the PDF adjudication (ledger/adjudication_pdf_batch1.json) filled positions 131 and 103 in E-r1/E-r2 and resolved the duplicate position 43 in E-r3. Homolog and ancestral-folding rows are kept out of the call. The abstract-only rows of the 1995 paper (RNASEHI-RNASEHI_20261020150655-r1, r2) are superseded and no longer cited.",
   "set": "RelaxDB-133"
  },
  {
@@ -1721,23 +1781,27 @@
  {
   "entry": "7036",
   "protein": "Human NCK2 third SH3 domain (SH3-3, UniProt O43639 198-256; entry 1-59 = UniProt - 197)",
-  "reference_state": "Free SH3-3 (198-256), no peptide; BMRB 7036 cites Liu et al. 2006 (PMID 16752908), read only as an abstract; the 2FRY structure deposition lists 298 K, pH 6.8",
+  "reference_state": "Free isolated Nck2 SH3-3 as deposited (the entry sequence; the paper numbers it 199-257 and plots it 1-59, PDB 2FRY adds an N-terminal GS), no peptide. The BMRB 7036 source sample (doi:10.1021/bi060091y, now full text): 15N-labelled SH3-3 at 20 °C, pH 6.8, 50 mM sodium phosphate with 0.01% sodium azide and 5 mM DTT, 10% D2O, 800 MHz, single field; the relaxation sample concentration is not stated (R7036-J1, J2, J12 marked is_wt_apo).",
   "call": "unknown",
-  "literal_two_peak": "cannot tell: The only SH3-3 dynamics row is an abstract reporting heteronuclear NOE; no exchange regime or second peak set is stated.",
-  "basis": "The BMRB 7036 abstract reports heteronuclear NOE above 0.7 at most SH3-3 residues despite a CD spectrum typical of a largely unstructured protein (R7036-J1); no row measures µs-ms exchange (R7036-J2, search_insufficient). The µs-ms statements in the rows belong to the SH2 domain with phosphopeptides bound (R7036-J10, R7036-J11).",
-  "kex": "not measured (R7036-J2)",
-  "pB": "not measured (R7036-J2)",
-  "regime": "Not stated (R7036-J2).",
-  "residues": "none localized; NOE > 0.7 at most residues without a list (R7036-J1)",
+  "literal_two_peak": "does not: the source states that only one set of HSQC peaks is detected, in contrast to the drkN SH3 domain it cites, and concludes that the conformational exchange of SH3-3 is faster than the NMR chemical-shift timescale (R7036-J2; E-r3). No kex and no Delta-omega are printed, so no regime can be computed, and a single peak set does not by itself exclude a weakly populated or very broad second state.",
+  "basis": "No author-reported Rex exists for free SH3-3. In the BMRB 7036 source sample (free SH3-3, 20 °C, pH 6.8, phosphate with DTT, 800 MHz) the average T2 is about 80 ms against about 100 ms for the SH3-2 domain measured in the same study under the same conditions, and the HSQC peaks are visibly broader; the authors write that the domain might undergo conformational exchange on the microsecond-to-millisecond timescale and/or dynamic aggregation, keep both readings, and say that deciding needs relaxation data at several fields (R7036-J2, J12; E-r1, E-r3). The model-free analysis failed, returning order parameters no higher than about 0.3 with large exchange terms under isotropic, axially symmetric and fully asymmetric diffusion, results the authors call strange, so no per-residue Rex can be quoted (R7036-J1). The single-field Rex rule of 2026-10-20 acts on author-reported Rex; here the only exchange terms come from a fit the authors reject, and the authors' own alternative is aggregation rather than anisotropic tumbling, so the rule is not applied and the call stays unknown. The shortened T2, the single peak set (read by the authors as exchange faster than the chemical-shift timescale) and the resonance loss in the linked SH3-2-SH3-3 construct (R7036-J14) are kept as a lead for a concentration series and a dispersion experiment. Fast motion is limited: heteronuclear NOE is above 0.7 at most residues despite a far-UV CD spectrum typical of an unstructured protein (R7036-J1).",
+  "kex": "not measured: no rate is fitted; the only numbers are average T2 values, about 80 ms for SH3-3 and about 100 ms for SH3-2, and exchange terms from a model-free fit the authors reject (R7036-J2)",
+  "pB": "not measured (R7036-J2); one peak set is observed, which the authors read as fast exchange rather than as a population measurement",
+  "regime": "Authors: faster than the NMR chemical-shift timescale, inferred from the single set of HSQC peaks; the motion is placed qualitatively in the microsecond-to-millisecond window from the shortened T2. No kex and no Delta-omega are printed, so no computed regime is possible (R7036-J2).",
+  "residues": "none localized: the T1, T2 and NOE profiles exist only as Figure 10 and the text names no residue, either for the high NOE values or for the shortened T2 (R7036-J1, J2)",
   "structure_match": [],
-  "fallback_annotation": "No alternate-state annotation is possible for free Nck2 SH3-3: the only measurement is a heteronuclear NOE summary from an abstract that limits fast backbone motion and does not test slower exchange (doi:10.1021/bi060091y).",
+  "fallback_annotation": "No apo alternate-state annotation is possible for free Nck2 SH3-3: its average 15N T2 (about 80 ms) is shorter than that of the neighbouring SH3-2 domain (about 100 ms) under the same conditions and its HSQC lines are broader, which the authors ascribe to microsecond-to-millisecond exchange and/or dynamic aggregation without a residue, rate or population, and the model-free analysis of this domain failed (doi:10.1021/bi060091y).",
   "other_conditions": [
+   "Free SH3-3, 20 °C, pH 6.8, 50 mM phosphate with 5 mM DTT, 800 MHz single field (2006 BMRB 7036 source, full text): unknown. hNOE above 0.7 at most residues, average T2 about 80 ms, broad lines, failed model-free fit, one peak set; exchange and/or aggregation per the authors, no fitted Rex (R7036-J1, J2, J12; E-r1, E-r3).",
+   "Free SH3-2 (paper residues 115-171), same buffer and temperature: comparator with S2 above 0.8 for many residues and average T2 about 100 ms; another domain (R7036-J13).",
+   "Linked SH3-2-SH3-3 (paper residues 115-257), same buffer: extensive resonance loss attributed to us-ms exchange, peaks not enumerated; longer construct (R7036-J14).",
+   "SH3-3 with proline-rich peptides (Nogo-A, Prk2, Wrch2), pooled with SH3-2 titrations: some peaks vanish and some trajectories do not fit a two-site model (R7036-J15).",
    "SH3-3 (192-262) bound to PINCH-1 LIM4: ultraweak complex, KD about 3 mM (abstract); binding, not conformational exchange (R7036-J4).",
+   "Structures 2FRY, 1WX6 and the LIM4 complex 1U5S: similar cores, terminal differences in the complex; static (R7036-J16).",
    "SH3-1, a different domain, 278 K, 800 MHz, 5 mM phosphate: native pH 6.5 ordered except termini, T33 and loop tips; at pH 2.0 or as 4AlaMut at pH 6.5 it forms highly populated non-native two-helix states (about 70% of residues above 50% helical at pH 2.0) with more fast motion; no interconversion rate (R7036-J5 to R7036-J9).",
-   "SH2 domain with phosphoephrinB2 peptides: increased backbone and side-chain µs-ms dynamics with pTyr304 or pTyr316 peptides, less with pTyr330 (abstract; R7036-J10, R7036-J11)."
+   "SH2 domain with phosphoephrinB2 peptides: increased backbone and side-chain us-ms dynamics with pTyr304 or pTyr316 peptides, less with pTyr330 (abstract; R7036-J10, R7036-J11)."
   ],
   "evidence_rows": [
-   "R7036-r1",
    "R7036-r2",
    "R7036-r3",
    "R7036-r4",
@@ -1746,7 +1810,13 @@
    "R7036-r7",
    "R7036-r8",
    "R7036-r9",
-   "R7036-r11"
+   "R7036-r11",
+   "R7036-7036_20261020223524-r1",
+   "R7036-7036_20261020223524-r2",
+   "R7036-7036_20261020223524-r3",
+   "R7036-7036_20261020223524-r4",
+   "R7036-7036_20261020223524-r5",
+   "R7036-7036_20261020223524-r6"
   ],
   "judgments": [
    "R7036-J1",
@@ -1759,9 +1829,14 @@
    "R7036-J8",
    "R7036-J9",
    "R7036-J10",
-   "R7036-J11"
+   "R7036-J11",
+   "R7036-J12",
+   "R7036-J13",
+   "R7036-J14",
+   "R7036-J15",
+   "R7036-J16"
   ],
-  "caveats": "Peptide-bound and other-domain states are kept out of the apo call. The full text of the BMRB 7036 paper would hold the relaxation data and any missing-peak explanation. No deposition readback file exists. Row r10 (static SH3-1 versus Src SH3 packing) was not used.",
+  "caveats": "Call stays unknown after the BMRB 7036 source paper (doi:10.1021/bi060091y) was read in full on 2026-10-20. The single-field Rex rule (ledger/redraft_notes.json, _RULE_single_field_rex) requires author-reported Rex in the reference state; this paper reports none. Its exchange terms belong to a model-free fit that returned order parameters of about 0.3 and that the authors call strange, and its exchange reading of the short average T2 is offered together with dynamic aggregation ('and/or'), with multi-field relaxation named as the way to decide. The rule's fixed caveat (anisotropic tumbling) is not the live alternative here; aggregation is (R7036-J12, artefact_suspected, contested against R7036-J2). The evidence is a domain-average T2 compared with a neighbouring domain, with no residue, rate or population, so no site could be annotated under any call. literal_two_peak is 'does not': the authors state that only one peak set is seen and read the exchange as faster than the chemical-shift timescale. The abstract-only row R7036-r1 is superseded and no longer cited; peptide-bound and other-domain states are kept out of the apo call; no deposition readback file exists. Both readers passed all six rows of case S6_r6_7036_20261020223524 with no flags. Lead: a concentration-resolved relaxation series or a dispersion experiment would move this entry.",
   "set": "RelaxDB-133"
  },
  {
@@ -1829,48 +1904,55 @@
  {
   "entry": "VL",
   "protein": "Mouse anti-digoxin antibody 26-10 light-chain variable domain (VL, Ig kappa chain V-II region 26-10, UniProt P01631), isolated, 113 residues (1MAJ/1MAK chain A)",
-  "reference_state": "Free isolated 26-10 VL as deposited (the entry sequence), no VH partner and no digoxin; no row gives temperature, pH, buffer or ligand state, and at NMR concentrations the domain is in a rapid monomer/dimer equilibrium (Kd 2.5 ± 0.7 mM).",
-  "call": "unknown",
-  "literal_two_peak": "cannot tell: the 1993 dynamics abstract reports R2 exchange contributions at 24 residues and calls them microsecond-to-millisecond motion without stating an exchange regime or a second peak set; the 1994 abstract's only kinetic word, 'rapid', describes monomer/dimer association (VL-J1).",
-  "basis": "The RelaxDB source paper (Constantine et al. 1993, doi:10.1002/prot.340150307) is now in the evidence as an abstract only: significant R2 exchange contributions at 24 unnamed residues of the free isolated VL, read by the authors as us-ms motion and for several residues attributed to nearby aromatic-ring motion rather than a backbone conformational change (VL-J4); low ps-ns flexibility with nanosecond motion at 15 residues (VL-J3). No residue list, rate, population, regime or sample condition can be checked, so the judgment verdict is unresolved and the call stays unknown; the 1994 structure abstract adds only a rapid monomer/dimer equilibrium (VL-J1) and a fold close to the Fab-bound VL (VL-J2).",
-  "kex": "not measured; the 1993 abstract gives R2 exchange contributions, not a rate (VL-J4)",
-  "pB": "not measured (VL-J4); the dimer fraction is not given, only Kd 2.5 ± 0.7 mM (VL-J1)",
-  "regime": "Not stated for conformational exchange: the 1993 abstract calls the R2 exchange contributions microsecond-to-millisecond motion with no regime (VL-J4). The monomer/dimer equilibrium is called rapid (VL-J1).",
-  "residues": "24 residues with R2 exchange contributions, not named in the abstract (VL-J4); solution-versus-Fab differences lie in CDR2, CDR3, strands A, F and G, with no residue numbers (VL-J2)",
+  "reference_state": "Free isolated 26-10 VL as deposited (the entry sequence), no VH partner and no digoxin. The RelaxDB source sample (doi:10.1002/prot.340150307, now full text): about 3.4 mM 15N protein in 0.50 ml, 30 °C, pH 5.5, 50 mM deuterated sodium acetate with 0.001% NaN3, 90% H2O/10% D2O, 599.95 MHz, single field, CPMG refocusing fixed at 0.9 ms (VL-J3, J4, J6, J7 marked is_wt_apo). The amide 1H-2H exchange of the same paper is a different sample state: 22 °C in nominally 100% D2O (VL-J5). At this concentration the domain is in a rapid monomer/dimer equilibrium (Kd 2.5 +/- 0.7 mM) (1994 abstract; the 1993 paper calls the sample predominantly monomeric by size exclusion).",
+  "call": "possible",
+  "literal_two_peak": "does not: the source reports no second set of backbone NH resonances and states explicitly that slow motions between well-populated substates would be evidenced by multiple resonances, which are not observed for the backbone NH groups of the 26-10 VL domain; the exchange is bounded only between about 10-6 s and the 10-3 s CPMG refocusing period, and no kex or Delta-omega is printed, so no regime can be computed (VL-J4; E-r2, p. 304).",
+  "basis": "Reference state: in the RelaxDB source sample (free isolated VL, 30 °C, pH 5.5, acetate, 600 MHz) 24 of the 89 analysed backbone amides carry a significant exchange contribution to R2, from 0.36 to 7.56 s-1, with the largest at Thr-96 (7.56 +/- 3.11), Ser-61 (6.00 +/- 0.01), Gly-104 (5.28 +/- 1.28), Trp-40 (4.56 +/- 0.01) and Gln-6 (4.44 +/- 0.02); eight of them lie in CDR1 (Ser-26, Ser-32, Asn-35), CDR2 (Asn-58, Ser-61) and CDR3 (Thr-96, Thr-97, His-98). The authors place the motion between about 10-6 and 10-3 s, give no rate, population or chemical-shift difference, and suggest for Cys-23, Arg-24, Trp-40, Gln-43 and Phe-92 that nearby aromatic rings repack rather than the NH vector moving (VL-J4, E-r2). Under the single-field Rex rule of 2026-10-20 this is exchange detected in the reference state without a population, so the call is 'possible'. Context from the same paper: tau_r 8.45 ns, 15 amides with a nanosecond internal motion (tau_s 0.81-6.49 ns) and 15 with a picosecond one, the other 59 described by S2 alone between 0.72 and 1.00 (VL-J3, J6); six further residues with R2ex comparable to the error in R2 are set aside as possibly artifactual (VL-J7); amide 1H-2H exchange spans 3.7 x 10-6 to about 3 x 10-2 min-1 and follows hydrogen bonding and burial, not the relaxation-active motions (VL-J5).",
+  "kex": "not measured: the paper gives exchange contributions R2ex in s-1 only (0.36-7.56 s-1 at 24 residues), and states that extracting temporal information would need the chemical-shift differences between environments, which are unknown (VL-J4)",
+  "pB": "not measured (VL-J4); the dimer fraction is not given either, only Kd 2.5 +/- 0.7 mM for the monomer/dimer equilibrium (VL-J1)",
+  "regime": "Not stated and not computable: no kex and no Delta-omega are printed, so the E-033 computation cannot be made. The authors bound the process between a lower limit of about 10-6 s, set by the population difference, the shift difference and the uncertainty in R2, and an upper limit comparable to the 10-3 s CPMG refocusing period, and note a general blind region between about 10-8 and 10-6 s (VL-J4). The monomer/dimer equilibrium is called rapid (VL-J1).",
+  "residues": "us-ms exchange (R2ex, s-1): Val-3 1.20, Met-4 0.72, Thr-5 1.44, Gln-6 4.44, Thr-7 2.04, Cys-23 1.94, Arg-24 3.36, Ser-26 1.08, Ser-32 0.72, Asn-35 1.80, Trp-40 4.56, Gln-43 4.08, Ser-48 4.20, Lys-50 2.76, Asn-58 1.80, Ser-61 6.00, Phe-67 0.72, Asp-87 1.91, Phe-92 1.20, Thr-96 7.56, Thr-97 1.56, His-98 0.84, Gly-104 5.28, Gly-105 4.08 (VL-J4); possibly artifactual: Ser-25, Thr-36, Ser-57, Val-63, Glu-84, Ile-90 (VL-J7). Nanosecond motion: Val-2, Ser-10, Leu-11, Ala-19, Ala-45, Gly-46, Leu-51, Phe-60, Gly-73, Leu-78, Lys-79, Gly-89, Lys-108, Lys-112, Arg-113 (VL-J3). Entry numbering equals the paper's numbering.",
   "structure_match": [],
-  "fallback_annotation": "No apo alternate-state annotation is possible yet: the isolated 26-10 VL shows R2 exchange contributions at 24 residues on the microsecond-to-millisecond timescale, partly attributed to aromatic-ring motion (doi:10.1002/prot.340150307, abstract only); it self-associates weakly in solution and its fold changes only slightly on pairing with VH in the Fab (doi:10.1006/jmbi.1994.1137, abstract only).",
+  "fallback_annotation": "May have alternate conformations involving the N-terminal strand region (Val-3 to Thr-7), the strand-B/C positions Cys-23, Arg-24, Trp-40 and Gln-43 and all three CDRs (Ser-26, Ser-32, Asn-35; Asn-58, Ser-61; Thr-96, Thr-97, His-98) of the free isolated 26-10 VL: single-field 15N exchange contributions of 0.36-7.56 s-1 at 24 amides at 30 °C, pH 5.5, placed by the authors between about 10-6 and 10-3 s, with motions of nearby aromatic rings proposed for five of the sites (doi:10.1002/prot.340150307); no rate, population or second peak set, and the 3.4 mM sample is partly dimeric.",
   "other_conditions": [
-   "Free isolated VL, conditions not stated (1993 abstract): R2 exchange contributions at 24 residues, nanosecond motion at 15 residues, low ps-ns flexibility overall; abstract only, unresolved (VL-J3, VL-J4, VL-VL_20261020152957-r1, r2).",
-   "VL paired with VH in the 26-10 Fab bound to digoxin (crystal, PDB not named): fold kept, subtle differences in CDR2, CDR3 and strands A, F and G relative to the isolated VL; static comparison, no rate or population (VL-J2, VL-r2).",
-   "Isolated VL at NMR concentrations: monomer/dimer equilibrium, Kd 2.5 ± 0.7 mM, called rapid; binding kinetics, not a conformational state (VL-J1, VL-r1)."
+   "Free isolated VL, 30 °C, pH 5.5, 50 mM deuterated acetate, 3.4 mM, 600 MHz single field (1993 RelaxDB source, full text): possible. Exchange contributions at 24 amides, nanosecond motion at 15, picosecond at 15, S2 alone for 59 (VL-J3, J4, J6, J7; E-r1, E-r2).",
+   "Same protein at 22 °C in nominally 100% D2O, pH* 5.5 (amide 1H-2H exchange): rates from (3.7 +/- 0.6) x 10-6 min-1 (Tyr-91) to bounds near 3 x 10-2 min-1, Trp-40 indole (2.6 +/- 0.1) x 10-5 min-1; hydrogen replacement, no conformational opening rate (VL-J5, VL-r3).",
+   "VL inside the 26-10 Fab, native and digoxin-bound crystals: regional B-factor differences read as flexibility changes on VL:VH association or ligand binding, including a more mobile site away from the binding surface; static, no rate (VL-J8, VL-r4).",
+   "VL paired with VH in the Fab/digoxin crystal versus the isolated solution structure: fold kept, subtle differences in CDR2, CDR3 and strands A, F and G; abstract only (VL-J2, VL-r2).",
+   "Isolated VL at NMR concentrations: monomer/dimer equilibrium, Kd 2.5 +/- 0.7 mM, called rapid; binding kinetics, not a conformational state (VL-J1, VL-r1)."
   ],
   "evidence_rows": [
    "VL-r1",
    "VL-r2",
-   "VL-VL_20261020152957-r1",
-   "VL-VL_20261020152957-r2"
+   "VL-r3",
+   "VL-r4",
+   "VL-VL_20261020213928-r1",
+   "VL-VL_20261020213928-r2"
   ],
   "judgments": [
    "VL-J1",
    "VL-J2",
    "VL-J3",
    "VL-J4",
-   "VL-J5"
+   "VL-J5",
+   "VL-J6",
+   "VL-J7",
+   "VL-J8"
   ],
-  "caveats": "All four rows are abstracts. The 1993 backbone-dynamics paper (doi:10.1002/prot.340150307), the likely RelaxDB source, was re-read on 2026-10-20 as an abstract only (case S6_r6_VL_20261020152957); with its full text (the 24 exchange residues, order parameters, conditions) the call would rise to possible if the exchange is in the backbone, or stay unknown if the authors assign it to aromatic-ring motion. Self-association at NMR concentrations may contribute to R2. Method searches used only the exact UniProt name.",
+  "caveats": "Call raised from unknown to possible on 2026-10-20 after the RelaxDB source paper (doi:10.1002/prot.340150307, Constantine et al. 1993) was read in full from the rendered pages and the OCR text (sources_cache/10.1002_prot.340150307_ocr.txt; the PDF has no usable text layer, so Tables I-III were read from the page images): exchange is detected in the reference state as single-field model-free R2ex at 24 of 89 analysed amides, and under the single-field Rex rule decided that night (ledger/redraft_notes.json, _RULE_single_field_rex) author-reported Rex in the reference state counts as exchange detected without a population. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. literal_two_peak is 'does not' because the authors state that multiple resonances, which slow exchange between well-populated substates would produce, are not observed for the backbone NH groups. Three further limits sit on the exchange list: the authors themselves attribute five sites to aromatic-ring repacking, six more residues have R2ex within the error of R2 and are set aside, and the 3.4 mM sample is in a rapid monomer/dimer equilibrium (Kd 2.5 mM) that can add to R2. Hydrogen exchange was measured on a different sample (22 °C, 100% D2O) and reports hydrogen replacement. The abstract-only rows VL-VL_20261020152957-r1 and r2 are superseded and no longer cited; the 1994 structure rows VL-r1 and VL-r2 remain abstracts. Built from cases S6_r6_VL_20261020152957 and S6_r6_VL_20261020213928.",
   "set": "RelaxDB-133"
  },
  {
   "entry": "UBE2G1",
   "protein": "Human E2 ubiquitin-conjugating enzyme G1 (UBE2G1, UniProt P62253), full length 1-170",
-  "reference_state": "Free full-length wild-type UBE2G1 as deposited (the entry sequence; 6D68 adds an N-terminal Ser), no ubiquitin, UbV or E3; no row gives a solution sample, temperature or buffer for it.",
+  "reference_state": "Free full-length wild-type UBE2G1 as deposited (the entry sequence), no ubiquitin, UbV or E3. The 2015 NMR study (doi:10.1186/s40543-015-0068-z, now full text) measures exactly this: 0.8 mM perdeuterated 2H/13C/15N protein, M1-E170 after GST cleavage (two cloning residues G-2 and S-1 remain), 30 °C, pH 7.0, 50 mM HEPES, 100 mM NaCl, 5 mM DTT, 5% D2O, 800 MHz for relaxation and 900 MHz at 25 °C for the assignments (UBE2G1-J3, J4, J6 marked is_wt_apo).",
   "call": "unknown",
-  "literal_two_peak": "cannot tell: No row measures exchange in free UBE2G1; the only 'two-state exchange' in the evidence is ubiquitin attached to the Ube2r1 paralog (UBE2G1-r2, abstract only).",
-  "basis": "No evidence row measures dynamics of free UBE2G1 in any window (UBE2G1-J3 to UBE2G1-J5, search_insufficient). The only structural comparison is static and shows almost no backbone change on UbV.G1.1 binding (UBE2G1-J2), and the only NMR row is an abstract about the acidic loop binding donor ubiquitin in a conjugate (UBE2G1-J1).",
-  "kex": "not measured (UBE2G1-J4)",
+  "literal_two_peak": "cannot tell: the one study of free UBE2G1 fits no exchange term, states no regime and shows no second peak set; the only 'two-state exchange' in the evidence is ubiquitin attached to the Ube2r1 paralog (UBE2G1-r2, abstract only).",
+  "basis": "The relaxation set behind this entry is now identified and read: the 2015 study measures R1, R2 and NOE at 800 MHz and 30 °C and reads the acidic loop 97-109 and the termini as more flexible than the core, which tumbles with a correlation time of roughly 12-14 ns (UBE2G1-J3). It fits no order parameters, internal correlation times, exchange rates or populations, and no dispersion, CEST or R1rho experiment of UBE2G1 exists (UBE2G1-J4), so the single-field Rex rule has nothing to act on and the call stays unknown. The gaps in its assignment table are proline and glycine chemistry, not exchange (UBE2G1-J6). The only structural comparison is static and shows almost no backbone change on UbV.G1.1 binding (UBE2G1-J2), and the only other NMR row is an abstract about the acidic loop binding donor ubiquitin in a conjugate (UBE2G1-J1).",
+  "kex": "not measured (UBE2G1-J4): the 2015 study reports no exchange term",
   "pB": "not measured (UBE2G1-J4)",
-  "regime": "Not measured (UBE2G1-J4).",
-  "residues": "none measured; Y102-G103-Y104 acidic loop is named only as a donor-ubiquitin contact (UBE2G1-J1)",
+  "regime": "Not measured (UBE2G1-J4). No kex and no Delta-omega are printed, so no regime can be computed.",
+  "residues": "none for us-ms. ps-ns flexibility in the acidic loop 97-109 (P97 and P107 have no amide, so the range is a regional annotation) and at the termini (UBE2G1-J3); Y102-G103-Y104 is named only as a donor-ubiquitin contact (UBE2G1-J1). Figure 3 of the 2015 paper shows uncommented R2 values of about 37 s-1 near residue 27 and about 42 s-1 near residue 126, with 128-131 elevated, against a 20-25 s-1 baseline; a lead for a dispersion measurement, not an exchange claim.",
   "structure_match": [
    {
     "pdb": "2AWF",
@@ -1878,24 +1960,29 @@
     "evidence_row": "UBE2G1-r4"
    }
   ],
-  "fallback_annotation": "No apo alternate-state annotation is possible for UBE2G1; backside binding of an engineered ubiquitin variant leaves its crystal backbone almost unchanged (doi:10.1016/j.jmb.2019.09.024).",
+  "fallback_annotation": "No apo alternate-state annotation is possible for UBE2G1: its relaxation data show only faster local motion in the acidic loop 97-109 and at the termini, with no exchange analysis (doi:10.1186/s40543-015-0068-z), and backside binding of an engineered ubiquitin variant leaves its crystal backbone almost unchanged (doi:10.1016/j.jmb.2019.09.024).",
   "other_conditions": [
-   "UbV.G1.1-bound full-length UBE2G1 (6D68, 2:2 strand-exchanged complex), crystal at 20 °C, pH 8.0: backbone RMSD 0.66 Å to apo 2AWF; static, no rate (UBE2G1-J2, UBE2G1-r4).",
+   "Free full-length UBE2G1, 30 °C, pH 7.0, 50 mM HEPES, 100 mM NaCl, 5 mM DTT, 0.8 mM, 800 MHz (2015 study, full text): unknown. Acidic loop 97-109 and termini more flexible, tau_c roughly 12-14 ns, no exchange term fitted (UBE2G1-J3, J4).",
+   "Same protein at 25 °C and 900 MHz (TROSY assignments): the table gaps are proline and glycine chemistry, not exchange (UBE2G1-J6).",
+   "UbV.G1.1-bound full-length UBE2G1 (6D68, 2:2 strand-exchanged complex), crystal at 20 °C, pH 8.0: backbone RMSD 0.66 A to apo 2AWF; static, no rate (UBE2G1-J2, UBE2G1-r4).",
    "Ubiquitin K48R oxyester conjugates of wild-type and Y102G/Y104G Ube2g1: NMR implicates the acidic loop in donor-ubiquitin binding; abstract only, no exchange parameters (UBE2G1-J1, UBE2G1-r1).",
    "E1 charging and discharge assays of wild type and S26R with UbV.G1.1 (30 °C, pH 7.5, HEPES, Mg/ATP; discharge with EDTA and apyrase): product kinetics, not conformational exchange; not judged (UBE2G1-r5 to UBE2G1-r8)."
   ],
   "evidence_rows": [
    "UBE2G1-r1",
-   "UBE2G1-r4"
+   "UBE2G1-r4",
+   "UBE2G1-UBE2G1_20261020224441-r1",
+   "UBE2G1-UBE2G1_20261020224441-r2"
   ],
   "judgments": [
    "UBE2G1-J1",
    "UBE2G1-J2",
    "UBE2G1-J3",
    "UBE2G1-J4",
-   "UBE2G1-J5"
+   "UBE2G1-J5",
+   "UBE2G1-J6"
   ],
-  "caveats": "The RelaxDB card has no BMRB id and no row reads its R1/R2/NOE set. Ube2r1 rows (UBE2G1-r2, UBE2G1-r3) describe a paralog and were not used. The 2015 paper was read only as an abstract.",
+  "caveats": "Call stays unknown after the 2015 NMR paper (doi:10.1186/s40543-015-0068-z) was read in full on 2026-10-20. That paper supplies what the RelaxDB card was missing, an R1/R2/NOE set on free full-length UBE2G1 at 800 MHz and 30 °C, but it fits no exchange term and runs no dispersion experiment, so there is no author-reported Rex for the single-field Rex rule to act on and the us-ms window stays a search gap rather than a negative result. Its protein is the entry sequence plus two cloning residues (G-2, S-1) left by GST cleavage, and it is treated here as the entry construct. All relaxation values are read from Figure 3, a plot; the uncommented R2 outliers near residues 27 and 126 are recorded as a lead and are not counted as exchange. The protein runs at an apparent 25 kDa against a 20 kDa sequence mass, with no quantitative test for oligomerisation. The RelaxDB card still carries no BMRB id, so the identification is by matching conditions and content, not by accession. Ube2r1 rows (UBE2G1-r2, UBE2G1-r3) describe a paralog and were not used; the 2015 JBC paper remains an abstract.",
   "set": "RelaxDB-133"
  },
  {
@@ -1936,14 +2023,14 @@
  {
   "entry": "HTGFA",
   "protein": "Human transforming growth factor alpha, mature 50-residue domain (V1-A50, UniProt P01135)",
-  "reference_state": "Entry construct as deposited (mature human TGF-alpha V1-A50), free, no ligand; the relaxation study behind the entry (pH 7.1 ± 0.1, 30 ± 0.5 °C, buffer unknown) is in the evidence as an abstract only",
-  "call": "unknown",
-  "literal_two_peak": "does not: the 1995 relaxation abstract describes the exchange broadening as interconversion on the microsecond (intermediate 15N chemical-exchange) timescale (HTGFA-J12); no second peak set is reported for the free ligand, and the only other stated regime, fast exchange, concerns EGFR-ED binding (HTGFA-J7).",
-  "basis": "The relaxation study behind the entry (Li and Montelione 1995, doi:10.1021/bi00008a003) is now in the evidence as an abstract: at pH 7.1 and 30 °C about 40% of the backbone amides of free TGF-alpha, including many at the subdomain interface, show significant 15N exchange broadening that the authors read as microsecond interconversion among conformations, with partial core-sheet unfolding, hinge bending or disulfide isomerisation as candidate mechanisms (HTGFA-J12); fast internal motion is mapped without values (HTGFA-J11). No residue list, rate, population or dispersion is available, so both judgments are unresolved and the call stays unknown. The other free-ligand evidence is abstract-level: flexible termini, a pH-dependent interconversion with no rate or regime, and partial disorder at pH 3.5 and 30 °C, a different sample state from pH 6.5.",
-  "kex": "not measured: the 1995 abstract gives exchange broadening with a 'microsecond' timescale and no rate (HTGFA-J12)",
-  "pB": "not measured; the 40% figure is the fraction of amides with exchange broadening, not a population (HTGFA-J12)",
-  "regime": "Microsecond (intermediate 15N chemical-exchange timescale) per the 1995 abstract (HTGFA-J12); not stated for the pH-dependent interconversion (HTGFA-J2, HTGFA-J3). EGFR-ED binding is in the fast-exchange limit (HTGFA-J7, binding kinetics).",
-  "residues": "about 40% of backbone amides including many at the subdomain interface, not named in the abstract (HTGFA-J12); termini flexible without a residue list (HTGFA-J1).",
+  "reference_state": "Entry construct as deposited (mature human TGF-alpha V1-A50), free, no ligand; the RelaxDB source sample (doi:10.1021/bi00008a003, full text): 2 mM 15N protein dissolved directly in 90% H2O/10% D2O with 1 mM NaN3, no buffer stated, pH 7.1 ± 0.1, 30 ± 0.5 °C, 500 MHz, single field (HTGFA-J11 to J15 marked is_wt_apo).",
+  "call": "possible",
+  "literal_two_peak": "does not: the source states that the exchange broadening reflects interconversion between multiple protein conformations on the intermediate 15N chemical-exchange (microsecond) timescale, with an author-derived lifetime between about 1.25 µs and 2.5 ms; no kex or Δω is printed (the bounds assume two equal populations and a maximum 10 ppm shift difference), so no regime can be computed, and no second peak set is reported for the free ligand (HTGFA-J12; E-r2). The title's 'slow conformational exchange' means slower than molecular tumbling. The only other stated regime, fast exchange, concerns EGFR-ED binding (HTGFA-J7).",
+  "basis": "Reference state: in the RelaxDB source sample (free hTGF-alpha, pH 7.1, 30 °C, 500 MHz) 23 of 36 analysed backbone amides carry single-field exchange broadening above 0.5 Hz (D7-C8, T13-H18, T20-K29, C32-V33, V39-G40, E44-H45; fourteen above 1.5 Hz, largest R22 4.93 ± 0.74 s-1), concentrated at the interface between the N- and C-terminal subdomains and in the first-strand region; the authors read this as interconversion between multiple backbone conformations with a lifetime between about 1.25 µs and 2.5 ms and propose first-strand dissociation from the core sheet, inter-subdomain hinge bending and/or disulfide isomerisation, without resolving their contributions; a BPTI control showed little broadening except near its disulfide (HTGFA-J12, E-r2). Under the single-field Rex rule of 2026-10-20 this is exchange detected in the reference state without a population, so the call is 'possible'. No fitted rate, population, shift difference, dispersion series or second peak set exists; the authors say CPMG field-strength measurements were in progress. Fast motion is confined to the C-terminal tail and the N-terminal bend (HTGFA-J11, J13), and the C8-F15 loop disorder of the NMR ensemble is attributed partly to exchange broadening (HTGFA-J15). The other free-ligand evidence is abstract-level: flexible termini, a pH-dependent interconversion with no rate or regime, and partial disorder at pH 3.5 and 30 °C, a different sample state from pH 6.5.",
+  "kex": "not fitted: single-field Rex > 0.5 Hz at 23 amides (uncertainties about ±0.3-0.5 Hz); author bounds on the exchange lifetime of about 1.25 µs (from a 10 ppm maximum 15N shift difference and a 0.5 Hz detection limit) to about 2.5 ms (from non-refocusing at CPMG 2tau = 720 µs), assuming two equally populated states (HTGFA-J12)",
+  "pB": "not measured; two equally populated states are an assumption of the lifetime bounds, and the '40%' or 'about half' figure is the fraction of amides with exchange broadening, not a population (HTGFA-J12)",
+  "regime": "Authors: intermediate 15N chemical-exchange (microsecond) timescale; lifetime bounded between about 1.25 µs and 2.5 ms; no kex or Δω printed, so no computed regime (HTGFA-J12). Not stated for the pH-dependent interconversion (HTGFA-J2, HTGFA-J3). EGFR-ED binding is in the fast-exchange limit (HTGFA-J7, binding kinetics).",
+  "residues": "Rex > 0.5 Hz: D7, C8, T13, F15, C16, F17, H18, T20, C21, R22, F23, L24, V25, Q26, E27, D28, K29, C32, V33, V39, G40, E44, H45 (Q14 unfitted; S36, C43 below threshold; D47 term rejected); > 1.5 Hz at D7, T13, F15, C16, C21, R22, F23, L24, V25, K29, C32, V33, V39, G40 (Table 3, cycle C; largest R22 4.93, V39 3.81, C21 3.50 s-1); interface residues F15-H18, C32-V33, V39-G40, E44-H45 (HTGFA-J12). Fast motion: L48-A50, D7-C8, F17-H18, E27-D28, V39-G40, F23, A31 (HTGFA-J11).",
   "structure_match": [
    {
     "pdb": "3E50",
@@ -1956,9 +2043,9 @@
     "evidence_row": "HTGFA-HTGFA_20261020092056-r12"
    }
   ],
-  "fallback_annotation": "No alternate-state annotation is possible yet: free TGF-alpha at pH 7.1, 30 °C shows 15N exchange broadening at about 40% of backbone amides on the microsecond timescale, candidate mechanisms partial core-sheet unfolding, subdomain hinge bending or disulfide isomerisation (doi:10.1021/bi00008a003, abstract only); the pH-dependent interconversion is known only from an abstract (doi:10.1111/j.1432-1033.1991.tb16050.x).",
+  "fallback_annotation": "May have alternate backbone conformations involving the interface between the N- and C-terminal subdomains (F15-H18, C32-V33, V39-G40, E44-H45) and the first beta-strand region (D7-C8, C21-V25): single-field 15N exchange broadening above 0.5 Hz at 23 amides of free TGF-alpha at pH 7.1, 30 °C, lifetime between about 1.25 µs and 2.5 ms, candidate mechanisms first-strand dissociation, subdomain hinge bending or disulfide isomerisation (doi:10.1021/bi00008a003); no rate or population; the pH-dependent interconversion is known only from an abstract (doi:10.1111/j.1432-1033.1991.tb16050.x).",
   "other_conditions": [
-   "pH 7.1 ± 0.1, 30 ± 0.5 °C, free ligand (1995 relaxation abstract): exchange broadening at about 40% of amides, microsecond timescale, no residues or rate; unresolved (HTGFA-J11, HTGFA-J12, HTGFA-HTGFA_20261020145442-r1, r2).",
+   "pH 7.1 ± 0.1, 30 ± 0.5 °C, no buffer, 500 MHz, free ligand (1995 RelaxDB source, full text): possible. Single-field Rex > 0.5 Hz at 23 amides (interface and first-strand region), lifetime 1.25 µs to 2.5 ms, intermediate-exchange wording; fast motion at L48-A50 and D7-C8; water-saturation artefact shown for the presaturated HNOE reference (HTGFA-J11 to J15; E-r1 to r4).",
    "pH 3.5, 30 °C versus pH 6.5, 10 or 30 °C: partially disordered at acidic pH with most hydrogen-bonded backbone intact; condition comparison from an abstract, no rate (HTGFA-J3, HTGFA-HTGFA_20261020092056-r9).",
    "pH 3.5: amide exchange much faster than mouse EGF (HTGFA-J4, HTGFA-HTGFA_20261020092056-r1).",
    "EGFR-ED bound: C terminus and interior immobilised, N terminus mobile; binding in fast exchange (HTGFA-J6, HTGFA-J7, HTGFA-HTGFA_20261020092056-r3).",
@@ -1972,8 +2059,10 @@
    "HTGFA-HTGFA_20261020092056-r9",
    "HTGFA-HTGFA_20261020092056-r10",
    "HTGFA-HTGFA_20261020092056-r12",
-   "HTGFA-HTGFA_20261020145442-r1",
-   "HTGFA-HTGFA_20261020145442-r2"
+   "HTGFA-HTGFA_20261020201428-r1",
+   "HTGFA-HTGFA_20261020201428-r2",
+   "HTGFA-HTGFA_20261020201428-r3",
+   "HTGFA-HTGFA_20261020201428-r4"
   ],
   "judgments": [
    "HTGFA-J1",
@@ -1985,9 +2074,12 @@
    "HTGFA-J8",
    "HTGFA-J9",
    "HTGFA-J11",
-   "HTGFA-J12"
+   "HTGFA-J12",
+   "HTGFA-J13",
+   "HTGFA-J14",
+   "HTGFA-J15"
   ],
-  "caveats": "Nine of fifteen rows are abstracts. The 1995 relaxation paper (doi:10.1021/bi00008a003) was added on 2026-10-20 as an abstract only (case S6_r6_HTGFA_20261020145442); its evidence rows record 'pH neutral' and no temperature, while the cached abstract states pH 7.1 ± 0.1 and 30 ± 0.5 °C. With its full text the call would become possible on exchange broadening alone, but the authors' microsecond timescale argues against separate peaks. The RelaxDB HTGFA source is still unconfirmed (no BMRB id). Built from cases V6_r6_HTGFA_20261020092056 and S6_r6_HTGFA_20261020145442.",
+  "caveats": "Call raised from unknown to possible on 2026-10-20 after the RelaxDB source paper (doi:10.1021/bi00008a003, Li and Montelione 1995) was read in full: exchange is detected in the reference state as single-field Rex at 23 of 36 analysed amides, and under the single-field Rex rule decided that night (ledger/redraft_notes.json, _RULE_single_field_rex) this counts as exchange detected without a population. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. The authors themselves call the regime intermediate (microsecond) and give only lifetime bounds (1.25 µs to 2.5 ms) under an equal-population, 10 ppm assumption, so the state is not shown to be slow enough for separate peaks; literal_two_peak is 'does not'. The sample has no buffer (direct dissolution with NaN3), the Rex threshold of 0.5 Hz is the authors' operational cutoff with uncertainties of ±0.3-0.5 Hz, and Q26 lacks a reported error. Nine of the other rows are abstracts. The RelaxDB HTGFA source is still unconfirmed (no BMRB id). The abstract-only rows HTGFA-HTGFA_20261020145442-r1 and r2 are superseded and no longer cited. Built from cases V6_r6_HTGFA_20261020092056, S6_r6_HTGFA_20261020145442 and S6_r6_HTGFA_20261020201428.",
   "set": "RelaxDB-133"
  },
  {
@@ -2049,14 +2141,14 @@
  {
   "entry": "TRX",
   "protein": "Escherichia coli / Salmonella typhi thioredoxin-1 (TrxA; entry sequence UniProt P0AA29 without Met1, identical to E. coli P0AA25), wild type, 108 residues",
-  "reference_state": "Wild-type thioredoxin-1 as deposited (108-residue mature sequence), free, no ligand. Redox form is a sample state: the RelaxDB card gives no BMRB id, no redox state and links only the oxidized human-E. coli chimera 1M7T, so the deposited form is unknown; the call is given for each form. Conditions of the key solution study (Stone et al. 1993, 15N relaxation of both forms) are not available because only its abstract could be read.",
-  "call": "unknown",
-  "literal_two_peak": "cannot tell for NMR: no NMR source states slow exchange or a second peak set for free wild-type thioredoxin; the reduced-form 73-75 exchange is an Rex term from model-free fitting (regime not stated) and the oxidized-form active-site millisecond motion is a transient conformation in an abstract. The 1989 urea-gradient abstract states slow (minute-scale) interconversion of cis and trans P76 forms in folded reduced thioredoxin with less than a few percent trans, but it is electrophoresis read from an abstract, not an NMR peak count.",
-  "basis": "Unknown, because the only wild-type µs-ms statements are abstract-only and the judgments stay unresolved (abstract-only rows give at most unresolved; same handling as 15521 and CD9K). Reduced form (dithiol), as stated in the abstract: The 1993 15N model-free study reports considerable microsecond-millisecond mobility at residues 73-75, adjacent to the active site, in reduced thioredoxin (TRX-J15; 101601-r3); abstract only, no kex, population or delta-omega. Oxidized form (C32-C35 disulfide), as stated in the abstracts: The same study reports no significant microsecond-millisecond mobility at 73-75 in the oxidized form (TRX-J16), while the 1996 13C/15N relaxation study reports millisecond motion at nuclei around the active-site disulfide that coincide with the redox-sensitive shifts, interpreted as a strained transient disulfide conformation (TRX-J17; 101601-r5); abstract only, no rate or population. No CPMG, R1rho or CEST measurement exists for either form (TRX-J21). Supporting but not reference-state: the reassembled 1-73/74-108 solid-state construct loses G21, P40, T54 and R73 on cooling to 238 K, read as 10-100 microsecond motion, and G21/R73 survive a 400 microsecond T2' filter (TRX-J12); the E101G crystal refines a 50/50 alternate backbone over 10-25, 77-91 and 95-107 (TRX-J35); wild-type MD makes persistent transitions at 13-18 (TRX-J38); native-state HX of oxidized wild type finds no partially unfolded form below global unfolding at 24 probes (TRX-J30).",
-  "kex": "not reported for either redox form; Rex at 73-75 (reduced) and millisecond motion around the disulfide (oxidized) are stated without values (TRX-J15, TRX-J17)",
-  "pB": "not reported for either redox form",
-  "regime": "not stated in either abstract; no delta-omega printed. The oxidized-form 73-75 result is 'no significant mobility' by the same Rex analysis (TRX-J16).",
-  "residues": "Reduced: 73-75 (R73, G74, I75), next to the active site (TRX-J15). Oxidized: nuclei around the active-site disulfide C32-C35, not enumerated in the abstract (TRX-J17). Solid-state reassembly (other construct, 238 K): G21, P40, T54, R73 lost; A19, D20, G21, R73 survive the T2' filter (TRX-J12).",
+  "reference_state": "Wild-type thioredoxin-1 as deposited (108-residue mature sequence), free, no ligand. Redox form is a sample state: the RelaxDB card gives no BMRB id, no redox state and links only the oxidized human-E. coli chimera 1M7T, so the deposited form is unknown; the call is given for each form. The key solution study (Stone et al. 1993, doi:10.1021/bi00053a007, now full text) measured both forms at 308 K on a 500 MHz spectrometer (single field, 1.0 ms CPMG spacing); its main text does not state protein concentration, buffer, pH or solvent isotope fraction (TRX-J1, J2, J15, J16, J51 marked is_wt_apo).",
+  "call": "possible",
+  "literal_two_peak": "cannot tell for NMR: the 1993 source states no exchange regime, prints no kex, population or Δω and reports no second peak set for either redox form; exchange is single-field model-free Rex above 1.5 Hz (reduced: G33, I38, I45, R73, G74, I75, W31 indole; oxidized: W31 indole, I45), which the authors call microsecond-millisecond mobility (TRX-J15, J51). The oxidized-form active-site millisecond motion of 1996 is a transient conformation in an abstract (TRX-J17). The 1989 urea-gradient abstract states slow (minute-scale) interconversion of cis and trans P76 forms in folded reduced thioredoxin with less than a few percent trans, but it is electrophoresis read from an abstract, not an NMR peak count, and the 1993 authors exclude P76 isomerisation as the source of the 73-75 broadening (TRX-J29).",
+  "basis": "Possible for both redox forms under the single-field Rex rule of 2026-10-20: exchange is detected in the reference state without a population. Reduced form (dithiol): the 1993 full text reports exchange broadening significantly above 1.5 Hz at G33, I38, I45, R73, G74, I75 and the W31 indole, read as microsecond-millisecond mobility propagated from I75 to R73-G74 and as greater flexibility around the active site in the reduced protein, explicitly not P76 cis-trans isomerisation (TRX-J15; E-r4); no kex, population or Δω. Oxidized form (C32-C35 disulfide): the same study finds broadening above 1.5 Hz only at the W31 indole and I45 (TRX-J51; E-r3) and none at R73-I75 (TRX-J16, no_evidence_in_window), while the 1996 13C/15N relaxation abstract reports millisecond motion at nuclei around the active-site disulfide interpreted as a strained transient disulfide conformation (TRX-J17; 101601-r5, abstract only). No CPMG, R1rho or CEST measurement exists for either form (TRX-J21). Supporting but not reference-state: the reassembled 1-73/74-108 solid-state construct loses G21, P40, T54 and R73 on cooling to 238 K (TRX-J12); the E101G crystal refines a 50/50 alternate backbone over 10-25, 77-91 and 95-107 (TRX-J35); wild-type MD makes persistent transitions at 13-18 (TRX-J38); native-state HX of oxidized wild type finds no partially unfolded form below global unfolding at 24 probes (TRX-J30).",
+  "kex": "not reported for either redox form; Rex above 1.5 Hz (values figure-only, Figure 3E/F; W31 indole 4.0 ± 0.2 Hz oxidized and 2.8 ± 0.1 Hz reduced, W28 0.44 ± 0.02 Hz oxidized, Table I) at the sites listed, from single-field model-free fitting with a 1.0 ms CPMG spacing (TRX-J15, J51); the 1996 oxidized active-site millisecond motion is stated without values (TRX-J17, abstract)",
+  "pB": "not reported for either redox form (TRX-J15, J51, J17)",
+  "regime": "not stated in the 1993 full text; no Δω printed; the authors speak of microsecond-to-millisecond mobility and exclude P76 cis-trans isomerisation on timescale grounds. The oxidized-form 73-75 result is 'no significant exchange broadening' by the same Rex analysis (TRX-J16).",
+  "residues": "Reduced: W31 indole, G33, I38, I45, R73, G74, I75 (Rex > 1.5 Hz; TRX-J15). Oxidized: W31 indole, I45 (TRX-J51); R73-I75 quiet (TRX-J16); G33 not measurable (TRX-J52). Oxidized 1996: nuclei around the active-site disulfide C32-C35, not enumerated in the abstract (TRX-J17). Solid-state reassembly (other construct, 238 K): G21, P40, T54, R73 lost; A19, D20, G21, R73 survive the T2' filter (TRX-J12).",
   "structure_match": [
    {
     "pdb": "2TRX",
@@ -2074,19 +2166,17 @@
     "evidence_row": "TRX-r45"
    }
   ],
-  "fallback_annotation": "May have an alternate apo conformation in the reduced (dithiol) form involving the active-site-adjacent loop 73-75, based on 15N relaxation with an exchange-broadening term (doi:10.1021/bi00053a007, abstract only); in the oxidized form, millisecond motion around the C32-C35 disulfide interpreted as a strained transient disulfide conformation (doi:10.1021/ja960877r, abstract only). The alternative conformers of the wild-type crystal 2TRX and the E101G crystal 5HR0 are candidates without a rate or population.",
+  "fallback_annotation": "May have an alternate apo conformation around the active site: in the reduced (dithiol) form single-field 15N exchange broadening above 1.5 Hz at G33, I38, I45, R73, G74, I75 and the W31 indole at 308 K, and in the oxidized form at the W31 indole and I45 (doi:10.1021/bi00053a007, full text); in the oxidized form also millisecond motion around the C32-C35 disulfide interpreted as a strained transient disulfide conformation (doi:10.1021/ja960877r, abstract only). The alternative conformers of the wild-type crystal 2TRX and the E101G crystal 5HR0 are candidates without a rate or population.",
   "other_conditions": [
    "Reassembled 1-73/74-108 E. coli thioredoxin, hydrated PEG-4000 precipitate, 288 K to 238 K, MAS NMR: possible. Cooling removes G21, P40, T54 and R73 and broadens most other peaks (10-100 microsecond interference, static heterogeneity not excluded); G21 shows CSA averaging faster than about 100 microseconds (TRX-J11, TRX-J12; 101601-r8, r9, r10).",
    "Reassembled construct by DARR below -15 °C: intermediate-timescale motion reported without residues (TRX-J13; 101601-r31, abstract).",
    "Fragment complex TRX1-93 + TRX94-108: elevated R2 at 43-50 and 74-89 attributed to peptide-modulated exchange, no rate (TRX-J18; 101601-r19, abstract).",
    "L78K core mutant: greater exchange contribution than wild type, no values (TRX-J19; 101601-r34, abstract).",
    "Oxidized wild type, 25 °C, pH 7, 30 mM phosphate, 0.1 M KCl, native-state HX: no partially unfolded form at 24 probes; delta-G of opening 4.7-9.9 kcal/mol (TRX-J30; 101601-r28, r29).",
-   "Wild type, both redox forms, urea-gradient electrophoresis at 2 and 25 °C: two compact forms assigned to cis/trans I75-P76; in the folded reduced form they interconvert slowly on the minute time scale with less than a few percent trans without urea, the oxidized form is essentially all cis (TRX-J29; 101601-r21, r22, r27, abstracts; not NMR, no rate constant).",
-   "Wild type reduced, 20 °C, pH 7.0, Tris, 1 mM DTT, 600 MHz: R1/R2/NOE profile figure only, no exchange analysis (TRX-J9; TRX-r40)."
+   "Wild type reduced, 20 °C, pH 7.0, Tris, 1 mM DTT, 600 MHz: R1/R2/NOE profile figure only, no exchange analysis (TRX-J9; TRX-r40).",
+   "Wild type, both redox forms, urea-gradient electrophoresis at 2 and 25 °C: two compact forms assigned to cis/trans I75-P76; in the folded reduced form they interconvert slowly on the minute time scale with less than a few percent trans without urea, the oxidized form is essentially all cis (TRX-J29; 101601-r21, r22, r27, abstracts; not NMR, no rate constant). The 1993 relaxation paper states that the 73-75 broadening cannot be P76 isomerisation because that would be much slower."
   ],
   "evidence_rows": [
-   "TRX-TRX_20261020101601-r1",
-   "TRX-TRX_20261020101601-r3",
    "TRX-TRX_20261020101601-r5",
    "TRX-TRX_20261020101601-r8",
    "TRX-TRX_20261020101601-r9",
@@ -2103,7 +2193,12 @@
    "TRX-r40",
    "TRX-r41",
    "TRX-r45",
-   "TRX-TRX_20261020104151-r1"
+   "TRX-TRX_20261020104151-r1",
+   "TRX-TRX_20261020212514-r1",
+   "TRX-TRX_20261020212514-r2",
+   "TRX-TRX_20261020212514-r3",
+   "TRX-TRX_20261020212514-r4",
+   "TRX-TRX_20261020212514-r5"
   ],
   "judgments": [
    "TRX-J9",
@@ -2120,9 +2215,13 @@
    "TRX-J30",
    "TRX-J34",
    "TRX-J35",
-   "TRX-J38"
+   "TRX-J38",
+   "TRX-J1",
+   "TRX-J2",
+   "TRX-J51",
+   "TRX-J52"
   ],
-  "caveats": "Call set to unknown by Claude (drafter proposed possible), for consistency with the abstract-only rule; it becomes possible if the full text of 10.1021/bi00053a007 confirms the Rex at 73-75 in the reduced form. The two papers carrying the wild-type us-ms evidence (Stone et al. 1993; LeMaster 1996) were readable as abstracts only, so no rate, population, field, temperature or pH is available and the judgments stay unresolved; the call rests on author statements, not checked values. The reduced and oxidized forms give different answers at 73-75, and the RelaxDB card does not say which form was deposited. The solid-state evidence is from a cleaved reassembly in a PEG precipitate at 238 K, the crystal alternatives come from a Cu(II)-containing wild-type crystal and an E101G mutant crystal, and the MD transitions are simulation only. No dispersion experiment was found, and the structured dispersion searches were restricted to Salmonella typhi terms. Built from cases V6_r6_TRX_20261020101601, V6_r6_TRX_20261020104151, V6_r6_TRX_20261020105420, S6_r6_TRX_20261020155442 and S6_r6_TRX_20261020160402; replaces the search_insufficient judgment built from the superseded cases V6_r6_TRX_20261020034041 and V6_r6_TRX_20261020084628.",
+  "caveats": "Call raised from unknown to possible on 2026-10-20 after the RelaxDB source paper (doi:10.1021/bi00053a007, Stone et al. 1993) was read in full: exchange is detected in the reference state in both redox forms as single-field model-free Rex above 1.5 Hz, and under the single-field Rex rule decided that night (ledger/redraft_notes.json, _RULE_single_field_rex) this counts as exchange detected without a population. Fixed caveat: single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm. The two forms give different site lists (reduced: G33, I38, I45, R73-I75, W31; oxidized: W31, I45 only), and the RelaxDB card does not say which form was deposited, so the call is 'possible' for each form and the atlas needs the deposited form. The 1993 main text omits protein concentration, buffer, pH and solvent, and its Rex values are figure-only except the W31 indole; the Monte Carlo uncertainties may be underestimated. LeMaster 1996 (oxidized active-site ms motion) remains abstract-only. The solid-state evidence is from a cleaved reassembly in a PEG precipitate at 238 K, the crystal alternatives come from a Cu(II)-containing wild-type crystal and an E101G mutant crystal, and the MD transitions are simulation only. No dispersion experiment was found, and the structured dispersion searches were restricted to Salmonella typhi terms. The abstract-only rows TRX-TRX_20261020101601-r1, r2, r3 are superseded and no longer cited. Built from cases V6_r6_TRX_20261020101601, V6_r6_TRX_20261020104151, V6_r6_TRX_20261020105420, S6_r6_TRX_20261020155442, S6_r6_TRX_20261020160402 and S6_r6_TRX_20261020212514.",
   "set": "RelaxDB-133"
  }
 ]

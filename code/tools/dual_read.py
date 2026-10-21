@@ -2,33 +2,54 @@
 """Run the second read with both backends on one case and list every row either reader flags as wrong, plus rows every reader
 calls unverified on a paper read in full (E-030).
 
-  dual_read.py CASE [--claude-only]  -> ledger/sr_dual/<CASE>_{codex,claude}.jsonl and ledger/sr_dual/<CASE>_flags.json
+  dual_read.py CASE [--claude-only] [--reuse]  -> ledger/sr_dual/<CASE>_{codex,claude}.jsonl and ledger/sr_dual/<CASE>_flags.json
 """
 import json
+import os
 import shutil
 import subprocess
 import sys
 import time
 from pathlib import Path
 
-WORK = Path.home() / "dynamics_atlas_work"
+WORK = Path(os.environ.get("DYNAMICS_ATLAS_WORK", Path.home() / "dynamics_atlas_work"))
 SR = WORK / "ledger/sr_dual"
 
 
+def read_rows(path):
+    try:
+        return [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
+    except (OSError, ValueError):
+        return []
+
+
+def complete(got, count):
+    return len(got) == count and all(isinstance(r, dict) and type(r.get("row_number")) is int for r in got) and {r.get("row_number") for r in got} == set(range(1, count + 1))
+
+
 def main():
+    SR.mkdir(parents=True, exist_ok=True)
     case = sys.argv[1]
     backends = ["claude"] if "--claude-only" in sys.argv else ["codex", "claude"]
     t0 = time.time()
     reads, failed = {}, {}
     rows = [json.loads(x) for x in (WORK / "cases" / case / "rows.jsonl").read_text().splitlines() if x.strip()]
     for b in backends:
+        if "--reuse" in sys.argv:  # recompute flags from saved reads in ledger/sr_dual, no new model calls
+            got = read_rows(SR / f"{case}_{b}.jsonl")
+            if not complete(got, len(rows)):
+                failed[b] = f"saved read incomplete: {len(got)} of {len(rows)} rows read"
+                continue
+            reads[b] = got
+            continue
         out = WORK / "cases" / case / "second_read.jsonl"
         out.unlink(missing_ok=True)  # never let a failed reader inherit the previous reader's file
         with open(SR / f"{case}_{b}.log", "w") as log:
             rc = subprocess.run([sys.executable, str(WORK / "tools/second_read.py"), case, "--backend", b], stdout=log, stderr=log, cwd=WORK).returncode
-        got = [json.loads(x) for x in out.read_text().splitlines() if x.strip()] if out.exists() else []
-        if rc != 0 or {r.get("row_number") for r in got} != set(range(1, len(rows) + 1)):
+        got = read_rows(out)
+        if rc not in (0, 2) or not complete(got, len(rows)):  # 2 = complete read, >5% wrong (blocked), still a valid read
             failed[b] = f"returncode {rc}, {len(got)} of {len(rows)} rows read"
+            out.unlink(missing_ok=True)
             (SR / f"{case}_{b}.jsonl").unlink(missing_ok=True)
             continue
         shutil.copy(out, SR / f"{case}_{b}.jsonl")
@@ -43,7 +64,7 @@ def main():
             if x.strip() and json.loads(x).get("status") == "filled"} if log.exists() else set()
     flags = []
     for n, v in sorted(by.items()):
-        both_unverified = len(v) == len(reads) and all(x.get("verdict") == "unverified" for x in v.values()) \
+        both_unverified = len(v) == len(backends) and all(x.get("verdict") == "unverified" for x in v.values()) \
             and (rows[n - 1].get("doi") or "").lower() in full
         if any(x.get("verdict") == "wrong" for x in v.values()) or both_unverified:
             row = rows[n - 1]

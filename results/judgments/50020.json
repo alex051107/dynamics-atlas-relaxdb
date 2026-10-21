@@ -2,18 +2,19 @@
  "protein_summary": {
   "entry_id": "50020",
   "per_window": {
-   "ps-ns": "dynamic_in_window in loops. Free murine vWFA2 at 298 K, pH 7.4, 500 MHz has reduced R2 at N1133, N1219 and around A1205 and lower NOE at N1133 and T1208 (entry 91, 177, 163, 166; R50020-J1, r1); no S2 or model-free fit.",
-   "us-ms": "search_insufficient (J4). No dispersion or exchange-broadening study is in the rows.",
-   "slower_than_ms": "search_insufficient (J5).",
-   "undetermined": "RDC outliers against the 6S4C crystal in two alignment media, seven in PEG-hexanol (J2) and five in CTAB:PEG-hexanol (J3), read as local solution-crystal differences or flexibility. Not judged: r4 (static overlays with homologous vWA domains from other proteins)."
+   "ps-ns": "dynamic_in_window in loops. Free murine vWFA2 at 298 K, pH 7.4, 500 MHz has reduced R2 at N1133, N1219 and around A1205 and lower NOE at N1133 and T1208 (entry 91, 177, 163, 166; R50020-J1, r1); no S2 or model-free fit. The 2011 paper, now read in full, adds no relaxation measurement; it reports only that the N-terminal affinity-tag residues could not be assigned, which it ascribes to flexibility (R50020-J9).",
+   "us-ms": "search_insufficient (J4). Neither paper measures dispersion, R1rho, CEST or exchange broadening on free vWFA2. The one exchange statement in the 2011 full text, fast exchange on the chemical-shift timescale, concerns binding to mFNIII-9 (KD 0.8 +/- 0.3 mM) and is binding kinetics (R50020-J8).",
+   "slower_than_ms": "search_insufficient (J5): the 2011 amide 1H-2H exchange shows 16 protected amides in the hydrophobic sheet core after three days, but from two time points only, with no fitted rate, so no opening rate or population exists (R50020-J7, window undetermined).",
+   "undetermined": "RDC outliers against the 6S4C crystal in two alignment media, seven in PEG-hexanol (J2) and five in CTAB:PEG-hexanol (J3), read as local solution-crystal differences or flexibility. From the 2011 full text: residues 78-87 (entry 83-92) 'may be in a flexible loop' where the scalar couplings and the TALOS+ prediction disagree (J6); 16 slowly exchanging amides map to the sheet core (J7); mFNIII-9 binding is in fast exchange (J8); the tag residues are unassigned (J9). Not judged: r4 (static overlays with homologous vWA domains from other proteins)."
   },
-  "wt_apo_answer": "Unknown: no row measures µs-ms exchange in free murine vWFA2; the one relaxation study (500 MHz, 298 K, pH 7.4, 10 mM phosphate) reports only ps-ns loop flexibility at N1133, N1219, around A1205 and T1208 (entry 91, 177, 163, 166), and no dispersion or exchange-broadening study was found.",
+  "wt_apo_answer": "Unknown: neither source measures us-ms exchange in free murine vWFA2. The relaxation study (500 MHz, 298 K, pH 7.4, 10 mM phosphate) reports only ps-ns loop flexibility at N1133, N1219, around A1205 and T1208 (entry 91, 177, 163, 166), and the 2011 paper, now read in full, has no relaxation data at all; its only exchange statement, fast exchange on the chemical-shift timescale, describes binding to mFNIII-9.",
   "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. The paper states that its relaxation and RDC data were deposited as BMRB 50020. The set holds 500 MHz T1 and T2 for 140 residues and NOE for 141 at 298 K, pH 7.4. NOE below 0.65 flags H9, G10, N91, V124, I132, A163, T166, D167, I169, A195 and A196; N91, A163 and T166 are the paper's N1133, A1205 and T1208, while N177 (N1219) has low R2 (7.3 s-1) but NOE 0.77. R2/R1 above 13.0 flags G43, H101, V116, I136, L144, G153 and G180 (author G1085, H1143, V1158, I1178, L1186, G1195, G1222), none of which the paper discusses.",
   "open_conflicts": [],
   "questions_for_gina": [
-   "Should the seven deposited R2/R1 outliers (author G1085, H1143, V1158, I1178, L1186, G1195, G1222), which the paper never discusses, stay an unmeasured lead for µs-ms exchange, or does the RelaxDB label already count them?"
+   "Should the seven deposited R2/R1 outliers (author G1085, H1143, V1158, I1178, L1186, G1195, G1222), which neither paper discusses, stay an unmeasured lead for us-ms exchange, or does the RelaxDB label already count them?",
+   "The 2011 construct keeps an unstated residual intein tag while the entry carries a GRAM prefix: should its flexible-loop and hydrogen-exchange results be treated as the entry construct or kept as another construct, as they are here?"
   ],
-  "buffer_note": "All vWFA2 NMR samples are in 10 mM sodium phosphate, pH 7.4. The 6S4C crystal (pH 4.6 reservoir, 1.8 M MgSO4) carries metal-complexed EDTA and a sulphate/phosphate ion at lattice contacts on the collagen-binding surface; these may affect crystal-solution comparisons but are not shown to cause any RDC outlier. Aligned samples (J2, J3) are flagged is_wt_apo false because the alignment medium is part of the state. The construct keeps a GRAMG cloning prefix and is bacterially expressed, unglycosylated. Second read flagged no row."
+  "buffer_note": "All vWFA2 NMR samples are in 10 mM sodium phosphate, pH 7.4. The 6S4C crystal (pH 4.6 reservoir, 1.8 M MgSO4) carries metal-complexed EDTA and a sulphate/phosphate ion at lattice contacts on the collagen-binding surface; these may affect crystal-solution comparisons but are not shown to cause any RDC outlier. Aligned samples (J2, J3) are flagged is_wt_apo false because the alignment medium is part of the state. The construct keeps a GRAMG cloning prefix and is bacterially expressed, unglycosylated. Second read flagged no row. The second source paper (doi:10.1016/j.febslet.2011.04.071) was read in full on 2026-10-20 (case S6_r6_50020_20261020215938); its four rows were confirmed by the PDF adjudication (ledger/adjudication_pdf_batch2.json), which established the entry = author + 5 mapping from the sequence printed on the Fig. 3a/3b axis. That paper's samples are also in 10 mM sodium phosphate, pH 7.4, 298 K, but on a construct whose residual intein tag is not stated, and its hydrogen-exchange sample is in 100% D2O rather than the routine 10% D2O."
  },
  "judgments": [
   {
@@ -217,8 +218,190 @@
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "No row measures H/D exchange or any slower-than-millisecond process of vWFA2.",
+   "reason": "No row measures an opening rate or any other slower-than-millisecond rate for vWFA2. The 2011 paper's amide 1H-2H exchange on its intein-tag construct gives protection at 16 amides from two time points without a rate (R50020-J7), so it does not fill this window.",
    "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J6",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": [
+     83,
+     84,
+     85,
+     86,
+     87,
+     88,
+     89,
+     90,
+     91,
+     92
+    ],
+    "residues_author": "Residues 78-87 of the 2011 construct (Ile-Pro-Tyr-Val-Asp-Pro-Ser-Gly-Asn-Asn), entry 83-92",
+    "numbering_note": "Two numbering systems: the 2019 structural paper numbers by UniProt Q63870 (entry = author - 1042), the 2011 FEBS Letters paper numbers its 191-residue construct 1-191 (entry = author + 5; the printed Fig. 3a/3b sequence equals entry 6-196, checked residue by residue from the page image).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant Mus musculus collagen VII vWFA2 from pTWIN1 with an N-terminal intein affinity tag; the 191 residues numbered in the paper equal entry 6-196, and the residual tag after cleavage is not stated, so it is not certain that the sample carries the entry's GRAM prefix",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.4; 10 mM sodium phosphate; 10% D2O; uniformly 15N/13C-labelled mvWFA2; no partner added; Bruker Avance DRX 500 with TCI cryoprobe",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "3J(HN,Halpha) scalar couplings from an HNHA spectrum compared with the TALOS+ secondary-structure prediction from backbone chemical shifts",
+    "observable": "disagreement between scalar couplings (helix-like, below 6 Hz) and a predicted beta strand, with a poorly defined TALOS+ prediction",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The 2011 paper reads the disagreement between its scalar couplings and the TALOS+ prediction over residues 78-87 as a sign that this region may be in a flexible loop; a conflict between two static secondary-structure indicators gives no timescale, rate, population or second conformation, and a non-canonical but static conformation would look the same (sources_cache/10.1016_j.febslet.2011.04.071.pdf, pp. 1749-1750, sections 3.2-3.3, Fig. 3a).",
+   "evidence_rows": [
+    "R50020-50020_20261020215938-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J7",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": [
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     38,
+     39,
+     119,
+     120,
+     121,
+     122,
+     123,
+     124,
+     147,
+     172
+    ],
+    "residues_author": "The 16 slowly exchanging amides of Fig. 4a: D8, V9, V10, F11, L12, L13, L33, V34, V114, M115, V116, L117, L118, V119, M142, F167 (entry = author + 5)",
+    "numbering_note": "Two numbering systems: the 2019 structural paper numbers by UniProt Q63870 (entry = author - 1042), the 2011 FEBS Letters paper numbers its 191-residue construct 1-191 (entry = author + 5; the printed Fig. 3a/3b sequence equals entry 6-196, checked residue by residue from the page image).",
+    "functional_site": "hydrophobic beta-sheet core of the homology model",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant Mus musculus collagen VII vWFA2 from pTWIN1 with an N-terminal intein affinity tag; the 191 residues numbered in the paper equal entry 6-196, and the residual tag after cleavage is not stated, so it is not certain that the sample carries the entry's GRAM prefix",
+    "binding_state": "apo",
+    "conditions": "298 K; nominal pH 7.4 without pD correction; 10 mM sodium phosphate; 15N/13C-labelled protein transferred into 100% D2O for this experiment only; 500 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Amide 1H-2H exchange followed by 1H,15N-HSQC immediately after transfer into D2O and again three days later; two time points only, no rate fitted",
+    "observable": "HDX protection (peak still present after three days)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Most amide protons exchange within the dead time while 16 remain after three days, and the authors map those to the hydrophobic sheet core of their homology model; with two observation times and no fitted rate this measures protection, not an opening rate or a population, and the time window of any opening motion is undetermined (sources_cache/10.1016_j.febslet.2011.04.071.pdf, p. 1749 section 2.2, p. 1750 section 3.4, p. 1751 Fig. 4a).",
+   "evidence_rows": [
+    "R50020-50020_20261020215938-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J8",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Affected residues shown only as bars in Figs. 3b and 4b; the proposed interface involves the first and last helices, with no residue list in the text",
+    "numbering_note": "Two numbering systems: the 2019 structural paper numbers by UniProt Q63870 (entry = author - 1042), the 2011 FEBS Letters paper numbers its 191-residue construct 1-191 (entry = author + 5; the printed Fig. 3a/3b sequence equals entry 6-196, checked residue by residue from the page image).",
+    "functional_site": "proposed mFNIII-9 interface (first and last helices)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant Mus musculus collagen VII vWFA2 from pTWIN1 with an N-terminal intein affinity tag; the 191 residues numbered in the paper equal entry 6-196, and the residual tag after cleavage is not stated, so it is not certain that the sample carries the entry's GRAM prefix",
+    "binding_state": "bound:murine collagen VII fibronectin-III-like domain 9 (mFNIII-9), unlabelled, about 1:2 molar ratio",
+    "conditions": "298 K; pH 7.4; 10 mM sodium phosphate; 100 uM 15N-labelled mvWFA2 with up to a twofold excess of mFNIII-9; 500 MHz; SPR on immobilised protein for the affinity",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H,15N-HSQC chemical-shift mapping during addition of unlabelled mFNIII-9; SPR steady-state affinity",
+    "observable": "chemical-shift changes in the fast-exchange limit",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: the spectra move continuously, which the authors call fast exchange on the chemical-shift timescale, and SPR gives KD 0.8 +/- 0.3 mM; this describes association with a partner, not an internal conformational process of the free domain, and no rate or population is measured (sources_cache/10.1016_j.febslet.2011.04.071.pdf, p. 1751 section 3.5).",
+   "evidence_rows": [
+    "R50020-50020_20261020215938-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J9",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N-terminal residues belonging to the affinity tag; the paper does not identify them, and they lie outside its numbered 1-191 sequence",
+    "numbering_note": "Two numbering systems: the 2019 structural paper numbers by UniProt Q63870 (entry = author - 1042), the 2011 FEBS Letters paper numbers its 191-residue construct 1-191 (entry = author + 5; the printed Fig. 3a/3b sequence equals entry 6-196, checked residue by residue from the page image).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant Mus musculus collagen VII vWFA2 from pTWIN1 with an N-terminal intein affinity tag; the 191 residues numbered in the paper equal entry 6-196, and the residual tag after cleavage is not stated, so it is not certain that the sample carries the entry's GRAM prefix",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.4; 10 mM sodium phosphate; 10% D2O; uniformly 15N/13C-labelled mvWFA2; no partner added; Bruker Avance DRX 500 with TCI cryoprobe",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Triple-resonance backbone assignment; the authors attribute the missing tag resonances to flexibility",
+    "observable": "unassigned resonances",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors could not assign the N-terminal affinity-tag residues and ascribe this to flexibility; failure to assign is not a measured line width or exchange rate, and the residues are part of the tag rather than of the entry sequence (sources_cache/10.1016_j.febslet.2011.04.071.pdf, p. 1749 section 3.1).",
+   "evidence_rows": [
+    "R50020-50020_20261020215938-r1"
+   ],
    "conflicts_with": [],
    "evidence_strength": "indirect",
    "function_link": "",

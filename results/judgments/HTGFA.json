@@ -2,22 +2,22 @@
  "protein_summary": {
   "entry_id": "HTGFA",
   "per_window": {
-   "ps-ns": "unresolved: the relaxation study behind the entry (Li and Montelione 1995, doi:10.1021/bi00008a003) is now in the evidence as an abstract only; an extended Lipari-Szabo analysis of 15N R1/R2/NOE at pH 7.1, 30 °C maps sub-nanosecond backbone motion without values (J11, HTGFA-HTGFA_20261020145442-r1). The EGFR-ED paper's abstract calls both termini flexible from methyl relaxation (J1, r3).",
-   "us-ms": "unresolved: the same abstract reports significant 15N exchange broadening at about 40% of backbone amides, including many at the subdomain interface, read as microsecond interconversion among conformations with partial core-sheet unfolding, hinge bending or disulfide isomerisation as candidate mechanisms; no residue list, rate or population (J12, HTGFA-HTGFA_20261020145442-r2).",
+   "ps-ns": "Reference state (free hTGF-alpha, 2 mM, pH 7.1, 30 °C, no buffer, 500 MHz; RelaxDB source paper doi:10.1021/bi00008a003, full text): dynamic_in_window at the C-terminal tail L48-A50 (S2 < 0.8, two internal timescales), the N-terminal bend D7-C8 and the chain reversals F17-H18, E27-D28, V39-G40, with F23/A31 below 0.85 (J11, E-r1); the rest of the analysed amides have S2 0.8-0.95 (J13, no_evidence_in_window); a presaturated-reference HNOE control shows water saturation transfer inflating apparent NOEs at F5-F15, F23, C34, S36, A41 (J14, artefact_suspected, E-r3). The EGFR-ED paper's abstract calls both termini flexible from methyl relaxation (J1, r3).",
+   "us-ms": "Reference state (same sample, single field, full text): exchange detected but unresolved by the single-field rule; 23 of 36 analysed amides carry Rex > 0.5 Hz (D7-C8, T13-H18, T20-K29, C32-V33, V39-G40, E44-H45; 14 amides above 1.5 Hz in the final cycle C, largest R22 4.93, V39 3.81, C21 3.50, L24 3.41 s-1; J12), concentrated at the subdomain interface, which the authors read as interconversion between multiple backbone conformations on the intermediate 15N chemical-exchange (microsecond) timescale with a lifetime between about 1.25 µs and 2.5 ms, candidate mechanisms first-strand dissociation, inter-subdomain hinge bending or disulfide isomerisation; no fitted rate, population or second peak set (J12, E-r2).",
    "slower_than_ms": "No judgment: no row gives a conformational rate slower than milliseconds. The pH-dependent interconversion (J2) has no rate, and the film H/D exchange rates (J5) are solvent-exchange rates, kept in undetermined.",
-   "undetermined": "Free ligand: pH-dependent interconversion (J2, r2), partial disorder at pH 3.5 and 30 °C versus pH 6.5 (J3, r9), faster amide exchange than mouse EGF at pH 3.5 (J4, r1), film H/D exchange class rates (J5, r10), all unresolved. Bound states, kept apart from the free domain: EGFR-ED-bound methyl mobility (J6, r3), fast-exchange binding (J7, binding kinetics), IDE-bound D10-Q14 helix-to-strand change in 3E50 (J8, r7), EGFR cryo-EM classes 7SZ5/7SZ7 (J9, r12) and complex MD (J10, r13). Not judged: r4 (1MOX receptor dimer packing in an abstract, no ligand motion), r5 (des-Val-Val construct structure, F15-D47 well defined, pH 6.3), r6 (TGF-alpha 8-50 construct structure), r8 (IDE cleavage-fragment mapping, proteolysis not motion), r11 (human EGF homolog film H/D exchange)."
+   "undetermined": "Free ligand: coordinate disorder of the C8-F15 loop among 15 NMR conformers not explained by fast motion alone (J15, E-r4, structure_only); pH-dependent interconversion (J2, r2), partial disorder at pH 3.5 and 30 °C versus pH 6.5 (J3, r9), faster amide exchange than mouse EGF at pH 3.5 (J4, r1), film H/D exchange class rates (J5, r10), all unresolved. Bound states, kept apart from the free domain: EGFR-ED-bound methyl mobility (J6, r3), fast-exchange binding (J7, binding kinetics), IDE-bound D10-Q14 helix-to-strand change in 3E50 (J8, r7), EGFR cryo-EM classes 7SZ5/7SZ7 (J9, r12) and complex MD (J10, r13). Not judged: r4 (1MOX receptor dimer packing in an abstract, no ligand motion), r5 (des-Val-Val construct structure, F15-D47 well defined, pH 6.3), r6 (TGF-alpha 8-50 construct structure), r8 (IDE cleavage-fragment mapping, proteolysis not motion), r11 (human EGF homolog film H/D exchange)."
   },
-  "wt_apo_answer": "Partly: the relaxation study behind the entry, read only as an abstract, says that free mature human TGF-alpha at pH 7.1 ± 0.1 and 30 ± 0.5 °C shows significant 15N exchange broadening at about 40% of its backbone amides, including many at the interface between the N- and C-terminal subdomains, which the authors read as interconversion among multiple conformations on the microsecond timescale; no residue list, rate, population or regime beyond 'microsecond' can be checked, so the verdict stays unresolved and no site or rate can be given. The remaining free-ligand evidence is abstract-level (flexible termini, a pH-dependent interconversion without rate, partial disorder at pH 3.5 and 30 °C).",
+  "wt_apo_answer": "Yes, exchange is detected in the reference state but without a rate or population: in the RelaxDB source sample (free mature human TGF-alpha, 2 mM, pH 7.1 ± 0.1, 30 ± 0.5 °C, no buffer, 500 MHz, single field) 23 of the 36 analysed backbone amides carry 15N exchange broadening above 0.5 Hz (D7-C8, T13-H18, T20-K29, C32-V33, V39-G40, E44-H45; largest at R22, V39, C21 and L24 (3.4-4.9 s-1)), concentrated at the interface between the two subdomains, which the authors read as interconversion between multiple backbone conformations on the intermediate 15N chemical-exchange (microsecond) timescale with a lifetime bounded between about 1.25 µs and 2.5 ms (J12, full text). Single-field Rex can also come from anisotropic tumbling, so the call is 'possible' and a dispersion experiment would confirm; the authors' own intermediate-exchange wording argues against separate peaks. Fast motion sits in the C-terminal tail L48-A50 and the N-terminal bend D7-C8 (J11).",
   "deposition_readback": "None: the input lists no BMRB id and outputs/deposition/HTGFA.json does not exist.",
   "open_conflicts": [
    "H/D exchange paper (r10): the prose says TGF-alpha beta-sheet exchange is ten orders of magnitude slower than EGF, while Table 1 gives 1.41 x 10-4 versus 1.88 x 10-3 min-1, about one order. Table values are used.",
-   "Conditions of the 1995 relaxation study: the evidence rows (HTGFA-HTGFA_20261020145442-r1, r2) record 'pH neutral' and no temperature, while the cached abstract states pH 7.1 ± 0.1 and 30 ± 0.5 °C; the abstract values are used in J11 and J12."
+   "Within the 1995 paper the iterative-cycle text says 25 sites required an exchange term while the final analysis reports 23 (D47's model-6 term rejected; threshold 0.5 Hz); the final 23 are used (J12). The title says 'slow conformational exchange' while the abstract and Results call the regime intermediate 15N chemical exchange on the microsecond timescale; 'slow' there means slower than tumbling, not slow on the chemical-shift timescale."
   ],
   "questions_for_gina": [
-   "Is the RelaxDB HTGFA set from Li and Montelione 1995 (doi:10.1021/bi00008a003, pH 7.1, 30 °C)? It is the only 15N R1/R2/NOE study of free TGF-alpha found, read as an abstract only; its full text would give the residues with exchange broadening.",
+   "The RelaxDB HTGFA set is presumably Li and Montelione 1995 (doi:10.1021/bi00008a003, pH 7.1, 30 °C, 500 MHz, no buffer; now full text). It detects exchange only as single-field Rex at 23 amides with lifetime bounds of 1.25 µs to 2.5 ms and calls the regime intermediate (microsecond): does single-field Rex count as us-ms exchange for the alternate-APO call (applied here as 'possible' with the anisotropic-tumbling caveat), given that the authors' wording argues against separate peaks?",
    "Does the pH-dependent conformational interconversion in the 1991 structure paper (r2) show two peak sets at one pH, or a shift between pH values? Only the abstract was readable."
   ],
-  "buffer_note": "Nine of fifteen rows were read as abstracts, so the free-ligand judgments are unresolved by rule. pH and temperature are part of the state: pH 3.5 at 30 °C and pH 6.5 at 10 or 30 °C are separate states, not one state in exchange; the 1995 relaxation study is at pH 7.1 ± 0.1 and 30 ± 0.5 °C (abstract), buffer unknown. EGFR-, EGFR-ED- and IDE-bound structures are partner-bound states and never enter the wt_apo_answer. The ATR-FTIR data (r10, r11) come from dried films rehydrated with D2O vapour at an unreported temperature and are not comparable with solution NMR. Second reads: no row marked wrong in either case; in the 2026-10-20 re-read Codex left both rows unverified and Claude marked both ok."
+  "buffer_note": "The RelaxDB source paper (doi:10.1021/bi00008a003) is now full text (E-rN = HTGFA-HTGFA_20261020201428-rN): 2 mM 15N hTGF-alpha dissolved directly in 90% H2O/10% D2O with 1 mM NaN3, pH 7.1 ± 0.1, 30 ± 0.5 °C, no buffer stated, Varian Unity 500, single field, CPMG 2tau = 720 µs; its abstract-only rows HTGFA-HTGFA_20261020145442-r1 and r2 are superseded and no longer cited. The other free-ligand rows remain abstracts, so their judgments stay unresolved by rule. pH and temperature are part of the state: pH 3.5 at 30 °C and pH 6.5 at 10 or 30 °C are separate states, not one state in exchange. EGFR-, EGFR-ED- and IDE-bound structures are partner-bound states and never enter the wt_apo_answer. The ATR-FTIR data (r10, r11) come from dried films rehydrated with D2O vapour at an unreported temperature and are not comparable with solution NMR. Second reads of the E rows: Claude marked all four ok, Codex left all four unverified, no flags."
  },
  "judgments": [
   {
@@ -411,37 +411,52 @@
    "judgment_id": "HTGFA-J11",
    "entry_id": "HTGFA",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "not listed in the abstract (locations and amplitudes of fast internal motion are said to be mapped)",
-    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50 (UniProt P01135 40-89); the abstract names no residues.",
-    "functional_site": ""
+    "residues_entry": [
+     7,
+     8,
+     17,
+     18,
+     23,
+     27,
+     28,
+     31,
+     39,
+     40,
+     48,
+     49,
+     50
+    ],
+    "residues_author": "S2 < 0.8: D7, C8 (N-terminal bend) and L48, L49, A50 (C-terminal tail; L49 and A50 need two internal timescales, slower component 892 ± 54 and 633 ± 67 ps, L48 tau_e 181 ± 8 ps); chain reversals F17-H18 (S2 < 0.8), E27-D28 and V39-G40 (S2 about 0.8); F23 and A31 in the central sheet below 0.85; 36 complete R1/R2/NOE sets of 47 secondary amides (41 HNOEs); tau_m 3.76 ± 0.05 ns",
+    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50 (UniProt P01135 40-89); author residue n maps to entry n (checked F5, D7, C8, P9, T13, F15, C16, F17, H18, F23, V25, E27, D28, K29, A31, C32, V33, V39, G40, E44, H45, D47, L48, L49, A50).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
    },
    "time_window": "ps-ns",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "free human TGF-alpha (50 residues) in aqueous solution; the abstract states pH 7.1 ± 0.1 and 30 ± 0.5 °C (the evidence row records only 'neutral pH'); buffer, field, concentration and labelling not in the abstract",
+    "conditions": "30 ± 0.5 °C; pH 7.1 ± 0.1; no buffer stated (protein dissolved directly in water with 1 mM NaN3); 90% H2O/10% D2O; 2 mM 15N-labelled free hTGF-alpha (V1-A50), no receptor; Varian Unity 500 (500 MHz 1H), single field; the RelaxDB source sample",
     "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "backbone 15N R1, R2 and 1H-15N NOE with an extended Lipari-Szabo analysis (abstract only)",
-    "observable": "S2 and locations of fast internal motion (values not in the abstract)",
-    "fit_model": "other",
+    "method": "15N R1, fixed-spacing CPMG R2 and PFG {1H}-15N NOE (15 s recycle, 3.7 s saturation) in duplicate, extended Lipari-Szabo analysis with iterative tau_m optimisation and Monte Carlo uncertainties",
+    "observable": "S2 (most sites 0.8-0.95), tau_e (20-1400 ps, poorly defined)",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
-    "temperature": "30 ± 0.5 °C (abstract; checked in sources_cache/HTGFA_r6_10.1021_bi00008a003_abstract.txt)",
+    "field": "11.7 T (500 MHz)",
+    "temperature": "30 ± 0.5 °C",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "The relaxation study behind the entry (Li and Montelione 1995) is now in the evidence as an abstract only: an extended Lipari-Szabo analysis of 15N R1, R2 and NOE at pH 7.1 and 30 °C maps the locations and amplitudes of sub-nanosecond backbone motion, but no order parameter, residue list or missing-peak annotation can be checked, so the ps-ns verdict stays unresolved.",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text of the RelaxDB source paper (Li and Montelione 1995): free hTGF-alpha at pH 7.1 and 30 °C has large-amplitude sub-nanosecond motion in the C-terminal tail L48-A50 (negative or low NOEs, S2 < 0.8, two internal timescales) and at the N-terminal bend D7-C8, with smaller reductions at the chain reversals F17-H18, E27-D28, V39-G40 and at F23/A31 in the central sheet, while most other amides have S2 0.8-0.95; missing data at other sites (weak signal, overlap, saturation transfer) are not evidence of absent motion (sources_cache/10.1021_bi00008a003.pdf, pp. 2413-2418, Tables 2-4, Figures 6A, 7A).",
    "evidence_rows": [
-    "HTGFA-HTGFA_20261020145442-r1"
+    "HTGFA-HTGFA_20261020201428-r1"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -449,37 +464,212 @@
    "judgment_id": "HTGFA-J12",
    "entry_id": "HTGFA",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "about 40% of backbone amides, including many at the interface between the N- and C-terminal subdomains; no residue list in the abstract",
-    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50; the abstract names no residues.",
-    "functional_site": "subdomain interface (as stated by the authors)"
+    "residues_entry": [
+     7,
+     8,
+     13,
+     15,
+     16,
+     17,
+     18,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     32,
+     33,
+     39,
+     40,
+     44,
+     45
+    ],
+    "residues_author": "23 amides with Rex > 0.5 Hz in the final cycle C (Table 3, Figure 6B): D7-C8, T13-H18 (T13, F15, C16, F17, H18; Q14 has no fitted Rex), T20-K29, C32-V33, V39-G40, E44-H45; above 1.5 Hz in cycle C at D7, T13, F15, C16, C21, R22, F23, L24, V25, K29, C32, V33, V39, G40 (largest R22 4.93 ± 0.74, V39 3.81 ± 0.81, C21 3.50 ± 0.56 s-1); C16, V25, K29 and V33 are the four residues excluded from the R2/R1 average after cycle A; S36 and C43 below threshold; D47 model-6 exchange term rejected",
+    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50 (UniProt P01135 40-89); author residue n maps to entry n (checked F5, D7, C8, P9, T13, F15, C16, F17, H18, F23, V25, E27, D28, K29, A31, C32, V33, V39, G40, E44, H45, D47, L48, L49, A50).",
+    "functional_site": "interface between the N- and C-terminal subdomains (F15, C16, F17, H18, C32, V33, V39, G40, E44, H45) and the first beta-strand region D7-C8 / C21-V25 (authors' structural interpretation)",
+    "residue_basis": "author_listed"
    },
    "time_window": "us-ms",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "free human TGF-alpha in aqueous solution; pH 7.1 ± 0.1 and 30 ± 0.5 °C per the abstract (the evidence row records only 'neutral pH'); buffer, field, concentration and labelling not in the abstract",
+    "conditions": "30 ± 0.5 °C; pH 7.1 ± 0.1; no buffer stated (protein dissolved directly in water with 1 mM NaN3); 90% H2O/10% D2O; 2 mM 15N-labelled free hTGF-alpha (V1-A50), no receptor; Varian Unity 500 (500 MHz 1H), single field; the RelaxDB source sample",
     "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N chemical-exchange line broadening inferred from the extended Lipari-Szabo analysis of 15N R1, R2 and NOE (abstract only); no dispersion experiment",
-    "observable": "Rex",
-    "fit_model": "other",
+    "method": "Rex term in the extended Lipari-Szabo analysis of single-field 15N R1/R2/NOE (CPMG 2tau = 720 µs, no variable-spacing series; uncertainties about ±0.3-0.5 Hz); lifetime bounds from line-shape and refocusing arguments assuming two equally populated states and at most 10 ppm 15N shift difference",
+    "observable": "Rex (> 0.5 Hz at 23 sites in cycle C; > 1.5 Hz at 14 of them, largest R22 4.93 s-1)",
+    "fit_model": "per-residue",
+    "kex": "not fitted; author bounds on the exchange lifetime tau_ex between about 1.25 µs (lower, from a 10 ppm maximum shift difference and 0.5 Hz detection limit) and about 2.5 ms (upper, from non-refocusing at 2tau = 720 µs), i.e. roughly 400 to 800,000 s-1",
+    "pB": "not measured; two equally populated states are an assumption of the lifetime bounds",
+    "delta_omega": "not measured; 10 ppm assumed as a maximum for the lower lifetime bound",
+    "field": "11.7 T (500 MHz)",
+    "temperature": "30 ± 0.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Full text of the RelaxDB source paper: 23 of 36 analysed backbone amides of free hTGF-alpha at pH 7.1 and 30 °C (about half) carry single-field exchange broadening above 0.5 Hz, concentrated at the subdomain interface and in the first-strand region, which the authors call slow conformational exchange between multiple backbone conformations on the intermediate 15N chemical-exchange (microsecond) timescale with a lifetime between about 1.25 µs and 2.5 ms, and explain by first-strand dissociation from the core sheet, inter-subdomain hinge bending and/or disulfide isomerisation; exchange is detected in the reference state, but there is no fitted rate, population, shift difference or second peak set, a BPTI control showed little broadening except near its C14-C38 disulfide, and single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm (sources_cache/10.1021_bi00008a003.pdf, pp. 2417, 2420-2422, Table 3, Figures 6B, 7B, 10).",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020201428-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors note that the dynamics occur under the pH and temperature at which hTGF-alpha binds the EGF receptor and discuss its possible relevance to recognition, without a measured link.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J13",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "the remaining analysed amides (most of the 36 complete sets, including the central beta-sheet G19-C34 and H35-D47 apart from the sites named in J11) with S2 0.8-0.95 and uncertainties below 0.05",
+    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50 (UniProt P01135 40-89); author residue n maps to entry n (checked F5, D7, C8, P9, T13, F15, C16, F17, H18, F23, V25, E27, D28, K29, A31, C32, V33, V39, G40, E44, H45, D47, L48, L49, A50).",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "30 ± 0.5 °C; pH 7.1 ± 0.1; no buffer stated (protein dissolved directly in water with 1 mM NaN3); 90% H2O/10% D2O; 2 mM 15N-labelled free hTGF-alpha (V1-A50), no receptor; Varian Unity 500 (500 MHz 1H), single field; the RelaxDB source sample",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and PFG NOE at one field with extended Lipari-Szabo analysis",
+    "observable": "S2 (0.8-0.95)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.7 T (500 MHz)",
+    "temperature": "30 ± 0.5 °C",
+    "detection_window": "Single-field 15N relaxation at 500 MHz, 30 °C, isotropic tumbling (tau_m 3.76 ns); detects internal motion faster than tumbling with amplitude 1 - S2; cannot see motion slower than tumbling, the 11 secondary amides without complete data (F5, D10, S11, H12, A41 HNOE only; others weak, overlapped or ambiguous), prolines, or small-amplitude motion within the S2 uncertainty"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Apart from the tail, the N-terminal bend and the chain reversals, the analysed amides of free hTGF-alpha have order parameters of 0.8-0.95, so no enhanced sub-nanosecond motion is detected in the core of the two subdomains at pH 7.1 and 30 °C (sources_cache/10.1021_bi00008a003.pdf, p. 2415, Figure 6A).",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020201428-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J14",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": [
+     5,
+     6,
+     7,
+     8,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     23,
+     34,
+     36,
+     41
+    ],
+    "residues_author": "F5-F15 (authors' regional description; P9 has no amide), F23, C34, S36, A41: apparent HNOE raised by weak water presaturation in the reference experiment",
+    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50 (UniProt P01135 40-89); author residue n maps to entry n (checked F5, D7, C8, P9, T13, F15, C16, F17, H18, F23, V25, E27, D28, K29, A31, C32, V33, V39, G40, E44, H45, D47, L48, L49, A50).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "30 ± 0.5 °C; pH 7.1 ± 0.1; no buffer stated (protein dissolved directly in water with 1 mM NaN3); 90% H2O/10% D2O; 2 mM 15N-labelled free hTGF-alpha (V1-A50), no receptor; Varian Unity 500 (500 MHz 1H), single field; the RelaxDB source sample",
+    "is_wt_apo": true
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "Control comparison of apparent {1H}-15N NOE with and without weak water presaturation (600 ms, 900 Hz modulation) in the reference spectrum; saturation-transfer parameter alpha from equation 15",
+    "observable": "HNOE difference (Figure 9A-B, figure only)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.7 T (500 MHz)",
+    "temperature": "30 ± 0.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A within-paper control shows that water presaturation inflates apparent HNOEs through amide-water saturation transfer, mainly in exposed regions (F5-F15, F23, C34, S36, A41); this is a demonstrated measurement confound for the presaturated reference, not for the PFG long-recycle data set used in J11, and it does not identify the exchange mechanism of J12 (sources_cache/10.1021_bi00008a003.pdf, pp. 2418-2420, Figure 9).",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020201428-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J15",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     39,
+     40,
+     47,
+     48,
+     49,
+     50
+    ],
+    "residues_author": "F5-D7, C8-F15, V39-G40, D47-A50: segments with high local backbone RMSD among 15 energy-refined NMR conformers (Figure 8E, figure only)",
+    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50 (UniProt P01135 40-89); author residue n maps to entry n (checked F5, D7, C8, P9, T13, F15, C16, F17, H18, F23, V25, E27, D28, K29, A31, C32, V33, V39, G40, E44, H45, D47, L48, L49, A50).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "relaxation at pH 7.1, 30 °C compared with the 15 energy-refined hTGF-alpha NMR conformers of Moy et al. 1993 determined at pH 6.5; no PDB accession given in this paper",
+    "is_wt_apo": true
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "Local backbone RMSD over five-residue superpositions of 15 NMR conformers compared with S2, R1 and HNOE profiles",
+    "observable": "structure difference (ensemble coordinate spread)",
+    "fit_model": "none",
     "kex": "",
     "pB": "",
     "delta_omega": "",
     "field": "",
-    "temperature": "30 ± 0.5 °C (abstract)",
+    "temperature": "",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "The source abstract states that about 40% of the backbone amides of free TGF-alpha at pH 7.1 and 30 °C, including many at the subdomain interface, show significant 15N exchange broadening that the authors read as interconversion between multiple conformations on the microsecond timescale, with partial unfolding of the core sheet, hinge bending between subdomains or disulfide isomerisation as candidate mechanisms; no residue list, rate, population, field dependence or regime beyond 'microsecond' is available, so the us-ms verdict stays unresolved.",
+   "reason": "Ensemble disorder at F5-D7, V39-G40 and D47-A50 matches the fast flexibility seen by relaxation, but the poorly defined C8-F15 loop is not explained by enhanced fast motion (only H12 shows it); the authors propose exchange broadening and saturation-transfer-related loss of NOE restraints as contributors, so the origin of that disorder stays open and no population or rate follows (sources_cache/10.1021_bi00008a003.pdf, pp. 2418, 2420, Figure 8).",
    "evidence_rows": [
-    "HTGFA-HTGFA_20261020145442-r2"
+    "HTGFA-HTGFA_20261020201428-r4"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "structure_only",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   }

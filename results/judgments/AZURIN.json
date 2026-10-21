@@ -2,22 +2,23 @@
  "protein_summary": {
   "entry_id": "AZURIN",
   "per_window": {
-   "ps-ns": "Not resolved for any wild-type state. No row gives per-residue order parameters for oxidised Cu(II) azurin (J1, search_insufficient). The RelaxDB source paper's abstract (copper azurin, oxidation state not stated) reports fast internal motion in the loop 103-108 and the turn 74-77 and an average S2 of 0.85 ± 0.05 elsewhere, including the copper site (J37, C-r1, unresolved). Reduced Cu(I) azurin has only an abstract that calls H117 and the hydrophobic patch mobile and N47-V49 relatively rigid (J17, r16, r17). The homologous CuA domain is rigid on this scale in apo and holo forms (r47, r48, not judged).",
-   "us-ms": "Reference Cu(II): not measured (J2). Reduced Cu(I) at pH about 5, 50 mM phosphate: two slow processes seen by 15N CPMG at three fields, one around H35 (D11, G37, G88-G90; kA 11.7 ± 2.4 s-1, 0.39 ± 0.07% at 44.8 °C; J12, r9), tied by the authors to H35 protonation and a peptide flip, and one in the copper loops (N47, W48, F111-T113, G116, H117, L120, K122; kA 4.1 ± 0.1 s-1, 0.45 ± 0.02%; J13, r10); residues in between sense both (J14, r11); per-residue kA 0.44-9.55 s-1 at 35.4 °C (J15, r12); 29 named amides pass across 25.7-44.8 °C (J16, r13-r15). Apo at 298 K, pH 7.0: 17 amides around the metal site broadened out by intermediate exchange (J18, r44), dispersion at M44, I87 and two more regions (J19, r45), none at T61 (J20, r46); high-pH 1H broadening of histidines, abstract only (J22). Homolog apo CuA shows the same pattern (J36). The RelaxDB source paper's abstract adds exchange broadening around H35 in copper azurin of unstated oxidation state, with the rate placed in the slower-than-ms window (J38).",
-   "slower_than_ms": "Not measured for the oxidised wild type as such (J3). The RelaxDB source paper (abstract only) gives an average exchange rate of 45 ± 6 s-1 at 41 °C by exchange spectroscopy for the residues around H35, attributed to H35 protonation/deprotonation, and says the pH 5.5 and pH 9.0 crystal conformations coexist in solution and interconvert slowly (J38, C-r2, unresolved; oxidation state not stated). The Cu(I) forward rates of 4-12 s-1 are reported within the CPMG analysis and stay in the us-ms window. Single-molecule ET-rate fluctuations over tens to hundreds of seconds (J33) are electron-transfer kinetics, not conformational.",
-   "undetermined": "Static and indirect items, none counted as exchange: oxidised crystals at two pH values with a P36-G37 flip (J4, abstract); DEPC histidine accessibility (J5); femtosecond coherences and charge transfer (J6, photophysics); holo fluorescence heterogeneity (J7, abstract); forced unfolding by steered MD and AFM (J8, J9, J26, J27); ionic-liquid and electrode studies (J10, J11); two apo crystal forms (J21, abstract); W48 phosphorescence and acrylamide quenching in apo and Cd forms (J23, J24, J29); 3 μs MD of apo and Zn azurin with loop fluctuation and water entry (J25, J30, md_only); Fe-, Zn-, Co- and Ni-substituted crystals (J28, J31, J32, J40); temperature-jump slow phase of the azurin/cytochrome c551 mixture assigned to H35 (J39, C-r3, abstract); Ru- and Re-labelled constructs (J34, J35, ET and photophysics). Not judged (mutants, engineered loops or metal sites, static crystals, chemical or ET assays): phosphorescence of I7S, F110S, C3A/C26A, F110A, F29A and Y108A (r3-r8, r22-r25, r28-r43); fluorescence anisotropy of I7S and F110S (r18, r19); C112A and C26A polyproteins and reduced-disulfide MD (r55, r56, r58); C3S and C3S/S100P folding (r68, r69); type-zero C112D/M121L EXAFS (r86); M121A Fe-azide ligand exchange (r89, binding kinetics); CuA homolog relaxation (r47, r48); p28 peptide and docking MD (AZURIN-AZURIN_20261020003349-r3, r5, r6); W48/W108 hydration MD (AZURIN-AZURIN_20261020003349-r4); Y72F/Y108F radical decay (AZURIN-AZURIN_20261020003349-r9); H46E/M121H iron nitrosyl (AZURIN-AZURIN_20261020003349-r10, r11); H117A/M121H crystals (AZURIN-AZURIN_20261020003349-r12, r13); GPLGS and junction MD abstracts (AZURIN-AZURIN_20261020003349-r14, r15); N47D/S/L KC-RPMD (AZURIN-AZURIN_20261020003349-r17-r19); DEPC mutants (AZURIN-AZURIN_20261020003349-r31-r33); I7S and F110S crystals (AZURIN-AZURIN_20261020003349-r38, r39); and all AZURIN-AZURIN_20261020005254-rows (M121A, T21R1 spin label, redox-tuning, nitrotyrosine, M121E, loop-shortened, C112D/M121X, Ru crystal, thermostability, W48M, F114A, H117G, N47D, H20/Y48, crosslinked dimers, CuA and loop-length chimeras), including the abstract-only multitemperature B-factor study whose construct is unresolved (AZURIN-AZURIN_20261020005254-r22). Also not judged, from the 2026-10-20 re-read (C-rN): N42C disulfide dimer electron self-exchange (C-r4, ET kinetics); oxidised apo-H117G and apo-H46G crystals (C-r6, r7, mutants); M44K EPR/ESEEM (C-r9, mutant, not DEER); classical and QM/MM excited-state MD of the Re124W and Re126WW photosensitiser constructs, including a 6% trajectory occupancy of a dmp-away orientation and sub-picosecond solvent response (C-r10 to r13, engineered constructs, chromophore motion)."
+   "ps-ns": "Reference state (reduced Cu(I), pH 5.5, 41 °C, the RelaxDB sample, full text of doi:10.1021/bi990624l): dynamic_in_window at the loop 103-108, the turn 74-77 (K74 S2 0.69, tau_e 1.3 ns; D77 0.70), I7 and the C-terminal L127-K128 (J37, D-r1); the rest of the backbone, including the copper ligands H46 and H117 (S2 0.97) and the loop 112-121, is rigid with average S2 0.86 ± 0.05 (J41, no_evidence_in_window), and the W48 indole has S2 0.89 (J42, D-r2). Oxidised Cu(II): no per-residue order parameters in any row (J1, search_insufficient). Reduced Cu(I) at other conditions: an abstract calls H117 and the hydrophobic patch mobile and N47-V49 relatively rigid (J17, r16, r17). The homologous CuA domain is rigid on this scale in apo and holo forms (r47, r48, not judged).",
+   "us-ms": "Reference state (reduced Cu(I), pH 5.5, 41 °C, 600 MHz): dynamic_in_window around His35: N10, D11, G37, G45 (9.5 Hz), G88, S89, G90 carry Rex of 2-9.5 Hz that the authors reproduce with the His35 protonation equilibrium (deprotonated form 2-4%, k = 60 ± 30 s-1, lifetime 8 ± 4 ms, slow on the chemical-shift timescale; 15N shift differences 340-400 Hz), plus F114 in the copper loop without a mechanism and weak Rex about 1 Hz in the flap 53-79 (J43, D-r3). Reduced Cu(I) at pH about 5, 50 mM phosphate (2003 CPMG at three fields): two processes, one around H35 (D11, G37, G88-G90; kA 11.7 ± 2.4 s-1, 0.39 ± 0.07% at 44.8 °C; J12, r9) and one in the copper loops (N47, W48, F111-T113, G116, H117, L120, K122; kA 4.1 ± 0.1 s-1, 0.45 ± 0.02%; J13, r10); residues in between sense both (J14, r11); per-residue kA 0.44-9.55 s-1 at 35.4 °C (J15, r12); 29 named amides pass across 25.7-44.8 °C (J16, r13-r15). Copper-free apo at 298 K, pH 7.0 (another sample state since 2026-10-20): 17 amides around the metal site broadened out by intermediate exchange (J18, r44), dispersion at M44, I87 and two more regions (J19, r45), none at T61 (J20, r46); high-pH 1H broadening of histidines, abstract only (J22). Oxidised Cu(II): not measured (J2). Homolog apo CuA shows the same pattern (J36).",
+   "slower_than_ms": "Reduced Cu(I) at pH 7.0, 41 °C (full text of the RelaxDB source paper): dynamic_in_window; two resolved peak sets for the nuclei around His35 interconvert with k = 45 ± 6 s-1 (kex 90 s-1, lifetime 11 ± 2 ms, equal populations at the pKa 7.0 ± 0.1) by EXSY, which the authors read as the slow His35 protonation/deprotonation equilibrium that interconverts the pH 5.5 and pH 9.0 crystal conformations in solution; computed kex/delta-omega about 0.04, slow exchange (J38, D-r4, D-r5). The same process at pH 5.5 is carried by J43 in the us-ms window because it is seen there as exchange broadening with a model-derived lifetime of 8 ± 4 ms. Oxidised Cu(II): not measured as such (J3). The Cu(I) forward rates of 4-12 s-1 from the 2003 CPMG fits stay in the us-ms window. Single-molecule ET-rate fluctuations over tens to hundreds of seconds (J33) are electron-transfer kinetics, not conformational.",
+   "undetermined": "Static and indirect items, none counted as exchange: oxidised crystals at two pH values with a P36-G37 flip (J4, abstract; the RelaxDB source paper's own comparison of these crystals with its solution exchange pattern is J44, D-r6, structure_only); DEPC histidine accessibility (J5); femtosecond coherences and charge transfer (J6, photophysics); holo fluorescence heterogeneity (J7, abstract); forced unfolding by steered MD and AFM (J8, J9, J26, J27); ionic-liquid and electrode studies (J10, J11); two apo crystal forms (J21, abstract); W48 phosphorescence and acrylamide quenching in apo and Cd forms (J23, J24, J29); 3 μs MD of apo and Zn azurin with loop fluctuation and water entry (J25, J30, md_only); Fe-, Zn-, Co- and Ni-substituted crystals (J28, J31, J32, J40); temperature-jump slow phase of the azurin/cytochrome c551 mixture assigned to H35 (J39, C-r3, abstract); Ru- and Re-labelled constructs (J34, J35, ET and photophysics). Not judged (mutants, engineered loops or metal sites, static crystals, chemical or ET assays): phosphorescence of I7S, F110S, C3A/C26A, F110A, F29A and Y108A (r3-r8, r22-r25, r28-r43); fluorescence anisotropy of I7S and F110S (r18, r19); C112A and C26A polyproteins and reduced-disulfide MD (r55, r56, r58); C3S and C3S/S100P folding (r68, r69); type-zero C112D/M121L EXAFS (r86); M121A Fe-azide ligand exchange (r89, binding kinetics); CuA homolog relaxation (r47, r48); p28 peptide and docking MD (AZURIN-AZURIN_20261020003349-r3, r5, r6); W48/W108 hydration MD (AZURIN-AZURIN_20261020003349-r4); Y72F/Y108F radical decay (AZURIN-AZURIN_20261020003349-r9); H46E/M121H iron nitrosyl (AZURIN-AZURIN_20261020003349-r10, r11); H117A/M121H crystals (AZURIN-AZURIN_20261020003349-r12, r13); GPLGS and junction MD abstracts (AZURIN-AZURIN_20261020003349-r14, r15); N47D/S/L KC-RPMD (AZURIN-AZURIN_20261020003349-r17-r19); DEPC mutants (AZURIN-AZURIN_20261020003349-r31-r33); I7S and F110S crystals (AZURIN-AZURIN_20261020003349-r38, r39); and all AZURIN-AZURIN_20261020005254-rows (M121A, T21R1 spin label, redox-tuning, nitrotyrosine, M121E, loop-shortened, C112D/M121X, Ru crystal, thermostability, W48M, F114A, H117G, N47D, H20/Y48, crosslinked dimers, CuA and loop-length chimeras), including the abstract-only multitemperature B-factor study whose construct is unresolved (AZURIN-AZURIN_20261020005254-r22). Also not judged, from the 2026-10-20 re-read (C-rN): N42C disulfide dimer electron self-exchange (C-r4, ET kinetics); oxidised apo-H117G and apo-H46G crystals (C-r6, r7, mutants); M44K EPR/ESEEM (C-r9, mutant, not DEER); classical and QM/MM excited-state MD of the Re124W and Re126WW photosensitiser constructs, including a 6% trajectory occupancy of a dmp-away orientation and sub-picosecond solvent response (C-r10 to r13, engineered constructs, chromophore motion)."
   },
-  "wt_apo_answer": "Copper-free wild-type azurin (298 K, pH 7.0, 100 mM phosphate, 2 mM DTT) does show microsecond-millisecond exchange around the metal site: 17 amides (A1-C3, G9-D11, N18, H35-L39, G45, H46, G88-E91) are broadened out by intermediate exchange and CPMG dispersion appears at M44, I87 and neighbouring regions, but no rate or population is reported; for the copper-bound forms, no exchange measurement exists for oxidised Cu(II) azurin, and only reduced Cu(I) azurin has rates (minor states of 0.39% and 0.45% at 44.8 °C, pH about 5). The RelaxDB source paper (doi:10.1021/bi990624l, abstract only, oxidation state not stated) adds slow exchange around H35 at 45 ± 6 s-1 (41 °C), read by the authors as interconversion of the pH 5.5 and pH 9.0 crystal conformations in solution (J38, unresolved).",
+  "wt_apo_answer": "Yes for the RelaxDB sample, which is reduced Cu(I) azurin (2 mM, 20 mM potassium phosphate, pH 5.5, 41 °C, 600 MHz; reference state since 2026-10-20, copper-bound, not copper-free): the amides of N10, D11, G37, G45, G88, S89 and G90 around His35 show exchange broadening of 2-9.5 Hz that the authors explain by the His35 protonation/deprotonation equilibrium, slow on the chemical-shift timescale, with a deprotonated minor form of 2-4% at pH 5.5, k = 60 ± 30 s-1 (lifetime 8 ± 4 ms) and 15N shift differences of 340-400 Hz; at pH 7.0 the two forms give two resolved peak sets with EXSY cross-peaks and k = 45 ± 6 s-1 (lifetime 11 ± 2 ms, equal populations) (J43, J38; full text of doi:10.1021/bi990624l). The exchange is protonation-coupled, so whether it counts as an alternate conformational state is a question for the NMR collaborator. Copper-free apo azurin (298 K, pH 7.0, 100 mM phosphate, 2 mM DTT) is a different sample state with 17 amides lost to intermediate exchange and CPMG dispersion at M44 and I87, no rate or population (J18, J19); oxidised Cu(II) azurin has no exchange measurement.",
   "open_conflicts": [
    "Not a conflict but a state contrast: apo-azurin loses 17 amides to intermediate exchange, while the authors cite a full Cu(I) HSQC (all non-proline residues but A1); the apo (pH 7.0, 100 mM phosphate, DTT) and Cu(I) (pH about 5, 50 mM phosphate) samples also differ in pH and buffer, so metal state and pH are confounded.",
    "Residue 116: the CPMG paper's Table 2 prints 'Cys 116' while the entry sequence has G116; the judgments follow the sequence (row AZURIN-r10 still prints C116).",
-   "H35 process rate: the 1999 RelaxDB source abstract gives an average exchange rate of 45 ± 6 s-1 at 41 °C from exchange spectroscopy (C-r2, J38, oxidation state and pH not stated), whereas the 2003 Cu(I) CPMG fit at 44.8 °C gives kA 11.7 ± 2.4 s-1 with a 0.39% minor state (r9, J12), which implies a total exchange rate in the thousands per second; the two may be different states, pH values or models, and only the 2003 paper was read in full."
+   "H35 process rate in reduced Cu(I) azurin: the 1999 RelaxDB source paper gives k = 60 ± 30 s-1 at pH 5.5 (kex about 120 s-1, minor form 2-4% estimated from the pKa; J43) and k = 45 ± 6 s-1 at pH 7.0 by EXSY (J38), whereas the 2003 three-field CPMG fit at pH about 5, 44.8 °C gives kA 11.7 ± 2.4 s-1 with a 0.39% minor state and keq 254, i.e. kex in the thousands per second (r9, J12); the two papers use different models (equal-population line broadening with a pKa-derived correction versus Carver-Richards with a fitted minor population), different phosphate concentrations and slightly different pH, so the rates are not reconciled.",
+   "Within the 1999 paper the mean S2 is 0.85 ± 0.05 in the abstract and 0.86 ± 0.05 in the Results; both are kept."
   ],
   "questions_for_gina": [
-   "Which azurin sample is the RelaxDB entry: oxidised Cu(II), reduced Cu(I), or apo? The RelaxDB source paper (doi:10.1021/bi990624l) was read only as an abstract, which does not state the oxidation state; the missing-peak annotations would fit paramagnetic Cu(II) broadening or the apo intermediate exchange (BMRB 18254, apo, pH 7.0) equally well.",
-   "Should the H35 process count as conformational exchange, given that the 1999 source calls it H35 protonation/deprotonation interconverting the pH 5.5 and 9.0 crystal conformations at 45 ± 6 s-1 (41 °C), and the 2003 Cu(I) CPMG paper links its minor population to the protonated fraction of H35?"
+   "The RelaxDB AZURIN sample is reduced Cu(I) azurin at pH 5.5 and 41 °C (doi:10.1021/bi990624l, full text). Its slow exchange around His35 is a protonation/deprotonation equilibrium (deprotonated form 2-4% at pH 5.5, two resolved peak sets near pH 7) that interconverts the pH 5.5 and pH 9.0 crystal conformations: should a pH-coupled chemical equilibrium of a metal-bound sample count as an alternate APO state in the 2026-09-17 sense?",
+   "The 1999 line-broadening rate (k = 60 ± 30 s-1, pH 5.5) and EXSY rate (45 ± 6 s-1, pH 7.0) disagree with the 2003 three-field CPMG model of the same Cu(I) H35 process (kA 11.7 s-1, pB 0.39%, kex in the thousands per second); which model should the atlas carry for the reference state?"
   ],
-  "buffer_note": "Every NMR dynamics sample is in phosphate: 50 mM, pH about 5 for Cu(I) CPMG (r9-r15) and 100 mM, pH 7.0 with 2 mM DTT for apo (r44-r46); no row tests a phosphate effect or a buffer change. The apo protein was made by KCN dialysis. Phosphorescence work (r1-r43) uses 2 mM Tris-HCl pH 7.5 at 20 °C with Cd(II) or Zn(II) standing in for copper. The RelaxDB source paper (C-r1, C-r2) is abstract-only: no pH, buffer or oxidation state, 41 °C for the exchange-spectroscopy rate. Row-id shorthand: A-rN = AZURIN-AZURIN_20261020003349-rN, B-rN = AZURIN-AZURIN_20261020005254-rN, C-rN = AZURIN-AZURIN_20261020143153-rN. Second reads of the C rows flagged nothing (Codex left nine and Claude five unverified)."
+  "buffer_note": "Every NMR dynamics sample is in phosphate: 20 mM, pH 5.5 (RelaxDB sample, D-r1 to r3) or pH 7.0 (D-r4, r5) for the 1999 reduced Cu(I) study, 50 mM, pH about 5 for the 2003 Cu(I) CPMG (r9-r15) and 100 mM, pH 7.0 with 2 mM DTT for apo (r44-r46); no row tests a phosphate effect or a buffer change. The apo protein was made by KCN dialysis. Phosphorescence work (r1-r43) uses 2 mM Tris-HCl pH 7.5 at 20 °C with Cd(II) or Zn(II) standing in for copper. Reference state since 2026-10-20: the RelaxDB sample is reduced Cu(I) azurin (dithionite under argon), 2 mM, 20 mM potassium phosphate, pH 5.5, 41 °C, 600 MHz, 90% H2O/10% D2O (D-r1), so is_wt_apo marks the Cu(I) pH 5.5 judgments (J37, J41-J43) and the copper-free apo judgments (J18-J26) are another sample state. The 1999 relaxation analysis used one field, a fixed 1 ms CPMG spacing and isotropic tumbling; the pH 7.0 EXSY sample is nonlabelled and its Cu(I) state is inferred from the general preparation. Row-id shorthand: A-rN = AZURIN-AZURIN_20261020003349-rN, B-rN = AZURIN-AZURIN_20261020005254-rN, C-rN = AZURIN-AZURIN_20261020143153-rN (abstract-only reads of the 1999 paper, superseded by the full-text D rows on 2026-10-20 and no longer cited), D-rN = AZURIN-AZURIN_20261020202618-rN. Second reads of the D rows: r1 corrected (pooled residue list replaced by the authors' flexible set), r4 and r5 reclassified as 'other', r3 identities N10, D11, S89 confirmed from the mature sequence (ledger/adjudication_AZURIN_pdf.json)."
  },
  "judgments": [
   {
@@ -793,7 +794,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "298 K; pH 7.0; 100 mM phosphate; 2 mM DTT; about 1 mM 15N or 13C/15N protein; copper removed by KCN dialysis",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -835,7 +836,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "298 K; pH 7.0; 100 mM phosphate; 2 mM DTT; about 1 mM 15N or 13C/15N protein; copper removed by KCN dialysis",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -876,7 +877,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "298 K; pH 7.0; 100 mM phosphate; 2 mM DTT; about 1 mM 15N or 13C/15N protein; copper removed by KCN dialysis",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "measured_not_detected",
    "detection": {
@@ -917,7 +918,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "apo-azurin crystal at 1.85 Å; abstract only",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -959,7 +960,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "apo-azurin; high and low pH (values not available); abstract only",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -1000,7 +1001,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "20 °C; pH 7.5; 2 mM Tris-HCl; deoxygenated; 2-5 μM protein; copper removed with cyanide/EDTA and chromatography; with and without 2 M sucrose (r2)",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -1042,7 +1043,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "20 °C; pH 7.5; 2 mM Tris-HCl; deoxygenated; 2-5 μM protein; acrylamide titration",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -1110,7 +1111,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "MD of wild-type apo structure 1E65 (the paper's experiments use Y72F/Y108F): AMBER18/ff14SB, 300 K, TIP3P, NPT, 3 μs",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -1148,7 +1149,7 @@
     "construct": "WT",
     "binding_state": "apo",
     "conditions": "steered MD from 1E65: 300 K, TIP3P, CHARMM27, NAMD 2.9, pulling 0.0001 Å/fs",
-    "is_wt_apo": true
+    "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
@@ -1625,8 +1626,8 @@
    "entry_id": "AZURIN",
    "region": {
     "residues_entry": [
+     7,
      74,
-     75,
      76,
      77,
      103,
@@ -1634,38 +1635,41 @@
      105,
      106,
      107,
-     108
+     108,
+     127,
+     128
     ],
-    "residues_author": "loop 103-108 and turn 74-77 (fast internal motion); remaining backbone and copper site rigid, average S2 0.85 ± 0.05",
-    "numbering_note": "Entry numbering is the mature chain A1-K128 (UniProt P00282 precursor 21-148); the abstract's residue numbers map without offset.",
-    "functional_site": ""
+    "residues_author": "Loop K103-Y108 and turn K74-D77 (P75 has no amide), plus I7, L127, K128: tau_e-fitted residues 74, 105, 107, 127, 128; long-T2 residues 7, 105, 107, 108, 127, 128; low-NOE residues 105, 107, 108, 128; S2 < 0.75 at K74 (0.69), D77 (0.70), Q107 and Y108",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128; UniProt P00282 precursor 21-148); checked I7, G9, N10, D11, H35, G37, M44, G45, H46, W48, K74, D77, G88, S89, G90, E91, Q107, Y108, F114, H117, L127, K128 against inputs/AZURIN.json.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
    },
    "time_window": "ps-ns",
    "sample_state": {
     "construct": "WT",
-    "binding_state": "bound:Cu (oxidation state not stated in the abstract)",
-    "conditions": "solution; temperature, pH and buffer not in the abstract (the exchange measurement of the same paper is at 41 °C)",
-    "is_wt_apo": false
+    "binding_state": "bound:Cu(I)",
+    "conditions": "41 °C; pH 5.5; 20 mM potassium phosphate; 2 mM uniformly 15N-labelled azurin, copper reduced to Cu(I) with sodium dithionite under argon; 90% H2O/10% D2O; 600 MHz (Bruker AMX); this is the RelaxDB sample (reference state since 2026-10-20)",
+    "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N backbone relaxation with order-parameter analysis (abstract only)",
-    "observable": "S2 (average 0.85 ± 0.05 for the rigid remainder; per-residue values not in the abstract)",
-    "fit_model": "other",
+    "method": "Backbone 15N T1, T2 and {1H}-15N NOE at one field with Lipari-Szabo model-free fitting (Modelfree 4.0; isotropic tumbling, tau_r 4.7 ± 0.1 ns; 113 of 123 amides analysed)",
+    "observable": "S2, tau_e",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
-    "temperature": "",
+    "field": "14.1 T (600 MHz 1H, 60.8 MHz 15N)",
+    "temperature": "41 °C",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "Abstract only, from the RelaxDB source paper: in copper azurin the loop 103-108 and the turn 74-77 show fast internal motion while the rest of the backbone, including the copper site, is rigid with an average S2 of 0.85 ± 0.05; the oxidation state, conditions, per-residue values and missing-peak annotations cannot be checked (sources_cache/AZURIN_case10_01_abstract.txt).",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text of the RelaxDB source paper: in reduced Cu(I) azurin at pH 5.5 and 41 °C the loop 103-108 and the turn 74-77 show fast internal motion (K74 S2 0.69 with tau_e 1.3 ± 0.2 ns, D77 0.70, Q107 and Y108 below 0.75; raised T1 and T2 and low NOE at 105-108 and the C-terminal K128), against an average S2 of 0.86 ± 0.05 (0.85 in the abstract) for the rest of the backbone; the authors note that the K74-D77 turn may move on an intermediate rather than a fast timescale because of its poor NOE fit (sources_cache/10.1021_bi990624l.pdf, pp. 12692-12695).",
    "evidence_rows": [
-    "AZURIN-AZURIN_20261020143153-r1"
+    "AZURIN-AZURIN_20261020202618-r1"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -1674,39 +1678,45 @@
    "entry_id": "AZURIN",
    "region": {
     "residues_entry": [
-     35
+     9,
+     35,
+     37,
+     88,
+     91
     ],
-    "residues_author": "a number of residues surrounding the His35 side chain (not listed in the abstract)",
-    "numbering_note": "Entry numbering is the mature chain A1-K128 (UniProt P00282 precursor 21-148); the abstract's residue numbers map without offset.",
-    "functional_site": ""
+    "residues_author": "His35 C-epsilon1 H and the amide protons of G9, G37, G88 and E91 (10 exchange cross-peaks from five protons); two resolved peak sets for protons and nitrogens around the His35 ring in the pH 6.3-7.6 HMQC series",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128; UniProt P00282 precursor 21-148); checked I7, G9, N10, D11, H35, G37, M44, G45, H46, W48, K74, D77, G88, S89, G90, E91, Q107, Y108, F114, H117, L127, K128 against inputs/AZURIN.json.",
+    "functional_site": "His35 protonation site and the P36-G37 peptide plane (authors' interpretation)",
+    "residue_basis": "author_listed"
    },
    "time_window": "slower_than_ms",
    "sample_state": {
     "construct": "WT",
-    "binding_state": "bound:Cu (oxidation state not stated in the abstract)",
-    "conditions": "solution; 41 °C for the exchange-spectroscopy rate; pH and buffer not in the abstract",
+    "binding_state": "bound:Cu(I) (reduced; inferred from the general sample preparation, not restated for the pH 7.0 sample)",
+    "conditions": "41 °C; pH 7.0 for the ROESY/EXSY sample (2 mM nonlabelled azurin) and pH 6.3, 6.6, 6.8, 7.2, 7.6 for the jump-return HMQC titration (15N-labelled); 20 mM potassium phosphate; 600 MHz; not the pH 5.5 RelaxDB sample",
     "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
-    "method": "15N exchange broadening and NMR exchange spectroscopy (abstract only); not CPMG, CEST or R1rho",
-    "observable": "line broadening and exchange-spectroscopy cross-peaks",
-    "fit_model": "other",
-    "kex": "45 ± 6 s-1 (average exchange rate at 41 °C, abstract)",
-    "pB": "",
-    "delta_omega": "",
-    "field": "",
+    "method": "1H EXSY build-up series (mixing times 20-150 ms) with a 50 ms ROESY control at pH 7.0, fitted to the Jeener two-site equations; pH-dependent peak intensities of the two resolved peak sets in jump-return HMQC spectra give the His35 pKa",
+    "observable": "exchange cross-peak volumes between the low-pH and high-pH resonances; intensities of two resolved peak sets",
+    "fit_model": "two-state global",
+    "kex": "k = 45 ± 6 s-1 printed as the average rate (kAB + kBA)/2 at the pKa, so kex = kAB + kBA = 90 ± 12 s-1; tau_ex = 1/(kAB + kBA) = 11 ± 2 ms (41 °C, pH 7.0)",
+    "pB": "0.5 at pH 7.0 (equal populations at the His35 pKa of 7.0 ± 0.1, stated by the authors)",
+    "delta_omega": "15N shift differences between the two forms 340 Hz (G37) and about 400 Hz (G88, G90) at 60.8 MHz 15N, i.e. about 5.6-6.6 ppm (from the same paper, used in D-r3); 1H differences not printed",
+    "field": "14.1 T (600 MHz 1H, 60.8 MHz 15N)",
     "temperature": "41 °C",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "Abstract only, from the RelaxDB source paper: residues around H35 are exchange-broadened, exchange spectroscopy gives an average rate of 45 ± 6 s-1 at 41 °C, and the authors attribute the process to H35 protonation/deprotonation and conclude that the pH 5.5 and pH 9.0 crystal conformations coexist in solution and interconvert slowly; the method gives a rate in the tens-of-milliseconds range, but the residue list, oxidation state, pH and populations cannot be checked, and the evidence row records neither the rate nor the slow-interconversion statement.",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text of the RelaxDB source paper: near the His35 pKa two resolved peak sets exist for the nuclei around the His35 ring, EXSY cross-peaks connect them, and ten cross-peak build-ups from five protons fit a single average rate k = 45 ± 6 s-1 at 41 °C, i.e. kex = 90 s-1 and a lifetime of 11 ± 2 ms, which the authors call a protonation/deprotonation equilibrium of His35 that is slow on the chemical-shift timescale and that interconverts the pH 5.5 and pH 9.0 crystal conformations in solution; computed regime at 600 MHz: kex/delta-omega = 90/(2 pi x 340) = 0.04, slow exchange, matching the authors' wording (sources_cache/10.1021_bi990624l.pdf, pp. 12691-12694, Figure 4).",
    "evidence_rows": [
-    "AZURIN-AZURIN_20261020143153-r2"
+    "AZURIN-AZURIN_20261020202618-r4",
+    "AZURIN-AZURIN_20261020202618-r5"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
-   "function_link": "",
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors note that His35 protonation changes the midpoint potential of azurin; physiological relevance is left open.",
    "relaxdb_relation": "pending_legend"
   },
   {
@@ -1784,6 +1794,190 @@
    "reason": "Abstract only: nickel keeps the fold and changes only the metal site, binding the G45 carbonyl more strongly while the M121 S-delta distance opens to 0.330 nm, a distorted tetrahedral centre between the Cu(II) and Zn(II) geometries; a static metal-substitution difference with no timescale.",
    "evidence_rows": [
     "AZURIN-AZURIN_20261020143153-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J41",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     46,
+     117
+    ],
+    "residues_author": "Rigid remainder of the 113 analysed amides, average S2 0.86 ± 0.05 (Results; 0.85 ± 0.05 in the abstract), including the copper ligand H46 with near-average relaxation data and H117 with S2 0.97; the copper-site loop 112-121 and the beta-sheet scaffold show the same rigidity as the core; only H46 and H117 are named individually as rigid",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128; UniProt P00282 precursor 21-148); checked I7, G9, N10, D11, H35, G37, M44, G45, H46, W48, K74, D77, G88, S89, G90, E91, Q107, Y108, F114, H117, L127, K128 against inputs/AZURIN.json.",
+    "functional_site": "copper site (ligands H46, C112, H117, M121; loop 112-121)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "41 °C; pH 5.5; 20 mM potassium phosphate; 2 mM uniformly 15N-labelled azurin, copper reduced to Cu(I) with sodium dithionite under argon; 90% H2O/10% D2O; 600 MHz (Bruker AMX); this is the RelaxDB sample (reference state since 2026-10-20)",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Backbone 15N T1, T2 and {1H}-15N NOE at one field with model-free fitting",
+    "observable": "S2 (0.75-0.97 outside the flexible sites; NOE > 0.74 for most residues)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T (600 MHz 1H, 60.8 MHz 15N)",
+    "temperature": "41 °C",
+    "detection_window": "15N T1/T2/NOE at 600 MHz, 41 °C, single field, isotropic tumbling assumed; detects internal motion faster than tau_r 4.7 ns with amplitude 1 - S2; cannot see motions slower than tumbling, amides unresolved (10 of 123), prolines (no amide), or small-amplitude motions below the S2 uncertainty of about 0.05"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Outside the loop 103-108, the turn 74-77 and the termini, the backbone of reduced Cu(I) azurin, including the copper ligands H46 and H117 (S2 0.97) and the loop 112-121, has order parameters near the 0.86 ± 0.05 average with NOE above 0.74, so no enhanced sub-nanosecond motion is detected there; the authors state that the Cu site shows the same pattern of rigidity as the core (sources_cache/10.1021_bi990624l.pdf, pp. 12694-12695).",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020202618-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J42",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     48
+    ],
+    "residues_author": "W48 N-epsilon1-H (side chain)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128; UniProt P00282 precursor 21-148); checked I7, G9, N10, D11, H35, G37, M44, G45, H46, W48, K74, D77, G88, S89, G90, E91, Q107, Y108, F114, H117, L127, K128 against inputs/AZURIN.json.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "41 °C; pH 5.5; 20 mM potassium phosphate; 2 mM uniformly 15N-labelled azurin, copper reduced to Cu(I) with sodium dithionite under argon; 90% H2O/10% D2O; 600 MHz (Bruker AMX); this is the RelaxDB sample (reference state since 2026-10-20)",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N relaxation of the W48 indole N-epsilon1 (T1 0.57 ± 0.01 s, T2 0.171 ± 0.006 s, NOE 0.76 ± 0.04) with a model-free order parameter (CSA -89 ppm assumed)",
+    "observable": "S2 = 0.89 ± 0.02",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T (600 MHz 1H, 60.8 MHz 15N)",
+    "temperature": "41 °C",
+    "detection_window": "Single-field 15N relaxation of one indole N-H at 600 MHz, 41 °C; detects reorientation faster than tumbling; a side-chain rearrangement slower than tumbling, or one that leaves the N-H vector in place, is not seen"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The W48 indole N-H of reduced Cu(I) azurin has S2 0.89 ± 0.02, which the authors read as a side chain just as rigid as the majority of the backbone amides (sources_cache/10.1021_bi990624l.pdf, p. 12693, Table 1).",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020202618-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J43",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     10,
+     11,
+     37,
+     45,
+     88,
+     89,
+     90,
+     114
+    ],
+    "residues_author": "Residues 10, 11, 37, 45, 88-90 (Rex > 2 Hz, all around the His35 side chain; G45 9.5 Hz) and F114 (short T2 0.11 s, large T1 error); the paper names G37, G45, G88, G90 and F114 and gives 10, 11 and 89 by number (N10, D11, S89 in the mature sequence); 25 residues in total carried an Rex term, most below 1.5 Hz, list not printed",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128; UniProt P00282 precursor 21-148); checked I7, G9, N10, D11, H35, G37, M44, G45, H46, W48, K74, D77, G88, S89, G90, E91, Q107, Y108, F114, H117, L127, K128 against inputs/AZURIN.json.",
+    "functional_site": "His35 protonation site, the P36-G37 peptide plane and the M44-G45 peptide bond hydrogen-bonded to His35 N-epsilon2 (authors' interpretation); F114 in the copper loop is unexplained",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "41 °C; pH 5.5; 20 mM potassium phosphate; 2 mM uniformly 15N-labelled azurin, copper reduced to Cu(I) with sodium dithionite under argon; 90% H2O/10% D2O; 600 MHz (Bruker AMX); this is the RelaxDB sample (reference state since 2026-10-20)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Exchange contribution Rex to 15N T2 from single-field model-free fitting (CPMG spacing fixed at 1 ms, no dispersion sweep), converted to a rate with equation 4 using the 15N shift differences from the pH titration and the populations expected from the His35 pKa",
+    "observable": "Rex (2-9.5 Hz at the eight residues; raised T1/T2 ratios)",
+    "fit_model": "per-residue",
+    "kex": "k = 60 ± 30 s-1 printed as (kAB + kBA)/2, so kex = 120 ± 60 s-1; tau_ex = 8 ± 4 ms at pH 5.5 (model estimate from the broadening of G37, G88 and G90, not a fitted dispersion rate)",
+    "pB": "0.02-0.04 for the deprotonated form at pH 5.5, estimated from the pKa of 7.0 ± 0.1, not fitted",
+    "delta_omega": "340 Hz (G37), about 400 Hz (G88, G90) at 60.8 MHz 15N (about 5.6-6.6 ppm)",
+    "field": "14.1 T (600 MHz 1H, 60.8 MHz 15N)",
+    "temperature": "41 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the RelaxDB sample itself (reduced Cu(I), pH 5.5, 41 °C) the amides of N10, D11, G37, G45, G88, S89 and G90, all surrounding His35, carry exchange contributions of 2-9.5 Hz that the authors reproduce with the His35 protonation equilibrium (minor deprotonated form 2-4%, k = 60 ± 30 s-1, lifetime 8 ± 4 ms), and they state the process is slow on the chemical-shift timescale at both pH 7.0 and 5.5; computed regime kex/delta-omega = 120/(2 pi x 340) = 0.06, slow exchange; F114 in the copper loop is also broadened without an assigned mechanism, and Rex of about 1 Hz in the flap 53-79 is mentioned as possible weak us-ms motion (sources_cache/10.1021_bi990624l.pdf, pp. 12693-12695).",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020202618-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J44",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     9,
+     10,
+     11,
+     12,
+     35,
+     36,
+     37,
+     44,
+     45,
+     88,
+     89,
+     90,
+     91
+    ],
+    "residues_author": "G9-Q12, H35, P36-G37 peptide flip, M44-G45, G88-E91 (residues most affected between the pH 5.5 and pH 9.0 crystal structures)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128; UniProt P00282 precursor 21-148); checked I7, G9, N10, D11, H35, G37, M44, G45, H46, W48, K74, D77, G88, S89, G90, E91, Q107, Y108, F114, H117, L127, K128 against inputs/AZURIN.json.",
+    "functional_site": "His35 protonation site",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "previously published oxidised Cu(II) crystal structures at pH 5.5 and 9.0 compared with the reduced Cu(I) solution data of this paper; crystal buffers and temperatures not restated; no PDB identifiers given",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "comparison of two published X-ray structures with the pattern of exchange broadening",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The low-pH and high-pH oxidised crystal structures differ at the P36-G37 peptide bond (flipped so that G37 HN hydrogen-bonds His35 N-delta1 at high pH) and in loops 9-12 and 88-91, and all these residues except G9 are among the exchange-broadened amides of the reduced solution sample; this is the authors' structural model for the two exchanging forms, from oxidised crystals, without a solution structure of either form (sources_cache/10.1021_bi990624l.pdf, pp. 12690, 12695, Figure 6).",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020202618-r6"
    ],
    "conflicts_with": [],
    "evidence_strength": "structure_only",

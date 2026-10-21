@@ -25,6 +25,7 @@ open and to the closed reference chain. closure = d_open / (d_open + d_closed): 
                g+ (0..120), t (120..240), g- (240..360), per conformer; the base row lists every altloc with its occupancy.
     "cofactor": ["GDP", "GNP", ...]  comp ids reported in their own column and excluded from the ligand list, so the apo /
                ligand-bound call ignores them (K-Ras: GDP vs GTP analogue is a state, not a ligand).
+    "detect_fused_covalent": true  adds fused/covalent columns from local CIF mappings and covale links; off by default.
     "metadata_table": true  also writes <ENTRY>_metadata_all.md/.json, one row per mapped entry from metadata.json (including
                entries above the download cap): method, resolution, cofactor, ligands, partners, mutation (deposited field, and
                parsed from the title when the field is empty), class.
@@ -109,6 +110,156 @@ def ca_coords(cif_gz, chains, names=None, altlocs=False, side=None):
         return out, alt
     return out
 
+
+
+def cif_categories(cif_gz):
+    """Read the sequence mapping and connection categories, including quoted/multiline CIF values."""
+    wanted = {"_struct_ref", "_struct_ref_seq", "_struct_ref_seq_dif", "_entity_poly", "_entity_poly_seq",
+              "_struct_asym", "_struct_conn", "_pdbx_poly_seq_scheme"}
+    result, singles = {}, {}
+    with gzip.open(cif_gz, "rt") as fh:
+        text = fh.read()
+    # RCSB separates categories with #; retain only relevant blocks before tokenizing the large atom table.
+    for block in re.split(r"^#\s*$", text, flags=re.M):
+        if not any(re.search(r"^" + category + r"\.", block, re.M) for category in wanted):
+            continue
+        tokens, multiline = [], None
+        for line in block.splitlines():
+            if line.startswith(";"):
+                if multiline is None:
+                    multiline = [line[1:]]
+                else:
+                    tokens.append(("\n".join(multiline), True)); multiline = None
+                continue
+            if multiline is not None:
+                multiline.append(line); continue
+            for match in re.finditer(r"'(.*?)'(?=\s|$)|\"(.*?)\"(?=\s|$)|(\S+)", line):
+                if match.group(3) and match.group(3).startswith("#"):
+                    break
+                tokens.append((next(v for v in match.groups() if v is not None), match.group(3) is None))
+        i = 0
+        def control(token):
+            return not token[1] and (token[0].startswith(("_", "data_")) or token[0] in ("loop_", "stop_"))
+        while i < len(tokens):
+            token, quoted = tokens[i]
+            if token == "loop_" and not quoted:
+                i += 1; fields = []
+                while i < len(tokens) and tokens[i][0].startswith("_") and not tokens[i][1]:
+                    fields.append(tokens[i][0]); i += 1
+                if not fields:
+                    raise ValueError("CIF loop has no fields")
+                while i < len(tokens) and not control(tokens[i]):
+                    values = tokens[i:i + len(fields)]
+                    if len(values) != len(fields) or any(control(v) for v in values):
+                        raise ValueError("Incomplete CIF loop row")
+                    category = fields[0].split(".")[0]
+                    if category in wanted:
+                        result.setdefault(category, []).append({f.split(".", 1)[1]: v[0] for f, v in zip(fields, values)})
+                    i += len(fields)
+            elif token.startswith("_") and not quoted:
+                category, field = token.split(".", 1)
+                if i + 1 >= len(tokens) or control(tokens[i + 1]):
+                    raise ValueError("Missing CIF item value")
+                if category in wanted:
+                    singles.setdefault(category, {})[field] = tokens[i + 1][0]
+                i += 2
+            else:
+                i += 1
+    for category, row in singles.items():
+        result.setdefault(category, []).append(row)
+    return result
+
+
+def tag_linker(seq):
+    """Recognize common short cloning scars, His/epitope tags and flexible tag linkers."""
+    tags = ("WSHPQFEK", "DYKDDDDK", "YPYDVPDYA", "EQKLISEEDL", "ENLYFQG", "LEVLFQGP", "LVPRGS")
+    for tag in tags:
+        seq = seq.replace(tag, "")
+    seq = re.sub(r"H{4,}", "", seq)
+    return not seq or bool(re.fullmatch(r"[GSAHM]*", seq))
+
+
+def fused_covalent(cif_gz, chains, accession):
+    """Return deposited unmapped segments and covalent connections for author chain IDs."""
+    data = cif_categories(cif_gz)
+    out = {c: {"fused": [], "covalent": []} for c in chains}
+    refs = {r["id"]: r for r in data.get("_struct_ref", [])}
+    poly = {r["entity_id"]: r for r in data.get("_entity_poly", [])}
+    asym = {r["id"]: r["entity_id"] for r in data.get("_struct_asym", [])}
+    seqs = {}
+    for r in data.get("_entity_poly_seq", []):
+        seqs.setdefault(r["entity_id"], {})[int(r["num"])] = AA1.get(r["mon_id"], "X")
+    for entity, r in poly.items():
+        if entity not in seqs:
+            seq = re.sub(r"\s+", "", r.get("pdbx_seq_one_letter_code_can", r.get("pdbx_seq_one_letter_code", "")))
+            seq = re.sub(r"\(([^)]+)\)", lambda m: AA1.get(m[1], "X"), seq)
+            seqs[entity] = dict(enumerate(seq, 1))
+    for chain in chains:
+        entity = next((e for e, r in poly.items() if chain in r.get("pdbx_strand_id", "").split(",")), None)
+        seq = seqs.get(entity, {})
+        mapped, tags = set(), set()
+        for r in data.get("_struct_ref_seq", []):
+            ref = refs.get(r.get("ref_id"), {})
+            acc = r.get("pdbx_db_accession", ref.get("pdbx_db_accession"))
+            if acc == accession and chain in r.get("pdbx_strand_id", "").split(","):
+                try:
+                    mapped.update(range(int(r["seq_align_beg"]), int(r["seq_align_end"]) + 1))
+                except (ValueError, KeyError):
+                    pass
+        if not mapped:
+            for ref in refs.values():
+                if ref.get("entity_id") != entity or ref.get("pdbx_db_accession") != accession:
+                    continue
+                segment = re.sub(r"\s+", "", ref.get("pdbx_seq_one_letter_code", ""))
+                full = "".join(seq[i] for i in sorted(seq))
+                if segment not in ("", "?", ".") and full.count(segment) == 1:
+                    start = full.index(segment) + 1
+                    mapped.update(range(start, start + len(segment)))
+        for r in data.get("_struct_ref_seq_dif", []):
+            if r.get("pdbx_pdb_strand_id") == chain and re.search(r"expression tag|cloning artifact|linker|purification tag", r.get("details", ""), re.I):
+                try:
+                    tags.add(int(r["seq_num"]))
+                except (KeyError, ValueError):
+                    pass
+        if mapped:
+            runs = []
+            for i in sorted(set(seq) - mapped - tags):
+                if not runs or i != runs[-1][-1] + 1:
+                    runs.append([])
+                runs[-1].append(i)
+            for run in runs:
+                segment = "".join(seq[i] for i in run)
+                if len(run) >= 4 and not tag_linker(segment):
+                    out[chain]["fused"].append(f"{segment} (label_seq_id {run[0]}-{run[-1]})")
+    label_auth = {}
+    for r in data.get("_pdbx_poly_seq_scheme", []):
+        label_auth[r["asym_id"]] = r.get("pdb_strand_id", "")
+    for label, entity in asym.items():
+        auths = poly.get(entity, {}).get("pdbx_strand_id", "").split(",")
+        if label not in label_auth and len(auths) == 1 and auths[0]:
+            label_auth[label] = auths[0]
+    standard = set(AA1) - {"MSE"}
+    for r in data.get("_struct_conn", []):
+        if r.get("conn_type_id") != "covale":
+            continue
+        ends = []
+        for n in (1, 2):
+            prefix = f"ptnr{n}_"
+            label = r.get(prefix + "label_asym_id", "")
+            auth = r.get(prefix + "auth_asym_id")
+            if auth in (None, "?", "."):
+                auth = label_auth.get(label) or label
+            comp = r.get(prefix + "label_comp_id", r.get(prefix + "auth_comp_id", "?"))
+            nonpoly = asym.get(label) not in poly and r.get(prefix + "label_seq_id", ".") in (".", "?")
+            residue = r.get(prefix + "auth_seq_id", r.get(prefix + "label_seq_id", "?"))
+            ends.append((auth, asym.get(label) in poly or not nonpoly, nonpoly or comp not in standard,
+                         f"{auth}:{comp}{residue}"))
+        for a, b in ((ends[0], ends[1]), (ends[1], ends[0])):
+            if a[0] in out and a[1] and b[2]:
+                value = f"{a[3]}--{b[3]} ({r.get('id', 'covale')})"
+                if value not in out[a[0]]["covalent"]:
+                    out[a[0]]["covalent"].append(value)
+    return out
 
 def renumber(d, rules):
     """apply [[lo, hi, delta], ...] to a {auth_seq_id: value} dict; residues outside every rule are dropped."""
@@ -226,6 +377,7 @@ def main():
     use_alt, chi_res, use_cof = bool(CFG.get("altlocs")), list(CFG.get("sidechain_chi1") or []), bool(CFG.get("cofactor"))
     chains, resnames, renum = {}, {}, CFG.get("renumber") or {}
     altca, sidec, conf_of = {}, {}, {}
+    detect, attachments = bool(CFG.get("detect_fused_covalent")), {}
     for pid, m in md.items():
         cif = WORK / "structures" / e / "cif" / f"{pid}.cif.gz"
         if not cif.exists():
@@ -233,6 +385,8 @@ def main():
         mine = [c for pe in m.get("polymer_entities") or []
                 if any(r.get("database_accession") == CFG["accession"] for r in (pe["rcsb_polymer_entity_container_identifiers"].get("reference_sequence_identifiers") or []))
                 for c in pe["rcsb_polymer_entity_container_identifiers"].get("auth_asym_ids") or []]
+        if detect:
+            attachments[pid] = fused_covalent(cif, mine, CFG["accession"])
         nm, sd = {}, ({} if chi_res else None)
         got = ca_coords(cif, mine, nm, altlocs=use_alt, side=sd)
         cas, alts = got if use_alt else (got, {})
@@ -318,6 +472,12 @@ def main():
         grow = (m.get("exptl_crystal_grow") or [{}])[0] or {}
         nmr = (m.get("pdbx_nmr_exptl_sample_conditions") or [{}])[0] or {}
         row_extra = {}
+        if detect:
+            row_extra.update(attachments[pid][ch])
+            if row_extra["covalent"]:
+                cls = "ligand-bound (covalent)"
+            elif row_extra["fused"]:
+                cls = "ligand-bound (fused)"
         if verify:
             shared = [i for i in core + mobile if i in resnames[key] and i in ref_names]
             row_extra["n_resname_mismatch"] = sum(resnames[key][i] != ref_names[i] for i in shared)
@@ -344,7 +504,8 @@ def main():
     out = WORK / "outputs/pdb_states"; out.mkdir(parents=True, exist_ok=True)
     (out / f"{e}.json").write_text(json.dumps({"config": CFG, "chains": rows}, indent=1))
     extra_cols = ("| cofactor " if use_cof else "") + ("| altloc (occ) " if use_alt else "") + ("| chi1 " if chi_res else "")
-    extra_sep = "|---" * (use_cof + use_alt + bool(chi_res))
+    extra_cols += "| fused | covalent " if detect else ""
+    extra_sep = "|---" * (use_cof + use_alt + bool(chi_res) + 2 * detect)
     lines = [f"# {e}: deposited structures between open {CFG['open']} and closed {CFG['closed']}", "",
              CFG.get("note", ""), "", f"| chain | class | ligands / partners | mutation | pH | T (K) | Å | RMSD open | RMSD closed | closure {extra_cols}|",
              f"|---|---|---|---|---|---|---|---|---|---{extra_sep}|"]
@@ -356,6 +517,8 @@ def main():
             ex += f"| {r['altloc']}{' (' + str(r['altloc_occ']) + ')' if r['altloc_occ'] is not None else ''} "
         if chi_res:
             ex += f"| {r['chi1'] or '-'} "
+        if detect:
+            ex += f"| {'; '.join(r['fused']) or '-'} | {'; '.join(r['covalent']) or '-'} "
         lines.append(f"| {r['chain']} | {r['class']} | {', '.join(r['ligands'] + r['partners']) or '-'}{' (' + ','.join(r['ions']) + ')' if r['ions'] else ''} | {r['mutation'] or '-'} | {r['pH'] or '-'} | {r['temp_K'] or '-'} | {r['resolution'] or '-'} | {r['rmsd_open']} | {r['rmsd_closed']} | {r['closure']} {ex}|")
     (out / f"{e}.md").write_text("\n".join(lines) + "\n")
     summary = {"entry": e, "chains": len(rows), "apo": sum(r["class"] == "apo" for r in rows)}

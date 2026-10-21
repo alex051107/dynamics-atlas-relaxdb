@@ -2,21 +2,22 @@
  "protein_summary": {
   "entry_id": "CD9K",
   "per_window": {
-   "ps-ns": "Unresolved, abstract-only throughout. Apo (variant not stated): the C-terminal loop G57-E60 has lower order parameters than in metal-bound states (J12, r2); Cd2+ in site II raises them (J14, r3); Ca2+-loaded averages S2 0.83 (loops), 0.85 (helices), 0.59 (linker) (J16, r1); methyls split into proximal and distal classes on Ca2+ binding (J20, J21, r17, r18); an engineered-loop mutant is stiffer than P43G (J34, r14).",
-   "us-ms": "Unresolved, abstract-only. Apo and (Cd2+)1 states show slower fluctuations in the empty N-terminal loop, faster with Cd2+ (J13, J15; r2, r3). Dicalcium and Ca/La P43M show millisecond equilibria in the linker (38, 42-44, 46) and site I (18, 19) by R1rho (J27, J28; r22, r23), lost in 2 M GdmHCl (J29; r39, r40). No dispersion or R1rho study of P43G or of the native protein is in the evidence.",
+   "ps-ns": "Reference state (apo P43G, 300 K, pH 6.0, 11.74 T; RelaxDB source paper doi:10.1021/bi00088a039, full text): dynamic_in_window; loop II G57-E60 has the lowest order parameters and the linker K41-S44 and C-terminal Q75 carry a slower internal component (tau_e 74-283 ps, Q75 592 ps conditional) (J12, E-r1). (Cd2+)1 P43G: loop II restricted, linker and C-terminus still flexible (J14, E-r2). (Ca2+)2 P43G, single-field reanalysis of the 1992 data: linker G42/G43 and S74/Q75 flexible, loop II restricted (J36, E-r3); the 1992 two-field averages S2 0.83 (loops), 0.85 (helices), 0.59 (linker) are abstract-only (J16, r1). Methyls split into proximal and distal classes on Ca2+ binding (J20, J21, r17, r18, abstracts); an engineered-loop mutant is stiffer than P43G (J34, r14).",
+   "us-ms": "Reference state (apo P43G, 300 K, pH 6.0, single field, full text): exchange detected but unresolved by the single-field rule; 14 amides need an Rex term, A15 2.39 s-1 and D19 1.32 s-1 in loop I the largest, then K55 and V61 1.11 s-1 in loop II, attributed by the authors to intrinsic conformational heterogeneity (Ca2+ contamination below 0.5%); no rate or population (J13, E-r4). (Cd2+)1 P43G: strong exchange broadening in the unoccupied loop I (A14, K16, G18, D19, Q22; E17, S24 lost; A15, L23 unfittable), assigned to substates of the singly loaded protein, not Cd2+ exchange (J15, E-r5). (Ca2+)2 P43G: no significant exchange, 42 fitted terms all at or below 0.33 s-1 (J37, E-r6, no_evidence_in_window). Dicalcium and Ca/La P43M show millisecond equilibria in the linker (38, 42-44, 46) and site I (18, 19) by R1rho (J27, J28; r22, r23), lost in 2 M GdmHCl (J29; r39, r40), abstracts. No dispersion or R1rho study of P43G is in the evidence.",
    "slower_than_ms": "Native Pro43 calbindin (Ca2+-loaded) has two peak sets, 3:1, linked by Gly42-Pro43 cis/trans isomerism with cis-to-trans 0.2 s-1 at 25 °C (J1; r4, r9, r36; abstracts). The entry construct P43G shows no second peak set (J6; r5, r10). Wild type and P43G do not form domain-swapped dimers in crystallization drops, while P43M variants do over days (J5, J11, J31).",
    "undetermined": "Hydrogen exchange: apo amides exchange on average 220-fold faster than in the Ca2+ form, Ca2+ and Cd2+ protect many amides (J17-J19); apo P43G shows faster amide exchange and ring rotation (J7). Static or indirect: crystal cis/trans conformers (J2), minor A form fold (J3), Ca2+ off-rate 3 s-1 (J4, binding kinetics), apo, Ca2+ and Cd2+ P43G structures (J8-J10), DPC micelle and DPC binding (J22, J23), lanthanide restraints and Ce3+ substitution kinetics (J24), apo/holo comparison (J25), deamidation isoforms as an artefact lead (J26), N56A, E65Q and F36G/P43M mutants (J30, J32, J33), frozen 19F-ENDOR (J35). Not judged: Ca2+-exchange mutants M1-M4 (r25-r28), lysine methylation (r35), pseudo-EF-hand mutants (CD9K-CD9K_20261020030739-r2), Mg2+- and Mn2+-bound crystals of an unstated variant (CD9K-CD9K_20261020030739-r6, r7), E60D crystal (CD9K-CD9K_20261020030739-r8), homolog comparison (CD9K-CD9K_20261020030739-r9) and the P43MG tether-helix mutant (CD9K-CD9K_20261020030739-r16)."
   },
-  "wt_apo_answer": "Unknown: no readable study measures microsecond-millisecond exchange in Ca2+-free calbindin D9k of either the native Pro43 sequence or the entry's P43G variant; the only apo relaxation study is read as an abstract (11.74 T, variant not stated) and reports slower fluctuations in the empty N-terminal binding loop with no residues, rate or population, and the slow cis/trans exchange with two peak sets belongs to native Pro43 calbindin in the Ca2+-loaded state, not to P43G.",
+  "wt_apo_answer": "Yes, exchange is detected in the reference state but without a rate or population: in the RelaxDB source sample (apo P43G calbindin D9k, the entry sequence, 4 mM, 300 K, pH 6.0, no buffer, 11.74 T, single field) 14 backbone amides need a model-free exchange term, largest at A15 (2.39 s-1) and D19 (1.32 s-1) in the unoccupied site I loop and at K55 and V61 (1.11 s-1) in loop II, which the authors attribute to intrinsic conformational heterogeneity after excluding exchange with the below-0.5% Ca2+-loaded contaminant (J13, full text); single-field Rex can also come from anisotropic tumbling, so the call is 'possible' and a dispersion experiment would confirm. P43G exists as a single isoform, so the two-peak cis/trans spectra of native Pro43 calbindin (Ca2+-loaded, J1) do not apply to the entry construct.",
   "open_conflicts": [
-   "Construct of the apo relaxation study (r2): its abstract names no variant, but the 1998 engineered-loop abstract (r14 source) calls the earlier apo study P43G; the judgments keep r2 as 'variant not stated'.",
-   "Native apo heterogeneity: the apo P43G assignment abstract (r11 source) says the wild type was not assigned because of conformational heterogeneity, which suggests cis/trans peak doubling also in the apo native protein, but no row shows apo peak sets or a rate."
+   "Resolved on 2026-10-20: the construct of the apo and (Cd2+)1 relaxation study is P43G (p. 9833 'All current studies are carried out on the P43G mutant'; Table I title), so J12-J15 now carry the entry construct; the abstract-only rows r2 and r3 ('variant not stated') are superseded.",
+   "Native apo heterogeneity: the apo P43G assignment abstract (r11 source) says the wild type was not assigned because of conformational heterogeneity, which suggests cis/trans peak doubling also in the apo native protein, but no row shows apo peak sets or a rate.",
+   "Linker response to ions: the one-field reanalysis of the Ca2+-saturated data gives different G42/G43/S44/Q75 parameters from the 1992 two-field fit, so whether the linker stiffens on ion binding is unresolved (J36 versus J16)."
   ],
   "questions_for_gina": [
-   "Which sample is the RelaxDB CD9K entry: apo or Ca2+-loaded, and is it the P43G variant (the entry sequence carries G43) from the 1992 Ca2+-loaded or 1993 apo/(Cd2+)1 15N relaxation studies?",
-   "For the alternate-APO table, should the P43G entry construct be the reference (no cis/trans isomerism) or should native Pro43 calbindin count, where two peak sets in slow exchange are reported in the Ca2+-loaded state?"
+   "Which sample is the RelaxDB CD9K entry: the apo P43G sample of the 1993 study (4 mM, 300 K, pH 6.0, 11.74 T), its (Cd2+)1 sample, or the 1992 Ca2+-loaded P43G data?",
+   "The apo P43G sample shows single-field model-free Rex at 14 amides (A15 2.39 s-1, D19 1.32 s-1) with no rate or population; the authors themselves say further kinetic analysis is not possible. Does single-field Rex count as us-ms exchange for the alternate-APO call (applied here as 'possible' with the anisotropic-tumbling caveat), and should the P43G construct be the reference rather than native Pro43 calbindin with its cis/trans two-peak state?"
   ],
-  "buffer_note": "Almost every calbindin row is abstract-only, so temperature, pH and buffer are mostly unknown; r15 and r16 state pH 7.5 and 25 °C. The full-text domain-swapping work (B-r18 to B-r25) is in acidic, concentrated crystallization drops (pH about 4.8-5.5, ammonium sulfate, Ca2+, sometimes 100 mM Mg2+) and does not describe solution NMR conditions. The ENDOR rows are frozen at 10 K with Gd3+ in a Ca2+ site. is_wt_apo is false for every judgment: no apo row concerns the native Pro43 protein, and P43G rows are labelled as the mutant they are. Row-id shorthand: B-rN = CD9K-CD9K_20261020030739-rN."
+  "buffer_note": "The RelaxDB source paper (doi:10.1021/bi00088a039) is now full text (E-rN = CD9K-CD9K_20261020211504-rN): apo and (Cd2+)1 P43G at 4 mM, 300 K, pH 6.0 adjusted with HCl, no buffer solute, 95% H2O/5% D2O, argon-purged, 11.74 T, 1 ms CPMG spacing, single field; the Ca2+-saturated data are a reanalysis of the 1992 sample whose composition is not restated. Its abstract-only rows CD9K-r2 and CD9K-r3 are superseded and no longer cited. Most other calbindin rows remain abstract-only, so their temperature, pH and buffer are unknown; r15 and r16 state pH 7.5 and 25 °C. The full-text domain-swapping work (B-r18 to B-r25) is in acidic, concentrated crystallization drops (pH about 4.8-5.5, ammonium sulfate, Ca2+, sometimes 100 mM Mg2+). The ENDOR rows are frozen at 10 K with Gd3+ in a Ca2+ site. is_wt_apo marks the apo P43G judgments (J12, J13) because P43G is the entry construct (contract rule added 2026-10-20); (Cd2+)1 and (Ca2+)2 are bound states and native Pro43 rows are a different construct. Second reads of the E rows: all six confirmed against the PDF (ledger/adjudication_pdf_batch1.json); the Claude reader flagged E-r6's class (single-field Rex assessment kept as nmr_exchange_broadening for consistency). Row-id shorthand: B-rN = CD9K-CD9K_20261020030739-rN."
  },
  "judgments": [
   {
@@ -457,42 +458,47 @@
    "entry_id": "CD9K",
    "region": {
     "residues_entry": [
+     41,
+     42,
+     43,
+     44,
      57,
      58,
      59,
-     60
+     60,
+     75
     ],
-    "residues_author": "G57, D58, G59, E60 (C-terminal Ca2+-binding loop)",
+    "residues_author": "Loop II G57-E60 (lowest apo order parameters, restricted on ion binding); linker K41, G42, G43, S44 and C-terminal Q75 with a slower internal component (tau_e 74-283 ps; Q75 592 ± 27 ps conditional, Sf2 fixed at 0.70); 71 residues in Table I in total (K1 solvent-exchanged, P3/P20/P37 no amide)",
     "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
-    "functional_site": "Ca2+ site II loop",
+    "functional_site": "Ca2+ site II loop (G57-E60); inter-EF-hand linker",
     "residue_basis": "author_listed"
    },
    "time_window": "ps-ns",
    "sample_state": {
-    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "construct": "mutant:P43G (the entry sequence; the paper states that all current studies use P43G)",
     "binding_state": "apo",
-    "conditions": "apo; 15N R1, R2 and NOE at 11.74 T; temperature and pH not in the abstract",
-    "is_wt_apo": false
+    "conditions": "300 K; pH 6.0 adjusted with 1 M HCl, no buffer solute; 95% H2O/5% D2O; 4 mM uniformly 15N-labelled P43G; argon-purged; 11.74 T (Bruker AMX 500), single field, 1 ms CPMG spacing; apo, both ion sites unoccupied (Ca2+-loaded contamination estimated below 0.5%)",
+    "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N relaxation with model-free analysis",
-    "observable": "S2",
+    "method": "15N R1, R2 and {1H}-15N NOE at one field with original and extended Lipari-Szabo model-free fitting (tau_m 4.10 ± 0.01 ns; statistical model selection)",
+    "observable": "S2, tau_e",
     "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
     "field": "11.74 T",
-    "temperature": "",
+    "temperature": "300 K",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "Abstract only: in the apo state the C-terminal binding loop G57-E60 has clearly lower order parameters than in the metal-bound states, while the N-terminal loop's fast motion does not change with ion binding.",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text of the RelaxDB source paper (Akke, Skelton, Kördel, Palmer and Chazin 1993): in apo P43G calbindin D9k at 300 K, pH 6.0 the C-terminal binding loop G57-E60 has the lowest order parameters and its fast fluctuations are strongly restricted by ion binding, whereas loop I changes little and helix III only modestly; the linker K41-S44 and the C-terminus carry a slower internal component of 74-283 ps (Q75 592 ps, precision unknown) (sources_cache/10.1021_bi00088a039.pdf, pp. 9836-9840, Tables I-II, Figure 3).",
    "evidence_rows": [
-    "CD9K-r2"
+    "CD9K-CD9K_20261020211504-r1"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -500,37 +506,54 @@
    "judgment_id": "CD9K-J13",
    "entry_id": "CD9K",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "unoccupied N-terminal ion-binding loop (no residues listed)",
+    "residues_entry": [
+     8,
+     14,
+     15,
+     16,
+     17,
+     19,
+     30,
+     35,
+     51,
+     54,
+     55,
+     61,
+     68,
+     73,
+     75
+    ],
+    "residues_author": "Table I apo Rex (s-1): G8 0.48, A14 0.44, A15 2.39, K16 0.40, E17 0.89, D19 1.32, L30 0.33, E35 0.56, E51 0.56, D54 0.33, K55 1.11, V61 1.11, V68 0.32, I73 0.65; Q75 R2 excluded from the fit because of exchange (no value)",
     "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
-    "functional_site": "Ca2+ site I loop"
+    "functional_site": "Ca2+ site I loop (A14-E17, D19) and site II loop (D54, K55, V61) among the exchange sites",
+    "residue_basis": "author_listed"
    },
    "time_window": "us-ms",
    "sample_state": {
-    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "construct": "mutant:P43G (the entry sequence; the paper states that all current studies use P43G)",
     "binding_state": "apo",
-    "conditions": "apo; 15N relaxation at 11.74 T; abstract only",
-    "is_wt_apo": false
+    "conditions": "300 K; pH 6.0 adjusted with 1 M HCl, no buffer solute; 95% H2O/5% D2O; 4 mM uniformly 15N-labelled P43G; argon-purged; 11.74 T (Bruker AMX 500), single field, 1 ms CPMG spacing; apo, both ion sites unoccupied (Ca2+-loaded contamination estimated below 0.5%)",
+    "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N relaxation with model-free analysis",
-    "observable": "exchange contribution (slower fluctuations)",
-    "fit_model": "none",
+    "method": "Rex term selected statistically in single-field model-free fits of 15N R1/R2/NOE (fixed 1 ms CPMG spacing, sensitive to exchange rates comparable to 2000 s-1 by the authors' argument); no dispersion experiment",
+    "observable": "Rex (0.32-2.39 s-1 at 14 residues)",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
     "field": "11.74 T",
-    "temperature": "",
+    "temperature": "300 K",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "Abstract only: significant fluctuations on slower timescales are detected in the unoccupied N-terminal loop of the apo state, with no residues, rate or population given.",
+   "reason": "Full text of the RelaxDB source paper: 14 apo P43G amides need an exchange term (A15 2.39 s-1 and D19 1.32 s-1 in loop I the largest), which the authors attribute to intrinsic conformational heterogeneity because the Ca2+-loaded contaminant is below 0.5% and Ca2+ koff is below 20 s-1; exchange is detected in the reference state, but no rate, population, shift difference or substate structure follows, and single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm (sources_cache/10.1021_bi00088a039.pdf, Table I p. 9838, pp. 9841-9842).",
    "evidence_rows": [
-    "CD9K-r2"
+    "CD9K-CD9K_20261020211504-r4"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -539,42 +562,46 @@
    "entry_id": "CD9K",
    "region": {
     "residues_entry": [
+     41,
+     42,
+     43,
      57,
      58,
      59,
-     60
+     60,
+     75
     ],
-    "residues_author": "G57-E60 (C-terminal loop, Cd2+-bound)",
+    "residues_author": "Loop II G57-E60 (fluctuation amplitudes reduced relative to apo); linker K41, G42, G43 (tau_e 95-157 ps) and Q75 (305 ± 14 ps conditional); I9/L39 overlapped; A15, E17, L23, S24 without model-free parameters",
     "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
-    "functional_site": "Ca2+ site II loop",
+    "functional_site": "Ca2+ site II loop; inter-EF-hand linker",
     "residue_basis": "author_listed"
    },
    "time_window": "ps-ns",
    "sample_state": {
-    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "construct": "mutant:P43G (the entry sequence; the paper states that all current studies use P43G)",
     "binding_state": "bound:Cd2+ (site II)",
-    "conditions": "(Cd2+)1; 15N relaxation at 11.74 T; abstract only",
+    "conditions": "300 K; pH 6.0 adjusted with 1 M HCl, no buffer solute; 95% H2O/5% D2O; 4 mM uniformly 15N-labelled P43G; argon-purged; 11.74 T (Bruker AMX 500), single field, 1 ms CPMG spacing; (Cd2+)1, one Cd2+ in the C-terminal site II, site I unoccupied",
     "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
-    "method": "15N relaxation with model-free analysis",
-    "observable": "S2",
+    "method": "15N R1, R2 and {1H}-15N NOE at one field with original and extended Lipari-Szabo model-free fitting (tau_m 4.10 ns)",
+    "observable": "S2, tau_e",
     "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
     "field": "11.74 T",
-    "temperature": "",
+    "temperature": "300 K",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "Abstract only: Cd2+ in site II raises the C-terminal loop order parameters relative to apo.",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text: one Cd2+ in site II restricts the fast fluctuations of loop II G57-E60 and modestly those of helix III, while the linker (K41-G43, tau_e 95-157 ps) and the C-terminus stay flexible; cadmium is a surrogate for the half-loaded calcium state (sources_cache/10.1021_bi00088a039.pdf, pp. 9836-9840, Tables I-II).",
    "evidence_rows": [
-    "CD9K-r3"
+    "CD9K-CD9K_20261020211504-r2"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -582,37 +609,65 @@
    "judgment_id": "CD9K-J15",
    "entry_id": "CD9K",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "unoccupied N-terminal ion-binding loop (no residues listed)",
+    "residues_entry": [
+     8,
+     12,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     27,
+     28,
+     29,
+     34,
+     51,
+     53,
+     55,
+     56,
+     62,
+     65,
+     68,
+     70,
+     71,
+     75
+    ],
+    "residues_author": "Substantial Rex at A14, K16, G18, D19, Q22 in loop I; E17 and S24 undetected in 1H; A15 and L23 severely 15N-broadened (no model-free fit); 21 numeric Table I Rex entries (G8, K12, A14, K16, G18, D19, N21, Q22, E27, L28, K29, T34, E51, L53, K55, N56, S62, E65, V68, V70, K71); Q75 R2 excluded",
     "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
-    "functional_site": "Ca2+ site I loop"
+    "functional_site": "Ca2+ site I loop (unoccupied; A14-S24)",
+    "residue_basis": "author_listed"
    },
    "time_window": "us-ms",
    "sample_state": {
-    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "construct": "mutant:P43G (the entry sequence; the paper states that all current studies use P43G)",
     "binding_state": "bound:Cd2+ (site II)",
-    "conditions": "(Cd2+)1; 15N relaxation at 11.74 T; abstract only",
+    "conditions": "300 K; pH 6.0 adjusted with 1 M HCl, no buffer solute; 95% H2O/5% D2O; 4 mM uniformly 15N-labelled P43G; argon-purged; 11.74 T (Bruker AMX 500), single field, 1 ms CPMG spacing; (Cd2+)1, site I unoccupied",
     "is_wt_apo": false
    },
    "direction": "detected",
    "detection": {
-    "method": "15N relaxation with model-free analysis",
-    "observable": "exchange contribution (slower fluctuations)",
-    "fit_model": "none",
+    "method": "Rex term in single-field model-free fits of 15N R1/R2/NOE plus missing and broadened 1H-15N cross-peaks; no dispersion experiment",
+    "observable": "Rex (21 numeric values; larger than apo in loop I) and missing or broadened peaks",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
     "field": "11.74 T",
-    "temperature": "",
+    "temperature": "300 K",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "Abstract only: slower fluctuations persist in the empty N-terminal loop when Cd2+ fills site II, with greater apparent rates than in apo; the rate model is unavailable.",
+   "reason": "Full text: with Cd2+ in site II the unoccupied loop I shows strong exchange broadening (A14, K16, G18, D19, Q22 substantial Rex; E17, S24 lost; A15, L23 too broad to fit), which the authors assign to interconversion among conformers of the singly loaded protein rather than Cd2+ binding exchange (Cd2-loaded fraction below 0.05, koff 700 s-1, Rex uncorrelated with the shift difference squared, r = 0.07) and read as more frequent sampling of loop-I substates than in apo; they state that further kinetic analysis is not possible, and single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm (sources_cache/10.1021_bi00088a039.pdf, pp. 9836, 9841-9842, Table I).",
    "evidence_rows": [
-    "CD9K-r3"
+    "CD9K-CD9K_20261020211504-r5"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -1450,6 +1505,93 @@
    ],
    "conflicts_with": [],
    "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J36",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     42,
+     43,
+     57,
+     58,
+     59,
+     60,
+     74,
+     75
+    ],
+    "residues_author": "Extended model-free residues G42 (tau_e 88 ± 4 ps), G43 (116 ± 5 ps), S74 (150 ± 7 ps), Q75 (392 ± 19 ps conditional); loop II G57-E60 as the four-residue mean compared across states; full calcium profile figure only",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker; Ca2+ site II loop",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence; the paper states that all current studies use P43G)",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "Ca2+-saturated P43G; previously acquired 15N R1/R2/NOE of Kördel et al. 1992 reanalysed with only the 11.74 T data; sample composition, temperature and pH not restated in this paper; tau_m 4.25 ± 0.01 ns",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Single-field reoptimisation of the 1992 calcium-saturated relaxation data with the same model-selection criteria as apo and (Cd2+)1",
+    "observable": "S2, tau_e",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74 T",
+    "temperature": "300 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The paper's own single-field reanalysis of the Ca2+-saturated data keeps linker (G42, G43) and C-terminal (S74, Q75) flexibility while loop II G57-E60 is more restricted than in apo; the linker parameters differ between the one-field and two-field fits, so the ion dependence of the linker is unresolved (sources_cache/10.1021_bi00088a039.pdf, p. 9837, Table II, Figures 3-4).",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020211504-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J37",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "42 residues received an Rex term in the single-field reoptimisation, identities not listed; none above 0.33 s-1",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence; the paper states that all current studies use P43G)",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "Ca2+-saturated P43G; 1992 relaxation data reanalysed at 11.74 T only; sample composition, temperature and pH not restated",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Rex terms in the single-field model-free reoptimisation of the 1992 Ca2+-saturated 15N R1/R2/NOE data",
+    "observable": "Rex (all 42 fitted terms at or below 0.33 s-1)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74 T",
+    "temperature": "300 K",
+    "detection_window": "Single-field 15N R2 at 11.74 T with 1 ms CPMG spacing; by the authors' argument sensitive to exchange with rates comparable to 2000 s-1 that produce Rex above the model-selection threshold; it cannot see exchange with Rex below about 0.3 s-1, exchange refocused by the 1 ms spacing, or exchange at unanalysed amides; conditions of the 1992 sample not restated"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "In the Ca2+-loaded protein the 42 fitted exchange terms are all at or below 0.33 s-1 and do not change the model-free parameters, and the authors conclude that no significant conformational-exchange contribution was identified for calcium-loaded calbindin, in contrast to the apo and (Cd2+)1 states (sources_cache/10.1021_bi00088a039.pdf, pp. 9837, 9842).",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020211504-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   }

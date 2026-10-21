@@ -2,18 +2,18 @@
  "protein_summary": {
   "entry_id": "17266",
   "per_window": {
-   "ps-ns": "unresolved: a 2011 backbone 15N relaxation study of the isolated apo domain exists (SILB-J1, r1; the 2L55 deposition lists T1, T2, T1rho and NOE at 298 K, pH 6.0), but only the abstract is readable and it gives no values or flexible residues.",
-   "us-ms": "unresolved: no dispersion or exchange-broadening study was found, and the T2/T1rho data that could show exchange sit in the unread full text (SILB-J2, r1). The RelaxDB missing peaks cannot be read as exchange from this evidence.",
-   "slower_than_ms": "unresolved (search_insufficient): HDX-MS, time-resolved, multitemperature crystallography, FRET and EPR searches returned zero hits (SILB-J3); closed-access full texts not checked.",
-   "undetermined": "No dynamics judgment possible. The metal-bound (Ag+/Cu+) state has no dynamics evidence (SILB-J4, r1). The 2016 paper studies a different construct, the N-terminal plus membrane-proximal domains (SILB-J5, r2), and its finding that the C-terminal site fills first is binding, not motion (SILB-J6, r2)."
+   "ps-ns": "dynamic_in_window at the N terminus and two surface loops, on an otherwise rigid domain. RelaxDB source paper now read in full (apo, 25 °C, pH 6.0, 50 mM MES, 1.0 mM, 600 MHz): S2 above 0.8 for most of the 63 fitted residues with an internal correlation time of about 70 ps, lower S2 at the N terminus and in the loops between strands 3 and 4 and between 4 and 5; an axially anisotropic diffusion tensor was preferred over the isotropic tau_c of 6.28 ns (SILB-J1). Per-residue values exist only in Figure S6.",
+   "us-ms": "unresolved by the single-field Rex rule: in the apo reference state exchange terms are confined to the metal-binding loop, at Ala24, Gln29, Gly31, Ala32, Met33 and Met35 (fitted Rex), with raised R2 also at His22, highest at Gln29 (about 6 s-1) and Met35 (about 4.3 s-1), with apo R2 raised to 11-15 s-1 against a baseline near 8 s-1 (SILB-J2); no exchange term is fitted outside that loop (SILB-J9, measured_not_detected). One equivalent of Ag+ removes the excess relaxation (SILB-J4, measured_not_detected in the bound state). No rate, population or Delta-omega anywhere.",
+   "slower_than_ms": "unresolved (search_insufficient): the full text contains no hydrogen-exchange, time-resolved, FRET or EPR measurement, and the searches for such work returned zero hits (SILB-J3).",
+   "undetermined": "In the Ag+-bound sample the Met65 methyl correlation disappears, which the authors presume to be severe line broadening without identifying the process (SILB-J7). The apo structure superposes on apo E. coli CusF with a backbone rmsd of 1.17 A, a homolog similarity, not a second state (SILB-J8). The 2016 paper studies a different construct, the N-terminal plus membrane-proximal domains (SILB-J5), and its finding that the C-terminal site fills first is binding, not motion (SILB-J6)."
   },
-  "wt_apo_answer": "Unknown: the isolated wild-type apo SilB C-terminal domain was studied by backbone 15N relaxation (T1, T2, T1rho and NOE listed in the 2L55 deposition, 298 K, pH 6.0), but only the 2011 abstract is readable here and it reports no result, so no ps-ns flexibility, us-ms exchange, residue, rate or population can be stated.",
+  "wt_apo_answer": "Yes, in one loop and without a rate: the free wild-type SilB C-terminal domain at 25 °C, pH 6.0 in 50 mM MES (600 MHz, single field, R1rho-derived R2) carries exchange terms of about 1.5-6 s-1 confined to the metal-binding loop, at Ala24, Gln29, Gly31, Ala32, Met33 and Met35 (fitted Rex), with raised R2 also at His22, highest at Gln29 at the top of the loop and at the Cu+ ligand Met35; the rest of the domain is rigid with S2 above 0.8. No exchange rate, population or chemical-shift difference was measured, one equivalent of Ag+ abolishes the excess relaxation, and the authors state that the apo protein does not simply exchange with a conformation close to the metal-bound one.",
   "open_conflicts": [],
   "questions_for_gina": [
-   "Is the RelaxDB 17266 data set the 2011 apo sample (298 K, pH 6.0, 50 mM MES per 2L55), or was relaxation also recorded with Ag+ or Cu+ bound?",
-   "For the residues with missing peaks in the RelaxDB set, does the 2011 paper attribute them to exchange broadening, overlap, or solvent exchange?"
+   "Is the RelaxDB 17266 set the 2011 apo sample (25 °C, pH 6.0, 50 mM MES, 600 MHz), or does it also include the Ag+-bound relaxation data of the same paper?",
+   "The paper prints 'Ala31' while the sequence has Gly31 and Ala32, and Figure S6C shows exchange at both positions: should the atlas keep both residues, as here, or ask the authors?"
   ],
-  "buffer_note": "Both SilB papers (10.1021/bi200005k and 10.1021/acs.biochem.6b00022) are closed access here and were read as abstracts only (C-priority rows), so every judgment is capped at indirect evidence. Sample conditions for the apo relaxation data come from the 2L55 deposition metadata (298 K, pH 6.0, 50 mM MES, 1 mM U-15N protein, 90% H2O/10% D2O), not from the article; metal-bound and apo samples, and the separate N-terminal constructs of the 2016 paper, are different sample states and are not combined. No oligomeric state is reported in the evidence rows; the deposition contains one chain."
+  "buffer_note": "The RelaxDB source paper (doi:10.1021/bi200005k) was read in full on 2026-10-20 (case S6_r6_17266_20261020221901), superseding the abstract-only row SILB-r1, which is no longer cited; the 2016 paper on the other construct (doi:10.1021/acs.biochem.6b00022) is still an abstract. All samples are 1.0 mM protein in 50 mM MES at pH 6.0 and 25 °C; apo, Ag+ (1 equivalent) and Cu+ (with 10 equivalents of ascorbate) are separate sample states and are not combined. R2 comes from an R1rho decay, not from a CPMG series, and the model-free fit was made on the apo sample only; per-residue S2, tau_i and Rex exist only as Figure S6, so the values quoted here are read from that plot. Thr34 was not fitted and overlapping resonances were excluded, leaving 63 apo and 57 Ag+-bound residues. Both readers passed all four rows of this case with no flags. The results text prints 'axially isotropic' where the methods and Figure S6 say axially anisotropic (SILB-J1)."
  },
  "judgments": [
   {
@@ -21,36 +21,36 @@
    "entry_id": "17266",
    "region": {
     "residues_entry": "unlocalized",
-    "residues_author": "none reported in the abstract",
-    "numbering_note": "Entry 1-82 = UniProt Q58AF3 440-521 (entry n = UniProt n + 439), per row SILB-r1; author numbering in the article not read",
+    "residues_author": "Most residues have S2 above 0.8; slightly lower values at the N terminus and in the surface loops between beta-strands 3 and 4 and between beta-strands 4 and 5, which the text does not enumerate (Figure S6A, plot only); internal correlation time tau_i about 70 ps (Figure S6B)",
+    "numbering_note": "The article numbers the isolated domain 1-82 and that numbering equals the entry sequence (UniProt Q58AF3 440-521, PDB 2L55 chain A; entry n = UniProt n + 439). The text prints 'Ala31' on p. 2200, but Figure 1 and the entry have Gly31 with Ala32 next to it, and Figure S6C shows exchange bars at both 31 and 32, so both positions are kept and the misprint is not resolved to one of them.",
     "functional_site": ""
    },
    "time_window": "ps-ns",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "From the 2L55 deposition record that row SILB-r1 cites for the method, not from the article: 298 K; pH 6.0; 50 mM MES; ionic strength 50 (units not given); 1 mM U-15N protein; 90% H2O/10% D2O; no metal listed and the entry keywords say 'apo form'; Varian 600 and 800 MHz spectrometers listed (field per experiment not given)",
+    "conditions": "25 °C; pH 6.0; 50 mM MES; 1.0 mM uniformly 15N-labelled SilB440-521 (six-His tag cleaved); apo, no added metal; 600 MHz; R2 derived from R1rho rather than from a CPMG experiment; relaxation rates for 63 residues, overlapping resonances excluded and Thr34 not fitted",
     "is_wt_apo": true
    },
-   "direction": "search_insufficient",
+   "direction": "detected",
    "detection": {
-    "method": "15N backbone spin relaxation (deposition lists T1, T2, T1rho and heteronuclear NOE)",
-    "observable": "S2 / R1 / R2 / NOE (values not available)",
-    "fit_model": "none",
+    "method": "15N R1, R1rho-derived R2 and {1H}-15N NOE at 600 MHz with Tensor2 Lipari-Szabo model-free analysis; an axially anisotropic diffusion tensor (D_par 3.19 x 10^7 s-1, D_perp 2.4 x 10^7 s-1) was preferred by F test over an isotropic fit with tau_c 6.28 +/- 0.04 ns",
+    "observable": "S2 and tau_i",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "600 and 800 MHz listed in the deposition",
-    "temperature": "298 K (deposition)",
+    "field": "14.1 T (600 MHz)",
+    "temperature": "25 °C",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "The 2011 paper measured backbone relaxation of the isolated C-terminal domain, but only its abstract is readable and it reports no relaxation values, order parameters or flexible residues, so fast backbone motion can be neither confirmed nor excluded.",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text of the RelaxDB source paper: the apo domain is globally rigid on the fast timescale, with S2 above 0.8 for most residues and an internal correlation time of about 70 ps, while the N terminus and the surface loops between strands 3 and 4 and between 4 and 5 have lower order parameters; the per-residue values appear only in Figure S6 (sources_cache/10.1021_bi200005k.pdf, pp. 2195-2196, 2199-2200; Supporting Information Figure S6A-B).",
    "evidence_rows": [
-    "SILB-r1"
+    "SILB-17266_20261020221901-r1"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -58,37 +58,46 @@
    "judgment_id": "SILB-J2",
    "entry_id": "17266",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "none reported in the abstract",
-    "numbering_note": "Entry 1-82 = UniProt Q58AF3 440-521 (entry n = UniProt n + 439), per row SILB-r1; author numbering in the article not read",
-    "functional_site": ""
+    "residues_entry": [
+     22,
+     24,
+     29,
+     31,
+     32,
+     33,
+     35
+    ],
+    "residues_author": "Text p. 2200: His22, Ala24, Gln29, 'Ala31' (printed; the sequence has Gly31 and Ala32), Met33 and Met35 show increased transverse relaxation rates (Figure 6B: apo R2 about 11 s-1 at His22, 15 at Gln29 and 12.5 at Met35 against a baseline near 8 s-1). Figure S6C, read from the plot: exchange terms of about 1.6 s-1 at Ala24, 6.0 at Gln29, 2.6 at Gly31, 1.5 at Ala32, 3.3 at Met33 and 4.3 at Met35; no bar at His22, which is fitted with S2 near 1.0.",
+    "numbering_note": "The article numbers the isolated domain 1-82 and that numbering equals the entry sequence (UniProt Q58AF3 440-521, PDB 2L55 chain A; entry n = UniProt n + 439). The text prints 'Ala31' on p. 2200, but Figure 1 and the entry have Gly31 with Ala32 next to it, and Figure S6C shows exchange bars at both 31 and 32, so both positions are kept and the misprint is not resolved to one of them.",
+    "functional_site": "metal-binding loop (residues 20-37); Met33 and Met35 are Cu+/Ag+ ligands with His22",
+    "residue_basis": "author_listed"
    },
    "time_window": "us-ms",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "From the 2L55 deposition record that row SILB-r1 cites for the method, not from the article: 298 K; pH 6.0; 50 mM MES; ionic strength 50 (units not given); 1 mM U-15N protein; 90% H2O/10% D2O; no metal listed and the entry keywords say 'apo form'; Varian 600 and 800 MHz spectrometers listed (field per experiment not given)",
+    "conditions": "25 °C; pH 6.0; 50 mM MES; 1.0 mM uniformly 15N-labelled SilB440-521 (six-His tag cleaved); apo, no added metal; 600 MHz; R2 derived from R1rho rather than from a CPMG experiment; relaxation rates for 63 residues, overlapping resonances excluded and Thr34 not fitted",
     "is_wt_apo": true
    },
-   "direction": "search_insufficient",
+   "direction": "detected",
    "detection": {
-    "method": "15N T2 and T1rho relaxation listed in the 2L55 deposition; no CPMG, CEST or exchange-broadening study found",
-    "observable": "possible Rex in R2/R1rho (values not available)",
-    "fit_model": "none",
+    "method": "Exchange term Rex from the Tensor2 model-free fit of R1, R1rho-derived R2 and NOE at one field; R1rho was chosen to reduce exchange contributions but residual loop terms were still fitted; no spin-lock-power dispersion series, CPMG or CEST",
+    "observable": "Rex (figure only, Figure S6C: about 1.5-6.0 s-1)",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "600 and 800 MHz listed in the deposition",
-    "temperature": "298 K (deposition)",
+    "field": "14.1 T (600 MHz)",
+    "temperature": "25 °C",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "The abstract of the only relaxation study names no exchange contribution, the searches for relaxation dispersion and exchange broadening of SilB returned zero hits, and the missing peaks in the RelaxDB set cannot be assigned to exchange without the article, so microsecond-millisecond exchange is unknown, not absent.",
+   "reason": "Full text: the metal-binding loop of the apo domain carries fitted exchange terms at residues 24-35 and raised R2 from His22, highest at Gln29 at the top of the loop and at Met35, one of the Cu+ ligands, which the authors call slow motions; exchange is detected in the reference state, but the fit is single-field with no rate, population or chemical-shift difference, the values exist only as a figure, and single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm (sources_cache/10.1021_bi200005k.pdf, pp. 2199-2200, Figure 6B, Figure S6C).",
    "evidence_rows": [
-    "SILB-r1"
+    "SILB-17266_20261020221901-r1"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -121,7 +130,7 @@
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "The name- and organism-restricted searches for hydrogen exchange, time-resolved or multitemperature structural work, FRET and EPR on SilB found nothing, but the two closed-access full texts were not checked for such data, so slower-than-millisecond motion is unknown, not shown to be unmeasured.",
+   "reason": "The name- and organism-restricted searches for hydrogen exchange, time-resolved or multitemperature structural work, FRET and EPR on SilB found nothing, and the 2011 paper, now read in full, contains no such measurement either; the 2016 paper on the other construct is still an abstract, so slower-than-millisecond motion is unknown.",
    "evidence_rows": [],
    "conflicts_with": [],
    "evidence_strength": "indirect",
@@ -132,37 +141,46 @@
    "judgment_id": "SILB-J4",
    "entry_id": "17266",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "metal site residues identified from 15N- and 13C-edited HSQC (not listed in the abstract)",
-    "numbering_note": "Entry 1-82 = UniProt Q58AF3 440-521 (entry n = UniProt n + 439), per row SILB-r1; author numbering in the article not read",
-    "functional_site": "Ag+/Cu+ binding site (per abstract; residues not given)"
+    "residues_entry": [
+     22,
+     24,
+     29,
+     31,
+     32,
+     33,
+     35
+    ],
+    "residues_author": "The same metal-binding-loop residues His22, Ala24, Gln29, 'Ala31', Met33 and Met35; in Figure 6B their Ag+-bound R2 values sit near the 8-9 s-1 baseline instead of 11-15 s-1",
+    "numbering_note": "The article numbers the isolated domain 1-82 and that numbering equals the entry sequence (UniProt Q58AF3 440-521, PDB 2L55 chain A; entry n = UniProt n + 439). The text prints 'Ala31' on p. 2200, but Figure 1 and the entry have Gly31 with Ala32 next to it, and Figure S6C shows exchange bars at both 31 and 32, so both positions are kept and the misprint is not resolved to one of them.",
+    "functional_site": "metal-binding loop (residues 20-37)",
+    "residue_basis": "author_listed"
    },
-   "time_window": "undetermined",
+   "time_window": "us-ms",
    "sample_state": {
     "construct": "WT",
-    "binding_state": "bound:Ag+ or Cu+",
-    "conditions": "not stated in the abstract; whether any relaxation data were recorded on the metal-bound domain is unknown",
+    "binding_state": "bound:Ag+ (1 molar equivalent of AgNO3)",
+    "conditions": "25 °C; pH 6.0; 50 mM MES; 1.0 mM protein with 1 molar equivalent of AgNO3; 600 MHz; R1 and R1rho-derived R2 for 57 residues; no {1H}-15N NOE or model-free fit on this sample",
     "is_wt_apo": false
    },
-   "direction": "search_insufficient",
+   "direction": "measured_not_detected",
    "detection": {
-    "method": "15N- and 13C-edited HSQC metal-binding experiments (per abstract)",
-    "observable": "",
+    "method": "15N R1 and R1rho-derived R2 of the Ag+-bound sample compared residue by residue with the apo sample (Figure 6A-B, filled circles Ag+-bound, empty apo)",
+    "observable": "excess R2 over the baseline (absent in the bound state)",
     "fit_model": "none",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
-    "temperature": "",
-    "detection_window": ""
+    "field": "14.1 T (600 MHz)",
+    "temperature": "25 °C",
+    "detection_window": "15N R1 and R1rho-derived R2 at one field (600 MHz), 25 °C, pH 6.0, on 57 residues, compared with the apo profile; it can see only exchange large enough to raise R2 above the roughly 8 s-1 baseline at this field, so it cannot exclude exchange with a smaller amplitude, a different rate or a smaller chemical-shift difference, nor exchange at the residues not quantitated, and no exchange-rate fit or detection threshold is given for the bound sample."
    },
-   "verdict": "unresolved",
-   "reason": "The abstract reports that the domain binds Ag+ and Cu+ and maps the metal site by HSQC, but gives no dynamics measurement of the metal-bound state, which is a different sample state from the apo relaxation sample and stays unjudged until the full text is read.",
+   "verdict": "no_evidence_in_window",
+   "reason": "Full text: adding one equivalent of Ag+ removes the excess transverse relaxation of the metal-binding loop while overall tumbling and fast backbone mobility stay similar, which the authors state as slow motions in the apo state that are abolished once the metal is bound; this is absence of detectable exchange in the bound state at this field, not proof that the loop has stopped moving (sources_cache/10.1021_bi200005k.pdf, pp. 2196, 2199-2200, Figure 6A-B).",
    "evidence_rows": [
-    "SILB-r1"
+    "SILB-17266_20261020221901-r2"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -239,6 +257,123 @@
    ],
    "conflicts_with": [],
    "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J7",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": [
+     65
+    ],
+    "residues_author": "Met65 methyl (1H-13C epsilon correlation), broadened below the detection limit in the Ag+-bound sample",
+    "numbering_note": "The article numbers the isolated domain 1-82 and that numbering equals the entry sequence (UniProt Q58AF3 440-521, PDB 2L55 chain A; entry n = UniProt n + 439). The text prints 'Ala31' on p. 2200, but Figure 1 and the entry have Gly31 with Ala32 next to it, and Figure S6C shows exchange bars at both 31 and 32, so both positions are kept and the misprint is not resolved to one of them.",
+    "functional_site": "second-shell residue near the metal site",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ag+ (1 molar equivalent of AgNO3)",
+    "conditions": "25 °C; pH 6.0; 50 mM MES; 1.0 mM protein; 1H,13C-HSQC of the methyl region (apo black, Ag+ blue, Cu+ red in Figure 3B; the Cu+ sample also carries 10 equivalents of ascorbate); the article does not assign a field to this panel",
+    "is_wt_apo": false
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "1H,13C-HSQC observation of methyl correlations in the Ag+-bound sample",
+    "observable": "loss of a side-chain methyl peak, attributed by the authors to severe line broadening",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the Ag+-bound domain the Met65 methyl correlation falls below the detection limit, which the authors ascribe, presumptively, to severe line broadening; a missing peak fixes no mechanism, timescale, population or structure, and it sits alongside the backbone result that loop exchange is suppressed in the same sample (sources_cache/10.1021_bi200005k.pdf, p. 2198, Figure 3B).",
+   "evidence_rows": [
+    "SILB-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J8",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Backbone superposition over 264 atoms; metal-binding residues well superimposed",
+    "numbering_note": "The article numbers the isolated domain 1-82 and that numbering equals the entry sequence (UniProt Q58AF3 440-521, PDB 2L55 chain A; entry n = UniProt n + 439). The text prints 'Ala31' on p. 2200, but Figure 1 and the entry have Gly31 with Ala32 next to it, and Figure S6C shows exchange bars at both 31 and 32, so both positions are kept and the misprint is not resolved to one of them.",
+    "functional_site": "metal-binding site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:apo E. coli CusF crystal structure 1ZEQ compared with the apo SilB440-521 NMR structure 2L55",
+    "binding_state": "apo",
+    "conditions": "NMR structure in 50 mM MES, pH 6.0, 25 °C versus a crystal structure of a different protein whose conditions this article does not give",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Superposition of the apo SilB C-terminal domain with apo CusF (DeepView)",
+    "observable": "structure difference (backbone rmsd 1.17 A over 264 atoms)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The apo domain superposes on apo E. coli CusF with a backbone rmsd of 1.17 A over 264 atoms and shares its OB fold and metal-site geometry; this is a similarity between two different proteins, not a second state of SilB, and it carries no timescale or population (sources_cache/10.1021_bi200005k.pdf, p. 2201, Figure 7).",
+   "evidence_rows": [
+    "SILB-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J9",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "The residues outside the metal-binding loop, with S2 above 0.8 and no fitted exchange term (Figure S6A and S6C, plot only); exchange terms are limited to residues 24-35",
+    "numbering_note": "The article numbers the isolated domain 1-82 and that numbering equals the entry sequence (UniProt Q58AF3 440-521, PDB 2L55 chain A; entry n = UniProt n + 439). The text prints 'Ala31' on p. 2200, but Figure 1 and the entry have Gly31 with Ala32 next to it, and Figure S6C shows exchange bars at both 31 and 32, so both positions are kept and the misprint is not resolved to one of them.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.0; 50 mM MES; 1.0 mM uniformly 15N-labelled SilB440-521 (six-His tag cleaved); apo, no added metal; 600 MHz; R2 derived from R1rho rather than from a CPMG experiment; relaxation rates for 63 residues, overlapping resonances excluded and Thr34 not fitted",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Tensor2 model-free fitting of R1, R1rho-derived R2 and NOE at one field; models with and without an Rex term compared per residue",
+    "observable": "no Rex term selected outside the metal-binding loop",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T (600 MHz)",
+    "temperature": "25 °C",
+    "detection_window": "Single-field 15N relaxation at 600 MHz, 25 °C, pH 6.0, with R2 from an R1rho decay chosen to suppress exchange contributions, on 63 of 82 residues (Thr34 not fitted, overlapping resonances excluded); it can see only exchange whose contribution to R2 survives the spin lock and exceeds the fit uncertainty of about 1 s-1, so it cannot exclude faster or smaller-amplitude exchange, exchange with a small chemical-shift difference, or exchange at the unquantitated residues."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The authors state that the slow motions are limited to the metal-binding loop, so no exchange term is fitted elsewhere in the apo domain; this is absence of detectable exchange under a spin-lock experiment at one field, not an absence of motion (sources_cache/10.1021_bi200005k.pdf, pp. 2199-2200, Figure S6C).",
+   "evidence_rows": [
+    "SILB-17266_20261020221901-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   }

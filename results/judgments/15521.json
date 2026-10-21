@@ -2,21 +2,20 @@
  "protein_summary": {
   "entry_id": "15521",
   "per_window": {
-   "ps-ns": "unresolved, abstract only. The C-terminal part of helix III is more flexible than its N-terminal part and R53 looks like a hinge in the free homeodomain at 286 K, 11.7 T (R15521-J3, r1).",
-   "us-ms": "unresolved, abstract only. Slow conformational exchange at Y25 (entry 26) by both relaxation analyses (J1) and at K21, Q22, I38, H52 (entry 22, 23, 39, 53) by spectral density mapping only (J2); no dispersion, rate or population.",
+   "ps-ns": "dynamic_in_window at the tails and the end of helix III. RelaxDB source paper now read in full (286 K, pH 4.3, 0.8 mM, 11.7 T, DNA-free): overall tau_m 10.51 ns (MF) or about 9.85 ns (RSDM); Arg1-Leu7, Arg58, Gln59 and Ala60-Gln67 move much faster than the core, Arg53 is intermediate and looks like a hinge, and the three helices Gln10-Gln22, Ala28-Ile38 and Thr43-Gln50 stay ordered (R15521-J3). The paper's own 10 ns MD reproduces this picture (J9, md_only).",
+   "us-ms": "unresolved by the single-field Rex rule: exchange is detected in the reference state but carries no population. Tyr25 (entry 26) has R2 26.39 s-1 against 8.41-16.53 s-1 elsewhere and is the only fitted model-free Rex, with J(0) far above every other residue (J1); RSDM alone adds Lys21, Gln22, Ile38 and His52 (entry 22, 23, 39, 53) from the J(omega_N)-J(0) correlation (J2). One field, no dispersion, no rate, population or Delta-omega.",
    "slower_than_ms": "unresolved, abstract only. Amide H/D exchange rates point to a local fluctuation at N51-R53 (J5, r3).",
-   "undetermined": "Helix III extension 51-59 less rigid with a kink at 51-53 (J4, r2); protease resistance of the C terminus at neutral pH (J6) and its increased accessibility after DNA binding (J7); DNA-bound human NKX2-1 crystal (J8). Not judged: r4 (database survey of other proteins), r5 (equilibrium thermal unfolding by CD/DSC at pH 5.0), r6 and r7 (3.5 ns MD of modelled DNA complexes, abstract only, no dynamics result)."
+   "undetermined": "Helix III extension 51-59 less rigid with a kink at 51-53 (J4, r2); protease resistance of the C terminus at neutral pH (J6) and its increased accessibility after DNA binding (J7); DNA-bound human NKX2-1 crystal (J8); the paper's own 10 ns MD (J9). Not judged: r4 (database survey of other proteins), r5 (equilibrium thermal unfolding by CD/DSC at pH 5.0), r6 and r7 (3.5 ns MD of modelled DNA complexes, abstract only, no dynamics result)."
   },
-  "wt_apo_answer": "Possibly, but only from an abstract: in the free rat TTF-1 homeodomain at 286 K (11.7 T) 15N relaxation analysis assigns slow conformational exchange to Y25 (entry Y26) by both model-free and spectral density mapping, and to K21, Q22, I38 and H52 by spectral density mapping only, with no dispersion, rate or population.",
-  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. BMRB 15521 holds 500 MHz T1, T2 and NOE for 65 residues with metadata pH 4.3 and 286 K, the field and temperature of the abstract-only relaxation study; no source names the accession. R2/R1 above 8.08 flags K22, Q23 and I39 (author K21, Q22, I38), three of the four RSDM-only exchange residues. Y26 (author Y25) has the largest R2, 26.3 s-1 against about 12-14 s-1 in the helices, but NOE 0.53, so the screen calls it fast; H53 (author H52) has NOE 0.63. NOE below 0.65 marks R2-L8, H53, R54 and M57-Q68 plus L17, K25-L27, E31, M38 and Q45. Median R2/R1 over NOE >= 0.65 residues (7.2) gives about 9.5 ns by the rigid-rotor formula, near the abstract's 9.85-10.51 ns.",
+  "wt_apo_answer": "Probably yes at one site, without a rate: in the free rat TTF-1 homeodomain at 286 K, pH 4.3, 0.8 mM, 11.7 T, Tyr25 (entry Y26) carries a slow-exchange contribution in both the model-free and the spectral-density analysis, with R2 26.39 s-1 against 8.41-16.53 s-1 for every other residue, and the spectral-density analysis alone adds Lys21, Gln22, Ile38 and His52 at the helix ends; the measurement is single-field with no dispersion, so no rate, population or chemical-shift difference exists, and the authors offer aromatic side-chain motion and helix-end fraying as interpretations.",
+  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. BMRB 15521 holds 500 MHz T1, T2 and NOE for 65 residues with metadata pH 4.3 and 286 K, and the paper itself names BMRB 15521 as the deposition of its chemical shift and relaxation data (p. 445). R2/R1 above 8.08 flags K22, Q23 and I39 (author K21, Q22, I38), three of the four RSDM-only exchange residues. Y26 (author Y25) has the largest R2, 26.3 s-1 against about 12-14 s-1 in the helices, but NOE 0.53, so the screen calls it fast; H53 (author H52) has NOE 0.63. NOE below 0.65 marks R2-L8, H53, R54 and M57-Q68 plus L17, K25-L27, E31, M38 and Q45. Median R2/R1 over NOE >= 0.65 residues (7.2) gives about 9.5 ns by the rigid-rotor formula, near the abstract's 9.85-10.51 ns.",
   "open_conflicts": [
-   "C-terminal region: disordered or less rigid by NMR under acidic conditions (r2) versus protease-inaccessible at neutral pH (r9); the proteolysis abstract names the pH difference and the methods measure different things, so this is kept as a condition difference."
+   "C-terminal region: mobile by NMR at pH 4.3 and 286 K (R15521-J3) versus protease-inaccessible at neutral pH (J6, r9); the proteolysis abstract names the pH difference and the methods measure different things, so this is kept as a condition difference."
   ],
   "questions_for_gina": [
-   "Is BMRB 15521 (500 MHz, 286 K, pH 4.3) the data set of the 2008 relaxation study, and can its full text be read so Y25 and the RSDM-only exchange residues can be judged above abstract level?",
-   "Should the deposited R2 of Y26 (26.3 s-1 with NOE 0.53) be read as exchange despite the low NOE, given that the abstract assigns slow exchange to Y25 by both methods?"
+   "The deposited R2 of Y26 (26.3 s-1) comes with NOE 0.53, and the paper's p. 438 prints the Tyr25 exchange-related quantity as '14.67 +/- 2.35 ns', a unit that cannot be an exchange rate: should the atlas treat Y25 as exchange, as the authors do, or as a mixed fast-motion and exchange site?"
   ],
-  "buffer_note": "Every rat TTF-1 homeodomain row except the human crystal is abstract-only, so no verdict above unresolved is possible. NMR on this domain was done under acidic conditions (pH 4.3 in the deposition), proteolysis at neutral pH and calorimetry at pH 5.0; the domain unfolds at 32 °C without salt (r5), so temperature and salt matter. R15521-r1 lists its conditions as not specified, yet the abstract gives 286 K and 11.7 T; the judgments use those values. Second read flagged no row."
+  "buffer_note": "The RelaxDB source paper (doi:10.1111/j.1742-4658.2007.06208.x) was read in full on 2026-10-20 (case S6_r6_15521_20261020220843), superseding the abstract-only row R15521-r1, which is no longer cited; the other rat-domain rows (r2, r3, r5-r7, r9, r10) remain abstracts. The sample has no buffer salt: pH 4.3 was set with HCl and is an uncorrected meter reading, at 286 K, where the domain is stable; proteolysis was done at neutral pH and calorimetry at pH 5.0, and the domain unfolds at 32 °C without salt (r5), so temperature, salt and pH all matter. Glu17, Leu34 and Lys46 were excluded for NOE overlap and Pro29 and Pro42 have no amide. The authors question their own per-residue local correlation times and name Tyr54 as a possible numerical artefact; supplementary Tables S1-S4 were unavailable, so per-residue relaxation values were not reconstructed. The second read left r2 unverified only for the claim of exact sequence identity to 1FTT:A; the PDF adjudication (ledger/adjudication_pdf_batch2.json) confirmed the five exchange residues, the R2 values and the conditions from the rendered pages."
  },
  "judgments": [
   {
@@ -26,8 +25,8 @@
     "residues_entry": [
      26
     ],
-    "residues_author": "Y25",
-    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "residues_author": "Tyr25, in the loop between helix I and helix II; R2 26.39 s-1 against 8.41-16.53 s-1 for all other residues, and J(0) about 7.8 ns against about 3.5-4.5 ns elsewhere",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); every residue named in the paper (38 positions from Arg1 to Gln67) matches the entry sequence at that offset, checked against the entry sequence; the paper does not print the full sequence.",
     "functional_site": "",
     "residue_basis": "per_residue"
    },
@@ -35,28 +34,28 @@
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "286 K; 11.7 T (500 MHz 1H); isolated 15N-labelled rat TTF-1 homeodomain in aqueous solution, no DNA; pH and buffer not given in the abstract",
+    "conditions": "286 +/- 0.5 K; pH 4.3 (uncorrected meter reading, set with microadditions of 1 M HCl, no buffer salt); 95:5 H2O/D2O; about 0.8 mM uniformly 15N-labelled rat TTF-1 homeodomain (segment 160-226 plus an N-terminal Met0), DNA-free; 11.7 T, 500.13 MHz 1H / 50.68 MHz 15N, single field",
     "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N R1, R2 and {1H}-15N NOE; model-free and reduced spectral density mapping",
-    "observable": "Rex (slow conformational exchange term)",
+    "method": "15N R1, R2 and steady-state {1H}-15N NOE at one field, analysed both by model-free (MF) and by reduced spectral density mapping (RSDM); no dispersion, R1rho or CEST experiment; Glu17, Leu34 and Lys46 excluded for almost complete NOE overlap, Pro29 and Pro42 have no backbone amide",
+    "observable": "Rex in the model-free fit (the only one fitted in the whole domain) and J(0) far above every other residue in RSDM",
     "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "11.7 T",
+    "field": "11.7 T (500.13 MHz 1H)",
     "temperature": "286 K",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "Both model-free and spectral density analyses assign slow conformational exchange to Y25, but only the abstract was read, so no Rex value, residue table or model selection can be checked.",
+   "reason": "Full text of the RelaxDB source paper: Tyr25 is the one residue to which both analyses assign a slow-exchange contribution, with R2 26.39 s-1 where the rest of the domain lies between 8.41 and 16.53 s-1; exchange is detected in the reference state, but the measurement is at a single field with no rate, population or chemical-shift difference, and single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm (sources_cache/10.1111_j.1742-4658.2007.06208.x.pdf, pp. 435, 437-438, 440-443).",
    "evidence_rows": [
-    "R15521-r1"
+    "R15521-15521_20261020220843-r2"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -70,37 +69,37 @@
      39,
      53
     ],
-    "residues_author": "K21, Q22, I38, H52",
-    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
-    "functional_site": "",
+    "residues_author": "Lys21 and Gln22 at the C-terminal end of helix I, Ile38 at the C-terminal end of helix II and His52 in helix III; identified from the J(omega_N)-J(0) correlation (Fig. 4) by RSDM only",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); every residue named in the paper (38 positions from Arg1 to Gln67) matches the entry sequence at that offset, checked against the entry sequence; the paper does not print the full sequence.",
+    "functional_site": "helix C-termini (authors: typical fraying transitions)",
     "residue_basis": "per_residue"
    },
    "time_window": "us-ms",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "286 K; 11.7 T (500 MHz 1H); isolated 15N-labelled rat TTF-1 homeodomain in aqueous solution, no DNA; pH and buffer not given in the abstract",
+    "conditions": "286 +/- 0.5 K; pH 4.3 (uncorrected meter reading, set with microadditions of 1 M HCl, no buffer salt); 95:5 H2O/D2O; about 0.8 mM uniformly 15N-labelled rat TTF-1 homeodomain (segment 160-226 plus an N-terminal Met0), DNA-free; 11.7 T, 500.13 MHz 1H / 50.68 MHz 15N, single field",
     "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N R1, R2 and NOE; reduced spectral density mapping only",
-    "observable": "Rex (slow conformational exchange term)",
+    "method": "15N R1, R2 and steady-state {1H}-15N NOE at one field, analysed both by model-free (MF) and by reduced spectral density mapping (RSDM); no dispersion, R1rho or CEST experiment; Glu17, Leu34 and Lys46 excluded for almost complete NOE overlap, Pro29 and Pro42 have no backbone amide",
+    "observable": "excess J(0) in the RSDM correlation plot; no Rex term survived the model-free refinement at these residues",
     "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "11.7 T",
+    "field": "11.7 T (500.13 MHz 1H)",
     "temperature": "286 K",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "Only the spectral density analysis, not model-free, finds an exchange contribution at K21, Q22, I38 and H52, which the abstract links to fraying at helix C-termini; abstract only and method dependent.",
+   "reason": "Full text: the spectral-density analysis puts four further residues off the J(omega_N)-J(0) correlation line, which the authors read as us-ms exchange at the helix ends, and they attribute the model-free miss to an overestimated overall correlation time; the assignment is method-dependent, comes from one field, and carries no rate, population or Delta-omega, so it stays unresolved (sources_cache/10.1111_j.1742-4658.2007.06208.x.pdf, pp. 435, 440-443).",
    "evidence_rows": [
-    "R15521-r1"
+    "R15521-15521_20261020220843-r2"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -108,37 +107,57 @@
    "judgment_id": "R15521-J3",
    "entry_id": "15521",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "C-terminal fragment of helix III (limits not given); R53 intermediate motional freedom; very flexible N- and C-terminal residues",
-    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
-    "functional_site": "helix III (DNA-recognition helix)"
+    "residues_entry": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     54,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68
+    ],
+    "residues_author": "Arg1-Leu7 (N terminus) and Ala60-Gln67 (C terminus), together with Arg58 and Gln59 at the C-terminal end of helix III, lie away from the main cluster in the J(omega_N)-J(0) plot towards shorter effective correlation times; Arg53 has intermediate motional freedom and looks like a hinge between the mobile tail and the core; the three helices are Gln10-Gln22, Ala28-Ile38 and Thr43-Gln50 with the extension to Gln59",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); every residue named in the paper (38 positions from Arg1 to Gln67) matches the entry sequence at that offset, checked against the entry sequence; the paper does not print the full sequence.",
+    "functional_site": "helix III (DNA-recognition helix) and its C-terminal extension",
+    "residue_basis": "author_listed"
    },
    "time_window": "ps-ns",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "286 K; 11.7 T (500 MHz 1H); isolated 15N-labelled rat TTF-1 homeodomain in aqueous solution, no DNA; pH and buffer not given in the abstract",
+    "conditions": "286 +/- 0.5 K; pH 4.3 (uncorrected meter reading, set with microadditions of 1 M HCl, no buffer salt); 95:5 H2O/D2O; about 0.8 mM uniformly 15N-labelled rat TTF-1 homeodomain (segment 160-226 plus an N-terminal Met0), DNA-free; 11.7 T, 500.13 MHz 1H / 50.68 MHz 15N, single field",
     "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N R1, R2 and NOE; model-free and reduced spectral density mapping",
-    "observable": "S2 / spectral densities",
+    "method": "15N R1, R2 and steady-state {1H}-15N NOE at one field, analysed both by model-free (MF) and by reduced spectral density mapping (RSDM); no dispersion, R1rho or CEST experiment; Glu17, Leu34 and Lys46 excluded for almost complete NOE overlap, Pro29 and Pro42 have no backbone amide",
+    "observable": "S2 and spectral densities; overall tau_m 10.51 +/- 0.05 ns by model-free and 9.85 +/- 1.79 ns (J(omega_N)-J(0)) or 9.84 +/- 0.20 ns (J(0.87omega_H)-J(0)) by RSDM, with a generalised internal correlation time of 0.28 +/- 0.11 ns",
     "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "11.7 T",
+    "field": "11.7 T (500.13 MHz 1H)",
     "temperature": "286 K",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "Both analyses find the C-terminal part of helix III more flexible than its N-terminal part, with R53 as a possible hinge between the flexible termini and the core; abstract only, no S2 values or limits.",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text: both analyses place the terminal segments Arg1-Leu7 and Ala60-Gln67, plus Arg58 and Gln59 at the end of helix III, towards much shorter effective correlation times than the structured core, with Arg53 intermediate, so the C-terminal part of the recognition helix and the tails move on the sub-nanosecond scale while the three helices stay ordered; the authors warn that their per-residue local correlation times are unreliable because internal and overall motion may not separate (sources_cache/10.1111_j.1742-4658.2007.06208.x.pdf, pp. 436-443, Tables 1-2, Figs. 3-4).",
    "evidence_rows": [
-    "R15521-r1"
+    "R15521-15521_20261020220843-r1"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -352,6 +371,44 @@
    ],
    "conflicts_with": [],
    "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J9",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole domain: backbone rmsd up to 10 A at the termini and mostly below 1.0 A over Gln10-Arg58; helix III beyond Tyr54 has incompletely conserved i-4 hydrogen bonds, and Arg53 and Tyr54 also show i-3 hydrogen bonds",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); every residue named in the paper (38 positions from Arg1 to Gln67) matches the entry sequence at that offset, checked against the entry sequence; the paper does not print the full sequence.",
+    "functional_site": "helix III (DNA-recognition helix)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "10 ns CHARMM molecular dynamics started from the deposited 1FTT NMR structure, DNA-free; snapshots every 500 ps for the structural ensemble and every 100 ps for the core-superposed N-H vector analysis; solvent, ions, thermostat and protonation are in an unavailable supplementary document, so the NMR conditions do not transfer",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "10 ns MD trajectory with backbone rmsd, N-H vector correlation and hydrogen-bond analysis",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The simulation reproduces the flexible termini, the loop motion and a less restrained second half of helix III with Arg53 intermediate, and its hydrogen-bond pattern is compatible with the proposed helix tightening; the authors state that the short simulation time precludes a direct spectral density analysis, so it neither establishes nor excludes the inferred us-ms process (sources_cache/10.1111_j.1742-4658.2007.06208.x.pdf, p. 443, p. 446).",
+   "evidence_rows": [
+    "R15521-15521_20261020220843-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   }

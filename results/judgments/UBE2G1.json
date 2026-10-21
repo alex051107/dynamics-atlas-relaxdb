@@ -2,18 +2,18 @@
  "protein_summary": {
   "entry_id": "UBE2G1",
   "per_window": {
-   "ps-ns": "unresolved (search_insufficient): no row reads the RelaxDB R1/R2/NOE set or any order parameter of UBE2G1 (UBE2G1-J3).",
-   "us-ms": "unresolved (search_insufficient): no dispersion, CEST, R1rho or exchange-broadening row (UBE2G1-J4).",
+   "ps-ns": "dynamic_in_window in the acidic loop and the chain ends. The 2015 NMR study, now read in full, measures R1, R2 and NOE at 800 MHz and 30 °C on perdeuterated full-length UBE2G1 (0.8 mM, pH 7.0, 50 mM HEPES, 100 mM NaCl, 5 mM DTT) and finds the acidic loop 97-109 and the termini more flexible than the core, which tumbles with a correlation time of roughly 12-14 ns (UBE2G1-J3); no order parameters or internal correlation times were fitted and the values are figure-only.",
+   "us-ms": "search_insufficient (UBE2G1-J4): the one relaxation study fits no exchange term and no dispersion, CEST or R1rho experiment exists. Its Figure 3 shows uncommented R2 outliers near residues 27 (about 37 s-1) and 126 (about 42 s-1, with 128-131 elevated) against a 20-25 s-1 baseline; a lead for a future dispersion measurement, not an exchange claim.",
    "slower_than_ms": "unresolved (search_insufficient): no slow-exchange measurement (UBE2G1-J5).",
-   "undetermined": "UbV.G1.1-bound 6D68 superposes on apo 2AWF with backbone RMSD 0.66 Å (UBE2G1-J2, r4, structure_only, no_evidence_in_window); the 2015 abstract implicates the Y102-G103-Y104 acidic loop in binding donor ubiquitin in an oxyester conjugate (UBE2G1-J1, r1, unresolved). Not judged: r2 and r3 (two-state and one-state ubiquitin on the Ube2r1 paralog, abstract only); r5 to r8 (E1 charging and discharge gel assays of wild type and S26R with UbV.G1.1: product accumulation, not conformational motion)."
+   "undetermined": "UbV.G1.1-bound 6D68 superposes on apo 2AWF with backbone RMSD 0.66 A (UBE2G1-J2, r4, structure_only); the 2015 JBC abstract implicates the Y102-G103-Y104 acidic loop in binding donor ubiquitin in an oxyester conjugate (UBE2G1-J1, r1); the gaps in the 2015 assignment table are proline and glycine chemistry, not exchange (UBE2G1-J6). Not judged: r2 and r3 (two-state and one-state ubiquitin on the Ube2r1 paralog, abstract only); r5 to r8 (E1 charging and discharge gel assays of wild type and S26R with UbV.G1.1: product accumulation, not conformational motion)."
   },
-  "wt_apo_answer": "Unknown: no evidence row measures dynamics of free full-length human UBE2G1 in any window (UBE2G1-J3 to J5, search_insufficient); the only structural evidence is a static crystal comparison showing that backside UbV.G1.1 binding leaves the backbone almost unchanged (RMSD 0.66 Å to apo 2AWF), and the only NMR row is an abstract about a ubiquitin-conjugate interaction.",
+  "wt_apo_answer": "Unknown: the relaxation study of free full-length UBE2G1 (800 MHz, 30 °C, pH 7.0, HEPES/NaCl/DTT, 0.8 mM perdeuterated protein), now identified and read in full, reports R1, R2 and NOE and reads the acidic loop 97-109 and the termini as more flexible, but fits no exchange term and runs no dispersion experiment, so no us-ms exchange, rate or population is measured; the isolated R2 outliers near residues 27 and 126 in its Figure 3 are uncommented by the authors.",
   "open_conflicts": [],
   "questions_for_gina": [
-   "Which paper and sample underlie the RelaxDB UBE2G1 R1/R2/NOE set? The card has no BMRB id; the screen set aside 'NMR assignment of human ubiquitin conjugating enzyme Ubc7' (J Biomol NMR 2005, doi:10.1007/s10858-005-1257-7) as the UBE2G2 paralog without an abstract, and UBC7 is also listed as a UBE2G1 alias in the search query.",
-   "Should a full read of the 2015 JBC paper (doi:10.1074/jbc.m114.624809) be requested, since its Ube2g1 oxyester NMR is the only solution data on this enzyme in the evidence?"
+   "The 2015 assignment paper (doi:10.1186/s40543-015-0068-z) measures 800 MHz R1, R2 and NOE at 30 °C on full-length Ube2g1 and matches the entry's relaxation set; can it be confirmed as the RelaxDB source, since the card carries no BMRB id?",
+   "Its Figure 3 shows uncommented R2 values of about 37 s-1 near residue 27 and about 42 s-1 near residue 126 against a 20-25 s-1 baseline: should these be flagged as candidate exchange sites for a dispersion measurement, or does the RelaxDB label already use them?"
   ],
-  "buffer_note": "The 2015 rows (r1-r3) are abstract-only and give no conditions. The 2020 rows (r4-r8) are full text: crystal at 20 °C, pH 8.0 in PEG1500/SPG; charging assays at 30 °C, pH 7.5, 20 mM HEPES, 100 mM NaCl, 5 mM MgCl2 with ATP; discharge adds apyrase, lysine and 25 mM EDTA. Construct boundaries differ: entry and 6D68 are full length (1-170), apo 2AWF and the assay protein are 8-160. Second read flagged r6; adjudication B confirmed the row and its corrected partner field (S26R is the sample, compromised for backside binding) is in the CSV."
+  "buffer_note": "The 2015 relaxation and assignment paper (doi:10.1186/s40543-015-0068-z) was read in full on 2026-10-20 (case S6_r6_UBE2G1_20261020224441); its protein is GST-cleaved M1-E170, the entry sequence plus two cloning residues G-2 and S-1, and it is treated here as the entry construct. Relaxation was recorded at 30 °C and 800 MHz, the assignments at 25 °C and 900 MHz; the two conditions are not conflated. All relaxation values are read from Figure 3, a plot. The protein runs at an apparent 25 kDa against a 20 kDa sequence mass, which the paper notes without a quantitative model or an independent test for oligomerisation. The 2015 JBC rows (r1-r3) are abstract-only and give no conditions. The 2020 rows (r4-r8) are full text: crystal at 20 °C, pH 8.0 in PEG1500/SPG; charging assays at 30 °C, pH 7.5, 20 mM HEPES, 100 mM NaCl, 5 mM MgCl2 with ATP; discharge adds apyrase, lysine and 25 mM EDTA. Construct boundaries differ: entry and 6D68 are full length (1-170), apo 2AWF and the assay protein are 8-160. Second read flagged r6 earlier; adjudication B confirmed that row, and both readers passed the two new rows with no flags."
  },
  "judgments": [
   {
@@ -101,35 +101,52 @@
    "judgment_id": "UBE2G1-J3",
    "entry_id": "UBE2G1",
    "region": {
-    "residues_entry": "unlocalized",
-    "residues_author": "none",
-    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104). 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the assay construct are residues 8-160.",
-    "functional_site": ""
+    "residues_entry": [
+     97,
+     98,
+     99,
+     100,
+     101,
+     102,
+     103,
+     104,
+     105,
+     106,
+     107,
+     108,
+     109
+    ],
+    "residues_author": "The acidic loop, residues 97-109 (P97, G98, E99, D100, K101, Y102, G103, Y104, E105, K106, P107, E108, E109), reported as more flexible than the structured core, and the terminal regions; per-residue R1, R2 and NOE values exist only in Figure 3, and P97 and P107 have no backbone amide, so the range is a regional annotation",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104, P97, P107). The 2015 NMR study uses the same numbering for a GST-cleaved M1-E170 protein whose Table 1 also lists two cloning residues G-2 and S-1 outside the entry sequence. 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the 2020 assay construct are residues 8-160.",
+    "functional_site": "acidic loop near the active-site Cys90",
+    "residue_basis": "author_listed"
    },
    "time_window": "ps-ns",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "full-length human UBE2G1, free, no ubiquitin, UbV or E3; not applicable (no measurement in the evidence rows)",
+    "conditions": "30 °C; pH 7.0; 50 mM HEPES, 100 mM NaCl, 5 mM DTT, 5% D2O; 0.8 mM 2H/13C/15N-labelled (perdeuterated) full-length UBE2G1, no ubiquitin, E1 or E3; 800 MHz, single field; the assignment spectra of the same paper were run at 25 °C and 900 MHz and are a different condition",
     "is_wt_apo": true
    },
-   "direction": "search_insufficient",
+   "direction": "detected",
    "detection": {
-    "method": "none (no row reports 15N R1/R2/NOE, order parameters or MD of UBE2G1)",
-    "observable": "",
+    "method": "15N R1, R2 and {1H}-15N heteronuclear NOE at 800 MHz on perdeuterated protein; rotational correlation time estimated from T1/T2 ratios by the method of Kay et al.; no model-free fit",
+    "observable": "raised R1, lowered R2 and lowered NOE across the acidic loop and the termini; global tumbling roughly 12 to 14 ns for the rigid part",
     "fit_model": "none",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
-    "temperature": "",
+    "field": "18.8 T (800 MHz)",
+    "temperature": "30 °C",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "The RelaxDB card lists an R1/R2/NOE set but no BMRB id, and no evidence row reads it; the relaxation searches (UBE2G1 names and aliases, Homo sapiens) returned zero hits, so absence is a search gap.",
-   "evidence_rows": [],
+   "verdict": "dynamic_in_window",
+   "reason": "Full text of the 2015 NMR study, now identified as the source of the entry's relaxation set: the acidic loop 97-109 and the chain ends show the relaxation signature of faster local backbone motion than the structured core, which tumbles with a correlation time of roughly 12-14 ns; no order parameter, internal correlation time or model-free fit is reported, and the per-residue values are a figure (sources_cache/10.1186_s40543-015-0068-z.pdf, Fig. 3 and caption p. 5, Results p. 6, Methods p. 4).",
+   "evidence_rows": [
+    "UBE2G1-UBE2G1_20261020224441-r1"
+   ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -138,32 +155,34 @@
    "entry_id": "UBE2G1",
    "region": {
     "residues_entry": "unlocalized",
-    "residues_author": "none",
-    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104). 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the assay construct are residues 8-160.",
+    "residues_author": "No exchange analysis was made. Figure 3 shows isolated R2 values well above the roughly 20-25 s-1 baseline near residue 27 (about 37 s-1) and near residue 126 (about 42 s-1, with 128-131 elevated), read from the plot; the authors do not comment on them",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104, P97, P107). The 2015 NMR study uses the same numbering for a GST-cleaved M1-E170 protein whose Table 1 also lists two cloning residues G-2 and S-1 outside the entry sequence. 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the 2020 assay construct are residues 8-160.",
     "functional_site": ""
    },
    "time_window": "us-ms",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "full-length human UBE2G1, free, no ubiquitin, UbV or E3; not applicable (no measurement in the evidence rows)",
+    "conditions": "30 °C; pH 7.0; 50 mM HEPES, 100 mM NaCl, 5 mM DTT, 5% D2O; 0.8 mM 2H/13C/15N-labelled (perdeuterated) full-length UBE2G1, no ubiquitin, E1 or E3; 800 MHz, single field; the assignment spectra of the same paper were run at 25 °C and 900 MHz and are a different condition",
     "is_wt_apo": true
    },
    "direction": "search_insufficient",
    "detection": {
-    "method": "none (no dispersion, CEST, R1rho or exchange-broadening row on UBE2G1)",
+    "method": "none: the 2015 study measured R1, R2 and NOE at a single field but fitted no exchange term, and no dispersion, CEST or R1rho experiment exists for UBE2G1",
     "observable": "",
     "fit_model": "none",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
-    "temperature": "",
+    "field": "18.8 T (800 MHz)",
+    "temperature": "30 °C",
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "No row measures microsecond-millisecond exchange of free UBE2G1; the dispersion and broadening searches returned zero hits, so this is a search gap.",
-   "evidence_rows": [],
+   "reason": "The only relaxation study of free UBE2G1 reports R1, R2 and NOE without fitting an exchange term, so no Rex exists to act on; the isolated R2 outliers near residues 27 and 126 in its Figure 3 are uncommented by the authors and are kept as a lead, not as exchange. No dispersion, CEST or R1rho measurement was found (sources_cache/10.1186_s40543-015-0068-z.pdf, Fig. 3).",
+   "evidence_rows": [
+    "UBE2G1-UBE2G1_20261020224441-r1"
+   ],
    "conflicts_with": [],
    "evidence_strength": "indirect",
    "function_link": "",
@@ -202,6 +221,75 @@
    "evidence_rows": [],
    "conflicts_with": [],
    "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "UBE2G1-J6",
+   "entry_id": "UBE2G1",
+   "region": {
+    "residues_entry": [
+     1,
+     21,
+     24,
+     28,
+     39,
+     44,
+     45,
+     46,
+     52,
+     53,
+     62,
+     66,
+     69,
+     70,
+     81,
+     87,
+     92,
+     97,
+     98,
+     103,
+     107,
+     112,
+     113,
+     123,
+     131,
+     133,
+     136,
+     145,
+     151
+    ],
+    "residues_author": "Residues with one or more missing entries in the assignment table: M1 (H, N), the prolines P21, P45, P46, P62, P66, P69, P70, P81, P97, P107, P113, P131, P136 (H, N, and all carbons for P45 and P69), the glycines G24, G28, G44, G52, G53, G87, G98, G103, G133, G151 (CB only), E39 (CB), S92 (CB, CO), L112 (CO), S123 (CB), W145 (CB); the cloning residues G-2 and S-1 are fully absent and lie outside the entry",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104, P97, P107). The 2015 NMR study uses the same numbering for a GST-cleaved M1-E170 protein whose Table 1 also lists two cloning residues G-2 and S-1 outside the entry sequence. 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the 2020 assay construct are residues 8-160.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 7.0; 50 mM HEPES, 100 mM NaCl, 5 mM DTT, 5% D2O; 0.8 mM perdeuterated 2H/13C/15N protein; 900 MHz TROSY triple-resonance experiments with 2H decoupling",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "TROSY triple-resonance backbone assignment; audit of every gap in the published assignment table",
+    "observable": "unassigned chemical shifts",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "21.1 T (900 MHz)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The gaps in the assignment table are proline backbone chemistry, the absent glycine CB and a few individual carbons, and the authors explain the missing P45 and P69 carbons by the prolines that follow them; no line width, exchange rate or missing-peak mechanism is measured, so these gaps are not evidence of exchange (sources_cache/10.1186_s40543-015-0068-z.pdf, Table 1 pp. 2-3, Results p. 6).",
+   "evidence_rows": [
+    "UBE2G1-UBE2G1_20261020224441-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   }

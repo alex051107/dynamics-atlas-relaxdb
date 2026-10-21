@@ -14,6 +14,8 @@ import time
 import urllib.parse
 import urllib.request
 
+from promote_source_papers import promote_rows
+
 WORK = Path(__file__).resolve().parents[1]
 STOP = WORK.parent / "dynamics_atlas_eval/STOP"
 RUNS = WORK / "ledger/v6_runs.jsonl"
@@ -379,10 +381,7 @@ def run_screen(entry, backend="codex"):
         # relaxation data (UBE2G1 source paper was tiered C as "assignment only")
         src_p = WORK / "config/relaxdb_source_dois.json"
         src = {d.lower() for d in (json.loads(src_p.read_text()).get(entry, []) if src_p.exists() else [])}
-        for row in rows:
-            if row.get("doi", "").lower() in src and row.get("tier") not in ("A", "B"):
-                row.update(tier="A", needs_full_text=True,
-                           reason=f"RelaxDB source paper (promoted from {row['tier']}): {row.get('reason', '')}")
+        promote_rows(rows, src)
         output = output_dir / f"{entry}.jsonl"
         temporary = output.with_suffix(".jsonl.tmp")
         temporary.write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows))

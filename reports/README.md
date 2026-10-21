@@ -14,3 +14,5 @@ The reports are in Chinese. Each one is dated and describes the state of the wor
 | `REVIEW_SYNTHESIS_20261020_NIGHT_ZH.md` | 2026-10-20 | Where the two reviews agree and disagree, which choice we made, and what was fixed. |
 
 Names of collaborators are replaced by their roles in these copies.
+
+The call counts in these reports predate the overnight full-text re-reads of 20 to 21 October. The current counts are in the main README and in `results/alternate_apo_states.csv`.

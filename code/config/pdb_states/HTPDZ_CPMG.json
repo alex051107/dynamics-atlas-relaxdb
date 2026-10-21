@@ -1,71 +1,72 @@
 {
-"entry": "HTPDZ_CPMG",
-"accession": "O43464",
-"core": [
-[
-363,
-369
-],
-[
-390,
-399
-],
-[
-408,
-416
-],
-[
-436,
-443
-],
-[
-447,
-453
-]
-],
-"mobile": [
-[
-353,
-362
-],
-[
-370,
-389
-],
-[
-417,
-435
-],
-[
-444,
-446
-]
-],
-"open": "2PZD:A",
-"closed": "5M3N:A",
-"verify_numbering": true,
-"renumber": {
-"1LCY": [
-[
-1,
-330,
-133
-]
-],
-"5FHT": [
-[
-1,
-330,
-133
-]
-],
-"5WYN": [
-[
-1,
-330,
-133
-]
-]
-},
-"note": "Author (UniProt O43464) numbering throughout; PDZ = 359-458. Mobile = the regions the 2024 paper names for apo isolated-PDZ CPMG: 'the amino-terminus, the alpha5 helix and the adjacent loop connecting to beta15, as well as alpha7 and its preceding loop' (HTPDZ-r1 / Fig. 2a-b) and at 283 K 'the beta17-beta18 loop' (HTPDZ-r2). Residue limits from the 5M3N helix/strand records: alpha5 370-381, beta15 391-396, alpha6 400-406, beta16 412-416, alpha7 423-434, beta17 437-443, beta18 446-452; so mobile = 353-362 (N-terminus incl. beta13 359-361), 370-389 (alpha5 + alpha5-beta15 loop), 417-435 (loop + alpha7), 444-446 (beta17-beta18 turn). Core = beta14 364-368, beta15 + loop 390-399, alpha6/beta16 408-416, beta17 436-443, beta18 447-453. 'open' = 2PZD chain A, the only isolated-PDZ crystal (peptide WTMFWV fused to the chain, bound in the groove; HTPDZ-J21); 'closed' = 5M3N chain A, wild-type full-length trimer with the PDZ packed on the protease domain (resting state; HTPDZ-J22 names 1LCY/5FHT as the same closed arrangement). The CPMG minor state is not identified structurally (HTPDZ-r3), so this axis tests only whether any PDZ copy departs from the closed-trimer geometry within the domain. Renumbering: 1LCY, 5FHT and 5WYN are numbered from the mature N-terminus (auth + 133 = UniProt; alignment to 5M3N gives delta 133 over 9-325 with <=4 mismatches, all at the deposited mutations). 7VGE and 8AUK are PDZ-deleted constructs (auth 140-342 only) and 8E2K chains Y/Z lack the PDZ, so those chains carry no mobile residues and get no closure. 2PZD is classed 'apo' by the tool because the peptide is part of the polymer chain; it is peptide-bound."
+ "entry": "HTPDZ_CPMG",
+ "accession": "O43464",
+ "core": [
+  [
+   363,
+   369
+  ],
+  [
+   390,
+   399
+  ],
+  [
+   408,
+   416
+  ],
+  [
+   436,
+   443
+  ],
+  [
+   447,
+   453
+  ]
+ ],
+ "mobile": [
+  [
+   353,
+   362
+  ],
+  [
+   370,
+   389
+  ],
+  [
+   417,
+   435
+  ],
+  [
+   444,
+   446
+  ]
+ ],
+ "open": "2PZD:A",
+ "closed": "5M3N:A",
+ "verify_numbering": true,
+ "renumber": {
+  "1LCY": [
+   [
+    1,
+    330,
+    133
+   ]
+  ],
+  "5FHT": [
+   [
+    1,
+    330,
+    133
+   ]
+  ],
+  "5WYN": [
+   [
+    1,
+    330,
+    133
+   ]
+  ]
+ },
+ "note": "Author (UniProt O43464) numbering throughout; PDZ = 359-458. Mobile = the regions the 2024 paper names for apo isolated-PDZ CPMG: 'the amino-terminus, the alpha5 helix and the adjacent loop connecting to beta15, as well as alpha7 and its preceding loop' (HTPDZ-r1 / Fig. 2a-b) and at 283 K 'the beta17-beta18 loop' (HTPDZ-r2). Residue limits from the 5M3N helix/strand records: alpha5 370-381, beta15 391-396, alpha6 400-406, beta16 412-416, alpha7 423-434, beta17 437-443, beta18 446-452; so mobile = 353-362 (N-terminus incl. beta13 359-361), 370-389 (alpha5 + alpha5-beta15 loop), 417-435 (loop + alpha7), 444-446 (beta17-beta18 turn). Core = beta14 364-368, beta15 + loop 390-399, alpha6/beta16 408-416, beta17 436-443, beta18 447-453. 'open' = 2PZD chain A, the only isolated-PDZ crystal (peptide WTMFWV fused to the chain, bound in the groove; HTPDZ-J21); 'closed' = 5M3N chain A, wild-type full-length trimer with the PDZ packed on the protease domain (resting state; HTPDZ-J22 names 1LCY/5FHT as the same closed arrangement). The CPMG minor state is not identified structurally (HTPDZ-r3), so this axis tests only whether any PDZ copy departs from the closed-trimer geometry within the domain. Renumbering: 1LCY, 5FHT and 5WYN are numbered from the mature N-terminus (auth + 133 = UniProt; alignment to 5M3N gives delta 133 over 9-325 with <=4 mismatches, all at the deposited mutations). 7VGE and 8AUK are PDZ-deleted constructs (auth 140-342 only) and 8E2K chains Y/Z lack the PDZ, so those chains carry no mobile residues and get no closure. Opt-in CIF detection identifies the fused WTMFWV peptide in 2PZD chains A and B and classes them as ligand-bound (fused).",
+ "detect_fused_covalent": true
 }

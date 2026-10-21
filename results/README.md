@@ -22,11 +22,11 @@ One row for each protein. 42 rows.
 
 ## `judgments/<entry>.json`
 
-One file for each protein. A judgment is one claim about one region, in one time window, in one sample state. Each judgment has a verdict (`dynamic_in_window`, `no_evidence_in_window`, `unresolved` and others), the detection details (method, kex, pB, Δω, field, temperature) and the evidence rows it uses. `protein_summary` gives the short answer and the open conflicts. The field rules are in `code/schema/judgment_contract.json`.
+One file for each protein. A judgment is one claim about one region, in one time window, in one sample state. Each judgment has a verdict, such as `dynamic_in_window`, `no_evidence_in_window` or `unresolved`. It also has the detection details (method, kex, pB, Δω, field, temperature) and the evidence rows it uses. `protein_summary` gives the short answer and the open conflicts. The field rules are in `code/schema/judgment_contract.json`.
 
 ## `evidence_rows_cpmg10.csv` and `evidence_rows_relaxdb133.csv`
 
-One row for each paper, experiment and condition. 597 rows for the CPMG proteins and 1,171 rows for the RelaxDB-133 proteins.
+One row for each paper, experiment and condition. 597 rows for the CPMG proteins and 1,218 rows for the RelaxDB-133 proteins.
 
 - `ID` stays the same between versions. Judgments use it.
 - `Review priority`: `A` rows carry the call, `B` rows support it, `C` rows are background and are in the appendix.
@@ -37,7 +37,7 @@ One row for each paper, experiment and condition. 597 rows for the CPMG proteins
 
 ## `pdb_states/<entry>.md`
 
-One table for each CPMG protein. Each row is one chain of one deposited structure: its class (apo, ligand-bound, complex), ligands, mutations, conditions, and its Cα RMSD to two reference chains after core superposition. `closure` is 0 when the chain is like the first reference and 1 when it is like the second. The note at the top of each table gives the reference chains, the residue ranges and their sources. For CypA, RNase A and K-Ras the tables also give side-chain rotamers and alternate conformers.
+One table for each CPMG protein. Each row is one chain of one deposited structure. It gives the class (apo, ligand-bound, complex), ligands, mutations and conditions. It also gives the Cα RMSD to two reference chains after core superposition. `closure` is 0 when the chain is like the first reference and 1 when it is like the second. The note at the top of each table gives the reference chains, the residue ranges and their sources. For CypA, RNase A and K-Ras the tables also give side-chain rotamers and alternate conformers. For the HtrA2 PDZ domain they also mark peptides fused to the chain.
 
 ## `relaxdb_data_issues.md`
 

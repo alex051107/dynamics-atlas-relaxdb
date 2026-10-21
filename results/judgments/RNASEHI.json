@@ -2,23 +2,24 @@
  "protein_summary": {
   "entry_id": "RNASEHI",
   "per_window": {
-   "ps-ns": "dynamic_in_window at the termini and loops, with ordered tryptophans and catalytic carboxylates of restricted amplitude. Free WT, pD 6.2: catalytic side chains S2 0.64-0.75 (J1, r1), matched in trend by MD (J8). Free WT, pH 5.5: Trp indoles S2 0.83-0.92 and handle backbone 0.84 ± 0.01 (J2, measured_not_detected). RelaxDB source candidate (1995, abstract only): tau_c 10.9 ns at 27 °C, S2 0.15-1.0 (average 0.85), large motion at L2-K3, C13-G15, E61-H62, D70-71, A93-K96, G123-H127, Q152-V155 (J38, unresolved). Reanalyses of published backbone and methyl data: C-terminal V153/V155 methyls have low, model-sensitive S2axis (J44); per-residue S2 and local tau_m rosters are figure-only (J45). MD (2 mus) reproduces the order parameters (J46, md_only). Cysteine-free RNase HI*: extra fast motion at L2, M50, A63, V153, V155 methyls (J4) and tau_s above 300 ps in loops and termini (J5); ILV methyl local correlation times 7-14 ns (J3). Quintuple mutant restricts K96 and V98 (J41, abstract). iG80b keeps ordered indoles (J6); the thermophilic homolog has a more mobile W81 (J7).",
-   "us-ms": "dynamic_in_window in the substrate-binding handle of the free enzyme, with no rate or population. Methyl Hahn-echo at 14.1 T, pH 5.5: V98, V101 and L103 are broadened beyond the exchange-free reference at 283, 300 and 310 K, read as open-closed exchange of the handle, with I78 and I82 elevated at 283 K; apparent activation energies 45.4 ± 1.6 (V98) and 23.7 ± 1.9 kJ/mol (V101) under a fast-limit two-site assumption (J47, 2019, full text). Multifield backbone reanalysis: 40 amides with Rex above 1 s-1 at 21.15 T, G77 4.00 ± 0.38 s-1 at 900 MHz, roster figure-only (J18, 2026, full text). Abstract-level: helix I exchange contribution in WT (J42) that is reduced, while the protrusion junction gains exchange, in the quintuple mutant (J43). Indirect: model-free Rex at V54 and G77 in RNase HI* (J19); Mg2+-induced R1rho broadening inseparable from Mg2+ binding (J20). Refolding phases of 120 mus and 3.1 ms (J21) and variant folding phases (J22) are folding intermediates. Caveat for every full-text us-ms row: the 2019, 2024 and 2026 articles do not restate the sample's cysteine content, so whether the measured protein is the entry sequence or cysteine-free RNase HI* is unconfirmed.",
+   "ps-ns": "dynamic_in_window at the termini and loops, with ordered tryptophans and catalytic carboxylates of restricted amplitude. Free WT, pD 6.2: catalytic side chains S2 0.64-0.75 (J1, r1), matched in trend by MD (J8). Free WT, pH 5.5: Trp indoles S2 0.83-0.92 and handle backbone 0.84 ± 0.01 (J2, measured_not_detected). RelaxDB source paper (Yamasaki et al. 1995, full text; free WT, 27 °C, pH 5.5, 100 mM acetate, 600 MHz): dynamic_in_window; tau_R 10.92 ns, S2 0.15-1.0 (average 0.85), large motion at L2-K3, C13-G15, E61-H62, D70-S71, A93-K96, G123-H127, Q152-V155 with tau_e 0.45-2.2 ns (J38, E-r1); the 47 class I amides of helices and strands show no enhanced fast motion (J51, no_evidence_in_window); the paper's 300 ps MD reproduces most order parameters (J53, md_only). Reanalyses of published backbone and methyl data: C-terminal V153/V155 methyls have low, model-sensitive S2axis (J44); per-residue S2 and local tau_m rosters are figure-only (J45). MD (2 mus) reproduces the order parameters (J46, md_only). Cysteine-free RNase HI*: extra fast motion at L2, M50, A63, V153, V155 methyls (J4) and tau_s above 300 ps in loops and termini (J5); ILV methyl local correlation times 7-14 ns (J3). Quintuple mutant restricts K96 and V98 (J41, abstract). iG80b keeps ordered indoles (J6); the thermophilic homolog has a more mobile W81 (J7).",
+   "us-ms": "Reference state (free WT, 27 °C, pH 5.5, 600 MHz, RelaxDB source paper, full text): exchange detected but unresolved by the single-field rule: 21 amides need a model-free Δex term, concentrated in helices I (M50, A51, A52, A55, L56, L59) and IV (V101, D102, D103, W104, L107, A109, A110, L111) plus I78, I82, W90 (2.61 Hz, the largest), K91, N100, W118 and E135, mean Δex 0.71 Hz, read by the authors as millisecond exchange and possibly cooperative helix motion; no rate, population or second peak set (J52, E-r2). Other constructs: dynamic_in_window in the substrate-binding handle of the free enzyme, with no rate or population. Methyl Hahn-echo at 14.1 T, pH 5.5: V98, V101 and L103 are broadened beyond the exchange-free reference at 283, 300 and 310 K, read as open-closed exchange of the handle, with I78 and I82 elevated at 283 K; apparent activation energies 45.4 ± 1.6 (V98) and 23.7 ± 1.9 kJ/mol (V101) under a fast-limit two-site assumption (J47, 2019, full text). Multifield backbone reanalysis: 40 amides with Rex above 1 s-1 at 21.15 T, G77 4.00 ± 0.38 s-1 at 900 MHz, roster figure-only (J18, 2026, full text). Abstract-level: helix I exchange contribution in WT (J42) that is reduced, while the protrusion junction gains exchange, in the quintuple mutant (J43). Indirect: model-free Rex at V54 and G77 in RNase HI* (J19); Mg2+-induced R1rho broadening inseparable from Mg2+ binding (J20). Refolding phases of 120 mus and 3.1 ms (J21) and variant folding phases (J22) are folding intermediates. Caveat for every full-text us-ms row: the 2019, 2024 and 2026 articles do not restate the sample's cysteine content, so whether the measured protein is the entry sequence or cysteine-free RNase HI* is unconfirmed.",
    "slower_than_ms": "search_insufficient for free WT (J37): no method gives a slower-than-ms rate for the folded enzyme. A folding model gives a 0.78 s-1 Icore-to-native step (J23). Native-state H/D exchange is measured only in I53A (J24) and, abstract only, in D10A (J25); acid-induced non-native states keep helix I protected (J49, abstract); pulsed-labeling HX-MS refolding of ecRNH*, A55G and D108L orders helix A before helix D (J50, other construct).",
-   "undetermined": "Handle loop: RDCs and V101 rotamers of free WT fit open/closed averaging, with E. coli the most open homolog and a V101 trans rotamer of about 10% (J11, r18, indirect); V98A shifts toward closed (J12, J13); homolog RDC ordering (J14). MD: WT G15 minor backbone state 39% (J9), handle open/closed in WT (J10), 2 mus OPLS4/AMBER runs decomposing methyl order at L2, L59, I116, V153, V155 (J46), MD abstracts (J39), iG80b W81 rotamer switch (J15), homologs (J16), alchemical MSlambdaD (J17). NMR-ensemble side-chain heterogeneity partly attributed to structure-determination artefacts (J40). Structures: metal positions differ among Mg2+ crystal forms (J26) and H124 binds Zn2+ through different nitrogens (J27); SSB-Ct pocket expansion (J28); SSB-Ct titration peak loss (J29, binding); B factors (J30), metal-bound (J31), mutant (J32, J33) abstracts; I53A crystal keeps the fold (J34). smFRET rows report enzyme-substrate binding and degradation (J35, J36). H124 catalytic side-chain change proposed from kinetics (J48). Not judged from the 2026-10-20 re-read (D-rN = RNASEHI-RNASEHI_20261020150655-rN): the preprint version of the 2019 methyl paper (D-r20, not independent); alanine-scanning kinetics and CD of handle variants (D-r23, no dynamics measurement); pulsed-labeling and competition HX-MS refolding of the Thermus homolog, its CD chevrons and the reconstructed ancestors Anc1-Anc3 and AncA-AncD (D-r29 to r38, homologs, folding)."
+   "undetermined": "Handle loop: RDCs and V101 rotamers of free WT fit open/closed averaging, with E. coli the most open homolog and a V101 trans rotamer of about 10% (J11, r18, indirect); V98A shifts toward closed (J12, J13); homolog RDC ordering (J14). MD: WT G15 minor backbone state 39% (J9), handle open/closed in WT (J10), 2 mus OPLS4/AMBER runs decomposing methyl order at L2, L59, I116, V153, V155 (J46), MD abstracts (J39; the 1995 MD is now full text in J53), iG80b W81 rotamer switch (J15), homologs (J16), alchemical MSlambdaD (J17). NMR-ensemble side-chain heterogeneity partly attributed to structure-determination artefacts (J40). Structures: metal positions differ among Mg2+ crystal forms (J26) and H124 binds Zn2+ through different nitrogens (J27); SSB-Ct pocket expansion (J28); SSB-Ct titration peak loss (J29, binding); B factors (J30), metal-bound (J31), mutant (J32, J33) abstracts; I53A crystal keeps the fold (J34). smFRET rows report enzyme-substrate binding and degradation (J35, J36). H124 catalytic side-chain change proposed from kinetics (J48). Not judged from the 2026-10-20 re-read (D-rN = RNASEHI-RNASEHI_20261020150655-rN): the preprint version of the 2019 methyl paper (D-r20, not independent); alanine-scanning kinetics and CD of handle variants (D-r23, no dynamics measurement); pulsed-labeling and competition HX-MS refolding of the Thermus homolog, its CD chevrons and the reconstructed ancestors Anc1-Anc3 and AncA-AncD (D-r29 to r38, homologs, folding)."
   },
-  "wt_apo_answer": "Not established for the entry sequence: the only full-text us-ms evidence (methyl Hahn-echo at 14.1 T, pH 5.5, V98, V101, L103 broadened at 283-310 K; multifield backbone Rex above 1 s-1 at 40 amides, G77 4.00 ± 0.38 s-1 at 900 MHz) comes from cysteine-free RNase HI* (stated for the 2025 data set behind the 2026 reanalysis, not stated for the 2019 sample), and the wild-type evidence is a 1998 abstract reporting an exchange contribution in helix I without values. Fast motion is restricted at the catalytic carboxylates (S2 0.64-0.75, pD 6.2) and the tryptophans (S2 0.83-0.92, pH 5.5), and the RelaxDB source candidate (1995, abstract) places large ps-ns motion in the termini and loops with tau_c 10.9 ns at 27 °C.",
+  "wt_apo_answer": "Yes, exchange is detected in the reference state but without a rate or population: in the RelaxDB source sample (free wild-type E. coli RNase HI, 27 °C, pH 5.5, 100 mM acetate, 600 MHz, single field) 21 backbone amides need a model-free exchange term, concentrated in helices I (M50-L56, L59) and IV (V101-A110, L111) plus I78, I82, W90, K91, N100, W118 and E135, mean Δex 0.71 Hz and 2.61 Hz at W90 (J52, full text); single-field Rex can also come from anisotropic tumbling, so the call is 'possible' and a dispersion experiment would confirm. The handle-region exchange with temperature dependence (V98, V101, L103; G77 Rex 4.00 ± 0.38 s-1 at 900 MHz) is measured in cysteine-free RNase HI* (J47, J18). Fast motion in the reference state sits in the termini and five loops (S2 down to 0.14-0.15, tau_e 0.45-2.2 ns; J38) and is restricted in the secondary structure (J51).",
   "open_conflicts": [
    "Catalytic side-chain S2: NMR 0.64-0.75 at D10, E48, D70, D134 (pD 6.2) versus MD 0.76-0.85 (r1 versus r3); the authors attribute the gap to protonation averaging near the D10 pKa and force-field limits.",
    "The 2013 paper names N44 in the Mg2+ group-1 broadening set and N45 in the conservation text (r2 versus r1); kept as printed.",
    "Construct identity of the us-ms evidence: the 2019 methyl, 2024 JCTC and 2026 JACS articles (D-r9 to r19) are labelled 'target' in the evidence but never restate the cysteine content of the sample, while the same laboratory's 2018 methyl sample (r25) is called cysteine-free by the 2025 paper (r26); if these samples are RNase HI*, J18, J44, J45 and J47 become inference_from_mutant and the wt_apo_answer drops to the earlier 'not established'.",
-   "Residue 71 in the 1995 abstract (D-r1): the abstract writes Asp70-Tyr71 while the entry sequence has S71 and Y73; both second readers flagged the row, the corrected row keeps Tyr71 as printed, and J38 maps D70 only."
+   "Residue 71 in the 1995 abstract (D-r1): the abstract writes Asp70-Tyr71 while the entry sequence has S71 and Y73; both second readers flagged the row, the corrected row keeps Tyr71 as printed, and J38 maps D70 only.",
+   "Residue letters in the 1995 paper: Ala131 and Asp103 (p. 6591, class lists; Glu131 on p. 6599), Tyr71 (flexible-loop text; Ser71 in the class III list) and Asn43/Asp92 (MD discussion) differ from the entry E131, L103, S71, T43, T92; the rows keep the printed letters and map by number (adjudication ledger/adjudication_pdf_batch1.json)."
   ],
   "questions_for_gina": [
-   "Which sample is the RelaxDB RNASEHI R1/R2/NOE set, and are the Palmer-laboratory samples in the 2019 methyl-exchange, 2024 JCTC and 2026 JACS papers the Cys-containing wild type (the entry sequence) or the cysteine-free RNase HI*? The answer decides whether the us-ms handle exchange (J47, J18) counts as reference-state evidence and whether the alternate-APO call is possible or unknown.",
-   "The 1995 relaxation paper (doi:10.1021/bi00020a003, 27 °C, tau_c 10.9 ns) is in the evidence as an abstract only and is the likely RelaxDB source; the earlier 15N handle-region exchange studies cited as refs 54-56 of the 2019 paper are still not in the evidence. Should both be added in full before the us-ms rate and population are judged?"
+   "Which sample is the RelaxDB RNASEHI R1/R2/NOE set, and are the Palmer-laboratory samples in the 2019 methyl-exchange, 2024 JCTC and 2026 JACS papers the Cys-containing wild type (the entry sequence) or the cysteine-free RNase HI*? The answer decides whether the us-ms handle exchange (J47, J18) counts as reference-state evidence.",
+   "The 1995 source paper (full text) detects exchange only as a single-field model-free Δex term at 21 amides (helices I and IV, W90 largest), with no rate or population. Does single-field Rex count as us-ms exchange for the alternate-APO call (applied here as 'possible' with the anisotropic-tumbling caveat), and should the earlier 15N handle-exchange studies cited as refs 54-56 of the 2019 paper be added in full?"
   ],
-  "buffer_note": "Most NMR samples are in 100 mM deuterated sodium acetate pH 5.5, often in 99% D2O and perdeuterated (r7, r24-r27); the side-chain study is at pD 6.2 with conditions in unread SI (r1, r2), and the RDC study's conditions are also in unread SI (r18-r21). The 2026-10-20 re-read rows (D-rN = RNASEHI-RNASEHI_20261020150655-rN): the 2019 methyl-exchange study is at 14.1 T, 283-310 K, pH 5.5 (stated in its MD methods), buffer not restated (D-r13 to r16); the 2024 JCTC and 2026 JACS reanalyses restate no temperature, pH or buffer (D-r9 to r12, r18, r19); the 1995 source abstract gives 27 °C only (D-r1); the eLife HX-MS rows are refolding experiments at 10 °C, pH 5.29 with a pH 10.11 pulse (D-r26 to r38). Many solution samples are cysteine-free RNase HI* (r24, r26, r27, r36, r71, r74-r78, D-r26 to r28); the entry sequence keeps C13, C63, C133, so these are other-construct evidence. r25 (pAED4, 2018) does not state the cysteine content, the 2025 paper calls the pAED4 protein cysteine-free (r26), and the 2019, 2024 and 2026 Palmer-laboratory articles likewise do not restate it, so their WT label is uncertain (see open_conflicts). Crystal rows differ in pH (4.6-8.0), metal and added AMP or p-CCU. Second-read adjudication B (ledger/batch3_adjudication_B.json) corrected residue fields of r20, r21, r38-r42, r69 and r80; those corrections are used here. Second reads of the D rows flagged only D-r1 (S71 versus the abstract's Tyr71; corrected in the snapshot). Not judged separately: r32 (ANS fluorescence under crowding, abstract only), D-r20 (preprint duplicate), D-r23 (alanine-scan kinetics), D-r29 to r38 (homolog and ancestral folding)."
+  "buffer_note": "Most NMR samples are in 100 mM deuterated sodium acetate pH 5.5, often in 99% D2O and perdeuterated (r7, r24-r27); the side-chain study is at pD 6.2 with conditions in unread SI (r1, r2), and the RDC study's conditions are also in unread SI (r18-r21). The 2026-10-20 re-read rows (D-rN = RNASEHI-RNASEHI_20261020150655-rN): the 2019 methyl-exchange study is at 14.1 T, 283-310 K, pH 5.5 (stated in its MD methods), buffer not restated (D-r13 to r16); the 2024 JCTC and 2026 JACS reanalyses restate no temperature, pH or buffer (D-r9 to r12, r18, r19); the 1995 source paper, now full text (E-rN = RNASEHI-RNASEHI_20261020210519-rN), is at 27 °C, pH 5.5, 100 mM deuterated sodium acetate, about 1 mM protein, 600 MHz, one field, with no Mg2+ or EDTA stated and metal occupancy not measured; its abstract-only rows D-r1 and D-r2 are superseded and no longer cited; the eLife HX-MS rows are refolding experiments at 10 °C, pH 5.29 with a pH 10.11 pulse (D-r26 to r38). Many solution samples are cysteine-free RNase HI* (r24, r26, r27, r36, r71, r74-r78, D-r26 to r28); the entry sequence keeps C13, C63, C133, so these are other-construct evidence. r25 (pAED4, 2018) does not state the cysteine content, the 2025 paper calls the pAED4 protein cysteine-free (r26), and the 2019, 2024 and 2026 Palmer-laboratory articles likewise do not restate it, so their WT label is uncertain (see open_conflicts). Crystal rows differ in pH (4.6-8.0), metal and added AMP or p-CCU. Second-read adjudication B (ledger/batch3_adjudication_B.json) corrected residue fields of r20, r21, r38-r42, r69 and r80; those corrections are used here. Second reads of the D rows flagged only D-r1 (S71 versus the abstract's Tyr71; corrected in the snapshot). Not judged separately: r32 (ANS fluorescence under crowding, abstract only), D-r20 (preprint duplicate), D-r23 (alanine-scan kinetics), D-r29 to r38 (homolog and ancestral folding)."
  },
  "judgments": [
   {
@@ -1669,6 +1670,7 @@
      61,
      62,
      70,
+     71,
      93,
      94,
      95,
@@ -1683,38 +1685,39 @@
      154,
      155
     ],
-    "residues_author": "Leu2-Lys3, Cys13-Gly15, Glu61-His62, Asp70-Tyr71, Ala93-Lys96, Gly123-His127, Gln152-Val155 (flexible regions); S2 0.15-1.0, average 0.85; tau_c 10.9 ns at 27 °C; effective correlation times 0.45 ns (E61, K96) to 2.2 ns (L14)",
-    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset. The abstract's Asp70-Tyr71 does not match the entry sequence (S71; Tyr at 73), so position 71 is left unmapped (both second readers flagged the original S71 entry; corrected row keeps Tyr71 as printed).",
-    "functional_site": ""
+    "residues_author": "Large internal motions at Leu2-Lys3 (N-terminus), Cys13-Gly15 (loop beta-A/beta-B), Glu61-His62 (turn helix-I/beta-D), Asp70-Tyr71 (loop beta-D/helix-II; entry S71), Ala93-Lys96 (loop helix-III/helix-IV, basic protrusion), Gly123-His127 (loop beta-E/helix-V) and Gln152-Val155 (C-terminus); S2 0.15-1.0 (V155 0.14 in the text), average 0.85; tau_e 0.45 ns (E61, K96) to 2.2 ns (L14), D70 1.4 ns",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset (checked L2, C13, G15, N16, E48, E61, H62, D70, S71, W90, A93, K96, V101, W118, G123, H127, D134, Q152, V155). The paper prints Ala131 (p. 6591; Glu131 on p. 6599), Asp103 (p. 6591) and Tyr71 (flexible-loop text; Ser71 in the class III list) where the entry has E131, L103 and S71; letters kept as printed, positions mapped by number.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
    },
    "time_window": "ps-ns",
    "sample_state": {
     "construct": "WT",
     "binding_state": "apo",
-    "conditions": "27 °C per the abstract; pH, buffer and construct details not in the abstract",
+    "conditions": "27 °C; pH 5.5; 100 mM CD3COONa (deuterated sodium acetate); about 1 mM 15N-labelled protein with 10% D2O; no substrate, Mg2+ or EDTA stated; 600.14 MHz 1H / 60.82 MHz 15N (Bruker AMX-600), single field; the RelaxDB source sample",
     "is_wt_apo": true
    },
    "direction": "detected",
    "detection": {
-    "method": "15N T1, T2 and NOE with model-free analysis (abstract only; RelaxDB source candidate), plus spectral-density mapping and a WT-versus-mutant model-free comparison from two further abstracts",
-    "observable": "S2 and effective correlation times (per-residue values not in the abstracts)",
-    "fit_model": "other",
+    "method": "15N T1, T2 and {1H}-15N NOE at one field with model-free fitting using five spectral-density models (124 of 149 possible amides analysed; tau_R 10.92 ± 0.03 ns from 96 T1/T2 ratios)",
+    "observable": "S2, tau_e (class II and III residues carry a slower internal component)",
+    "fit_model": "per-residue",
     "kex": "",
     "pB": "",
     "delta_omega": "",
-    "field": "",
+    "field": "14.1 T (600 MHz)",
     "temperature": "27 °C",
     "detection_window": ""
    },
-   "verdict": "unresolved",
-   "reason": "Abstract only, from the RelaxDB source candidate (Yamasaki et al. 1995): the free enzyme has tau_c 10.9 ns at 27 °C, S2 from 0.15 to 1.0 (average 0.85) and large ps-ns motion in the termini and in the loops listed, with effective correlation times of 0.45-2.2 ns; the spectral-density abstract (r3) and the 1998 WT-versus-quintuple-mutant abstract (r5, S2 largely unchanged by the mutations) agree qualitatively, but no per-residue value, condition or missing-peak annotation can be checked.",
+   "verdict": "dynamic_in_window",
+   "reason": "Full text of the RelaxDB source paper (Yamasaki et al. 1995): free wild-type RNase HI at 27 °C, pH 5.5 in acetate has tau_R 10.9 ns and large sub-nanosecond backbone motion in the termini and in five loops (S2 down to 0.14-0.15 at the C-terminus, tau_e 0.45-2.2 ns), while the secondary structure keeps S2 near the 0.85 average; the spectral-density abstract (r3) and the 1998 WT-versus-quintuple-mutant abstract (r5) agree qualitatively but carry no checked values (sources_cache/10.1021_bi00020a003.pdf, pp. 6591-6594, Table 2, Figures 4-5).",
    "evidence_rows": [
-    "RNASEHI-RNASEHI_20261020150655-r1",
+    "RNASEHI-RNASEHI_20261020210519-r1",
     "RNASEHI-RNASEHI_20261020150655-r3",
     "RNASEHI-RNASEHI_20261020150655-r5"
    ],
    "conflicts_with": [],
-   "evidence_strength": "indirect",
+   "evidence_strength": "direct_measurement",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   },
@@ -1747,9 +1750,8 @@
     "detection_window": ""
    },
    "verdict": "unresolved",
-   "reason": "Abstracts only: the simulations reproduce most NMR order parameters, give elliptic N-H angular distributions near a diffusion-in-a-cone picture, and agree with the relaxation evidence for flexible substrate-recognition loops; no residue list, timescale or condition can be checked.",
+   "reason": "Abstracts only (the 1995 MD abstract is superseded by its full text in J53): the simulations reproduce most NMR order parameters and agree with the relaxation evidence for flexible substrate-recognition loops; no residue list, timescale or condition can be checked.",
    "evidence_rows": [
-    "RNASEHI-RNASEHI_20261020150655-r2",
     "RNASEHI-RNASEHI_20261020150655-r4",
     "RNASEHI-RNASEHI_20261020150655-r21"
    ],
@@ -2209,6 +2211,228 @@
    ],
    "conflicts_with": [],
    "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J51",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     5,
+     10,
+     11,
+     18,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     27,
+     33,
+     34,
+     39,
+     41,
+     42,
+     43,
+     44,
+     47,
+     48,
+     53,
+     58,
+     65,
+     68,
+     69,
+     73,
+     74,
+     75,
+     77,
+     79,
+     86,
+     105,
+     112,
+     119,
+     120,
+     129,
+     131,
+     132,
+     133,
+     134,
+     136,
+     139,
+     140,
+     141,
+     142,
+     148,
+     151
+    ],
+    "residues_author": "Class I residues (47; S2 only, no slower internal component or exchange term): V5, D10, G11, G18, G20, G21, Y22, G23, A24, I25, R27, K33, T34, Y39, R41, T42, T43, N44, M47, E48, I53, A58, V65, S68, T69, Y73, V74, R75, G77, T79, K86, Q105, G112, E119, W120, E129, A131 (entry E131), R132, C133, D134, L136, A139, A140, A141, M142, D148, Y151; mostly helix and sheet positions, S2 near the 0.85 average",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset (checked L2, C13, G15, N16, E48, E61, H62, D70, S71, W90, A93, K96, V101, W118, G123, H127, D134, Q152, V155). The paper prints Ala131 (p. 6591; Glu131 on p. 6599), Asp103 (p. 6591) and Tyr71 (flexible-loop text; Ser71 in the class III list) where the entry has E131, L103 and S71; letters kept as printed, positions mapped by number.",
+    "functional_site": "includes the catalytic carboxylates D10, E48, D134 (not stated as a site by this paper)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "27 °C; pH 5.5; 100 mM CD3COONa (deuterated sodium acetate); about 1 mM 15N-labelled protein with 10% D2O; no substrate, Mg2+ or EDTA stated; 600.14 MHz 1H / 60.82 MHz 15N (Bruker AMX-600), single field; the RelaxDB source sample",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N T1, T2 and NOE at one field with model-free model selection",
+    "observable": "S2 (class I: fitted with S2 alone)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T (600 MHz)",
+    "temperature": "27 °C",
+    "detection_window": "Single-field 15N relaxation at 600 MHz, 27 °C, isotropic tumbling (tau_R 10.9 ns); detects internal motion faster than tumbling with amplitude 1 - S2; cannot see motion slower than tumbling, the 25 unanalysed positions (N-terminus, five prolines, overlapped peaks, white in Figure 5), or small-amplitude motion within the S2 uncertainty"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The 47 class I amides, mostly in helices and strands, are fitted by S2 alone with values near the 0.85 average, so no enhanced sub-nanosecond motion is detected there; the authors read this as a relatively rigid secondary structure with mobile termini and loops (sources_cache/10.1021_bi00020a003.pdf, pp. 6591-6592).",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020210519-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J52",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     50,
+     51,
+     52,
+     55,
+     56,
+     59,
+     78,
+     82,
+     91,
+     100,
+     101,
+     102,
+     103,
+     104,
+     107,
+     109,
+     110,
+     111,
+     118,
+     135,
+     90
+    ],
+    "residues_author": "Class IV (model IV, S2 + Δex; 20 residues): Met50, Ala51, Ala52, Ala55, Leu56 (helix I), Leu59 (C-cap of helix I), Ile78 (helix II), Ile82 (helix III), Lys91, Asn100, Val101, Asp102, Asp103 (entry L103), Trp104, Leu107, Ala109, Ala110 (helix IV), Leu111 (C-cap of helix IV), Trp118 (beta-E), Glu135 (helix V); class V (model V, S2, tau_e + Δex): Trp90",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset (checked L2, C13, G15, N16, E48, E61, H62, D70, S71, W90, A93, K96, V101, W118, G123, H127, D134, Q152, V155). The paper prints Ala131 (p. 6591; Glu131 on p. 6599), Asp103 (p. 6591) and Tyr71 (flexible-loop text; Ser71 in the class III list) where the entry has E131, L103 and S71; letters kept as printed, positions mapped by number.",
+    "functional_site": "helices I (N44-A58) and IV (V101-A110) with their C-terminal caps, adjacent and forming a hydrophobic core (authors' description)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "27 °C; pH 5.5; 100 mM CD3COONa (deuterated sodium acetate); about 1 mM 15N-labelled protein with 10% D2O; no substrate, Mg2+ or EDTA stated; 600.14 MHz 1H / 60.82 MHz 15N (Bruker AMX-600), single field; the RelaxDB source sample",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Exchange contribution Δex to 15N T2 selected by model-free model fitting at one field (1/T2obs = 1/T2 + pi Δex); fixed CPMG spacing, no dispersion, CEST or R1rho experiment",
+    "observable": "Δex (Table 2: mean 0.71 Hz for the 20 class IV residues, 2.61 Hz for W90, 0.80 Hz over all 21)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T (600 MHz)",
+    "temperature": "27 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Full text of the RelaxDB source paper: 21 amides of the free wild-type enzyme need an exchange term, concentrated in helices I and IV and their C-terminal caps (mean Δex 0.71 Hz; W90 2.61 Hz), which the authors read as millisecond-scale exchange and a possible cooperative movement of the two helices; exchange is detected in the reference state, but there is no rate, population, shift difference or second peak set, and single-field Rex can also come from anisotropic tumbling; a dispersion experiment would confirm (sources_cache/10.1021_bi00020a003.pdf, pp. 6591-6594, Table 2, Figure 4d).",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020210519-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J53",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     2,
+     3,
+     4,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     30,
+     31,
+     43,
+     53,
+     58,
+     61,
+     62,
+     70,
+     92,
+     93,
+     94,
+     95,
+     96,
+     116,
+     123,
+     124,
+     125,
+     126,
+     127,
+     131,
+     148,
+     152,
+     153,
+     154,
+     155
+    ],
+    "residues_author": "L2, K3, Q4, C13, L14, G15, N16, P17 (region span; no amide), G18, G30, R31, T43 (also printed Asn43), I53, A58, E61, H62, D70, D92 (entry T92), A93, D94, K95, K96, I116, G123, H124, A125, G126, H127, E131, D148, Q152, V153, E154, V155: residues named for elliptic-cone, axial-fluctuation or two-cone N-H distributions and for MD/NMR/B-factor comparison",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset (checked L2, C13, G15, N16, E48, E61, H62, D70, S71, W90, A93, K96, V101, W118, G123, H127, D134, Q152, V155). The paper prints Ala131 (p. 6591; Glu131 on p. 6599), Asp103 (p. 6591) and Tyr71 (flexible-loop text; Ser71 in the class III list) where the entry has E131, L103 and S71; letters kept as printed, positions mapped by number.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "all-atom MD of 2RN2 in an SPC water sphere (34 Å, 4566 waters) at 300 K, AMBER/OPLS, no cutoff (PPPC); 420 ps unrestrained, last 300 ps analysed, N-H vectors every 1 ps; no pH or buffer",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "N-H orientational correlation functions, order parameters and angular distributions from a 300 ps MD trajectory, compared with the NMR S2 and 2RN2 B-factors",
+    "observable": "MD fluctuation (S2, angular distributions; G15 jumps between two cones five times in 300 ps)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "300 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the 300 ps simulation most N-H vectors diffuse in an elliptic cone, some show axial fluctuation (e.g. L2, G30 heterogeneous) and G15 jumps between two cones five times; the MD order parameters agree with NMR except that MD under-represents G123 and V155 (correlation not at plateau) and over-represents G30 and T43; a short trajectory, so no slower exchange or rate follows (sources_cache/10.1021_bi00020a003.pdf, pp. 6595-6600, Figures 6-11).",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020210519-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
    "function_link": "",
    "relaxdb_relation": "pending_legend"
   }

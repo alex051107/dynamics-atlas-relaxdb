@@ -798,5 +798,47 @@
   "source": "Astra night review 2026-10-20",
   "evidence": "tools/pdb_states.py classes HTPDZ 2PZD as apo although the peptide is fused to the chain; fused peptides, modified residues and covalent ligands are not detected",
   "status": "open"
+ },
+ {
+  "id": "E-035",
+  "class": "pipeline_integrity",
+  "source": "Claude, 2026-10-20 21:10",
+  "evidence": "the E-032 fix treated second_read exit code 2 as a failure; 2 means a complete read with more than 5% rows wrong (status blocked). For S6_r6_AZURIN_20261020202618 both reads were dropped and 4 flagged rows would not have reached adjudication.",
+  "fix": "dual_read.py accepts exit codes 0 and 2 with a complete read; new --reuse mode recomputes flags from saved reads. AZURIN Codex read rebuilt from second_read_runs/20261020T210258_d0e5f5fc batch results (raw, before the quote check), Claude read from the case file; 4 rows flagged.",
+  "status": "fixed; only this case was affected (HTGFA ran on the old code)"
+ },
+ {
+  "id": "E-036",
+  "class": "provenance",
+  "case": "S6_r6_VL_20261020213928",
+  "source": "Claude, 2026-10-20 22:20",
+  "evidence": "for a scanned PDF the Codex worker transcribed rendered pages into sources_cache/VL_current_verified_excerpt.txt and cited that file as the source; values spot-checked against the independent macOS Vision OCR (sources_cache/10.1002_prot.340150307_ocr.txt) agree",
+  "proposal": "for scanned sources, cite the OCR file produced outside the worker; a worker-made transcription can be a reading aid but not the cited source",
+  "status": "open"
+ },
+ {
+  "id": "E-037",
+  "class": "adjudication_error",
+  "case": "S6_r6_TRX_20261020212514 r5",
+  "source": "Fable review G6, checked by Claude on the PDF page image",
+  "evidence": "pdftotext renders the subscripts of T1 and T2 as \"7)\"; the batch-1 adjudicator read the sentence reversed and Claude applied it; the original row was right",
+  "fix": "correction reverted; judgments J16/J52 and the G9 row caveat fixed from review G6 finding 1",
+  "rule": "when a statement depends on subscripts, superscripts or table cells, read the PDF page image, not the text layer",
+  "status": "fixed"
+ },
+ {
+  "id": "E-038",
+  "class": "pipeline_integrity",
+  "source": "Claude, 2026-10-20 22:58",
+  "evidence": "a hand-written rerun of the 7036 Codex read (second_read.py then cp of cases/<case>/second_read.jsonl) repeated the E-032 pattern: a failed Codex run would have copied the Claude file. Stopped before it finished; nothing was copied.",
+  "fix": "tools/reread_one.py: deletes the case file first, requires exit code 0 or 2 and a complete read, then recomputes flags with dual_read.py --reuse. All single-reader reruns go through it.",
+  "status": "fixed"
+ },
+ {
+  "id": "E-033-tool",
+  "class": "exchange_regime",
+  "source": "Claude, 2026-10-20 23:30",
+  "evidence": "tools/regime_check.py (Codex) passes its synthetic tests but parses 0 of 913 real judgments (free-text kex/delta_omega: per-residue lists, approximate values, mixed nuclei)",
+  "status": "open: needs a parser for the real formats; key cases (CheY D64, 27011, BLVRB G76, AZURIN) were computed by hand"
  }
 ]
