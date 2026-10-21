@@ -1,0 +1,76 @@
+# Pseudomonas aeruginosa azurin
+
+RelaxDB entry `AZURIN` · set RelaxDB-133 · Pseudomonas aeruginosa azurin (UniProt P00282), mature wild type A1-K128
+
+## Answer
+
+**Yes: a minor state is measured in the free protein.**
+
+**Strict two-peak reading:** qualifies. The source states that the His35 process is slow on the chemical-shift timescale at both pH 7.0 and pH 5.5 and shows two resolved peak sets for the protons and nitrogens around His35 in jump-return HMQC spectra between pH 6.3 and 7.6, connected by EXSY/ROESY cross-peaks at pH 7.0 (AZURIN-J38; D-r4, D-r5). Computed regime (E-033): kex = kAB + kBA = 2k = 90 ± 12 s-1 at pH 7.0 and 120 ± 60 s-1 at pH 5.5; 15N delta-omega 340 Hz (G37) to about 400 Hz (G88, G90) at 60.8 MHz, i.e. 2136-2513 rad/s; kex/delta-omega = 0.04 (pH 7.0) and 0.06 (pH 5.5), slow exchange, matching the authors' wording. At the reference pH 5.5 the minor form is only 2-4%, so the second peak set is documented near pH 7, not shown at pH 5.5.
+
+In the RelaxDB sample (reduced Cu(I), pH 5.5, 41 °C) the amides of N10, D11, G37, G45, G88, S89 and G90, all surrounding His35, carry exchange contributions of 2-9.5 Hz; the authors reproduce the broadening of G37, G88 and G90 with the His35 protonation/deprotonation equilibrium: deprotonated minor form 0.02-0.04 (from the pKa of 7.0 ± 0.1), k = 60 ± 30 s-1, lifetime 8 ± 4 ms, 15N shift differences 340-400 Hz (AZURIN-J43, D-r3). At pH 7.0 the two forms are equally populated, give two resolved peak sets and interconvert at k = 45 ± 6 s-1 (lifetime 11 ± 2 ms) by EXSY (AZURIN-J38, D-r4, D-r5). The authors identify the two forms with the pH 5.5 and pH 9.0 crystal conformations, which differ by a P36-G37 peptide flip and the loops 9-12 and 88-91 (AZURIN-J44, D-r6, oxidised crystals, structure_only). The 2003 three-field CPMG study of Cu(I) azurin at pH about 5 sees the same H35 region with a 0.39% minor state and kA 11.7 s-1 at 44.8 °C and a second copper-loop process (0.45%, kA 4.1 s-1) (AZURIN-J12, J13); its kinetic model disagrees with the 1999 rates. The call is 'yes' because the reference-state sample shows exchange that the same paper resolves as two peak sets with a measured rate; the caveat is that the alternate state is a protonation state coupled to a local backbone flip, not a ligand-free conformational excursion.
+
+## The free protein (reference state)
+
+The RelaxDB sample: wild-type Pseudomonas aeruginosa azurin with its copper reduced to Cu(I) (dithionite), 2 mM, 20 mM potassium phosphate, pH 5.5, 41 °C, 600 MHz (doi:10.1021/bi990624l, full text; AZURIN-J37, J41-J43 marked is_wt_apo). Changed on 2026-10-20 from copper-free apo, which stays in the table as another sample state (AZURIN-J18 to J26). Reduced Cu(I) holo azurin is the deposited construct's native metal state; the alternate state here is still a metal-bound, protonation-coupled one.
+
+| | |
+|---|---|
+| Where (residues) | Reference state Cu(I), pH 5.5: N10, D11, G37, G45, G88, S89, G90 around His35 (Rex 2-9.5 Hz) and F114 in the copper loop (mechanism unassigned); pH 7.0 EXSY: His35 C-epsilon1 H and the amides of G9, G37, G88, E91; the crystal comparison names G9-Q12, P36-G37, M44-G45, G88-E91 (J43, J38, J44). 2003 Cu(I) CPMG: D11, G37, G88-G90 (near H35) and N47, W48, F111-T113, G116, H117, L120, K122 (near copper) (J12, J13). Apo: A1-C3, G9-D11, N18, H35-L39, G45, H46, G88-E91 missing, dispersion at M44 and I87 (J18, J19). |
+| Exchange rate kex | Reference state, pH 5.5: k = 60 ± 30 s-1 printed as (kAB + kBA)/2, so kex = 120 ± 60 s-1, tau_ex 8 ± 4 ms (model estimate from line broadening of G37, G88, G90; AZURIN-J43, D-r3). pH 7.0 EXSY: k = 45 ± 6 s-1 (average rate at the pKa, kAB = kBA), kex = 90 ± 12 s-1, tau_ex 11 ± 2 ms (AZURIN-J38, D-r4). 2003 Cu(I) CPMG at 44.8 °C, pH about 5, 50 mM phosphate: forward rates kA 11.7 ± 2.4 s-1 (H35 region, keq 254 ± 31) and 4.1 ± 0.1 s-1 (copper loops, keq 222 ± 7), total kex not printed (AZURIN-J12, J13; keq values from Table 3 of that paper, not in a row). Not measured for Cu(II) or apo. |
+| Minor-state population pB | Reference state, pH 5.5: deprotonated form 0.02-0.04, estimated from the His35 pKa 7.0 ± 0.1, not fitted (D-r3). pH 7.0: 0.5 (equal populations at the pKa, stated by the authors; D-r4). 2003 Cu(I) CPMG: 0.39 ± 0.07% (H35 region) and 0.45 ± 0.02% (copper loops) at 44.8 °C (J12, J13). Not measured for Cu(II) or apo. |
+| Exchange regime | Authors (1999, Cu(I)): 'slow on the chemical shift time scale' at pH 7.0 and 5.5; two resolved peak sets near the pKa. Computed: kex/delta-omega = 90/2136 = 0.04 at pH 7.0 and 120/2136 = 0.06 at pH 5.5 (delta-omega 340 Hz for G37 at 60.8 MHz 15N; about 400 Hz for G88/G90 gives 0.04-0.05), slow exchange. 2003 Cu(I) CPMG: no regime statement; Carver-Richards fit with kA much smaller than kB (J12, J13). Apo: 'intermediate exchange' for the 17 missing amides (AZURIN-r44). Cu(II): not stated. |
+
+Fallback statement: Reduced Cu(I) azurin at pH 5.5 and 41 °C has an alternate state around His35 populated at about 2-4%: the deprotonated His35 form with a flipped P36-G37 peptide plane and adjusted loops 9-12 and 88-91, exchanging with k = 60 ± 30 s-1 (lifetime 8 ± 4 ms) and resolved as two peak sets near pH 7 (EXSY k = 45 ± 6 s-1) (doi:10.1021/bi990624l). The 2003 three-field CPMG study of Cu(I) azurin adds a 0.45% copper-loop state (N47, W48, F111-T113, G116, H117, L120, K122) of unknown structure (doi:10.1110/ps.0225403).
+
+## Matching structures
+
+What the papers relate to the states:
+
+- **not given (oxidised Cu(II) crystals at pH 5.5 and pH 9.0, Nar et al.)**: The authors' model of the two exchanging forms: at low pH the P36 carbonyl accepts a hydrogen bond from protonated His35 N-delta1-H; at high pH the P36-G37 peptide bond flips and G37 HN hydrogen-bonds His35 N-delta1, with loops 9-12 and 88-91 adjusting. Oxidised crystals compared with reduced solution data; no solution structure of either form.
+
+## Other conditions (not the reference state)
+
+- WT, pH 7.0 (2 mM nonlabelled sample) and pH 6.3-7.6 titration (15N sample), 20 mM phosphate, 41 °C; redox state not restated for these samples, inferred Cu(I) from the sample preparation and the reduced-form pKa (RelaxDB source paper, full text): yes, literal two-peak. Two resolved peak sets around His35, pKa 7.0 ± 0.1, EXSY k = 45 ± 6 s-1, equal populations, lifetime 11 ± 2 ms (AZURIN-J38; D-r4, D-r5).
+- Reduced Cu(I) WT, pH about 5, 50 mM phosphate, 25.7-44.8 °C (2003 three-field CPMG): yes. Two processes with minor states of 0.39% and 0.45% at 44.8 °C and forward rates of 11.7 and 4.1 s-1; the H35 process tracks H35 protonation, the copper-loop process has no known structure; oxidised contamination is ruled out at ≤0.2% (AZURIN-J12 to AZURIN-J16). Its kinetic model does not agree with the 1999 rates (open conflict).
+- Copper-free apo WT, 298 K, pH 7.0, 100 mM phosphate, 2 mM DTT: possible. 17 amides around the metal site are broadened out by intermediate exchange and CPMG dispersion is seen at M44, I87 and nearby regions, with no rate or population (AZURIN-J18, AZURIN-J19); T61 is flat (AZURIN-J20). Abstract-only leads: two apo crystal forms that differ at H46 and H117 and pH-dependent histidine broadening (AZURIN-J21, AZURIN-J22). Until 2026-10-20 this was the reference state.
+- Oxidised Cu(II) WT: unknown; no exchange measurement in the evidence (AZURIN-J2, J3). A temperature-jump slow phase in the azurin/cytochrome c551 mixture is assigned to the H35 relaxation, no rate (AZURIN-J39, abstract).
+- Zn-, Cd-, Co- and Fe-substituted WT: unknown. Only MD, phosphorescence and static crystals exist (AZURIN-J28 to AZURIN-J32).
+- Ru- and Re-labelled constructs and the N42C dye-labelled smFRET construct: not assessable; their kinetics are electron transfer and photophysics, not conformational exchange (AZURIN-J33 to AZURIN-J35).
+
+## Key evidence
+
+| Row | Paper | Method | What it shows | Read |
+|---|---|---|---|---|
+| AZURIN-AZURIN_20261020202618-r1 | [Backbone Dynamics of Azurin in Solution: Slow Conformational Change…](https://doi.org/10.1021/bi990624l) | nmr_spin_relaxation | Localized fast backbone flexibility against a relatively rigid beta-sheet scaffold and copper-site environment | full_text |
+| AZURIN-AZURIN_20261020202618-r2 | [Backbone Dynamics of Azurin in Solution: Slow Conformational Change…](https://doi.org/10.1021/bi990624l) | nmr_spin_relaxation | No enhanced fast reorientation of the W48 indole N-H bond detected relative to backbone amides | full_text |
+| AZURIN-AZURIN_20261020202618-r3 | [Backbone Dynamics of Azurin in Solution: Slow Conformational Change…](https://doi.org/10.1021/bi990624l) | nmr_exchange_broadening | Slow His35-linked conformational exchange; additional broadening at F114 is mechanistically unresolved | full_text |
+| AZURIN-AZURIN_20261020202618-r4 | [Backbone Dynamics of Azurin in Solution: Slow Conformational Change…](https://doi.org/10.1021/bi990624l) | other | Reversible exchange between low-pH and high-pH conformations coupled to His35 protonation | full_text |
+| AZURIN-AZURIN_20261020202618-r5 | [Backbone Dynamics of Azurin in Solution: Slow Conformational Change…](https://doi.org/10.1021/bi990624l) | other | Protonation-linked, slow chemical-shift exchange near His35 | full_text |
+| AZURIN-AZURIN_20261020202618-r6 | [Backbone Dynamics of Azurin in Solution: Slow Conformational Change…](https://doi.org/10.1021/bi990624l) | pdb_structure_comparison | Alternative local backbone/hydrogen-bond arrangements consistent with His35-coupled solution exchange | full_text |
+| AZURIN-r9 | [NMR detection of multiple transitions to low-populated states in…](https://doi.org/10.1110/ps.0225403) | nmr_relaxation_dispersion | Exchange near H35; protonation-coupled peptide-plane flip interpretation | full_text |
+| AZURIN-r10 | [NMR detection of multiple transitions to low-populated states in…](https://doi.org/10.1110/ps.0225403) | nmr_relaxation_dispersion | Low-population exchange near the copper-coordinating loops | full_text |
+| AZURIN-r11 | [NMR detection of multiple transitions to low-populated states in…](https://doi.org/10.1110/ps.0225403) | nmr_relaxation_dispersion | Overlapping sensitivity to the two regional exchange processes | full_text |
+| AZURIN-r12 | [NMR detection of multiple transitions to low-populated states in…](https://doi.org/10.1110/ps.0225403) | nmr_relaxation_dispersion | Residue-resolved heterogeneous conformational exchange | full_text |
+| AZURIN-r13 | [NMR detection of multiple transitions to low-populated states in…](https://doi.org/10.1110/ps.0225403) | nmr_relaxation_dispersion | Conformational exchange detected over the temperature series | full_text |
+| AZURIN-r14 | [NMR detection of multiple transitions to low-populated states in…](https://doi.org/10.1110/ps.0225403) | nmr_relaxation_dispersion | Conformational exchange detected over the temperature series | full_text |
+| AZURIN-r15 | [NMR detection of multiple transitions to low-populated states in…](https://doi.org/10.1110/ps.0225403) | nmr_relaxation_dispersion | Conformational exchange detected over the temperature series | full_text |
+| AZURIN-r44 | [Flexibility of the metal-binding region in apo-cupredoxins.](https://doi.org/10.1073/pnas.1119460109) | nmr_exchange_broadening | Intermediate exchange on the chemical-shift timescale | full_text |
+| AZURIN-r45 | [Flexibility of the metal-binding region in apo-cupredoxins.](https://doi.org/10.1073/pnas.1119460109) | nmr_relaxation_dispersion | Micro-to-millisecond exchange near the copper-binding region | full_text |
+
+All rows for this protein: [`data/evidence.csv`](../../data/evidence.csv), filter `Protein (RelaxDB entry)` = `AZURIN`.
+
+## Caveats
+
+Call raised from possible to yes on 2026-10-20 after the RelaxDB source paper (doi:10.1021/bi990624l) was read in full and the reference state was reset to its sample, reduced Cu(I) azurin at pH 5.5 and 41 °C (ledger/redraft_notes.json; adjudication ledger/adjudication_AZURIN_pdf.json). Two caveats for the NMR collaborator: (1) the alternate state is protonation-coupled, a pH-dependent chemical equilibrium of His35 with a local peptide flip, and its 2-4% population at pH 5.5 is estimated from the pKa rather than fitted; (2) the reference state is metal-bound (Cu(I) holo), so this is not a ligand-free alternate conformation in the strict sense. The pH 5.5 rate comes from single-field line broadening with an equal-population equation corrected for unequal populations (k = 60 ± 30 s-1); the two-peak evidence and the EXSY rate come from pH 7.0 samples, where the populations are equal. The 2003 three-field CPMG model of the same Cu(I) H35 process (pB 0.39%, kA 11.7 s-1, kex in the thousands per second) is not reconciled with the 1999 rates. The abstract-only rows of the 1999 paper (AZURIN-AZURIN_20261020143153-r1, r2) are superseded and no longer cited. Only the selected papers were searched, all in phosphate or Tris.
+
+## Open questions
+
+- Not a conflict but a state contrast: apo-azurin loses 17 amides to intermediate exchange, while the authors cite a full Cu(I) HSQC (all non-proline residues but A1); the apo (pH 7.0, 100 mM phosphate, DTT) and Cu(I) (pH about 5, 50 mM phosphate) samples also differ in pH and buffer, so metal state and pH are confounded.
+- Residue 116: the CPMG paper's Table 2 prints 'Cys 116' while the entry sequence has G116; the judgments follow the sequence (row AZURIN-r10 still prints C116).
+- H35 process rate in reduced Cu(I) azurin: the 1999 RelaxDB source paper gives k = 60 ± 30 s-1 at pH 5.5 (kex about 120 s-1, minor form 2-4% estimated from the pKa; J43) and k = 45 ± 6 s-1 at pH 7.0 by EXSY (J38), whereas the 2003 three-field CPMG fit at pH about 5, 44.8 °C gives kA 11.7 ± 2.4 s-1 with a 0.39% minor state and keq 254, i.e. kex in the thousands per second (r9, J12); the two papers use different models (equal-population line broadening with a pKa-derived correction versus Carver-Richards with a fitted minor population), different phosphate concentrations and slightly different pH, so the rates are not reconciled.
+- Within the 1999 paper the mean S2 is 0.85 ± 0.05 in the abstract and 0.86 ± 0.05 in the Results; both are kept.
+- The RelaxDB AZURIN sample is reduced Cu(I) azurin at pH 5.5 and 41 °C (doi:10.1021/bi990624l, full text). Its slow exchange around His35 is a protonation/deprotonation equilibrium (deprotonated form 2-4% at pH 5.5, two resolved peak sets near pH 7) that interconverts the pH 5.5 and pH 9.0 crystal conformations: should a pH-coupled chemical equilibrium of a metal-bound sample count as an alternate APO state in the 2026-09-17 sense?
+- The 1999 line-broadening rate (k = 60 ± 30 s-1, pH 5.5) and EXSY rate (45 ± 6 s-1, pH 7.0) disagree with the 2003 three-field CPMG model of the same Cu(I) H35 process (kA 11.7 s-1, pB 0.39%, kex in the thousands per second); which model should the atlas carry for the reference state?
+
+Judgments: AZURIN-J1, AZURIN-J2, AZURIN-J3, AZURIN-J4, AZURIN-J5, AZURIN-J12, AZURIN-J13, AZURIN-J14, AZURIN-J15, AZURIN-J16, AZURIN-J18, AZURIN-J19, AZURIN-J20, AZURIN-J21, AZURIN-J22, AZURIN-J33, AZURIN-J34, AZURIN-J35, AZURIN-J37, AZURIN-J38, AZURIN-J39, AZURIN-J41, AZURIN-J42, AZURIN-J43, AZURIN-J44 in [`data/judgments.jsonl`](../../data/judgments.jsonl).

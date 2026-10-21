@@ -4,7 +4,7 @@ The scripts use only the Python standard library, plus numpy for the structure c
 
 | Folder | Contents |
 |---|---|
-| `tools/` | The pipeline steps (see `../method/PIPELINE.md`) and the table builders. Also the structure-state tool `pdb_states.py` and `ocr/vision_ocr.swift`, which reads scanned PDFs with macOS text recognition. |
+| `tools/` | The pipeline steps (see `../methods/how_it_is_built.md`) and the table builders. Also the structure-state tool `pdb_states.py` and `ocr/vision_ocr.swift`, which reads scanned PDFs with macOS text recognition. |
 | `prompts/` | The fixed instructions for the worker (`worker_v6_fill.md`, `worker_v6_screen.md`) and the judgment drafter (`judgment_draft_v1.md`). |
 | `schema/` | The judgment contract and the worker result schema. |
 | `config/` | Search configuration per entry, RelaxDB source-paper DOIs, identity overrides, and the residue ranges for the structure comparison (`pdb_states/`). |
