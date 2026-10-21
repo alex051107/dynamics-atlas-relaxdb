@@ -1,0 +1,966 @@
+{
+ "protein_summary": {
+  "entry_id": "CHEY_CPMG",
+  "per_window": {
+   "ps-ns": "dynamic_in_window at specific sites, measured only with Mg2+ or BeFx at 25 °C. Mg-bound unphosphorylated WT: lowest backbone S2 at K91 in the β4-α4 loop (CHEY-J12, r8), rigid remainder S2 0.66-0.94, mean 0.88 (CHEY-J13, no_evidence_in_window, r8), methyl S2axis 0.25-0.99 with flexible T87 Cγ2 and A90 Cβ (CHEY-J14, r9). BeFx-bound: active-site methyls rigidify, nearby methyls loosen, A90 stays flexible (CHEY-J15, r10, r11). Mg-free WT: not_measured (CHEY-J16). The urea-denatured F14N/V83T study (CHEY-J23, r37) is excluded from the native verdict.",
+   "us-ms": "dynamic_in_window in every native state measured. Mg-free WT (1 mM EDTA, 15 °C): 13 residues with per-residue local-fit kex 96 ± 16 to 2,440 ± 570 s-1 and per-residue pI 0.67-0.99 (local fits, not a shared population; group fit failed) (CHEY-J1, r1); D13 broadened (CHEY-J2, r5); nothing above Rex 2 s-1 elsewhere (CHEY-J3). 10 mM Mg2+: 11 residues, per-residue kex 246 ± 31 to 3,620 ± 460 s-1, per-residue pI 0.91-0.99 (CHEY-J4, r2), a suspected second faster process at A88 (CHEY-J5), G39 broadened (CHEY-J6), nothing elsewhere by CPMG or model-free (CHEY-J7). Two-point Rex peaks at 1 mM Mg2+ and is lower at 75 mM, the latter from Figure 3 only (CHEY-J8, r3, r4). BeFx-activated CheY keeps small, redistributed exchange (CHEY-J9, r7). Moy 1994, abstract only, Mg present: exchange near the Mg-binding loop (CHEY-J10, r26). Parameter differences across Mg conditions are condition differences, not conflicts.",
+   "slower_than_ms": "not_measured for Mg-free WT (CHEY-J17; HDX-MS searched with no relevant paper; the only time-resolved row, r18, is F14N refolding and is not judged).",
+   "undetermined": "Structure-only: Mg-free WT crystals show correlated two-conformer β4-α4 loop and Y106 (CHEY-J18, r19, r27); FliM-peptide-bound Mg-CheY shows intermediate loop conformers (CHEY-J19, r12); the Mg-bound crystal rearrangement is unresolved against solution data (CHEY-J20, r21); BeF3-activated structure with α4 amide-exchange protection (CHEY-J21, r13). MD: 1 μs apo simulation (CHEY-J22, r39, md_only). CheA P1-CheY arrangement at 283 K and 303 K is binding kinetics, not counted (CHEY-J11, r16, r17). Not judged: r14, r33 (phospho/BeFx chemical-shift endpoints), r15 (CheA PRE docking), r18 (refolding intermediate), r20, r24 (BeF3/Mn and CheZ-peptide crystals, abstract only), r22 (Salmonella homolog), r23, r30, r31, r32 (phosphorylation and signalling kinetics), r25, r38 (MD with mutant, peptide or BeF3-removed starts), r28 (in-cell resting state), r29 (T87I crystal, abstract only, no motion measured), r34 (in-cell intermolecular FRET), r35, r36 (activating mutant crystal and 19F), r40, r41 (Thermotoga homolog EPR), r42, r43 (XFMS accessibility of FliM-bound CheY)."
+  },
+  "wt_apo_answer": "Yes: at 15 °C without Mg2+ (50 mM sodium phosphate pH 7.0, 1 mM EDTA), unphosphorylated wild-type CheY shows microsecond-millisecond exchange at 13 active-site and FliM-face residues (R18, R19, A36, D38, N62, D64, E67, L68, L69, T87, N94, V107, L127, plus broadened D13); per-residue local two-state fits give kex from 96 ± 16 s-1 (D64) to 2,440 ± 570 s-1 (V107) and per-residue major fractions pI 0.99 to 0.67, which are local fit parameters, not a shared population; no global rate or population exists because group fitting failed, and no phosphate-free control was run.",
+  "open_conflicts": [
+   "Exchange model for the same CPMG data (r1, r2): the authors' per-residue local fits, failed group fits and poor Δω-Δδ correlation argue against a concerted two-state inactive-active switch, while the linear chemical-shift trajectories of E89, Y106 and V107 (and nearly M85, A97, A98) across T87I, WT, A113P and BeFx states fit a classic two-state equilibrium shift; the authors reconcile them as segmental local switching.",
+   "Two-state versus three-state at 10 mM Mg2+ (r2 source text): an F-test favours a three-state model for A36, T87 and E89, but the three-state fits were not robust and group three-state fitting gave no improvement; in EDTA no residue improved.",
+   "Mg2+ effect on structure: the Mg-bound E. coli crystal shows displacements up to 10 Å at the α4 N terminus and preceding loop (r21), while McDonald 2012 solution chemical-shift perturbations on Mg2+ addition are small in the allosteric region (cited in r1/r2 paper).",
+   "Residual exchange in BeFx-activated CheY (r7): authors leave open whether it is local return to the inactive state, motion among several active-like states, or motions slowed into the CPMG window."
+  ],
+  "questions_for_gina": [
+   "The RelaxDB source lead names Table 2 (Rex labels) and Figure 2 (missing-peak labels), i.e. the Mg-free 1 mM EDTA sample; the text names only D13 as too broad there, and Figure 2A marks too-broad residues only in the image. Which residues carry the missing-peak label, and should the 10 mM Mg2+ Table 1 set be kept out of the labels?",
+   "All CPMG and relaxation samples used 50 mM sodium phosphate pH 7.0 with no phosphate-free control, and the Mg-free crystal 3CHY has a sulfate next to N59/K109 in the phosphorylation pocket; do you know of a buffer comparison for CheY, or should the active-site exchange (D13, D38, N62, D64) be flagged as untested for anion binding?"
+  ],
+  "buffer_note": "Untested condition, not a demonstrated artefact: every native CheY NMR dynamics sample in the rows (McDonald 2012, r1-r6; McDonald 2013, r7-r11) was in 50 mM sodium phosphate, 0.02% NaN3, pH 7.0, and no source reports a phosphate-free control, although CheY is phosphorylated at D57 and binds phosphoryl analogues there; the Mg2+ Kd of 1.5 mM was also measured in this buffer. The Mg-free apo crystal 3CHY contains three sulfate ions (verified in the cached mmCIF ~/dynamics_atlas_work/structures/CHEY_CPMG/cif/3CHY.cif.gz); by a 4.5 Å contact check run here, one sits next to N59 and K109 in the phosphorylation pocket, one near G105, Y106, K119 and K122, and one near G76. The Mg-free sample contains 1 mM EDTA and the Mg-bound sample 10 mM MgCl2 (about 86% occupied); they give different per-residue parameters and are separate states. CPMG samples were >80% deuterated, 2H-relaxation samples about 60%. All CPMG pI values are per-residue local fits, not populations. The denatured-state study used 25 mM sodium phosphate with 5 M urea (r37)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "CHEY-J1",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     18,
+     19,
+     36,
+     38,
+     62,
+     64,
+     67,
+     68,
+     69,
+     87,
+     94,
+     107,
+     127
+    ],
+    "residues_author": "R18, R19, A36, D38, N62, D64, E67, L68, L69, T87, N94, V107, L127 (Table 2, 13 residues with Rex > 2 s-1)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "active site and FliM-binding interface (authors' description)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3, 1 mM EDTA, no Mg2+ added; unphosphorylated; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation-compensated CPMG, 600 and 700 MHz fitted together",
+    "observable": "Rex, dispersion amplitude",
+    "fit_model": "per-residue",
+    "kex": "per-residue local Carver-Richards fits, no shared value: from 96 ± 16 s-1 (D64) and 180 ± 30 s-1 (R19) to 2,440 ± 570 s-1 (V107); group fitting failed",
+    "pB": "per-residue fitted major fraction pI 0.67 ± 0.2 (N94) to 0.99 ± 0.01; not a shared population",
+    "delta_omega": "per-residue 0.27 ± 0.1 ppm (N94) to 9.4 ± 1 ppm (D64)",
+    "field": "600 and 700 MHz",
+    "temperature": "15 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Without Mg2+ (1 mM EDTA) at 15 °C, 13 residues of unphosphorylated wild-type CheY show microsecond-millisecond exchange whose per-residue rates (about 100 to 2,400 per second) and populations differ, so no single two-state switch describes them.",
+   "evidence_rows": [
+    "CHEY-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors propose these asynchronous local motions are the basis of CheY allostery (segmental switching between inactive and active-like conformations), not a concerted two-state switch.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J2",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     13
+    ],
+    "residues_author": "D13 (peak extremely broad in 1H-15N HSQC; dispersion fit errors too large)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "active site (Mg2+/phosphorylation site region)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3, 1 mM EDTA, no Mg2+ added; unphosphorylated; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC line width during 15N CPMG analysis",
+    "observable": "line broadening",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 700 MHz",
+    "temperature": "15 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the Mg-free sample D13 is too broad to fit, and the authors state it undergoes motion, but no rate or population can be given.",
+   "evidence_rows": [
+    "CHEY-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J3",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "All other assigned, resolved amides in the EDTA sample (residues not reaching Rex > 2 s-1)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3, 1 mM EDTA, no Mg2+ added; unphosphorylated; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N relaxation-compensated CPMG, 600 and 700 MHz",
+    "observable": "Rex",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 700 MHz",
+    "temperature": "15 °C",
+    "detection_window": "15N relaxation-compensated CPMG at 600 and 700 MHz, 15 °C; 12 or 13 τcp values with duplicates, 40 ms total CPMG period (one data set used 20 ms). The text gives the τcp extremes only through the two-point Rex screen, which used τcp 10.0 and 0.556 ms as the lowest and highest τcp of the dispersion set. A residue counted only with Rex > 2 s-1 and an F-test (α 0.01) favouring exchange. Misses exchange with Rex below 2 s-1 (small Δω or minor population), exchange faster than about 3,000-5,000 s-1 (authors' usable range a few hundred to about 3,000 s-1), and amides that are unassigned, overlapped, broadened out or prolines."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Outside the 13 fitted residues and D13, the Mg-free CPMG data show no exchange above the 2 s-1 threshold, which limits detectable exchange to the active-site and FliM face but does not exclude smaller or faster motions elsewhere.",
+   "evidence_rows": [
+    "CHEY-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J4",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     12,
+     36,
+     38,
+     62,
+     64,
+     86,
+     87,
+     88,
+     89,
+     106,
+     107
+    ],
+    "residues_author": "D12, A36, D38, N62, D64, V86, T87, A88, E89, Y106, V107 (Table 1, 11 residues)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "active site and FliM-binding interface; β4-α4 loop (T87-E89) and Y106/V107"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (10 mM MgCl2, about 86% occupied)",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3, 10 mM MgCl2 (about 86% Mg-bound, Kd 1.5 mM); unphosphorylated; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation-compensated CPMG, 500, 600 and 700 MHz fitted together",
+    "observable": "Rex, dispersion amplitude",
+    "fit_model": "per-residue",
+    "kex": "per-residue local Carver-Richards fits, no shared value: 246 ± 31 s-1 (E89), about 1,220-1,370 s-1 (D12, D38, T87, A88) up to 3,620 ± 460 s-1 (D64) and 3,100 ± 410 s-1 (Y106)",
+    "pB": "per-residue pI 0.91 ± 0.02 to 0.99 ± 0.01; not a shared population",
+    "delta_omega": "per-residue 0.52 ± 0.04 ppm (A36) to 6.0 ± 0.6 ppm (D64)",
+    "field": "500, 600 and 700 MHz",
+    "temperature": "15 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "With 10 mM Mg2+ at 15 °C, 11 active-site and FliM-face residues exchange on the microsecond-millisecond scale with per-residue rates from about 250 to 3,600 per second, and the parameters of residues shared with the Mg-free sample differ, so the two conditions must not be pooled.",
+   "evidence_rows": [
+    "CHEY-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors place these residues on the allosteric pathway from D57 through T87/A88 to the W58-M85-E89-Y106 quartet.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J5",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     88
+    ],
+    "residues_author": "A88: anomalously high R2° and poorer fit; authors suspect an additional faster μs process",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "phosphoryl-binding residue (backbone amide H-bonds the phosphoryl group)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (10 mM MgCl2, about 86% occupied)",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3, 10 mM MgCl2 (about 86% Mg-bound, Kd 1.5 mM); unphosphorylated; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "15N CPMG, 500, 600 and 700 MHz",
+    "observable": "Rex, elevated R2°",
+    "fit_model": "per-residue",
+    "kex": "1,230 ± 280 s-1 (local two-state fit, main process only)",
+    "pB": "pI 0.91 ± 0.04",
+    "delta_omega": "1.4 ± 0.4 ppm",
+    "field": "500, 600 and 700 MHz",
+    "temperature": "15 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A88's dispersion fits a two-state model poorly, and the authors suspect a separate faster microsecond motion, possibly tied to Mg2+ binding and release, on top of the fitted exchange.",
+   "evidence_rows": [
+    "CHEY-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J6",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     39
+    ],
+    "residues_author": "G39 (peak extremely broad; dispersion fit errors too large)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (10 mM MgCl2, about 86% occupied)",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3, 10 mM MgCl2 (about 86% Mg-bound, Kd 1.5 mM); unphosphorylated; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC line width during 15N CPMG analysis",
+    "observable": "line broadening",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600 and 700 MHz",
+    "temperature": "15 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "With 10 mM Mg2+, G39 is too broad to fit and the authors state it undergoes motion, without a rate.",
+   "evidence_rows": [
+    "CHEY-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J7",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "All other assigned amides with 10 mM Mg2+ ('no non-zero Rex values elsewhere in the protein')",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (10 mM MgCl2, about 86% occupied)",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3, 10 mM MgCl2 (about 86% Mg-bound, Kd 1.5 mM); unphosphorylated; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CPMG (500/600/700 MHz) plus model-free analysis of 15N T1, T2 and {1H}-15N NOE",
+    "observable": "Rex",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600 and 700 MHz",
+    "temperature": "15 °C",
+    "detection_window": "15N relaxation-compensated CPMG at 500, 600 and 700 MHz, 15 °C; 12 or 13 τcp values, 40 ms total CPMG period (one data set 20 ms), τcp extremes 10.0 and 0.556 ms per the two-point Rex description; Rex threshold 2 s-1 with F-test; plus model-free Rex terms from 15N T1/T2/NOE. Misses exchange with Rex below 2 s-1, exchange faster than about 3,000-5,000 s-1, and unassigned or broadened amides (the W58 amide is unassigned)."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "With 10 mM Mg2+ neither the CPMG data nor model-free relaxation analysis found exchange outside the active site and FliM interface, which bounds detection rather than proving rigidity.",
+   "evidence_rows": [
+    "CHEY-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J8",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     39,
+     88,
+     107
+    ],
+    "residues_author": "Two-point Rex series over Mg2+ (Figure 3): at 1 mM Mg2+ V107 Rex about 28 s-1 and G39, A88 broadened away; at 75 mM Mg2+ Rex described only as relatively low, no per-residue values in the text",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "FliM-binding interface (V107) and phosphoryl/Mg site (A88)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 0.02% NaN3; unphosphorylated; 1 mM CheY; 10% 2H2O; 1 mM MgCl2 (about 31% Mg-bound) and 75 mM MgCl2 (about 98% Mg-bound)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Two-point CPMG Rex estimate, τcp 10.0 and 0.556 ms, 40 ms period",
+    "observable": "approximate Rex = R2,eff difference at τcp 10.0 and 0.556 ms; 1 mM Mg2+: V107 about 28 s-1; 75 mM Mg2+: not given per residue",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "15 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Two-point Rex peaks at 1 mM Mg2+ (V107 about 28 per second, A88 and G39 broadened out), which the authors attribute to a change in the inactive-to-active transition, while the drop at 75 mM rests only on Figure 3 with no per-residue values in the text.",
+   "evidence_rows": [
+    "CHEY-r3",
+    "CHEY-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors argue the enhancement near 1 mM Mg2+ (close to the Kd and the cellular Mg2+ level) is biologically relevant to the inactive-to-active transition.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J9",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Residual Rex throughout, much of it in the β4-α4 loop and near Y106, shifted toward the FliM-binding interface; residue identities in Fig. 2c only",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "β4-α4 loop, Y106 region, FliM-binding interface (authors)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:BeFx + Mg2+ (4 mM BeCl2, 25 mM NaF, 10 mM MgCl2; phosphorylation mimic)",
+    "conditions": "15 °C; pH 7.0; 50 mM sodium phosphate, 10 mM MgCl2, 0.02% NaN3; 1 mM CheY; 10% 2H2O; >80% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation-compensated CPMG, 20 ms period, 10 τcp values, 700 MHz",
+    "observable": "approximate Rex = R2,eff(τcp 5 ms) - R2,eff(τcp 0.556 ms)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "15 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The BeFx-activated mimic still shows small microsecond-millisecond exchange, reduced at the active site and redistributed toward the FliM interface, with too few residues above 2 per second for rate fits.",
+   "evidence_rows": [
+    "CHEY-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J10",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "'Chemical exchange near the Mg-binding loop' (abstract); no residues transcribed",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "Mg-binding loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (concentration not given)",
+    "conditions": "Mg2+ present per McDonald 2012 description of the Moy 1994 work; temperature, pH and buffer not given (abstract only)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Heteronuclear backbone relaxation",
+    "observable": "Rex",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "An early backbone relaxation study of Mg-containing CheY reports exchange near the Mg-binding loop, but only the abstract was read, so rates, residues and temperature are unknown.",
+   "evidence_rows": [
+    "CHEY-r26"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J11",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Probe is CheA P1 I5 methyl, not a CheY residue",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "CheA P1-CheY phosphotransfer arrangement"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:full-length CheA (segmentally labelled), CheY titrated",
+    "conditions": "283 K (10 °C) and 303 K (30 °C); unphosphorylated CheY titrated into segmentally labelled full-length CheA; titration buffer not verified",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "CheA I5 methyl chemical-shift titration with CheY, fast-exchange population-averaged shifts with McConnell-equation simulations",
+    "observable": "chemical-shift averaging",
+    "fit_model": "none",
+    "kex": "not fitted; authors state exchange faster than the NMR timescale (>1,000 s-1)",
+    "pB": "not separable (fast exchange)",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "283 K and 303 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: the CheA P1 domain exchanges between CheY-bound and CheY-unbound arrangements faster than about 1,000 per second, shifting toward unbound at 283 K and toward bound at 303 K, which is partner binding seen through a CheA probe, not CheY conformational dynamics.",
+   "evidence_rows": [
+    "CHEY-r16",
+    "CHEY-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "Authors link the temperature-shifted equilibrium to thermotaxis signalling via CheY phosphotransfer.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J12",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     91
+    ],
+    "residues_author": "K91 NH S2 0.66 ± 0.01, the lowest backbone S2 in CheY-unP (A90 has no backbone S2 because of overlap)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "β4-α4 loop"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (10 mM MgCl2, partial occupancy)",
+    "conditions": "25 °C; pH 7.0; 50 mM sodium phosphate, 10 mM MgCl2, 0.02% NaN3; unphosphorylated, no BeFx; 1 mM CheY; 10% 2H2O",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2, {1H}-15N NOE with model-free analysis (AIC model selection); global τc 8.1 ns",
+    "observable": "S2",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 25 °C with 10 mM Mg2+ the β4-α4 loop backbone is the most flexible site on the ps-ns scale, with K91 at S2 0.66.",
+   "evidence_rows": [
+    "CHEY-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J13",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "All other backbone amides with S2 (range 0.66-0.94, mean 0.88; rigid in secondary structure)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (10 mM MgCl2, partial occupancy)",
+    "conditions": "25 °C; pH 7.0; 50 mM sodium phosphate, 10 mM MgCl2, 0.02% NaN3; unphosphorylated, no BeFx; 1 mM CheY; 10% 2H2O",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N T1, T2, {1H}-15N NOE with model-free analysis (AIC model selection); global τc 8.1 ns",
+    "observable": "S2",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz",
+    "temperature": "25 °C",
+    "detection_window": "15N T1, T2 and {1H}-15N NOE at 500 MHz, 25 °C, model-free analysis with global τc 8.1 ns; reports internal motion faster than overall tumbling only. Cannot see motions slower than about τc (ns-ms exchange enters only as Rex), and gives nothing for amides without S2 (overlap, unassigned, prolines)."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Outside the β4-α4 loop the backbone in secondary structure is rigid on the ps-ns scale (S2 0.66-0.94, mean 0.88), which says nothing about slower exchange.",
+   "evidence_rows": [
+    "CHEY-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J14",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     87,
+     90
+    ],
+    "residues_author": "Methyl S2axis 0.25-0.99 (mean 0.71) for CheY-unP; T87 Cγ2 0.50 ± 0.04 (Thr average 0.69); A90 Cβ about 0.67 ± 0.01 (Ala average 0.86)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "β4-α4 loop and phosphoryl-sensing T87"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (10 mM MgCl2, partial occupancy)",
+    "conditions": "25 °C; pH 7.0; 50 mM sodium phosphate, 10 mM MgCl2, 0.02% NaN3; unphosphorylated, no BeFx; about 60% 2H; 1 mM CheY",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "2H methyl relaxation (CH2D) with model-free analysis",
+    "observable": "S2axis, τe",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 700 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Methyl order parameters at 25 °C range widely (S2axis 0.25-0.99, mean 0.71), and the phosphoryl-sensing T87 Cγ2 (0.50) and β4-α4 loop A90 Cβ (about 0.67) are unusually flexible for their residue types in the Mg-bound inactive protein.",
+   "evidence_rows": [
+    "CHEY-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors describe T87 Cγ2 as 'poised' for rigidification upon phosphorylation, part of entropic compensation in the allosteric switch.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J15",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     85,
+     87,
+     88,
+     89,
+     90,
+     95,
+     107
+    ],
+    "residues_author": "Largest methyl changes on activation at T87, A88 (more rigid), M85, I95, V107; A90 Cβ S2axis about 0.67 in both states; E89 NH S2 0.82 ± 0.02 to 0.87 ± 0.01; backbone changes small and in both directions; τe changes at L28, L43, A113 without S2axis change",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "active site, β4-α4 loop and Y106 pocket (region of the allosteric conformational change)"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:BeFx + Mg2+ (4 mM BeCl2, 25 mM NaF, 10 mM MgCl2; phosphorylation mimic)",
+    "conditions": "25 °C; pH 7.0; 50 mM sodium phosphate, 10 mM MgCl2, 0.02% NaN3; 1 mM CheY; 10% 2H2O; about 60% 2H for 2H relaxation",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2, {1H}-15N NOE and 2H methyl relaxation with model-free analysis; global τc 8.1 ns",
+    "observable": "S2, S2axis, τe",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In BeFx-activated CheY at 25 °C the active-site methyls of T87 and A88 rigidify while several nearby methyls become more flexible and A90 stays flexible, so ps-ns motion persists and is redistributed rather than removed.",
+   "evidence_rows": [
+    "CHEY-r10",
+    "CHEY-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors propose the rigidification at the active site with compensating flexibility nearby is entropic compensation within the allosteric switch.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J16",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "No ps-ns relaxation of Mg-free (EDTA) wild-type CheY",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The ps-ns rows that exist (r8-r11) were all recorded with 10 mM Mg2+ or with BeFx, and Moy 1994 (r26, abstract only, Mg2+ present) gives no order parameters, so fast motion of Mg-free wild-type CheY was not measured in the searched literature.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J17",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "No WT apo measurement in this window",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The workbook searched HDX-MS and time-resolved methods and found no native measurement slower than milliseconds for Mg-free wild-type CheY; the only time-resolved row is a refolding study of the F14N mutant.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J18",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     88,
+     89,
+     90,
+     91,
+     106
+    ],
+    "residues_author": "Y106 'out' and 'in' rotamers in Mg-free 3CHY (Volz 1991; seven side chains in dual conformations); β4-α4 loop in two conformations that sterically correlate with the two Y106 rotamers in the 1.08 Å apoCheY structure",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "β4-α4 loop and Y106 (FliM-binding surface switch)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Crystals; Mg2+-free unphosphorylated CheY; 3CHY contains three sulfate ions (Volz 1991 abstract); other conditions not transcribed",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray crystallography with alternate-conformer modelling (1.7 Å and 1.08 Å)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Mg-free wild-type crystals hold Y106 and the β4-α4 loop in two correlated conformations, one read as meta-active, but crystals give no rate, so the timescale stays undetermined.",
+   "evidence_rows": [
+    "CHEY-r19",
+    "CHEY-r27"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "Simonovic and Volz propose the second conformation is a meta-active form responsible for the active properties of apoCheY.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J19",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     87,
+     88,
+     89,
+     90,
+     106
+    ],
+    "residues_author": "T87, A88, E89, A90, Y106: buried Y106 with an incompletely activated β4-α4 loop and multiple loop conformers (2B1J)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "FliM-binding surface; β4-α4 loop"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ + FliM N-terminal peptide (FliM16)",
+    "conditions": "Crystal; data at 24 °C, growth at 4 °C; protein in 10 mM Tris pH 7.0, well 50 mM MES pH 6.0, 30% PEG 6000, 50 mM MgCl2",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Single-crystal X-ray structure 2B1J at one temperature (24 °C) with alternate loop conformers, compared with 3CHY and 1F4V; not a multi-temperature series",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "24 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Unphosphorylated Mg-CheY bound to the FliM peptide crystallizes with Y106 buried but the β4-α4 loop in intermediate and multiple conformations, which shows partial activation without a timescale.",
+   "evidence_rows": [
+    "CHEY-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J20",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N terminus of α4 and the preceding loop: displacements up to 10 Å, one α4 turn unwinds (abstract)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "α4/β4-α4 functional surface"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+",
+    "conditions": "Crystal; conditions not transcribed (abstract only)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray crystallography, Mg-bound versus Mg-free comparison",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The Mg-bound E. coli crystal shows large α4 and loop rearrangement, while solution chemical-shift data in McDonald 2012 show only small Mg2+ effects in that region, so whether Mg2+ reshapes the solution structure is open.",
+   "evidence_rows": [
+    "CHEY-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J21",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": [
+     95,
+     96,
+     97,
+     98,
+     99
+    ],
+    "residues_author": "Activated structure: Y106 inward, shifted β4/α4; substantial amide protection for I95-A99 relative to unactivated CheY (Moy 1994)",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": "α4 (FliM-binding face)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:BeF3- + Mg2+ (phosphorylation mimic)",
+    "conditions": "25 °C; pH 6.7; 4 mM CheY, 16 mM BeCl2, 100 mM NaF, 20 mM MgCl2; 10% 2H2O; buffer not stated in caption",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution NMR structure (NOE and torsion restraints) plus NMR-detected amide hydrogen exchange",
+    "observable": "structure difference, HX protection",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "BeF3 activation gives the active-state structure and stabilizes α4 (I95-A99 more protected from amide exchange), but hydrogen exchange has no assigned window here and the unactivated comparison comes from a separate study.",
+   "evidence_rows": [
+    "CHEY-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J22",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole-domain Cα conformational landscape of Mg2+-free 3CHY in 1 μs MD",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Simulation, 300 K, Mg2+-free apo CheY from 3CHY; 1 μs trajectory",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Published atomistic MD (no new simulation)",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "300 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "A 1 μs simulation of Mg-free CheY shows conformational fluctuation within a narrower, distinct region than the Mg-bound forms, with no rate or population and no experimental timescale.",
+   "evidence_rows": [
+    "CHEY-r39"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CHEY-J23",
+   "entry_id": "CHEY_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Denatured chain: residues up to about 70 mostly positive {1H}-15N NOE (less mobile); second half negative or near-zero NOE except F111-K122; 77 of 125 observable amides analysed",
+    "numbering_note": "Entry numbering equals author numbering (Met1 = 1).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:F14N/V83T double mutant denatured in 5 M urea",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 7; 25 mM sodium phosphate; 5 M urea; 2.0 mM protein",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2, {1H}-15N NOE, reduced spectral density mapping",
+    "observable": "R1, R2, NOE",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The urea-denatured F14N/V83T chain shows heterogeneous fast motions, more restricted in the N-terminal half; this describes the unfolded state and is excluded from the native verdict.",
+   "evidence_rows": [
+    "CHEY-r37"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

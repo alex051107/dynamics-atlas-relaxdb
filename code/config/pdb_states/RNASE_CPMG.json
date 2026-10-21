@@ -1,0 +1,71 @@
+{
+ "entry": "RNASE_CPMG",
+ "accession": "P61823",
+ "core": [
+  [
+   2,
+   13
+  ],
+  [
+   24,
+   31
+  ],
+  [
+   37,
+   63
+  ],
+  [
+   72,
+   111
+  ],
+  [
+   116,
+   124
+  ]
+ ],
+ "mobile": [
+  [
+   14,
+   23
+  ],
+  [
+   32,
+   36
+  ],
+  [
+   64,
+   71
+  ],
+  [
+   112,
+   115
+  ]
+ ],
+ "open": "3A1R:A",
+ "closed": "5OGH:A",
+ "count_as_ligand": [
+  "SO4",
+  "PO4"
+ ],
+ "verify_numbering": true,
+ "altlocs": true,
+ "sidechain_chi1": [
+  11,
+  17,
+  33,
+  41,
+  46,
+  48,
+  119
+ ],
+ "note": "Mature RNase A numbering, Lys1 = 1 (RNASE-J1 numbering_note); accession P61823 (bovine), which holds 341 of the 342 mapped entries; the single P61824-only entry 6QMN is an RNase A-onconase chimera and is left out. Mobile = the loops named by the CPMG rows: loop 1 / hinge 14-23 (S15, S16, T17 of the His48 cluster, RNASE-J5; the 15-23 hinge of RNASE-J14), 32-36 (R33, the separate process of RNASE-J7/r68), loop 4 64-71 (A64, K66, T70, N71; RNASE-J6/r19) and 112-115 (the loop before the His119 strand; RNASE-J6 'loop 4 near His119', RNASE-r46 His119 rotamers); 3A1R helix/strand records: helices 3-13, 24-33, 50-60, strands 43-47, 61-63, 72-74, 79-86, 97-104, 106-111, 116-123. F46, H48, T82, D83, T100, Q101 and H119 sit on strands and stay in the core; their state is read from chi1 (Q11, T17, R33, K41, F46, H48, H119). The rows contrast apo 7RSA with the pTppAp complex 1U1B (RNASE-r1, r2, r9; backbone RMSD 0.69 A per Beach 2005); neither is among the 150 downloaded files (newest by release date), so 'open' = 3A1R chain A (ligand-free neutron structure at 298 K) and 'closed' = 5OGH chain A (3'-CMP plus sulfate, 1.16 A, 100 K), a B1/P1 substrate-analogue complex standing in for 1U1B; 5OGH's paper was not read (unverified stand-in), and the other nucleotide complexes (3JW1 U5P, 3LXO T3P at 294 K, 6PVU-6PVX, 8FHM/8GC9/8GGG/8S96, 8UB2 AMP, 9NCS uridine vanadate) are in the table for comparison. Sulfate and phosphate are counted as ligands because they bind the P1 site (RNASE-J18: 'phosphate and sulfate bind the P1 active site'; RNASE-J19 anion artefact). Chloride stays solvent. RNase S entries (3OQY/3OQZ/3OR0, 4K7L/4K7M, 4O36/4O37, 4OKF, 4YGW, 9GF9) deposit the S-peptide and S-protein as separate chains; the S-peptide chain has too few core residues and gets no RMSD. 8R5V is deposited with a +26 offset (auth 27 = Lys1; mapped by residue names) and is renumbered.",
+ "renumber": {
+  "8R5V": [
+   [
+    27,
+    150,
+    -26
+   ]
+  ]
+ }
+}

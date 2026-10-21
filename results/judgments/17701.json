@@ -1,0 +1,617 @@
+{
+ "protein_summary": {
+  "entry_id": "17701",
+  "per_window": {
+   "ps-ns": "unresolved for the free enzyme: no evidence row reports solution order parameters or MD of free WT YkuD, and the search missed the alias LdtBs (YKUD-J2, search_insufficient). The peptidoglycan-bound measurements that reach into ps-ns (bulk REDOR S = 0.82, bulk R1rho) are filed as undetermined because their windows extend to tens of microseconds.",
+   "us-ms": "unresolved: the 2012 abstract says relaxation dispersion finds no preexisting exchange in the free apoenzyme, but conditions, residues and window were not readable (YKUD-J1, r1). In the peptidoglycan-bound isolated catalytic domain the authors propose microsecond-to-millisecond exchange among bound and free states without a fit (YKUD-J15, r13).",
+   "slower_than_ms": "unresolved (search_insufficient): no CEST, ZZ-exchange, HDX or other slow measurement of the free enzyme (YKUD-J3). The milliseconds-or-longer residence time of full-length LdtBs on peptidoglycan is binding and not counted (YKUD-J11).",
+   "undetermined": "Peptidoglycan-bound full-length LdtBs at 298 K, pH 7.2 (solid-state MAS NMR, a separate sample state from the free enzyme) retains bulk motion: H-N dipolar S = 0.82 (YKUD-J9, r7) and bulk 15N R1rho 14 +/- 3 s-1 in a deuterated sample (YKUD-J10, r8), both unlocalized; no freely tumbling or large-amplitude mobile protein is seen by INEPT (YKUD-J11, r9). Not counted: V47C and H122A (YKUD-J12, J13) and isolated LysM (YKUD-J14, binding kinetics). Covalent carbapenem or thiobenzoate modification induces backbone flexibility and noncovalent beta-lactams do not, per abstract only (YKUD-J6 to J8, unresolved). The K117A/Q118A crystal (1Y7M) shows higher B factors in LysM loop entry 25-39 (YKUD-J4, unresolved) and a Cd2+/sulfate crystal artefact at the catalytic Cys142 (YKUD-J5)."
+  },
+  "wt_apo_answer": "Not established: the only us-ms test of free, wild-type apo YkuD is the 2012 relaxation-dispersion study, read as abstract only, which reports no preexisting conformational exchange without giving conditions, residues or detection window (YKUD-J1, unresolved), so no exchanging region, rate or population is known; the residual motion measured by solid-state NMR belongs to the peptidoglycan-bound state.",
+  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. BMRB 17701, which the PDB record of the 2012 apo NMR structure 3ZQD cross-references, holds one 600 MHz R1/R2/NOE set at 298 K, pH 6.5, 0.15 M ionic strength for 149 residues (including tag residue H170); NOE below 0.65 marks G1, K3, L4, S35-T41 (overlapping the end of the crystal B-factor loop 25-39), T93, G96, G108, G109, K140 and G168 as fast-moving, and R2/R1 above the 14.25 cut (mean 12.2) flags H60, I61, V63, V86, L90, Q121, Y123 and V138, all between 14.3 and 16.5. The deposited relaxation times appear to be in ms although labelled s, so absolute rates read 1000-fold low and are rounded to four decimals; the R2/R1 ratios and flags do not depend on that unit.",
+  "open_conflicts": [
+   "No same-proposition conflicts. The free apoenzyme (2012 abstract: no preexisting exchange by dispersion) and the peptidoglycan-bound solid (2014: residual bulk motion) are different sample states.",
+   "Numbering, not dynamics: the 2006 crystal paper and UniProt O34816 number residues as entry minus 3; the 2014 paper uses entry numbering."
+  ],
+  "questions_for_gina": [
+   "Should the 2012 Structure full text and SI be obtained? It is the likely source of the BMRB 17701 relaxation set and of the dispersion null, and without it YKUD-J1 stays unresolved.",
+   "Bulk REDOR S and bulk R1rho of the peptidoglycan-bound protein span ps to tens of microseconds; keep them in the undetermined window, or split them between ps-ns and us-ms?"
+  ],
+  "buffer_note": "The 2014 solid-state and slurry samples (r7-r13) all use 50 mM HEPES pH 7.2 at 298 K with intact B. subtilis 168 sacculi; the protein is bound to a large, flexible polymer, so these rows describe a peptidoglycan-bound sample state separate from the free solution enzyme, and labelling (deuterated for R1rho, U-13C,15N for 13C detection) differs between experiments. The 2014 SI (Figures S1, S2, S9) was not retrieved, and the 2012 paper was read as abstract only, so no buffer, temperature or field transfers to YKUD-J1 to J3 or J6 to J8. The 1Y7M crystal is a K117A/Q118A surface mutant grown with CdCl2, Li2SO4 and acetate at pH 5.1, and Cd2+/sulfate contacts reshape the active site. Searches used YkuD/ykuD names only, not the alias LdtBs, so absent method classes are search gaps."
+ },
+ "judgments": [
+  {
+   "judgment_id": "YKUD-J1",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "apoenzyme; sampled residues not given in the abstract",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not reported in the abstract (2012 full text and SI not accessible); free enzyme in solution",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "NMR relaxation dispersion (pulse sequence not given in the abstract)",
+    "observable": "dispersion of effective R2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Relaxation dispersion on the free apoenzyme; nucleus, field, temperature, pH, CPMG or spin-lock range, sampled residues and sensitivity are not given in the abstract, so the exchange rates, populations and shift differences it could miss cannot be stated"
+   },
+   "verdict": "unresolved",
+   "reason": "The 2012 abstract says relaxation dispersion shows no preexisting conformational exchange in the free apoenzyme, but with only the abstract read the residues, conditions and detection window are unknown, so this cannot be scored as a window-limited null.",
+   "evidence_rows": [
+    "YKUD-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J2",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement in the evidence rows); the RelaxDB R1/R2/NOE set for this entry is a free solution sample",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (no evidence row reports solution 15N R1/R2/NOE, order parameters or MD of free YkuD; spin-relaxation search returned 0 hits, 2026-10-17)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row gives ps-ns order parameters for the free enzyme: the 2012 study behind the apo NMR structure was read as abstract only, and the searches used the names YkuD/ykuD but not the alias LdtBs used by the 2014 paper.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J3",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement in the evidence rows)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (HDX-MS, EPR/DEER, smFRET, time-resolved and multitemperature crystallography queries returned 0 hits, 2026-10-17)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The evidence holds no CEST, ZZ-exchange, hydrogen-exchange or other slower-than-millisecond measurement of the free enzyme, and zero-hit searches without the LdtBs alias are too narrow to call this not measured.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J4",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": [
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39
+    ],
+    "residues_author": "residues 22-36, part of helix B and the downstream loop of the LysM domain (2006 numbering)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "LysM domain, helix B and downstream loop",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:K117A/Q118A (entry K120A/Q121A)",
+    "binding_state": "apo",
+    "conditions": "selenomethionine crystal grown at pH 5.1 from 0.1 M acetate, 0.2 M Li2SO4, 30% PEG 3350, 10 mM CdCl2; Cd2+ and sulfate at crystal contacts; TEV-cleaved tag; PDB 1Y7M; single structure, compared with the E. coli MltD LysM NMR structure 1E0G",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray crystallography (2.0 A) with isotropic B factors; comparison with a homologous LysM NMR structure",
+    "observable": "B factor; structure difference to a homolog",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Average B factors in this loop are higher than in the rest of the LysM domain (about 25 vs 22 A2) and the loop differs from the E. coli LysM structure, which the authors read as higher mobility, but the LysM domain has no significant lattice contacts and the crystal is a surface mutant, so static disorder or packing remain equal explanations and no timescale is given.",
+   "evidence_rows": [
+    "YKUD-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J5",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": [
+     122,
+     126,
+     127,
+     142
+    ],
+    "residues_author": "His119, His123, Gly124, Cys139 (2006 numbering); His119 from an adjacent molecule",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "putative catalytic site (His/Cys motif, Cys139 nucleophile)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:K117A/Q118A (entry K120A/Q121A)",
+    "binding_state": "bound:Cd2+ and sulfate (crystal contact)",
+    "conditions": "selenomethionine crystal grown at pH 5.1 from 0.1 M acetate, 0.2 M Li2SO4, 30% PEG 3350, 10 mM CdCl2; PDB 1Y7M",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "X-ray crystallography (2.0 A)",
+    "observable": "side-chain orientation in the active site",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The Cys139 thiol points away from His123 because Cd2+ bridges it to His119 of a neighbouring molecule and a sulfate binds His123, which the authors call a crystallization artefact; the rotated canonical geometry is a model, not an observed second state.",
+   "evidence_rows": [
+    "YKUD-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J6",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "backbone (residues not given in the abstract)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "active-site cysteine (acylated)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:carbapenem (covalent acyl-enzyme at the active-site cysteine)",
+    "conditions": "not reported in the abstract (2012 full text and SI not accessible); free enzyme in solution; individual carbapenems not named in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "not stated in the abstract (NMR study)",
+    "observable": "backbone flexibility",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Per its abstract, covalent acylation of the active cysteine by carbapenems induces backbone flexibility, but the method, residues, timescale and size of the change are not available from the abstract.",
+   "evidence_rows": [
+    "YKUD-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J7",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "backbone (residues not given in the abstract)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "active-site cysteine (modified)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:2-nitro-5-thiobenzoate (covalent, active-site cysteine)",
+    "conditions": "not reported in the abstract (2012 full text and SI not accessible); free enzyme in solution",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "not stated in the abstract (NMR study)",
+    "observable": "backbone flexibility",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Per its abstract, covalent 2-nitro-5-thiobenzoate modification of the active cysteine also induces backbone flexibility, which the authors say is not caused by loss of the imidazole-sulfhydryl interaction or steric hindrance; no method, residues or timescale are available.",
+   "evidence_rows": [
+    "YKUD-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J8",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "not given in the abstract",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:beta-lactams (noncovalent; KD above 37.5 mM per the abstract)",
+    "conditions": "not reported in the abstract (2012 full text and SI not accessible); free enzyme in solution; individual compounds and concentrations not given",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "not stated in the abstract (NMR study)",
+    "observable": "change in backbone flexibility on binding",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Comparison of flexibility with and without noncovalently bound beta-lactams; method, residues, ligand occupancy (weak binding, KD above 37.5 mM) and sensitivity are not given in the abstract, so neither the timescale probed nor the smallest detectable change is known"
+   },
+   "verdict": "unresolved",
+   "reason": "The abstract reports no change in flexibility on noncovalent beta-lactam binding, but with binding this weak and no method or window available, the null cannot be scored.",
+   "evidence_rows": [
+    "YKUD-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J9",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole amide region integrated (bulk value)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:peptidoglycan sacculi",
+    "conditions": "298 K; pH 7.2; 50 mM HEPES; full-length protein (0.3-1 mM before incubation) bound to intact, hydrated B. subtilis strain 168 peptidoglycan sacculi; solid-state MAS NMR, 600 MHz; SI with labelling and acquisition details not retrieved; 54 kHz MAS for 1H-detected HN REDOR",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-detected one-dimensional 1H-15N REDOR under MAS",
+    "observable": "bulk amide H-N dipolar order parameter S (not S2)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Peptidoglycan-bound LdtBs has a bulk H-N order parameter S of 0.82, below the S above 0.93 typical of crystals or precipitates, so it moves more than a lattice-embedded protein on timescales shorter than tens of microseconds; local backbone motion and whole-protein motion carried by the flexible peptidoglycan cannot be separated, and no residue or rate is resolved.",
+   "evidence_rows": [
+    "YKUD-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors attribute the residual motion partly to the flexibility of the bound peptidoglycan; no catalytic link is stated.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J10",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "bulk 15N signal (not residue-resolved)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: highly deuterated full-length LdtBs (WT sequence)",
+    "binding_state": "bound:peptidoglycan sacculi",
+    "conditions": "298 K; pH 7.2; 50 mM HEPES; full-length protein (0.3-1 mM before incubation) bound to intact, hydrated B. subtilis strain 168 peptidoglycan sacculi; solid-state MAS NMR, 600 MHz; SI with labelling and acquisition details not retrieved; fast MAS; spin-lock strength and MAS rate for this measurement not given in the main text",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "bulk 15N R1rho under fast MAS",
+    "observable": "bulk 15N R1rho (not a dispersion fit, not kex)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The bulk 15N R1rho of peptidoglycan-bound LdtBs is 14 +/- 3 s-1, above the values below 5 s-1 typical of microcrystalline proteins (literature benchmarks, not a matched control), which the authors read as motion on the tens-of-nanoseconds to microseconds scale; a single bulk rate gives no exchange rate, population or location, and the window straddles ps-ns and us-ms.",
+   "evidence_rows": [
+    "YKUD-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J11",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole protein (1D 13C spectra)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:peptidoglycan sacculi",
+    "conditions": "298 K; pH 7.2; 50 mM HEPES; full-length protein (0.3-1 mM before incubation) bound to intact, hydrated B. subtilis strain 168 peptidoglycan sacculi; solid-state MAS NMR, 600 MHz; SI with labelling and acquisition details not retrieved; U-13C,15N protein with unlabelled peptidoglycan; 12 or 12.5 kHz MAS; 13C-detected",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "13C direct excitation vs 1H-13C cross-polarization vs refocused INEPT under MAS",
+    "observable": "presence of INEPT signal (freely tumbling or highly flexible protein)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": "Refocused-INEPT under 12-12.5 kHz MAS at 298 K detects freely tumbling protein or highly flexible segments; no INEPT signal was seen (data not shown), with no stated sensitivity, so a small free fraction or low-amplitude motion is not excluded"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Full-length LdtBs gives strong cross-polarization and no refocused-INEPT signal, so no freely tumbling protein or large-amplitude flexible segment is detected; the inferred residence time of milliseconds or longer on peptidoglycan is binding, not conformational motion, and is not counted.",
+   "evidence_rows": [
+    "YKUD-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J12",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": [
+     47
+    ],
+    "residues_author": "V47 (mutation site in the LysM domain)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "predicted peptidoglycan interaction site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:V47C",
+    "binding_state": "bound:peptidoglycan sacculi",
+    "conditions": "298 K; pH 7.2; 50 mM HEPES; full-length protein (0.3-1 mM before incubation) bound to intact, hydrated B. subtilis strain 168 peptidoglycan sacculi; solid-state MAS NMR, 600 MHz; SI with labelling and acquisition details not retrieved; 13C-detected; labelling scheme not given in the main text",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C direct excitation vs 1H-13C cross-polarization; pull-down binding; solution spectra as fold control",
+    "observable": "loss of cross-polarization efficiency",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "V47C still binds peptidoglycan but its cross-polarization is almost entirely lost, which the authors read as weaker binding with motion averaging the dipolar couplings; bound/free exchange, internal motion and heterogeneous binding cannot be told apart, and no rate is given.",
+   "evidence_rows": [
+    "YKUD-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J13",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": [
+     122
+    ],
+    "residues_author": "H122 (mutation site in the catalytic domain)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "predicted peptidoglycan interaction site near the DAP residue"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:H122A",
+    "binding_state": "bound:peptidoglycan sacculi",
+    "conditions": "298 K; pH 7.2; 50 mM HEPES; full-length protein (0.3-1 mM before incubation) bound to intact, hydrated B. subtilis strain 168 peptidoglycan sacculi; solid-state MAS NMR, 600 MHz; SI with labelling and acquisition details not retrieved; 13C-detected; labelling scheme not given in the main text",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C direct excitation vs 1H-13C cross-polarization; pull-down binding; solution spectra as fold control",
+    "observable": "loss of cross-polarization efficiency",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "H122A behaves like V47C: it binds peptidoglycan but nearly loses cross-polarization, read as weaker binding with motional averaging, again without separating binding exchange from internal motion.",
+   "evidence_rows": [
+    "YKUD-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J14",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "isolated LysM domain (residues 1-54 per the introduction; cloned boundaries in unavailable SI)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "LysM domain (beta-sheet is the peptidoglycan interaction site)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: isolated LysM domain",
+    "binding_state": "bound:peptidoglycan sacculi (slurry; bound and free fractions not quantified)",
+    "conditions": "298 K; pH 7.2; 50 mM HEPES; hydrated peptidoglycan slurry; INEPT under MAS and solution 1H-15N HSQC without MAS, 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "INEPT under MAS; solution 1H and 1H-15N HSQC of the slurry",
+    "observable": "observable INEPT/solution signal; chemical-shift perturbation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: the isolated LysM domain stays visible by INEPT and solution NMR in a peptidoglycan slurry, which the authors explain by fast exchange between free and bound states; this is binding, not a conformational process, and is not counted in any window answer.",
+   "evidence_rows": [
+    "YKUD-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "YKUD-J15",
+   "entry_id": "17701",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "isolated catalytic domain (residues 55-169 per the introduction; cloned boundaries in unavailable SI)",
+    "numbering_note": "Entry numbering equals the 2014 JACS/2MTZ numbering (checked V47, H122, C142, LysM 1-54 and catalytic domain 55-169 against the entry sequence). The entry carries G1-R2-K3 in place of UniProt M1 and adds G168-S169, so UniProt O34816 and 2006 crystal-paper numbers are entry minus 3 (UniProt L2 = entry L5, His119 = H122, His123 = H126, Gly124 = G127, Cys139 = C142).",
+    "functional_site": "catalytic domain"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: isolated catalytic domain",
+    "binding_state": "bound:peptidoglycan sacculi (bound and possibly free states)",
+    "conditions": "298 K; pH 7.2; 50 mM HEPES; hydrated peptidoglycan pellet; 13C direct excitation, CP and INEPT under MAS, 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C direct excitation vs 1H-13C cross-polarization vs INEPT under MAS",
+    "observable": "inefficient CP and absent INEPT signal",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The peptidoglycan-associated catalytic domain gives neither INEPT signal nor efficient cross-polarization, which the authors propose reflects exchange among bound and possibly free states on a microsecond-to-millisecond scale; this is a proposed explanation, mixes binding with bound-state motion, and has no fitted rate.",
+   "evidence_rows": [
+    "YKUD-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

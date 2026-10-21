@@ -1,0 +1,228 @@
+{
+ "protein_summary": {
+  "entry_id": "50020",
+  "per_window": {
+   "ps-ns": "dynamic_in_window in loops. Free murine vWFA2 at 298 K, pH 7.4, 500 MHz has reduced R2 at N1133, N1219 and around A1205 and lower NOE at N1133 and T1208 (entry 91, 177, 163, 166; R50020-J1, r1); no S2 or model-free fit.",
+   "us-ms": "search_insufficient (J4). No dispersion or exchange-broadening study is in the rows.",
+   "slower_than_ms": "search_insufficient (J5).",
+   "undetermined": "RDC outliers against the 6S4C crystal in two alignment media, seven in PEG-hexanol (J2) and five in CTAB:PEG-hexanol (J3), read as local solution-crystal differences or flexibility. Not judged: r4 (static overlays with homologous vWA domains from other proteins)."
+  },
+  "wt_apo_answer": "Unknown: no row measures µs-ms exchange in free murine vWFA2; the one relaxation study (500 MHz, 298 K, pH 7.4, 10 mM phosphate) reports only ps-ns loop flexibility at N1133, N1219, around A1205 and T1208 (entry 91, 177, 163, 166), and no dispersion or exchange-broadening study was found.",
+  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. The paper states that its relaxation and RDC data were deposited as BMRB 50020. The set holds 500 MHz T1 and T2 for 140 residues and NOE for 141 at 298 K, pH 7.4. NOE below 0.65 flags H9, G10, N91, V124, I132, A163, T166, D167, I169, A195 and A196; N91, A163 and T166 are the paper's N1133, A1205 and T1208, while N177 (N1219) has low R2 (7.3 s-1) but NOE 0.77. R2/R1 above 13.0 flags G43, H101, V116, I136, L144, G153 and G180 (author G1085, H1143, V1158, I1178, L1186, G1195, G1222), none of which the paper discusses.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "Should the seven deposited R2/R1 outliers (author G1085, H1143, V1158, I1178, L1186, G1195, G1222), which the paper never discusses, stay an unmeasured lead for µs-ms exchange, or does the RelaxDB label already count them?"
+  ],
+  "buffer_note": "All vWFA2 NMR samples are in 10 mM sodium phosphate, pH 7.4. The 6S4C crystal (pH 4.6 reservoir, 1.8 M MgSO4) carries metal-complexed EDTA and a sulphate/phosphate ion at lattice contacts on the collagen-binding surface; these may affect crystal-solution comparisons but are not shown to cause any RDC outlier. Aligned samples (J2, J3) are flagged is_wt_apo false because the alignment medium is part of the state. The construct keeps a GRAMG cloning prefix and is bacterially expressed, unglycosylated. Second read flagged no row."
+ },
+ "judgments": [
+  {
+   "judgment_id": "R50020-J1",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": [
+     91,
+     163,
+     166,
+     177
+    ],
+    "residues_author": "N1133, N1219, residues around A1205 (not enumerated), T1208, plus the termini",
+    "numbering_note": "Entry = author - 1042 (GRAMG cloning prefix then Q63870 1048-1238 = entry 6-196); checked N1133, A1205, T1208 and N1219 (entry 91, 163, 166, 177) against the entry sequence.",
+    "functional_site": "loops; alpha5-beta6 loop poorly defined in the 6S4C crystal",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K (25 °C); pH 7.4; 10 mM sodium phosphate; 10% D2O; TSP-d4; isolated murine vWFA2 (1048-1238 with GRAMG prefix), no partner; 15N labelled; 500 MHz",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE (3.7 s saturation)",
+    "observable": "reduced R2 and NOE",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Besides the termini, N1133, N1219 and residues around A1205 have reduced R2 and N1133 and T1208 lower NOE, which the authors read as ps-ns loop flexibility; overlapping peaks give some unreliable values and no model-free fit was made.",
+   "evidence_rows": [
+    "R50020-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J2",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": [
+     72,
+     89,
+     124,
+     157,
+     162,
+     163,
+     191
+    ],
+    "residues_author": "D1114, S1131, V1166, E1199, L1204, A1205, A1233",
+    "numbering_note": "Entry = author - 1042 (GRAMG cloning prefix then Q63870 1048-1238 = entry 6-196); checked N1133, A1205, T1208 and N1219 (entry 91, 163, 166, 177) against the entry sequence.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.3-7.4; 10 mM sodium phosphate; 10% D2O; PEG-hexanol alignment medium (4.2% w/v PEG); 500 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N RDCs by IPAP-HSQC fitted to the 6S4C crystal structure (PALES SVD)",
+    "observable": "RDC deviation from crystal structure",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In PEG-hexanol the seven largest RDC deviations from the crystal structure mark local solution-crystal differences or flexibility; a mismatch can be a changed mean conformation or averaging, and gives no timescale or population.",
+   "evidence_rows": [
+    "R50020-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J3",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": [
+     45,
+     91,
+     143,
+     157,
+     162
+    ],
+    "residues_author": "L1087, N1133, G1185, E1199, L1204",
+    "numbering_note": "Entry = author - 1042 (GRAMG cloning prefix then Q63870 1048-1238 = entry 6-196); checked N1133, A1205, T1208 and N1219 (entry 91, 163, 166, 177) against the entry sequence.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.3-7.4; 10 mM sodium phosphate; 10% D2O; CTAB:PEG-hexanol 1:30 alignment medium; 500 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N RDCs by IPAP-HSQC fitted to the 6S4C crystal structure (PALES SVD)",
+    "observable": "RDC deviation from crystal structure",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz 1H",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the charged CTAB medium the five largest deviations, all in loops, again suggest local differences or flexibility; the outlier set changes with the alignment tensor, so the two media are kept apart.",
+   "evidence_rows": [
+    "R50020-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J4",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole construct",
+    "numbering_note": "Entry = author - 1042 (GRAMG cloning prefix then Q63870 1048-1238 = entry 6-196); checked N1133, A1205, T1208 and N1219 (entry 91, 163, 166, 177) against the entry sequence.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K (25 °C); pH 7.4; 10 mM sodium phosphate; 10% D2O; TSP-d4; isolated murine vWFA2 (1048-1238 with GRAMG prefix), no partner; 15N labelled; 500 MHz",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures dispersion, R1rho, CEST or exchange broadening for vWFA2 (missing plotted points are not assigned to exchange), and the zero-hit searches used narrow name and species terms.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R50020-J5",
+   "entry_id": "50020",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole construct",
+    "numbering_note": "Entry = author - 1042 (GRAMG cloning prefix then Q63870 1048-1238 = entry 6-196); checked N1133, A1205, T1208 and N1219 (entry 91, 163, 166, 177) against the entry sequence.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K (25 °C); pH 7.4; 10 mM sodium phosphate; 10% D2O; TSP-d4; isolated murine vWFA2 (1048-1238 with GRAMG prefix), no partner; 15N labelled; 500 MHz",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures H/D exchange or any slower-than-millisecond process of vWFA2.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

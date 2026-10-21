@@ -1,0 +1,736 @@
+{
+ "_note": "RelaxDB-133 transfer pilot 2026-10-15. Seeds = BMRB entry citation (data-generating paper) only; no RelaxDB labels used.",
+ "4762": {
+  "seeds": [
+   "10.1021/bi00004a036"
+  ],
+  "aliases": [
+   "\\bntrc\\b",
+   "nitrogen regulat\\w* protein",
+   "receiver domain of ntrc"
+  ],
+  "search_terms": [
+   "NtrC"
+  ],
+  "epmc_name": "(NtrC OR \"nitrogen regulatory protein C\" OR \"NtrC receiver\")"
+ },
+ "5839": {
+  "seeds": [
+   "10.1023/a:1025467918856"
+  ],
+  "aliases": [
+   "\\bgb3\\b",
+   "protein g\\b",
+   "igg.binding domain",
+   "\\bb3 domain\\b",
+   "third igg"
+  ],
+  "search_terms": [
+   "GB3",
+   "protein G B3 domain"
+  ],
+  "epmc_name": [
+   "(GB3 AND \"protein G\")",
+   "\"third IgG-binding domain\"",
+   "(\"B3 domain\" AND \"protein G\")"
+  ]
+ },
+ "17266": {
+  "seeds": [
+   "10.1021/bi200005k"
+  ],
+  "aliases": [
+   "\\bsilb\\b",
+   "\\bcusb\\b",
+   "silver efflux",
+   "metallochaperone domain"
+  ],
+  "search_terms": [
+   "SilB",
+   "SilB metallochaperone"
+  ],
+  "epmc_name": "(SilB OR \"silver efflux\" OR \"CusB metallochaperone\")"
+ },
+ "50410": {
+  "seeds": [
+   "10.1007/s12104-020-09976-1"
+  ],
+  "aliases": [
+   "\\ball4940\\b",
+   "orange carotenoid protein",
+   "\\bcth\\b",
+   "\\bocp\\b"
+  ],
+  "search_terms": [
+   "All4940",
+   "C-terminal domain homolog orange carotenoid protein"
+  ],
+  "epmc_name": "(All4940 OR CTDH OR \"C-terminal domain homolog of orange carotenoid protein\")"
+ },
+ "50020": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "Q63870",
+  "seeds": [
+   "10.1016/j.febslet.2011.04.071",
+   "10.1002/2211-5463.12807"
+  ],
+  "aliases": [
+   "\\bcollagen[-\\s]?alpha[-\\s]?1[-\\s]?\\([-\\s]?vii[-\\s]?\\)[-\\s]?chain\\b",
+   "\\blong[-\\s]?chain[-\\s]?collagen\\b",
+   "\\blc[-\\s]?collagen\\b",
+   "\\bcollagen[-\\s]?α[-\\s]?1[-\\s]?\\([-\\s]?vii[-\\s]?\\)[-\\s]?chain\\b",
+   "\\bcol[-\\s]?7[-\\s]?a[-\\s]?1\\b"
+  ],
+  "epmc_name": [
+   "(\"Collagen alpha-1(VII) chain\" OR \"Long-chain collagen\" OR \"LC collagen\" OR \"Collagen α-1(VII) chain\")",
+   "(\"Col7a1\")"
+  ],
+  "search_terms": [
+   "Collagen alpha-1(VII) chain",
+   "Col7a1"
+  ]
+ },
+ "15521": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P23441",
+  "seeds": [
+   "10.1111/j.1742-4658.2007.06208.x"
+  ],
+  "aliases": [
+   "\\bhomeobox[-\\s]?protein[-\\s]?nkx[-\\s]?2[-\\s]?\\.[-\\s]?1\\b",
+   "\\bthyroid[-\\s]?nuclear[-\\s]?factor[-\\s]?1\\b",
+   "\\bthyroid[-\\s]?transcription[-\\s]?factor[-\\s]?1\\b",
+   "\\bttf[-\\s]?1\\b",
+   "\\bnkx[-\\s]?2[-\\s]?1\\b",
+   "\\bnkx[-\\s]?2[-\\s]?\\.[-\\s]?1\\b",
+   "\\btitf[-\\s]?1\\b",
+   "\\bttf[-\\s]?1\\b",
+   "\\bttf[-\\s]?1\\b"
+  ],
+  "epmc_name": [
+   "(\"Homeobox protein Nkx-2.1\" OR \"Thyroid nuclear factor 1\" OR \"Thyroid transcription factor 1\" OR \"TTF-1\")",
+   "(\"Nkx2-1\" OR \"Nkx-2.1\" OR \"Titf1\" OR \"Ttf-1\" OR \"Ttf1\")"
+  ],
+  "search_terms": [
+   "Homeobox protein Nkx-2.1",
+   "Nkx2-1"
+  ]
+ },
+ "AZURIN": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "P00282",
+  "seeds": [
+   "10.1021/bi990624l"
+  ],
+  "aliases": [
+   "\\bazurin\\b",
+   "\\bazu\\b"
+  ],
+  "epmc_name": [
+   "(\"Azurin\")",
+   "(\"azu\")"
+  ],
+  "search_terms": [
+   "Azurin",
+   "azu"
+  ]
+ },
+ "19335": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P13501",
+  "seeds": [
+   "10.1016/j.bpj.2013.10.025"
+  ],
+  "aliases": [
+   "\\bc[-\\s]?c[-\\s]?motif[-\\s]?chemokine[-\\s]?5\\b",
+   "\\beocp\\b",
+   "\\beosinophil[-\\s]?chemotactic[-\\s]?cytokine\\b",
+   "\\bsis[-\\s]?delta\\b",
+   "\\bsmall[-\\s]?inducible[-\\s]?cytokine[-\\s]?a[-\\s]?5\\b",
+   "\\bt[-\\s]?cell[-\\s]?specific[-\\s]?protein[-\\s]?p[-\\s]?228\\b",
+   "\\btcp[-\\s]?228\\b",
+   "\\bt[-\\s]?cell[-\\s]?specific[-\\s]?protein[-\\s]?rantes\\b",
+   "\\brantes[-\\s]?\\([-\\s]?3[-\\s]?68[-\\s]?\\)\\b",
+   "\\brantes[-\\s]?\\([-\\s]?4[-\\s]?68[-\\s]?\\)\\b",
+   "\\bp[-\\s]?228\\b",
+   "\\brantes\\b",
+   "\\bccl[-\\s]?5\\b",
+   "\\bd[-\\s]?17[-\\s]?s[-\\s]?136[-\\s]?e\\b",
+   "\\bscya[-\\s]?5\\b"
+  ],
+  "epmc_name": [
+   "(\"C-C motif chemokine 5\" OR \"EoCP\" OR \"Eosinophil chemotactic cytokine\" OR \"SIS-delta\" OR \"Small-inducible cytokine A5\" OR \"T cell-specific protein P228\" OR \"TCP228\" OR \"T-cell-specific protein RANTES\" OR \"RANTES(3-68)\" OR \"RANTES(4-68)\" OR \"P228\" OR \"RANTES\")",
+   "(\"CCL5\" OR \"D17S136E\" OR \"SCYA5\")"
+  ],
+  "search_terms": [
+   "C-C motif chemokine 5",
+   "CCL5"
+  ]
+ },
+ "HTGFA": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "P01135",
+  "seeds": [
+   "10.1021/bi00008a003"
+  ],
+  "aliases": [
+   "\\bprotransforming[-\\s]?growth[-\\s]?factor[-\\s]?alpha\\b",
+   "\\btransforming[-\\s]?growth[-\\s]?factor[-\\s]?alpha\\b",
+   "\\btgf[-\\s]?alpha\\b",
+   "\\bprotransforming[-\\s]?growth[-\\s]?factor[-\\s]?α\\b",
+   "\\btransforming[-\\s]?growth[-\\s]?factor[-\\s]?α\\b",
+   "\\btgf[-\\s]?α\\b",
+   "\\btgfa\\b"
+  ],
+  "epmc_name": [
+   "(\"Protransforming growth factor alpha\" OR \"Transforming growth factor alpha\" OR \"TGF-alpha\" OR \"Protransforming growth factor α\" OR \"Transforming growth factor α\" OR \"TGF-α\")",
+   "(\"TGFA\")"
+  ],
+  "search_terms": [
+   "Protransforming growth factor alpha",
+   "TGFA"
+  ]
+ },
+ "18306": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "Q9Y235",
+  "seeds": [
+   "10.1021/bi300021s"
+  ],
+  "aliases": [
+   "\\bc[-\\s]?>[-\\s]?u[-\\s]?editing[-\\s]?enzyme[-\\s]?apobec[-\\s]?2\\b",
+   "\\bmrna[-\\s]?\\([-\\s]?cytosine[-\\s]?\\([-\\s]?6666[-\\s]?\\)\\)[-\\s]?deaminase[-\\s]?2\\b",
+   "\\bapobec[-\\s]?2\\b",
+   "\\bapobec[-\\s]?2\\b"
+  ],
+  "epmc_name": [
+   "(\"C->U-editing enzyme APOBEC-2\" OR \"mRNA(cytosine(6666)) deaminase 2\" OR \"APOBEC-2\")",
+   "(\"APOBEC2\")"
+  ],
+  "search_terms": [
+   "C->U-editing enzyme APOBEC-2",
+   "APOBEC2"
+  ]
+ },
+ "CD9K": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P02633",
+  "seeds": [],
+  "aliases": [
+   "\\bprotein[-\\s]?s[-\\s]?100[-\\s]?g\\b",
+   "\\bcalbindin[-\\s]?d[-\\s]?9[-\\s]?k\\b",
+   "\\bs[-\\s]?100[-\\s]?calcium[-\\s]?binding[-\\s]?protein[-\\s]?g\\b",
+   "\\bvitamin[-\\s]?d[-\\s]?dependent[-\\s]?calcium[-\\s]?binding[-\\s]?protein[-\\s]?,[-\\s]?intestinal\\b",
+   "\\bcabp\\b",
+   "\\bs[-\\s]?100[-\\s]?g\\b",
+   "\\bs[-\\s]?100[-\\s]?g\\b",
+   "\\bcalb[-\\s]?3\\b",
+   "\\bs[-\\s]?100[-\\s]?d\\b"
+  ],
+  "epmc_name": [
+   "(\"Protein S100-G\" OR \"Calbindin-D9k\" OR \"S100 calcium-binding protein G\" OR \"Vitamin D-dependent calcium-binding protein, intestinal\" OR \"CABP\" OR \"S100-G\")",
+   "(\"S100G\" OR \"CALB3\" OR \"S100D\")"
+  ],
+  "search_terms": [
+   "Protein S100-G",
+   "S100G"
+  ]
+ },
+ "TRX": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "P0AA29",
+  "seeds": [
+   "10.1021/bi00053a007"
+  ],
+  "aliases": [
+   "\\bthioredoxin[-\\s]?1\\b",
+   "\\btrx[-\\s]?1\\b",
+   "\\btrxa\\b",
+   "\\bthioredoxin\\b"
+  ],
+  "epmc_name": [
+   "(\"Thioredoxin 1\" OR \"Trx-1\")",
+   "(\"trxA\")",
+   "TITLE:\"Thioredoxin\" AND (\"Salmonella typhi\" OR \"S. typhi\" OR \"Escherichia coli\" OR \"E. coli\" OR \"Escherichia coli O6:H1\" OR \"Escherichia coli O157:H7\" OR \"Salmonella typhimurium\" OR \"S. typhimurium\" OR \"Shigella flexneri\" OR \"S. flexneri\")"
+  ],
+  "search_terms": [
+   "Thioredoxin 1",
+   "trxA"
+  ]
+ },
+ "VCPTH": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P0A7D1",
+  "seeds": [],
+  "aliases": [
+   "\\bpeptidyl[-\\s]?trna[-\\s]?hydrolase\\b",
+   "\\bpth\\b",
+   "\\bpeptidyl[-\\s]?trna[-\\s]?hydrolase[-\\s]?,[-\\s]?n[-\\s]?terminally[-\\s]?processed\\b",
+   "\\bpth\\b",
+   "\\brap\\b"
+  ],
+  "epmc_name": [
+   "(\"Peptidyl-tRNA hydrolase\" OR \"Pth\" OR \"Peptidyl-tRNA hydrolase, N-terminally processed\")",
+   "(\"pth\" OR \"rap\")"
+  ],
+  "search_terms": [
+   "Peptidyl-tRNA hydrolase",
+   "pth"
+  ]
+ },
+ "RFAHTD": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P0AFW0",
+  "seeds": [],
+  "aliases": [
+   "\\btranscription[-\\s]?antitermination[-\\s]?protein[-\\s]?rfah\\b",
+   "\\brfah\\b",
+   "\\bhlyt\\b",
+   "\\bsfrb\\b"
+  ],
+  "epmc_name": [
+   "(\"Transcription antitermination protein RfaH\")",
+   "(\"rfaH\" OR \"hlyT\" OR \"sfrB\")"
+  ],
+  "search_terms": [
+   "Transcription antitermination protein RfaH",
+   "rfaH"
+  ]
+ },
+ "27011": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P06224",
+  "seeds": [
+   "10.1074/jbc.m117.784074"
+  ],
+  "aliases": [
+   "\\brna[-\\s]?polymerase[-\\s]?sigma[-\\s]?factor[-\\s]?siga\\b",
+   "\\bsigma[-\\s]?43\\b",
+   "\\bsigma[-\\s]?a\\b",
+   "\\bsiga\\b",
+   "\\brpod\\b"
+  ],
+  "epmc_name": [
+   "(\"RNA polymerase sigma factor SigA\" OR \"Sigma-43\" OR \"Sigma-A\")",
+   "(\"sigA\" OR \"rpoD\")"
+  ],
+  "search_terms": [
+   "RNA polymerase sigma factor SigA",
+   "sigA"
+  ]
+ },
+ "6838": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P16897",
+  "seeds": [
+   "10.1016/j.bpj.2009.02.068",
+   "10.1023/a:1025870122182",
+   "10.1007/bf00197809",
+   "10.1016/s0140-6736(69)90742-9",
+   "10.1021/bi001653v",
+   "10.1007/s10858-005-5343-7"
+  ],
+  "aliases": [
+   "\\bbeta[-\\s]?lactamase[-\\s]?pse[-\\s]?4\\b",
+   "\\bbeta[-\\s]?lactamase[-\\s]?carb[-\\s]?1\\b",
+   "\\bcarbenicillinase[-\\s]?1\\b",
+   "\\bpse[-\\s]?4\\b",
+   "\\bcarb[-\\s]?1\\b",
+   "\\bpse[-\\s]?4\\b",
+   "\\bcarb[-\\s]?1\\b"
+  ],
+  "epmc_name": [
+   "(\"Beta-lactamase PSE-4\" OR \"Beta-lactamase CARB-1\" OR \"Carbenicillinase 1\" OR \"PSE-4\" OR \"CARB-1\")",
+   "(\"pse4\" OR \"carB1\")"
+  ],
+  "search_terms": [
+   "Beta-lactamase PSE-4",
+   "pse4"
+  ]
+ },
+ "REV1CT": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "Q9UBZ9",
+  "seeds": [],
+  "aliases": [
+   "\\btranslesion[-\\s]?synthesis[-\\s]?protein[-\\s]?rev[-\\s]?1\\b",
+   "\\balpha[-\\s]?integrin[-\\s]?binding[-\\s]?protein[-\\s]?80\\b",
+   "\\baibp[-\\s]?80\\b",
+   "\\bmolecular[-\\s]?adapter[-\\s]?protein[-\\s]?rev[-\\s]?1\\b",
+   "\\brev[-\\s]?1[-\\s]?like[-\\s]?terminal[-\\s]?deoxycytidyl[-\\s]?transferase\\b",
+   "\\breversionless[-\\s]?protein[-\\s]?1[-\\s]?homolog\\b",
+   "\\brev[-\\s]?1[-\\s]?homolog\\b",
+   "\\btemplate[-\\s]?dependent[-\\s]?deoxycytidyl[-\\s]?transferase[-\\s]?rev[-\\s]?1\\b",
+   "\\brev[-\\s]?1\\b",
+   "\\brev[-\\s]?1\\b",
+   "\\brev[-\\s]?1\\b",
+   "\\brev[-\\s]?1\\b",
+   "\\brev[-\\s]?1[-\\s]?l\\b"
+  ],
+  "epmc_name": [
+   "(\"Translesion synthesis protein REV1\" OR \"Alpha integrin-binding protein 80\" OR \"AIBP80\" OR \"Molecular adapter protein REV1\" OR \"Rev1-like terminal deoxycytidyl transferase\" OR \"Reversionless protein 1 homolog\" OR \"REV1 homolog\" OR \"Template-dependent deoxycytidyl transferase REV1\" OR \"REV1\" OR \"REV1\" OR \"REV1\")",
+   "(\"REV1\" OR \"REV1L\")"
+  ],
+  "search_terms": [
+   "Translesion synthesis protein REV1",
+   "REV1"
+  ]
+ },
+ "17701": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "O34816",
+  "seeds": [
+   "10.1016/j.str.2012.03.015"
+  ],
+  "aliases": [
+   "\\bputative[-\\s]?l[-\\s]?,[-\\s]?d[-\\s]?transpeptidase[-\\s]?ykud\\b",
+   "\\bspore[-\\s]?protein[-\\s]?ykud\\b",
+   "\\bykud\\b"
+  ],
+  "epmc_name": [
+   "(\"Putative L,D-transpeptidase YkuD\" OR \"Spore protein YkuD\")",
+   "(\"ykuD\")"
+  ],
+  "search_terms": [
+   "Putative L,D-transpeptidase YkuD",
+   "ykuD"
+  ]
+ },
+ "VILD6": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "P02640",
+  "seeds": [
+   "10.1021/bi700110v"
+  ],
+  "aliases": [
+   "\\bvillin[-\\s]?1\\b",
+   "\\bvil[-\\s]?1\\b",
+   "\\bvil\\b"
+  ],
+  "epmc_name": [
+   "(\"Villin-1\")",
+   "(\"VIL1\" OR \"VIL\")"
+  ],
+  "search_terms": [
+   "Villin-1",
+   "VIL1"
+  ]
+ },
+ "CDNFCT": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "Q49AH0",
+  "seeds": [],
+  "aliases": [
+   "\\bcerebral[-\\s]?dopamine[-\\s]?neurotrophic[-\\s]?factor\\b",
+   "\\barmet[-\\s]?like[-\\s]?protein[-\\s]?1\\b",
+   "\\bconserved[-\\s]?dopamine[-\\s]?neurotrophic[-\\s]?factor\\b",
+   "\\bcdnf\\b",
+   "\\barmetl[-\\s]?1\\b"
+  ],
+  "epmc_name": [
+   "(\"Cerebral dopamine neurotrophic factor\" OR \"ARMET-like protein 1\" OR \"Conserved dopamine neurotrophic factor\")",
+   "(\"CDNF\" OR \"ARMETL1\")"
+  ],
+  "search_terms": [
+   "Cerebral dopamine neurotrophic factor",
+   "CDNF"
+  ]
+ },
+ "SPRY": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "O88838",
+  "seeds": [],
+  "aliases": [
+   "\\bspry[-\\s]?domain[-\\s]?containing[-\\s]?socs[-\\s]?box[-\\s]?protein[-\\s]?2\\b",
+   "\\bssb[-\\s]?2\\b",
+   "\\bgene[-\\s]?rich[-\\s]?cluster[-\\s]?protein[-\\s]?c[-\\s]?9\\b",
+   "\\bspsb[-\\s]?2\\b",
+   "\\bgrcc[-\\s]?9\\b",
+   "\\bssb[-\\s]?2\\b"
+  ],
+  "epmc_name": [
+   "(\"SPRY domain-containing SOCS box protein 2\" OR \"SSB-2\" OR \"Gene-rich cluster protein C9\")",
+   "(\"Spsb2\" OR \"Grcc9\" OR \"Ssb2\")"
+  ],
+  "search_terms": [
+   "SPRY domain-containing SOCS box protein 2",
+   "Spsb2"
+  ]
+ },
+ "CIN1D1": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "A8W3P3",
+  "seeds": [],
+  "aliases": [
+   "\\bcin[-\\s]?1\\b"
+  ],
+  "epmc_name": [
+   "(\"CIN1\")"
+  ],
+  "search_terms": [
+   "CIN1"
+  ]
+ },
+ "RNASEHI": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "P0A7Y4",
+  "seeds": [
+   "10.1021/bi00020a003"
+  ],
+  "aliases": [
+   "\\bribonuclease[-\\s]?hi\\b",
+   "\\brnase[-\\s]?hi\\b",
+   "\\bribonuclease[-\\s]?h\\b",
+   "\\brnase[-\\s]?h\\b",
+   "\\brnha\\b",
+   "\\bdasf\\b",
+   "\\bhera\\b",
+   "\\brnh\\b",
+   "\\bsdra\\b"
+  ],
+  "epmc_name": [
+   "(\"Ribonuclease HI\" OR \"RNase HI\" OR \"Ribonuclease H\" OR \"RNase H\")",
+   "(\"rnhA\" OR \"dasF\" OR \"herA\" OR \"rnh\" OR \"sdrA\")"
+  ],
+  "search_terms": [
+   "Ribonuclease HI",
+   "rnhA"
+  ]
+ },
+ "MIA40": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "Q8N4Q1",
+  "seeds": [],
+  "aliases": [
+   "\\bmitochondrial[-\\s]?intermembrane[-\\s]?space[-\\s]?import[-\\s]?and[-\\s]?assembly[-\\s]?protein[-\\s]?40\\b",
+   "\\bcoiled[-\\s]?coil[-\\s]?helix[-\\s]?coiled[-\\s]?coil[-\\s]?helix[-\\s]?domain[-\\s]?containing[-\\s]?protein[-\\s]?4\\b",
+   "\\bchchd[-\\s]?4\\b",
+   "\\bmia[-\\s]?40\\b"
+  ],
+  "epmc_name": [
+   "(\"Mitochondrial intermembrane space import and assembly protein 40\" OR \"Coiled-coil-helix-coiled-coil-helix domain-containing protein 4\")",
+   "(\"CHCHD4\" OR \"MIA40\")"
+  ],
+  "search_terms": [
+   "Mitochondrial intermembrane space import and assembly protein 40",
+   "CHCHD4"
+  ]
+ },
+ "VL": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "P01631",
+  "seeds": [
+   "10.1002/prot.340150307"
+  ],
+  "aliases": [
+   "\\big[-\\s]?kappa[-\\s]?chain[-\\s]?v[-\\s]?ii[-\\s]?region[-\\s]?26[-\\s]?10\\b",
+   "\\big[-\\s]?κ[-\\s]?chain[-\\s]?v[-\\s]?ii[-\\s]?region[-\\s]?26[-\\s]?10\\b"
+  ],
+  "epmc_name": [
+   "(\"Ig kappa chain V-II region 26-10\" OR \"Ig κ chain V-II region 26-10\")"
+  ],
+  "search_terms": [
+   "Ig kappa chain V-II region 26-10"
+  ]
+ },
+ "7036": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "O43639",
+  "seeds": [
+   "10.1021/bi060091y"
+  ],
+  "aliases": [
+   "\\bcytoplasmic[-\\s]?protein[-\\s]?nck[-\\s]?2\\b",
+   "\\bgrowth[-\\s]?factor[-\\s]?receptor[-\\s]?bound[-\\s]?protein[-\\s]?4\\b",
+   "\\bnck[-\\s]?adaptor[-\\s]?protein[-\\s]?2\\b",
+   "\\bnck[-\\s]?2\\b",
+   "\\bsh[-\\s]?2[-\\s]?/[-\\s]?sh[-\\s]?3[-\\s]?adaptor[-\\s]?protein[-\\s]?nck[-\\s]?beta\\b",
+   "\\bnck[-\\s]?2\\b",
+   "\\bnck[-\\s]?2\\b",
+   "\\bgrb[-\\s]?4\\b"
+  ],
+  "epmc_name": [
+   "(\"Cytoplasmic protein NCK2\" OR \"Growth factor receptor-bound protein 4\" OR \"NCK adaptor protein 2\" OR \"Nck-2\" OR \"SH2/SH3 adaptor protein NCK-beta\" OR \"NCK2\")",
+   "(\"NCK2\" OR \"GRB4\")"
+  ],
+  "search_terms": [
+   "Cytoplasmic protein NCK2",
+   "NCK2"
+  ]
+ },
+ "4267": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P80188",
+  "seeds": [],
+  "aliases": [
+   "\\bneutrophil[-\\s]?gelatinase[-\\s]?associated[-\\s]?lipocalin\\b",
+   "\\bngal\\b",
+   "\\b25[-\\s]?kda[-\\s]?alpha[-\\s]?2[-\\s]?microglobulin[-\\s]?related[-\\s]?subunit[-\\s]?of[-\\s]?mmp[-\\s]?9\\b",
+   "\\blipocalin[-\\s]?2\\b",
+   "\\boncogene[-\\s]?24[-\\s]?p[-\\s]?3\\b",
+   "\\bsiderocalin\\b",
+   "\\bp[-\\s]?25\\b",
+   "\\bmmp[-\\s]?9\\b",
+   "\\blcn[-\\s]?2\\b",
+   "\\bhnl\\b",
+   "\\bngal\\b"
+  ],
+  "epmc_name": [
+   "(\"Neutrophil gelatinase-associated lipocalin\" OR \"NGAL\" OR \"25 kDa alpha-2-microglobulin-related subunit of MMP-9\" OR \"Lipocalin-2\" OR \"Oncogene 24p3\" OR \"Siderocalin\" OR \"p25\" OR \"MMP-9\")",
+   "(\"LCN2\" OR \"HNL\" OR \"NGAL\")"
+  ],
+  "search_terms": [
+   "Neutrophil gelatinase-associated lipocalin",
+   "LCN2"
+  ]
+ },
+ "CRABP2": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P29373",
+  "seeds": [],
+  "aliases": [
+   "\\bcellular[-\\s]?retinoic[-\\s]?acid[-\\s]?binding[-\\s]?protein[-\\s]?2\\b",
+   "\\bcellular[-\\s]?retinoic[-\\s]?acid[-\\s]?binding[-\\s]?protein[-\\s]?ii\\b",
+   "\\bcrabp[-\\s]?ii\\b",
+   "\\bcrabp[-\\s]?2\\b"
+  ],
+  "epmc_name": [
+   "(\"Cellular retinoic acid-binding protein 2\" OR \"Cellular retinoic acid-binding protein II\" OR \"CRABP-II\")",
+   "(\"CRABP2\")"
+  ],
+  "search_terms": [
+   "Cellular retinoic acid-binding protein 2",
+   "CRABP2"
+  ]
+ },
+ "17306": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "N1S0H6",
+  "seeds": [
+   "10.1016/j.str.2010.12.018"
+  ],
+  "aliases": [],
+  "epmc_name": [],
+  "search_terms": []
+ },
+ "UBE2G1": {
+  "auto": true,
+  "auto_version": 6,
+  "uniprot": "P62253",
+  "seeds": [
+   "10.1186/s40543-015-0068-z"
+  ],
+  "aliases": [
+   "\\bubiquitin[-\\s]?conjugating[-\\s]?enzyme[-\\s]?e[-\\s]?2[-\\s]?g[-\\s]?1\\b",
+   "\\be[-\\s]?2[-\\s]?ubiquitin[-\\s]?conjugating[-\\s]?enzyme[-\\s]?g[-\\s]?1\\b",
+   "\\be[-\\s]?217[-\\s]?k\\b",
+   "\\bubc[-\\s]?7\\b",
+   "\\bubiquitin[-\\s]?carrier[-\\s]?protein[-\\s]?g[-\\s]?1\\b",
+   "\\bubiquitin[-\\s]?protein[-\\s]?ligase[-\\s]?g[-\\s]?1\\b",
+   "\\bubiquitin[-\\s]?conjugating[-\\s]?enzyme[-\\s]?e[-\\s]?2[-\\s]?g[-\\s]?1[-\\s]?,[-\\s]?n[-\\s]?terminally[-\\s]?processed\\b",
+   "\\bube[-\\s]?2[-\\s]?g[-\\s]?1\\b",
+   "\\bube[-\\s]?2[-\\s]?g\\b"
+  ],
+  "epmc_name": [
+   "(\"Ubiquitin-conjugating enzyme E2 G1\" OR \"E2 ubiquitin-conjugating enzyme G1\" OR \"E217K\" OR \"UBC7\" OR \"Ubiquitin carrier protein G1\" OR \"Ubiquitin-protein ligase G1\" OR \"Ubiquitin-conjugating enzyme E2 G1, N-terminally processed\")",
+   "(\"UBE2G1\" OR \"UBE2G\")"
+  ],
+  "search_terms": [
+   "Ubiquitin-conjugating enzyme E2 G1",
+   "UBE2G1"
+  ]
+ },
+ "CXCL8": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P10145",
+  "seeds": [],
+  "aliases": [
+   "\\binterleukin[-\\s]?8\\b",
+   "\\bil[-\\s]?8\\b",
+   "\\bc[-\\s]?x[-\\s]?c[-\\s]?motif[-\\s]?chemokine[-\\s]?8\\b",
+   "\\bchemokine[-\\s]?\\([-\\s]?c[-\\s]?x[-\\s]?c[-\\s]?motif[-\\s]?\\)[-\\s]?ligand[-\\s]?8\\b",
+   "\\bemoctakin\\b",
+   "\\bgranulocyte[-\\s]?chemotactic[-\\s]?protein[-\\s]?1\\b",
+   "\\bgcp[-\\s]?1\\b",
+   "\\bmonocyte[-\\s]?derived[-\\s]?neutrophil[-\\s]?chemotactic[-\\s]?factor\\b",
+   "\\bmdncf\\b",
+   "\\bmonocyte[-\\s]?derived[-\\s]?neutrophil[-\\s]?activating[-\\s]?peptide\\b",
+   "\\bmonap\\b",
+   "\\bneutrophil[-\\s]?activating[-\\s]?protein[-\\s]?1\\b",
+   "\\bnap[-\\s]?1\\b",
+   "\\bprotein[-\\s]?3[-\\s]?10[-\\s]?c\\b",
+   "\\bt[-\\s]?cell[-\\s]?chemotactic[-\\s]?factor\\b",
+   "\\bmdncf[-\\s]?a\\b",
+   "\\bil[-\\s]?8[-\\s]?\\([-\\s]?5[-\\s]?77[-\\s]?\\)\\b",
+   "\\bil[-\\s]?8[-\\s]?\\([-\\s]?6[-\\s]?77[-\\s]?\\)\\b",
+   "\\bil[-\\s]?8[-\\s]?\\([-\\s]?7[-\\s]?77[-\\s]?\\)\\b",
+   "\\bil[-\\s]?8[-\\s]?\\([-\\s]?8[-\\s]?77[-\\s]?\\)\\b",
+   "\\bil[-\\s]?8[-\\s]?\\([-\\s]?9[-\\s]?77[-\\s]?\\)\\b",
+   "\\bcxcl[-\\s]?8\\b",
+   "\\bil[-\\s]?8\\b"
+  ],
+  "epmc_name": [
+   "(\"Interleukin-8\" OR \"IL-8\" OR \"C-X-C motif chemokine 8\" OR \"Chemokine (C-X-C motif) ligand 8\" OR \"Emoctakin\" OR \"Granulocyte chemotactic protein 1\" OR \"GCP-1\" OR \"Monocyte-derived neutrophil chemotactic factor\" OR \"MDNCF\" OR \"Monocyte-derived neutrophil-activating peptide\" OR \"MONAP\" OR \"Neutrophil-activating protein 1\")",
+   "(\"CXCL8\" OR \"IL8\")"
+  ],
+  "search_terms": [
+   "Interleukin-8",
+   "CXCL8"
+  ]
+ },
+ "18092": {
+  "auto": true,
+  "auto_version": 3,
+  "uniprot": "P03355",
+  "seeds": [
+   "10.1002/pro.2067"
+  ],
+  "aliases": [
+   "\\bgag[-\\s]?pol[-\\s]?polyprotein\\b",
+   "\\bpr[-\\s]?180[-\\s]?gag[-\\s]?pol\\b",
+   "\\bmatrix[-\\s]?protein[-\\s]?p[-\\s]?15\\b",
+   "\\brna[-\\s]?binding[-\\s]?phosphoprotein[-\\s]?p[-\\s]?12\\b",
+   "\\bcapsid[-\\s]?protein[-\\s]?p[-\\s]?30\\b",
+   "\\bnucleocapsid[-\\s]?protein[-\\s]?p[-\\s]?10[-\\s]?pol\\b",
+   "\\bnc[-\\s]?pol\\b",
+   "\\bprotease\\b",
+   "\\breverse[-\\s]?transcriptase[-\\s]?/[-\\s]?ribonuclease[-\\s]?h\\b",
+   "\\bintegrase\\b",
+   "\\bgag[-\\s]?pol\\b"
+  ],
+  "epmc_name": [
+   "(\"Gag-Pol polyprotein\" OR \"Pr180gag-pol\" OR \"Matrix protein p15\" OR \"RNA-binding phosphoprotein p12\" OR \"Capsid protein p30\" OR \"Nucleocapsid protein p10-Pol\" OR \"NC-pol\" OR \"Protease\" OR \"Reverse transcriptase/ribonuclease H\" OR \"Integrase\")",
+   "(\"gag-pol\")"
+  ],
+  "search_terms": [
+   "Gag-Pol polyprotein",
+   "gag-pol"
+  ]
+ }
+}

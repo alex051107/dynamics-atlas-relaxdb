@@ -1,0 +1,1457 @@
+{
+ "protein_summary": {
+  "entry_id": "CD9K",
+  "per_window": {
+   "ps-ns": "Unresolved, abstract-only throughout. Apo (variant not stated): the C-terminal loop G57-E60 has lower order parameters than in metal-bound states (J12, r2); Cd2+ in site II raises them (J14, r3); Ca2+-loaded averages S2 0.83 (loops), 0.85 (helices), 0.59 (linker) (J16, r1); methyls split into proximal and distal classes on Ca2+ binding (J20, J21, r17, r18); an engineered-loop mutant is stiffer than P43G (J34, r14).",
+   "us-ms": "Unresolved, abstract-only. Apo and (Cd2+)1 states show slower fluctuations in the empty N-terminal loop, faster with Cd2+ (J13, J15; r2, r3). Dicalcium and Ca/La P43M show millisecond equilibria in the linker (38, 42-44, 46) and site I (18, 19) by R1rho (J27, J28; r22, r23), lost in 2 M GdmHCl (J29; r39, r40). No dispersion or R1rho study of P43G or of the native protein is in the evidence.",
+   "slower_than_ms": "Native Pro43 calbindin (Ca2+-loaded) has two peak sets, 3:1, linked by Gly42-Pro43 cis/trans isomerism with cis-to-trans 0.2 s-1 at 25 °C (J1; r4, r9, r36; abstracts). The entry construct P43G shows no second peak set (J6; r5, r10). Wild type and P43G do not form domain-swapped dimers in crystallization drops, while P43M variants do over days (J5, J11, J31).",
+   "undetermined": "Hydrogen exchange: apo amides exchange on average 220-fold faster than in the Ca2+ form, Ca2+ and Cd2+ protect many amides (J17-J19); apo P43G shows faster amide exchange and ring rotation (J7). Static or indirect: crystal cis/trans conformers (J2), minor A form fold (J3), Ca2+ off-rate 3 s-1 (J4, binding kinetics), apo, Ca2+ and Cd2+ P43G structures (J8-J10), DPC micelle and DPC binding (J22, J23), lanthanide restraints and Ce3+ substitution kinetics (J24), apo/holo comparison (J25), deamidation isoforms as an artefact lead (J26), N56A, E65Q and F36G/P43M mutants (J30, J32, J33), frozen 19F-ENDOR (J35). Not judged: Ca2+-exchange mutants M1-M4 (r25-r28), lysine methylation (r35), pseudo-EF-hand mutants (CD9K-CD9K_20261020030739-r2), Mg2+- and Mn2+-bound crystals of an unstated variant (CD9K-CD9K_20261020030739-r6, r7), E60D crystal (CD9K-CD9K_20261020030739-r8), homolog comparison (CD9K-CD9K_20261020030739-r9) and the P43MG tether-helix mutant (CD9K-CD9K_20261020030739-r16)."
+  },
+  "wt_apo_answer": "Unknown: no readable study measures microsecond-millisecond exchange in Ca2+-free calbindin D9k of either the native Pro43 sequence or the entry's P43G variant; the only apo relaxation study is read as an abstract (11.74 T, variant not stated) and reports slower fluctuations in the empty N-terminal binding loop with no residues, rate or population, and the slow cis/trans exchange with two peak sets belongs to native Pro43 calbindin in the Ca2+-loaded state, not to P43G.",
+  "open_conflicts": [
+   "Construct of the apo relaxation study (r2): its abstract names no variant, but the 1998 engineered-loop abstract (r14 source) calls the earlier apo study P43G; the judgments keep r2 as 'variant not stated'.",
+   "Native apo heterogeneity: the apo P43G assignment abstract (r11 source) says the wild type was not assigned because of conformational heterogeneity, which suggests cis/trans peak doubling also in the apo native protein, but no row shows apo peak sets or a rate."
+  ],
+  "questions_for_gina": [
+   "Which sample is the RelaxDB CD9K entry: apo or Ca2+-loaded, and is it the P43G variant (the entry sequence carries G43) from the 1992 Ca2+-loaded or 1993 apo/(Cd2+)1 15N relaxation studies?",
+   "For the alternate-APO table, should the P43G entry construct be the reference (no cis/trans isomerism) or should native Pro43 calbindin count, where two peak sets in slow exchange are reported in the Ca2+-loaded state?"
+  ],
+  "buffer_note": "Almost every calbindin row is abstract-only, so temperature, pH and buffer are mostly unknown; r15 and r16 state pH 7.5 and 25 °C. The full-text domain-swapping work (B-r18 to B-r25) is in acidic, concentrated crystallization drops (pH about 4.8-5.5, ammonium sulfate, Ca2+, sometimes 100 mM Mg2+) and does not describe solution NMR conditions. The ENDOR rows are frozen at 10 K with Gd3+ in a Ca2+ site. is_wt_apo is false for every judgment: no apo row concerns the native Pro43 protein, and P43G rows are labelled as the mutant they are. Row-id shorthand: B-rN = CD9K-CD9K_20261020030739-rN."
+ },
+ "judgments": [
+  {
+   "judgment_id": "CD9K-J1",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     42,
+     43
+    ],
+    "residues_author": "G42-P43 peptide bond (native Pro43; entry position 43 is Gly)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "Ca2+-loaded; line shapes at elevated temperature on a sample deuterated except Ser and Val (r9); 3:1 major:minor resonances related by 2D exchange, metal state not named in that abstract (r4); PPIase 1:10 at 35 °C (r36); abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H line-shape analysis (r9), 2D 1H exchange spectroscopy and NOESY (r4), saturation transfer (r36)",
+    "observable": "two resolved peak sets in slow exchange",
+    "fit_model": "other",
+    "kex": "not given; cis-to-trans 0.2 s-1 at 25 °C (r9 abstract, extrapolated)",
+    "pB": "about 25% cis (3:1 major:minor, r4 abstract)",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C (extrapolated); 35 °C for the PPIase test",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: native calbindin shows two full 1H peak sets in a 3:1 ratio that interconvert by Gly42-Pro43 cis/trans isomerism, with a cis-to-trans rate of 0.2 s-1 at 25 °C extrapolated from high-temperature line shapes, and added PPIase does not speed it; the conditions and fits cannot be checked.",
+   "evidence_rows": [
+    "CD9K-r4",
+    "CD9K-r9",
+    "CD9K-r36"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J2",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     41,
+     42,
+     43
+    ],
+    "residues_author": "K41-P43 alternative backbone stretches (native Pro43)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "unknown",
+    "conditions": "recombinant bovine crystal with Pro43; metal occupancy not verified; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "single-condition X-ray alternate-conformer refinement",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the crystal resolves cis and trans Gly42-Pro43 conformers with local backbone changes from K41 to P43, static heterogeneity without a rate.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J3",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole fold (no residue list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ca2+ (saturated)",
+    "conditions": "recombinant Ca2+-saturated bovine minor A form; assignments for the trans-Pro43 isoform; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "solution NMR fold compared with crystal and porcine solution structures",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the solution and crystal folds of the minor A form agree, and agreement of folds neither measures exchange nor excludes local motion.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J4",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N-terminal Ca2+ site I (no residue list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "Ca2+ site I"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ca2+",
+    "conditions": "bovine minor A wild type (M0); 1H, 43Ca and 113Cd NMR; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "43Ca NMR metal-exchange measurement",
+    "observable": "Ca2+ exchange rate",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: Ca2+ leaves the N-terminal site at 3 s-1 in the wild type (abstract), a metal off-rate rather than a conformational motion.",
+   "evidence_rows": [
+    "CD9K-r24"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J5",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole protein (oligomer state)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ca2+",
+    "conditions": "crystallization drops: initial pH 5.5 falling to about 4.8-4.9, 60-70% ammonium sulfate, 1.7-3 equivalents CaCl2; gel filtration in 100 mM NaOAc pH 5.5, 150 mM NaCl, 1 mM CaCl2",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "time-dependent size-exclusion chromatography of crystallization drops",
+    "observable": "dimer fraction",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Gel filtration of crystallization drops over days at pH about 4.8-5.5 with Ca2+: detects accumulated dimer only, not intramolecular exchange, rare dimers or Pro43 isomerism."
+   },
+   "verdict": "unresolved",
+   "reason": "The wild type does not dimerize to a significant extent over the crystallization trials; domain-swapped dimerization is an intermolecular process and says nothing about motion within the monomer.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r22"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J6",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     43
+    ],
+    "residues_author": "G43 (Pro43 replaced by Gly)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence)",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "Ca2+-loaded P43G (r10); metal state not named for the 1989 comparison (r5); abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "2D 1H NMR assignment and comparison with the wild type",
+    "observable": "second peak set",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "2D 1H NMR spectra (conditions and sensitivity not in the abstracts): a resolved minor peak set from slow exchange would show; minor states below the detection limit or exchanging faster than the shift difference would not."
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: replacing Pro43 by Gly removes the second peak set (no indication of multiple conformations), so the slow cis/trans heterogeneity of the native protein is absent in the entry construct; other processes are not tested.",
+   "evidence_rows": [
+    "CD9K-r5",
+    "CD9K-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J7",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     43
+    ],
+    "residues_author": "G43 (P43G); no measured residues listed",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence)",
+    "binding_state": "apo",
+    "conditions": "apo bovine P43G; 2D 1H NMR in H2O and 2H2O; abstract only",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "2D 1H NMR amide exchange and aromatic ring rotation",
+    "observable": "amide exchange; ring flips",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: Ca2+ removal dramatically changes the dynamics, judged by faster amide exchange and aromatic ring rotation, while the fold stays similar; the abstract also says the wild type was not assigned because of its conformational heterogeneity.",
+   "evidence_rows": [
+    "CD9K-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J8",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "helices III and IV and the core packing (no residue list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence)",
+    "binding_state": "apo",
+    "conditions": "apo P43G with an N-terminal Met (1CLB); restrained MD used for refinement; abstract only",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR structure (distance geometry, restrained MD, relaxation matrix) compared with the Ca2+-loaded structure",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: apo and Ca2+-loaded structures differ mainly in helices III and IV and their core packing, two endpoints with no interconversion rate; the restrained MD is refinement, not a trajectory.",
+   "evidence_rows": [
+    "CD9K-r43",
+    "CD9K-r44"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J9",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no residue list",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence)",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "Ca2+-loaded P43G (2BCB; 2BCA adds an N-terminal Met); abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "solution NMR versus X-ray structure",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: small solution-crystal differences are attributed to crystal contacts, side-chain flexibility or in-vacuo refinement, and none is assigned to a motion.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J10",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no residue list",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence)",
+    "binding_state": "bound:Cd2+ (site II)",
+    "conditions": "(Cd2+)1 P43G with an N-terminal Met (1CDN); abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "half-saturated solution structure compared with apo and Ca2+-loaded structures",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the Cd2+ half-saturated structure lies closer to the fully loaded than to the apo structure, so most reorganization comes with the first ion; endpoints only.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J11",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole protein (oligomer state)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:P43G (the entry sequence)",
+    "binding_state": "bound:Ca2+",
+    "conditions": "crystallization drops, initial pH 5.5 falling to about 4.8-4.9, 60-70% ammonium sulfate; gel filtration in 100 mM NaOAc pH 5.5, 150 mM NaCl, 1 mM CaCl2",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "time-dependent size-exclusion chromatography of crystallization drops",
+    "observable": "dimer fraction",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Gel filtration of crystallization drops over days at pH about 4.8-5.5 with Ca2+: sees only accumulated dimer, not intramolecular exchange or a small dimer fraction."
+   },
+   "verdict": "unresolved",
+   "reason": "P43G stays near baseline dimer over the measured days while P43M variants accumulate domain-swapped dimers; this is an intermolecular assay and gives no information on motion within the monomer.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J12",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     57,
+     58,
+     59,
+     60
+    ],
+    "residues_author": "G57, D58, G59, E60 (C-terminal Ca2+-binding loop)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "Ca2+ site II loop",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "apo",
+    "conditions": "apo; 15N R1, R2 and NOE at 11.74 T; temperature and pH not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation with model-free analysis",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74 T",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: in the apo state the C-terminal binding loop G57-E60 has clearly lower order parameters than in the metal-bound states, while the N-terminal loop's fast motion does not change with ion binding.",
+   "evidence_rows": [
+    "CD9K-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J13",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "unoccupied N-terminal ion-binding loop (no residues listed)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "Ca2+ site I loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "apo",
+    "conditions": "apo; 15N relaxation at 11.74 T; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation with model-free analysis",
+    "observable": "exchange contribution (slower fluctuations)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74 T",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: significant fluctuations on slower timescales are detected in the unoccupied N-terminal loop of the apo state, with no residues, rate or population given.",
+   "evidence_rows": [
+    "CD9K-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J14",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     57,
+     58,
+     59,
+     60
+    ],
+    "residues_author": "G57-E60 (C-terminal loop, Cd2+-bound)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "Ca2+ site II loop",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Cd2+ (site II)",
+    "conditions": "(Cd2+)1; 15N relaxation at 11.74 T; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation with model-free analysis",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74 T",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: Cd2+ in site II raises the C-terminal loop order parameters relative to apo.",
+   "evidence_rows": [
+    "CD9K-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J15",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "unoccupied N-terminal ion-binding loop (no residues listed)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "Ca2+ site I loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Cd2+ (site II)",
+    "conditions": "(Cd2+)1; 15N relaxation at 11.74 T; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation with model-free analysis",
+    "observable": "exchange contribution (slower fluctuations)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74 T",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: slower fluctuations persist in the empty N-terminal loop when Cd2+ fills site II, with greater apparent rates than in apo; the rate model is unavailable.",
+   "evidence_rows": [
+    "CD9K-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J16",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Ca2+ loops, helices and linker (averages only)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "Ca2+-loaded, uniformly 15N; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and NOE with model-free analysis",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: Ca2+-loaded calbindin has average S2 0.83 ± 0.05 in the binding loops and 0.85 ± 0.04 in the helices, but 0.59 ± 0.23 in the linker, which needs two motional timescales.",
+   "evidence_rows": [
+    "CD9K-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J17",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "many hydrogen-bonded amides (no list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "apo",
+    "conditions": "apo; 1H/2H exchange and water saturation transfer (r6); exchange quenched by Ca2+ addition, pH 7.5, 25 °C (r15); abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR-detected amide hydrogen exchange",
+    "observable": "HX rate",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: apo amides exchange much faster than in the Ca2+ form (on average 220-fold for the amides that are slow in Ca2+, ranging from a 10^2-fold decrease to a 10^5-fold increase), read as opening fluctuations; no window is assigned.",
+   "evidence_rows": [
+    "CD9K-r6",
+    "CD9K-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J18",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "ion-binding loops and helices I-III (no list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "(Ca2+)2; direct exchange-out and saturation transfer; pH 7.5, 25 °C for r16; abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR-detected amide hydrogen exchange",
+    "observable": "HX rate",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: Ca2+ loading strongly protects many hydrogen-bonded amides, most in the binding loops and helices I-III; protection is not absence of motion.",
+   "evidence_rows": [
+    "CD9K-r8",
+    "CD9K-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J19",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "hydrogen-bonded amides (no list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Cd2+ (site II)",
+    "conditions": "(Cd2+)1; amide hydrogen exchange; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR-detected amide hydrogen exchange",
+    "observable": "HX rate",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: one Cd2+ protects many hydrogen-bonded amides against exchange.",
+   "evidence_rows": [
+    "CD9K-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J20",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "methyl groups (no list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "apo",
+    "conditions": "apo; 2H methyl relaxation at two fields; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "side-chain 2H relaxation, spectral density mapping and model-free fits",
+    "observable": "methyl S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: apo methyl dynamics are the baseline for a split response to Ca2+ (proximal methyls stiffen, distal ones loosen); no values are available.",
+   "evidence_rows": [
+    "CD9K-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J21",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "methyl groups (no list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "Ca2+-loaded; 2H methyl relaxation at two fields; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "side-chain 2H relaxation, spectral density mapping and model-free fits",
+    "observable": "methyl S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: Ca2+ partly immobilizes methyls near the binding sites and increases the mobility of distal methyls.",
+   "evidence_rows": [
+    "CD9K-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J22",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "helix C (no residue list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:DPC micelles (Ca2+-free)",
+    "conditions": "apo with dodecylphosphocholine micelles; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR of micelle association",
+    "observable": "loss of tertiary structure",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: Ca2+-free calbindin associates with DPC micelles, keeps its helices but loses an apparent tertiary fold, and helix C is called dynamic; no timescale.",
+   "evidence_rows": [
+    "CD9K-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J23",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "site near the inter-EF-hand linker",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Ca2+ and DPC",
+    "conditions": "Ca2+-loaded with single DPC molecules at neutral pH (r20); with DPC micelles at lowered pH (r21); abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR of detergent binding",
+    "observable": "chemical shift change",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding: Ca2+-loaded calbindin binds single DPC molecules near the linker and joins micelles only at lower pH, a ligand and pH effect rather than an internal motion.",
+   "evidence_rows": [
+    "CD9K-r20",
+    "CD9K-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J24",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "metal site II surroundings (no residue list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "Ca2+ site II"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "bound:Ca2+ (site I) and Ce3+ or other Ln3+ (site II)",
+    "conditions": "lanthanide-substituted calbindin; paramagnetic NMR; abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Curie-spin cross-correlation, pseudocontact shifts, RDCs and PRE for structure refinement; stopped-flow NMR of Ce3+/Ca2+ substitution (r38)",
+    "observable": "paramagnetic restraints",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "These lanthanide studies refine the fold or time metal substitution (Ce3+ for Ca2+ on a sub-second scale, an associative binding mechanism), which is structure and binding kinetics, not conformational exchange.",
+   "evidence_rows": [
+    "CD9K-r12",
+    "CD9K-r29",
+    "CD9K-r37",
+    "CD9K-r38",
+    "CD9K-r41",
+    "CD9K-r42"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J25",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no residue list",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:calbindin D9k, variant not stated in the abstract",
+    "binding_state": "apo",
+    "conditions": "apo compared with Ca2+-loaded by NOE patterns; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H NMR structural comparison with preliminary mobility observations",
+    "observable": "structure difference; mobility",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: apo and Ca2+-loaded forms share the fold but show some very large differences in flexibility; the probe and window are not named.",
+   "evidence_rows": [
+    "CD9K-r34"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J26",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "residues_author": "K55-D58 with iso-Asp56 (major product) or normal Asp56 (minor product)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:deamidated recombinant bovine calbindin D9k (iso-Asp56 or Asp56)",
+    "binding_state": "unknown",
+    "conditions": "products isolated after urea-denaturation preparation; metal state not stated; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "2D 1H NMR and peptide sequencing of deamidation products",
+    "observable": "extra species",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Artefact lead: preparation-induced deamidation at N56 gives covalent isoforms whose spectra can mimic a second conformer near K55-D58; nothing shows it in the RelaxDB sample.",
+   "evidence_rows": [
+    "CD9K-r45",
+    "CD9K-r46"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J27",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     18,
+     19,
+     38,
+     42,
+     43,
+     44,
+     46
+    ],
+    "residues_author": "Residues 38, 42-44 and 46 (linker) and 18, 19 (site I); 43 is Met in P43M",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker; Ca2+ site I",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:P43M",
+    "binding_state": "bound:Ca2+ (two sites)",
+    "conditions": "dicalcium P43M; amide 15N R1, R2 and R1rho; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1rho and transverse relaxation",
+    "observable": "exchange contribution",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: P43M, which lacks Pro43 isomerism, still shows millisecond conformational equilibria in the linker and Ca2+ site I with similar energy barriers; no rate or population is given.",
+   "evidence_rows": [
+    "CD9K-r22"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J28",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     18,
+     19,
+     38,
+     42,
+     43,
+     44,
+     46
+    ],
+    "residues_author": "Same residues as J27",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "inter-EF-hand linker; Ca2+ site I",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:P43M",
+    "binding_state": "bound:Ca2+ (site I) and La3+ (site II)",
+    "conditions": "P43M with La3+ in the C-terminal site; amide 15N R1, R2 and R1rho; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1rho and transverse relaxation",
+    "observable": "exchange contribution",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the La3+-substituted P43M gives similar mobility data to the dicalcium form.",
+   "evidence_rows": [
+    "CD9K-r23"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J29",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     23,
+     43,
+     61
+    ],
+    "residues_author": "M43 side chain; L23-V61 inter-EF-hand hydrogen bond",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:P43M",
+    "binding_state": "bound:Ca2+ (two sites) or Ca2+/Ce3+",
+    "conditions": "2 M GdmHCl (early unfolding); 15N R2 and DD/CSA cross-correlation; dicalcium (r39) and Ce3+ in site II (r40); abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R2 and cross-correlated relaxation",
+    "observable": "loss of exchange contribution",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: in 2 M GdmHCl the millisecond dynamics seen in native P43M disappear as Met43 turns into the core and the L23-V61 hydrogen bond weakens; plots and sensitivity are unavailable.",
+   "evidence_rows": [
+    "CD9K-r39",
+    "CD9K-r40"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J30",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     9,
+     10,
+     13,
+     23,
+     31,
+     36,
+     54,
+     55
+    ],
+    "residues_author": "I9, F10, Y13, L23, L31, F36 (G36 in the sample), D54, K55",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:F36G/P43M",
+    "binding_state": "apo",
+    "conditions": "27 °C; pH 6.0; trace EDTA; about 2.5 mM; 500/750 MHz; buffer not specified (1KCY)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "apo NMR structure compared with apo P43G (1CLB) and apo calmodulin N-domain",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "F36G repacks the helix I/II interface and helix III, which the authors read as a globally cooperative EF-hand; static mutant endpoints with no rate or population.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J31",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     22,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     48,
+     49
+    ],
+    "residues_author": "N22 (Q22 in entry), S38-T45, E48, L49; M43 in sample",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66. N22 and M43 differ from the entry (Q22, G43).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:Q22N/P43M and P43M",
+    "binding_state": "bound:Ca2+",
+    "conditions": "crystallization drops (pH 5.5 falling to about 4.8-4.9, ammonium sulfate, Ca2+, Mg2+ in later trials); dissolution at room temperature, pH 5.5 with Ca2+ and Mg2+; thermal ramps at pH 5.5 and 4.85",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "crystal structure 1HT9 and gel filtration time courses",
+    "observable": "domain-swapped dimer fraction",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Under crystallization conditions P43M variants slowly form domain-swapped dimers (Q22N/P43M about 30 days, 40% of chains at 4.5 mM), dissolved dimers stay 75-90% dimer for 4.5 months and heat converts them back; this is intermolecular kinetic trapping, not monomer dynamics.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r18",
+    "CD9K-CD9K_20261020030739-r19",
+    "CD9K-CD9K_20261020030739-r20",
+    "CD9K-CD9K_20261020030739-r23",
+    "CD9K-CD9K_20261020030739-r24",
+    "CD9K-CD9K_20261020030739-r25"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J32",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     56
+    ],
+    "residues_author": "A56 (N56 in entry)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:N56A",
+    "binding_state": "bound:Ca2+ (site I only)",
+    "conditions": "half-saturated N56A; 1H NMR shifts, amide exchange and NOEs (r13); solution structure and fast backbone dynamics (r30); abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H NMR comparison and fast backbone dynamics",
+    "observable": "amide exchange; S2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: Ca2+ in site I alone drives the core toward the fully loaded packing and lowers C-terminal EF-hand flexibility, evidence for site-site coupling in a mutant.",
+   "evidence_rows": [
+    "CD9K-r13",
+    "CD9K-r30"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J33",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     65
+    ],
+    "residues_author": "Q65 (E65 in entry)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:E65Q",
+    "binding_state": "bound:Ca2+ (site I, then nominally both)",
+    "conditions": "half-saturated and further titrated E65Q; 1H NMR amide exchange, NOEs and titration; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "2D 1H NMR",
+    "observable": "amide exchange; shift titration",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the first Ca2+ changes the N-terminal EF-hand toward the loaded state; E65Q cripples site II, so its (Ca2+)2 state is not standard.",
+   "evidence_rows": [
+    "CD9K-r32",
+    "CD9K-r33"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J34",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Ca2+ loops and helices (no residue list)",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:A14D+ΔA15+ΔP20+N21G+P43M",
+    "binding_state": "apo",
+    "conditions": "apo; 15N spin relaxation; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N spin relaxation",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the engineered N-terminal loop is much stiffer than in apo P43G and the C-terminal loop is also less flexible, while helix dynamics agree with P43G.",
+   "evidence_rows": [
+    "CD9K-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CD9K-J35",
+   "entry_id": "CD9K",
+   "region": {
+    "residues_entry": [
+     50,
+     66
+    ],
+    "residues_author": "F50 and F66 replaced by fluorinated Phe spin-label analogues",
+    "numbering_note": "Entry numbering equals author numbering for the 75-residue bovine protein (K1-Q75); the entry carries G43 (the P43G variant), so native Pro43 and the P43M Met43 sit at entry position 43 with a different residue; checked G18, D19, L23, S38, G42, S44, L46, F50, G57, D58, G59, E60, V61, F66.",
+    "functional_site": "hydrophobic core"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:F50 or F66 fluorinated-Phe calbindin with Gd3+ in a Ca2+ site",
+    "binding_state": "bound:Gd3+",
+    "conditions": "frozen solution, 10 K; W-band 94 GHz 19F-ENDOR; SI not read",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "19F-ENDOR line shapes with rotamer analysis (not DEER)",
+    "observable": "Gd-F distance distribution",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In frozen samples only trans chi1 rotamers fit F50 and the F66 data bound a short Gd-F distance; a frozen distance distribution has no exchange timescale.",
+   "evidence_rows": [
+    "CD9K-CD9K_20261020030739-r10",
+    "CD9K-CD9K_20261020030739-r11",
+    "CD9K-CD9K_20261020030739-r12",
+    "CD9K-CD9K_20261020030739-r13",
+    "CD9K-CD9K_20261020030739-r14",
+    "CD9K-CD9K_20261020030739-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+"entry": "VHR_CPMG",
+"accession": "P51452",
+"core": [
+[
+5,
+61
+],
+[
+83,
+87
+],
+[
+100,
+185
+]
+],
+"mobile": [
+[
+62,
+82
+],
+[
+88,
+99
+]
+],
+"open": "8TK6:A",
+"closed": "8TK2:A",
+"count_as_ligand": [
+"PO4",
+"EPE"
+],
+"verify_numbering": true,
+"note": "Mobile = variable insert 62-82 and acid loop 88-99 (VHR-J1 functional_site: 'variable insert (VI, residues 62-82, allosteric site) and acid loop (residues 88-99, catalytic acid D92)'; CPMG residues A63, R66, N72, K89, D92, E95, F96, L98, S99, VHR-r1). Core = the rest (8TK6 helix/strand records: alpha1 5-17 ... beta5 120-123, P-loop C124-R130 included). 'open' = apo form 1 8TK6 chain A (VHR-r10, the paper's own apo structure); 'closed' = fragment F17 complex 8TK2 chain A, the only deposited structure in which the authors report the VI E-loop A63-N72 moving ('up to 1.4 A', VHR-r9 / VHR-J9). The CPMG paper contrasts apo with tungstate-bound (VHR-r3) but no tungstate structure is deposited; 8TK4 (phosphate) is the nearest oxyanion-bound analogue and is placed in the table. The two references differ by at most 1.4 A on one loop, so the closure axis is expected to be weakly informative. PO4 and HEPES (EPE) are counted as ligands here because 8TK4/8TK5 are deposited as active-site complexes. Numbering: all 9 depositions use author = UniProt numbering (checked A63, R66, N72, N74, K89, D92, F96, S99, C124); no renumbering."
+}

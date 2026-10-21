@@ -1,0 +1,242 @@
+{
+ "protein_summary": {
+  "entry_id": "CIN1D1",
+  "per_window": {
+   "ps-ns": "unresolved. The one relaxation study (15N R1/R2/NOE of the two-domain D1D2 construct) was read only as an abstract: a short inter-domain linker stretch has large-amplitude motion linked to domain-domain mobility (CIN1D1-J1, r1, other construct, no residues). Fast motion inside domain 1 is search_insufficient (J4).",
+   "us-ms": "search_insufficient (J5). No exchange measurement exists in the rows; the missing-peak annotations in the RelaxDB set have no source explanation.",
+   "slower_than_ms": "search_insufficient (J6).",
+   "undetermined": "SAXS of D1D2 (thick envelope at the domain boundary, J2, r2) and of full-length Cin1 (loosely packed repeat domains, J3, r3) support inter-domain flexibility in longer constructs; both abstract-only and without a rate."
+  },
+  "wt_apo_answer": "Not measured: no row describes the isolated domain-1 construct, and the only relaxation study (two-domain D1D2, read as an abstract) reports large-amplitude motion in a short inter-domain linker without residues, rates or a µs-ms test, so nothing in the evidence shows or excludes µs-ms exchange in domain 1.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "Is the RelaxDB CIN1D1 set the domain-1 part (residues 1-65) of the D1D2 relaxation data of Mesarich et al. 2012 (2LHT)? If so, the D1D2 rows describe the deposited sample and the inter-domain linker may fall partly inside the entry.",
+   "Can the full text of doi:10.1016/j.bbapap.2012.06.015 be obtained to identify the linker residues and any exchange-broadened domain-1 amides?"
+  ],
+  "buffer_note": "All three rows are abstract-only, so no buffer, temperature or field is known for any dynamics measurement; the 2LHT structure deposition gives pH 6.2 and 298 K for its sample. The measured constructs (D1D2, full length) are longer than the 65-residue entry, so no row sets a verdict for the entry construct. Zero-hit method searches did not even retrieve the known Cin1 paper and count as search_insufficient."
+ },
+ "judgments": [
+  {
+   "judgment_id": "CIN1D1-J1",
+   "entry_id": "CIN1D1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "a short stretch of the inter-domain linker (residues not given in the abstract)",
+    "numbering_note": "Entry 1-65 equals residues 1-65 of the 2LHT D1D2 construct (identical sequence start ADVFDPPTQY); no offset. The linker sits at the D1/D2 boundary, so it may lie partly or wholly outside the 65-residue entry.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:Cin1-D1D2, the first two repeat domains of Venturia inaequalis Cin1 expressed in Pichia pastoris (2LHT entity, 122 residues); the entry domain-1 sequence is its residues 1-65",
+    "binding_state": "unknown",
+    "conditions": "Not stated in the abstract; the 2LHT structure deposition lists pH 6.2, 298.15 K, ionic strength 0.050 for its sample, not confirmed for the relaxation set; ligand state not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N backbone R1, R2 and heteronuclear NOE (experiment types corroborated by the 2LHT deposition)",
+    "observable": "relaxation rates and NOE (values not available)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: in the two-domain construct a short linker stretch has large-amplitude motion that the authors tie to reciprocal domain-domain mobility; no residues, values or window are given, and the construct is not the isolated domain 1.",
+   "evidence_rows": [
+    "CIN1D1-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CIN1D1-J2",
+   "entry_id": "CIN1D1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "domain-domain boundary of D1D2",
+    "numbering_note": "Entry 1-65 equals residues 1-65 of the 2LHT D1D2 construct (identical sequence start ADVFDPPTQY); no offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Cin1-D1D2, the first two repeat domains of Venturia inaequalis Cin1 expressed in Pichia pastoris (2LHT entity, 122 residues); the entry domain-1 sequence is its residues 1-65",
+    "binding_state": "unknown",
+    "conditions": "Not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution SAXS envelope modelling",
+    "observable": "scattering envelope shape",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the SAXS envelope stays thick at the D1/D2 boundary, which the authors read as inter-domain dynamics; an averaged envelope has no rate and concerns the two-domain construct.",
+   "evidence_rows": [
+    "CIN1D1-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CIN1D1-J3",
+   "entry_id": "CIN1D1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "relative arrangement of the repeat domains",
+    "numbering_note": "Full-length protein; no residue mapping to the entry.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:full-length Cin1 (Cin1-FL, 523-residue precursor with eight repeats); mature-chain boundaries and tags not given in the abstract",
+    "binding_state": "unknown",
+    "conditions": "Not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution SAXS modelling",
+    "observable": "low-resolution shape model",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: SAXS models of full-length Cin1 favour loosely packed repeat domains, a beads-on-a-string arrangement with inter-domain flexibility; no rate, population or domain-1 internal motion.",
+   "evidence_rows": [
+    "CIN1D1-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "The authors suggest the inter-domain flexibility is likely to facilitate interactions with target ligands (abstract).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CIN1D1-J4",
+   "entry_id": "CIN1D1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "domain 1 interior",
+    "numbering_note": "Entry 1-65 equals residues 1-65 of the 2LHT D1D2 construct (identical sequence start ADVFDPPTQY); no offset.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "entry construct (domain 1, residues 1-65), free; no sample described",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none for the domain-1 interior",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The only relaxation study was read as an abstract that describes the linker alone, so per-residue fast motion inside domain 1 is not available from the rows.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CIN1D1-J5",
+   "entry_id": "CIN1D1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain",
+    "numbering_note": "Entry 1-65 equals residues 1-65 of the 2LHT D1D2 construct (identical sequence start ADVFDPPTQY); no offset.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "entry construct (domain 1, residues 1-65), free; no sample described",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none in the evidence rows",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures dispersion, CEST, R1rho or assigned exchange broadening for Cin1, the method searches returned zero hits even for the known Cin1 paper, and the full text was not read, so the missing peaks in the RelaxDB set cannot be interpreted.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CIN1D1-J6",
+   "entry_id": "CIN1D1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain",
+    "numbering_note": "Entry 1-65 equals residues 1-65 of the 2LHT D1D2 construct (identical sequence start ADVFDPPTQY); no offset.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "entry construct (domain 1, residues 1-65), free; no sample described",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none in the evidence rows",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row gives hydrogen exchange, folding or any other slower-than-ms rate for Cin1, and the zero-hit searches missed even the known structure paper.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

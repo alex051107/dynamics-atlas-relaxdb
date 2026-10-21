@@ -1,0 +1,1334 @@
+{
+ "protein_summary": {
+  "entry_id": "ARGKIN_CPMG",
+  "per_window": {
+   "ps-ns": "dynamic_in_window for apo loop L13 V308-V322 (S2 0.53, τs about 1 ns, 25 °C; J7, r3); the rest of the apo backbone averages S2 0.85 with lower values in loops L1 and L12. The TSA complex is more ordered (average S2 0.91; only residue 112 and the C-terminus stand out; J23, r16), and its L13 amides are broadened out (J22, r17, r24).",
+   "us-ms": "dynamic_in_window. Apo WT at 25 °C (citrate pH 6.5): four backbone clusters, NTD hinge kex 1,930 s-1 / pB 0.4%, interface 800 s-1 / 1.1%, dynamic domain 1 790 or 990 s-1 (inconsistent within the paper), loop L8 790 s-1 / 2.6% (J1-J5, r1, r2). The 2011 four-temperature fit gives interface 570-1,440 s-1 and L8 530-1,080 s-1 with L8 pB 3.5-5.7% from 15 to 30 °C (J8, J9, r4-r7); hinge and core-sheet multi-temperature fits did not converge. Apo methyls at 25 °C: 6 of 71 ILV exchange, L8-adjacent methyls at 970 s-1 / 4.8%, dynamic-domain-1 methyls at 3,890 s-1 / 0.56%, I210 suggesting three states (J10-J14, r11). Model-free Rex terms in about 35% of residues are unconfirmed (J6). Bound states at 25 °C in imidazole/Mg buffer: MCA 914 s-1 / 3.1% (J17, r12); TSA methyls 4,247 s-1 (J18, r13) and TSA backbone 2,300-2,750 s-1 in two collective groups with 77 Rex residues (J20, J21, r15); PCA 4,690 s-1 (J19, r14).",
+   "slower_than_ms": "not_measured for apo WT (J16); no CEST, ZZ-exchange, HDX, EPR or FRET rows. kclose 19-62 s-1 (r4-r7) and MCA kAB 28 s-1 (r12) are directional rates inside the millisecond processes.",
+   "undetermined": "Apo RDCs fit a 0.5-0.7 apo/TSA mixture but cannot separate a static average from exchange (J15, r8, r9). Apo-versus-TSA crystals (J24), ambient TSA crystals (J25), noncognate-analogue closures (J26) and the C271A mutant (J27) are structure_only or mutant inference. Homolog rows (Daphnia in phosphate, spider crystals and MD, lobster SAXS; J28-J31) never decide the WT verdict. Not judged: r35 and r40 (E314D/E225Q mutant structures, abstract only), r31 (DFT cluster model, no protein dynamics), r32 and r39 (abstract-only TSA endpoints), r37 (creatine kinase versus AK cross-protein comparison)."
+  },
+  "wt_apo_answer": "Yes: at 25 °C substrate-free wild-type Limulus arginine kinase (10 mM citrate, pH 6.5, no buffer control) exchanges on the microsecond-millisecond scale in four backbone regions, the N-terminal-domain hinge D88-G92 (kex 1,930 ± 350 s-1, pB 0.4%), the domain interface (800 ± 100 s-1, pB 1.1%), the dynamic-domain-1 hinge (790 ± 70 s-1 in Table 1, 990 ± 110 s-1 in the text) and loop L8 I182-G209 (790 ± 60 s-1, pB 2.6 ± 0.6%). A 2011 four-temperature fit of the same regions gives rates rising from about 530-570 s-1 at 15 °C to 1,080-1,440 s-1 at 30 °C, with an L8 minor state of 3.5-5.7% estimated from three residues.",
+  "open_conflicts": [
+   "Loop L8 population at 25 °C, apo (model/subset difference, not a data conflict): the 2009 collective fit of all 17 L8 residues gives pB 2.6 ± 0.6% (r1), while the 2011 fit takes pB from only the three slow-intermediate residues E190, D192, T206 and gives 4.9 ± 0.5% (r6; reused as the apo row of the 2017 JACS Table 1). The kex values agree within error (790 ± 60 versus 860 ± 120 s-1).",
+   "Dynamic domain 1 and hinge, apo 25 °C: Table 1 of the 2009 paper gives kex 790 ± 70 s-1, pB 0.4 ± 0.1%, while its text reports a collective fit of 990 ± 110 s-1 with pB < 0.3% and calls the result semi-quantitative (r1). The apo methyls in the same region (L219, I231) give 3,890 ± 29 s-1, pB 0.56% (r11).",
+   "Number of apo processes: backbone data are fitted as four concerted cluster motions (r1, r4-r7), while the methyl study reports heterogeneous per-site rates and a possible three-state residue (I210), and says methyl timescales are not completely consistent with the backbone (r11).",
+   "TSA complex at 25 °C: backbone groups give 2,300-2,750 s-1 (r15) and methyls 4,247 s-1 (r13); the samples differ in ligand concentrations (60 mM Arg/6 mM ADP versus 100 mM Arg/20 mM ADP) and in KCl/Mg, so probe and sample are confounded."
+  ],
+  "questions_for_gina": [
+   "Which threshold and data produced the RelaxDB ARGKIN_CPMG labels? The curator note cites Fig. 3 (Rex > 2 SD = 5 s-1, 17 residues, TROSY/anti-TROSY experiment), while the 2009 CPMG Table 1 uses ΔR2eff > 2 s-1 (34 residues), and the 2011 counts vary with temperature (33, 23, 34, 28 residues at 15-30 °C).",
+   "Every apo NMR sample used 10 mM sodium or potassium citrate at pH 6.5 with no citrate-free control, while all bound samples switched to imidazole plus 8-30 mM MgCl2. Should apo exchange be flagged as untested for citrate binding at the anionic substrate sites, and should apo-versus-bound comparisons be treated as buffer-confounded?"
+  ],
+  "buffer_note": "Untested condition, not a suspected artefact: all apo NMR data (2009 backbone CPMG and relaxation r1-r3, 2011 four-temperature CPMG r4-r7, 2010 RDCs r8-r9, 2017 methyl CPMG r11) were recorded in 10 mM sodium or potassium citrate at pH 6.5, and none of these sources reports a citrate-free control; no Limulus NMR sample used phosphate. Bound-state samples (r12-r17, r24) switched to 10 mM (d4-)imidazole with 8-30 mM MgCl2 and 1 mM DTT, so ligand and buffer change together. The apo methyl sample's DTT is 0.5 mM in the JACS Methods but 1.0 mM in SI Table S1 (r11), unresolved; the RDC sample lists no DTT or KCl. Kinetics (kcat, Ea) used tris at pH 8 with Mg and substrates, not the NMR buffer (r4-r7). Phosphate as a confound appears only in the Daphnia homolog crystals (1.8 M phosphate, phosphate in the nucleotide site; r26, r30). EDTA was used in purification only (r24)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "ARGKIN-J1",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     88,
+     90,
+     92
+    ],
+    "residues_author": "NTD hinge D88, H90, G92 (Table 1; prose writes G90)",
+    "numbering_note": "Entry numbering equals author numbering; entry residue 90 is His.",
+    "functional_site": "hinge linking the N- and C-terminal domains"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 ± 0.5 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 90% H2O/10% D2O; 1.0 mM enzyme, U-15N, 80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion, numerical Bloch-McConnell two-state fit",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "1,930 ± 350 s-1 (collective fit of 3 hinge residues)",
+    "pB": "0.4 ± 0.1%",
+    "delta_omega": "",
+    "field": "600, 720 and 800 MHz 1H (15N 60.78, 72.95, 81.04 MHz)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 25 °C the substrate-free enzyme's N-terminal-domain hinge exchanges at about 1,930 per second with a 0.4% minor state (kclose about 10 s-1 by the authors' decomposition).",
+   "evidence_rows": [
+    "ARGKIN-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors state the slower directional rates (kclose about 10-20 s-1) are of the same order as kcat (100-150 s-1) and potentially rate-limiting; no direct test.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J2",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     71,
+     136,
+     137,
+     270,
+     271,
+     274,
+     276,
+     332
+    ],
+    "residues_author": "NTD-CTD interface D71, F136, N137, F270, C271, N274, G276, G332 (collective fit; F136 found only by the independent Rex experiment)",
+    "numbering_note": "",
+    "functional_site": "interface between the N- and C-terminal domains"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 ± 0.5 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 90% H2O/10% D2O; 1.0 mM enzyme, U-15N, 80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion, numerical Bloch-McConnell two-state fit",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "800 ± 100 s-1 (collective fit)",
+    "pB": "1.1 ± 0.1%",
+    "delta_omega": "",
+    "field": "600, 720 and 800 MHz 1H (15N 60.78, 72.95, 81.04 MHz)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 25 °C the domain interface exchanges at about 800 per second with a 1.1% minor state; individual residue fits range 1,200-2,800 s-1, and the authors warn small pB makes the parameters uncertain.",
+   "evidence_rows": [
+    "ARGKIN-r1",
+    "ARGKIN-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors state the slower directional rates (kclose about 10-20 s-1) are of the same order as kcat (100-150 s-1) and potentially rate-limiting; no direct test.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J3",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     126,
+     127,
+     129,
+     220,
+     222,
+     229,
+     234
+    ],
+    "residues_author": "Dynamic domain 1 and hinge: R126, C127, R129, V220, V222, R229, Q234",
+    "numbering_note": "",
+    "functional_site": "hinge of dynamic domain 1, near the bottoms of the substrate-binding pockets"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 ± 0.5 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 90% H2O/10% D2O; 1.0 mM enzyme, U-15N, 80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion, numerical Bloch-McConnell two-state fit",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "790 ± 70 s-1 (Table 1); prose reports a collective fit of 990 ± 110 s-1 with unreasonably large Δω (not shown)",
+    "pB": "0.4 ± 0.1% (Table 1); < 0.3% (prose)",
+    "delta_omega": "",
+    "field": "600, 720 and 800 MHz 1H (15N 60.78, 72.95, 81.04 MHz)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Exchange in this region is clear, but the paper gives two different collective fits (Table 1 versus prose) and calls the result only semi-quantitative, so the rate is not pinned down.",
+   "evidence_rows": [
+    "ARGKIN-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J4",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     182,
+     183,
+     184,
+     185,
+     190,
+     191,
+     192,
+     193,
+     197,
+     198,
+     200,
+     201,
+     202,
+     206,
+     207,
+     208,
+     209
+    ],
+    "residues_author": "Substrate-binding loop L8, I182-G209: the 17 residues in the Table 1 collective fit",
+    "numbering_note": "",
+    "functional_site": "substrate-binding loop L8 (H185 stacks with ADP in the closed form)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 ± 0.5 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 90% H2O/10% D2O; 1.0 mM enzyme, U-15N, 80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion, numerical Bloch-McConnell two-state fit",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "790 ± 60 s-1 (collective fit of 17 residues)",
+    "pB": "2.6 ± 0.6%",
+    "delta_omega": "",
+    "field": "600, 720 and 800 MHz 1H (15N 60.78, 72.95, 81.04 MHz)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 25 °C loop L8 moves as one unit at about 790 per second with a 2.6% minor state (kclose about 20 s-1); individual residues give 500-2,700 s-1.",
+   "evidence_rows": [
+    "ARGKIN-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors speculate the intrinsic L8 motion samples the closed form selected by nucleotide binding, with kclose on the order of kcat.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J5",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     136
+    ],
+    "residues_author": "17 residues with Rex > 5 s-1 (Fig. 3 labels); F136 is the only one not already found by CPMG",
+    "numbering_note": "",
+    "functional_site": "interface between the N- and C-terminal domains"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 ± 0.5 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 90% H2O/10% D2O; 1.0 mM enzyme, U-15N, 80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Independent Rex from 15N R2β (TROSY), R2α (anti-TROSY) and 2HzNz relaxation",
+    "observable": "Rex",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "A second, non-dispersion relaxation experiment at 25 °C confirms exchange in 17 residues and adds F136; it gives no rate.",
+   "evidence_rows": [
+    "ARGKIN-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J6",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "About 35% of 303 analysed residues best fit by model-free models with an Rex term (models 3 and 4)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 ± 0.5 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 90% H2O/10% D2O; 1.0 mM enzyme, U-15N, 80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 (T1rho-derived) at three fields and NOE at 600 MHz; Lipari-Szabo model selection",
+    "observable": "model-free Rex term",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600, 800 MHz 1H (15N 50.65, 60.78, 81.04 MHz)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Model selection adds an exchange term for about 35% of residues, which the authors read as more widespread exchange than dispersion shows; dispersion did not confirm these residues and the row warns model-free Rex is not a CPMG detection.",
+   "evidence_rows": [
+    "ARGKIN-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J7",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     308,
+     309,
+     310,
+     311,
+     312,
+     313,
+     314,
+     315,
+     316,
+     317,
+     318,
+     319,
+     320,
+     321,
+     322
+    ],
+    "residues_author": "Loop L13, V308-V322",
+    "numbering_note": "",
+    "functional_site": "substrate-binding loop L13 (R309 contacts nucleotide, E314 salt-links substrate arginine in the bound form)"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 ± 0.5 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 90% H2O/10% D2O; 1.0 mM enzyme, U-15N, 80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 (T1rho-derived) at three fields and NOE at 600 MHz; extended model-free (model 5)",
+    "observable": "S2 (average 0.53), slow internal correlation time",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600, 800 MHz 1H",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Loop L13 is the most flexible region on the ps-ns scale (average S2 0.53, τs about 1 ns from a single NOE field); the rest of the backbone averages S2 0.85, with lower values also in loops L1 and L12.",
+   "evidence_rows": [
+    "ARGKIN-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors link conserved L13 flexibility to substrate binding; L13 orders in the substrate-bound crystal.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J8",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     71,
+     136,
+     137,
+     270,
+     271,
+     274,
+     276,
+     332
+    ],
+    "residues_author": "NTD-CTD interface cluster (2011 names the cluster and shows N137 as representative, Fig. 2B)",
+    "numbering_note": "Members taken from the 2009 definition (r1: D71, F136, N137, F270, C271, N274, G276, G332); the 2011 text does not relist them.",
+    "functional_site": "NTD-CTD interface"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "15, 20, 25, 30 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 10% D2O; 1 mM enzyme, U-15N, ~80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG, simultaneous four-temperature two-state fit (Bloch-McConnell or Carver-Richards)",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "15 °C 570 ± 120; 20 °C 790 ± 170; 25 °C 1,070 ± 230; 30 °C 1,440 ± 310 s-1",
+    "pB": "indeterminate (exchange regime ill-defined)",
+    "delta_omega": "",
+    "field": "600, 720, 800 MHz at 15 and 25 °C; 800 MHz only at 20 and 30 °C",
+    "temperature": "15, 20, 25, 30 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "From 15 to 30 °C the interface cluster exchanges at 570 to 1,440 per second, rising with temperature (Ea 46 ± 8 kJ/mol); its population could not be fitted.",
+   "evidence_rows": [
+    "ARGKIN-r4",
+    "ARGKIN-r5",
+    "ARGKIN-r6",
+    "ARGKIN-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors report Ea 46 ± 8 kJ/mol for interface exchange versus 34 ± 13 kJ/mol (abstract; 34 ± 4 in Results) for turnover, consistent with but not proof of rate limitation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J9",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     182,
+     183,
+     184,
+     185,
+     190,
+     191,
+     192,
+     193,
+     197,
+     198,
+     200,
+     201,
+     202,
+     206,
+     207,
+     208,
+     209
+    ],
+    "residues_author": "Loop L8 I182-G209: kex from the whole loop; pB from E190, D192, T206 only (well-determined intermediate exchange)",
+    "numbering_note": "Loop members taken from the 2009 Table 1 set (r1); the 2011 text gives the loop range, not a member list.",
+    "functional_site": "substrate-binding loop L8"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "15, 20, 25, 30 °C; pH 6.5; 10 mM sodium citrate, 0.5 mM DTT, 50 mM KCl, 50 μM NaN3; 10% D2O; 1 mM enzyme, U-15N, ~80% 2H; no ligand",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG, simultaneous four-temperature two-state fit (Bloch-McConnell or Carver-Richards)",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "15 °C 530 ± 80; 20 °C 680 ± 100; 25 °C 860 ± 120; 30 °C 1,080 ± 150 s-1",
+    "pB": "15 °C 3.5 ± 0.3%; 20 °C 4.1 ± 0.5%; 25 °C 4.9 ± 0.5%; 30 °C 5.7 ± 1.6% (E190, D192, T206 subset)",
+    "delta_omega": "",
+    "field": "600, 720, 800 MHz at 15 and 25 °C; 800 MHz only at 20 and 30 °C",
+    "temperature": "15, 20, 25, 30 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "From 15 to 30 °C loop L8 exchanges at 530 to 1,080 per second with a 3.5-5.7% minor state from three residues (kclose 19 ± 3, 28 ± 5, 42 ± 7, 62 ± 19 s-1, assuming concerted two-state motion; Ea 34 ± 12 kJ/mol).",
+   "evidence_rows": [
+    "ARGKIN-r4",
+    "ARGKIN-r5",
+    "ARGKIN-r6",
+    "ARGKIN-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors report Ea 34 ± 12 kJ/mol for L8 exchange, similar to turnover (34 ± 13 kJ/mol), consistent with but not proof of rate limitation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J10",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     170,
+     187
+    ],
+    "residues_author": "L170 Cδ1, L187 Cδ1",
+    "numbering_note": "",
+    "functional_site": "in or near loop L8"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; 10 mM potassium citrate, 50 mM KCl, 50 μM NaN3, 10% D2O; DTT 0.5 mM (Methods) or 1.0 mM (SI Table S1); pH not stated per sample; no Mg or nucleotide; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "ILV methyl 13C single-quantum CPMG, ChemEx two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "cluster",
+    "kex": "970 ± 38 s-1 (two-methyl collective fit)",
+    "pB": "4.8 ± 0.3%",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Two methyls near loop L8 exchange at about 970 per second with a 4.8% minor state, close to the backbone L8 values.",
+   "evidence_rows": [
+    "ARGKIN-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J11",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     219,
+     231
+    ],
+    "residues_author": "L219 Cδ1, I231 Cδ1",
+    "numbering_note": "",
+    "functional_site": "dynamic domain 1 and hinge"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; 10 mM potassium citrate, 50 mM KCl, 50 μM NaN3, 10% D2O; DTT 0.5 mM (Methods) or 1.0 mM (SI Table S1); pH not stated per sample; no Mg or nucleotide; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "ILV methyl 13C single-quantum CPMG, ChemEx two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "cluster",
+    "kex": "3,890 ± 29 s-1 (two-methyl collective fit)",
+    "pB": "0.56 ± 0.05%",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Side chains in dynamic domain 1 exchange about five times faster (3,890 per second) than the backbone of the same region, so the methyls report a different or additional process.",
+   "evidence_rows": [
+    "ARGKIN-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J12",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     210
+    ],
+    "residues_author": "I210 Cδ1",
+    "numbering_note": "",
+    "functional_site": "close to the ligand-binding site"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; 10 mM potassium citrate, 50 mM KCl, 50 μM NaN3, 10% D2O; DTT 0.5 mM (Methods) or 1.0 mM (SI Table S1); pH not stated per sample; no Mg or nucleotide; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": true
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "ILV methyl 13C single-quantum CPMG, ChemEx two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "per-residue",
+    "kex": "3,417 ± 325 s-1 (single-residue two-state fit, reduced χ2 28.5; SI Table S3)",
+    "pB": "0.86 ± 0.05%",
+    "delta_omega": "3.08 ± 0.16 ppm",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "I210 exchanges but fits two-state models poorly alone or with neighbours; the authors suggest three or more states.",
+   "evidence_rows": [
+    "ARGKIN-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J13",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     331
+    ],
+    "residues_author": "L331 Cδ2",
+    "numbering_note": "",
+    "functional_site": "NTD-CTD interface"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; 10 mM potassium citrate, 50 mM KCl, 50 μM NaN3, 10% D2O; DTT 0.5 mM (Methods) or 1.0 mM (SI Table S1); pH not stated per sample; no Mg or nucleotide; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "ILV methyl 13C single-quantum CPMG, ChemEx two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "per-residue",
+    "kex": "1,597 ± 211 s-1 (SI Table S3)",
+    "pB": "0.69 ± 0.04%",
+    "delta_omega": "2.06 ± 0.11 ppm",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "One interface methyl exchanges at about 1,600 per second with a 0.7% minor state (single-residue fit).",
+   "evidence_rows": [
+    "ARGKIN-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J14",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "The other 65 of 71 ILV residues (a few Leu/Val methyls unassigned in apo, SI Table S2)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; 10 mM potassium citrate, 50 mM KCl, 50 μM NaN3, 10% D2O; DTT 0.5 mM (Methods) or 1.0 mM (SI Table S1); pH not stated per sample; no Mg or nucleotide; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "ILV methyl 13C single-quantum CPMG, ChemEx two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": "ILV methyl 13C CPMG at 600 and 800 MHz, 25 °C, 40 ms constant time, 21 fields 50-2000 Hz; residues with Rex ≤ 4 s-1 were not fitted, so small-amplitude or low-Δω exchange, and exchange much faster than about 10^4 s-1, would be missed"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Most ILV side chains show no dispersion above the 4 s-1 threshold in the apo enzyme.",
+   "evidence_rows": [
+    "ARGKIN-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J15",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole backbone; five quasi-rigid groups",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 10 mM sodium citrate, 50 μM NaN3, 10% D2O (no DTT or KCl listed); ~1 mM U-15N/2H enzyme; aligned in 3% C12E5/hexanol (PEG) and in 10 mg/mL Pf1 phage; 800 MHz",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Backbone NH RDCs in two alignment media plus Cα/Cβ shifts, fitted to apo/TSA crystal mixtures",
+    "observable": "orientational averaging, apo-crystal population Papo",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Solution RDCs and shifts fit a mixture with Papo 0.5-0.7 (averaging stated to span ps to ms), but a static average structure fits equally well, so motion is not established.",
+   "evidence_rows": [
+    "ARGKIN-r8",
+    "ARGKIN-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J16",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "No WT apo measurement in this window",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The searches (relaxation dispersion, HDX-MS, EPR/DEER, FRET, time-resolved) found no CEST, ZZ-exchange, HDX or single-molecule data on the free enzyme; the 19-62 s-1 kclose values are directional rates inside the millisecond CPMG process, not a separate slower process.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J17",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "34 ILV methyl probes in the CTD and NTD-CTD linker (global fit)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:L-arginine + Mg·AMPPNP (Michaelis complex analogue)",
+    "conditions": "25 °C; 10 mM imidazole, 20 mM KCl, 30 mM MgCl2, 1.0 mM DTT (SI Table S1); 100 mM arginine, 20 mM AMPPNP; pH not stated per sample; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "ILV methyl 13C CPMG, global two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "two-state global",
+    "kex": "914 ± 15 s-1",
+    "pB": "3.10 ± 0.04%",
+    "delta_omega": "",
+    "field": "600 and 850 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The Michaelis-complex analogue exchanges at 914 per second with a 3.1% excited state whose shifts correlate with the TSA (R = 0.81); kAB 28 s-1 gives a 36 ms ground-state lifetime.",
+   "evidence_rows": [
+    "ARGKIN-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors state the MCA samples a TSA-like state at a rate (28 s-1) comparable in order of magnitude to turnover; correlation with MCA-PCA shifts (R = 0.88, SI Fig. S4F) weakens the assignment.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J18",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "25 ILV methyl probes, mainly CTD around the substrate pocket (global fit)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:L-arginine + Mg·ADP + nitrate (transition-state analogue)",
+    "conditions": "25 °C; 10 mM imidazole, 20 mM KCl, 30 mM MgCl2, 1.0 mM DTT (SI Table S1); 100 mM arginine, 20 mM ADP, 20 mM nitrate; pH not stated per sample; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "ILV methyl 13C CPMG, global two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "two-state global",
+    "kex": "4,247 ± 72 s-1",
+    "pB": "2.75 ± 0.05% (conditional on unit slope of Δω versus MCA-TSA shift differences)",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Methyls in the TSA complex exchange at about 4,250 per second with an MCA- or apo-like excited state; the population depends on an assumed slope.",
+   "evidence_rows": [
+    "ARGKIN-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J19",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "15 ILV methyl probes, mainly CTD (global fit)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:phosphoarginine analogue pAIE + Mg·ADP (product complex analogue)",
+    "conditions": "25 °C; 10 mM imidazole, 20 mM KCl, 30 mM MgCl2, 1.0 mM DTT (SI Table S1); 100 mM pAIE, 20 mM ADP; pH not stated per sample; 0.75-1.0 mM ILV-methyl-labelled, highly deuterated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "ILV methyl 13C CPMG, global two-state fit",
+    "observable": "dispersion amplitude (Rex > 4 s-1)",
+    "fit_model": "two-state global",
+    "kex": "4,690 ± 119 s-1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 850 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The product-complex analogue exchanges at about 4,690 per second, but its excited state matches none of the other three states.",
+   "evidence_rows": [
+    "ARGKIN-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J20",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     71,
+     185
+    ],
+    "residues_author": "Loop L8 (12 residues) and NTD motion = NTD hinge + interface (10 residues); representatives D71 (NTD) and H185 (L8), Fig. 4 caption",
+    "numbering_note": "Table 3 gives cluster names and counts only; residues_entry lists the representatives the authors name.",
+    "functional_site": "substrate-binding loop L8 (I182-G209); NTD hinge and NTD-CTD interface"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:L-arginine + Mg·ADP + nitrate (transition-state analogue)",
+    "conditions": "25 °C; pH 6.5; 10 mM d4-imidazole, 1 mM DTT, 0.2 mM NaN3; 6 mM ADP, 8 mM MgCl2, 60 mM L-arginine, 20 mM NaNO3; 0.8 mM enzyme, U-15N, ~75% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG, collective Bloch-McConnell two-state fit",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "L8 2,750 ± 180 s-1; NTD motion 2,410 ± 260 s-1; joint L8+NTD fit 2,530 s-1",
+    "pB": "not determinable (no residues in slow-intermediate exchange)",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the TSA complex loop L8 and the NTD exchange at about 2,400-2,750 per second, roughly three times the apo rates; ligand binding/release is reduced by saturation but not excluded.",
+   "evidence_rows": [
+    "ARGKIN-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J21",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     211,
+     230,
+     293
+    ],
+    "residues_author": "Dynamic domains 2 (10 residues), 4 (31 residues, centre of the active site) and 5 (12 residues); representatives F211, I230, D293 (Fig. 4 caption)",
+    "numbering_note": "Table 3 gives cluster names and counts only; residues_entry lists the representatives the authors name.",
+    "functional_site": "dynamic domain 4 at the centre of the active site"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:L-arginine + Mg·ADP + nitrate (transition-state analogue)",
+    "conditions": "25 °C; pH 6.5; 10 mM d4-imidazole, 1 mM DTT, 0.2 mM NaN3; 6 mM ADP, 8 mM MgCl2, 60 mM L-arginine, 20 mM NaNO3; 0.8 mM enzyme, U-15N, ~75% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG, collective Bloch-McConnell two-state fit",
+    "observable": "dispersion amplitude (Rex)",
+    "fit_model": "cluster",
+    "kex": "DD2 2,700 ± 180 (Table 3; prose 2,690); DD4 2,300 ± 170; DD5 2,470 ± 210 s-1; joint fit 2,300 s-1",
+    "pB": "DD2 not determinable; DD4 1.3 ± 0.1%; DD5 1.8 ± 0.1%; joint fit 1.5%",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Dynamic domains 2, 4 and 5 of the TSA complex exchange at about 2,300-2,700 per second, equal within error, so the authors treat them as one collective motion; domain 5 shows no Rex in apo.",
+   "evidence_rows": [
+    "ARGKIN-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J22",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     310,
+     311,
+     312,
+     313,
+     314,
+     315,
+     316
+    ],
+    "residues_author": "G310-T316 in loop L13 (unassigned amides in the TSA complex)",
+    "numbering_note": "",
+    "functional_site": "substrate-binding loop L13 (contacts substrates)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:L-arginine + Mg·ADP + nitrate (transition-state analogue)",
+    "conditions": "25 °C; pH 6.5; 10 mM d4-imidazole, 1 mM DTT, 0.2 mM NaN3; 6 mM ADP, 8 mM MgCl2, 60 mM L-arginine, 20 mM NaNO3; 0.8 mM enzyme, U-15N, ~75% 2H; assignment sample ~1.8 mM, U-13C/15N, ~80% 2H, 600/800 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Missing amide signals in TROSY spectra (assignment and relaxation samples)",
+    "observable": "line broadening",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Seven L13 amides vanish in the TSA complex; the authors propose intermediate exchange, but missing peaks fix neither a rate nor a mechanism.",
+   "evidence_rows": [
+    "ARGKIN-r17",
+    "ARGKIN-r24"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J23",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     112,
+     357
+    ],
+    "residues_author": "D112 and C-terminal A357 (S2 more than 3 SD below the TSA average)",
+    "numbering_note": "Paper's D112 does not match entry residue 112 (Gly; UniProt P51541 has Asp).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:L-arginine + Mg·ADP + nitrate (transition-state analogue)",
+    "conditions": "25 °C; pH 6.5; 10 mM d4-imidazole, 1 mM DTT, 0.2 mM NaN3; 6 mM ADP, 8 mM MgCl2, 60 mM L-arginine, 20 mM NaNO3; 0.8 mM enzyme, U-15N, ~75% 2H",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2, heteronuclear NOE, model-free",
+    "observable": "S2 (TSA average 0.91 ± 0.05)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The TSA backbone is more ordered on the ps-ns scale than apo (S2apo/S2TSA 0.92); only residue 112 and the C-terminus stand out, and the flexible apo L13 residues are unassigned in TSA.",
+   "evidence_rows": [
+    "ARGKIN-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J24",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Five quasi-rigid groups; NTD hinge 88-94, loops L8 and L13",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "Cryogenic crystal structures 3M10 (apo) and 1M15 (TSA: arginine, MgADP, nitrate)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal structure comparison, quasi-rigid group decomposition and l1-restrained flexible superposition",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Apo and TSA crystals differ by rotations of five quasi-rigid groups and distributed small torsion changes, but give no rate or population.",
+   "evidence_rows": [
+    "ARGKIN-r10",
+    "ARGKIN-r25",
+    "ARGKIN-r33"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J25",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Alternate side-chain conformers and TLS sub-domain displacements",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:L-arginine + Mg·ADP + nitrate (transition-state analogue)",
+    "conditions": "~298 K crystal forms I (5J99) and II (5J9A), compared with 100 K structures",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Ambient-temperature crystallography, TLS/disorder analysis",
+    "observable": "alternate conformers, anisotropic displacement",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "~298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Room-temperature TSA crystals show alternate conformers whose displacement directions partly align with substrate-associated movements; the authors note ADPs mainly sample ps-ns fluctuations, and alternates carry no timescale.",
+   "evidence_rows": [
+    "ARGKIN-r18",
+    "ARGKIN-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J26",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Subdomain orientations in closed complexes",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:noncognate guanidino analogues (L-ornithine, L-citrulline, imino-L-ornithine, D-arginine, creatine) + MgADP",
+    "conditions": "Crystals from 26% PEG 6000, 50 mM HEPES, 100 mM MgCl2 pH 8.0 stock (final drop not stated); nitrate in stock",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal structure comparison with cognate TSA",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Noncognate analogues close the enzyme into several distinct subdomain orientations, a static spread with no kinetics.",
+   "evidence_rows": [
+    "ARGKIN-r20",
+    "ARGKIN-r21",
+    "ARGKIN-r22",
+    "ARGKIN-r23",
+    "ARGKIN-r38"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J27",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": [
+     271
+    ],
+    "residues_author": "C271A TSA structure versus WT TSA",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:C271A",
+    "binding_state": "bound:L-arginine + Mg·ADP + nitrate (transition-state analogue)",
+    "conditions": "Abstract only; conditions not extracted",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Crystal structure comparison (mutant versus WT TSA)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Static cryo-crystal comparison of the TSA complex: detects coordinate shifts above coordinate error only; blind to any exchange rate or minor population"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The C271A TSA structure is near-identical to WT despite reduced activity (abstract only).",
+   "evidence_rows": [
+    "ARGKIN-r36"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J28",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Daphnia magna AK nucleotide site and closure salt bridge (WT apo vs H284A/arginine); H227A local secondary structure",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Daphnia magna AK WT, H284A and H227A (homolog)",
+    "binding_state": "mixed",
+    "conditions": "Crystals from 1.8 M potassium (or sodium/potassium) phosphate pH 8.2; phosphate bound in the nucleotide site of the H284A study structures; H227A crystals at 100 K with ligands added before crystallization, retained occupancy not established",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "Crystal structure comparisons (WT versus mutants) plus stability assays",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Daphnia structures neither close with arginine nor give a clean mutant comparison, because concentrated phosphate occupies or can occupy the nucleotide site and is proposed to block the closed-state salt bridge.",
+   "evidence_rows": [
+    "ARGKIN-r26",
+    "ARGKIN-r30"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J29",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Polybetes pythagoricus AK; active-site lid",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Polybetes pythagoricus AK (homolog)",
+    "binding_state": "mixed",
+    "conditions": "100 K; pH 5.6; 0.2 M ammonium acetate, 0.1 M sodium citrate, 30% PEG 4000; arginine soak 20 mM, 10 min",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Crystal structure comparison (apo versus arginine binary complex)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Static cryo-crystal comparison after a 10 min arginine soak, no nucleotide: detects global closure only; blind to solution motion and its rate"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Spider AK stays open with arginine alone and has a disordered lid of unknown timescale.",
+   "evidence_rows": [
+    "ARGKIN-r29"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J30",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Loxosceles laeta AK homology model with docked EGCG",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Loxosceles laeta AK homology model (homolog)",
+    "binding_state": "bound:EGCG (docked)",
+    "conditions": "303.15 K; TIP3 water, 3 Na+; CHARMM36; GROMACS 2022.4; duplicate 100 ns runs",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "MD simulation",
+    "observable": "MD fluctuation, ligand displacement",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "303.15 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "100 ns simulations of a docked spider complex describe ligand retention, not Limulus domain exchange.",
+   "evidence_rows": [
+    "ARGKIN-r27"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "ARGKIN-J31",
+   "entry_id": "ARGKIN_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole protein (radius of gyration)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:lobster AK (homolog)",
+    "binding_state": "mixed",
+    "conditions": "Abstract only; MgADP, MgATP or MgADP/L-arginine complexes versus apo",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Equilibrium SAXS",
+    "observable": "structure difference (compaction)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Nucleotide and ternary complexes compact lobster AK in solution (abstract only); an equilibrium shape change, not a rate.",
+   "evidence_rows": [
+    "ARGKIN-r34",
+    "ARGKIN-r41",
+    "ARGKIN-r42"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

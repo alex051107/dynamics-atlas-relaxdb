@@ -1,0 +1,823 @@
+{
+ "protein_summary": {
+  "entry_id": "6838",
+  "per_window": {
+   "ps-ns": "dynamic_in_window at five sites only: S2 < 0.70 at N53 and S292-R295 (entry 32, 268-271; PSE4-J1, r1); the rest is ordered, mean S2 0.861 ± 0.087 (J2), and the active site is the most rigid part, S2 0.88-0.97 (J3). Y105's nanosecond component is model-dependent (J4, unresolved).",
+   "us-ms": "dynamic_in_window, qualitative. 32 amides need Rex from the field dependence of 15N R2 (J7, r2), most prominently T128, L221, R234, S235, G236 near the active site (J5) and R161, R178 at the Omega-loop ends (J6); S70 and A237 are broadened out (J8, unresolved) and K73 is ambiguous (J9). No Rex inside the Omega loop (J10) or at S106 (J11). No dispersion was recorded, so no kex or pB.",
+   "slower_than_ms": "dynamic_in_window by NMR H/D exchange at pH 6.65 (EX2 checked at pH 7.85): I97-Q115 and N132-I137 exchange within 32 min (J12), as do E171-L177 (J13) and S235/G236 (J14); R161-N170 and most secondary structure are protected, 6-11 kcal/mol (J15, J16).",
+   "undetermined": "Proposed cavity-filling Omega-loop motion (J17, homolog MD inference) and the S130 alternate side chain in the wild-type crystal (J18, abstract only, structure_only)."
+  },
+  "wt_apo_answer": "Yes, qualitatively: free wild-type PSE-4 at 31.5 °C, pH 6.65 (no buffer) needs Rex terms at 32 amides from the field dependence of 15N R2, most prominently T128, L221, R234, S235 and G236 near the active site (entry 106, 199, 212, 213, 214; Rex 4.2-7.5 s-1 at 60.8 MHz 15N where given) and R161 and R178 at the Omega-loop ends (entry 139, 156), while S70 and A237 are broadened out; no dispersion was recorded, so there is no rate or population.",
+  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. BMRB 6838, which the 2009 paper names as its deposition, holds T1, T2 and NOE at 500, 600 and 800 MHz (pH 6.65, 304.65 K) in entry numbering; the screen used the 500 MHz lists and flags 11 fast residues (NOE < 0.65, including N53 and S292-R295 = entry 32 and 268-271, as in the paper) and 17 possible-exchange residues (R2/R1 > 13.435), among them T128, L221, S235 and G236 (entry 106, 199, 213, 214). R234 (entry 212) is not flagged, which fits the authors' report that its 500 MHz R2 is lowered by overlap with K192.",
+  "open_conflicts": [
+   "K73: highest-ranked model has no Rex and S2 0.94, against a weak amide peak and side-chain signals lost beyond C-gamma (J9, r2).",
+   "Omega loop: Rex only at the hinges R161/R178 and none inside (J6, J10), fast H/D exchange at E171-L177 (J13) but protection at R161-N170 (J15); the authors reconcile these with a proposed cavity-filling motion that rests on TEM-1 MD (J17).",
+   "Y105: two-timescale versus single-timescale model fit almost equally (J4, r1).",
+   "Author label 'R161-E170' versus N170 in the sequence (r3); mapped here as R161-N170."
+  ],
+  "questions_for_gina": [
+   "Should the RelaxDB 6838 label at R234 (entry 212) be read against the 600 MHz data, given the 500 MHz R2 overlap with K192 that the authors report?",
+   "Should the qualitative two-field Rex (no CPMG) count as us-ms evidence for the WT apo answer, or only as indirect support?"
+  ],
+  "buffer_note": "No buffer was used: phosphate was omitted because it binds the TEM-1 active site weakly, DSS was used only externally, and no protease inhibitors were added because some bind the active site; the sample holds 3 mM imidazole and 0.1% azide at pH 6.65, 31.5 °C. The 81.0 MHz R2 data were excluded for inconsistency, so Rex rests on 50.6 and 60.8 MHz R2 and is reported scaled to 60.8 MHz. H/D exchange used lyophilized protein dissolved in D2O; the pH 7.85 control used a room-temperature probe. The full S2, Rex and exchange tables (SI Tables S2-S4) were unavailable."
+ },
+ "judgments": [
+  {
+   "judgment_id": "PSE4-J1",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     32,
+     268,
+     269,
+     270,
+     271
+    ],
+    "residues_author": "N53, S292, Q293, S294, R295 (the only S2 < 0.70)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and NOE at 50.6, 60.8 and 81.0 MHz 15N (500/600/800 MHz 1H; 81.0 MHz R2 excluded as inconsistent); model-free with ellipsoidal diffusion, tau_m 12.683 ± 0.024 ns; CSA -172 ppm, N-H 1.02 Å",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600, 800 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Only five amides have order parameters below 0.70: N53 in a surface loop and the last four residues S292-R295, the frayed C-terminus.",
+   "evidence_rows": [
+    "PSE4-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J2",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "all other analysed amides (230 N-H vectors in total): mean S2 0.861 ± 0.087 (0.868 ± 0.051 without the three flexible C-terminal residues); secondary-structure core 0.879 ± 0.035; 70% of amides above 0.85",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and NOE at 50.6, 60.8 and 81.0 MHz 15N (500/600/800 MHz 1H; 81.0 MHz R2 excluded as inconsistent); model-free with ellipsoidal diffusion, tau_m 12.683 ± 0.024 ns; CSA -172 ppm, N-H 1.02 Å",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600, 800 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": "Three-field 15N relaxation at 31.5 °C with model-free fitting; measures the amplitude of N-H motion faster than tumbling (tau_m 12.7 ns) only; us-ms motion enters only as Rex; fixed CSA and crystal-derived N-H orientations can bias S2; side chains not probed."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Apart from the five flexible sites the backbone is highly ordered on the ps-ns scale, which says nothing about slower motion.",
+   "evidence_rows": [
+    "PSE4-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J3",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     51,
+     108,
+     109,
+     110,
+     144,
+     212
+    ],
+    "residues_author": "active-site and SDN-loop amides: K73 0.94 ± 0.01, S130 0.95 ± 0.02, D131 0.92 ± 0.01, N132 0.97 ± 0.01, E166 0.91 ± 0.02, R234 0.88 ± 0.02",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and NOE at 50.6, 60.8 and 81.0 MHz 15N (500/600/800 MHz 1H; 81.0 MHz R2 excluded as inconsistent); model-free with ellipsoidal diffusion, tau_m 12.683 ± 0.024 ns; CSA -172 ppm, N-H 1.02 Å",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600, 800 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": "Three-field 15N relaxation at 31.5 °C with model-free fitting; measures backbone N-H amplitude faster than tumbling only, not side-chain motion or us-ms exchange."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The most rigid amides on the ps-ns scale sit in the active site, with S2 0.88-0.97 at the catalytic and SDN-loop residues; R234 and the K73 side chain still show signs of slower exchange (J5, J9).",
+   "evidence_rows": [
+    "PSE4-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J4",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     83
+    ],
+    "residues_author": "Y105",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "15N R1, R2 and NOE at 50.6, 60.8 and 81.0 MHz 15N (500/600/800 MHz 1H; 81.0 MHz R2 excluded as inconsistent); model-free with ellipsoidal diffusion, tau_m 12.683 ± 0.024 ns; CSA -172 ppm, N-H 1.02 Å",
+    "observable": "S2 and internal correlation time",
+    "fit_model": "per-residue",
+    "kex": "m5: 1008 ± 188 ps; m2: 26 ± 4 ps",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500, 600, 800 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Y105 is fitted with a two-timescale model (S2 0.80 ± 0.02, slow internal time 1008 ± 188 ps), but a single fast motion (S2 0.85 ± 0.01, 26 ± 4 ps) also fits, so the nanosecond process may be artefactual.",
+   "evidence_rows": [
+    "PSE4-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J5",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     106,
+     199,
+     212,
+     213,
+     214
+    ],
+    "residues_author": "T128, L221, R234, S235, G236 (the five most prominent of 32 Rex sites, 4.5-12.5 Å from the active site)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Rex from model-free fits: field dependence of 15N R2 at 50.6 and 60.8 MHz (81.0 MHz R2 excluded), scaled quadratically to 60.8 MHz 15N",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Five amides near the active-site cavity need large exchange terms (R234 4.2 ± 1.6 s-1 once its overlapped 50.6 MHz R2 is dropped, S235 7.5 s-1, G236 4.5 s-1 at 60.8 MHz 15N), a qualitative sign of us-ms exchange with no rate or population.",
+   "evidence_rows": [
+    "PSE4-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "authors propose relevance to catalysis (kcat about 1 ms-1) and a slowly moving structural water as a possible cause; neither tested",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J6",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     139,
+     156
+    ],
+    "residues_author": "R161 and R178, the two Omega-loop residues with Rex",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "Omega loop ends (proposed hinge)",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Rex from model-free fits: field dependence of 15N R2 at 50.6 and 60.8 MHz (81.0 MHz R2 excluded), scaled quadratically to 60.8 MHz 15N",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Within the Omega loop only the two end residues R161 and R178, where the loop narrows, need exchange terms; the authors propose R178 as the hinge of a slow loop motion.",
+   "evidence_rows": [
+    "PSE4-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J7",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "32 residues with non-zero Rex; spatial distribution figure-only (Figure 1B), full list in unavailable SI",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Rex from model-free fits: field dependence of 15N R2 at 50.6 and 60.8 MHz (81.0 MHz R2 excluded), scaled quadratically to 60.8 MHz 15N",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In all 32 amides need an exchange term, concentrated near the active site and the ends of the Omega loop; only the residues in J5 and J6 are named in the text.",
+   "evidence_rows": [
+    "PSE4-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J8",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     48,
+     215
+    ],
+    "residues_author": "S70 and A237 (unassigned)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N spectra and assignment (no relaxation data)",
+    "observable": "missing amide peaks",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The catalytic S70 and A237 amides are not observed, which the authors attribute to extreme broadening from us-ms motion or severe overlap; a missing peak gives no rate and does not separate these causes.",
+   "evidence_rows": [
+    "PSE4-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J9",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     51
+    ],
+    "residues_author": "K73 backbone amide (side chain broadened beyond C-gamma)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Rex from model-free fits: field dependence of 15N R2 at 50.6 and 60.8 MHz (81.0 MHz R2 excluded), scaled quadratically to 60.8 MHz 15N; plus peak intensity and side-chain resonances",
+    "observable": "Rex and line broadening",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The best model for K73 has no exchange term (S2 0.94), the next one gives a questionable Rex of 0.7 ± 0.5 s-1, yet its weak amide peak and missing side-chain signals point to slow or intermediate exchange that the quadratic Rex scaling may miss.",
+   "evidence_rows": [
+    "PSE4-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J10",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     142,
+     144,
+     147,
+     154,
+     155
+    ],
+    "residues_author": "Omega-loop R164, E166, L169, D176, L177 (author statement: only R161 and R178 in the loop show exchange; K173 and L174 have no data)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "Omega loop",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Rex from model-free fits: field dependence of 15N R2 at 50.6 and 60.8 MHz (81.0 MHz R2 excluded), scaled quadratically to 60.8 MHz 15N",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": "Rex from the field dependence of 15N R2 at 50.6 and 60.8 MHz, 31.5 °C, assuming quadratic field scaling; blind to exchange with small shift change or very skewed populations and may miss slow or intermediate exchange that does not scale quadratically; no CPMG or R1rho was recorded."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Inside the Omega loop no amide needs an exchange term, including the catalytic E166 (model 1, S2 0.91); the authors note that a loop shift preserving the D176 and L177 environments would stay invisible.",
+   "evidence_rows": [
+    "PSE4-r1",
+    "PSE4-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J11",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     84
+    ],
+    "residues_author": "S106",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Rex from model-free fits: field dependence of 15N R2 at 50.6 and 60.8 MHz (81.0 MHz R2 excluded), scaled quadratically to 60.8 MHz 15N",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 and 600 MHz 1H",
+    "temperature": "31.5 °C",
+    "detection_window": "Rex from the field dependence of 15N R2 at 50.6 and 60.8 MHz, 31.5 °C, assuming quadratic field scaling; blind to exchange with small shift change or very skewed populations and may miss slow or intermediate exchange that does not scale quadratically; no CPMG or R1rho was recorded."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "S106 would shift by 286 Hz (60.8 MHz 15N) if Y105 switched between its two rotamers, yet it needs no exchange term, so any such switch is not seen on the us-ms scale; the authors suggest it is sub-ns.",
+   "evidence_rows": [
+    "PSE4-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J12",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     75,
+     76,
+     77,
+     78,
+     79,
+     80,
+     81,
+     82,
+     83,
+     84,
+     86,
+     87,
+     88,
+     89,
+     90,
+     91,
+     92,
+     93,
+     110,
+     111,
+     112,
+     113,
+     114,
+     115
+    ],
+    "residues_author": "I97-Q115 and N132-I137 (all amides exchange before the first spectrum; P107 has no amide)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; lyophilized 15N PSE-4 dissolved in D2O, no buffer (3 mM imidazole, 0.1% azide in the general sample); 60 TROSY-HSQC spectra over 80 days, first after 32 min; free enzyme",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Amide H/D exchange by serial 1H-15N TROSY-HSQC, EX2 analysis (pH 7.85 control)",
+    "observable": "amide H/D exchange rate",
+    "fit_model": "none",
+    "kex": "> 1e-3 s-1 (amide solvent exchange, not an opening rate)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Every amide in I97-Q115 and the adjacent N132-I137 helix exchanges within the 32 min dead time although 17 of 24 have no solvent exposure, so this subdomain next to the active site opens often; the authors' estimate of a >0.1% partially unfolded population rests on an assumed free energy, not a fit.",
+   "evidence_rows": [
+    "PSE4-r3",
+    "PSE4-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J13",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     149,
+     150,
+     151,
+     152,
+     153,
+     154,
+     155
+    ],
+    "residues_author": "E171-L177 (Omega loop, fast-exchange class)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "Omega loop",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; lyophilized 15N PSE-4 dissolved in D2O, no buffer (3 mM imidazole, 0.1% azide in the general sample); 60 TROSY-HSQC spectra over 80 days, first after 32 min; free enzyme",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Amide H/D exchange by serial 1H-15N TROSY-HSQC, EX2 analysis (pH 7.85 control)",
+    "observable": "amide H/D exchange rate",
+    "fit_model": "none",
+    "kex": "> 1e-3 s-1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The second half of the Omega loop exchanges within the dead time, while R161-N170 stays protected (J15).",
+   "evidence_rows": [
+    "PSE4-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J14",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     213,
+     214
+    ],
+    "residues_author": "S235 and G236",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; lyophilized 15N PSE-4 dissolved in D2O, no buffer (3 mM imidazole, 0.1% azide in the general sample); 60 TROSY-HSQC spectra over 80 days, first after 32 min; free enzyme",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Amide H/D exchange by serial 1H-15N TROSY-HSQC, EX2 analysis (pH 7.85 control)",
+    "observable": "amide H/D exchange rate",
+    "fit_model": "none",
+    "kex": "> 1e-3 s-1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "S235 and G236 exchange faster than 1e-3 s-1 despite zero solvent exposure, matching their large Rex (J5).",
+   "evidence_rows": [
+    "PSE4-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J15",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     139,
+     140,
+     141,
+     142,
+     143,
+     144,
+     146,
+     147,
+     148
+    ],
+    "residues_author": "R161-N170 (printed by the authors as 'R161-E170'; residue 170 is N in the entry and 1G68); R164 7.3, E166 7.6, L169 6.1 kcal/mol; mean about 6.7",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "Omega loop",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; lyophilized 15N PSE-4 dissolved in D2O, no buffer (3 mM imidazole, 0.1% azide in the general sample); 60 TROSY-HSQC spectra over 80 days, first after 32 min; free enzyme",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Amide H/D exchange by serial 1H-15N TROSY-HSQC, EX2 analysis (pH 7.85 control)",
+    "observable": "apparent opening free energy from EX2 exchange rates",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The first half of the Omega loop exchanges only slowly (apparent opening free energy about 6-8 kcal/mol), rare local opening that the authors read as restricted loop motion.",
+   "evidence_rows": [
+    "PSE4-r3",
+    "PSE4-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J16",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "125 amides with measurable rates (of 226 with data; 101 exchanged before the first spectrum); highest protection in the alpha/beta-domain beta-sheet; C77-C123 disulfide neighbours 4-8 kcal/mol",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; lyophilized 15N PSE-4 dissolved in D2O, no buffer (3 mM imidazole, 0.1% azide in the general sample); 60 TROSY-HSQC spectra over 80 days, first after 32 min; free enzyme",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Amide H/D exchange by serial 1H-15N TROSY-HSQC, EX2 analysis (pH 7.85 control)",
+    "observable": "amide H/D exchange rate and apparent opening free energy",
+    "fit_model": "none",
+    "kex": "2e-3 to 3e-8 s-1 (amide exchange)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "31.5 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Most secondary-structure amides exchange over hours to about a year (2e-3 to 3e-8 s-1, about 6-11 kcal/mol), with the alpha/beta domain more protected than the all-alpha domain; faster exchange at pH 7.85 (mean 11 ± 7-fold versus 16 expected) supports the EX2 reading.",
+   "evidence_rows": [
+    "PSE4-r3",
+    "PSE4-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J17",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     149,
+     150,
+     151,
+     152,
+     153,
+     154,
+     155,
+     43
+    ],
+    "residues_author": "E171-L177 moving toward R65 so that G175 can hydrogen-bond it (about 5 Å), hinged at R161/R178",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "Omega loop"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "31.5 °C; pH 6.65; no buffer (phosphate deliberately omitted), 3 mM imidazole, 0.1% sodium azide; 0.5 mM 15N PSE-4; 10% D2O; free enzyme, no substrate or inhibitor",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "interpretation combining Rex (hinges), H/D exchange (E171-L177 fast) and TEM-1 homolog MD",
+    "observable": "proposed cavity-filling loop displacement",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors propose that E171-L177 closes the cavity between the Omega loop and the core, a motion seen once in a 5 ns TEM-1 simulation; no PSE-4 alternate state or rate was measured.",
+   "evidence_rows": [
+    "PSE4-r2",
+    "PSE4-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "authors propose it could hold E166 in a catalytically relevant position (not tested)",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "PSE4-J18",
+   "entry_id": "6838",
+   "region": {
+    "residues_entry": [
+     108
+    ],
+    "residues_author": "S130 side chain (abstract also names R234 and N170)",
+    "numbering_note": "Author Ambler numbering 22-295 with gaps at 58, 239 and 253; entry = Ambler - 21 for 22-57, - 22 for 59-238, - 23 for 240-252, - 24 for 254-295; BMRB 6838 uses entry numbering (checked N53=32, S70=48, K73=51, Y105=83, T128=106, S130=108, E166=144, R161=139, R178=156, L221=199, R234=212, S235=213, G236=214, R295=271).",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "unknown",
+    "conditions": "crystal; conditions not in the abstract; compared with the R234K variant",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray crystallography, wild type versus R234K (abstract only)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The wild-type crystal shows an alternate S130 side-chain conformation relative to R234K, static heterogeneity with no rate, read from the abstract only.",
+   "evidence_rows": [
+    "PSE4-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

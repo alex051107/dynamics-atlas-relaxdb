@@ -1,0 +1,3 @@
+{"entry": "AQADK_CPMG", "accession": "O66490", "core": [[1, 29], [72, 110], [170, 220]], "mobile": [[30, 71], [111, 169]],
+ "open": "2RH5:A", "closed": "2RGX:A",
+ "note": "Core and lid ranges from the TLS domain definitions in AQADK-J5 (AMP lid 30-71, ATP lid 111-169). Closed reference: Zn2+-Ap5A complex 2RGX. Open reference: apo 2RH5 chain A (provisional; replaced by the apo chain farthest from 2RGX after a first pass)."}

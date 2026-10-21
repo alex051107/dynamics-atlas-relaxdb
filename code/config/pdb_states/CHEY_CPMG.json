@@ -1,0 +1,32 @@
+{
+"entry": "CHEY_CPMG",
+"accession": "P0AE67",
+"core": [
+[
+6,
+56
+],
+[
+65,
+85
+],
+[
+112,
+128
+]
+],
+"mobile": [
+[
+57,
+64
+],
+[
+86,
+111
+]
+],
+"open": "3CHY:A",
+"closed": "1FQW:A",
+"verify_numbering": true,
+"note": "Author numbering = Met1 = 1 (CHEY-J1 numbering_note; checked D13, D57, N59, T87, E89, Y106, K109 in all 61 depositions; mutant positions differ as deposited). Mobile = the activation switch: beta3-alpha3 loop 57-64 (D57 phosphorylation site; CPMG residues N62, D64) and 86-111 (beta4 end T87, beta4-alpha4 loop 88-91, alpha4 92-99, beta5 and Y106/V107, K109 up to the alpha5 start; 3CHY helix/strand records: beta4 82-87, alpha4 92-99, beta5 106-108, alpha5 113-125). This covers the CPMG residues T87, N94, V107 (CHEY-r1) and the beta4-alpha4 loop / Y106 region that CHEY-J18 and CHEY-J19 describe. The remaining CPMG residues (R18, R19 in alpha1; A36, D38 at beta2-alpha2; E67-L69 in alpha3; L127) are left in the core because no structural contrast is described for them. 'open' = inactive Mg-free apo 3CHY chain A (CHEY-r19; the Mg-free sample of CHEY-r1); 'closed' = BeF3-/Mn2+ activated wild type 1FQW chain A ('Crystal structure of activated CheY'; the activated-mimic state of CHEY-r7). Part of the inactive/active contrast is the Y106 side-chain rotamer, which Calpha cannot see; the Calpha part is the beta4-alpha4 loop and alpha4 shift. Mg2+/Mn2+ count as ions (not ligands), BeF3- counts as a ligand, sulfate (3 in 3CHY, one in the phosphorylation pocket, CHEY caveats) stays solvent; phosphono-CheY (CYQ) is a modified residue and is classed by the tool as apo with the modification in the mutation column."
+}

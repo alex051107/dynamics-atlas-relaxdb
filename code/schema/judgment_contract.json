@@ -1,0 +1,79 @@
+{
+ "version": "judgment_v0.4 (2026-10-13)",
+ "purpose": "Per protein x region x time window x sample state: is there dynamics, with evidence for, against, and gaps. Built ONLY from evidence-layer rows; no new papers, no web.",
+ "inputs": {
+  "evidence_rows": "~/dynamics_atlas_work/outputs/gina_review_round1/evidence_rows.csv plus Appendix_rows sheet of RelaxDB_CPMG_evidence_round1.xlsx; row ids exactly as in the workbook ID column (e.g. CYPA-r1, KRAS-xiang2026-r1)",
+  "source_texts": "~/dynamics_atlas_work/sources_cache/ (read only, to check a value cited by an evidence row)"
+ },
+ "judgment_row": {
+  "judgment_id": "<PREFIX>-J<n>",
+  "entry_id": "RelaxDB entry, e.g. CYPA_CPMG",
+  "region": {
+   "residues_entry": "list of entry-numbered residues, or 'unlocalized' when the source gives only a global value",
+   "residues_author": "as reported",
+   "numbering_note": "offset or construct numbering, empty if none",
+   "functional_site": "only if the source states it (active site, binding interface, hinge); else empty",
+   "residue_basis": "OPTIONAL: author_listed | global_fit_unlocalized | per_residue"
+  },
+  "time_window": "ps-ns | us-ms | slower_than_ms | undetermined",
+  "sample_state": {
+   "construct": "WT | mutant:<mutation> | other construct:<description>",
+   "binding_state": "apo | bound:<ligand or partner> | mixed | unknown",
+   "conditions": "temperature; pH; buffer; Mg/metal; nucleotide; other — as reported",
+   "is_wt_apo": "true | false"
+  },
+  "direction": "detected | measured_not_detected | artefact_suspected | unclear_second_process | not_measured | search_insufficient",
+  "detection": {
+   "method": "experiment as reported",
+   "observable": "Rex, dispersion amplitude, CEST dip, R1rho, S2, line broadening, HDX rate, structure difference, MD fluctuation",
+   "fit_model": "two-state global | per-residue | cluster | none | other",
+   "kex": "",
+   "pB": "",
+   "delta_omega": "",
+   "field": "",
+   "temperature": "",
+   "detection_window": "REQUIRED when direction = measured_not_detected: method, field, temperature, nuCPMG or B1 range, and what exchange it could not see"
+  },
+  "verdict": "dynamic_in_window | no_evidence_in_window | contested | not_measured | unresolved",
+  "reason": "one sentence, plain English",
+  "evidence_rows": "list of evidence row ids; REQUIRED, at least one, except direction = not_measured or search_insufficient",
+  "conflicts_with": "judgment ids that state the opposite for the SAME comparable proposition (same region, window, comparable state); empty otherwise",
+  "evidence_strength": "direct_measurement | indirect | inference_from_mutant | inference_from_homolog | md_only | structure_only",
+  "function_link": "only if the source states that the motion relates to function; else empty",
+  "relaxdb_relation": "pending_legend (until the RelaxDB label legend is confirmed)"
+ },
+ "rules": [
+  "Never give one global 'dynamic' verdict per protein; give verdicts per time window. Low S2 is ps-ns evidence only; high S2 is not evidence against us-ms exchange.",
+  "measured_not_detected is not 'no dynamics'; it is 'not seen in this detection window under these conditions'.",
+  "A flat dispersion at one temperature and a detected one at another are a condition difference, not a conflict.",
+  "Mutant, homolog or non-WT-condition evidence may support a WT verdict only with evidence_strength inference_from_mutant / inference_from_homolog.",
+  "A global kex is never assigned to single residues; region = residues the authors report.",
+  "A structure difference alone does not fix a slow timescale: use time_window undetermined unless the source gives one. Do not assign HDX or MD to a window by method name alone.",
+  "Suspected artefacts (phosphate or other anion binding, aggregation, proline isomerization, lanthanide tags, EDTA vs Mg) use direction artefact_suspected with the reason.",
+  "If no evidence row covers a method class or region, write not_measured only when the workbook search covered it; otherwise search_insufficient.",
+  "Do not invent values; empty string when the source does not state it.",
+  "Granularity (v0.2): one row per state x group/cluster. A temperature or field series from one paper (or one global/Arrhenius fit) is ONE row with the values listed per temperature; split by temperature only when different papers or methods give the values or the conclusion changes with temperature.",
+  "Author-defined clusters/groups (named residue sets) keep their region (residue list or functional_site name); 'unlocalized' is only for a global fit whose residues the authors do not list.",
+  "Ligand binding/unbinding kinetics (kon/koff, ZZ-exchange of ligand) are not conformational dynamics: verdict unresolved with reason 'binding kinetics', never counted in a window answer.",
+  "In the fast-exchange limit pB is not separable: write 'not separable (fast exchange)' instead of a fitted population.",
+  "Put recurring caveats (e.g. a unit printed as Hz) once in buffer_note, not in every row.",
+  "MD-only or structure-only evidence may give dynamic_in_window only with evidence_strength md_only/structure_only and time_window undetermined (unless the source states a timescale); never unresolved merely because it is MD.",
+  "When a source reports a protein-wide order-parameter average, record both the flexible sites (detected) and the rigid remainder (measured_not_detected for ps-ns, with the S2 range).",
+  "residue_basis (v0.4) is optional: author_listed means an author-listed residue group; global_fit_unlocalized means an unlocalized global fit; per_residue means per-residue evidence. A global kex attached to multiple residues is an error unless residue_basis is author_listed or per_residue; residues_entry = unlocalized is exempt.",
+  "Reference state for a RelaxDB entry = the entry construct as deposited (its sequence), free and without ligand. When that construct is a mutant or engineered variant (e.g. CD9K P43G, 19335 5P12-RANTES-E66S), sample_state.is_wt_apo marks this entry-construct reference state and construct names the variant (rule added 2026-10-20 after batch-3 review)."
+ ],
+ "protein_summary": {
+  "entry_id": "",
+  "per_window": {
+   "ps-ns": "verdict + main regions + key rows",
+   "us-ms": "...",
+   "slower_than_ms": "...",
+   "undetermined": "..."
+  },
+  "wt_apo_answer": "one sentence: does the WT apo protein show us-ms exchange, where, how fast, what population",
+  "open_conflicts": "list",
+  "questions_for_gina": "at most 2",
+  "buffer_note": "buffer and condition caveats that apply to many rows (e.g. phosphate buffer without control)"
+ },
+ "outputs": "~/dynamics_atlas_work/outputs/judgment_v0/<ENTRY>.json = {protein_summary, judgments: [...]}"
+}

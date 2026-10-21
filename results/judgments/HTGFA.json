@@ -1,0 +1,487 @@
+{
+ "protein_summary": {
+  "entry_id": "HTGFA",
+  "per_window": {
+   "ps-ns": "unresolved: the relaxation study behind the entry (Li and Montelione 1995, doi:10.1021/bi00008a003) is now in the evidence as an abstract only; an extended Lipari-Szabo analysis of 15N R1/R2/NOE at pH 7.1, 30 °C maps sub-nanosecond backbone motion without values (J11, HTGFA-HTGFA_20261020145442-r1). The EGFR-ED paper's abstract calls both termini flexible from methyl relaxation (J1, r3).",
+   "us-ms": "unresolved: the same abstract reports significant 15N exchange broadening at about 40% of backbone amides, including many at the subdomain interface, read as microsecond interconversion among conformations with partial core-sheet unfolding, hinge bending or disulfide isomerisation as candidate mechanisms; no residue list, rate or population (J12, HTGFA-HTGFA_20261020145442-r2).",
+   "slower_than_ms": "No judgment: no row gives a conformational rate slower than milliseconds. The pH-dependent interconversion (J2) has no rate, and the film H/D exchange rates (J5) are solvent-exchange rates, kept in undetermined.",
+   "undetermined": "Free ligand: pH-dependent interconversion (J2, r2), partial disorder at pH 3.5 and 30 °C versus pH 6.5 (J3, r9), faster amide exchange than mouse EGF at pH 3.5 (J4, r1), film H/D exchange class rates (J5, r10), all unresolved. Bound states, kept apart from the free domain: EGFR-ED-bound methyl mobility (J6, r3), fast-exchange binding (J7, binding kinetics), IDE-bound D10-Q14 helix-to-strand change in 3E50 (J8, r7), EGFR cryo-EM classes 7SZ5/7SZ7 (J9, r12) and complex MD (J10, r13). Not judged: r4 (1MOX receptor dimer packing in an abstract, no ligand motion), r5 (des-Val-Val construct structure, F15-D47 well defined, pH 6.3), r6 (TGF-alpha 8-50 construct structure), r8 (IDE cleavage-fragment mapping, proteolysis not motion), r11 (human EGF homolog film H/D exchange)."
+  },
+  "wt_apo_answer": "Partly: the relaxation study behind the entry, read only as an abstract, says that free mature human TGF-alpha at pH 7.1 ± 0.1 and 30 ± 0.5 °C shows significant 15N exchange broadening at about 40% of its backbone amides, including many at the interface between the N- and C-terminal subdomains, which the authors read as interconversion among multiple conformations on the microsecond timescale; no residue list, rate, population or regime beyond 'microsecond' can be checked, so the verdict stays unresolved and no site or rate can be given. The remaining free-ligand evidence is abstract-level (flexible termini, a pH-dependent interconversion without rate, partial disorder at pH 3.5 and 30 °C).",
+  "deposition_readback": "None: the input lists no BMRB id and outputs/deposition/HTGFA.json does not exist.",
+  "open_conflicts": [
+   "H/D exchange paper (r10): the prose says TGF-alpha beta-sheet exchange is ten orders of magnitude slower than EGF, while Table 1 gives 1.41 x 10-4 versus 1.88 x 10-3 min-1, about one order. Table values are used.",
+   "Conditions of the 1995 relaxation study: the evidence rows (HTGFA-HTGFA_20261020145442-r1, r2) record 'pH neutral' and no temperature, while the cached abstract states pH 7.1 ± 0.1 and 30 ± 0.5 °C; the abstract values are used in J11 and J12."
+  ],
+  "questions_for_gina": [
+   "Is the RelaxDB HTGFA set from Li and Montelione 1995 (doi:10.1021/bi00008a003, pH 7.1, 30 °C)? It is the only 15N R1/R2/NOE study of free TGF-alpha found, read as an abstract only; its full text would give the residues with exchange broadening.",
+   "Does the pH-dependent conformational interconversion in the 1991 structure paper (r2) show two peak sets at one pH, or a shift between pH values? Only the abstract was readable."
+  ],
+  "buffer_note": "Nine of fifteen rows were read as abstracts, so the free-ligand judgments are unresolved by rule. pH and temperature are part of the state: pH 3.5 at 30 °C and pH 6.5 at 10 or 30 °C are separate states, not one state in exchange; the 1995 relaxation study is at pH 7.1 ± 0.1 and 30 ± 0.5 °C (abstract), buffer unknown. EGFR-, EGFR-ED- and IDE-bound structures are partner-bound states and never enter the wt_apo_answer. The ATR-FTIR data (r10, r11) come from dried films rehydrated with D2O vapour at an unreported temperature and are not comparable with solution NMR. Second reads: no row marked wrong in either case; in the 2026-10-20 re-read Codex left both rows unverified and Claude marked both ok."
+ },
+ "judgments": [
+  {
+   "judgment_id": "HTGFA-J1",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N-terminal and C-terminal methyl groups of the free ligand (no residue list in the abstract)",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "free ligand; species, buffer, pH and temperature not stated in the abstract (both second readers could not confirm human TGF-alpha)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl 1H R1 and R2 of free and EGFR-ED-bound TGF-alpha (abstract only)",
+    "observable": "methyl relaxation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The abstract calls both termini flexible in unbound TGF-alpha, but only the abstract was read, it gives no values, residues or timescale, and the ligand species is not stated.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J2",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none given",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "free human TGF-alpha; the pH values and temperature of the interconversion are not stated in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H NMR structure determination with amide exchange rates (abstract only)",
+    "observable": "pH-dependent conformational interconversion (no observable named)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors report a pH-dependent conformational interconversion of free TGF-alpha, but the abstract gives no rate, second-state structure, residues or exchange regime.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J3",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none given; most of the hydrogen-bonded backbone stays intact at pH 3.5",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "free human TGF-alpha, 15N-enriched; compared states pH 6.5 at 10 °C, pH 6.5 at 30 °C and pH 3.5 at 30 °C (abstract); structures solved at pH 6.5, 10 °C",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H/15N NMR assignments, 3J(HN-Halpha) couplings and NOEs compared across conditions (abstract only)",
+    "observable": "structure difference (chemical shifts, couplings, NOEs)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Free TGF-alpha is partially disordered at pH 3.5 and 30 °C compared with pH 6.5, which is a difference between two sample states with no rate, not exchange within one state, and only the abstract was read.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J4",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "not residue-resolved; amide exchange compared globally with mouse EGF",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "free recombinant human TGF-alpha, pH 3.5; temperature and buffer not stated in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H NMR amide proton/deuteron exchange (abstract only)",
+    "observable": "HDX rate (qualitative comparison)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Amide exchange is much faster for human TGF-alpha than for mouse EGF at pH 3.5, a qualitative abstract statement with no rates, residues or opening timescale.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J5",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "motif classes only: Tyr side chains, Arg and beta-turns, beta-sheets and 3_10 helix",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "recombinant human TGF-alpha (E. coli), about 1 mg/mL in 10 mM HEPES, 100 mM NaCl, pH 7.4, dried overnight on ZnSe, then exposed to D2O vapour; exchange temperature not reported; monomer",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "ATR-FTIR H/D exchange of a hydrated film, multiexponential class-rate fit and 2D correlation",
+    "observable": "HDX rate (H/D exchange rate constants per motif class)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Film H/D exchange gives 65% exchange after 15 min with class rates of 0.91 min-1 (Tyr), 0.27 min-1 (Arg, beta-turns) and 1.41 x 10-4 min-1 (beta-sheets, 3_10 helix), but these are solvent-exchange rates in a dried film at an unstated temperature, not residue-resolved and not conformational transition rates.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J6",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "C-terminal and interior methyls (large R2 increase on binding); N-terminal methyls (slight increase)",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:EGFR extracellular domain (85 kDa)",
+    "conditions": "receptor-bound ligand in NMR fast exchange with free ligand; species, buffer, pH and temperature not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl 1H R1 and R2 on binding EGFR-ED (abstract only)",
+    "observable": "R2 enhancement on binding",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the EGFR-ED complex the C terminus and interior lose mobility while the N terminus stays mobile, a bound-state result from an abstract without values or timescale.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J7",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole ligand",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:EGFR extracellular domain (85 kDa)",
+    "conditions": "free and EGFR-ED-bound ligand; other conditions not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl 1H relaxation rates versus receptor binding (abstract only)",
+    "observable": "fast-exchange binding regime",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: the EGFR-ED interaction is in the NMR fast-exchange limit, which describes ligand binding, not conformational dynamics of TGF-alpha.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J8",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": [
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "residues_author": "TGF-alpha aa 10-14 change from helix to strand; only main chains of aa 1-3 and aa 10-14 visible",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": "IDE catalytic site (substrate cleavage region)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:catalytically inactive human IDE-CF-E111Q",
+    "conditions": "crystal grown at 18 °C, 100 mM HEPES pH 7.0, PEG MME 5000, Tacsimate, dioxane; data at 100 K; compared with free NMR structure 1YUF",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal structure 3E50 (2.3 Å) compared with free NMR structure",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Bound to inactive IDE, TGF-alpha D10-Q14 changes from helix to strand relative to the free structure; this is a partner-bound state from a static structure with possible incomplete occupancy, so it gives no rate and no free-state dynamics.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J9",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "receptor domains only; no TGF-alpha residue observable",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:full-length human EGFR in peptidiscs",
+    "conditions": "25 mM Tris pH 8.0, 150 mM NaCl, 2 µM erlotinib; grids blotted at +4 °C, 95% humidity, vitrified in liquid ethane",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Single-particle cryo-EM classification (7SZ7 tips juxtaposed, 7SZ5 tips separated)",
+    "observable": "structure difference (receptor conformational classes)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The heterogeneity is in the TGF-alpha-bound receptor (two extracellular arrangements, poorly defined domain IV leg), not a measured motion of TGF-alpha itself.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J10",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "receptor domain centroid angle; no TGF-alpha residue observable",
+    "numbering_note": "Entry numbering equals mature TGF-alpha numbering V1-A50 (checked V1, S3, D10, S11, Q14, F15, D47, A50 against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:human EGFR extracellular module (TGF-alpha from 1MOX placed into 3NJP)",
+    "conditions": "all-atom MD, NAMD with CHARMM36m, explicit water, 0.15 M ionic strength, 300 K, 1 atm; four trajectories of about 350-550 ns, about 2.0 µs total",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Molecular dynamics of the TGF-alpha-EGFR extracellular complex",
+    "observable": "MD fluctuation (receptor centroid angle, mode about 75°)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "300 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The simulations describe a more compressed receptor binding pocket with TGF-alpha bound, a receptor observable in a modelled complex, not motion of the free or bound ligand.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020092056-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J11",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "not listed in the abstract (locations and amplitudes of fast internal motion are said to be mapped)",
+    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50 (UniProt P01135 40-89); the abstract names no residues.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "free human TGF-alpha (50 residues) in aqueous solution; the abstract states pH 7.1 ± 0.1 and 30 ± 0.5 °C (the evidence row records only 'neutral pH'); buffer, field, concentration and labelling not in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "backbone 15N R1, R2 and 1H-15N NOE with an extended Lipari-Szabo analysis (abstract only)",
+    "observable": "S2 and locations of fast internal motion (values not in the abstract)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "30 ± 0.5 °C (abstract; checked in sources_cache/HTGFA_r6_10.1021_bi00008a003_abstract.txt)",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The relaxation study behind the entry (Li and Montelione 1995) is now in the evidence as an abstract only: an extended Lipari-Szabo analysis of 15N R1, R2 and NOE at pH 7.1 and 30 °C maps the locations and amplitudes of sub-nanosecond backbone motion, but no order parameter, residue list or missing-peak annotation can be checked, so the ps-ns verdict stays unresolved.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020145442-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTGFA-J12",
+   "entry_id": "HTGFA",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "about 40% of backbone amides, including many at the interface between the N- and C-terminal subdomains; no residue list in the abstract",
+    "numbering_note": "Entry numbering is the mature 50-residue domain V1-A50; the abstract names no residues.",
+    "functional_site": "subdomain interface (as stated by the authors)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "free human TGF-alpha in aqueous solution; pH 7.1 ± 0.1 and 30 ± 0.5 °C per the abstract (the evidence row records only 'neutral pH'); buffer, field, concentration and labelling not in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N chemical-exchange line broadening inferred from the extended Lipari-Szabo analysis of 15N R1, R2 and NOE (abstract only); no dispersion experiment",
+    "observable": "Rex",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "30 ± 0.5 °C (abstract)",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The source abstract states that about 40% of the backbone amides of free TGF-alpha at pH 7.1 and 30 °C, including many at the subdomain interface, show significant 15N exchange broadening that the authors read as interconversion between multiple conformations on the microsecond timescale, with partial unfolding of the core sheet, hinge bending between subdomains or disulfide isomerisation as candidate mechanisms; no residue list, rate, population, field dependence or regime beyond 'microsecond' is available, so the us-ms verdict stays unresolved.",
+   "evidence_rows": [
+    "HTGFA-HTGFA_20261020145442-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

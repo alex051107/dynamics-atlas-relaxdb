@@ -1,0 +1,558 @@
+{
+ "protein_summary": {
+  "entry_id": "VCPTH",
+  "per_window": {
+   "ps-ns": "Free wt-VcPth at 298 K, pH 6.5 (700 MHz, single field): dynamic_in_window at the N-terminus and L42, F49, N58, S59, Y85, H145 (J1, r1); rest rigid on this window (J2, r1, average NOE 0.78). H24N adds fast motion at A13, M71, N72, G116, N118 (J6, r2, inference_from_mutant).",
+   "us-ms": "unresolved. Single-field model-free Rex at T22, A79, G115-H117, D147, H192 (J3, r1) and missing N118 and K146 amides that return in H24N, N72D and N118D (J4, r4); no dispersion, rate or population. Mutants move the exchange to the lid hinge G139/L154 (J7, r2) or strengthen it near H24 (J8, r3). Relaxation dispersion: search_insufficient (J12; method-class queries used E. coli Pth terms).",
+   "slower_than_ms": "search_insufficient (J13): no HDX, time-resolved or spin-label data in the screened list, and the method-class queries used E. coli Pth terms.",
+   "undetermined": "pH-dependent N118 reappearance with two readings (J5, r5); 10 ns MD RMSF in termini, lid, base loop and alpha5-alpha6 loop (J9, r6, md_only); mutant crystal side-chain network around H24 (J10, r7, structure_only); E. coli homolog lid/helix alpha4 B-factors and tRNA-bound loop changes (J11, r8)."
+  },
+  "wt_apo_answer": "Unresolved: wild-type apo V. cholerae Pth at 298 K, pH 6.5 (700 MHz, single field, phosphate) has model-free exchange terms at T22, A79, G115-H117, D147 and H192 and a broadened-beyond-detection N118 and K146 amide, which the authors read as slow motion near the catalytic H24, the helix alpha3 N-cap and the lid, but no dispersion, rate or population exists and single-field Rex cannot exclude anisotropic tumbling.",
+  "deposition_readback": "none in BMRB inputs",
+  "open_conflicts": [
+   "N118 peak recovery below pH 6 (r5): protonation of H24 altering N118 conformational exchange, or slower base-catalysed amide-solvent exchange; no CLEANEX or dispersion separates them.",
+   "Gate-lid coupling: an earlier cross-species crystal proposal held that gate opening goes with lid closing; the VcPth wild-type and mutant structures show no inverse correlation (r7). Both rest on static crystals."
+  ],
+  "questions_for_gina": [
+   "The input card pairs the V. cholerae Pth sequence and NMR structure 2MJL with UniProt P0A7D1 (E. coli Pth); the fill worker set the target by sequence. Is RelaxDB VCPTH the V. cholerae data of the 2017 paper (r1)?",
+   "Should single-field model-free Rex count as us-ms detection for the WT apo answer, or stay unresolved until dispersion data exist?"
+  ],
+  "buffer_note": "Row ids are written VCPTH-rN. Card mismatch: the input sequence and PDB 2MJL are Vibrio cholerae Pth, while the card UniProt P0A7D1 is E. coli Pth; V. cholerae Pth is treated as the entry and E. coli Pth as a homolog (inference). The second read of this case was done by one model only (Claude; the Codex reader was blocked by a content filter): 7 rows ok, 1 unverified, none flagged. All VcPth NMR uses 20 mM sodium phosphate pH 6.5; Pth has a basic 5'-phosphate clamp (K107, K109, R137) that phosphate could occupy, and the wt crystal 4ZXP carries citrate in the active site; neither is controlled or shown to be an artefact. The single 2017 paper supplies every VcPth row, so nothing is independently replicated. The 2017 paper prints the lid hinge as G139/L154 in the dynamics paragraph and as G139/V153 in the section summary; J7 follows the dynamics paragraph."
+ },
+ "judgments": [
+  {
+   "judgment_id": "VCPTH-J1",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     42,
+     49,
+     58,
+     59,
+     85,
+     145
+    ],
+    "residues_author": "tau_e group L42, F49, N58, S59, Y85, H145 plus the N-terminal region (unlisted); the R2/R1 sentence also names the C-terminal region, N72 and D147",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3; 0.5 mM 15N wt-VcPth (His-tag construct from pET-NH6); no substrate",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 700 MHz (single field); Lipari-Szabo model-free (FAST-Modelfree / Modelfree 4.1)",
+    "observable": "tau_e internal-motion term (values figure-only)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Model-free fits need an internal correlation time at the N-terminus and at L42, F49, N58, S59, Y85 and the lid residue H145, marking ps-ns loop motion in the free enzyme.",
+   "evidence_rows": [
+    "VCPTH-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J2",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "remaining analysed residues (139 of 187 non-proline residues analysed; S2 profile figure-only)",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3; 0.5 mM 15N wt-VcPth (His-tag construct from pET-NH6); no substrate",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 700 MHz (single field); Lipari-Szabo model-free (FAST-Modelfree / Modelfree 4.1)",
+    "observable": "averages R1 0.93 s-1, R2 19.28 s-1, NOE 0.78",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "298 K",
+    "detection_window": "700 MHz R1/R2/NOE at 298 K, one field; detects internal motion faster than tumbling; 48 non-proline residues (including N118 and K146) were not analysed; S2 values figure-only."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Outside the listed loops the backbone needs no fast internal motion term (average NOE 0.78), so most of the fold is rigid on the ps-ns scale.",
+   "evidence_rows": [
+    "VCPTH-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J3",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     22,
+     79,
+     115,
+     116,
+     117,
+     147,
+     192
+    ],
+    "residues_author": "Rex group T22, A79, G115-H117, D147, H192",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": "next to catalytic base H24 (T22); base loop G115-H117 at the helix alpha3 N-terminus; lid D147; C-terminal helical hairpin (H192)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3; 0.5 mM 15N wt-VcPth (His-tag construct from pET-NH6); no substrate",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 700 MHz (single field); Lipari-Szabo model-free (FAST-Modelfree / Modelfree 4.1)",
+    "observable": "model-free Rex term (values figure-only)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Single-field model-free fits need an exchange term at T22, A79, G115-H117, D147 and H192, but without dispersion or a second field this cannot be separated from anisotropic tumbling and gives no rate or population.",
+   "evidence_rows": [
+    "VCPTH-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "authors: slow motions near H24 and the lid may help accommodate the peptidyl-tRNA substrate",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J4",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     118,
+     146
+    ],
+    "residues_author": "N118 (helix alpha3 N-cap) and lid flap K146 amides not observed in wt HSQC",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": "N118 side chain contacts catalytic H24; K146 is the basic lid flap",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3; 0.5 mM 15N wt-VcPth (His-tag construct from pET-NH6); no substrate; compared with H24N, N72D, N118D and N14D",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC peak absence across wt and active-site mutants",
+    "observable": "line broadening (missing peak)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz (assignments)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The N118 amide is missing in the wild type but returns in H24N, N72D and N118D, which the authors read as intermediate exchange from transient N118-H24 contact (a wobble of helix alpha3); no rate was measured and solvent exchange was argued against, not tested.",
+   "evidence_rows": [
+    "VCPTH-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "authors: the slow wobble of helix alpha3 and its N-cap N118 may position the scissile ester bond of the substrate",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J5",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     118
+    ],
+    "residues_author": "N118 reappears from pH 6.0 down to 5.0",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.0 to 5.0 (assignment at 5.2); same phosphate buffer",
+    "is_wt_apo": true
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "1H-15N HSQC pH titration",
+    "observable": "reappearance of the N118 peak",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The N118 peak returns below pH 6, which fits protonation of H24 changing N118 dynamics but equally fits slower base-catalysed amide-solvent exchange; the titration cannot separate the two.",
+   "evidence_rows": [
+    "VCPTH-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J6",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     13,
+     71,
+     72,
+     116,
+     118
+    ],
+    "residues_author": "A13, M71, N72 (helix alpha2), G116, N118 (tip of helix alpha3)",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:H24N",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3; 0.5 mM 15N VcPth H24N; no substrate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 700 MHz (single field); Lipari-Szabo model-free (FAST-Modelfree / Modelfree 4.1)",
+    "observable": "tau_e term",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Removing the catalytic histidine adds fast motion near A13, in helix alpha2 and at the helix alpha3 tip while the global motional mode stays wild-type-like.",
+   "evidence_rows": [
+    "VCPTH-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J7",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     139,
+     154
+    ],
+    "residues_author": "lid hinge G139 and L154 gain Rex; Rex near residue 24 is lost",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": "lid hinge",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:H24N",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3; 0.5 mM 15N VcPth H24N; no substrate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 700 MHz (single field); Lipari-Szabo model-free (FAST-Modelfree / Modelfree 4.1)",
+    "observable": "model-free Rex term",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In H24N the exchange term moves from the H24 region to the lid hinge G139 and L154, a single-field model-free result with no rate.",
+   "evidence_rows": [
+    "VCPTH-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J8",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "residues 'in the vicinity of H24' (Figure 5 only)",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:N118D",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.5; 20 mM NaH2PO4, 50 mM NaCl, 1 mM DTT, 0.1% NaN3; 0.5 mM 15N VcPth N118D; no substrate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 700 MHz (single field); Lipari-Szabo model-free (FAST-Modelfree / Modelfree 4.1)",
+    "observable": "model-free Rex term",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "N118D keeps wild-type-like relaxation but shows larger slow-motion terms near H24; the residues are figure-only and no rate exists.",
+   "evidence_rows": [
+    "VCPTH-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J9",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "termini, lid loop, base loop and alpha5-alpha6 loop flexible; gate loop rigid (RMSF figure-only)",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "300 K; GROMACS 4.5.6, GROMOS43a1, SPC water; one 10 ns run per protein from crystal structures (wt and N14D, H24N, D97N, N118D), RMSF over 2-10 ns",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "MD simulation",
+    "observable": "MD fluctuation (RMSF)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Single 10 ns simulations put the largest fluctuations in the termini, lid, base loop and alpha5-alpha6 loop, matching the NMR fast-motion sites qualitatively; there are no replicas and no access to the slower exchange.",
+   "evidence_rows": [
+    "VCPTH-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J10",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     14,
+     24,
+     97,
+     118
+    ],
+    "residues_author": "N14, H24, D97, N118 side-chain network",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": "catalytic site (H24 and its hydrogen-bond partners)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: wt NMR ensemble (2MJL) and crystal (4ZXP citrate-bound, 5VGZ citrate-free) compared with mutant crystals N14D (5IMB), H24N (5B6J), D97N (5IKE), N118D (4Z86)",
+    "binding_state": "mixed",
+    "conditions": "NMR 298 K, pH 6.5 phosphate; crystals grown at 296 K from 100 mM sodium citrate pH 8.0, flash-cooled",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "structure comparison",
+    "observable": "structure difference (alternative side-chain hydrogen bonds)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Mutant crystals show H24 bonded to N14 or to N118 depending on the mutation, and the authors propose that wild-type side chains switch between these bonds in solution, but no experiment shows the wild type interconverting.",
+   "evidence_rows": [
+    "VCPTH-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J11",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": [
+     146
+    ],
+    "residues_author": "E. coli K142 (mapped to VcPth K146); lid loop-helix alpha4 high B-factors",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118). E. coli K142 mapped to entry K146.",
+    "functional_site": "lid loop and helix alpha4 (CCA-end capture)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: Escherichia coli Pth (homolog), His-tag removed",
+    "binding_state": "mixed",
+    "conditions": "crystals at 20 °C, cryo data; tRNA CCA-acceptor-TpsiC fragment complex (3VJR, 10 mM HEPES pH 7.6, 10 mM MgCl2) versus substrate-free 2PTH",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "crystal structure comparison and B-factor profile",
+    "observable": "B-factors; loop differences (Calpha rmsd 1.32 Å over 193 atoms)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the E. coli homolog the lid loop-helix alpha4 segment has high B-factors and differs between free and tRNA-bound crystals, which may reflect crystal packing and does not transfer quantitatively to VcPth.",
+   "evidence_rows": [
+    "VCPTH-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "authors: the plastic loop-helix alpha4 likely captures the flexible CCA end of the substrate via K142",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J12",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (CPMG, CEST and R1rho relaxation-dispersion queries: 0 hits for the E. coli name query; 26 VcPth papers screened by hand, none with dispersion)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No relaxation-dispersion study of VcPth was found, but every dispersion query used E. coli Pth terms and the only V. cholerae query was one free-text search, so dispersion is a search gap rather than not measured.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VCPTH-J13",
+   "entry_id": "VCPTH",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "",
+    "numbering_note": "Entry numbering equals V. cholerae Pth (2MJL) author numbering (checked A13, N14, T22, H24, L42, N58, M71, N72, A79, D97, G115-N118, G139, H145-D147, L154, H192); E. coli Pth numbers run four lower (H20 = H24, N114 = N118).",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (HDX-MS, time-resolved structural, EPR/DEER, FRET and multitemperature crystallography searched; 26 VcPth papers screened, no eligible row)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No hydrogen exchange, time-resolved or spin-label study of VcPth entered the screened list, but the method-class queries used E. coli Pth terms only, so this is a search gap rather than not measured.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

@@ -1,0 +1,832 @@
+{
+ "protein_summary": {
+  "entry_id": "4267",
+  "per_window": {
+   "ps-ns": "unresolved. The 15N relaxation study of free NGAL that accompanies the 1NGL structure, the likely source of BMRB 4267, is abstract only: overall tau_c 13.3 ns for a 179-residue monomer and dynamics said to correlate with barrel features, no residue values (R4267-J1, r1).",
+   "us-ms": "search_insufficient for free NGAL (J2). The only CPMG data observe the receptor domain exchanging with NGAL (kex 1200-1300 s-1; J12) and are binding kinetics; receptor binding broadens NGAL peaks without a rate (J13).",
+   "slower_than_ms": "search_insufficient for free NGAL (J4). Candesartan binding to C87S siderocalin gives slow-to-intermediate exchange with more than one bound peak set and model rates of 7.9-63 s-1, but induced fit and parallel binding fit equally well (J14, binding kinetics).",
+   "undetermined": "Unbound tagged siderocalin by HDX-MS at 37 °C: fast uptake in the N-terminal segment and alpha-helix, protected barrel, no rates (J3, unresolved). Ligand protection by aferric and ferric enterobactin (J5, J6) and Lys/Arg footprinting (J7). Crystals: W79 and R81 rotamers vary with ligand (J8, structure_only) while the calyx backbone does not move across 73 molecules (J9); human-mouse R92 comparison (J10); crystal versus solution flexibility abstract (J11). Mouse homolog titration (J15) and MD with a suspected unit error (J16)."
+  },
+  "wt_apo_answer": "Not determined: no row measures us-ms exchange in free NGAL, and the 1999 15N relaxation study of the apo entry construct (1NGL) was read as an abstract only, so no site, rate or population can be given.",
+  "deposition_readback": "No deposited-data readback file (outputs/deposition/4267.json) was present when this was drafted.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "Is BMRB 4267 the 15N relaxation set of Coles et al. 1999 (doi:10.1006/jmbi.1999.2755, apo 1NGL)? If so, its full text or the deposited R1/R2/NOE values are needed before any window verdict for the entry.",
+   "Recombinant NGAL often carries copurified bacterial siderophores (the receptor study refolded NGAL from guanidinium to remove them; the mouse candesartan sample may contain aferric enterobactin). Should 'apo' for this entry require such a ligand-removal step?"
+  ],
+  "buffer_note": "Most solution data use non-entry constructs: C87S siderocalin (receptor and candesartan studies), a GS-tagged protein for HDX-MS and footprinting (paper numbering = entry + 1), and mature protein without Met for the phosphoserine crystal (precursor numbering = entry + 19). HDX and footprinting are in PBS at 37 °C; the candesartan titrations are in 100 mM sodium phosphate with DMSO, with no buffer control at the calyx. Crystals are grown at pH 4.1-4.5 (or 7.9 for 9JDO) and measured cryo-cooled. Mature author numbering maps to entry +1. The second read raised no flags for this case."
+ },
+ "judgments": [
+  {
+   "judgment_id": "R4267-J1",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Not available (abstract only)",
+    "numbering_note": "",
+    "functional_site": "calyx open end (proposed recognition site)"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Abstract only: apo NGAL, the 1NGL solution sample; temperature, pH, buffer and field not available",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N spin relaxation accompanying the 1NGL solution structure (abstract)",
+    "observable": "Overall rotational correlation time 13.3 ns, consistent with a 179-residue monomer; 'dynamic data correlate well with structural features'",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the paper behind the entry measured 15N relaxation of free NGAL and relates the dynamics to barrel features and an open-end recognition mechanism, but no residue values, rates or order parameters are readable.",
+   "evidence_rows": [
+    "R4267-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J2",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free NGAL (entry construct)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "No CPMG, CEST or R1rho dispersion of free NGAL in the evidence",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures us-ms exchange of NGAL itself: the only dispersion data observe the receptor domain (J12), the relaxation paper behind the entry is abstract only (J1), and the dispersion query for this case returned zero hits, so this is a search gap.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J3",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Exposed or fast-exchanging peptides G1-W33 (includes the tag), Y140-L150, T147-G162, L150-F157, S158-Q176; much of the beta barrel and C-terminal region protected",
+    "numbering_note": "HDX paper numbering includes the GS tag: entry = paper - 1 (checked K17->K16, W81->W80, R83->R82, Y34->Y33); the G1-W33 peptide includes the tag, so ranges are left unmapped",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant human siderocalin with a two-residue GS N-terminal extension (from GST fusion); Cys87 status not stated",
+    "binding_state": "apo",
+    "conditions": "37 °C labelling; pH 7.5; PBS in D2O; quench pH 2.5 with 4 M GdmCl, 50 mM TCEP, 25% TFE (SI caption says 50%); 100 pmol protein; 10 s to 4 h",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Peptide-resolved HDX-MS with online pepsin digestion",
+    "observable": "Deuterium uptake over 10 s-4 h: N-terminal and alpha-helical peptides exchange fast throughout; barrel peptides protected",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Unbound siderocalin exchanges fast in the N-terminal segment and the alpha-helix and slowly in the beta barrel, but uptake without rates cannot separate solvent exposure from conformational opening, and the sample is a tagged construct in phosphate at 37 °C.",
+   "evidence_rows": [
+    "R4267-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J4",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free NGAL (entry construct)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "No native-state exchange rate, EPR/DEER, smFRET or time-resolved structural measurement of free NGAL",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The one native-state HDX row gives uptake without rates on a tagged construct (J3), and the time-resolved, EPR and FRET queries returned zero hits, so slower-than-ms motion of free NGAL is a search gap.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J5",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": [
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98,
+     99,
+     100,
+     101,
+     102,
+     103,
+     104,
+     105,
+     106,
+     107,
+     108,
+     123,
+     124,
+     125,
+     126,
+     127,
+     128,
+     129,
+     130,
+     131,
+     132,
+     133,
+     134,
+     135,
+     136,
+     137,
+     138
+    ],
+    "residues_author": "Protected peptides Y34-A42, L60-L72, F94-L109, F124-L139 (paper numbering)",
+    "numbering_note": "HDX paper numbering includes the GS tag: entry = paper - 1 (checked K17->K16, W81->W80, R83->R82, Y34->Y33)",
+    "functional_site": "calyx"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant human siderocalin with a two-residue GS N-terminal extension (from GST fusion); Cys87 status not stated",
+    "binding_state": "bound:aferric linear enterobactin",
+    "conditions": "37 °C labelling; pH 7.5; PBS in D2O; quench pH 2.5 with 4 M GdmCl, 50 mM TCEP, 25% TFE (SI caption says 50%); 100 pmol protein; 10 s to 4 h; matched unbound control",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Differential peptide HDX-MS (bound minus unbound)",
+    "observable": "Reduced uptake in four peptide regions, emerging after about 120 s labelling",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Aferric linear enterobactin protects four calyx and strand peptides, which the authors read as ligand-associated compaction; protection can equally reflect direct shielding, so no change in motion is established.",
+   "evidence_rows": [
+    "R4267-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J6",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": [
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     80,
+     81,
+     82,
+     83,
+     84,
+     85,
+     86,
+     87,
+     88,
+     89,
+     90,
+     91,
+     92,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98,
+     99,
+     100,
+     101,
+     102,
+     103,
+     104,
+     105,
+     106,
+     107,
+     108,
+     123,
+     124,
+     125,
+     126,
+     127,
+     128,
+     129,
+     130,
+     131,
+     132,
+     133,
+     134,
+     135,
+     136,
+     137,
+     138
+    ],
+    "residues_author": "Protected peptides Y34-A42, L60-L72, W81-F94, F94-L109, F124-L139 (paper numbering)",
+    "numbering_note": "HDX paper numbering includes the GS tag: entry = paper - 1 (checked K17->K16, W81->W80, R83->R82, Y34->Y33)",
+    "functional_site": "calyx"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant human siderocalin with a two-residue GS N-terminal extension (from GST fusion); Cys87 status not stated",
+    "binding_state": "bound:ferric linear enterobactin",
+    "conditions": "37 °C labelling; pH 7.5; PBS in D2O; quench pH 2.5 with 4 M GdmCl, 50 mM TCEP, 25% TFE (SI caption says 50%); 100 pmol protein; 10 s to 4 h; matched unbound control",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Differential peptide HDX-MS (bound minus unbound)",
+    "observable": "Same four regions as the aferric ligand plus peptide 81-94, with stronger protection near the calyx",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The ferric complex adds protection of peptide 81-94 near the calyx; as for the aferric ligand, protection does not separate shielding from a change in dynamics.",
+   "evidence_rows": [
+    "R4267-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J7",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": [
+     16,
+     31,
+     47,
+     51,
+     63,
+     99,
+     125,
+     126,
+     135,
+     150,
+     158,
+     44,
+     73,
+     82,
+     110,
+     131,
+     141,
+     155
+    ],
+    "residues_author": "Lys (ETAT) K17, K32, K48, K52, K64, K100, K126, K127, K136, K151, K159 and Arg (MG) R45, R74, R83, R111, R132, R142, R156 (paper numbering); K127, K136 and R83 most protected",
+    "numbering_note": "HDX paper numbering includes the GS tag: entry = paper - 1 (checked K17->K16, W81->W80, R83->R82, Y34->Y33)",
+    "functional_site": "calyx"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: recombinant human siderocalin with a two-residue GS N-terminal extension (from GST fusion); Cys87 status not stated",
+    "binding_state": "mixed",
+    "conditions": "37 °C; pH 7.5; PBS; 10 µM protein, 10 mM reagent, 5 min; aferric and ferric linear enterobactin each compared with unbound protein",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Covalent Lys/Arg footprinting with MS",
+    "observable": "Reduced labelling at K127, K136 and R83 on ligand binding; K64, K100, K126 unchanged",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Ligand binding cuts reactivity at K127, K136 and R83 around the calyx, which reports masking or reactivity change, not conformational exchange.",
+   "evidence_rows": [
+    "R4267-r14",
+    "R4267-r15",
+    "R4267-r16",
+    "R4267-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J8",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": [
+     80,
+     82,
+     107,
+     126,
+     135
+    ],
+    "residues_author": "W79, R81 (most variable), Y106, K125, K134 (smaller changes), mature numbering",
+    "numbering_note": "Entry position = mature-chain author number + 1 (entry starts with Met; checked: W79->W80, R81->R82, Y106->Y107, K125->K126, K134->K135, C87->C88)",
+    "functional_site": "calyx pocket (W79, R81, Y106, K125, K134)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: WT and variants deposited in the PDB (73-molecule superposition; the source does not mention C87S)",
+    "binding_state": "mixed",
+    "conditions": "Crystals: 73 superposed molecules (r5: pH 4.1-4.3 growth, -160 °C data), 36 views (r18: sulfate salts, -170 °C), catechol:iron and 4-methylcatechol:iron (r2, r3: pH 4.5, 18 °C growth); apo and many siderophore or metal-chelator complexes",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Comparison of apo and ligand-bound crystal structures (3FW4, 3FW5, 4ZFX-4ZHH series, 3HWD-3HWG, 3TF6, 3K3L and others)",
+    "observable": "Alternate W79 and R81 rotamers and smaller Y106/K125 changes with ligand; backbone and most calyx side chains conserved",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Across dozens of crystal structures the calyx side chains W79 and R81 take different rotamers with different ligands while the backbone stays put; these are static alternatives without rates or solution populations.",
+   "evidence_rows": [
+    "R4267-r2",
+    "R4267-r3",
+    "R4267-r5",
+    "R4267-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "The authors tie the W79/R81 rotamer plasticity to the calyx's broad ligand specificity.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J9",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Calyx backbone across 73 crystallographic molecules",
+    "numbering_note": "",
+    "functional_site": "calyx"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: WT and variants deposited in the PDB (73-molecule superposition; the source does not mention C87S)",
+    "binding_state": "mixed",
+    "conditions": "Cryogenic crystals (-160 to -170 °C), pH 4.1-4.5 growth, apo and ligand complexes",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Superposition of 73 crystallographic NGAL molecules and 36 independent views",
+    "observable": "No concerted opening or closing of the calyx backbone",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Static cryo-cooled crystal structures under packing constraints can show only end-state differences; they cannot see solution fluctuations or low-population states"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The crystal set shows no concerted calyx backbone remodelling between apo and ligand-bound forms.",
+   "evidence_rows": [
+    "R4267-r5",
+    "R4267-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J10",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": [
+     53,
+     73,
+     80,
+     135
+    ],
+    "residues_author": "Y72, R92, W99, K154 (precursor numbering)",
+    "numbering_note": "Precursor numbering: entry = author - 19 (checked Y72->Y53, R92->R73, W99->W80, K154->K135)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: mature human NGAL from pET28a (no initial Met)",
+    "binding_state": "bound:L-O-phosphoserine",
+    "conditions": "Crystal grown at 20 °C, reservoir 0.2 M Tris-HCl pH 7.9, 20% PEG4000; ligand preincubated at 4 °C; compared with mouse LCN2",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Human 9JDO complex versus a mouse LCN2 structure",
+    "observable": "R92 (entry R73) oriented differently from the mouse structure",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The R92 difference compares a human complex with an unliganded mouse protein, so species and ligand change together and no motion of human NGAL is shown.",
+   "evidence_rows": [
+    "R4267-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J11",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Not given (abstract)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: NGAL crystals (exact construct not available)",
+    "binding_state": "mixed",
+    "conditions": "Abstract only; crystal forms with sulfate or a copurified fatty acid, compared with the solution structure",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal versus solution structure comparison (abstract)",
+    "observable": "Differences in structural details and overall flexibility",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: crystal and solution structures differ in flexibility, which may reflect conditions, packing or structure precision.",
+   "evidence_rows": [
+    "R4267-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J12",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Receptor residues observed; NGAL not observed",
+    "numbering_note": "",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:C87S (unlabelled NGAL; the observed nucleus is the receptor)",
+    "binding_state": "bound:SLC22A17 N-terminal domain (hLCN2-R-NTD-QM), 0.05-0.15 eq NGAL",
+    "conditions": "25 °C; pH 7.4; 20 mM Tris, 50 mM NaCl, 10% D2O; 600 and 800 MHz in Methods (Fig. 8 caption: 500 and 800 MHz); nuCPMG 40-960 Hz, 40 ms",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG of the receptor domain in mixtures with NGAL",
+    "observable": "Two-state global fits of receptor free/bound exchange: kex 1300 s-1 (0.1 eq) and 1200 s-1 (0.15 eq); fitted bound fraction 1% versus about 10% expected",
+    "fit_model": "two-state global",
+    "kex": "1300 s-1 (0.1 eq), 1200 s-1 (0.15 eq); receptor binding exchange",
+    "pB": "1% fitted bound receptor at 0.1 eq",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The dispersion belongs to the receptor domain exchanging between free and NGAL-bound forms (binding kinetics), and simple models underestimate the bound fraction, so nothing is learned about NGAL's own motion.",
+   "evidence_rows": [
+    "R4267-r8",
+    "R4267-r9",
+    "R4267-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J13",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Calyx-proximal NGAL residues, only plotted; MTSL at C87 (Results say 86)",
+    "numbering_note": "",
+    "functional_site": "calyx"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:C87S for titrations; native-Cys NGAL with MTSL for PRE",
+    "binding_state": "bound:SLC22A17 N-terminal domain",
+    "conditions": "25 °C; pH 7.4; 20 mM Tris, 50 mM NaCl, 10% D2O; NGAL refolded from guanidinium to remove copurified ligands; up to 0.5 mM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Reciprocal HSQC titration and intermolecular PRE",
+    "observable": "Severe NGAL line broadening with small shifts near the calyx; PRE on many receptor regions",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "NGAL peaks broaden severely when the receptor domain binds, consistent with a heterogeneous complex; binding-associated exchange without a rate (binding kinetics).",
+   "evidence_rows": [
+    "R4267-r6",
+    "R4267-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J14",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": [
+     23,
+     24,
+     29,
+     30,
+     32,
+     33,
+     34,
+     36,
+     37,
+     41,
+     44,
+     54,
+     55,
+     59,
+     71,
+     73,
+     74,
+     75,
+     77,
+     78,
+     80,
+     82,
+     95,
+     96,
+     105,
+     123,
+     126,
+     127,
+     133,
+     134,
+     136,
+     137,
+     140,
+     143,
+     144,
+     146,
+     162,
+     169,
+     171
+    ],
+    "residues_author": "39 perturbed residues F22-V170 (mature numbering; W31 and W79 by indole Hepsilon); TITAN global fit of Q23, Q28, Y32, G139, E143",
+    "numbering_note": "Entry = mature author number + 1 (checked Q23->Q24, Y32->Y33, G139->G140, E143->E144)",
+    "functional_site": "calyx",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "mutant:C87S with C-terminal GHHHHHH (SI sequence begins MDST)",
+    "binding_state": "bound:candesartan (titration 1:0 to 1:10)",
+    "conditions": "25 °C; pH 6.0; 100 mM sodium phosphate, 5% D2O, 2% DMSO, 10 µM TSP-d4; 200 µM protein; 700 MHz; no significant ferric enterobactin detected",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "TROSY-HSQC titration with global 2D lineshape (TITAN) fits",
+    "observable": "Intermediate/slow exchange and more than one bound-state peak set; induced fit: koff 63 ± 1, kclose 7.9 ± 0.2, kopen 29.5 ± 0.6 s-1 (jackknife errors 120, 1.7, 3.3); parallel two-site: koff,1 119 ± 2, koff,2 21 ± 0.6 s-1",
+    "fit_model": "other",
+    "kex": "directional model rates only (see observable)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Candesartan binding gives slow-to-intermediate exchange and more than one bound peak set, but an induced-fit closing step (7.9 s-1) and two parallel binding sites fit equally well, so a ligand-bound conformational change is not established (binding kinetics).",
+   "evidence_rows": [
+    "R4267-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J15",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "33 mouse residues W31-T143 (homolog numbering, not mapped)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: mouse siderocalin (homolog) with GP scar",
+    "binding_state": "bound:candesartan (1:0 to 1:10)",
+    "conditions": "298 K; pH 6.0; 100 mM sodium phosphate, 5% D2O, 5% DMSO; 50 µM; 600 MHz; may contain aferric enterobactin",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "BEST-TROSY HSQC titration",
+    "observable": "Peaks lose intensity and reappear at new positions (intermediate/slow binding exchange)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Mouse siderocalin binds candesartan in intermediate or slow exchange; homolog binding kinetics only.",
+   "evidence_rows": [
+    "R4267-r20"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R4267-J16",
+   "entry_id": "4267",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none for the simulation: both runs report only a backbone RMSD trajectory; the residues named in the Figure 1 caption (W31, T113, R140, the hydrophobic pocket, R81/K125/K134 and the docked linoleic-acid contacts G38, I41, V66, L70, W79, F83, F123, F133) describe the docked starting model and cited literature, not an MD result",
+    "numbering_note": "Entry position = mature-chain author number + 1 (entry starts with Met; checked: W79->W80, R81->R82, Y106->Y107, K125->K126, K134->K135, C87->C88)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: 1DFV-derived human NGAL model (chain and ligand removal not reported)",
+    "binding_state": "mixed",
+    "conditions": "GROMACS 2018.1, GROMOS 43A1, SPC water, 300 K equilibration, 50 ns production; unliganded and linoleic-acid-bound models",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "MD backbone RMSD trajectories",
+    "observable": "Text reports 12-35 Å RMSD after 40 ns while the SI plot is on a sub-nm scale",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The reported RMSD values conflict with the units of the SI figure, a suspected reporting error, so these docking-based simulations set no verdict.",
+   "evidence_rows": [
+    "R4267-r22",
+    "R4267-r23"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

@@ -1,0 +1,1192 @@
+{
+ "protein_summary": {
+  "entry_id": "19335",
+  "per_window": {
+   "ps-ns": "dynamic_in_window at both termini of the entry construct. In free 5P12-RANTES-E66S at 37 °C, pH 3.8, Q0-S9 and residues past N63 (entry 1-10, 65-69) have strongly reduced R1 and NOE from terminal fraying (R19335-J1, r1); the core C10-N63 is uniform (R1 2.26 ± 0.13 s-1, NOE 0.71 ± 0.04; J2, measured_not_detected). Native CCL5 oligomers also have a very flexible N terminus, but without values (J9, r7, other construct).",
+   "us-ms": "dynamic_in_window, qualitative only. M5-S9 (entry 6-10) show increased R2 read as µs-ms motion (J3) and Y14, G32 (entry 15, 33) are exchange-broadened (J4); the rest of the core has uniform R2 at one field (J5). No dispersion, kex, population or Δω exists. Other constructs: possible intermediate exchange at basic residues of the sulfate-bound 12AAA14 mutant (J15, artefact_suspected).",
+   "slower_than_ms": "search_insufficient (J26). Refolding, H/D exchange and multitemperature data are absent from the rows.",
+   "undetermined": "Self-association: the entry construct stays monomeric with one resonance set (J6); native-N-terminus E66S CCL5 shows separate monomer and dimer peak sets (J10 at 310/293 K, J11 at 1/20 µM), and K25S, 12AAA14 and the engineered tetramer change assembly (J12, J13, J14, J16). Detergent FC-12 darkens the core (J7, artefact_suspected). Binding kinetics with Nt-CCR5, Nt-ECL3, Ev4 peptide and Evasin-4 (J18-J22). Static or bound structures: 1EQT helix length (J8), 6LOG register shift (J17), receptor-bound cryo-EM (J23, J24) and MD (J25). Not judged: r6 (RDC/SAXS tetramer architecture, alignment not motion), r19 and r28 (bound-pose models), r23 and r24 (CCL3 homolog MD), r32 (two unresolved C-terminal residues in 5UIW), r33 (Monte Carlo model), r38 and r39 (P2-RANTES crystal tetramer and 90% monomer/10% dimer at 1 M NaCl, oligomer populations), and abstract-only static structures r12, r29, r30, r31, r40."
+  },
+  "wt_apo_answer": "Yes, qualitatively and without rate or population: free monomeric 5P12-RANTES-E66S (the entry sequence) at 37 °C, pH 3.8 in phosphate shows µs-ms signs only as raised 15N R2 at M5-S9 (entry 6-10) inside the frayed N-terminal tail and exchange broadening at Y14 and G32 (entry 15, 33); no dispersion was recorded, so there is no kex, population or Δω.",
+  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. BMRB 19335 holds 600 MHz T1, T2 and NOE for 63 residues (no prolines) in entry numbering, with sample metadata pH 3.8 and 273 K. The deposited core (entry 11-64 without 15 and 33) averages R1 2.26 ± 0.13 s-1, R2 6.07 ± 0.78 s-1 and NOE 0.71 ± 0.04, the paper's 37 °C core values. NOE below 0.65 flags entry 1-2, 5-11, 17-18, 33-34, 39 and 67-69; R2/R1 above 3.976 flags only Y15 (author Y14; R2 16.0 s-1). G33 (author G32) has R2 13.1 s-1 but NOE 0.6485, so the screen calls it fast. M6-S10 (author M5-S9) carry R2 5.5-10.0 s-1 with NOE below 0.45.",
+  "open_conflicts": [
+   "Temperature of the deposited set: the paper's Figure 4 and Methods give 37 °C, BMRB 19335 metadata gives 273 K; the deposited core averages equal the paper's 37 °C values (r1, deposition readback).",
+   "Detergent buffer for the FC-12 samples: Figure 6 says 50 mM KH2PO4, Methods say 50 mM DCOONa, and FC-12 is 1% in Figure 6 but 0.5% in the text (r3, r4)."
+  ],
+  "questions_for_gina": [
+   "Is the RelaxDB 19335 set the 2013 37 °C 5P12-RANTES-E66S data, so the 273 K in the BMRB metadata is a deposition error?",
+   "Should native-N-terminus CCL5 data (E66S, P9S, 12AAA14, K25S) count toward this 5P12 entry only as inference, as done here, given that their N termini and oligomer states differ?"
+  ],
+  "buffer_note": "The RelaxDB entry is the engineered variant 5P12-RANTES-E66S, so is_wt_apo true here means the unmodified entry construct, free and monomeric; native-sequence CCL5 and its mutants are other constructs and use inference_from_mutant. The entry data are in 50 mM phosphate at pH 3.8 with no phosphate-free control; CCL5 has a basic anion/GAG-binding surface, but no phosphate effect is shown. Q0 cyclises to pyroglutamate during storage, which changes Q0/G1 shifts chemically. Monomer-dimer and higher-oligomer equilibria are kept out of every window answer as self-association. Second read: r1 (residue list, corrected), r24, r34 (method, corrected) and r35 (confirmed) were flagged; the CSV carries the corrections."
+ },
+ "judgments": [
+  {
+   "judgment_id": "R19335-J1",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     1,
+     2,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     65,
+     66,
+     67,
+     68,
+     69
+    ],
+    "residues_author": "N-terminal Q0-S9 (P2, P3 without amide) and C-terminal residues beyond about N63 (S64-S68)",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "apo",
+    "conditions": "37 °C; pH 3.8; 50 mM KH2PO4 (phosphate), 0.02% NaN3, 5% D2O; 0.6 mM 15N/13C protein; no detergent or receptor; BMRB 19335 metadata lists 273 K, unresolved against the paper's 37 °C",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 600 MHz, 2-3 repeats averaged; no model-free or dispersion fit",
+    "observable": "strongly reduced R1 and {1H}-15N NOE (negative NOE at the termini)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The first ten and last five residues have much lower R1 and NOE than the core, which the authors read as large-amplitude pico- to nanosecond fraying of both termini.",
+   "evidence_rows": [
+    "R19335-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J2",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     11,
+     12,
+     13,
+     14,
+     16,
+     17,
+     18,
+     20,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     34,
+     35,
+     36,
+     37,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64
+    ],
+    "residues_author": "core C10-N63 excluding Y14 and G32 (and prolines)",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "apo",
+    "conditions": "37 °C; pH 3.8; 50 mM KH2PO4 (phosphate), 0.02% NaN3, 5% D2O; 0.6 mM 15N/13C protein; no detergent or receptor; BMRB 19335 metadata lists 273 K, unresolved against the paper's 37 °C",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 600 MHz, 2-3 repeats averaged; no model-free or dispersion fit",
+    "observable": "uniform R1 2.26 ± 0.13 s-1, R2 6.08 ± 0.78 s-1, NOE 0.71 ± 0.04",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "37 °C",
+    "detection_window": "15N R1/R2/NOE at 600 MHz, 37 °C, pH 3.8, judged against core averages without model-free fitting; sees large-amplitude sub-ns motion that lowers NOE and R1, not small S2 differences."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The core has uniform relaxation consistent with a well-folded domain tumbling with tau_c 4.0 ns (3.1 ns expected; the authors suspect onset of aggregation at 0.6 mM), so no large fast internal motion is seen.",
+   "evidence_rows": [
+    "R19335-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J3",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "residues_author": "M5-S9",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "apo",
+    "conditions": "37 °C; pH 3.8; 50 mM KH2PO4 (phosphate), 0.02% NaN3, 5% D2O; 0.6 mM 15N/13C protein; no detergent or receptor; BMRB 19335 metadata lists 273 K, unresolved against the paper's 37 °C",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 600 MHz, 2-3 repeats averaged; no model-free or dispersion fit",
+    "observable": "15N R2 elevated relative to the low R1/NOE of a frayed terminus",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Inside the flexible N-terminal tail, M5-S9 have increased R2, which the authors take as evidence of additional micro- to millisecond motion; there is no dispersion, rate or population.",
+   "evidence_rows": [
+    "R19335-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J4",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     15,
+     33
+    ],
+    "residues_author": "Y14 and G32",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "apo",
+    "conditions": "37 °C; pH 3.8; 50 mM KH2PO4 (phosphate), 0.02% NaN3, 5% D2O; 0.6 mM 15N/13C protein; no detergent or receptor; BMRB 19335 metadata lists 273 K, unresolved against the paper's 37 °C",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 600 MHz, 2-3 repeats averaged; no model-free or dispersion fit",
+    "observable": "exchange broadening (elevated R2)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The authors exclude Y14 and G32 from the core averages because they are affected by exchange broadening, a qualitative sign of µs-ms exchange at two core sites without rate or population.",
+   "evidence_rows": [
+    "R19335-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J5",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     11,
+     12,
+     13,
+     14,
+     16,
+     17,
+     18,
+     20,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     34,
+     35,
+     36,
+     37,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64
+    ],
+    "residues_author": "core C10-N63 excluding Y14 and G32 (and prolines)",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "apo",
+    "conditions": "37 °C; pH 3.8; 50 mM KH2PO4 (phosphate), 0.02% NaN3, 5% D2O; 0.6 mM 15N/13C protein; no detergent or receptor; BMRB 19335 metadata lists 273 K, unresolved against the paper's 37 °C",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE at 600 MHz, 2-3 repeats averaged; no model-free or dispersion fit",
+    "observable": "uniform 15N R2 6.08 ± 0.78 s-1",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "37 °C",
+    "detection_window": "Single-field 15N R2 at 600 MHz, 37 °C, pH 3.8, compared with the core spread of ±0.78 s-1; no CPMG, R1rho or multi-field analysis, so small Rex or fast exchange with small Δω would be missed."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Apart from Y14 and G32 the core R2 values are uniform, so no Rex large enough to stand out at one field is seen.",
+   "evidence_rows": [
+    "R19335-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J6",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole spectrum (single resonance set)",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "apo",
+    "conditions": "37 °C; pH 3.8; 50 mM KH2PO4 (phosphate), 0.02% NaN3, 5% D2O; micromolar to 0.6 mM protein series plus size-exclusion chromatography; no detergent or receptor; BMRB 19335 metadata lists 273 K, unresolved against the paper's 37 °C",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Concentration series of 1H-15N HSQC (0.6 mM shown at 600 MHz) and size-exclusion chromatography",
+    "observable": "second (dimer) resonance set; elution size",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": "HSQC concentration series and SEC at 37 °C, pH 3.8 phosphate; would show a monomer-dimer pair in slow exchange; blind to fast-exchanging or low-population oligomers and to incipient aggregation."
+   },
+   "verdict": "unresolved",
+   "reason": "One concentration-independent resonance set and monomer-sized elution show that 5P12-RANTES-E66S stays monomeric; this concerns self-association, not intramolecular motion, so it is not counted in a window.",
+   "evidence_rows": [
+    "R19335-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J7",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "core resonances invisible; only Q0, G1, L4-T7 and I62-S68 visible at 25 °C; most core peaks return at 60 °C (60 °C list figure-only)",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "bound:Fos-Choline-12 micelles",
+    "conditions": "25 °C and 60 °C; pH 3.8; Figure 6 lists 50 mM KH2PO4, Methods 50 mM DCOONa (unresolved); 1% FC-12 in Figure 6, 0.5% in the text; 0.25 mM protein; 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "1H-15N HSQC in Fos-Choline-12 at two temperatures with secondary shifts",
+    "observable": "peak loss and reappearance",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C and 60 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In FC-12 the core is NMR-dark at 25 °C and reappears at 60 °C as a non-native, more helical ensemble; the authors cannot separate micelle association from intermediate exchange, and the detergent denatures the protein at low pH.",
+   "evidence_rows": [
+    "R19335-r3",
+    "R19335-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J8",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "C-terminal helix end (no residue list)",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: crystal 1EQT (RANTES-E66S-type construct with S1M, P2G, L19M relative to WT) versus solution 5P12-RANTES-E66S",
+    "binding_state": "apo",
+    "conditions": "solution: 37 °C, pH 3.8 phosphate; crystal 1EQT: lattice",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "Solution secondary chemical shifts compared with crystal structure 1EQT",
+    "observable": "helix length difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The crystal C-terminal helix runs longer than the solution shifts indicate, which the authors explain by lattice contacts stabilising the helix end; a static difference between constructs, not exchange.",
+   "evidence_rows": [
+    "R19335-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J9",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N terminus (no residue list in the main text)",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: native-sequence mature CCL5 (called WT by the authors), self-associated oligomer",
+    "binding_state": "apo",
+    "conditions": "pH 4.4 (Methods) or 4.5 (Results); 50 mM acetate; about 1 mM CCL5; temperature not stated; relaxation data in Supplementary Figure 1B (not recovered)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N spin relaxation (qualitative main-text report)",
+    "observable": "relaxation-based flexibility",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors state that the native N terminus is extremely flexible within the oligomer, but give no values or timescale in the main text, and this N terminus differs from the entry's 5P12 tail.",
+   "evidence_rows": [
+    "R19335-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J10",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "monomer and dimer peak sets (full list not given)",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human CCL5 E66S with native N terminus plus an extra N-terminal Gly after TEV cleavage (not 5P12)",
+    "binding_state": "apo",
+    "conditions": "310 K and 293 K; pH 4.8; 100 mM d4-acetate, 95% H2O/5% D2O, 0.005% thimerosal; 50 µM 15N RANTES; 800 MHz; no CCR5 peptide",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Temperature-dependent 1H-15N HSQC with separate monomer and dimer signals",
+    "observable": "monomer/dimer peak intensity ratio IM/ID 0.45 at 310 K, 0.13 at 293 K",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "310 K; 293 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Monomer and dimer give separate peaks (slow exchange on the shift timescale) and cooling shifts the balance to dimer; this is self-association, not an intramolecular alternate state, and no rate is given.",
+   "evidence_rows": [
+    "R19335-r8",
+    "R19335-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J11",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "dimerisation-perturbed ranges S4-I15, S31-C34, R47-C50 (native numbering; N-terminal identities differ)",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human CCL5 E66S with native N terminus (not 5P12)",
+    "binding_state": "apo",
+    "conditions": "37 °C; pH 4.5; 25 mM sodium acetate-d3, 0.1 mM EDTA, 0.2 mM NaN3, 5% D2O; 700 MHz; 1 µM versus 20 µM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Concentration-dependent 1H-15N HSQC",
+    "observable": "two signal sets (monomer and dimer) at 20 µM, one at 1 µM",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "E66S CCL5 is monomeric at 1 µM and shows separate monomer and dimer peak sets at 20 µM; this is self-association with no rate or population, not intramolecular exchange.",
+   "evidence_rows": [
+    "R19335-r34"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J12",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     46,
+     47,
+     48,
+     49
+    ],
+    "residues_author": "K45-Q48",
+    "numbering_note": "Shared residues map entry = author + 1 (K45-Q48 = entry 46-49).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:K25S/E26A/E66S labelled protomer mixed 1:1 with unlabelled R44A/K45A (engineered tetramer)",
+    "binding_state": "bound:R44A/K45A CCL5 partner",
+    "conditions": "pH 3.2 (dimer) and pH 5 (tetramer); 25 mM sodium acetate; selective deuteration; tetramer NMR temperature not restated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Selective-label 1H-15N HSQC of engineered dimer and tetramer",
+    "observable": "missing resonances",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "K45-Q48 vanish in the mixed tetramer, which the authors read as flexibility at the dimer-dimer interface, but pH, size and deuteration differ and missing peaks do not fix a mechanism or rate.",
+   "evidence_rows": [
+    "R19335-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J13",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole spectrum",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:K25S (native-sequence CCL5 otherwise)",
+    "binding_state": "apo",
+    "conditions": "pH 3 to 5 and back to 3; 25 mM sodium acetate; about 0.2 mM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC pH titration with reversal",
+    "observable": "loss and recovery of signals",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "As pH rises K25S assembles into large NMR-invisible soluble oligomers that dissociate back to dimers on acidification; this is assembly, not intramolecular motion.",
+   "evidence_rows": [
+    "R19335-r20"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J14",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     14,
+     40,
+     53
+    ],
+    "residues_author": "A13, V39, N52 (D6 also named; native residue not in the entry)",
+    "numbering_note": "CCL5-12AAA14 is numbered with an extra initiator M0; shared core residues map entry = author + 1 (checked L19, K25, K33, V39, K45, N52, E54-R59); M0, S1 and D6 differ from the entry and are not mapped; P18 is a proline.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: CCL5-12AAA14 (F12A/Y14A on native-sequence mature CCL5 with initiator M0, E66 retained)",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 3.2; 25 mM sodium acetate, 150 mM NaCl, 10% D2O; 0.2 mM 15N protein; 600 MHz; without and with 180 mM ammonium sulfate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and heteronuclear NOE without and with ammonium sulfate",
+    "observable": "local R2/NOE changes; R2/R1 tumbling about 9 ns (dimer)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The mutant tumbles as a dimer (about 9 ns) and sulfate raises the dimer population and changes local R2/NOE near the interface; no timescale or kex is given for the local changes.",
+   "evidence_rows": [
+    "R19335-r13",
+    "R19335-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J15",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     20,
+     26,
+     34,
+     46,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60
+    ],
+    "residues_author": "missing L19, K25, K33, K45, E54-R59 (M0, S1 also missing; P18 is proline)",
+    "numbering_note": "CCL5-12AAA14 is numbered with an extra initiator M0; shared core residues map entry = author + 1 (checked L19, K25, K33, V39, K45, N52, E54-R59); M0, S1 and D6 differ from the entry and are not mapped; P18 is a proline.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: CCL5-12AAA14 (F12A/Y14A on native-sequence mature CCL5 with initiator M0, E66 retained)",
+    "binding_state": "bound:sulfate (180 mM ammonium sulfate)",
+    "conditions": "298 K; pH 3.2; 25 mM sodium acetate, 150 mM NaCl, 10% D2O; 0.2 mM 15N protein; 600 MHz; 180 mM ammonium sulfate",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "Backbone assignment of the sulfate-stabilised dimer",
+    "observable": "missing resonances",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors suggest the missing peaks may reflect local intermediate exchange possibly involving sulfate at basic residues, but sulfate binding, ionic strength and oligomer selection are not separated and no rate exists.",
+   "evidence_rows": [
+    "R19335-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J16",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole spectrum",
+    "numbering_note": "CCL5-12AAA14 is numbered with an extra initiator M0; shared core residues map entry = author + 1 (checked L19, K25, K33, V39, K45, N52, E54-R59); M0, S1 and D6 differ from the entry and are not mapped; P18 is a proline.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: CCL5-12AAA14 (F12A/Y14A on native-sequence mature CCL5 with initiator M0, E66 retained)",
+    "binding_state": "mixed",
+    "conditions": "298 K; pH 3.2; 25 mM sodium acetate, 150 mM NaCl, 10% D2O; 0.2 mM 15N protein; 600 MHz; ammonium sulfate titration up to 180 mM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC sulfate titration",
+    "observable": "multiple resonance sets collapsing to one dominant dimer set",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Without sulfate the mutant spectrum is heterogeneous and sulfate selects one dimer form; this is oligomer and anion selection with no exchange time or population.",
+   "evidence_rows": [
+    "R19335-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J17",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N-terminal backbone pairing at the dimer interface (one-residue register shift)",
+    "numbering_note": "CCL5-12AAA14 is numbered with an extra initiator M0; shared core residues map entry = author + 1 (checked L19, K25, K33, V39, K45, N52, E54-R59); M0, S1 and D6 differ from the entry and are not mapped; P18 is a proline.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: CCL5-12AAA14 (F12A/Y14A on native-sequence mature CCL5 with initiator M0, E66 retained)",
+    "binding_state": "bound:sulfate",
+    "conditions": "crystal 6LOG grown at 10 °C (reservoir pH 7.9, 0.2 M magnesium acetate, 20% PEG3350; protein in 180 mM ammonium sulfate), compared with 1EQT",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal structure comparison 6LOG versus 1EQT",
+    "observable": "dimer interface register and monomer orientation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Removing F12 lets the mutant dimer pair one residue out of register, a static difference between constructs and lattices, not observed sliding.",
+   "evidence_rows": [
+    "R19335-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J18",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Nt-CCR5-perturbed T7, F12-A16, L19, R21, H23, K25, T30, R47, C50 and Y3, S5, D6, C10, S31, G32, A38, F41, T43, V49, A51, V58 (native numbering)",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human CCL5 E66S with native N terminus plus an extra N-terminal Gly after TEV cleavage (not 5P12)",
+    "binding_state": "bound:sulfated CCR5 N-terminal peptide (Nt-CCR5) or Nt-ECL3 chimera",
+    "conditions": "310 K (Nt-CCR5) and 293 K (Nt-ECL3); pH 4.8; 100 mM d4-acetate, 95% H2O/5% D2O, 0.005% thimerosal; 100 µM RANTES, up to 800 µM Nt-CCR5; DMSO no more than 10% for Nt-ECL3; 800 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC peptide titrations",
+    "observable": "fast-exchange shift changes; peak loss with Nt-ECL3",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: Nt-CCR5 shifts peaks in fast exchange and weakens dimerisation, and Nt-ECL3 broadens peaks out, which the authors suggest is intermediate binding exchange.",
+   "evidence_rows": [
+    "R19335-r10",
+    "R19335-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J19",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "not residue-resolved for CCL5 dynamics",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:P9S/E66S (CCL5(P9S), native-type N terminus)",
+    "binding_state": "bound:doubly sulfated Nt-CCR5(1-27) C20A",
+    "conditions": "37 °C; pH 4.8; 130 mM d-acetate; 120 µM CCL5(P9S), fivefold peptide excess; 800 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Isotope-filtered NOESY and transferred NOE",
+    "observable": "averaged free/bound peptide shifts",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: peptide signals average free and bound forms in fast exchange; this reports peptide binding, not an internal CCL5 state.",
+   "evidence_rows": [
+    "R19335-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J20",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     20,
+     22,
+     24,
+     49,
+     51
+    ],
+    "residues_author": "F12-R21, H23, Q48, C50 (prolines P18, P20 excluded)",
+    "numbering_note": "Shared core residues map entry = author + 1 (checked F12, Y14, H23, Q48, C50).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human CCL5 E66S with native N terminus (not 5P12)",
+    "binding_state": "bound:Ev4 peptide (Evasin-4 E14-N31, C27A)",
+    "conditions": "37 °C; pH 4.5; 25 mM sodium acetate-d3, 0.1 mM EDTA, 0.2 mM NaN3, 5% D2O; 700 MHz; 25 µM 15N CCL5, peptide up to 500 µM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC peptide titration",
+    "observable": "gradual monomer shifts and loss of dimer signal",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: monomer peaks move gradually (fast binding exchange) while dimer peaks weaken, so peptide binding redistributes monomer and dimer; no kex or population.",
+   "evidence_rows": [
+    "R19335-r37"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J21",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "sixteen amide peaks missing in free CCL5 and in the complex (identities figure-only)",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human CCL5 E66S with native N terminus (not 5P12)",
+    "binding_state": "mixed",
+    "conditions": "37 °C; pH 7.0-7.3 (Results) or 7.0 (Fig. 5B); 25 mM phosphate, 0.1 mM EDTA, 0.2 mM NaN3, 5% D2O; about 80-82 µM; free CCL5 and complex with slight excess of met-Evasin-4; 700 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "1H-15N HSQC of free CCL5 and the CCL5-Evasin-4 complex at neutral pH",
+    "observable": "broadened and missing amide peaks",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "At neutral pH in phosphate sixteen peaks are missing in both free and bound CCL5, but pH and buffer changed together, phosphate binding to the basic surface is untested, and the missing residues are figure-only.",
+   "evidence_rows": [
+    "R19335-r36"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J22",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole spectrum",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human CCL5 E66S with native N terminus (not 5P12)",
+    "binding_state": "bound:met-Evasin-4",
+    "conditions": "37 °C; pH 4.5; 25 mM sodium acetate-d3, 0.1 mM EDTA, 0.2 mM NaN3, 5% D2O; 700 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "1H-15N HSQC titration with full Evasin-4 at pH 4.5",
+    "observable": "signal loss",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "37 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The sample precipitated during titration, which explains the signal loss without any exchange process.",
+   "evidence_rows": [
+    "R19335-r35"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J23",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": [
+     16,
+     17,
+     18,
+     20,
+     22,
+     23,
+     24,
+     25,
+     43,
+     44,
+     45,
+     46,
+     47
+    ],
+    "residues_author": "unresolved N-loop I15-I24 and 40s loop V42-N46 (prolines P18, P20 excluded)",
+    "numbering_note": "Shared residues map entry = author + 1.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: RANTES F28C crosslinked to CCR5 E172C via 12xGS linker, CCR5 G163N, dominant-negative Gi1",
+    "binding_state": "bound:CCR5-Gi1",
+    "conditions": "pH 7.5; 20 mM HEPES, 100 mM NaCl, LMNG/GDN/CHS; cryo-EM grids vitrified at 4 °C",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Cryo-EM structure 7F1R compared with 5UIW",
+    "observable": "unresolved density",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the receptor complex the N-loop and 40s loop are not fully resolved, which may be disorder or reconstruction limits; static and receptor-bound, no kinetics.",
+   "evidence_rows": [
+    "R19335-r22"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J24",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "chemokine core (no residue list)",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: [6P4]CCL5 with N-terminal pyroglutamate, E66 retained",
+    "binding_state": "bound:CCR5, nucleotide-free Gi and Fab16",
+    "conditions": "pH 7.5; 25 mM HEPES, 150 mM NaCl, 0.01% LMNG; apyrase-treated; cryo-EM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Cryo-EM 3D variability analysis (PDB 7O7F)",
+    "observable": "particle heterogeneity",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The bound chemokine core is less resolved and varies among frozen particles, heterogeneity without a time axis or rate.",
+   "evidence_rows": [
+    "R19335-r25"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J25",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "chemokine N terminus and core contacts with the receptor (no residue list)",
+    "numbering_note": "Native-N-terminus CCL5 shares the entry sequence from C10 onward with entry = author + 1; its N-terminal residues (S1-P9 native versus Q0-S9 in 5P12) differ, so N-terminal sites are not mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: [6P4]CCL5 modelled with CCR5 1-320 (sulfated or non-sulfated Y10/Y14)",
+    "binding_state": "bound:CCR5 (membrane model)",
+    "conditions": "310 K; pH 7.0 protonation; explicit water; 80% POPC/20% cholesterol; CHARMM36m; five 500 ns replicas per system",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Atomistic MD of [6P4]CCL5-CCR5",
+    "observable": "contact persistence and water-mediated contacts",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "310 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The simulations report receptor-contact patterns that depend on sulfation, an interface property of a modelled complex rather than intramolecular CCL5 dynamics of the free entry construct.",
+   "evidence_rows": [
+    "R19335-r26",
+    "R19335-r27"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R19335-J26",
+   "entry_id": "19335",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry = author + 1 (author Q0-S68 = entry 1-69); checked Q0, M5, S9, C10, Y14, G32, N63, S68 against the entry sequence. Prolines P2, P3, P18, P20, P37, P53 (entry 3, 4, 19, 21, 38, 54) give no amide signal.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "other construct: 5P12-RANTES-E66S, the exact entry sequence (engineered N terminus Q0-S9 and E66S relative to native mature CCL5)",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement in the evidence rows)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (HDX-MS and multitemperature crystallography queries with restrictive name terms returned 0 hits; the 2013 paper reports no H/D exchange)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures H/D exchange or any slower-than-millisecond process of 5P12-RANTES-E66S, and zero-hit narrow searches cannot establish that it was never measured.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

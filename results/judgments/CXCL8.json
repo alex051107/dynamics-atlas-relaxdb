@@ -1,0 +1,1879 @@
+{
+ "protein_summary": {
+  "entry_id": "CXCL8",
+  "per_window": {
+   "ps-ns": "dynamic_in_window at the termini with an ordered core. Free CXCL8(1-66) at 25 °C, pH 6.0 phosphate, 100 µM: low S2 at E4-R6 and seven model-5 sites (S2 about 0.55, tau_s 0.5-3.5 ns) (CXCL8-J1, r13); other residues S2 0.80-0.87 (J2). At pH 7.3 HEPES, 40 and 15 °C: negative NOE for A2-R6, NOE about 0.8 for C7-F65 (J3, J4; r34, r35). Receptor-peptide binding raises most S2 (J16). Full-length dimer (J21, J22) and the monomer-biased L25Y/V27R mutant (J27) also have mobile termini.",
+   "us-ms": "dynamic_in_window at two sites, no rate. Free 1-66 monomer, 25 °C, pH 6.0, 600/800 MHz CPMG: K23 (800 MHz only, fast-limit fit) and V62 (slow-limit fit) disperse (J7, r15); I10, S14, E63 and all other amides are flat although model-free Rex exceeded 1 s-1 at I10, S14, E63 (J8). Bound to the CXCR1 N-domain peptide, T12, Y13, S14, V41, E48, C50 exchange with kex 900-2000 s-1 and a 1-2% minor state (J12, r16), F17 is flat (J13), K15 and V58 are too weak to fit (J14). Peptide binding kinetics koff 2400-6500 s-1 (J15) are binding, not conformational. The full-length dimer has H(S/M)QC exchange near R26 and C50 with flat 600 MHz CPMG (J23, J24). Mutant and high-concentration dispersion is self-association (J9, J28).",
+   "slower_than_ms": "search_insufficient (J41). Only a one-hour D2O snapshot with five unnamed protected beta-sheet amides exists (J10, unresolved).",
+   "undetermined": "Free 1-66: N-terminal RDCs near zero (J5, indirect), missing S1 and L66 (J6), construct-dependent N-loop and F65 position versus the dimer (J11). Bound states: receptor-fragment peak loss at K15, D52, V58 (J17), tighter complex ensemble (J18), Site-I to Site-II contact switching in one 800 ns MD (J19), Fab crystal (J20), receptor cryo-EM (J36), SpyCEP (J35). Oligomer and GAG: dimer tumbling with peptide (J25, J29), restrained MD of dimer versus mutant (J26, J30), CS binding (J31-J34), native MS 18:82 monomer:dimer (J37), antibody SPR (J38). Abstract-only structural and partner papers (J39, J40)."
+  },
+  "wt_apo_answer": "Yes, at two sites without rate or population: the free entry construct CXCL8(1-66) at 100 µM (>99% monomer), 25 °C, pH 6.0 in 50 mM sodium phosphate shows 15N CPMG dispersion only at K23 (800 MHz only, fast-limit fit) and V62 (C-terminal helix, slow-limit fit), with all other observed amides flat; the authors print no kex, population or shift difference.",
+  "open_conflicts": [
+   "Model-free Rex above 1 s-1 at I10, S14 and E63 (r13) is not confirmed by CPMG on the same sample, which disperses only at K23 and V62 (r15); the authors attribute small Rex to tumbling anisotropy or fitting.",
+   "Full-length dimer: H(S/M)QC shift differences report exchange at R26 and C50 (r5) while 600 MHz CPMG is flat (r6); the authors reconcile this by placing the process in the microsecond range, which no row measures."
+  ],
+  "questions_for_gina": [
+   "Is the RelaxDB CXCL8 set the 2018 free 1-66 monomer data (100 µM, 25 °C, pH 6.0 phosphate, 600 and 800 MHz; doi:10.3390/molecules23112825)? The input card has no BMRB id.",
+   "Should the single-residue slow-limit CPMG fit at V62 (AICc-selected, no rate or population printed) count as an alternate-APO candidate, or does that need a fitted kex and pB?"
+  ],
+  "buffer_note": "The entry construct is the C-terminally truncated CXCL8(1-66), a monomer at the 100 µM relaxation concentration (KM-D about 20 mM) but partly dimeric at 900 µM (J9); full-length 1-72 is a dimer at NMR concentrations, so its rows are other-construct evidence and dimer/monomer exchange is never counted as intramolecular dynamics. The 2018 relaxation and CPMG data are in 50 mM sodium phosphate pH 6.0 and the lineshape titration at 30 °C; no phosphate artefact is shown, but GAG and receptor binding are electrostatic and buffer-sensitive. The 2017 1-66 data are in 20 mM HEPES pH 7.3 at 40 and 15 °C. The 2014 paper's I11 and A15 labels do not match the sequence (K11, K15) and are left unmapped. The second read raised no flags for this case."
+ },
+ "judgments": [
+  {
+   "judgment_id": "CXCL8-J1",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     4,
+     5,
+     6
+    ],
+    "residues_author": "ELR motif E4, L5, R6 have low S2; seven model-5 residues (S2 average 0.55, tau_s 500-3500 ps) not named; termini and some beta-strand loops have below-average R1, R2, NOE",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": "ELR motif (receptor activation, Site-II)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 100 µM (>99% monomer)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2, {1H}-15N NOE at 600 and 800 MHz; model-free fit with an oblate axially symmetric diffusion tensor",
+    "observable": "Low S2 at E4-R6; model 5 (two time scales) for seven residues, S2 average 0.55, tau_s 500-3500 ps (600 MHz); model 2 tau_f 10-90 ps; tau_c 4.7 ns",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the free 1-66 monomer the N-terminal ELR motif, the termini and some loops move on the ps-ns scale, and seven residues need a slower ns internal motion (tau_s up to 3.5 ns).",
+   "evidence_rows": [
+    "CXCL8-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J2",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Model 1 (21 residues), model 2 (15), models 3/4 (13); residues not listed",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 100 µM",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2, NOE at 600 and 800 MHz, model-free",
+    "observable": "Average S2 0.86 (model 1), 0.80 (model 2), 0.87 (model 3), 0.81 (model 4)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": "Model-free 15N relaxation at 600/800 MHz, 25 °C reports internal motion faster than tau_c 4.7 ns; S2 0.80-0.87 excludes large-amplitude fast motion, not us-ms exchange; A35, I40, R47, W57 did not fit any model at 600 MHz"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Apart from the termini and model-5 sites the free monomer backbone is ordered on the ps-ns scale (average S2 0.80-0.87 by model class).",
+   "evidence_rows": [
+    "CXCL8-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J3",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "residues_author": "A2, K3, E4, L5, R6 negative heteronuclear NOE (Fig. 2b)",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": "ELR motif",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3; 20 mM HEPES, 10% D2O; NOE measured at 40 and 15 °C; 600/800 MHz",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N heteronuclear NOE (6 s saturation delay)",
+    "observable": "Negative NOE for residues 2-6; residues 7-65 near 0.8; profiles not given per temperature",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "40 and 15 °C (one plotted profile)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The N-terminal A2-R6 segment, including the ELR motif, is mobile on the ps-ns scale in HEPES at pH 7.3, consistent with the 2018 phosphate data (J1).",
+   "evidence_rows": [
+    "CXCL8-r34",
+    "CXCL8-r35"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J4",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65
+    ],
+    "residues_author": "Residues C7-F65 collectively (prolines have no NH)",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66); prolines 16, 19, 32, 53 have no amide NH and are left out",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3; 20 mM HEPES, 10% D2O; 40 and 15 °C",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "1H-15N heteronuclear NOE",
+    "observable": "NOE about 0.8 for residues 7-65",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "40 and 15 °C",
+    "detection_window": "Heteronuclear NOE reports only sub-ns internal motion; values near 0.8 rule out large fast motion in C7-F65 but say nothing about us-ms exchange"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "From C7 to F65, including the shortened C-terminal helix (57-66), the backbone is ordered on the ps-ns scale (NOE about 0.8).",
+   "evidence_rows": [
+    "CXCL8-r34",
+    "CXCL8-r35"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J5",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "near-zero RDCs only for 'the residues closest to the N-terminus' (not enumerated; residues 2-6 is the heteronuclear-NOE set, kept in the NOE judgment); C-terminal helix V58-F65 follows a dipolar wave",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3; 20 mM HEPES, 10% D2O; 13.5 mg/ml Y21M fd phage, 70 mM NaCl, empty nanodiscs; IPAP-HSQC",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N RDCs in fd phage (cross-validation, not restraints)",
+    "observable": "Near-zero RDCs at the N-terminus; dipolar wave across the helix",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Near-zero N-terminal RDCs agree with motional averaging of the free N-terminus seen by NOE, while the C-terminal helix stays structured; RDCs give no timescale.",
+   "evidence_rows": [
+    "CXCL8-r37"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J6",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     1,
+     66
+    ],
+    "residues_author": "S1 and L66 amide signals not observed",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3; 20 mM HEPES, 10% D2O",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Missing 1H-15N HSQC signals",
+    "observable": "No signal for the N- and C-terminal residues",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors attribute the two missing terminal amides to local dynamics, but a missing signal alone does not fix the type or timescale of motion.",
+   "evidence_rows": [
+    "CXCL8-r36"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J7",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     23,
+     62
+    ],
+    "residues_author": "Dispersing residues K23 (800 MHz only) and V62",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 100 µM (>99% monomer)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion at 600 and 800 MHz, 60 ms constant delay, nuCPMG 33.3-2000 Hz; two-site fast-limit and slow-limit models compared by AICc",
+    "observable": "Dispersion of R2eff at K23 and V62 (Fig. 5)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Only two residues of the free monomer show us-ms exchange by CPMG: K23 fits the fast-limit model (kex >> delta-omega) and V62, in the C-terminal helix, the slow-limit model (kex << delta-omega); no kex, population or shift difference is printed.",
+   "evidence_rows": [
+    "CXCL8-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J8",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     10,
+     14,
+     63
+    ],
+    "residues_author": "I10, S14, E63 (model-free Rex > 1 s-1) and all other observed amides except K23 and V62",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 100 µM",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion at 600 and 800 MHz",
+    "observable": "No dispersion at I10, S14, E63 despite model-free Rex > 1 s-1 (I10, S14, V62 at 600 MHz; plus E63 at 800 MHz)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": "15N CPMG, 600 and 800 MHz, 25 °C, 60 ms constant time, nuCPMG 33.3-2000 Hz: cannot see exchange much faster than about 10^4 s-1, or with very small population or shift difference; only K23 and V62 dispersed"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Except K23 and V62, no residue disperses, so the small model-free Rex at I10, S14 and E63 is not confirmed; the authors note such Rex can reflect tumbling anisotropy or fitting.",
+   "evidence_rows": [
+    "CXCL8-r13",
+    "CXCL8-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J9",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole-spectrum R2 and minor dimer peaks (residues not listed)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 900, 300 and 100 µM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R2 versus concentration and HSQC peak inspection",
+    "observable": "Higher R2 at 900 µM than 300 µM; minimal difference between 300 and 100 µM; minor dimer peaks only at 900 µM; KM-D about 20 mM",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "At 900 µM the 1-66 construct partly dimerises, giving a second, slowly exchanging set of dimer peaks and raised R2; this is self-association, not intramolecular dynamics, and it is absent at the 100 µM used for relaxation.",
+   "evidence_rows": [
+    "CXCL8-r20",
+    "CXCL8-r21",
+    "CXCL8-r22"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J10",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Five strongly protected amides, identities only in Fig. 2d",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3; 20 mM HEPES, 10% D2O; transfer to 90% D2O, HSQC after 1 h",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR-detected amide H/D exchange (single time point)",
+    "observable": "Relative peak heights after 1 h, normalised to L49; five intense beta-sheet amides after several hours",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A few beta-sheet amides stay protected for hours in D2O, but a single incubation gives no protection factors or opening rates, and the protected residues are not named.",
+   "evidence_rows": [
+    "CXCL8-r38"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J11",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     27,
+     30,
+     52,
+     57,
+     61,
+     63,
+     64,
+     65
+    ],
+    "residues_author": "Shift differences dimer vs monomer at I10, K15, K20, K23, V27, S30, D52, V61, E63, K64, F65; N-loop I10-K23 position and F65 orientation differ",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3; 20 mM HEPES, 10% D2O; 313 K for the HSQC comparison",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution structure 5WDZ compared with dimer 1IL8 and N-methyl monomer 1IKL",
+    "observable": "Same fold; N-loop position and F65 side-chain orientation differ",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Truncation to 1-66 keeps the fold but moves the N-loop and F65 relative to the dimer, a construct difference rather than motion within one state.",
+   "evidence_rows": [
+    "CXCL8-r39"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J12",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     12,
+     13,
+     14,
+     41,
+     48,
+     50
+    ],
+    "residues_author": "T12, Y13, S14, V41, E48, C50 (all dispersing residues; Rex about 20 s-1 at T12 and C50, 800 MHz)",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": "Site-I (N-loop) and beta3, near the C9-C50 disulfide",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:CXCR1 N-domain peptide 1-29 (saturating)",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 130 µM CXCL8, 1 mM peptide",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion at 600 and 800 MHz, two-site fast-limit model",
+    "observable": "Rex up to about 20 s-1 (T12, C50)",
+    "fit_model": "two-state global",
+    "kex": "900-2000 s-1",
+    "pB": "1-2%",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Receptor-peptide binding switches on us-ms exchange in a six-residue cluster around the N-loop and beta3 with kex 900-2000 s-1 and a 1-2% minor state of unknown structure; binding itself is faster (J15) and F17 is flat (J13).",
+   "evidence_rows": [
+    "CXCL8-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors propose that slow dynamics gained in the bound state contribute to binding affinity (entropy) and may relate to a disulfide switch or signalling state; proposed, not shown.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J13",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     17
+    ],
+    "residues_author": "F17 (large binding shift, flat dispersion)",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:CXCR1 N-domain peptide 1-29 (saturating)",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 130 µM CXCL8, 1 mM peptide",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CPMG at 600 and 800 MHz",
+    "observable": "Flat R2eff profile at F17",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": "15N CPMG, 600/800 MHz, 25 °C, 60 ms constant time, nuCPMG 33.3-2000 Hz; cannot see exchange too fast for the CPMG range or with tiny population or shift difference"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "F17 does not disperse despite a large binding shift, which argues that the bound-state process is not simple peptide on-off exchange.",
+   "evidence_rows": [
+    "CXCL8-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J14",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     15,
+     58
+    ],
+    "residues_author": "K15, V58 (weak peaks)",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:CXCR1 N-domain peptide 1-29",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 130 µM CXCL8, 1 mM peptide",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R2 and CPMG at 600 and 800 MHz",
+    "observable": "High R2 and R2/R1 at K15; dispersion not fittable at K15 and V58",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "K15 and V58 look exchange-broadened in the complex but their peaks are too weak for a dispersion fit, so the six-residue kex cannot be assigned to them.",
+   "evidence_rows": [
+    "CXCL8-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J15",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     9,
+     17,
+     58
+    ],
+    "residues_author": "C9, F17, V58 lineshape fits",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "30 °C; pH 6.0; 50 mM sodium phosphate; 200 to 135 µM CXCL8 titrated with CXCR1 peptide up to 1135 µM; 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "HSQC titration lineshape analysis, two-site Bloch-McConnell binding model (KD fixed at 5 µM)",
+    "observable": "koff 2400, 4300 (Fig. 3: 4319), 6500 s-1; kon 4.8, 8.6, 9.72 x 10^8 M-1 s-1 at C9, F17, V58",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "30 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "These are peptide association and dissociation rates (binding kinetics), faster than the bound-state CPMG process, and not conformational dynamics.",
+   "evidence_rows": [
+    "CXCL8-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J16",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Twelve model-5 residues (S2 0.60 average) and higher S2 at most residues; residue identities only plotted",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:CXCR1 N-domain peptide 1-29",
+    "conditions": "25 °C; pH 6.0; 50 mM sodium phosphate, 1 mM sodium azide, 10% 2H2O; 130 µM CXCL8, 1 mM peptide; isotropic diffusion model",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2, NOE at 600 and 800 MHz; model-free",
+    "observable": "tau_c 7.2 ns; model 5 S2 average 0.60, tau_s 594-4730 ps; most residues have higher S2 than in the free state",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the complex most backbone order parameters rise, so fast motion is damped on binding, while twelve residues still need a slower ns motion.",
+   "evidence_rows": [
+    "CXCL8-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J17",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     14,
+     15,
+     16,
+     52,
+     58
+    ],
+    "residues_author": "S14 never observed, P16 no NH, K15 broadened beyond detection with both receptor fragments; D52 and V58 also lost with nanodisc 1TM-CXCR1",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:CXCR1(1-38) C30S or nanodisc 1TM-CXCR1(1-72) C30S (titrations to 1:1)",
+    "conditions": "pH 7.3; 20 mM HEPES, 10% D2O; temperature not assigned for Fig. 4",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC titrations",
+    "observable": "Line broadening and peak loss at the listed residues",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Peak loss at K15 (and D52, V58 with the membrane fragment) on receptor binding reflects binding-associated exchange with no rate or alternate state (binding kinetics).",
+   "evidence_rows": [
+    "CXCL8-r40",
+    "CXCL8-r41"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J18",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     11,
+     13,
+     15,
+     17,
+     18,
+     21,
+     47,
+     57,
+     59,
+     60,
+     61,
+     64
+    ],
+    "residues_author": "Named contacts K11, Y13, K15, F17, H18, F21, R47, W57, Q59, R60, V61, K64",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": "Site-I interface"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:CXCR1 N-domain 1-29",
+    "conditions": "Conditions in unread SI; 20-member NOE ensemble 6XMN",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution ensemble of the complex versus the free monomer",
+    "observable": "Bound ensemble more precise (lower RMSD) than free",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A tighter bound ensemble means more restraints and ordering on binding, not a measured change in motion.",
+   "evidence_rows": [
+    "CXCL8-r62"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J19",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     8,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     17,
+     18,
+     21,
+     33,
+     38,
+     47,
+     49,
+     60,
+     64
+    ],
+    "residues_author": "Contact groups I (E4, L5, R6, I10, H33, E38), II (K11, T12, S14), III (Y13, K15, F17, F21, R47), IV (H18, R60, K64) plus S1, A2, K3, Q8, L49",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:full CXCR1 (inactive model, no G protein)",
+    "conditions": "Single 800 ns MD from the 6XMN Site-I complex merged with a CXCR1 model; initial restraints removed later; temperature in unread SI",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "All-atom MD (800 ns, one trajectory)",
+    "observable": "Group IV contacts disengage near 250 ns as Site-II forms",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In one restrained-then-free trajectory Site-I contacts rearrange and switch as the ELR N-terminus engages Site-II; trajectory times are not rates.",
+   "evidence_rows": [
+    "CXCL8-r61"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J20",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     4,
+     5,
+     6,
+     7,
+     9,
+     10,
+     11,
+     13,
+     17,
+     34,
+     36,
+     38,
+     40,
+     49,
+     50,
+     51
+    ],
+    "residues_author": "Fab-contact and noncontact residues named in the text",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:LY3041658 Fab",
+    "conditions": "Crystal grown at 21 °C in 20% PEG 3350, 200 mM MgCl2; data at 100 K (6WZM)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Antibody-bound crystal structure",
+    "observable": "Crystallographic dimer of 1-66; some interface interactions appear conformationally flexible",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Side-chain disorder at a Fab interface in one cryo-cooled crystal does not define a motion or timescale, and the crystal dimer reflects packing and concentration.",
+   "evidence_rows": [
+    "CXCL8-r58"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J21",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     12,
+     33,
+     35,
+     45,
+     57
+    ],
+    "residues_author": "Termini (plotted only) and internal sites I11, T12, H33, A35, D45, W57",
+    "numbering_note": "Author 'I11' does not match the sequence (K11 in entry and UniProt), so it is left out of residues_entry; T12, H33, A35, D45, W57 match",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 7.0; 50 mM HEPES, 50 mM NaCl, 5% D2O; 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1 and R2",
+    "observable": "Lower R1/R2 at the termini and listed internal sites; tau_c 8.7 ns (dimer)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the full-length dimer the termini and six internal sites show extra fast local motion; values belong to the 72-residue dimer.",
+   "evidence_rows": [
+    "CXCL8-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J22",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Profiles only plotted",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.5; 50 mM Na3PO4, 150 mM NaCl, 5% D2O; 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1 and R2",
+    "observable": "Profiles resemble those in HEPES",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In phosphate buffer the dimer's relaxation profile matches the HEPES one, so the fast terminal motion does not depend on the buffer change tested.",
+   "evidence_rows": [
+    "CXCL8-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J23",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     26,
+     50
+    ],
+    "residues_author": "Two-standard-deviation set A15, R26, C50 (author A15 does not match entry K15)",
+    "numbering_note": "Author 'A15' does not match the sequence (K15), so only R26 and C50 are mapped",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 7.0; 50 mM HEPES, 50 mM NaCl; 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Exchange-induced shift differences between HSQC and HMQC (H(S/M)QC)",
+    "observable": "Significant HSQC/HMQC shift differences at A15, R26, C50",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The full-length dimer shows chemical exchange near the receptor-binding surface that the authors place in the microsecond range because CPMG at 600 MHz is flat (J24); no rate or alternate structure.",
+   "evidence_rows": [
+    "CXCL8-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J24",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     26,
+     30,
+     50,
+     63
+    ],
+    "residues_author": "Representatives C50, E63, R26, S30 (not all sampled residues)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 7.0; 50 mM HEPES, 50 mM NaCl; 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R2 CPMG relaxation dispersion",
+    "observable": "No measurable dispersion",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C",
+    "detection_window": "Single-field (600 MHz) 15N CPMG, 25 °C, 50 ms CPMG delay; blind to exchange faster than the CPMG pulse range (the authors infer microseconds) or with very small population or shift difference"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The dimer shows no CPMG dispersion at 600 MHz, so the exchange seen by H(S/M)QC (J23) is too fast, too small or too low in population for this window.",
+   "evidence_rows": [
+    "CXCL8-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J25",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global tumbling",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "bound:CXCR1 N-terminal peptide 9-29",
+    "conditions": "25 °C; pH 7.0; 50 mM HEPES, 50 mM NaCl; 600 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R2/R1 effective tau_c",
+    "observable": "tau_c 14.9 ns (estimated 25.1 kDa versus 22.8 kDa for dimer plus two peptides)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The peptide complex tumbles like an intact dimer, which speaks to oligomeric state, not internal motion.",
+   "evidence_rows": [
+    "CXCL8-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J26",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     28,
+     29,
+     30,
+     31,
+     50,
+     51,
+     52,
+     53
+    ],
+    "residues_author": "30s loop I28-G31 and beta3-region C50-P53",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "apo",
+    "conditions": "Replica-averaged chemical-shift-restrained MD, Amber99SB*-ILDN, TIP3P, 4 x 150 ns, annealing 300-400 K, analysed at 300 K; shifts from phosphate buffer",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Chemical-shift-restrained replica MD",
+    "observable": "Equilibrium loop fluctuations of the WT dimer (comparison basis for the mutant)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Shift-restrained ensembles of the WT dimer are more ordered in the 30s loop and C-terminal helix than those of the monomer-biased mutant; restrained annealed ensembles carry no transition times.",
+   "evidence_rows": [
+    "CXCL8-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J27",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Termini, profiles only plotted",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:CXCL8(1-72) L25Y/V27R (CXCL8M, monomer-biased)",
+    "binding_state": "apo",
+    "conditions": "25 °C; 600 MHz; pH 7.0 HEPES/NaCl (r3) and pH 6.5 phosphate/NaCl (r10)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1 and R2",
+    "observable": "tau_c 5.7 ns (mostly monomer); highly mobile termini; some R2 include self-association exchange",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The monomer-biased mutant has highly mobile termini on the ps-ns scale in both buffers.",
+   "evidence_rows": [
+    "CXCL8-r3",
+    "CXCL8-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J28",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     26,
+     30,
+     50,
+     63
+    ],
+    "residues_author": "Representatives C50, E63, R26, S30 of 14 exchanging residues (full map only plotted)",
+    "numbering_note": "Positions 25 and 27 are mutated; listed sites match the entry",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:CXCL8(1-72) L25Y/V27R (CXCL8M, monomer-biased)",
+    "binding_state": "mixed",
+    "conditions": "25 °C; pH 7.0; 50 mM HEPES, 50 mM NaCl; 0.5 and 1 mM protein; 600 and 900 MHz at 1 mM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion at two concentrations",
+    "observable": "Concentration-dependent dispersion; at 1 mM kex 130 ± 30 s-1 with 7% dimer",
+    "fit_model": "two-state global",
+    "kex": "130 ± 30 s-1 (1 mM, self-association)",
+    "pB": "7% dimer (1 mM)",
+    "delta_omega": "",
+    "field": "600 and 900 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The dispersion grows with concentration and maps to the dimer interface, so it reports monomer-dimer self-association (kex 130 ± 30 s-1, 7% dimer at 1 mM), not intramolecular dynamics.",
+   "evidence_rows": [
+    "CXCL8-r7",
+    "CXCL8-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J29",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global tumbling",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:CXCL8(1-72) L25Y/V27R (CXCL8M, monomer-biased)",
+    "binding_state": "bound:CXCR1 N-terminal peptide 9-29",
+    "conditions": "25 °C; pH 7.0; 50 mM HEPES, 50 mM NaCl",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R2/R1 effective tau_c",
+    "observable": "tau_c 8.9 ns",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Peptide binding raises the mutant's tumbling time; this is size, not internal motion.",
+   "evidence_rows": [
+    "CXCL8-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J30",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     28,
+     29,
+     30,
+     31,
+     50,
+     51,
+     52,
+     53
+    ],
+    "residues_author": "30s loop I28-G31, C50-P53 and partial C-terminal helix unfolding",
+    "numbering_note": "Positions 25 and 27 are mutated",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:CXCL8(1-72) L25Y/V27R (CXCL8M, monomer-biased)",
+    "binding_state": "apo",
+    "conditions": "Replica-averaged shift-restrained MD as CXCL8-J26",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Chemical-shift-restrained replica MD",
+    "observable": "More loop disorder and partial C-terminal helix unfolding than in the WT dimer",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Restrained ensembles of the monomer-biased mutant are more disordered in the 30s loop and partly unfold the C-terminal helix.",
+   "evidence_rows": [
+    "CXCL8-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J31",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Spectral reporters only plotted",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "mixed",
+    "conditions": "30 °C; pH 7.5; 50 mM sodium phosphate, 1 mM NaN3, 1 mM DSS; about 10 µM CXCL8; chondroitin sulfate dp14",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "HSQC monomer/dimer peak redistribution on CS titration",
+    "observable": "Separate monomer and dimer peaks; intensity shifts toward dimer with CS",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "30 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Separate monomer and dimer peaks show slow self-association, and CS binding favours the dimer; neither is intramolecular dynamics and no rate is given.",
+   "evidence_rows": [
+    "CXCL8-r45"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J32",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     3,
+     6,
+     11,
+     15,
+     18,
+     20,
+     23,
+     26,
+     33,
+     42,
+     47,
+     54,
+     60,
+     64
+    ],
+    "residues_author": "WT: perturbed K15, H18, K20, K23, R47, K54, R60, K64 (plus K67, R68 outside the entry); unperturbed K3, R6, K11, R26, H33, K42; Arg NepsilonH: R47, R60, R68 shift, R6, R26 do not",
+    "numbering_note": "K67 and R68 lie outside the 1-66 entry and are not mapped",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "bound:chondroitin sulfate dp14 (CS:protein 3:1)",
+    "conditions": "30 °C; pH 6.0 (backbone) and 5.5 (Arg side chains); 50 mM sodium phosphate, 1 mM NaN3, 1 mM DSS; 50 µM CXCL8",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "HSQC CS titration, backbone and Arg side-chain shifts",
+    "observable": "Fast-exchange chemical-shift changes",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "30 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "CS binds in fast exchange on the shift timescale with basic residues of the C-terminal helix and N-loop; binding kinetics, not conformational dynamics.",
+   "evidence_rows": [
+    "CXCL8-r46",
+    "CXCL8-r48"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J33",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     15,
+     18,
+     20,
+     23,
+     47,
+     60,
+     64
+    ],
+    "residues_author": "K15, H18, K20, K23, R47, R60, K64 (plus K67, R68 outside the entry)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:CXCL8(1-72) V27P/E29P (monomer)",
+    "binding_state": "bound:chondroitin sulfate dp14 (CS:protein 4:1)",
+    "conditions": "30 °C; pH 6.0; 50 mM sodium phosphate, 1 mM NaN3, 1 mM DSS; 50 µM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "HSQC CS titration",
+    "observable": "Fast-exchange shift changes; binding did not saturate",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "30 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The trapped monomer binds CS in fast exchange at a similar basic surface; binding kinetics only.",
+   "evidence_rows": [
+    "CXCL8-r47"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J34",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     15,
+     18,
+     20,
+     44,
+     47,
+     60,
+     64
+    ],
+    "residues_author": "Common contacts H18, K20, R47, R60, K64 with K15, S44 in individual models",
+    "numbering_note": "Contacts beyond residue 66 are not mapped",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length CXCL8 monomer and dimer models",
+    "binding_state": "bound:CS4S or CS6S octasaccharide (dp8)",
+    "conditions": "AMBER18, ff12SB/GLYCAM_06j-1, TIP3P, 300 K, 200 ns per complex from NMR-guided docking",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "All-atom MD of docked complexes",
+    "observable": "Ligand translation and rotation with switching hydrogen bonds; more persistent contacts in dimer models",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The simulations follow the sugar moving on the protein surface, ligand dynamics rather than CXCL8 conformational exchange.",
+   "evidence_rows": [
+    "CXCL8-r49",
+    "CXCL8-r50",
+    "CXCL8-r51",
+    "CXCL8-r52"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J35",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global broadening",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8",
+    "binding_state": "bound:catalytically inactive SpyCEP",
+    "conditions": "298 K; pH 7.4; PBS; 10% D2O; 600 or 800 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "HSQC peak attenuation on complex formation; cryo-EM of a non-crosslinked sample",
+    "observable": "Extensive line broadening; bound CXCL8 not resolved in the cryo-EM map",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Broadening in a large protease complex cannot be split into size and exchange, and the missing cryo-EM density has several explanations.",
+   "evidence_rows": [
+    "CXCL8-r29",
+    "CXCL8-r30"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J36",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     1,
+     3,
+     4,
+     6,
+     11,
+     13,
+     15,
+     32,
+     49,
+     66
+    ],
+    "residues_author": "S1, K3, E4, R6, K11, Y13, K15, P32, L49, L66 (K67, R68, A69 outside the entry)",
+    "numbering_note": "Entry numbering equals mature CXCL8 numbering S1-L66 (checked against inputs/CXCL8.json: S1, E4, L5, R6, I10, S14, K15, F17, K23, C50, V62, E63, L66)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72)",
+    "binding_state": "bound:full-length CXCR1-Gi with scFv16",
+    "conditions": "Cryo-EM 8IC0; pH 7.5, 20 mM HEPES, 100 mM NaCl, 1 mM MgCl2, 0.5 mM TCEP, LMNG/CHS",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Cryo-EM structure compared with CXCR2 complexes 6LFM and 6LFO",
+    "observable": "CXCR1 holds a CXCL8 monomer; C-terminal 66-69 ordered",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A selected cryo-EM class of the receptor complex shows how the monomer binds, not exchange between structures.",
+   "evidence_rows": [
+    "CXCL8-r56"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J37",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole protein",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: full-length mature CXCL8(1-72), WT sequence, dimer at NMR concentrations",
+    "binding_state": "mixed",
+    "conditions": "200 mM ammonium acetate; 2-7 µM (Results) or 5-20 µM (Methods)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Native ESI-MS",
+    "observable": "Monomer:dimer ion intensity 18:82",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Native MS shows monomer and dimer coexist, self-association with no rate; the ion ratio is not a solution population.",
+   "evidence_rows": [
+    "CXCL8-r57"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J38",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole protein",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human CXCL8 (analyte boundaries not stated) and cynomolgus CXCL8",
+    "binding_state": "bound:LY3041658 antibody (surface-captured)",
+    "conditions": "25 °C; HBS-EP+; 1:1 binding model",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Surface plasmon resonance",
+    "observable": "Human: kon (3.39 ± 0.03) x 10^5 M-1 s-1, koff (1.30 ± 0.06) x 10^-4 s-1; cyno: kon (4.37 ± 0.01) x 10^5, koff (2.68 ± 0.01) x 10^-5 s-1 as printed",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Antibody binding kinetics, not CXCL8 conformational dynamics.",
+   "evidence_rows": [
+    "CXCL8-r59",
+    "CXCL8-r60"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J39",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     31,
+     32,
+     33,
+     34,
+     35
+    ],
+    "residues_author": "Crystal/solution receptor-binding region E4-C9, H33; N-methyl monomer disorder E4-R6, G31-A35 (and 67-72 outside the entry)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: CXCL8 dimer (crystal and NMR), N-methyl IL8(4-72), IL8/MGSA chimera, receptor and CXCR2 complexes",
+    "binding_state": "mixed",
+    "conditions": "Abstracts only; no conditions",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Structure comparisons and structure calculations (abstracts)",
+    "observable": "Static crystal/solution differences; terminal disorder in the monomer analogue; altered helix packing in the chimera",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract-only structural papers describe static differences between constructs and methods, with no dynamics measurement.",
+   "evidence_rows": [
+    "CXCL8-r31",
+    "CXCL8-r32",
+    "CXCL8-r33",
+    "CXCL8-r42",
+    "CXCL8-r43",
+    "CXCL8-r44"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J40",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Not given in the abstracts",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: human IL8 (comparator), canine IL8 ortholog, and unspecified constructs",
+    "binding_state": "mixed",
+    "conditions": "Abstracts only: apo and heparin (orthologs), suramin, heparin PRE, nitroxide cosolute PRE with GAGs, GAG/acidic-peptide MD, dendritic GAGs, receptor-derived peptides",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Various (comparative NMR, PRE, MD, ITC, fluorescence; abstracts)",
+    "observable": "Qualitative statements only",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract-only reports of ortholog excited states, ligand plasticity, PRE contacts and binding give no residue, rate or condition that could set a verdict.",
+   "evidence_rows": [
+    "CXCL8-r23",
+    "CXCL8-r24",
+    "CXCL8-r25",
+    "CXCL8-r26",
+    "CXCL8-r27",
+    "CXCL8-r28",
+    "CXCL8-r53",
+    "CXCL8-r54",
+    "CXCL8-r55",
+    "CXCL8-r63",
+    "CXCL8-r64"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CXCL8-J41",
+   "entry_id": "CXCL8",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free CXCL8(1-66)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "No HDX-MS, time-resolved structural, EPR/DEER or smFRET measurement of the free monomer in the evidence",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures a slower-than-ms process of the free 1-66 monomer beyond a one-hour D2O protection snapshot (J10), and the HDX, EPR, FRET and time-resolved searches returned zero hits, so this is a search gap.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

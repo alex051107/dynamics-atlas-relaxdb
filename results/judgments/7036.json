@@ -1,0 +1,435 @@
+{
+ "protein_summary": {
+  "entry_id": "7036",
+  "per_window": {
+   "ps-ns": "unresolved for SH3-3. The BMRB 7036 paper, read as an abstract, reports heteronuclear NOE above 0.7 at most SH3-3 residues despite a CD spectrum typical of a largely unstructured protein (R7036-J1, r1); no residues, values or conditions. Other-domain context only: native SH3-1 is ordered apart from its termini, T33 and loop tips (J5, r5), and acidified or 4AlaMut SH3-1 has more fast motion (J6, J7; r6, r7; 278 K, 800 MHz).",
+   "us-ms": "search_insufficient for SH3-3 (J2). The only µs-ms statements concern the SH2 domain with phosphoephrinB2 peptides bound, abstract-only (J10, J11; r2-r4).",
+   "slower_than_ms": "search_insufficient (J3).",
+   "undetermined": "Ultraweak SH3-3/PINCH-1 LIM4 complex (KD about 3 mM, abstract; J4, r11) is binding, not conformational exchange. Acidified and 4AlaMut SH3-1 populate non-native two-helix states (J8, J9; r8, r9). Not judged: the static SH3-1 versus Src SH3 packing comparison (r10), which proposes a folding requirement without kinetics."
+  },
+  "wt_apo_answer": "Not measured: for free Nck2 SH3-3 (UniProt 198-256) no row measures µs-ms exchange; the BMRB 7036 paper, read only as an abstract, reports heteronuclear NOE above 0.7 at most residues, which limits fast backbone motion and says nothing about slower exchange or about the missing peaks in the RelaxDB set.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "Can the full text of Liu et al. 2006 (doi:10.1021/bi060091y, the BMRB 7036 citation) be obtained? It holds the SH3-3 relaxation data, conditions and any explanation of missing peaks.",
+   "Should SH3-1 and SH2 rows from other Nck2 domains be kept as inference_from_homolog context, or excluded from this entry altogether?"
+  ],
+  "buffer_note": "The entry SH3-3 has only two abstract-level rows (r1, r11); everything else describes SH3-1 (5 mM phosphate, 278 K, 800 MHz, deliberate acid or mutant perturbations) or the SH2 domain with peptides, which never set an SH3-3 verdict. No deposition readback file exists for this entry."
+ },
+ "judgments": [
+  {
+   "judgment_id": "R7036-J1",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "most residues (no list in the abstract)",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256 (offset +197); 2FRY adds an N-terminal GS.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free SH3-3 (UniProt 198-256); conditions not given in the abstract; the 2FRY structure deposition lists 298 K, pH 6.8; free state inferred from the abstract, which reports the NOE as a property of the domain before the peptide titrations",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "{1H}-15N steady-state heteronuclear NOE",
+    "observable": "heteronuclear NOE",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Heteronuclear NOE only, abstract-level; field, temperature and per-residue values not given. NOE above 0.7 limits large-amplitude sub-ns backbone motion at most sites and says nothing about µs-ms exchange or about residues not listed."
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: SH3-3 has a far-UV CD spectrum typical of a largely unstructured protein yet heteronuclear NOE above 0.7 at most residues, so most of the backbone lacks large fast motion; no residues or values are available.",
+   "evidence_rows": [
+    "R7036-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J2",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256 (offset +197); 2FRY adds an N-terminal GS.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free SH3-3 (UniProt 198-256); conditions not given in the abstract; the 2FRY structure deposition lists 298 K, pH 6.8",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none in the evidence rows",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures dispersion, CEST, R1rho or assigned exchange broadening for SH3-3; the BMRB 7036 paper (PMID 16752908) was read only as an abstract and the method searches were title-abstract only, so µs-ms exchange is neither shown nor excluded.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J3",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain",
+    "numbering_note": "Entry 1-59 = UniProt O43639 198-256 (offset +197); 2FRY adds an N-terminal GS.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free SH3-3 (UniProt 198-256); conditions not given in the abstract; the 2FRY structure deposition lists 298 K, pH 6.8",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none in the evidence rows",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row gives hydrogen exchange, folding or any other slower-than-ms rate for SH3-3.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J4",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "SH3-3 interface with PINCH-1 LIM4 (residues not given in the abstract)",
+    "numbering_note": "1U5S chain A is UniProt 192-262 (71 residues), the entry 198-256 plus native flanks.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Nck2 SH3-3 with native flanks (UniProt 192-262, 1U5S chain A)",
+    "binding_state": "bound:PINCH-1 LIM4 domain",
+    "conditions": "Not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution NMR structure of the weak complex",
+    "observable": "structure difference (bound complex)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: the abstract reports an ultraweak SH3-3/LIM4 complex (KD about 3 mM) with a small polar interface and proposes transient association; affinity and a static complex give no internal conformational exchange.",
+   "evidence_rows": [
+    "R7036-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "The authors propose the transient Nck-2/PINCH-1 association may trigger rapid focal adhesion turnover (abstract).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J5",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "all but V1, T33 and N56 have hNOE > 0.7 (about half > 0.8); slightly lower at the RT-loop tip (W7-K21) and Src-loop tip (D29-R36)",
+    "numbering_note": "Different domain (SH3-1, UniProt 5-60); no residue maps to the entry SH3-3 (198-256).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:Nck2 first SH3 domain (SH3-1, author V1-N56 = UniProt 5-60), wild type; a different domain from the entry SH3-3",
+    "binding_state": "apo",
+    "conditions": "278 K; 5 mM phosphate; 800 MHz; no ligand; pH 6.5",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 and {1H}-15N steady-state NOE",
+    "observable": "heteronuclear NOE, T1, T2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 MHz",
+    "temperature": "278 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In native SH3-1, a different domain, the backbone is well ordered on the ps-ns scale apart from the termini, T33 and slightly more mobile loop tips; it sets nothing for SH3-3.",
+   "evidence_rows": [
+    "R7036-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J6",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "termini lower; most residues of the two helices hNOE > 0.5, some > 0.6 (helix limits figure-only)",
+    "numbering_note": "Different domain (SH3-1, UniProt 5-60); no residue maps to the entry SH3-3 (198-256).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:Nck2 first SH3 domain (SH3-1, author V1-N56 = UniProt 5-60), wild type; a different domain from the entry SH3-3",
+    "binding_state": "apo",
+    "conditions": "278 K; 5 mM phosphate; 800 MHz; no ligand; pH 2.0 (HCl-acidified)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 and {1H}-15N steady-state NOE",
+    "observable": "heteronuclear NOE, T1, T2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 MHz",
+    "temperature": "278 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Acid-unfolded SH3-1 has lower hNOE than the native domain, with the two non-native helices still more restricted than the termini; a perturbed state of another domain.",
+   "evidence_rows": [
+    "R7036-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J7",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "termini lower; most helix residues hNOE > 0.5, some > 0.6 (helix limits figure-only)",
+    "numbering_note": "Different domain (SH3-1, UniProt 5-60); no residue maps to the entry SH3-3 (198-256).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:Nck2 SH3-1 4AlaMut (L25A/W26A/L27A/L28A, author numbering); a different domain from the entry SH3-3",
+    "binding_state": "apo",
+    "conditions": "278 K; 5 mM phosphate; 800 MHz; no ligand; pH 6.5",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 and {1H}-15N steady-state NOE",
+    "observable": "heteronuclear NOE, T1, T2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 MHz",
+    "temperature": "278 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The four-alanine SH3-1 mutant at pH 6.5 shows the same raised fast backbone motion as acidified SH3-1, helices more restricted than termini; mutant of another domain.",
+   "evidence_rows": [
+    "R7036-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J8",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "two non-native helices separated by the L28-D29-D30 loop; large conformational shifts at S31, W35, R36 (helix limits figure-only)",
+    "numbering_note": "Different domain (SH3-1, UniProt 5-60); no residue maps to the entry SH3-3 (198-256).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Nck2 first SH3 domain (SH3-1, author V1-N56 = UniProt 5-60), wild type; a different domain from the entry SH3-3",
+    "binding_state": "apo",
+    "conditions": "278 K; 5 mM phosphate; 800 MHz; no ligand; pH 2.0 (HCl-acidified)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Secondary chemical shifts and sequential/medium-range NOE patterns",
+    "observable": "helix population from chemical shifts",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "about 70% of residues more than 50% helical, more than half above 70% (local two-state random-coil/helix estimate)",
+    "delta_omega": "",
+    "field": "800 MHz",
+    "temperature": "278 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Acidified SH3-1 populates a partially folded two-helix state instead of the native beta fold; an equilibrium state of another domain under acid, with local helix propensities and no interconversion rate.",
+   "evidence_rows": [
+    "R7036-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J9",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "two non-native helices; populations lower near the mutation sites (figure-only)",
+    "numbering_note": "Different domain (SH3-1, UniProt 5-60); no residue maps to the entry SH3-3 (198-256).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Nck2 SH3-1 4AlaMut (L25A/W26A/L27A/L28A, author numbering); a different domain from the entry SH3-3",
+    "binding_state": "apo",
+    "conditions": "278 K; 5 mM phosphate; 800 MHz; no ligand; pH 6.5",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Secondary chemical shifts and sequential/medium-range NOE patterns",
+    "observable": "helix population from chemical shifts",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 MHz",
+    "temperature": "278 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The 4AlaMut SH3-1 forms a similar helical partially folded state at pH 6.5, without a numerical population or rate; mutant of another domain.",
+   "evidence_rows": [
+    "R7036-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J10",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N-terminal half of the SH2 domain (abstract)",
+    "numbering_note": "Different domain (SH2); no residue maps to the entry SH3-3.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:Nck2 SH2 domain (boundaries not given in the abstract); a different domain from the entry SH3-3",
+    "binding_state": "bound:[Tyr(P)304]ephrinB2(301-322) or [Tyr(P)316]ephrinB2(301-322)",
+    "conditions": "Not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR (readout not named in the abstract)",
+    "observable": "not stated",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: binding of either of two phosphoephrinB2 peptides to the SH2 domain significantly increases backbone and side-chain µs-ms dynamics; ligand-induced, another domain, and binding exchange is not separated from internal motion.",
+   "evidence_rows": [
+    "R7036-r2",
+    "R7036-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R7036-J11",
+   "entry_id": "7036",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "residues over both halves of the SH2 domain engaged (abstract)",
+    "numbering_note": "Different domain (SH2); no residue maps to the entry SH3-3.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:Nck2 SH2 domain (boundaries not given in the abstract); a different domain from the entry SH3-3",
+    "binding_state": "bound:[Tyr(P)330]ephrinB2(324-333)",
+    "conditions": "Not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR (readout not named in the abstract)",
+    "observable": "not stated",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the shorter pTyr330 peptide induces less profound µs-ms dynamics in the SH2 domain than the other two peptides; qualitative, ligand-bound, another domain.",
+   "evidence_rows": [
+    "R7036-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

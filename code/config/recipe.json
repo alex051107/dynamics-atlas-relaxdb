@@ -1,0 +1,62 @@
+{
+  "version": "recipe_v1",
+  "methods": {
+    "nmr_relaxation_dispersion": [
+      "relaxation dispersion",
+      "CPMG",
+      "CEST",
+      "R1rho"
+    ],
+    "nmr_spin_relaxation": [
+      "spin relaxation",
+      "NMR relaxation",
+      "order parameter",
+      "heteronuclear NOE"
+    ],
+    "nmr_exchange_broadening": [
+      "exchange broadening",
+      "missing resonances",
+      "line broadening"
+    ],
+    "nmr_ensemble_restraints": [
+      "paramagnetic relaxation",
+      "RDC",
+      "residual dipolar",
+      "NMR ensemble"
+    ],
+    "xray_multitemp_ensemble": [
+      "multitemperature crystallography",
+      "ensemble refinement",
+      "alternate conformation"
+    ],
+    "time_resolved_structural": [
+      "time-resolved crystallography",
+      "time-resolved X-ray",
+      "time-resolved SAXS"
+    ],
+    "fret": [
+      "FRET",
+      "fluorescence resonance energy transfer"
+    ],
+    "epr_deer": [
+      "EPR",
+      "DEER",
+      "double electron electron resonance"
+    ],
+    "hdx_ms": [
+      "HDX",
+      "hydrogen deuterium exchange",
+      "hydrogen exchange mass spectrometry"
+    ],
+    "md_simulation": [
+      "molecular dynamics",
+      "molecular simulation"
+    ],
+    "pdb_structure_comparison": [
+      "crystal structure",
+      "apo",
+      "holo",
+      "ligand-bound structure"
+    ]
+  }
+}

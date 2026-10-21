@@ -1,0 +1,2216 @@
+{
+ "protein_summary": {
+  "entry_id": "RNASEHI",
+  "per_window": {
+   "ps-ns": "dynamic_in_window at the termini and loops, with ordered tryptophans and catalytic carboxylates of restricted amplitude. Free WT, pD 6.2: catalytic side chains S2 0.64-0.75 (J1, r1), matched in trend by MD (J8). Free WT, pH 5.5: Trp indoles S2 0.83-0.92 and handle backbone 0.84 ± 0.01 (J2, measured_not_detected). RelaxDB source candidate (1995, abstract only): tau_c 10.9 ns at 27 °C, S2 0.15-1.0 (average 0.85), large motion at L2-K3, C13-G15, E61-H62, D70-71, A93-K96, G123-H127, Q152-V155 (J38, unresolved). Reanalyses of published backbone and methyl data: C-terminal V153/V155 methyls have low, model-sensitive S2axis (J44); per-residue S2 and local tau_m rosters are figure-only (J45). MD (2 mus) reproduces the order parameters (J46, md_only). Cysteine-free RNase HI*: extra fast motion at L2, M50, A63, V153, V155 methyls (J4) and tau_s above 300 ps in loops and termini (J5); ILV methyl local correlation times 7-14 ns (J3). Quintuple mutant restricts K96 and V98 (J41, abstract). iG80b keeps ordered indoles (J6); the thermophilic homolog has a more mobile W81 (J7).",
+   "us-ms": "dynamic_in_window in the substrate-binding handle of the free enzyme, with no rate or population. Methyl Hahn-echo at 14.1 T, pH 5.5: V98, V101 and L103 are broadened beyond the exchange-free reference at 283, 300 and 310 K, read as open-closed exchange of the handle, with I78 and I82 elevated at 283 K; apparent activation energies 45.4 ± 1.6 (V98) and 23.7 ± 1.9 kJ/mol (V101) under a fast-limit two-site assumption (J47, 2019, full text). Multifield backbone reanalysis: 40 amides with Rex above 1 s-1 at 21.15 T, G77 4.00 ± 0.38 s-1 at 900 MHz, roster figure-only (J18, 2026, full text). Abstract-level: helix I exchange contribution in WT (J42) that is reduced, while the protrusion junction gains exchange, in the quintuple mutant (J43). Indirect: model-free Rex at V54 and G77 in RNase HI* (J19); Mg2+-induced R1rho broadening inseparable from Mg2+ binding (J20). Refolding phases of 120 mus and 3.1 ms (J21) and variant folding phases (J22) are folding intermediates. Caveat for every full-text us-ms row: the 2019, 2024 and 2026 articles do not restate the sample's cysteine content, so whether the measured protein is the entry sequence or cysteine-free RNase HI* is unconfirmed.",
+   "slower_than_ms": "search_insufficient for free WT (J37): no method gives a slower-than-ms rate for the folded enzyme. A folding model gives a 0.78 s-1 Icore-to-native step (J23). Native-state H/D exchange is measured only in I53A (J24) and, abstract only, in D10A (J25); acid-induced non-native states keep helix I protected (J49, abstract); pulsed-labeling HX-MS refolding of ecRNH*, A55G and D108L orders helix A before helix D (J50, other construct).",
+   "undetermined": "Handle loop: RDCs and V101 rotamers of free WT fit open/closed averaging, with E. coli the most open homolog and a V101 trans rotamer of about 10% (J11, r18, indirect); V98A shifts toward closed (J12, J13); homolog RDC ordering (J14). MD: WT G15 minor backbone state 39% (J9), handle open/closed in WT (J10), 2 mus OPLS4/AMBER runs decomposing methyl order at L2, L59, I116, V153, V155 (J46), MD abstracts (J39), iG80b W81 rotamer switch (J15), homologs (J16), alchemical MSlambdaD (J17). NMR-ensemble side-chain heterogeneity partly attributed to structure-determination artefacts (J40). Structures: metal positions differ among Mg2+ crystal forms (J26) and H124 binds Zn2+ through different nitrogens (J27); SSB-Ct pocket expansion (J28); SSB-Ct titration peak loss (J29, binding); B factors (J30), metal-bound (J31), mutant (J32, J33) abstracts; I53A crystal keeps the fold (J34). smFRET rows report enzyme-substrate binding and degradation (J35, J36). H124 catalytic side-chain change proposed from kinetics (J48). Not judged from the 2026-10-20 re-read (D-rN = RNASEHI-RNASEHI_20261020150655-rN): the preprint version of the 2019 methyl paper (D-r20, not independent); alanine-scanning kinetics and CD of handle variants (D-r23, no dynamics measurement); pulsed-labeling and competition HX-MS refolding of the Thermus homolog, its CD chevrons and the reconstructed ancestors Anc1-Anc3 and AncA-AncD (D-r29 to r38, homologs, folding)."
+  },
+  "wt_apo_answer": "Not established for the entry sequence: the only full-text us-ms evidence (methyl Hahn-echo at 14.1 T, pH 5.5, V98, V101, L103 broadened at 283-310 K; multifield backbone Rex above 1 s-1 at 40 amides, G77 4.00 ± 0.38 s-1 at 900 MHz) comes from cysteine-free RNase HI* (stated for the 2025 data set behind the 2026 reanalysis, not stated for the 2019 sample), and the wild-type evidence is a 1998 abstract reporting an exchange contribution in helix I without values. Fast motion is restricted at the catalytic carboxylates (S2 0.64-0.75, pD 6.2) and the tryptophans (S2 0.83-0.92, pH 5.5), and the RelaxDB source candidate (1995, abstract) places large ps-ns motion in the termini and loops with tau_c 10.9 ns at 27 °C.",
+  "open_conflicts": [
+   "Catalytic side-chain S2: NMR 0.64-0.75 at D10, E48, D70, D134 (pD 6.2) versus MD 0.76-0.85 (r1 versus r3); the authors attribute the gap to protonation averaging near the D10 pKa and force-field limits.",
+   "The 2013 paper names N44 in the Mg2+ group-1 broadening set and N45 in the conservation text (r2 versus r1); kept as printed.",
+   "Construct identity of the us-ms evidence: the 2019 methyl, 2024 JCTC and 2026 JACS articles (D-r9 to r19) are labelled 'target' in the evidence but never restate the cysteine content of the sample, while the same laboratory's 2018 methyl sample (r25) is called cysteine-free by the 2025 paper (r26); if these samples are RNase HI*, J18, J44, J45 and J47 become inference_from_mutant and the wt_apo_answer drops to the earlier 'not established'.",
+   "Residue 71 in the 1995 abstract (D-r1): the abstract writes Asp70-Tyr71 while the entry sequence has S71 and Y73; both second readers flagged the row, the corrected row keeps Tyr71 as printed, and J38 maps D70 only."
+  ],
+  "questions_for_gina": [
+   "Which sample is the RelaxDB RNASEHI R1/R2/NOE set, and are the Palmer-laboratory samples in the 2019 methyl-exchange, 2024 JCTC and 2026 JACS papers the Cys-containing wild type (the entry sequence) or the cysteine-free RNase HI*? The answer decides whether the us-ms handle exchange (J47, J18) counts as reference-state evidence and whether the alternate-APO call is possible or unknown.",
+   "The 1995 relaxation paper (doi:10.1021/bi00020a003, 27 °C, tau_c 10.9 ns) is in the evidence as an abstract only and is the likely RelaxDB source; the earlier 15N handle-region exchange studies cited as refs 54-56 of the 2019 paper are still not in the evidence. Should both be added in full before the us-ms rate and population are judged?"
+  ],
+  "buffer_note": "Most NMR samples are in 100 mM deuterated sodium acetate pH 5.5, often in 99% D2O and perdeuterated (r7, r24-r27); the side-chain study is at pD 6.2 with conditions in unread SI (r1, r2), and the RDC study's conditions are also in unread SI (r18-r21). The 2026-10-20 re-read rows (D-rN = RNASEHI-RNASEHI_20261020150655-rN): the 2019 methyl-exchange study is at 14.1 T, 283-310 K, pH 5.5 (stated in its MD methods), buffer not restated (D-r13 to r16); the 2024 JCTC and 2026 JACS reanalyses restate no temperature, pH or buffer (D-r9 to r12, r18, r19); the 1995 source abstract gives 27 °C only (D-r1); the eLife HX-MS rows are refolding experiments at 10 °C, pH 5.29 with a pH 10.11 pulse (D-r26 to r38). Many solution samples are cysteine-free RNase HI* (r24, r26, r27, r36, r71, r74-r78, D-r26 to r28); the entry sequence keeps C13, C63, C133, so these are other-construct evidence. r25 (pAED4, 2018) does not state the cysteine content, the 2025 paper calls the pAED4 protein cysteine-free (r26), and the 2019, 2024 and 2026 Palmer-laboratory articles likewise do not restate it, so their WT label is uncertain (see open_conflicts). Crystal rows differ in pH (4.6-8.0), metal and added AMP or p-CCU. Second-read adjudication B (ledger/batch3_adjudication_B.json) corrected residue fields of r20, r21, r38-r42, r69 and r80; those corrections are used here. Second reads of the D rows flagged only D-r1 (S71 versus the abstract's Tyr71; corrected in the snapshot). Not judged separately: r32 (ANS fluorescence under crowding, abstract only), D-r20 (preprint duplicate), D-r23 (alanine-scan kinetics), D-r29 to r38 (homolog and ancestral folding)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "RNASEHI-J1",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     10,
+     48,
+     70,
+     134,
+     6,
+     16,
+     45,
+     57,
+     102,
+     130,
+     131
+    ],
+    "residues_author": "Asx/Glx side chains named in the text: catalytic D10, E48, D70, D134 (values given) and E6, N16, N45, E57, D102, N130, E131 (described as rigid); 22 of 34 Asx/Glx analysed, full set only in Fig. 2",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "active site (D10, E48, D70, D134)",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pD 6.2; no Mg2+ added; temperature, buffer and solvent are in the unread SI",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13Cgamma/delta R1 and cross-correlated eta_xy relaxation, model-free side-chain analysis",
+    "observable": "S2 of carboxyl/carbonyl C-C' bond: 0.67 ± 0.08 (D10), 0.72 ± 0.11 (E48), 0.75 ± 0.09 (D70), 0.64 ± 0.04 (D134)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Catalytic side chains of the free enzyme move on the ps-ns scale with restricted amplitude (S2 0.64-0.75), which the authors read as pre-organisation of the active site; pD 6.2 is close to the D10 pKa, so D10 averages two protonation states.",
+   "evidence_rows": [
+    "RNASEHI-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors conclude the catalytic residues are pre-organised on ps-ns timescales to minimise entropy penalties when Mg2+ is coordinated.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J2",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     81,
+     85,
+     90,
+     104,
+     118,
+     120
+    ],
+    "residues_author": "Trp indole Nepsilon1 order parameters W81, W85, W90, W104, W118, W120 (Table 1); backbone values only plotted (Fig. 2)",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "handle region (81-101) Trp reporters",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 5.5; no substrate or divalent metal; previously published WT data reused, sample conditions not restated",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Backbone 15N R1/R2/NOE and Trp Nepsilon1 model-free order parameters (reused WT data set)",
+    "observable": "Indole S2 0.83 ± 0.02 (W81), 0.85 ± 0.02 (W85), 0.84 ± 0.01 (W90), 0.92 ± 0.08 (W104), 0.86 ± 0.01 (W118), 0.89 ± 0.01 (W120); handle-region (81-101) backbone S2 average 0.84 ± 0.01",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "15N and Trp 15N relaxation with model-free fits report only internal motions faster than overall tumbling (ps-ns); S2 above 0.8 rules out large-amplitude fast motion at these sites, not us-ms exchange; field and temperature of the reused WT set are not restated in this paper"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The six tryptophan indoles and the handle-region backbone of the free WT enzyme are ordered on the ps-ns scale (S2 0.83-0.92, handle average 0.84 ± 0.01); this says nothing about slower handle motion.",
+   "evidence_rows": [
+    "RNASEHI-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J3",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     103,
+     121,
+     56
+    ],
+    "residues_author": "Named ILV methyl examples: V121 gamma2, L56 delta1 (local correlation times), L103 delta1 (excluded, poor tau_m convergence); 32 of 48 resolvable methyls analysed, identities in Fig. 2",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: cysteine-free RNase HI (pAED4 protein; RNASEHI_p06 line 57)",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 5.5; 100 mM 2H3-sodium acetate in 99% 2H2O; no substrate or Mg2+ added; 500 µM [U-2H,15N] ILV-[13CH2D] protein (pAED4 vector; cysteine content not stated in this paper)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Multifield 2H methyl relaxation (R1, R1rho, RQ, RAP) at 400/500/800/900 MHz with Lipari-Szabo spectral density mapping",
+    "observable": "Effective local methyl correlation times: about 7 ns (V121 gamma2) and about 14 ns (L56 delta1); fifteen methyls need more complex models",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "400, 500, 800, 900 MHz (700 MHz validation)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Methyl groups of the free perdeuterated enzyme show heterogeneous sub-ns to ns motion, with local correlation times from about 7 ns (V121) to about 14 ns (L56); these are local tumbling times, not exchange rates. The measured protein is the cysteine-free construct, so this is inference for the wild-type entry (batch-3 review).",
+   "evidence_rows": [
+    "RNASEHI-r25"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J4",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     2,
+     50,
+     63,
+     153,
+     155
+    ],
+    "residues_author": "Methyls needing an extra motional component: L2 delta1/delta2, M50 epsilon, A63 beta, V153 gamma1/gamma2, V155 gamma1/gamma2 (eight methyl groups; 49 others fit the simpler model)",
+    "numbering_note": "Entry position 63 is Cys; the sample has Ala63 (cysteine-free construct). L2, M50, V153, V155 match the entry sequence.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: cysteine-free E. coli RNase HI (RNase HI*); the entry sequence keeps C13, C63 and C133",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 5.5; 100 mM deuterated sodium acetate in 99% D2O; 1.2 mM protein, 55% fractional deuteration; no substrate or metal reported",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "2H methyl R1, R1rho, RQ, RAP at 475/500/900/950 MHz; original and extended model-free fits",
+    "observable": "Additional internal motion component at eight methyl groups; overall tau_m 13.3 ± 0.2 ns (Fig. 7 caption: 13.4 ± 0.2 ns)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "475, 500, 900, 950 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the cysteine-free enzyme the N-terminal L2, M50, A63 and the C-terminal V153 and V155 methyls need a second fast motional component, so the termini move more than the 49 other methyls on the sub-ns to ns scale.",
+   "evidence_rows": [
+    "RNASEHI-r24"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J5",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     15,
+     54,
+     61,
+     77
+    ],
+    "residues_author": "Figure 11 examples G15, V54, E61, G77; 23 loop/terminal residues need tau_s > 300 ps, identities only plotted",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: cysteine-free E. coli RNase HI (RNase HI*); the entry sequence keeps C13, C63 and C133",
+    "binding_state": "apo",
+    "conditions": "about 298 K (shuttle bore ± 2 K); pH 5.5; 100 mM deuterated sodium acetate; about 500 µM 15N protein; EDTA used in purification, none in final buffer; no substrate or Mg2+",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N high-resolution field-cycling relaxometry (1.06-9.19 T) plus R1/R2/NOE at 11.74, 16.44 and 21.1 T; steady-state and full spin-evolution analysis",
+    "observable": "Extended model-free fits with internal correlation times tau_s > 300 ps for 23 loop and terminal residues; mean effective tau_c 9.29 ± 0.46 ns",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "1.06-9.19 T (field cycling); 11.74, 16.44, 21.1 T",
+    "temperature": "about 298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Loops and termini of the cysteine-free enzyme have slower internal motions (tau_s above 300 ps) than the rest of the backbone; the paper lists only four example sites.",
+   "evidence_rows": [
+    "RNASEHI-r26"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J6",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     81,
+     85,
+     90,
+     104,
+     118,
+     120
+    ],
+    "residues_author": "Trp indoles W81, W85, W90, W104, W118, W120 (Table 1)",
+    "numbering_note": "Author numbering uses E. coli equivalents; the inserted G80b has no entry position",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:iG80b (Gly inserted after Q80, ttRNH-like handle)",
+    "binding_state": "apo",
+    "conditions": "300 K; pH 5.5; 100 mM d3-sodium acetate, 10% D2O, 0.02% NaN3, 1 mM d10-DTT; 1.0 mM [U-2H,U-15N] protein; 500 MHz only",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Single-field 15N R1/R2/NOE and Trp Nepsilon1 model-free order parameters",
+    "observable": "Indole S2 0.82 ± 0.01 (W81), 0.86 ± 0.01 (W85), 0.86 ± 0.01 (W90), 0.87 ± 0.02 (W104), 0.85 ± 0.01 (W118), 0.80 ± 0.01 (W120); handle backbone S2 average 0.85 ± 0.02",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500 MHz",
+    "temperature": "300 K",
+    "detection_window": "Single-field (500 MHz) 15N relaxation at 300 K reports only motions faster than overall tumbling; S2 0.80-0.87 excludes large fast motions at the six indoles, not us-ms handle exchange"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The iG80b insertion mutant keeps ordered tryptophans and handle backbone on the ps-ns scale, like WT; only two of seven beta5/alphaE loop amides gave order parameters.",
+   "evidence_rows": [
+    "RNASEHI-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J7",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Trp indoles W81 (S2 0.67 ± 0.02), W90 (0.82 ± 0.01), W104 (0.96 ± 0.01); W85 N/A, W118 and W120 not reported (author E. coli-equivalent labels)",
+    "numbering_note": "Author labels are E. coli-equivalent; the homolog sequence was not supplied, so no entry mapping",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: cysteine-free Thermus thermophilus RNase H (ttRNH), a homolog",
+    "binding_state": "apo",
+    "conditions": "310 K; pH 5.5; previously published data reused",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Backbone 15N R1/R2/NOE and Trp Nepsilon1 model-free order parameters (reused)",
+    "observable": "Indole S2 0.67 ± 0.02 at W81-equivalent, 0.82-0.96 elsewhere",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "310 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the thermophilic homolog at 310 K the W81-equivalent indole is more mobile on the ps-ns scale (S2 0.67) than in E. coli RNase HI (0.83); this is homolog evidence and sets no E. coli verdict.",
+   "evidence_rows": [
+    "RNASEHI-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J8",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     10,
+     48,
+     70,
+     134,
+     6,
+     16,
+     45,
+     57,
+     102,
+     130,
+     131
+    ],
+    "residues_author": "Same Asx/Glx sites as RNASEHI-r1; deprotonated-D10 run reports D10 and D134",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "active site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Simulation: start 2RN2, Amber99SB, TIP3P, Cl- neutralised, 100 ns; protonation set for pH 5.5 (D10 protonated) or pH 8.0 (D10 deprotonated); no Mg2+ or substrate",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Explicit-solvent MD, side-chain C-C' order parameters",
+    "observable": "S2_MD averages: D 0.87 ± 0.08, N 0.85 ± 0.08, E 0.64 ± 0.21, Q 0.46 ± 0.21; catalytic D10/E48/D70/D134 0.85/0.76/0.78/0.81; deprotonated D10 0.847 ± 0.002 via a water-mediated bond to D134; correlation with NMR S2 R2 = 0.72",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Simulations agree with the NMR picture of rigid catalytic carboxylates and more mobile Glu/Gln side chains, but overestimate catalytic-site S2 relative to experiment (for example D10 0.85 versus 0.67).",
+   "evidence_rows": [
+    "RNASEHI-r3",
+    "RNASEHI-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J9",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     15,
+     16,
+     81,
+     85,
+     90,
+     104,
+     118,
+     120,
+     124
+    ],
+    "residues_author": "Glycine-rich region G15/N16, Trp indoles, H124 (beta5/alphaE loop)",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "glycine-rich region (11-22), handle, beta5/alphaE loop"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Simulation: AMBER ff99SB, TIP3P, 300 K, pH 5.5 protonation, 100 ns, S2 from 10-ns blocks; no substrate or metal",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Explicit-solvent MD (100 ns)",
+    "observable": "G15 alternative backbone conformation 39% of the trajectory; W81 trans rotamer 1.00; indole S2_MD 0.75-0.87",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In a 100 ns trajectory of WT ecRNH the G15 backbone spends 39% of the time in a minor conformation that the authors relate to productive substrate binding, while W81 stays in one rotamer; finite occupancy is not an equilibrium population.",
+   "evidence_rows": [
+    "RNASEHI-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J10",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     81,
+     85,
+     88,
+     92,
+     98,
+     101
+    ],
+    "residues_author": "Handle-region residues used for the open/closed metric: W81, W85, R88, T92, V98, V101",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "handle region (81-101)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Reanalysis of earlier 100 ns all-atom trajectories of unbound WT; open if W85 Calpha-T92 Calpha >= 7.8 Å",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "All-atom MD reanalysis with predicted RDCs",
+    "observable": "Open and closed handle conformations in the trajectories; predicted T92 N-H RDC near +4 Hz (open) and -4 Hz (closed)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The simulated WT handle loop visits both open and closed conformations, which supplies the structural reading of the RDC and rotamer data (RNASEHI-J11); the trajectories give no rate.",
+   "evidence_rows": [
+    "RNASEHI-r22"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J11",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     85,
+     92,
+     101
+    ],
+    "residues_author": "W85 Nepsilon1-Hepsilon1 and T92 N-H RDCs; V101 chi1 rotamer from scalar couplings and 13Cgamma shifts (full RDC set in unread SI)",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "handle region (81-101), substrate-binding"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "No substrate in the NMR samples; temperature, buffer and alignment medium are in the unread SI",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "IPAP 1H-15N RDCs in anisotropic media plus 3J(13CO-13Cgamma), 3J(15N-13Cgamma) couplings and 13Cgamma shifts, interpreted with MD",
+    "observable": "Least negative T92 and W85 RDCs of the homologs tested (largest open population); V101 trans chi1 rotamer about 10%",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Solution RDCs and valine rotamers of the free WT enzyme fit averaging of the handle loop between open (binding-competent) and closed conformations, with E. coli RNase HI the most open of the proteins tested; the about 10% figure is a V101 rotamer population, not the closed-handle population, and no rate is measured.",
+   "evidence_rows": [
+    "RNASEHI-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "The authors relate a larger closed-handle population to a higher Michaelis constant (weaker substrate binding) across homologs and the V98A mutant.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J12",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     85,
+     92,
+     101
+    ],
+    "residues_author": "W85, T92 RDCs; V101 rotamer",
+    "numbering_note": "Position 98 is Ala in this mutant, Val in the entry",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:V98A",
+    "binding_state": "apo",
+    "conditions": "As RNASEHI-J11; conditions in unread SI",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "IPAP 1H-15N RDCs and valine rotamer analysis",
+    "observable": "RDCs more negative than WT; V101 trans chi1 rotamer above 30%",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The designed V98A mutant shifts the handle toward closed conformations (V101 trans rotamer above 30% versus about 10% in WT) and has about a four-fold higher Michaelis constant.",
+   "evidence_rows": [
+    "RNASEHI-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J13",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     81,
+     85,
+     88,
+     92,
+     101
+    ],
+    "residues_author": "W81, W85, R88, T92, A98, V101",
+    "numbering_note": "A98 differs from entry V98; other sites match",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:V98A",
+    "binding_state": "apo",
+    "conditions": "Reanalysis of earlier 100 ns trajectories; open/closed by the 7.8 Å W85-T92 distance",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "All-atom MD reanalysis",
+    "observable": "Handle distance, T92/W85 bond orientations and residue-101 rotamer distributions",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Simulations of V98A populate mainly closed handle conformations, in line with the mutant's RDCs (RNASEHI-J12).",
+   "evidence_rows": [
+    "RNASEHI-r23"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J14",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "TtRNHI: T92 N-H RDC only (W85 RDC not measurable because of exchange broadening); SoRNHI: W85 Nepsilon1-Hepsilon1 RDC only (T92 overlapped)",
+    "numbering_note": "Residue fields corrected by second-read adjudication (ledger/batch3_adjudication_B.json): r20 measured T92 only, r21 measured W85 only",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: Thermus thermophilus and Shewanella oneidensis RNase HI homologs",
+    "binding_state": "apo",
+    "conditions": "Conditions in unread SI",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "IPAP 1H-15N RDCs",
+    "observable": "RDC ordering TtRNHI < V98A EcRNHI < SoRNHI < EcRNHI (most negative = most closed)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The thermophilic homolog has the smallest open-handle population and the psychrotroph sits between V98A and WT E. coli; these homolog orderings, with E. coli-equivalent labels and unverified mapping, set no E. coli verdict.",
+   "evidence_rows": [
+    "RNASEHI-r20",
+    "RNASEHI-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J15",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     15,
+     16,
+     81,
+     85,
+     90,
+     104,
+     118,
+     120,
+     124
+    ],
+    "residues_author": "G15, N16, W81, handle and beta5/alphaE loop in iG80b and iG80b Q80L, V101R, G77A",
+    "numbering_note": "E. coli author numbering; G80b has no entry position",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:iG80b and the iG80b point variants Q80L, V101R, G77A",
+    "binding_state": "apo",
+    "conditions": "Simulation: AMBER ff99SB, TIP3P, 300 K, pH 5.5 protonation, 100 ns per system",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Explicit-solvent MD (100 ns per system)",
+    "observable": "iG80b: G15 alternative backbone 29%, W81 gauche- 1.00; Q80L W81 trans 0.97; V101R trans/gauche- 0.48/0.52; G77A 0.66/0.34",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In simulations the Gly insertion moves W81 into a different rotamer than WT and point changes next to W81 partly restore the WT rotamer, so the insertion reshapes the local landscape; occupancies are finite-sampling values.",
+   "evidence_rows": [
+    "RNASEHI-r13",
+    "RNASEHI-r14",
+    "RNASEHI-r15",
+    "RNASEHI-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J16",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "G15, N16, W81, F120, H124 (E. coli-equivalent labels) in ttRNH WT, A12S/K75M, A12S/K75M/A77P, dG80; human RNase H catalytic domain (2QK9, D210N, substrate removed)",
+    "numbering_note": "Homolog-to-entry mapping unverified; labels follow the authors' E. coli alignment",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: T. thermophilus RNase H and variants, and human RNase H catalytic domain (homologs)",
+    "binding_state": "apo",
+    "conditions": "Simulation: AMBER ff99SB, TIP3P, 300 K, 100 ns per system",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Explicit-solvent MD (100 ns per system)",
+    "observable": "ttRNH WT: W81 trans/gauche- 0.93/0.07, G15 minor state 3%; A12S/K75M: 0.98/0.02, G15 14%; triple mutant W81 trans 1.00, G15 4% and 9%; dG80 W81 trans 1.00; human: holo-like glycine-rich region, handle more closed than the crystal",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Homolog simulations sample the glycine-rich minor state less often than E. coli WT (3% versus 39%) and give a more closed handle; these are homolog MD results and set no E. coli verdict.",
+   "evidence_rows": [
+    "RNASEHI-r8",
+    "RNASEHI-r9",
+    "RNASEHI-r10",
+    "RNASEHI-r11",
+    "RNASEHI-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J17",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "15 alchemically varied positions shown only in Fig. 1; C-terminal relaxation mentioned",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: Cys-to-Ala E. coli RNase HI model and alchemical sequence combinations toward a designed consensus",
+    "binding_state": "apo",
+    "conditions": "MSlambdaD, CHARMM36, TIP3P, 70 mM KCl, pH 6.5 protonation, 12 x 400 ns; simulation temperature not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Multisite lambda dynamics free-energy sampling",
+    "observable": "Longer sampling lets the C-terminus relax and improves stability predictions",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Alchemical moves between sequences are not physical conformational exchange of one protein, so the C-terminal relaxation seen in long runs sets no window verdict.",
+   "evidence_rows": [
+    "RNASEHI-r79"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J18",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     77
+    ],
+    "residues_author": "Gly77 (the only exchange example named in text and caption); 40 residues with Rex(21.15 T) > 1 s-1 in total, figure only",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: cysteine-free E. coli RNase HI (RNase HI*, pAED4; stated in the source of the reanalysed data, doi:10.1016/j.jmr.2025.107989); the entry sequence keeps C13, C63, C133",
+    "binding_state": "apo",
+    "conditions": "previously reported 15N R1/R2/NOE data of free E. coli RNase HI at 500, 700 and 900 MHz; temperature, pH, buffer and cysteine content are not restated in this reanalysis (sources_cache/RNASEHI_selected_07_full.txt)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "field-squared dependence of the transverse 15N relaxation contribution Gamma(B0) at 500, 700 and 900 MHz (Rex = beta B0^2, beta > 0 with chi2 improvement > 1), reanalysis of published relaxation data for 130 backbone amides",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74, 16.45 and 21.15 T",
+    "temperature": "not restated",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A multifield reanalysis of the free enzyme's backbone relaxation finds exchange broadening at 40 amides (Rex above 1 s-1 at 21.15 T, figure only), with G77 in the handle region as the worked example at 4.00 ± 0.38 s-1 at 900 MHz; Rex is a relaxation contribution, not a rate or population, a 10 ppm CSA variation can shift Rex by about 0.7 s-1 near the threshold, and the sample's conditions and cysteine content are not restated; the reanalysed 500/700/900 MHz data set is the 2025 relaxometry sample, which that paper calls cysteine-free.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J19",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     54,
+     77
+    ],
+    "residues_author": "Figure examples V54 and G77 only; full exchange set only plotted",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: cysteine-free E. coli RNase HI (RNase HI*); the entry sequence keeps C13, C63 and C133",
+    "binding_state": "apo",
+    "conditions": "about 298 K; pH 5.5; 100 mM deuterated sodium acetate; about 500 µM 15N protein; no substrate or Mg2+",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Field-dependent Rex term in model-free fits of R2 at 11.74, 16.44 and 21.1 T (Rex assumed to scale with B0^2)",
+    "observable": "Rex contribution to high-field R2 at V54 and G77 (magnitudes only plotted)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.74, 16.44, 21.1 T",
+    "temperature": "about 298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A model-free Rex term at two example residues of the cysteine-free enzyme hints at us-ms exchange, but there is no dispersion, rate, population or complete residue list.",
+   "evidence_rows": [
+    "RNASEHI-r27"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J20",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     44,
+     57,
+     102,
+     10,
+     48,
+     70,
+     134
+    ],
+    "residues_author": "Group 1 N44, E57, D102 and group 2 D10, E48, D70, D134 (D10 too broad to measure; E48 low signal-to-noise); N44 as printed, the conservation text names N45",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "active site, metal-binding residues"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ (no RNA/DNA substrate)",
+    "conditions": "pD 6.2; Mg2+ concentration, temperature and buffer in unread SI",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13Cgamma/delta R1rho with and without Mg2+ at one spin-lock field (1.1 kHz)",
+    "observable": "Rex = R1rho(Mg) - R1rho(apo), correlated with the squared apo-to-Mg shift difference in two groups",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "spin-lock 1.1 kHz",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Adding Mg2+ broadens catalytic and nearby side chains in two groups with different Rex/Delta-omega^2 slopes, but because Rex tracks the apo-to-Mg shift difference it cannot be separated from Mg2+ binding exchange, and the authors cannot tell new from pre-existing motion (binding kinetics not excluded).",
+   "evidence_rows": [
+    "RNASEHI-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors read the two groups as support for the mobile-metal-ion model, where the first Mg2+ triggers motion needed for the second Mg2+ and substrate.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J21",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     81,
+     85,
+     90,
+     104,
+     118,
+     120
+    ],
+    "residues_author": "All six Trp as fluorescence reporters (global signal)",
+    "numbering_note": "",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: cysteine-free full-length E. coli RNase HI (called wild type by the authors)",
+    "binding_state": "apo",
+    "conditions": "21 °C; pH 5.5; 20 mM sodium acetate, 50 mM KCl; refolding by urea jump 6 M to 0.6 M; 1.2 µM protein; 60 µs dead time",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Continuous-flow mixing with time-resolved Trp fluorescence lifetime",
+    "observable": "Two refolding phases, time constants 120 ± 20 µs and 3.1 ± 0.2 ms at 0.6 M urea",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "21 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "These are folding phases after a denaturant jump that the authors assign to non-native early intermediates, not exchange of the folded protein, so they are kept out of the native us-ms answer.",
+   "evidence_rows": [
+    "RNASEHI-r74"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J22",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "I53D (no ms phase); W118F/W120F 4Trp (three phases 91 ± 2 µs, 300 ± 40 µs, 2.3 ± 0.2 ms); 81-residue Icore fragment (80 ± 10 µs, 1.11 ± 0.06 ms; final urea 0.5 M)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: cysteine-free I53D, W118F/W120F and an 81-residue core fragment",
+    "binding_state": "apo",
+    "conditions": "21 °C; pH 5.5; 20 mM sodium acetate, 50 mM KCl; urea-jump refolding; 1.2-1.5 µM protein",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Continuous-flow time-resolved Trp fluorescence",
+    "observable": "Refolding time constants as listed in residues_author",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "21 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Variant folding kinetics (a missing ms phase in I53D, an extra phase with four Trp, faster folding of the core fragment) describe the folding pathway, not native-state motion.",
+   "evidence_rows": [
+    "RNASEHI-r75",
+    "RNASEHI-r76",
+    "RNASEHI-r77"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J23",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global kinetic model, no residues",
+    "numbering_note": "",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "other construct: cysteine-free full-length E. coli RNase HI",
+    "binding_state": "apo",
+    "conditions": "21 °C; pH 5.5; 20 mM sodium acetate, 50 mM KCl; global urea-dependent fit with synthetic long-time constraints",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Global on-pathway kinetic model U <-> Iearly <-> Icore <-> N fitted to continuous-flow and equilibrium data",
+    "observable": "k1 20,000 ± 3,000 s-1, k-1 130 ± 150 s-1, k2 240 ± 80 s-1, k-2 24 ± 20 s-1, k3 0.78 ± 0.11 s-1, k-3 1.9 x 10^-5 ± 0.1 x 10^-4 s-1 (directional rates)",
+    "fit_model": "other",
+    "kex": "directional rates only, see observable",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "21 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The model gives a slow Icore-to-native step (0.78 s-1) and an N-to-Icore rate whose error exceeds its value, both from a folding model with synthetic constraints, so no native-state slower-than-ms exchange is established.",
+   "evidence_rows": [
+    "RNASEHI-r78"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J24",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     9,
+     35,
+     48,
+     108
+    ],
+    "residues_author": "Named Fig. 3 probes T9 (strand 1), F35 (strand 3), E48 (helix A), D108 (helix D); full local-fluctuation map only in Fig. 4",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:I53A in the cysteine-free RNase HI* background",
+    "binding_state": "apo",
+    "conditions": "pD 5.5 (pDread 5.1), EX2 check at pD 5.2; 100 mM d3-sodium acetate in D2O; 0-0.8 M deuterated GdmCl; 0.7-1.0 mM protein; HSQC monitoring from 20 min up to 3 months",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Native-state H/D exchange monitored by 15N HSQC versus denaturant",
+    "observable": "Global unfolding Delta G 8.2 kcal/mol (m 5.3) plus denaturant-independent local fluctuations, more sites in I53A than in wt*; shared sites have unchanged Delta G_FL",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The I53A core mutation adds denaturant-independent local opening events in peripheral strands I, II, III, V and helix E while lowering global stability by about 2 kcal/mol; the row gives no opening rates, so no window is assigned.",
+   "evidence_rows": [
+    "RNASEHI-r71"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J25",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     10
+    ],
+    "residues_author": "Parental mutation site D10 only; no residue table in the abstract",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:D10A thermostabilised variant (other substitutions unverified)",
+    "binding_state": "apo",
+    "conditions": "Abstract only; conditions not given",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Native-state residue-specific hydrogen exchange (abstract)",
+    "observable": "Lower partial-unfolding accessibility, same regional stability pattern as the mesophile",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the stabilised variant reduces access to the partially unfolded form without changing which regions are least stable; no values are available.",
+   "evidence_rows": [
+    "RNASEHI-r73"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J26",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     10,
+     11,
+     48,
+     70,
+     134,
+     124
+    ],
+    "residues_author": "RNH_Mg_3 (7VSA): two Mg2+ coordinated by D10, G11, E48, D134, with D70 and H124 via water; RNH_Mg_1 (7VSC, one Mg2+, coordination not detailed); RNH_Mg_2 (7VSD, Mg2+ at a different position)",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "active site, H124"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ with added AMP (no nucleotide density resolved)",
+    "conditions": "Crystals grown at 20 °C: Mg_1 pH 6.5 cacodylate/PEG 8000, 0.1 M MgSO4, 10 mM AMP; Mg_2 pH 5.6 citrate/PEG 4000, 0.1 M MgSO4, 10 mM AMP; Mg_3 pH 6.5 MES/PEG MME 5000, 0.1 M Mg acetate, 5 mM AMP; diffraction temperature not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Comparison of Mg2+-bound crystal forms with 1RDD and 1G15",
+    "observable": "Mg2+ position differs in RNH_Mg_2 from RNH_Mg_1 and RNH_Mg_3; H124 interacts through water",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Mg2+ sits at different active-site positions in different crystal forms, which fits the proposed mobile-metal model but cannot separate packing, pH and ligand effects from motion and gives no timescale.",
+   "evidence_rows": [
+    "RNASEHI-r80",
+    "RNASEHI-r81",
+    "RNASEHI-r82"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J27",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     10,
+     70,
+     124
+    ],
+    "residues_author": "D10, D70, H124 (Zn2+ ligands)",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "H124, active site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Zn2+",
+    "conditions": "RNH_Zn_1 (7VSE): pH 4.6 acetate/PEG MME 2000, 2 mM ZnCl2; RNH_Zn_2 (7VSB): pH 5.6 citrate, 20% 2-propanol, PEG 4000, 1.5 mM ZnCl2, 2 mM p-CCU substrate (no density); 20 °C growth",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Comparison of Zn2+-bound crystal forms",
+    "observable": "H124 coordinates Zn2+ through Nepsilon in one form and through Ndelta, with a different imidazole orientation, in the other",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "H124 binds zinc with a different imidazole nitrogen in two crystal forms grown at different pH and with or without substrate, a static difference without a timescale.",
+   "evidence_rows": [
+    "RNASEHI-r83",
+    "RNASEHI-r84"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J28",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     5,
+     26,
+     28,
+     58,
+     59,
+     63,
+     3,
+     31,
+     33,
+     61,
+     60
+    ],
+    "residues_author": "SSB-Ct pocket and lip residues V5, L26, Y28, A58, L59, C63, K3, R31, K33, E61, K60",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "SSB-Ct binding pocket opposite the catalytic surface"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:SSB-Ct peptide WMDFDDDIPF",
+    "conditions": "Crystal: 1 M sodium citrate, 90 mM HEPES pH 7.0, 11% glycerol; protein:peptide 1:1.2; flash frozen, temperature not stated; compared with apo 1F21",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal structure 4Z0U versus apo 1F21",
+    "observable": "Binding pocket expands to take the terminal Pro-Phe; two bound chains differ locally",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The pocket opposite the active site widens when the SSB C-terminal peptide binds; a static bound-versus-apo difference, not an exchange process.",
+   "evidence_rows": [
+    "RNASEHI-r37"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J29",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Nine disappearing and 25 perturbed resonances, identities only plotted",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: cysteine-free E. coli RNase HI (RNase HI*); the entry sequence keeps C13, C63 and C133",
+    "binding_state": "bound:SSB-Ct peptide (titration 0.5-2 equivalents)",
+    "conditions": "25 °C; pH 5.5; 50 mM sodium acetate; 1.34 mM 15N protein",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC titration",
+    "observable": "Nine backbone peaks disappear and 16 more shift on SSB-Ct binding",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Peak loss on peptide binding maps the binding site but mixes binding exchange and any conformational change (binding kinetics).",
+   "evidence_rows": [
+    "RNASEHI-r36"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J30",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Basic protrusion (residues not listed in the abstract)",
+    "numbering_note": "",
+    "functional_site": "basic protrusion (proposed nucleic-acid binding)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Abstract only; uncomplexed crystal, single temperature",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal B factors (abstract)",
+    "observable": "High backbone B factors in the basic protrusion",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: high B factors suggest a flexible basic protrusion, but B factors mix motion with static disorder and no values are available.",
+   "evidence_rows": [
+    "RNASEHI-r29"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J31",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     10,
+     48,
+     70,
+     134,
+     44
+    ],
+    "residues_author": "Mg2+ crystal: N44, E48; Mn2+ crystal: D10, E48, D70, D134",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Mg2+ or Mn2+ (two separate crystals)",
+    "conditions": "Abstracts only; substrate-free crystals",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Metal-bound versus metal-free crystal comparisons (abstracts)",
+    "observable": "One Mg2+ site; two Mn2+ ions with an inhibitory second site",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: metal-bound crystals show local coordination changes and different metal counts, with no values to judge motion.",
+   "evidence_rows": [
+    "RNASEHI-r28",
+    "RNASEHI-r33"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J32",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     23,
+     52,
+     62,
+     74,
+     77,
+     80,
+     81,
+     95,
+     134
+    ],
+    "residues_author": "Parental mutation sites: G23, H62, V74, K95, D134 (5H quintuple), A52 (cavity-filling), V74 (V74L, V74I), H62 and K95 (single mutants; corrected), G77, W81 and G80b insertion (G77A, G80b, G77A/G80b), surface-charge variants 7Ca, 7Cb, 9Ca, 11C (sites not listed)",
+    "numbering_note": "Residue fields for r38-r42 and r69 follow the second-read adjudication (ledger/batch3_adjudication_B.json): each single mutant carries only its own site (H62 or K95; G77 and W81 for G77A). G80b is an insertion with no entry position.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:thermostabilising, cavity-filling and surface-charge variants (each a separate crystal)",
+    "binding_state": "apo",
+    "conditions": "Abstracts only; no crystallisation conditions available",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Mutant versus WT crystal structures (abstracts)",
+    "observable": "Local packing, strain or hydrogen-bond changes with the global fold kept",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract-only mutant crystal structures explain stability changes by static local adjustments; none measures motion of one protein.",
+   "evidence_rows": [
+    "RNASEHI-r30",
+    "RNASEHI-r31",
+    "RNASEHI-r34",
+    "RNASEHI-r35",
+    "RNASEHI-r38",
+    "RNASEHI-r39",
+    "RNASEHI-r40",
+    "RNASEHI-r41",
+    "RNASEHI-r42",
+    "RNASEHI-r68",
+    "RNASEHI-r69",
+    "RNASEHI-r70",
+    "RNASEHI-r85",
+    "RNASEHI-r86",
+    "RNASEHI-r87",
+    "RNASEHI-r88"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J33",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     10,
+     48,
+     70,
+     134,
+     124,
+     87
+    ],
+    "residues_author": "Catalytic D10, E48, D70, D134, H124 (D134A/H/N) and K87 (E48A/K87A, D134A/K87A, E48A/D134N/K87A)",
+    "numbering_note": "Entry numbering equals E. coli author numbering (checked against inputs/RNASEHI.json: D10, G15, N16, E48, D70, W81, W85, T92, V101, H124, D134, V153, V155)",
+    "functional_site": "active site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:catalytic-site variants D134A/H/N and Mn2+-bound K87A-background mutants",
+    "binding_state": "bound:Mn2+ for the K87A series; metal state not stated for D134 mutants",
+    "conditions": "Abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Mutant crystal structures (abstracts)",
+    "observable": "Local loop conformations differ in D134 mutants; Mn2+ sits at different positions in different mutant complexes",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract-only mutant structures place the metal at different sites, which motivates the mobile-metal model but measures no motion.",
+   "evidence_rows": [
+    "RNASEHI-r43",
+    "RNASEHI-r44",
+    "RNASEHI-r45",
+    "RNASEHI-r65",
+    "RNASEHI-r66",
+    "RNASEHI-r67"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J34",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     53
+    ],
+    "residues_author": "I53 (mutation site); B-factor comparison is data not shown",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:I53A in the cysteine-free background",
+    "binding_state": "apo",
+    "conditions": "Crystal: 20 mM HEPES pH 7.5, 10% PEG-3350; cryoprotected at pH 8.0; 1.6 Å; temperature not stated",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Crystal structure 1JXB versus cysteine-free reference 1F21",
+    "observable": "Same fold; uniformly higher B factors (not shown)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "A single cryo-cooled average structure can show only a static fold change; it cannot see conformational exchange, and the B-factor comparison is not shown"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "I53A keeps the wt* fold, so the extra local H/D exchange of RNASEHI-J24 is not a static structural change.",
+   "evidence_rows": [
+    "RNASEHI-r72"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J35",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole enzyme labelled at an engineered terminal Cys (Cy5); substrate Cy3",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: His-tagged cysteine-engineered E. coli RNase HI with Cy5 (native Cys replaced by Ser/Ala)",
+    "binding_state": "bound:RNA/DNA hybrid substrates (Ca2+-stabilised, catalytically inactive)",
+    "conditions": "pH 8.3; 50 mM Tris-HCl, 75 mM KCl, 100 µg/ml BSA, Trolox/glucose oxidase/catalase; 10 mM CaCl2; 0.2 nM enzyme; 500 ms frames; surface-immobilised substrate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Single-molecule protein-substrate FRET binding assay on several hybrid architectures",
+    "observable": "Binding positions and dwell at junctions and overhangs",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The FRET reports where the enzyme binds and slides on the substrate (binding kinetics), not motion within the protein.",
+   "evidence_rows": [
+    "RNASEHI-r46",
+    "RNASEHI-r47",
+    "RNASEHI-r48",
+    "RNASEHI-r49",
+    "RNASEHI-r50",
+    "RNASEHI-r51",
+    "RNASEHI-r52",
+    "RNASEHI-r53"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J36",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "No protein label; both dyes on the substrate",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: His-tagged E. coli RNase HI (unlabelled)",
+    "binding_state": "bound:RNA/DNA hybrids with 10 mM Mg2+ (catalysis)",
+    "conditions": "pH 8.3; 50 mM Tris-HCl, 75 mM KCl, 100 µg/ml BSA; multiturnover with 1-100 nM enzyme (100 ms frames), or single turnover after Ca2+ prebinding and Mg2+ washout (5 nM, 100 ms frames)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Substrate-labelled smFRET degradation and protein-substrate FRET during single turnover",
+    "observable": "Processive versus distributive degradation depending on overhang architecture",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "These traces time substrate degradation and enzyme translocation, which is enzyme-substrate kinetics, not conformational exchange of RNase HI.",
+   "evidence_rows": [
+    "RNASEHI-r54",
+    "RNASEHI-r55",
+    "RNASEHI-r56",
+    "RNASEHI-r57",
+    "RNASEHI-r58",
+    "RNASEHI-r59",
+    "RNASEHI-r60",
+    "RNASEHI-r61",
+    "RNASEHI-r62",
+    "RNASEHI-r63",
+    "RNASEHI-r64"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J37",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free wild-type enzyme (entry sequence)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "No native-state H/D exchange, HDX-MS, CEST, ZZ-exchange or time-resolved structural measurement of the free WT enzyme in the evidence",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures a slower-than-ms native-state process of the wild-type enzyme: the native-state exchange rows are I53A or D10A variants, the 2019 and 2026 exchange studies give no rate, the acid-denaturation H-D exchange abstract concerns non-native states (J49), the pulsed-labeling HX-MS rows are refolding experiments on cysteine-free protein (J50), and the primary wt* hydrogen exchange and HX-MS papers cited by the selected articles were not selected.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J38",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     2,
+     3,
+     13,
+     14,
+     15,
+     61,
+     62,
+     70,
+     93,
+     94,
+     95,
+     96,
+     123,
+     124,
+     125,
+     126,
+     127,
+     152,
+     153,
+     154,
+     155
+    ],
+    "residues_author": "Leu2-Lys3, Cys13-Gly15, Glu61-His62, Asp70-Tyr71, Ala93-Lys96, Gly123-His127, Gln152-Val155 (flexible regions); S2 0.15-1.0, average 0.85; tau_c 10.9 ns at 27 °C; effective correlation times 0.45 ns (E61, K96) to 2.2 ns (L14)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset. The abstract's Asp70-Tyr71 does not match the entry sequence (S71; Tyr at 73), so position 71 is left unmapped (both second readers flagged the original S71 entry; corrected row keeps Tyr71 as printed).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "27 °C per the abstract; pH, buffer and construct details not in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 and NOE with model-free analysis (abstract only; RelaxDB source candidate), plus spectral-density mapping and a WT-versus-mutant model-free comparison from two further abstracts",
+    "observable": "S2 and effective correlation times (per-residue values not in the abstracts)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "27 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only, from the RelaxDB source candidate (Yamasaki et al. 1995): the free enzyme has tau_c 10.9 ns at 27 °C, S2 from 0.15 to 1.0 (average 0.85) and large ps-ns motion in the termini and in the loops listed, with effective correlation times of 0.45-2.2 ns; the spectral-density abstract (r3) and the 1998 WT-versus-quintuple-mutant abstract (r5, S2 largely unchanged by the mutations) agree qualitatively, but no per-residue value, condition or missing-peak annotation can be checked.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r1",
+    "RNASEHI-RNASEHI_20261020150655-r3",
+    "RNASEHI-RNASEHI_20261020150655-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J39",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "backbone N-H vectors generally; substrate-recognition loops called flexible (boundaries not in the abstract)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "explicit-water MD; temperature and setup not in the abstracts",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "explicit-water MD with angular-distribution and spectral-density analysis, compared with NMR relaxation and with the NMR and crystal structures (abstracts only)",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: the simulations reproduce most NMR order parameters, give elliptic N-H angular distributions near a diffusion-in-a-cone picture, and agree with the relaxation evidence for flexible substrate-recognition loops; no residue list, timescale or condition can be checked.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r2",
+    "RNASEHI-RNASEHI_20261020150655-r4",
+    "RNASEHI-RNASEHI_20261020150655-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J40",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "a subset of side-chain torsions with non-rotameric or syn-pentane conformations in the NMR ensemble (identities not in the abstract)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "NMR ensemble versus MD and crystal thermal factors; conditions not in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "comparison of NMR-ensemble torsion heterogeneity with MD conformations and crystal thermal factors (abstract only)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: part of the side-chain heterogeneity in the NMR ensemble is attributed by the authors to structure-determination artefacts (spin diffusion, uneven restraints) because the same torsions take one conformation in MD and have low crystal thermal factors; this concerns the authors' subset and is not evidence against motion elsewhere.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r22"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J41",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     96,
+     98
+    ],
+    "residues_author": "Lys96, Val98 (S2 significantly increased in the mutant)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:G23A/H62P/V74L/K95G/D134H (thermostable quintuple mutant)",
+    "binding_state": "apo",
+    "conditions": "conditions not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation model-free analysis of the quintuple mutant compared with wild type (abstract only)",
+    "observable": "S2",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: in the quintuple mutant the S2 of K96 and V98 rises, so fast motion in the protruding region around the K95G site is restricted relative to wild type, while most other order parameters are unchanged; no values can be checked and this is mutant evidence.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J42",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "residues in alpha-helix I of the wild-type protein (no list in the abstract)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "conditions not in the abstract (1998 15N relaxation study)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "exchange contribution (Delta-ex) from the 15N relaxation model-free analysis (abstract only); no dispersion",
+    "observable": "Rex",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the 1998 relaxation study reports a micro- to millisecond exchange contribution for residues in helix I of the wild-type enzyme, reduced in the V74L-containing quintuple mutant, which the authors relate to a cavity in the hydrophobic core; no residue list, rate, population or regime is available.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J43",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "residues in the joining region between the protrusion and the major domain (no list in the abstract)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G23A/H62P/V74L/K95G/D134H (thermostable quintuple mutant)",
+    "binding_state": "apo",
+    "conditions": "conditions not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "exchange contribution (Delta-ex) from the 15N relaxation model-free analysis (abstract only)",
+    "observable": "Rex",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the quintuple mutant shows drastically increased micro- to millisecond exchange contributions and slightly lower S2 at the junction between the protrusion and the major domain, which the authors attribute to loss of the K95 side chain; mutant evidence without values.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J44",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     153,
+     155
+    ],
+    "residues_author": "Val153, Val155 (C-terminal methyls whose S2axis depends strongly on spectral-density model); full methyl roster figure only",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: cysteine content not stated; same pAED4 line as the cysteine-free RNase HI* samples of 2018 and 2025 (r25, r26)",
+    "binding_state": "apo",
+    "conditions": "55% randomly deuterated, alternately 12C/13C-labelled sample; 2H relaxation at 475, 500, 900 and 950 MHz; global axially symmetric diffusion tensor, isotropic tau_m 13.5 ± 0.2 ns, D-parallel/D-perp 1.31 ± 0.10; temperature, pH, buffer and cysteine content not restated; the laboratory's 2018 and 2025 samples from the same pAED4 line are cysteine-free (r25, r26)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "reanalysis of methyl 13CH2D deuterium relaxation (Models 1-3; 32, 19 and 9 methyls) with a global diffusion tensor instead of local isotropic correlation times",
+    "observable": "S2axis (values figure only; experimental values scaled by 0.92 for MD comparison)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "475, 500, 900, 950 MHz",
+    "temperature": "not restated",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the reanalysed methyl deuterium relaxation of the free enzyme the C-terminal V153 and V155 methyls have relatively low S2axis and are the only methyls whose S2axis depends strongly on model choice, consistent with sub-ns to ns side-chain and terminal motion; the per-residue roster is figure-only and the sample conditions and cysteine content are not restated.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J45",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     46,
+     77,
+     152
+    ],
+    "residues_author": "Arg46, Gly77, Gln152 as examples in secondary structure, a loop and the terminus (local tau_m 9.94 ± 0.29, 9.05 ± 0.33 and 8.51 ± 0.30 ns); 130 amides analysed, 109 used for the diffusion tensor; full S2 roster figure only",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: cysteine-free E. coli RNase HI (RNase HI*, pAED4; stated in the source of the reanalysed data, doi:10.1016/j.jmr.2025.107989); the entry sequence keeps C13, C63, C133",
+    "binding_state": "apo",
+    "conditions": "previously reported 15N R1/R2/NOE at 500, 600/700 and 800/900 MHz and relaxation-interference data at 500 and 600 MHz; temperature, pH, buffer and cysteine content not restated in either reanalysis",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "reanalyses of published backbone 15N relaxation: spectral-density mapping with exchange correction and direct diffusion-tensor fitting (2026; Diso 1.73 ± 0.01 x 10^7 s-1, 2Dzz/(Dxx+Dyy) 1.23 ± 0.03, Dxx/Dyy 0.88 ± 0.03) and model-free S2 as the experimental comparator for MD (2024)",
+    "observable": "S2 and local tau_m (per-residue values figure only; NH S2 scaled by 0.89 for MD comparison)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "500-900 MHz",
+    "temperature": "not restated",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Two reanalyses of the same previously published backbone data give per-residue S2 and local rotational times for the free enzyme, but the residue-wise results are figure-only and the three named residues are fitting examples rather than flexible sites, so no ps-ns site verdict can be drawn beyond J38; the sample conditions and cysteine content are not restated.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r11",
+    "RNASEHI-RNASEHI_20261020150655-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J46",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     2,
+     59,
+     116,
+     153,
+     155
+    ],
+    "residues_author": "Leu2, Leu59, Ile116, Val153, Val155 (named analysis sites for rotamer and backbone contributions); full rosters figure only",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "simulations from wild-type 2RN2: OPLS4/TIP3P and AMBER-FF19SB/TIP3P, 2 mus NVT at 300 K, 0.15 M NaCl, protonation set for pH 7.4 (2024); two 1 mus TIP3P trajectories at 300 K with pH 5.5 protonation (2019); no substrate or metal",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "explicit-water MD with S2 and S2axis from 50 ns blocks (2024) and MD-derived methyl relaxation reference (2019)",
+    "observable": "MD fluctuation (backbone fluctuations, rotamer jumps, within-rotamer fluctuations)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "300 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Microsecond simulations of the wild-type structure reproduce much of the backbone and methyl orientational order (OPLS4 closer than AMBER-FF19SB in the reported comparison) and decompose low methyl order parameters into backbone fluctuation and rotamer jumps at the named sites, with L59's rotamer cross-correlation poorly converged; the 2019 trajectories only calibrate an exchange-free methyl reference and give two possible slopes; no physical rate follows from either.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r9",
+    "RNASEHI-RNASEHI_20261020150655-r10",
+    "RNASEHI-RNASEHI_20261020150655-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J47",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     78,
+     82,
+     98,
+     101,
+     103
+    ],
+    "residues_author": "Val98 gamma1, Val101 gamma1, Leu103 (delta1 per Methods and Table 1) at 283, 300 and 310 K; Ile78 and Ile82 delta1 elevated at 283 K only; Table 1 Eapp 45.4 ± 1.6 kJ/mol (V98), 23.7 ± 1.9 kJ/mol (V101) and 21.4 ± 3.0 kJ/mol (L103)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": "substrate-binding handle region (as stated by the authors)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: cysteine content not stated; same pAED4 line as the cysteine-free RNase HI* samples of 2018 and 2025 (r25, r26)",
+    "binding_state": "apo",
+    "conditions": "U-2H, 13CH3 Ile delta1 and stereospecific Val gamma/Leu delta labelled free enzyme; 14.1 T; 283, 300 and 310 K; pH 5.5 (stated in the MD methods as matching the NMR conditions); buffer, concentration and cysteine content not restated; the laboratory's 2018 and 2025 samples from the same pAED4 line are cysteine-free (r25, r26); no substrate or metal specified",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "zero-/double-quantum methyl TROSY Hahn echo referenced to 1H-1H dipolar cross-correlated relaxation (excess Delta-R_MQ), 283-310 K series with Arrhenius analysis of Delta-Rex",
+    "observable": "dispersion amplitude (excess multiple-quantum relaxation, Delta-R_MQ); no rate",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T",
+    "temperature": "283, 300, 310 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the free enzyme the handle-region methyls V98, V101 and L103 are notably broadened beyond the exchange-free reference at all three temperatures, which the authors read as conformational exchange of the substrate-binding handle between open and closed states, with I78 and I82 also elevated at 283 K; the analysis uses the fast-limit two-site expression (populations p1 much greater than p2), gives apparent activation energies rather than kex, populations or a minor-state structure, and the sample's cysteine content is not restated.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r13",
+    "RNASEHI-RNASEHI_20261020150655-r14",
+    "RNASEHI-RNASEHI_20261020150655-r15",
+    "RNASEHI-RNASEHI_20261020150655-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors state that V98, V101 and L103 are directly involved in or located within the substrate-binding handle whose open-to-closed transition was shown by earlier 15N relaxation and MD (their refs 54-56).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J48",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": [
+     124
+    ],
+    "residues_author": "His124",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:M13 DNA/RNA hybrid substrate (kinetic assays)",
+    "conditions": "enzyme kinetics and titration; conditions not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "pH titration and kinetics of wild type and H124K/Q/E mutants (abstract only)",
+    "observable": "none (mechanistic proposal)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the authors propose that the H124 side chain changes conformation during catalysis, inferred from titration and mutant kinetics, not from any time-resolved or exchange measurement; altered electrostatics or chemistry could explain the same data.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r25"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J49",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "helix I hydrogen bonds protected in the non-native U(A) and A states (no residue list)",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "acid titration by CD and 15N-HSQC with direct and pH-jump amide H-D exchange; acidic pH values not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "acid-induced unfolding followed by CD, HSQC and NMR H-D exchange (abstract only)",
+    "observable": "HDX rate (NMR, non-native states)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: acid denaturation gives distinguishable native and non-native ensembles (an acid-unfolded U(A) state and a molten-globule-like A state) with helix I hydrogen bonds still protected in the non-native states; these are low-pH unfolding equilibria, not native-state exchange, and no rate or condition can be checked.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r24"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "RNASEHI-J50",
+   "entry_id": "RNASEHI",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "peptide-level protection across the sequence (complete assayed spans listed in the rows); Icore = protected core helices and strands with a less protected periphery; helix A versus helix D order",
+    "numbering_note": "Entry numbering is the 155-residue E. coli RNase HI sequence (UniProt P0A7Y4; 1RCH:A); author numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: cysteine-free E. coli RNase HI (ecRNH*, C13A/C63A/C133A) and its A55G and D108L variants",
+    "binding_state": "apo",
+    "conditions": "pulsed-labeling HX-MS refolding from 7-9 M urea, 10 °C; refolding buffer 10 mM sodium acetate pH 5.29, 10 ms pulse in 100 mM glycine pH 10.11, quench pH 1.95; 13 ms dead time; no substrate or metal",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "pulsed-labeling hydrogen-exchange mass spectrometry during refolding (ecRNH* comparator reproduced from Hu et al. 2013; A55G and D108L measured here)",
+    "observable": "HDX rate (protection during refolding)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "10 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Refolding experiments on the cysteine-free construct: ecRNH* acquires protection in helix A before helix D and in a protected core before the periphery, A55G delays helix A protection and D108L favours early protection of the N-terminal part of helix D (A55G versus comparator p = 0.0917); these describe folding intermediates of another construct, not exchange of the folded wild-type enzyme, and no native-state rate follows.",
+   "evidence_rows": [
+    "RNASEHI-RNASEHI_20261020150655-r26",
+    "RNASEHI-RNASEHI_20261020150655-r27",
+    "RNASEHI-RNASEHI_20261020150655-r28"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

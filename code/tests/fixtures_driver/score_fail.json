@@ -1,0 +1,1 @@
+{"entry_id":"KRAS_CPMG","n_rows":1,"integrity":{"pass":false,"n_errors":1,"by_kind":{"number_not_in_source":1},"errors":[{"row":7,"kind":"number_not_in_source","detail":"Synthetic number absent from synthetic source."}]}}

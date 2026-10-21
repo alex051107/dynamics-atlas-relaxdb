@@ -1,0 +1,1010 @@
+{
+ "protein_summary": {
+  "entry_id": "HTPDZ_CPMG",
+  "per_window": {
+   "ps-ns": "dynamic_in_window only for the unstructured C-terminal tail of the isolated apo PDZ; the core, including α5, is rigid at 298 K (average S2 0.9 ± 0.1, hetNOE about 0.8; J5, r4). Full-length S306A: no extra PDZ flexibility in the hexamer-rich apo sample at 50 °C (J14, r13) and partial PDZ decoupling with activator at 313 K (J15, r11), both inference only. Methyl S2axis·τc of the isolated PDZ (Fig. 2d,e of the 2024 paper) has no evidence row.",
+   "us-ms": "dynamic_in_window: isolated apo PDZ in PBS pH 7.4 exchanges in the N-terminus, α5 and the α5-β15 loop, and α7 with its preceding loop; one global two-site fit per temperature gives τex 0.42 ± 0.004 ms, 15.2% minor at 298 K and 0.98 ± 0.005 ms, 16.1% at 283 K, where α7 and β17-β18 also exchange (J1 298 K, r1; J28 283 K, r2; derived kex about 2,400 and 1,020 s-1; per-residue ΔR2eff in Source Data sheet 2a localizes 30 residues at 298 K and 35 at 283 K under a ≥ 2 s-1 transcription rule); dimerization (KD ≥ 13 mM, at most about 7% of protomers) cannot explain the minor state. Methyl MQ CPMG gives τex 1.19 ± 0.07 ms, 16.6 ± 0.4% (J3, r3); R2β and model-free Rex agree (J4, r4). Full-length S306A constructs show exchange at α5 (J11, r10), a PDZ hexamer-interface contribution (J12, r14) and interface exchange enhanced by open neighbours (J13, r15), all inference_from_mutant. Peptide-bound isolated PDZ is not_measured (J8); the Ca2+/Zn2+ methyl CPMG in the source has no row (J9, search_insufficient).",
+   "slower_than_ms": "not_measured for the isolated apo PDZ (J10). Trimer-hexamer interconversion of full-length S306A (koff 9.0 ± 1.1 s-1, 40 °C; J16, r12) and the isolated-PDZ ligand off-rates (J10 reason) are binding kinetics and are not counted.",
+   "undetermined": "β14/β15 broadening of the isolated PDZ is unresolved between amide solvent exchange and conformational exchange (J6, r5). Full-length constructs: slow C/OI/OA state switching with client (J17, r17), PRE opening with Ca2+ or activator (J18-J20, r7-r9), Y361W fluorescence (J27, r29), crystal comparisons (J21, r31; J22, r28, structure_only) and MD (J23, r26, r27; J25, r22, r23; md_only). Not judged: the Cu2+ attenuation (r6), which the authors use as a solvent-exposure probe, not a dynamics measurement; protease-domain active-site rows outside the entry (r18, r19, r20, r24, r25, r30); the viscosity activity assay that names no coordinate (r21); the S276C state-population titration with an out-of-entry probe (r16); abstract-only rows r32-r40."
+  },
+  "wt_apo_answer": "Yes: the isolated apo PDZ (PBS pH 7.4) exchanges on the microsecond-millisecond scale in the N-terminus, helix α5 with its loop to β15, and α7 with its preceding loop, fit globally to one two-site process with τex 0.42 ± 0.004 ms (derived kex about 2,400 s-1) and a 15.2% minor state at 298 K, and 0.98 ± 0.005 ms (about 1,020 s-1) with 16.1% at 283 K, where α7 and the β17-β18 loop join; per-residue ΔR2eff in the Source Data (sheet 2a) places exchange on 30 residues at 298 K and 35 at 283 K under a ≥ 2 s-1 transcription rule, the fitted residue set itself is not listed, and the minor state is not identified, but it is not explained by dimerization.",
+  "open_conflicts": [
+   "Backbone versus methyl lifetime at 298 K: 15N CPMG gives τex 0.42 ± 0.004 ms (15.2%, r1) while methyl MQ CPMG gives 1.19 ± 0.07 ms (16.6 ± 0.4%, r3); the authors call it one underlying process, but the samples differ (protonated in H2O versus deuterated ALVIT in 99.9% D2O) and the lifetimes differ about three-fold.",
+   "The 298 K and 283 K global fits use different residue sets: Source Data sheet 2a has ΔR2eff for 37 residues at 298 K and 50 at 283 K, and the exchanging sets differ (J1, J28); the residues entering each global fit are still not listed (r1, r2)."
+  ],
+  "questions_for_gina": [
+   "Which sample produced the RelaxDB HTPDZ_CPMG labels: 15N CPMG at 298 K or 283 K (700/900 MHz), and which construct (entry 352-458 plus LE, paper construct 349-458, BMRB 51320 entity of 156 residues)?",
+   "All isolated-PDZ NMR was in PBS pH 7.4 with no phosphate-free control, and the exchanging α5-β15 and pre-α7 loops are where divalent cations bind; should the exchange be flagged as untested for phosphate binding?"
+  ],
+  "buffer_note": "Untested condition, not a suspected artefact: every isolated-PDZ NMR measurement in the rows (r1-r6) used PBS pH 7.4, the methyl sample (r3) in 99.9% D2O, and the 2024 paper reports no phosphate-free NMR control; HEPES-buffered saline was used only for SEC-MALS with divalent metals. The source places divalent-cation binding (Ca2+ KD 4.1 mM, Zn2+ 1.6 mM) in the α5-β15 loop and the loop before α7, the same regions that exchange, so an anion-binding contribution is neither shown nor excluded. Full-length rows used Tris pH 8 (r7-r9) or a low-salt buffer whose composition is in an unread SI (r12-r15, r17)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "HTPDZ-J1",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": [
+     3,
+     7,
+     8,
+     9,
+     10,
+     11,
+     19,
+     22,
+     26,
+     30,
+     33,
+     35,
+     36,
+     37,
+     40,
+     45,
+     55,
+     60,
+     61,
+     70,
+     71,
+     72,
+     74,
+     75,
+     76,
+     91,
+     94,
+     96,
+     104,
+     105
+    ],
+    "residues_author": "298 K, Source Data sheet 2a (Fig. 2a), columns '298K' Residues/deltaR2eff/Error: 37 residues have values. No numeric threshold is stated by the authors and the residues entering the global fit are not listed; residues_entry applies a transcription rule to the per-residue values: ΔR2eff (R2eff at lowest minus highest νCPMG) ≥ 2 s-1 and ≥ 2× its fit error. Listed (30): 354, 358, 359, 360, 361, 362, 370, 373, 377, 381, 384, 386, 387, 388, 391, 396, 406, 411, 412, 421, 422, 423, 425, 426, 427, 442, 445, 447, 455, 456. Below the rule (7): 376 (0.15 ± 0.08); 378 (0.94 ± 0.11); 379 (1.19 ± 0.05); 383 (1.41 ± 0.04); 414 (1.09 ± 0.08); 430 (0.26 ± 0.05); 439 (0.58 ± 0.06). No residue is flagged 'Broadened' at 298 K. Authors' text names the N-terminus, α5 and its loop to β15, and α7 with its preceding loop; the rule also flags residues outside those segments (e.g. 406, 411, 412, 442, 445, 447, 455, 456).",
+    "numbering_note": "Author numbering = UniProt O43464; entry = author − 351 (author construct 349-458 plus a C-terminal Leu numbered 459 = entry 108; author 349-351 have no entry position). Checked against the entry sequence for 45 methyl-bearing residues of Source Data sheet 2f (e.g. I362, L367, I373, V387, L392, I413, V427, L459) and Q388; all match.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; PBS pH 7.4; no added divalent metal; 500 µM [U-15N,13C] isolated PDZ",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "BEST-TROSY 15N CPMG, 40 ms constant time, νCPMG 25-1500 Hz",
+    "observable": "dispersion amplitude (ΔR2eff per residue, Source Data sheet 2a)",
+    "fit_model": "two-state global",
+    "kex": "not reported as kex; source gives τex = 0.42 ± 0.004 ms from the global two-site fit (Fig. 2c); derived, assuming τex = 1/kex: about 2,400 s-1",
+    "pB": "15.2%",
+    "delta_omega": "",
+    "field": "CPMG recorded at 16.4 T and 21.1 T (700 and 900 MHz); the field of the ΔR2eff values in Source Data sheet 2a is not stated (Fig. 2b, the 298 K structure map, uses 21.1 T)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 298 K, 30 of the 37 residues with ΔR2eff values in Source Data sheet 2a pass the ≥ 2 s-1 rule, and one global two-site fit gives τex 0.42 ms with a 15.2% minor state that transient dimerization (SEC-MALS KD ≥ 13 ± 1.65 mM, at most about 7% of protomers at 500 µM) cannot account for.",
+   "evidence_rows": [
+    "HTPDZ-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors propose that the α5 and α5-β15 linker dynamics may matter for regulating HtrA2 activation; stated as a possibility, not shown.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J28",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": [
+     7,
+     9,
+     10,
+     11,
+     19,
+     22,
+     26,
+     27,
+     30,
+     32,
+     33,
+     35,
+     36,
+     38,
+     39,
+     45,
+     46,
+     48,
+     60,
+     61,
+     63,
+     66,
+     70,
+     72,
+     74,
+     75,
+     76,
+     77,
+     79,
+     93,
+     95,
+     96,
+     97,
+     104,
+     105
+    ],
+    "residues_author": "283 K, Source Data sheet 2a (Fig. 2a), columns '283K' Residues/deltaR2eff/Error: 50 residues have entries. No numeric threshold is stated by the authors and the residues entering the global fit are not listed; residues_entry applies a transcription rule to the per-residue values: ΔR2eff (R2eff at lowest minus highest νCPMG) ≥ 2 s-1 and ≥ 2× its fit error, plus every residue the sheet flags 'Broadened' (the purple exchange-broadened bars of Fig. 2a). Listed by value (30): 358, 360, 361, 370, 377, 378, 381, 383, 384, 386, 389, 390, 396, 397, 399, 411, 412, 414, 417, 425, 426, 427, 428, 430, 444, 446, 447, 448, 455, 456; flagged Broadened (5): 362, 373, 387, 421, 423. Below the rule (15): 359 (1.86 ± 0.60); 375 (0.95 ± 0.12); 379 (1.31 ± 1.28); 392 (3.11 ± 2.49); 402 (1.40 ± 1.39); 406 (0.54 ± 1.37); 408 (0.73 ± 1.23); 422 (14.62 ± 9.01); 431 (1.73 ± 4.00); 439 (1.80 ± 0.12); 440 (1.47 ± 0.16); 442 (26.75 ± 35.45); 451 (0.78 ± 0.18); 457 (1.14 ± 0.38); 459 (0.57 ± 0.34). Authors' text adds α7 and the β17-β18 loop at 283 K; assignment transferred from 298 K via the CSPs of Source Data sheet S4h.",
+    "numbering_note": "Author numbering = UniProt O43464; entry = author − 351 (author construct 349-458 plus a C-terminal Leu numbered 459 = entry 108; author 349-351 have no entry position). Checked against the entry sequence for 45 methyl-bearing residues of Source Data sheet 2f (e.g. I362, L367, I373, V387, L392, I413, V427, L459) and Q388; all match.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "283 K; PBS pH 7.4; no added divalent metal; 500 µM [U-15N,13C] isolated PDZ",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "BEST-TROSY 15N CPMG, 40 ms constant time, νCPMG 25-1500 Hz",
+    "observable": "dispersion amplitude (ΔR2eff per residue, Source Data sheet 2a); exchange broadening",
+    "fit_model": "two-state global",
+    "kex": "not reported as kex; source gives τex = 0.98 ± 0.005 ms from the global two-site fit (Fig. 2c); derived, assuming τex = 1/kex: about 1,020 s-1",
+    "pB": "16.1%",
+    "delta_omega": "",
+    "field": "CPMG recorded at 16.4 T and 21.1 T (700 and 900 MHz); the field of the ΔR2eff values in Source Data sheet 2a is not stated (Fig. 2b, the 298 K structure map, uses 21.1 T)",
+    "temperature": "283 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 283 K the residue set changes: 30 residues with ΔR2eff values in Source Data sheet 2a pass the ≥ 2 s-1 rule and 5 more are flagged exchange-broadened, and the global two-site fit slows to τex 0.98 ms with a 16.1% minor state.",
+   "evidence_rows": [
+    "HTPDZ-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors propose that the α5 and α5-β15 linker dynamics may matter for regulating HtrA2 activation; stated as a possibility, not shown.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J3",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Methyl MQ CPMG: increased dispersion for methyls in the α5-to-β15 region and in β16/α7 (Fig. 2f; Supplementary Fig. 5a,b); residues entering the fit not listed in the text",
+    "numbering_note": "Author construct is UniProt 349-458; entry is 352-458 plus LE, so the three N-terminal author residues 349-351 have no entry position.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; PBS pH 7.4 in 99.9% D2O; 500 µM [U-2H; Ile-δ1, Leu, Val, Ala, Thr-γ2 13CH3] (ALVIT) isolated PDZ",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C-1H methyl multiple-quantum CPMG, 40 ms constant time, νCPMG 25-750 Hz, ChemEx two-site fit",
+    "observable": "dispersion amplitude (ΔR2eff)",
+    "fit_model": "other",
+    "kex": "not reported as kex; source gives τex = 1.19 ± 0.07 ms (two-site fit; whether global is not stated)",
+    "pB": "16.6 ± 0.4% minor state",
+    "delta_omega": "",
+    "field": "16.4 T and 18.8 T (700 and 800 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Side-chain methyls of the deuterated PDZ in D2O also exchange in α5-β15 and β16/α7, with τex 1.19 ms and a 16.6% minor state; the authors call this the same process as the backbone exchange, although the lifetime differs nearly three-fold from the 298 K backbone fit.",
+   "evidence_rows": [
+    "HTPDZ-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J4",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Elevated R2β in α5-β15 and β17-β18; model-free Rex terms in the β15-preceding linker, α6, and α7 plus the α7-β17 linker (Fig. 1f,g; Supplementary Fig. 4b)",
+    "numbering_note": "Author construct is UniProt 349-458; entry is 352-458 plus LE, so the three N-terminal author residues 349-351 have no entry position.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; PBS pH 7.4; no added divalent metal; 500 µM [U-15N,13C] isolated PDZ",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R2β (TRACT) and Lipari-Szabo model-free Rex; R2 from R1ρ with 2 kHz spin lock as control",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Transverse relaxation and model-free Rex terms flag exchange in the same loop and helix regions as the CPMG data, while spin-lock R2 at 2 kHz is flat, which places the exchange slower than about 80 µs.",
+   "evidence_rows": [
+    "HTPDZ-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J5",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Fast flexibility only in the unstructured C-terminal tail beyond the last secondary-structure element (hetNOE drops sharply toward the carboxy terminus, which is devoid of stable secondary structure); the PDZ core, including the loosely attached helix α5, is rigid (average S2 0.9 ± 0.1, hetNOE about 0.8). Tail residues are not numbered in the text.",
+    "numbering_note": "Author construct is UniProt 349-458; entry 108-109 is the LE tag, which the author construct as described does not contain, so the tail flexibility is not evidence for the entry's LE residues.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; PBS pH 7.4; no added divalent metal; 500 µM [U-15N,13C] isolated PDZ",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N{1H} NOE, R1, R2β, R2(R1ρ); axially symmetric Lipari-Szabo model-free analysis (Tensor2, PDB 1LCY)",
+    "observable": "S2, hetNOE",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "On the picosecond-nanosecond scale the isolated PDZ core is rigid (average S2 0.9) and only the unstructured C-terminal tail is flexible; τc 8.2 ns is a tumbling time, and the high S2 says nothing against the slower exchange in J1, J3 and J4.",
+   "evidence_rows": [
+    "HTPDZ-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J6",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Strand β14 broadened and only partially populated (about 50% by secondary shifts); reduced amide intensity in adjacent β15 (Supplementary Fig. 2d,e)",
+    "numbering_note": "Author construct is UniProt 349-458; entry is 352-458 plus LE, so the three N-terminal author residues 349-351 have no entry position.",
+    "functional_site": "β14 locks the PDZ onto the protease domain in full-length HtrA2 (authors' statement)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; PBS pH 7.4; no added divalent metal; 500 µM [U-15N,13C] isolated PDZ",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "[15N,1H] spectra, assignment experiments and secondary chemical shifts",
+    "observable": "line broadening",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "β14/β15 amide broadening fits either fast solvent exchange of the amides or microsecond-millisecond conformational exchange, and the authors do not decide between them, so neither the process nor its window is fixed.",
+   "evidence_rows": [
+    "HTPDZ-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J8",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "No relaxation measurement on peptide-bound isolated PDZ in the rows",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:DD-PDZOpt activator peptide",
+    "conditions": "",
+    "is_wt_apo": false
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The workbook relaxation-dispersion search covered the 2024 paper, but no row records a CPMG, Rex or relaxation measurement on the isolated PDZ with activator peptide, so the bound-state window is open.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J9",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Methyl MQ CPMG of isolated PDZ with 50 mM CaCl2 or 0.5 mM ZnSO4 exists in the source (Supplementary Fig. 6f-h) but has no evidence row",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ca2+ or Zn2+ (divalent cation)",
+    "conditions": "",
+    "is_wt_apo": false
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The source reports only minor changes of the methyl exchange with Ca2+ or Zn2+, but this measurement was not extracted into an evidence row, so it cannot be judged here.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J10",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "No WT apo measurement of the isolated PDZ in this window",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The workbook searched HDX-MS, EPR/DEER, time-resolved structural and multi-temperature crystallography with no hits, and no row reports CEST or ZZ exchange on the isolated PDZ; the TITAN line-shape off-rates for ligands of the isolated PDZ (DD-PDZOpt peptide koff 48.5 ± 2.9 s-1, Ca2+ 84.3 ± 29 s-1, Zn2+ 52.8 ± 15.3 s-1) are binding kinetics and are excluded.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J11",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Largest two-point exchange in helix α1, regulatory loops (notably LA) and helix α5 of full-length HtrA2 (Supplementary Fig. 17e); only α5 lies in the entry",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": "α1 and LA loop are outside the entry (protease domain/N-terminus)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A (residues 134-458), MALVIproS methyl labelled",
+    "binding_state": "apo",
+    "conditions": "313 K; Tris-based sample buffer (25 mM Tris-HCl pH 8, 0.1 M NaCl, 1 mM TCEP) per Methods; CPMG sample concentration not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Two-point methyl MQ CPMG at 25 and 750 Hz",
+    "observable": "dispersion amplitude (ΔR2eff, average 8.5 s-1)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "18.8 T",
+    "temperature": "313 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Apo full-length S306A HtrA2 shows exchange (average ΔR2eff 8.5 s-1) in α1, the LA loop and the PDZ helix α5, which supports the isolated-domain α5 result only by inference because the construct, mutation and temperature differ.",
+   "evidence_rows": [
+    "HTPDZ-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "Authors link apo α1/α5 exchange to the activation cascade and to structurally frustrated regions; a hypothesis.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J12",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": [
+     97
+    ],
+    "residues_author": "L448δ1 shows the trimer-hexamer exchange contribution at the hexamerization interface (Fig. 3C); other baseline residues not listed",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": "PDZ hexamerization interface"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A/I441V, U-2H proR ILVM methyl labelled (symmetric closed protomers)",
+    "binding_state": "apo",
+    "conditions": "40 °C; buffer composition in SI (not read)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Two-point 13C-1H MQ relaxation difference at 66 and 2,000 Hz CPMG",
+    "observable": "dispersion amplitude (RMQ,ex)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.0 T",
+    "temperature": "40 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The symmetric apo trimer gives the exchange baseline, and the PDZ methyl L448δ1 carries a contribution the authors assign to weak residual trimer-hexamer exchange, an oligomerization process rather than an intradomain one.",
+   "evidence_rows": [
+    "HTPDZ-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J13",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Residues with ΔRMQ,ex > 16.4 s-1 are labelled in Fig. 3C (bottom) and not transcribed in the row; the Fig. 3A slices (I234, M365, M366, I397, I413) are spectra, not the CPMG result",
+    "numbering_note": "",
+    "functional_site": "protease-PDZ and interprotomer interfaces"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer asymmetric trimer: 10% U-2H proR ILVM S306A/I441V observed protomers with 90% S306A/I441V/E425C PDZ-peptide-stapled neighbours",
+    "binding_state": "bound:PDZ peptide covalently stapled to neighbouring protomers (observed protomer unliganded)",
+    "conditions": "40 °C; no free peptide; buffer composition in SI (not read)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Two-point 13C-1H MQ relaxation difference at 66 and 2,000 Hz CPMG",
+    "observable": "dispersion amplitude (ΔRMQ,ex)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.0 T",
+    "temperature": "40 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "When its neighbours are held open by stapled peptides, an unliganded protomer gains microsecond-millisecond exchange at the protease-PDZ and interprotomer interfaces, with no fitted rate and no transcribed residue list.",
+   "evidence_rows": [
+    "HTPDZ-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "Authors read the enhanced exchange as interprotomer allosteric communication during activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J14",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "PDZ-domain methyls as a group (average S2axis·τc 40 ± 18 ns versus 44 ± 22 ns for the protease domain); residue-level SI Fig. S3 not read",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A (134-458), U-2H proR ILVM methyl labelled, about 80% hexamer",
+    "binding_state": "apo",
+    "conditions": "50 °C; low-salt buffer, 0 mM NaCl; 300 µM monomer; remaining composition in SI",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Methyl 1H triple-quantum build-up (S2axis·τc)",
+    "observable": "S2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "50 °C",
+    "detection_window": "Methyl TQ build-up at 50 °C on a hexamer-rich sample; detects only whether PDZ methyls show lower S2axis·τc than protease methyls (domain decoupling or added fast flexibility), assumes similar local order, and cannot see microsecond-millisecond exchange"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "In the hexamer-rich apo sample PDZ and protease methyls have similar S2axis·τc, so no extra fast PDZ flexibility or domain decoupling is seen; this does not bear on the slower exchange of the isolated domain.",
+   "evidence_rows": [
+    "HTPDZ-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J15",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "PDZ-domain methyls as a group: bound 24 ± 21 ns versus apo 37 ± 24 ns (all resolved residues) or 35 ± 19 ns (matched residues); protease 29 ± 20 ns bound versus 38 ± 19 / 34 ± 13 ns apo (Supplementary Fig. 17a-d)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A, MALVIproS methyl labelled",
+    "binding_state": "bound:DD-PDZOpt activator peptide",
+    "conditions": "313 K; 100 µM HtrA2 with 520 µM DD-PDZOpt",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl SQ/TQ cross-correlated relaxation (S2axis·τc)",
+    "observable": "S2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "313 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Activator peptide lowers PDZ S2axis·τc from 35 ± 19 to 24 ± 21 ns for matched residues, which the authors read as partial PDZ decoupling, still far above the 6.5 ns of the isolated domain.",
+   "evidence_rows": [
+    "HTPDZ-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J16",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole oligomer; trimer-hexamer interconversion (PDZ forms the hexamer interface per authors)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A (134-458), U-2H proR ILVM methyl labelled",
+    "binding_state": "apo",
+    "conditions": "40 °C; low-salt buffer, 0 mM NaCl; other composition in SI",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "2D methyl ZZ magnetization exchange, trimer-hexamer model",
+    "observable": "other: oligomer exchange peaks; kon 5.1 ± 0.6 × 10^5 M-1 s-1 (trimer association), koff 9.0 ± 1.1 s-1 (hexamer dissociation)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "40 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: full-length apo HtrA2 trimers and hexamers interconvert with a hexamer dissociation rate of 9.0 per second at 40 °C, a self-association process that is not conformational exchange and is not counted in any window answer.",
+   "evidence_rows": [
+    "HTPDZ-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "Authors report that hexamers bind activator more weakly than trimers.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J17",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": [
+     11,
+     26,
+     69
+    ],
+    "residues_author": "PDZ methyl probes I362, L377, M420 report PDZ peptide occupancy and the open-inactive state (Fig. 2A-D); I150 (protease, outside entry) reports the open-active state",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": "PDZ peptide-binding site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A/I441V, U-2H proR ILVM-13CH3",
+    "binding_state": "bound:drkN SH3-PDZbm client (titration)",
+    "conditions": "40 °C; 150 µM HtrA2 monomer; 18.8 T titration; buffer in SI (not read)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl-TROSY titration with a protein substrate",
+    "observable": "structure difference (separate state-specific peaks)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "18.8 T",
+    "temperature": "40 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Client binding moves HtrA2 between closed, open-inactive and open-active states that give separate peaks, so they interconvert slowly on the chemical-shift timescale, but no HtrA2 rate is given (the ZZ rates belong to the client).",
+   "evidence_rows": [
+    "HTPDZ-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J18",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Localized PRE from MTSL at C145 near the N-terminal helix α1, consistent with the closed arrangement (Fig. 6a,d)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A/S145C, MTSL at C145, MALVIproS methyl labelled",
+    "binding_state": "apo",
+    "conditions": "40 °C; 20 mM Tris-HCl pH 8, 0.1 M NaCl",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl PRE, MTSL versus ascorbate-reduced reference",
+    "observable": "other: PRE intensity ratio",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "40 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "PRE from the apo spin-labelled enzyme fits the closed structure with some basal motion near α1, but probe mobility and α1 versus PDZ movement cannot be separated, so no PDZ motion is established.",
+   "evidence_rows": [
+    "HTPDZ-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J19",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": [
+     22
+    ],
+    "residues_author": "I373 shows increased PRE with calcium (Fig. 6b,e)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": "PDZ-protease interface"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A/S145C, MTSL at C145, MALVIproS methyl labelled",
+    "binding_state": "bound:Ca2+",
+    "conditions": "40 °C; 20 mM Tris-HCl pH 8, 0.1 M NaCl; 25 mM CaCl2 per Fig. 6 (Methods states 5 mM)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl PRE, MTSL versus ascorbate-reduced reference",
+    "observable": "other: PRE intensity ratio",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "40 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Calcium raises PRE at parts of the PDZ-protease interface such as I373, consistent with partial opening, without the fully open pattern seen with peptide; no rate or population.",
+   "evidence_rows": [
+    "HTPDZ-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J20",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Extended PRE across α1/PDZ contacts with activator bound (Fig. 6c,f)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A/S145C, MTSL at C145, MALVIproS methyl labelled",
+    "binding_state": "bound:DD-PDZOpt activator peptide",
+    "conditions": "40 °C; 20 mM Tris-HCl pH 8, 0.1 M NaCl; 520 µM DD-PDZOpt; no active-site substrate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl PRE, MTSL versus ascorbate-reduced reference",
+    "observable": "other: PRE intensity ratio",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "40 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Activator peptide spreads the PRE pattern, consistent with altered α1/PDZ positions in an open state that the authors consider still catalytically inactive.",
+   "evidence_rows": [
+    "HTPDZ-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J21",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "PDZ peptide-binding surface in 2PZD (fused WTMFWV) versus the same surface contacting the protease domain in 1LCY",
+    "numbering_note": "2PZD construct is PDZ 359-458 (entry 8-107) fused through GGG to WTMFWV",
+    "functional_site": "PDZ peptide-binding groove"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:PDZ 359-458 fused via triglycine to WTMFWV (crystal) versus full-length S306A (1LCY)",
+    "binding_state": "bound:fused WTMFWV peptide (cross-bound between molecules in the crystal)",
+    "conditions": "crystal structures",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Crystal structure comparison (2PZD versus 1LCY)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Peptide in the isolated-PDZ crystal and the protease domain in the full-length crystal occupy overlapping PDZ surface, which shows competition for the groove but no motion or timescale, and the constructs differ.",
+   "evidence_rows": [
+    "HTPDZ-r31"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J22",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Closed PDZ-protease arrangement in 5FHT (V226K/S306A) as in 1LCY (S306A)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer V226K/S306A, C-terminal His6",
+    "binding_state": "apo",
+    "conditions": "crystal structure",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Crystal structure comparison (5FHT versus 1LCY)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Single crystal snapshot of V226K/S306A; shows only the lattice-selected conformation and cannot see solution opening, populations or rates"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The activating V226K substitution still crystallizes closed in the S306A background, which does not exclude PDZ opening in solution.",
+   "evidence_rows": [
+    "HTPDZ-r28"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J23",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Apo S306A model: all three subunits show only minute irregular PDZ motions; peptide-bound WT model: two subunits open the PDZ like a lid, the third behaves differently (Figs. 4-5, Table 4)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:modelled full-length trimers, apo S306A (r27) and WT with GWTMFWV in the PDZ sites (r26)",
+    "binding_state": "mixed",
+    "conditions": "313 K; AMBER11; 50 ns production each; 1 atm",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Molecular dynamics",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "313 K (simulation)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In 50 ns simulations the apo S306A trimer shows no substantial PDZ opening while the peptide-bound WT trimer opens the PDZ in two of three subunits without reaching a competent catalytic triad; each trajectory excludes or shows only events within 50 ns.",
+   "evidence_rows": [
+    "HTPDZ-r27",
+    "HTPDZ-r26"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J25",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Loop and interdomain reorganization with GQYYFV or GSAWFSF docked at a proposed non-canonical pocket (separate simulations, Fig. 6)",
+    "numbering_note": "Paper often numbers the mature sequence from 1",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:modelled mature HtrA2 trimer from 1LCY with rebuilt loops",
+    "binding_state": "bound:GQYYFV or GSAWFSF docked at proposed non-canonical pocket (separate simulations)",
+    "conditions": "300 K; Desmond, OPLS-AA, TIP3P; 30 ns production",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Molecular dynamics of docked complex",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "300 K (simulation)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Two 30 ns simulations with GQYYFV or GSAWFSF docked at a hypothetical pocket reorient the PDZ and catalytic loops, which rests on an unverified docking site.",
+   "evidence_rows": [
+    "HTPDZ-r22",
+    "HTPDZ-r23"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "HTPDZ-J27",
+   "entry_id": "HTPDZ_CPMG",
+   "region": {
+    "residues_entry": [
+     10
+    ],
+    "residues_author": "Y361W (engineered Trp in the PDZ peptide-recognition region)",
+    "numbering_note": "Entry residue = UniProt O43464 residue - 351 (entry 1-107 = UniProt 352-458; entry 108-109 = LE tag).",
+    "functional_site": "PDZ peptide-recognition region"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:mature full-length HtrA2 trimer S306A/Y361W (134-458), C-terminal His6",
+    "binding_state": "apo",
+    "conditions": "20-45 °C in 5 °C steps; pH 8; 20 mM Tris-HCl, 100 mM NaCl, 1 mM EDTA; acrylamide quencher",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Steady-state Trp fluorescence, lifetimes and acrylamide quenching",
+    "observable": "other: solvent exposure (quenching)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "20-45 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The PDZ recognition region changes its solvent exposure non-monotonically with temperature, but temperature also changes fluorophore and quencher behaviour and no protein exchange rate follows.",
+   "evidence_rows": [
+    "HTPDZ-r29"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+  "protein_summary": {
+    "entry_id": "TOY_CPMG",
+    "per_window": {
+      "ps-ns": "Toy summary",
+      "us-ms": "Toy summary",
+      "slower_than_ms": "Toy summary",
+      "undetermined": "Toy summary"
+    },
+    "wt_apo_answer": " ",
+    "open_conflicts": [],
+    "questions_for_gina": []
+  },
+  "judgments": [
+    {
+      "judgment_id": "TOY-J1",
+      "entry_id": "TOY_CPMG",
+      "region": {
+        "residues_entry": [
+          0,
+          5
+        ],
+        "residues_author": "1, 2",
+        "numbering_note": "",
+        "functional_site": ""
+      },
+      "time_window": "us-ms",
+      "sample_state": {
+        "construct": "invalid",
+        "binding_state": "invalid",
+        "conditions": "298 K",
+        "is_wt_apo": true
+      },
+      "direction": "detected",
+      "detection": {
+        "method": "CPMG",
+        "observable": "Rex",
+        "fit_model": "two-state global",
+        "kex": "100 s^-1",
+        "pB": "",
+        "delta_omega": "",
+        "field": "600 MHz",
+        "temperature": "298 K",
+        "detection_window": ""
+      },
+      "verdict": "dynamic_in_window",
+      "evidence_rows": [
+        "MISSING-r1",
+        "OTHER-r1"
+      ],
+      "conflicts_with": [
+        "NO-J1",
+        "TOY-J3"
+      ],
+      "evidence_strength": "direct_measurement",
+      "function_link": "",
+      "relaxdb_relation": "pending_legend"
+    },
+    {
+      "judgment_id": "TOY-J2",
+      "entry_id": "TOY_CPMG",
+      "region": {
+        "residues_entry": "unlocalized",
+        "residues_author": "1, 2",
+        "numbering_note": "",
+        "functional_site": ""
+      },
+      "time_window": "us-ms",
+      "sample_state": {
+        "construct": "WT",
+        "binding_state": "apo",
+        "conditions": "298 K",
+        "is_wt_apo": true
+      },
+      "direction": "measured_not_detected",
+      "detection": {
+        "method": "CPMG",
+        "observable": "Rex",
+        "fit_model": "two-state global",
+        "kex": "100 s^-1",
+        "pB": "",
+        "delta_omega": "",
+        "field": "600 MHz",
+        "temperature": "298 K",
+        "detection_window": ""
+      },
+      "verdict": "no_evidence_in_window",
+      "reason": "Toy evidence reports exchange.",
+      "evidence_rows": [],
+      "conflicts_with": [
+        "TOY-J1"
+      ],
+      "evidence_strength": "direct_measurement",
+      "function_link": "",
+      "relaxdb_relation": "pending_legend"
+    },
+    {
+      "judgment_id": "TOY-J3",
+      "entry_id": "TOY_CPMG",
+      "region": {
+        "residues_entry": [
+          3
+        ],
+        "residues_author": "1, 2",
+        "numbering_note": "",
+        "functional_site": ""
+      },
+      "time_window": "undetermined",
+      "sample_state": {
+        "construct": "WT",
+        "binding_state": "apo",
+        "conditions": "298 K",
+        "is_wt_apo": true
+      },
+      "direction": "detected",
+      "detection": {
+        "method": "CPMG",
+        "observable": "Rex",
+        "fit_model": "none",
+        "kex": "100 s^-1",
+        "pB": "",
+        "delta_omega": "",
+        "field": "600 MHz",
+        "temperature": "298 K",
+        "detection_window": ""
+      },
+      "verdict": "dynamic_in_window",
+      "reason": "Toy evidence reports exchange.",
+      "evidence_rows": [
+        "TOY-r1",
+        "TOY-a1"
+      ],
+      "conflicts_with": [],
+      "evidence_strength": "structure_only",
+      "function_link": "",
+      "relaxdb_relation": "pending_legend"
+    }
+  ]
+}

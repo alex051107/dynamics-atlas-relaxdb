@@ -1,0 +1,802 @@
+[
+ {
+  "id": "E-001",
+  "class": "missed_paper",
+  "case": "R_r9_KRAS_CPMG_20261011200427",
+  "source": "fable_check1",
+  "evidence": "candidate rank 44 Xiang 2026 JACS 10.1021/jacs.6c09870 (K-Ras GDP CPMG/CEST, source lab) not_screened: time; budget spent on peripheral MD rows",
+  "proposed_change": "worker prompt: screen all A-tier-method candidates before writing MD/homolog rows; one MD row per paper",
+  "status": "open (apply in next phase, v5 frozen)"
+ },
+ {
+  "id": "E-002",
+  "class": "format",
+  "case": "R_r9_KRAS_CPMG_20261011200427",
+  "source": "fable_check1",
+  "evidence": "122 rows, 35 MD rows (one MD paper split into 18 rows)",
+  "proposed_change": "export tiers A/B/C with caps (done in export); worker: collapse MD per paper",
+  "status": "export fixed; worker change pending"
+ },
+ {
+  "id": "E-003",
+  "class": "wrong_value",
+  "case": "C_BLAC_claude",
+  "source": "fable_check1",
+  "evidence": "r6 '0.54 mM at 22.3 T' not found in main text",
+  "proposed_change": "marked unconfirmed in row",
+  "status": "fixed"
+ },
+ {
+  "id": "E-004",
+  "class": "missed_paper",
+  "case": "R_r9_RNASE_CPMG_20261011203948",
+  "source": "fable_check2",
+  "evidence": "55 not_screened:time incl. Kovrigin&Loria 2006, Doucet 2011, Gagne 2015 (target CPMG full text) while 22 abstract-only peripheral rows written; same root cause as E-001",
+  "change": "amendment 2 screening-order rule in worker prompt for remaining proteins (VHR, CHEY, AQADK); BLVRB/CYPA already running under the original v5",
+  "status": "applied"
+ },
+ {
+  "id": "E-005",
+  "class": "identity",
+  "case": "R_r9_RNASE_CPMG_20261011203948",
+  "source": "fable_check2",
+  "evidence": "RelaxDB P61824 (Bison bison) vs bovine RNase A with identical 124-residue mature sequence; worker labelled all rows homolog",
+  "change": "identity decision: treat bovine RNase A as same protein in export; keep accession note",
+  "status": "applied in export"
+ },
+ {
+  "id": "E-006",
+  "class": "provider_block",
+  "case": "R_r9_CYPA_CPMG_20261011205533",
+  "source": "campaign",
+  "evidence": "OpenAI bio-risk filter ended the CypA run after 67 rows / 29 papers; one scorer false positive (r26 superscript)",
+  "change": "keep the 67 rows; override r26 in ledger/integrity_overrides.json; no rewording to evade the filter; unscreened CypA candidates go to Claude review",
+  "status": "applied"
+ },
+ {
+  "id": "E-007",
+  "class": "reviewer_error",
+  "source": "fable_check3",
+  "evidence": "Fable named Stiller 2019 Nat Catal as a missed CypA paper; full text is about adenylate kinase (in AQADK pool). Fable gave a non-resolving DOI for Bosco 2002 (correct 10.1073/pnas.082100499).",
+  "change": "reviewer leads are verified against source before use; S_CYPA_supp excludes Stiller 2019",
+  "status": "applied"
+ },
+ {
+  "id": "E-008",
+  "class": "missed_paper",
+  "case": "R_r9_AQADK_CPMG_20261011213637",
+  "source": "claude_check",
+  "evidence": "Stiller 2019 Nat Catal (OA, Aquifex Adk high-pressure NMR dynamics) left not_screened:time; 426 candidates unscreened. Title says high-pressure NMR dynamics, which the amendment-2 keyword list does not name. Full-text check (S_AQADK_supp): Stiller 2019 studies E. coli and P. profundum Adk, not Aquifex; impact is homolog evidence only.",
+  "change": "S_AQADK_supp by Claude subagent; for 133 phase add generic NMR dynamics terms to the screening-order rule",
+  "status": "applied: S_AQADK_supp (12 homolog rows, 5 papers)"
+ },
+ {
+  "id": "L-001",
+  "class": "evidence_row_lead",
+  "case": "AQADK-r19",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "conditions say nucleotide-bound without Mg2+, source sentence states no nucleotide/temperature/data; cites a methods review",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-002",
+  "class": "evidence_row_lead",
+  "case": "AQADK-r6",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "source Methods give ~390 s-1 smFRET rate (Mg-Ap5A) and CPMG on labelled enzyme 30 C 600+-300 s-1; row says no rate",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-003",
+  "class": "evidence_row_lead",
+  "case": "AQADK-r12",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "residue T86 named in source but residue column empty; 70 C absence of splitting and 31P observation omitted",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-004",
+  "class": "evidence_row_lead",
+  "case": "AQADK-r2",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "'fast-limit' wording not the authors'; authors say too fast for accurate analysis",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-005",
+  "class": "evidence_row_lead",
+  "case": "CYPA-r34",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "15N R1 at 900 MHz recorded as us-ms; source treats R1 as fast-timescale; loop 65-73 statement compares CypA/B/C",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-006",
+  "class": "evidence_row_lead",
+  "case": "CYPA-r5",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "residues F67,N71,G74,S77,S110 are us-ms exchange residues per Fig.3 caption, row files them as fast flexibility; omits T68,G72",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-007",
+  "class": "evidence_row_lead",
+  "case": "CYPA-r1",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "mixes 15N amide and 13C methyl probes under '15N backbone CPMG'",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-008",
+  "class": "evidence_row_lead",
+  "case": "CYPA-r35/r36/r37",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "locator Fig.6 is simulation, data in Fig.7; rates ~1500 and ~300 s-1 omitted; r37 loop range ~65-78 plus 108-110",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-009",
+  "class": "evidence_row_lead",
+  "case": "CYPA-r13/r14/r15",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "Keedy 2015: S99/F113 network single state at <=180 K; rows record heterogeneity/alternate state",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "confirmed and applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-010",
+  "class": "evidence_row_lead",
+  "case": "CYPA search gap",
+  "source": "judgment_v0 drafting subagent (claimed verified against cached source)",
+  "evidence": "cached CYPA_supp/PMC7063682 high-pressure NMR paper has no evidence row",
+  "change": "pending Claude verification before editing evidence layer",
+  "status": "refuted: wrong-protein lead (Stiller 2019 is AdK)"
+ },
+ {
+  "id": "L-011",
+  "class": "evidence_row_lead",
+  "case": "VHR-r1",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "constant relaxation time 30 ms vs publisher PDF 40 ms (VHR2020_pdf.txt l.348); two versions disagree",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-012",
+  "class": "evidence_row_lead",
+  "case": "VHR-r2",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "merges apo and tungstate states; apo WT Rex>4.57 list has 14 residues (VHR2020_pdf.txt l.660-667)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-013",
+  "class": "evidence_row_lead",
+  "case": "VHR-r5",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "prose gives N74A broadened list R66,V71,N72,I88,A90,D92,A100,R130,G161 (l.608-609)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-014",
+  "class": "evidence_row_lead",
+  "case": "VHR-r4",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "Rex higher than WT set is N41,A45,T73,N163,D164 (l.710-712)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-015",
+  "class": "evidence_row_lead",
+  "case": "VHR-r10/r11",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "rows claim alternative crystal conformations; source caption only shows superposition, no claimed difference",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-016",
+  "class": "export_bug",
+  "case": "Method_coverage export",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "cites excluded/merged row ids (VHR-r3, VHR-r18); 'searched, none found' shows 0 hits while cached searches had 1-32 hits",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-017",
+  "class": "evidence_row_lead",
+  "case": "HTPDZ-r10",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "temperature not assigned but SI caption gives 313 K, 18.8 T (2024_SI.txt Suppl. Fig. 17e)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-018",
+  "class": "evidence_row_lead",
+  "case": "HTPDZ-r11",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "conditions missing: 100 uM sample 313 K with 520 uM DD-PDZOpt; apo comparison 34+-13, 35+-19 ns missing (Suppl. Fig. 17b)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-019",
+  "class": "evidence_row_lead",
+  "case": "HTPDZ-r15",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "M365,M366,I397,I413 are displayed slices, not full exchange list (PMC8536338 Fig.3 legend)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-020",
+  "class": "evidence_row_lead",
+  "case": "HTPDZ missing rows",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "2024 isolated PDZ Ca2+/Zn2+ methyl CPMG (SI Fig.6f-h) and methyl S2axis*tc (Fig.2d,e) not extracted",
+  "change": "pending verification",
+  "status": "confirmed; missing data noted, row not written"
+ },
+ {
+  "id": "L-021",
+  "class": "evidence_row_lead",
+  "case": "ARGKIN-r4..r7",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "residues E190,D192,T206 are only the pB-fit subset; kex values come from interface/whole-loop fits (ARGKIN_PMC3091953.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-022",
+  "class": "evidence_row_lead",
+  "case": "ARGKIN-r1",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "Table 1 dynamic-domain-1 790+-70 pB 0.4% vs text collective fit 990+-110 pB<0.3%; Table value equals L8 value, possible paper copy error (ARGKIN_PMC2826323.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-023",
+  "class": "evidence_row_lead",
+  "case": "ARGKIN-r2",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "experiment found 17 residues with Rex>5 s-1, row lists only F136",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-024",
+  "class": "evidence_row_lead",
+  "case": "ARGKIN entry sequence",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "2017 TSA paper reports D112; RelaxDB entry has G112; UniProt has D (RelaxDB data issue candidate)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-025",
+  "class": "evidence_row_lead",
+  "case": "CHEY-r16/r17",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "method recorded as exchange broadening but source shows fast-exchange averaged shifts; rate bound >1,000 s-1 omitted (PMC5705603.normalized.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-026",
+  "class": "evidence_row_lead",
+  "case": "CHEY-r3",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "1 mM Mg: V107 Rex ~28 s-1; G39 and A88 broadened away per Fig.3 caption; not in row",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-027",
+  "class": "evidence_row_lead",
+  "case": "CHEY-r26",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "conditions blank; McDonald 2012 says Moy 1994 NMR had Mg2+ present",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-028",
+  "class": "evidence_row_lead",
+  "case": "CHEY-r5/r8 minor",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "r5 lists Carver-Richards fits though D13 not fitted; r8 experiment string duplicated",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "E-009",
+  "class": "export_bug",
+  "case": "Method_coverage",
+  "source": "VHR/ARGKIN/CHEY drafting subagents",
+  "evidence": "coverage cited row ids removed by exclusion or merged by dedupe; 'N hits screened' copied worker-reported hits (0) that disagree with cached searches",
+  "change": "build_gina_table.py maps merged ids, drops missing ids, removes hit counts; verified 0 dangling ids",
+  "status": "applied"
+ },
+ {
+  "id": "L-029",
+  "class": "evidence_row_lead",
+  "case": "BLAC-r1/r2/r3 + Papers_to_send",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "marked abstract_only but full 2020 text cached (BLAC_CPMG/PMC7038250.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-030",
+  "class": "evidence_row_lead",
+  "case": "BLAC-r4",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "S70,S130 amides not observable in WT (broadened beyond detection); 860 s-1 fit used 1.0/0.8 mM two-field samples, not 0.38 mM",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-031",
+  "class": "evidence_row_lead",
+  "case": "BLAC numbering r4,r7,r8,r15,r18",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "'entry = Ambler-27' wrong outside Ambler 68-80: S130->101, K234->209, T235->210, T237->212, E166->141, D246->220 (2GDN alignment); residues_entry may be wrong",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-032",
+  "class": "evidence_row_lead",
+  "case": "BLAC-r7",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "Thr235 assigned in K234R (PMC8284444)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-033",
+  "class": "evidence_row_lead",
+  "case": "BLAC-r6",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "0.54 mM stated in Methods (PMC8284444) - not unconfirmed; closes E-003",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-034",
+  "class": "evidence_row_lead",
+  "case": "BLAC-r18",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "2017 sample His-tagged (BMRB 27067)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-035",
+  "class": "evidence_row_lead",
+  "case": "BLAC-r15",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "'sub-microsecond' not the authors' phrase; 'simulations reach the low microsecond range'",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-036",
+  "class": "evidence_row_lead",
+  "case": "BLAC missing row",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "cached SAXS paper PMC5524718 (open apo shape) has no evidence row",
+  "change": "pending verification",
+  "status": "confirmed; missing data noted, row not written"
+ },
+ {
+  "id": "L-037",
+  "class": "evidence_row_lead",
+  "case": "KRAS-r85/r86",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "author_claim says T35A/T35S show dynamics; source: no ms-us motions within CPMG detection limit (PMC10430694_KRAS_html.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-038",
+  "class": "evidence_row_lead",
+  "case": "KRAS-r83",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "GDP methyl row copies GMPPNP interlobe finding; source: little or no dispersion (<3 s-1) in GDP-bound KRAS; r83/r84 omit 25 C",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-039",
+  "class": "evidence_row_lead",
+  "case": "KRAS-r7",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "labelled same_protein_other_construct but is target WT 1-169 (PMC10584678_KRAS_read.txt Fig.4b)",
+  "change": "pending verification",
+  "status": "refuted (row already correct)"
+ },
+ {
+  "id": "L-040",
+  "class": "evidence_row_lead",
+  "case": "KRAS-r1 minor",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "residue field lists 4 examples; global fit used 29 (15N CPMG), 22 (1HN), 28 (CEST) residues",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-041",
+  "class": "evidence_row_lead",
+  "case": "KRAS missing rows",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "G13D paper WT GMPPNP methyl CPMG at 20/25/30 C; RSC correction WT GMPPNP 31P 70/30 at 7 C",
+  "change": "pending verification",
+  "status": "confirmed; missing data noted, row not written"
+ },
+ {
+  "id": "L-042",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r1",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "lists S111,L125 only; source: over 30 residues exchange in apo (PMC6431292.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-043",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r3",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "region R78 only; source names 76-82 and 36-38",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-044",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r54",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "R170 alternate conformers belong to BCT1028 structure, not BCT2029 (PMC11992022.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-045",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r9",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "records T164 only; source: active site and residues 156-176 (PMC8173106.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-046",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r10/r11/r12",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "no rates; SI Table S4 (2021_si.txt) group kex WT 2020+-230, T164A 1410+-300, T164I 3300+-350, T164S 2430+-230 s-1 (+- lost in extraction); WT 2021 row missing",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-047",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r38",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "no rates; SI Table S1 (2024_si.txt) S111 1420+-100, L125 2670+-500, T164 8070+-3600; 'Q205' vs entry Tyr205; refit of 2018 data, not independent",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-048",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r31..r34",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "region R78 only; source: R78 loop and 164-177 (PMC10461185.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-049",
+  "class": "evidence_row_lead",
+  "case": "BLVRB-r13",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "no residues; source: loss of signal for 109-137 (PMC8173106.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-050",
+  "class": "evidence_row_lead",
+  "case": "RNASE-r47",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "row says no kinetics; abstract gives average kex 1640 s-1 for all residues (10_1021_bi025655m.abstract.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-051",
+  "class": "evidence_row_lead",
+  "case": "RNASE-r48",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "conclusion text not in abstract; S2 0.910+-0.051 missing",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-052",
+  "class": "evidence_row_lead",
+  "case": "RNASE-r54",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "'complementary to preserved slower exchange' not in source; only S2 higher for pTppAp complex (10_1021_bi034027h.abstract.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-053",
+  "class": "evidence_row_lead",
+  "case": "RNASE-r24..r27",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "rows say no rate copied; main text gives kex ~1,700 s-1 and populations 0.95:0.05 (PMC1924554.txt)",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "L-054",
+  "class": "evidence_row_lead",
+  "case": "RNASE cluster naming",
+  "source": "judgment_v0 drafting subagent",
+  "evidence": "'cluster 1' means loop1/His48 in JPCB 2015 and Doucet 2011 but loop 4 in Gagne 2015; rows cannot be pooled by cluster name",
+  "change": "pending verification",
+  "status": "confirmed/partly; applied via ledger/row_corrections.json"
+ },
+ {
+  "id": "E-010",
+  "class": "reviewer_error",
+  "source": "fable review KRAS+VHR",
+  "evidence": "Reviewer called VHR J5 'kcat drop 21%' wrong (Table 1 gives ~26%); authors' text prints 'slight (21%)' (VHR2020_pdf.txt l.741-742). Reviewer doubted J4 wording; main text supports it (l.703-705).",
+  "change": "kept source-supported wording; flagged 21%/26% internal mismatch",
+  "status": "applied"
+ },
+ {
+  "id": "E-011",
+  "class": "reviewer_error",
+  "source": "fable review RNASE+HTPDZ (relayed by Claude)",
+  "evidence": "'dimer fraction far below 1%' wrong: KD >= 13 mM at 500 uM gives up to ~6.7% of protomers in dimers; still cannot explain a 15-16% minor state",
+  "change": "J1 wording corrected by drafter",
+  "status": "applied"
+ },
+ {
+  "id": "E-012",
+  "class": "reviewer_error",
+  "source": "fable review CHEY+BLAC",
+  "evidence": "Reviewer suspected all BlaC entry numbers off by 1. Checked: entry has 266 residues starting with an extra G; entry 43 = S of the single SxxK motif, entry 209 = K of KTG. Numbering is correct.",
+  "change": "none",
+  "status": "refuted"
+ },
+ {
+  "id": "E-013",
+  "class": "environment",
+  "case": "v6 screen (Codex-launched)",
+  "source": "ledger/v6_report.md",
+  "evidence": "codex exec spawned from inside a Codex sandbox fails: 'failed to initialize in-process app-server client: Operation not permitted'. Both dev-set screen launches failed in ~1 s; no model run happened.",
+  "change": "screen/fill are launched by Claude from the host; failed-env ledger archived as ledger/v6_runs_failed_env_20261013.jsonl; screening budget reset by Claude (order section 7)",
+  "status": "applied"
+ },
+ {
+  "id": "E-014",
+  "class": "screen_miss",
+  "case": "v6 screen RNASE_CPMG",
+  "source": "Claude acceptance check",
+  "evidence": "Gagne 2015 (10.1016/j.str.2015.10.011) tier X: candidate has no abstract and title does not name the protein. 46/95 RNase and 315/485 AdK candidates lack abstracts in the OpenAlex pool.",
+  "change": "screen_candidates.py must fetch missing abstracts (Europe PMC, Crossref, OpenAlex) before screening; no-abstract candidates flagged",
+  "status": "fixed by v6-patch1; verified: RNase re-screen puts all 3 target papers in tier A; candidates without abstract 46 -> 5"
+ },
+ {
+  "id": "E-015",
+  "class": "screen_miss",
+  "case": "v6 screen RNASE_CPMG",
+  "source": "Claude acceptance check",
+  "evidence": "Kovrigin & Loria 2006 (10.1021/ja061435a) tier B: abstract reports measured conformational motion and isotope effect on the target but names no technique; prompt tier A requires a stated measurement.",
+  "change": "prompt rule: measured dynamics/exchange kinetics on the target is A even if the technique is unnamed",
+  "status": "fixed by v6-patch1; verified: RNase re-screen puts all 3 target papers in tier A; candidates without abstract 46 -> 5"
+ },
+ {
+  "id": "E-016",
+  "class": "acceptance_fail",
+  "case": "v6 dev set",
+  "source": "Claude acceptance check",
+  "evidence": "Criterion 5 (total time <= 1.5x old run) failed: KRAS 152 s screen + 2230 s fill = 40 min vs 25.5 min limit; RNase 272 s + 1980 s = 37.5 min vs 24 min. Criteria 1-4 passed (all candidates screened; target papers tier A with rows; integrity pass; 0 not_screened).",
+  "change": "none yet; time cost is the price of reading every A/B paper; decision recorded for the project lead/Fable",
+  "status": "open: decision for the project lead (time vs recall)"
+ },
+ {
+  "id": "E-017",
+  "class": "model_copy_error",
+  "case": "CYPA_CPMG Claude screen",
+  "source": "validator",
+  "evidence": "Claude output DOI 10.1038/nature12611 for candidate 50 (actual 10.1038/nature11722); validator rejected batch 2. Cost of 2 batches about $0.65.",
+  "change": "patch2: DOI written by code from candidate_index; title prefix check; single retry for mismatches",
+  "status": "fixed: DOI written by code; title-prefix check (punctuation-insensitive, fixed by Claude after Codex version rejected a correct prefix); CypA Claude screen 289/289, Holliday 2017, Eisenmesser 2002/2005, Fraser 2009 tier A; total Claude cost $1.72"
+ },
+ {
+  "id": "E-018",
+  "class": "check_design",
+  "case": "second_read on KRAS V6 copy (125 rows, Claude)",
+  "source": "host acceptance",
+  "evidence": "seeded PBS/EDTA->HEPES row correctly flagged wrong; but 91/125 rows flagged wrong, nearly all because sample conditions were outside the 1,500-char window (methods/tables elsewhere), not contradictions",
+  "change": "patch1: tri-state checks (match/mismatch/not_in_context), full text up to 120k chars or methods+table sections, gate only on mismatches",
+  "status": "fixed: after patch1 (tri-state, full-text context) KRAS V6 copy: 65 ok, 54 unverified, 6 wrong (seeded row + 5 real binding errors: r1/r2 unassigned residues listed; r7-r9 GDP results attached to GTP rows); wrong rate 4.0/100 excluding seed"
+ },
+ {
+  "id": "E-019",
+  "class": "evidence_row_binding",
+  "case": "V6_r6_KRAS_CPMG_20261013010304 r1,r2,r7,r8,r9",
+  "source": "second_read (Claude, full-text context)",
+  "evidence": "r1/r2 list Y64 and M72 which the source gives as unassigned; r7-r9 attach GDP-state NASR findings (10 ns-1 us, mobile E31/Y32/G60-S65) to GTP-bound samples",
+  "change": "pending human adjudication; V6 case is not in the the NMR collaborator workbook",
+  "status": "open"
+ },
+ {
+  "id": "E-020",
+  "class": "reviewer_coverage",
+  "case": "second read KRAS main (122 rows)",
+  "source": "Codex vs Claude second read",
+  "evidence": "Claude flagged 1 contradiction; Codex flagged 14 (incl. that one) on the rows it reached; adjudication against source confirmed all 14. A single second-read model misses real binding errors.",
+  "change": "second read uses both models where allowed (union of flags, each adjudicated against source); BLAC/CYPA Claude only",
+  "status": "applied"
+ },
+ {
+  "id": "E-021",
+  "class": "candidate_recall",
+  "case": "RelaxDB-133 pilot 4762 NtrC, 5839 GB3",
+  "source": "pre-registered must-find list (~/dynamics_atlas_eval/pilot133/must_find.json)",
+  "evidence": "Citation graph from the single BMRB-citation seed found 1/4 must-find papers for NtrC (missed Volkman 2001 Science, Kern 1999 Nature, Gardino 2009 Cell) and 1/4 for GB3. Adding Europe PMC name+method query v1 raised NtrC to 2/4; v1 method words lacked plain NMR/relaxation/dipolar coupling. v2 words: NtrC 4/4, GB3 2/4 (Bouvignies 2005 PNAS and Lakomek 2008 never name GB3 in title/abstract).",
+  "fix": "tools/extra_channels.py (BMRB same-UniProt citations + Europe PMC name AND method query, several narrow name queries, 400 per query). Channel words were revised once after seeing misses on these two proteins, so their recall is development-exposed; 17266 and 50410 and later entries are the clean test.",
+  "status": "open: title/abstract search cannot find papers that never name the protein; full-text search or Edison needed"
+ },
+ {
+  "id": "L-epr-class",
+  "class": "contract",
+  "case": "V6_r6_4762_20261015203702",
+  "evidence": "atlas_contract method_class has only epr_deer for all EPR; CW-EPR line-shape mobility rows get epr_deer and readers flag it",
+  "fix": "proposal: rename to epr (with experiment field naming DEER/CW) at next contract version",
+  "status": "open"
+ },
+ {
+  "id": "E-022",
+  "class": "candidate_recall",
+  "case": "RelaxDB-133 pilot 5839 GB3",
+  "source": "Fable review + Claude Europe PMC check",
+  "evidence": "Smith et al. 2015 Angew (10.1002/anie.201408890), high-power RD on free GB3 with backbone 1HN exchange, abstract never names GB3 or protein G; Bouvignies 2005 and Lakomek 2008 same pattern. Title/abstract channels cannot find methods papers that use GB3 as an unnamed test protein.",
+  "fix": "needs full-text search (Europe PMC full-text query on OA subset, or Edison/PaperQA) or citation chasing from GB3 papers already found",
+  "status": "open"
+ },
+ {
+  "id": "E-023",
+  "class": "provenance",
+  "case": "exporter build_gina_table.rows_from_case (pilot 5839, 50410)",
+  "source": "Claude, 2026-10-17, while superseding abstract rows with full-text re-reads",
+  "evidence": "Exported row ids were assigned at export time; when a main-case row was excluded, a supplement row with the same worker row_id took over the plain id, so judgments citing GB3-r1 / ALL4940-r1 silently pointed to a different paper. Checker still passed.",
+  "fix": "ledger/row_id_registry.json fixes every exported id at first export; seeded from the as-drafted pilot build and the current CPMG-10 build. Audit: no CPMG-10 entry had an exclusion that collided with a supplement row id, so CPMG-10 judgments were not affected.",
+  "status": "fixed"
+ },
+ {
+  "id": "E-024",
+  "class": "screening_identity",
+  "case": "VILD6 (villin-1 D6 domain, P02640)",
+  "source": "Claude, fill review 2026-10-17",
+  "evidence": "Screening put 24 villin headpiece papers (a different domain of the same UniProt entry) into A/B; the fill worker correctly labelled all 25 rows same_protein_other_construct 'distinct from D6', leaving 1 target row. Most of the fill time went to the wrong domain.",
+  "fix": "proposal: for multidomain UniProt entries, give the screener the entry's residue range and require other-domain papers to be tier C",
+  "status": "open"
+ },
+ {
+  "id": "E-025",
+  "class": "search_config",
+  "case": "batch3 TRX, HTGFA",
+  "source": "judgment drafters + Claude check 2026-10-20",
+  "evidence": "TRX card UniProt P0AA29 (Salmonella typhi) has the identical sequence of E. coli TrxA P0AA25; auto_config v3 restricted the base-name query to S. typhi and missed the E. coli literature. HTGFA's usual name 'TGF-α' was not among the UniProt-derived names ('TGF-alpha').",
+  "fix": "auto_config v4: organisms of all Swiss-Prot entries with the identical sequence (UniParc) and Greek-letter name variants; TRX and HTGFA rerun with logged re-screen (SCREEN_RERUN_REASON).",
+  "status": "fix applied, rerun queued"
+ },
+ {
+  "id": "E-026",
+  "class": "extraction_completeness",
+  "case": "batch3 HTGFA-r1/r2/r15, R15521-r1/r5",
+  "source": "judgment drafters",
+  "evidence": "abstract-only rows say conditions are 'not specified' or 'not in the abstract' although the abstract states pH, temperature or field.",
+  "fix": "candidate prompt change for worker_v6_fill (record every condition the abstract states); to be tested on a golden set before adoption, not changed mid-batch",
+  "status": "open"
+ },
+ {
+  "id": "E-027",
+  "class": "scorer_false_positive",
+  "case": "batch3 AZURIN, HTGFA, CD9K, RFAHTD, GB3 S6",
+  "source": "Claude",
+  "evidence": "frozen score.py number matcher misreads hyphenated ranges ('5.2-5.4', '0.05-0.52'), glued table cells ('530 ps670 ps', '94.47±0.46pB'), en-dash minus ('–184') and gene/mutation names as glued tokens; every case so far was a false positive after checking the source.",
+  "fix": "proposal: scorer v2 normalising unicode minus and range hyphens and splitting glued cells, versioned so earlier scorecards stay comparable",
+  "status": "open"
+ },
+ {
+  "id": "E-028",
+  "class": "entry_identity",
+  "case": "RelaxDB-133 cards",
+  "source": "Claude, 2026-10-20 (ledger/card_identity_check_133.json)",
+  "evidence": "Card sequence vs card UniProt sequence for 131 entries with an accession: 75 exact substrings, 23 substrings after trimming tags, 33 not substrings; of those, 5 share almost no 10-mers with the named accession (17306 0.00, 18092 0.00, 50410 0.00, VCPTH 0.05, BINASE 0.15), i.e. the card names the wrong protein or organism. 18092's card accession P03355 is MoMLV Gag-Pol while the evidence is human eRF1 N-domain; 17306's N1S0H6 is a fungal fragment, not the designed ankyrin. Searches built from the card identity miss the literature.",
+  "fix": "identity preflight before search: compare card sequence with the accession; if overlap < 0.5, find the matching UniProt entry by sequence (UniParc) and search with its names, logging the change. Not yet implemented.",
+  "status": "open"
+ },
+ {
+  "id": "E-028-fix",
+  "class": "entry_identity",
+  "source": "Claude, 2026-10-20",
+  "fix": "tools/identity_preflight.py (10-mer overlap of card sequence vs card UniProt); tools/batch_run.py stops an entry on mismatch (<0.3) unless config/identity_overrides.json sets the accession; tools/auto_config.py uses the override. Tested: 17306 0.00, 18092 0.00, VCPTH 0.06 mismatch; TRX 1.00, CD9K 0.85, 4267 0.99 match; P62495 vs 18092 card 0.99.",
+  "status": "implemented, not yet used in a batch"
+ },
+ {
+  "id": "E-029",
+  "class": "search_recall",
+  "case": "UBE2G1",
+  "source": "Claude, 2026-10-20",
+  "evidence": "v6 seed found the RelaxDB source paper 10.1186/s40543-015-0068-z but the abstract screen tiered it C (assignment-method comparison, no dynamics in the abstract); RelaxDB took the entry relaxation data from it.",
+  "fix": "tools/screen_candidates.py promotes any config/relaxdb_source_dois.json paper to tier A (original tier kept in the reason text); tools/promote_source_papers.py applies it to existing screens; ledger/run_queue_e029.sh fills them.",
+  "status": "implemented; fill queued"
+ },
+ {
+  "id": "E-030",
+  "class": "reviewer_recall",
+  "case": "INJ_REV1CT, INJ_RFAHTD",
+  "source": "Claude, 2026-10-20 (ledger/batch3_F3_injection_score.json)",
+  "evidence": "F3 65% < 70%: 7 of 20 planted binding errors were unverified by both readers and never reached adjudication, because the rubric sends a claim absent from the supplied context to unverified, not wrong.",
+  "proposal": "route rows that both readers mark unverified, on full-text sources, to adjudication (load estimate up to 233/1509 rows, fewer after excluding abstract-only); re-test on a new planted set",
+  "status": "implemented in tools/dual_read.py; retest on a new planted set 20/20 (13 by the old rule), 1/38 unplanted flagged (ledger/batch3_F3_retest_score.json); backlog of 109 existing rows under adjudication"
+ },
+ {
+  "id": "E-031",
+  "class": "species_relation",
+  "case": "S6_r6_TRX_20261020155442, S6_r6_TRX_20261020160402",
+  "source": "Claude, 2026-10-20",
+  "evidence": "Codex again labelled 19 E. coli thioredoxin-1 rows homolog (same error as the 85 rows relabelled earlier today); the fill worker judges species from the card accession P0AA29 (Salmonella) and is not told that E. coli TrxA P0AA25 has the identical sequence. Corrected per row in ledger/row_corrections.json (5 target, 14 same_protein_other_construct).",
+  "proposal": "give the fill worker the identical-sequence Swiss-Prot accessions (UniParc, as tools/auto_config.py organism() already finds) as the same protein",
+  "status": "implemented in tools/prefetch.py (identity_aliases.json gets same_sequence; class queries add those organisms); test refill of 10.1021/bi100784h and 10.1074/jbc.m109.035634: 30 rows, 0 labelled homolog (6 target, 24 same_protein_other_construct) vs all E. coli rows homolog before (ledger/e031_test_prereg.txt; case S6_r6_TRX_20261020185114, excluded from the table)"
+ },
+ {
+  "id": "E-032",
+  "class": "pipeline_integrity",
+  "source": "Astra night review 2026-10-20 (REVIEW_ASTRA_20261020_NIGHT_ZH.md)",
+  "evidence": "tools/dual_read.py ignored the second_read.py return code and copied the shared cases/<case>/second_read.jsonl, so a failed reader could inherit the previous reader's file.",
+  "fix": "dual_read.py deletes second_read.jsonl before each reader, requires returncode 0 and a read for every row, else records failed_readers, does not copy, exits 1",
+  "check": "63 existing codex/claude pairs: none identical; only R_r9_VHR_CPMG_20261011211819 has 17 of 18 rows in both reads",
+  "status": "fixed"
+ },
+ {
+  "id": "E-033",
+  "class": "exchange_regime",
+  "source": "Fable night review 2026-10-20 (REVIEW_FABLE_20261020_NIGHT_ZH.md), checked by Claude",
+  "evidence": "literal_two_peak used author wording only. Computed kex/Δω: CheY Table 2 D64 (96 s-1, 9.4 ppm, 20% minor) and R19 are slow exchange at 600 MHz, predicting a resolved minor peak that is not reported; 27011 is intermediate-fast despite the authors' 'slow exchange'. Fable's BLVRB G76 example was a misread (SI Table S1: kex 3260 ± 1250, PA 99.8%, Δω 9.49 ppm -> intermediate, 0.2% minor).",
+  "fix": "CHEY_CPMG and 27011 literal_two_peak rewritten with the computed regime; rule for new rows: when kex and Δω are both printed, compute the regime and state it next to the authors' wording",
+  "status": "applied to 2 rows; rule not yet in prompts/judgment_draft_v1.md"
+ },
+ {
+  "id": "E-034",
+  "class": "pdb_state_class",
+  "source": "Astra night review 2026-10-20",
+  "evidence": "tools/pdb_states.py classes HTPDZ 2PZD as apo although the peptide is fused to the chain; fused peptides, modified residues and covalent ligands are not detected",
+  "status": "open"
+ }
+]

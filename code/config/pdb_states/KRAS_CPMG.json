@@ -1,0 +1,49 @@
+{
+ "entry": "KRAS_CPMG",
+ "accession": "P01116",
+ "core": [
+  [
+   2,
+   24
+  ],
+  [
+   41,
+   56
+  ],
+  [
+   77,
+   164
+  ]
+ ],
+ "mobile": [
+  [
+   25,
+   40
+  ],
+  [
+   57,
+   76
+  ]
+ ],
+ "open": "9OEL:A",
+ "closed": "36OL:A",
+ "cofactor": [
+  "GDP",
+  "GNP",
+  "GCP",
+  "GSP",
+  "GTP",
+  "AF3"
+ ],
+ "verify_numbering": true,
+ "altlocs": true,
+ "sidechain_chi1": [
+  32,
+  35,
+  61,
+  64,
+  71
+ ],
+ "metadata_table": true,
+ "note": "K-Ras4B 1-169 numbering (KRAS-J1 numbering_note; the N-terminal tag residue is 0 and is outside core and mobile). Mobile = Switch I 25-40 (Y32, T35, I36, E37, D38) and Switch II 57-76 (G60, Q61, E62, Y64, Y71); the P-loop 10-17 carries CPMG residues but its Calpha does not move between the two states and stays in the core; 36OL helix/strand records: helices 15-26, 61-66, 67-75, 86-105, 126-138, 151-168, strands 3-10, 37-46, 49-58, 77-83, 111-116, 141-143. The literature contrast is state 1 (open Switch I, T35 off the Mg2+/gamma-phosphate; GDP-like shifts, KRAS-r1) versus state 2 (T35 on the gamma-phosphate); the state-1 crystals the rows cite (6MBQ Mg-free GMPPNP, KRAS-r36; 6ASA/6ASE D33E/A59G, KRAS-r74/r75; 6BP1, KRAS-r76) and the WT references 4OBE (GDP) and 6GOD (GMPPNP) are all outside the 150 downloaded files, which are the newest 150 of 556 by release date (2025-07 onward). Within the downloaded set: 'open' = 9OEL chain A, wild type GDP.Mg at 298 K with no inhibitor or partner (the GDP state that state 1 resembles by chemical shift), 'closed' = 36OL chain A, wild type GMPPNP.Mg with no inhibitor or partner (state 2 expected; its paper was not read). The only downloaded structure deposited as state 1 is the NMR ensemble 9Q30 (T35S/C118S GppNHp, model 1 used), with 9Q2X/9Q2Z the G12D/G12C versions; T35S itself shows extra processes (KRAS-J20). The nucleotide (GDP, GNP = GppNHp, GCP = GppCH2p, GSP = GTPgammaS, GTP, AF3 transition-state mimic) is reported in its own column and is not a ligand: apo = nucleotide only, ligand-bound = plus a small-molecule inhibitor or fragment, complex = plus a protein partner (RAF RBD, CypA tri-complexes, SOS, PI3K, antibodies, VHL ternary complexes). The 556-entry metadata table (<ENTRY>_metadata_all.md) classifies every mapped entry by nucleotide, partner and mutation; the deposited mutation field is empty for many G12C/G12D/G13C entries, so a second column parses the title (regex X123Y) and is marked as such. T35 chi1 (N-CA-CB-OG1), Y32, Q61, Y64 and Y71 chi1 are listed per altloc."
+}

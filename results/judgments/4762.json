@@ -1,0 +1,2129 @@
+{
+ "protein_summary": {
+  "entry_id": "4762",
+  "per_window": {
+   "ps-ns": "Unresolved for the native domain: the 2001 relaxation paper that would hold R1/R2/NOE data was read as an abstract only, so no order parameters are available (NTRC-J5, r4, search_insufficient). Spin-label EPR on engineered cysteines reports label mobility, not backbone S2: in full-length MBP-NtrC the position-86 label moves with τR 2.5–3 ns unphosphorylated and slows to near 10 ns on phosphorylation (J41, J42; r45, r46), helix-4 position 89 slows less (J43, r47), the isolated receiver fusion stays at τR ≈ 1.5 ns in both states (J46, r51), and the S160F and Δ444–469 controls tie the restriction to phosphorylation and probably to intermolecular contacts (J47–J51; r52–r56). Labels at V115 and C30 impair function and are flagged as perturbed (J44, J45; r48, r50). All EPR judgments are unresolved for the window: the authors trace the spectral change to interdomain contacts, and the isolated-fusion τR shifts with fragment size, so label τR is not a backbone order parameter of the receiver domain.",
+   "us-ms": "dynamic_in_window. Unphosphorylated WT at 25 °C in 50 mM sodium phosphate pH 6.75 interconverts between inactive and active conformations: 15N CPMG gives kex 13,580 ± 850 s−1 with 14% active from the D88 ruler (J1, r20); methyl 1H CPMG gives kex 15,458 ± 452 s−1 at 18 author-listed residues with the population fixed at 14% (J2, r7, r9); I55 fits poorly (J3, r8); the 2001 abstract agrees qualitatively (J4, r4). Phosphorylation and its mimic shift this equilibrium: BeF3−-bound WT exchanges at about 1,950 s−1 with the active state dominant (J18, r23, r14), and a second faster Y101-linked process appears once activation exchange is slow enough to separate (J19, r14; S85D and Y101F, J32, J33, r12, r13); the authors state it cannot be tested in unphosphorylated WT because its exchange near 14,000 s−1 is too fast for 1000 Hz CPMG. Activating mutants D86N and D86N/A89T exchange faster with 43% and 65% active (J24, J25; r21, r22); hydrogen-bond mutants S85D, S85G, Y101F, Q96N and S85D/Y101F slow exchange to 2,800–3,800 s−1 while S85N restores 16,900 s−1 (J26–J31; r24–r29). Y101L keeps activation exchange (2,200 s−1, J34, r15) but loses the faster process except at S13, where sodium binding is suspected (J35, J36; r16, r17); BeF3−-bound Y101L exchanges at 1,500 ± 600 s−1 (J37, r18) and the unnamed partially active mutant of the 2001 abstract stays unresolved (J38, r6). For truly phosphorylated WT only the 2001 abstract speaks (J14, r5, unresolved).",
+   "slower_than_ms": "Only denaturant or folding experiments: at the 2.4 M GdmHCl midpoint the domain unfolds slower than 0.1 s−1 and helix 4 unfolds cooperatively with the rest (J9, r30); folding in urea is limited by K104-P105 prolyl isomerization (J11, r35). BeFx titration shows slow-limit coexistence of free and bound resonances, which is binding kinetics (J20, r41). HDX-MS, FRET, time-resolved and multitemperature structural methods were searched with no hits (J13).",
+   "undetermined": "MD of unphosphorylated WT gives a slowest relaxation of about 100 μs between a heterogeneous inactive and a uniform active ensemble (J6, r1, md_only) and Y101 rotamer switching on about 1 μs within an active-like state at 320 K (J7, r19, md_only); a Gō model gives folding order with no physical clock (J12, r36, r37). Structures: apo 2MSL ensemble heterogeneity (J8, r2), BeF3− 2MSK helix α4 rotation (J21, r3), abstract-only BeF3− and phosphorylated structures (J22, r10, r11; J16, r58), iron-chelate proximity changes in full-length fusions (J17, J23; r44, r43) and unfolding-kinetics cross-checks without transcribed rates (J10, J15, J39, J40; r31–r34) are all unresolved for timescale. Not judged: Spo0F folding and Gō simulation (r38, r39, homolog), static NtrC/CheY comparison (r40, abstract only), CheY BeFx titration (r42, homolog binding), S160C label (r49, outside the 124-residue entry) and the C-terminal DNA-binding domain structure (r57, outside the entry)."
+  },
+  "wt_apo_answer": "Yes: at 25 °C in 50 mM sodium phosphate pH 6.75, the unphosphorylated wild-type receiver domain switches between inactive and active conformations with kex 13,580 ± 850 s−1 and 14% active state by 15N backbone dispersion (D88 population ruler); this exchange is too fast to be suppressed by 1000 Hz CPMG (JMB 2014), so the rate rests on dispersion plus independently measured exchange-free R2 (Cell 2009 Methods), and methyl 1H dispersion at 18 switch-interface residues gives a similar 15,458 ± 452 s−1 with that 14% population fixed rather than fitted.",
+  "open_conflicts": [
+   "Same unphosphorylated WT state, two dispersion methods: 15N backbone kex 13,580 ± 850 s−1 (r20) versus methyl 1H kex 15,458 ± 452 s−1 (r7); the authors call them in excellent agreement, but the methyl fit fixed pB at the 15N-derived 14%, so the population is not an independent replicate.",
+   "BeF3−-bound WT rate printed three ways: 1,940 ± 290 s−1 (2009 Fig. 2D, r23), 1,950 ± 290 s−1 (2014 main text, r14) and 1,950 ± 200 s−1 (2014 Fig. 1C, r14); S85D (2,900 ± 200) and Y101F (3,300 ± 800) are identical in the 2009 and 2014 papers (r24/r12, r27/r13), so they are probably one data set each and not replicates.",
+   "Methyl probe count: the methyl paper's narrative says 21 exchanging probes while Table 1 lists 22 methyl groups including the excluded I55-γ2 (r7, r9)."
+  ],
+  "questions_for_gina": [
+   "Which sample is the RelaxDB 4762 R1/R2/NOE set: unphosphorylated, phosphorylated or the partially active mutant from the 2001 relaxation study (r4–r6, abstract only), and at what temperature and buffer? Without it the ps-ns window cannot be judged.",
+   "All Kern-lab NMR samples used 50 mM sodium phosphate for a phosphorylatable receiver domain with no phosphate-free control, and the 2014 authors suspect sodium binding at S13; should the atlas carry the 14% active population and kex values as the WT apo answer as they stand, or flag them as buffer-dependent until a control exists?"
+  ],
+  "buffer_note": "All 15N and methyl dispersion and HSQC unfolding samples (r7–r9, r12–r30) are the isolated receiver domain in 50 mM sodium phosphate pH 6.75 with 10% D2O at 25 °C (0.75 mM, or 0.3 mM for BeF3−-activated and Y101L samples in 2014); Mg2+ is not stated, and no phosphate-free control exists. The methyl sample is deuterated with CHD2 labelling. Folding kinetics (r35) used 10 mM potassium phosphate pH 7.0 with urea. The 2015 structures (r2, r3) are at 35 °C with buffer not restated. EPR samples (r45–r56) are MBP fusions with C30V/C364A and an engineered cysteine, in Tris-acetate pH 7.8 with 0.1 mM EDTA at 22–23 °C; iron-chelate cleavage samples (r43, r44) contain both 8 mM MgCl2 and 1 mM EDTA. BeF3− is a phosphorylation mimic and is kept separate from carbamoyl-phosphate or steady-state phosphorylation. MD runs are at 300 K (r1) and 320 K (r19)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "NTRC-J1",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     88
+    ],
+    "residues_author": "D88 backbone amide, the authors' population ruler; the residues used in the global fit are shown only by colour on the structure, and the shared Fig. 2 legend (D11, Q68, I69, K70, Q71, R72, V78, T82, H84, L87, D88, A89, V91, Y94, F99, D100, Y101, L102) is not allocated per sample",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region (inactive-active conformational switch)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude) plus D88 chemical-shift position",
+    "fit_model": "two-state global",
+    "kex": "13,580 ± 850 s−1 (kIA inactive→active 1,900 ± 125 s−1; kAI active→inactive 11,600 ± 775 s−1)",
+    "pB": "14% active (from the D88 chemical-shift ruler combined with the dispersion fit, Fig. 2E; not from dispersion alone)",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 25 °C the unphosphorylated wild-type receiver domain interconverts between inactive and active conformations with kex 13,580 ± 850 s−1, and the D88 chemical-shift ruler places 14% of molecules in the active state.",
+   "evidence_rows": [
+    "NTRC-r20"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors tie this inactive/active interconversion to activation: phosphorylation (BeF3− mimic) and activating mutations shift its equilibrium toward the active state.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J2",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     9,
+     18,
+     19,
+     40,
+     43,
+     50,
+     66,
+     76,
+     78,
+     79,
+     80,
+     83,
+     87,
+     90,
+     91,
+     93,
+     102,
+     114
+    ],
+    "residues_author": "Methyl probes in the global fit (Table 1): V9, V18, L19, L40, L43, V50, L66, L76, V78, I79, I80, A83, L87, A90, V91, A93, L102, L114 (I55-γ2 excluded, see NTRC-J3); the narrative counts 21 exchanging probes while Table 1 lists 22 methyl groups including I55",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "interface between secondary-structure elements of the molecular switch (authors' description)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.75; 50 mM sodium phosphate, 0.02% azide, 10% D2O; about 0.75 mM deuterated protein with CHD2 methyl labelling; no activating ligand; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Methyl 1H CPMG relaxation dispersion on CHD2 groups (νCPMG 50–6000 Hz, TCP 40 ms, heating compensated)",
+    "observable": "Rex and methyl 1H dispersion profiles (Table 1 Rex at 600 and 800 MHz)",
+    "fit_model": "two-state global",
+    "kex": "15,458 ± 452 s−1 (τex 64.7 ± 1.9 μs), fast-exchange model",
+    "pB": "not separable (fast exchange); fixed at 14% from the independent 15N/chemical-shift analysis (NTRC-r20)",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Methyl 1H dispersion of the same unphosphorylated state finds one cooperative process at 18 residues with kex 15,458 ± 452 s−1, close to the 15N backbone value, but the population was fixed at 14% rather than fitted.",
+   "evidence_rows": [
+    "NTRC-r7",
+    "NTRC-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors interpret the cooperative methyl exchange as the active/inactive switching process of NtrC activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J3",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     55
+    ],
+    "residues_author": "I55-γ2 methyl",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.75; 50 mM sodium phosphate, 0.02% azide, 10% D2O; about 0.75 mM deuterated protein with CHD2 methyl labelling; no activating ligand; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": true
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "Methyl 1H CPMG relaxation dispersion on CHD2 groups (νCPMG 50–6000 Hz)",
+    "observable": "Rex and dispersion profile",
+    "fit_model": "per-residue",
+    "kex": "individual fit τex 36.1 ± 6.2 μs with pB fixed at 14%; not an accepted global rate",
+    "pB": "14% imposed for this fit",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "I55-γ2 shows exchange broadening but fits the common two-site fast-exchange model poorly, so the authors exclude it from the global fit and do not say whether a second process, overlap or residual coupling is the cause.",
+   "evidence_rows": [
+    "NTRC-r8",
+    "NTRC-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J4",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "not given in the abstract",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not stated in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR backbone relaxation (details unavailable; abstract only)",
+    "observable": "microsecond backbone dynamics (as stated in the abstract)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The 2001 relaxation abstract reports microsecond backbone exchange between inactive and active conformations in unphosphorylated NtrC with both states populated, but gives no rate, population, residue list or conditions because only the abstract was read.",
+   "evidence_rows": [
+    "NTRC-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "The abstract links the exchange to activation by a population shift between two preexisting conformations.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J5",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "unknown (relaxation paper read as abstract only)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "15N R1/R2/NOE spin relaxation (2001 relaxation study, abstract only)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The only spin-relaxation study found for the receiver domain was read as an abstract, which reports microsecond exchange but no order parameters, so no ps-ns verdict can be given.",
+   "evidence_rows": [
+    "NTRC-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J6",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     67,
+     82,
+     84,
+     92,
+     94,
+     95,
+     96,
+     98,
+     99,
+     101
+    ],
+    "residues_author": "Structural descriptors discussed for the MSM states: K67, T82, H84, S92, Y94, Q95, Q96, A98, F99, Y101 (H84–Q96 region); not a list of exchanging amides",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix α4 rotation and switch side chains",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "MD at 300 K; explicit TIP3P water, Na+ counterions; CHARMM27/CMAP; 8000 trajectories, 1.015 ms total; MSM with 2168 microstates, 50 ns lag",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Unbiased MD seeded along a string pathway, Markov state model",
+    "observable": "MD macrostate interconversion",
+    "fit_model": "other",
+    "kex": "slowest MSM relaxation about 100 μs (imprecise; rare transitions sparsely sampled); other processes in the low-μs range and faster",
+    "pB": "about 52% and 48% simulated macrostate populations (assignment to active vs inactive not unambiguous)",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "300 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Simulations of the unphosphorylated domain show slow interconversion between a heterogeneous inactive ensemble and a more uniform active ensemble through several pathways, with a slowest relaxation of about 100 μs that the sampling does not pin down.",
+   "evidence_rows": [
+    "NTRC-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "The authors present this as the free-energy landscape of activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J7",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     101
+    ],
+    "residues_author": "Y101 χ1 rotamer; helix-rotation pseudoangle defined by V8, V9, T32, F33, L52, S53, I80, L87, D88, A89, A90, V91, S92, A93, Y94; other rotamer probes T82, F99, Y122",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "conserved tyrosine Y101 (Y–T coupling site)",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "MD at 320 K started from the active conformation, no BeF3−; explicit TIP3 water, 7 Na+; CHARMM22/CMAP; about 71.5 μs on Anton",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Long unbiased MD (Anton)",
+    "observable": "MD rotamer fluctuation",
+    "fit_model": "none",
+    "kex": "typical residence in the most populated Y101 rotamer on the order of 1 μs; not the global active/inactive rate",
+    "pB": "simulated rotamer populations about 0.68 (t), 0.28 (g+), 0.04 (g−); not transferable to the NMR samples",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "320 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In a 71.5 μs simulation at 320 K started from the active conformation, Y101 switches among three χ1 rotamers while the helix-rotation coordinate stays active-like, so the rotamer motion is not coupled to activation in this trajectory.",
+   "evidence_rows": [
+    "NTRC-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "The authors use this to argue against obligatory Y–T coupling in activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J8",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     84,
+     94,
+     96,
+     99
+    ],
+    "residues_author": "H84, Y94, Q96, F99 (helix α4 extent and F99 position revised)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix α4 / switch region",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "35 °C; buffer and pH not restated in the article; 600 MHz assignments, 800 MHz NOESY",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution NMR structure (PDB 2MSL) compared with earlier inactive models and activated 2MSK",
+    "observable": "structure difference (restraint ensemble)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The new 35 °C apo NMR ensemble is described as heterogeneous and extends helix α4 to Q96, but restraint-derived ensemble spread is not a measured motion and comparison with older 25 °C models mixes temperature and sensitivity changes.",
+   "evidence_rows": [
+    "NTRC-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J9",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     7,
+     17,
+     82,
+     85,
+     88
+    ],
+    "residues_author": "W7, W17, T82, S85 (helix 4 marker), D88 among the monitored residues; other residues shown only in the figure",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM; 1.8, 2.4 (midpoint) and 3.2 M GdmHCl — denaturing, not native conditions",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N HSQC across a GdmHCl unfolding transition",
+    "observable": "separate folded and unfolded peaks (slow exchange) and two-state unfolding curves",
+    "fit_model": "two-state global",
+    "kex": "folding/unfolding exchange below 10^−1 s−1 at the 2.4 M GdmHCl midpoint (bound from peak coexistence)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At the denaturant midpoint the folded and unfolded peaks coexist, so global unfolding is slower than 0.1 s−1 and helix 4 unfolds cooperatively with the rest of the domain, far slower than activation exchange.",
+   "evidence_rows": [
+    "NTRC-r30"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors use this to show activation does not require unfolding of helix 4.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J10",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     7,
+     17
+    ],
+    "residues_author": "W7, W17 (fluorescence probes, outside the switch region)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); 5 μM protein; GdmCl ≥ 3.2 M with linear extrapolation to 0 M; buffer not restated for the final mixture",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Stopped-flow fluorescence unfolding kinetics",
+    "observable": "unfolding rate ku extrapolated to 0 M denaturant",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Global unfolding kinetics of the unphosphorylated domain were measured as an energetic cross-check of the dispersion results, but no rate is transcribed in the evidence row and tryptophan probes cannot report local helix-4 opening.",
+   "evidence_rows": [
+    "NTRC-r31"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J11",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     104,
+     105
+    ],
+    "residues_author": "native cis-prolyl peptide bond K104-P105 (isomerizes in the unfolded state)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 7.0; 10 mM potassium phosphate; urea-dependent folding and unfolding; 10 μM; NT-NtrC construct pJES820",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Stopped-flow CD and fluorescence folding/unfolding, global parallel-channel off-pathway model",
+    "observable": "folding and unfolding kinetic phases",
+    "fit_model": "other",
+    "kex": "Table 2 microscopic rates: UC→UT 5.34×10^−2 ± 8.10×10^−3 s−1; UT→UC 5.95×10^−3 ± 1.02×10^−3 s−1; UC→IBPC > 1.95×10^4 s−1; IBPC→UC > 4.22 s−1; UT→IBPT > 1.65×10^3 s−1; IBPT→UT > 40.9 s−1; IBPC→IBPT 1.52×10^−1 ± 1.16×10^−2 s−1; IBPT→IBPC 1.95 ± 2.79×10^−1 s−1; UC→NC 93.4 ± 1.83 s−1; NC→UC 2.84×10^−5 ± 9.94×10^−7 s−1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Folding in urea runs through parallel channels limited by K104-P105 prolyl isomerization and sub-millisecond off-pathway intermediates; these are folding-landscape rates, not native active/inactive exchange.",
+   "evidence_rows": [
+    "NTRC-r35"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J12",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "N-subdomain versus C-subdomain contact sets; ILV cluster membership shown only in the figure",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "coarse-grained Cα Gō model from 1DC7; no solvent; replica exchange/umbrella sampling at 0.87–1.20 Tf and 100 Langevin kinetic runs at 0.87 Tf; no calibrated physical time",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Sequence-sensitive coarse-grained Gō-model simulation",
+    "observable": "MD folding order and contact formation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The coarse-grained model folds NtrC from the N-subdomain without the C-subdomain backtracking seen for Spo0F and does not reproduce the experimentally favoured off-pathway trap; it gives no physical timescale.",
+   "evidence_rows": [
+    "NTRC-r36",
+    "NTRC-r37"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J13",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement found)",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "none (HDX-MS, FRET, time-resolved structural and multitemperature crystallography searched; Europe PMC, 2026-10-15)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The case search for HDX-MS, FRET, time-resolved and multitemperature structural methods found no study of the native receiver domain, so native-state processes slower than milliseconds are unmeasured apart from denaturant unfolding and folding kinetics.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J14",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "not given in the abstract",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated)",
+    "conditions": "not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR backbone relaxation (abstract only)",
+    "observable": "microsecond backbone dynamics (as stated in the abstract)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The 2001 abstract says relaxation was measured on phosphorylated NtrC and that phosphorylation shifts the equilibrium toward the active state, but without the full text it is unknown where or how fast exchange remains.",
+   "evidence_rows": [
+    "NTRC-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "Phosphorylation-driven activation correlates with microsecond backbone dynamics (abstract).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J15",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     7,
+     17
+    ],
+    "residues_author": "W7, W17 (fluorescence probes)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated)",
+    "conditions": "25 °C (298 K); true phosphorylation (P-NtrCr), not BeF3−; 5 μM; GdmCl ≥ 3.2 M, extrapolated to 0 M; buffer not restated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Stopped-flow or discontinuous fluorescence unfolding kinetics",
+    "observable": "unfolding rate ku",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Unfolding kinetics of genuinely phosphorylated domain were used to check the energetics inferred from BeF3− dispersion, but no rate is transcribed and the sample differs from the BeF3− NMR sample.",
+   "evidence_rows": [
+    "NTRC-r34"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J16",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "helix 4 register shift and rotation; signalling face (abstract)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated)",
+    "conditions": "steady-state phosphorylation during NMR; conditions not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution NMR structures of unphosphorylated (1DC7) and phosphorylated (1DC8) receiver domain (abstract only)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The phosphorylated structure differs from the inactive one by a helix-4 register shift and rotation that exposes a hydrophobic surface, but a structure pair gives no rate and only the abstract was read.",
+   "evidence_rows": [
+    "NTRC-r58"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "The abstract states the rearranged signalling face is exposed on phosphorylation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J17",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "engineered C86 carrying an EDTA-Fe chelate (entry D86); D54 phosphorylation site",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "receiver/output-domain interface"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C with Fe-chelate at C86",
+    "binding_state": "bound:phosphoryl group (10 mM carbamoyl phosphate)",
+    "conditions": "25 °C; pH 8.0; 10 mM MOPS, 50 mM KCl, 8 mM MgCl2, 5% glycerol, 1 mM EDTA; 5–10 μM; 30 min activation",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Site-directed iron-chelate cleavage",
+    "observable": "proximity-dependent cleavage of the opposite subunit's output domain",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Phosphorylation by carbamoyl phosphate lets the receiver domain approach the output domain of the opposite subunit in the full-length fusion, a structural proximity change with no rate.",
+   "evidence_rows": [
+    "NTRC-r44"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "Activation-dependent receiver/output-domain contact (authors' conclusion).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J18",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     88
+    ],
+    "residues_author": "D88 population ruler (2009); the 2014 Fig. 1 curves show V78, I79, T82, D88, A90, D100, Y101, L102 for three samples together; global-fit residues are shown only by colour",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:BeF3− (phosphorylation mimic)",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM (2009) or 0.3 mM (2014); Mg2+ not stated in the rows",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude) plus D88 chemical-shift position",
+    "fit_model": "two-state global",
+    "kex": "1,940 ± 290 s−1 (2009 Fig. 2D; kIA 1,940 ± 290 s−1, kAI 10 ± 1.5 s−1); 1,950 ± 290 s−1 in the 2014 main text, 1,950 ± 200 s−1 in its Fig. 1C",
+    "pB": "active state ≥ 99.4% (pA ≥ 0.994 from the chemical-shift endpoint analysis, 2009 Methods, population determination); not fitted from the dispersion alone",
+    "delta_omega": "",
+    "field": "600 MHz (Fig. 2D); 800 MHz also used in 2009",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "BeF3−-bound wild type still exchanges between inactive and active forms but about seven times more slowly (kex about 1,950 s−1), and its rate constants show the active state is stabilized (kAI 10 s−1).",
+   "evidence_rows": [
+    "NTRC-r23",
+    "NTRC-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors conclude BeF3− activation works mainly by stabilizing the active state.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J19",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "a subset of amides clustered around Y101 (Fig. 1F/G, shown only in the figure)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "around conserved Y101"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:BeF3− (phosphorylation mimic)",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.3 mM; Mg2+ not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion (28–1000 Hz) plus independently measured exchange-free TROSY transverse relaxation (R20β)",
+    "observable": "R2β(1000 Hz) above independently measured R20β (exchange not suppressed by CPMG)",
+    "fit_model": "none",
+    "kex": "rough estimate about 30,000 ± 12,000 (unit not printed in the main text, s−1 implied; the authors call it a rough estimate and give the derivation in the supplement, which was not read); faster than the 1,950 s−1 activation process",
+    "pB": "not separable",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In BeF3−-bound wild type a second, faster exchange that 1000 Hz CPMG cannot suppress is seen at amides around Y101; the authors link it to Y101 rotamer exchange and state it cannot be tested in unphosphorylated wild type because activation exchange there is too fast.",
+   "evidence_rows": [
+    "NTRC-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J20",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "residue-wise shift pattern shown only as a bar plot",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "BeCl2, NaF and Mg2+ titration (free and BeFx-bound protein coexist); temperature, pH and buffer not stated in the row",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR titration line shapes (HSQC) with BeFx",
+    "observable": "separate unbound and BeFx-bound resonances (slow-exchange limit)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: during BeFx titration free and bound resonances coexist, which reports slow ligand association rather than conformational exchange within one state.",
+   "evidence_rows": [
+    "NTRC-r41"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J21",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     94,
+     96,
+     99
+    ],
+    "residues_author": "Y94, Q96, F99 (Y94 contacts to helix 3 replaced by Q96 contacts)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix α4",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:BeF3− (phosphorylation mimic)",
+    "conditions": "35 °C; buffer and pH not restated; 600 MHz assignments, 800 MHz NOESY",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution NMR structure (PDB 2MSK) and NOE comparison with apo 2MSL",
+    "observable": "structure difference (state-dependent NOEs)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "State-dependent NOEs show helix α4 rotates on BeF3− activation rather than F99 changing position, but the structure pair measures no transition rate.",
+   "evidence_rows": [
+    "NTRC-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J22",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     82,
+     84,
+     101
+    ],
+    "residues_author": "T82, H84, Y101",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:BeF3− (phosphorylation mimic)",
+    "conditions": "not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "RDC-assisted solution NMR structure (1KRW/1KRX) compared with the phosphorylated structure (abstract only)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The BeF3−-activated structure shows the same helix-register shift and a correlated T82/Y101 position change as the phosphorylated one, but static structures from an abstract-only source give no rate and do not test coupling.",
+   "evidence_rows": [
+    "NTRC-r10",
+    "NTRC-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J23",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "engineered C86 carrying an EDTA-Fe chelate (entry D86); D54 phosphorylation site",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "receiver/output-domain interface"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C with Fe-chelate at C86",
+    "binding_state": "bound:BeFx (200 μM BeCl2, 10 mM NaF)",
+    "conditions": "25 °C; pH 8.0; 10 mM MOPS, 50 mM KCl, 8 mM MgCl2, 5% glycerol, 1 mM EDTA; 5–10 μM; 30 min activation",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Site-directed iron-chelate cleavage",
+    "observable": "proximity-dependent cleavage",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "BeFx activation produces the same receiver/output-domain proximity change as phosphorylation in the full-length fusion; this is a structural consequence, not a rate.",
+   "evidence_rows": [
+    "NTRC-r43"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J24",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     88
+    ],
+    "residues_author": "D88 population ruler; per-sample global-fit residues shown only by colour; shared figure legend not allocated per sample",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:D86N",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "16,450 ± 840 s−1 (kIA 7,100 ± 480 s−1; kAI 9,400 ± 360 s−1)",
+    "pB": "43% active (D88 ruler)",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The activating D86N mutant exchanges with kex 16,450 ± 840 s−1 and 43% active, mainly by destabilizing the inactive state.",
+   "evidence_rows": [
+    "NTRC-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors tie this inactive/active interconversion to activation: phosphorylation (BeF3− mimic) and activating mutations shift its equilibrium toward the active state.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J25",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     88
+    ],
+    "residues_author": "D88 population ruler; per-sample global-fit residues shown only by colour; shared figure legend not allocated per sample",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:D86N/A89T",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "20,050 ± 1080 s−1 (kIA 13,000 ± 700 s−1; kAI 7,020 ± 380 s−1)",
+    "pB": "65% active (D88 ruler)",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The more active D86N/A89T mutant exchanges faster (kex 20,050 ± 1080 s−1) with 65% active, again by destabilizing the inactive state.",
+   "evidence_rows": [
+    "NTRC-r22"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors tie this inactive/active interconversion to activation: phosphorylation (BeF3− mimic) and activating mutations shift its equilibrium toward the active state.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J26",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global-fit residues not listed per sample; the shared Fig. 4 legend (I5, V6, V9, D10, D11, D12, R16, V18, T29, C30, N35, G36, T47, D49, V50, A64, Q68, I69, Q71, V78, I79, M81, T82, A83, L87, D88, A90, V91, L102, F106, I119, Y122) covers all mutants",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:S85D",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain (2014 row: 0.75 mM)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "2,900 ± 200 s−1 (2009 Fig. 4 and 2014 Fig. 1A print the same value, probably the same data set)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Removing the S85 hydrogen-bond donor (S85D) slows activation exchange to kex 2,900 ± 200 s−1, about five times slower than wild type.",
+   "evidence_rows": [
+    "NTRC-r24",
+    "NTRC-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors take the slower exchange as evidence that transient S85–D86 and Y101–Q96 side-chain hydrogen bonds lower the transition barrier of activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J27",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global-fit residues not listed per sample; the shared Fig. 4 legend (I5, V6, V9, D10, D11, D12, R16, V18, T29, C30, N35, G36, T47, D49, V50, A64, Q68, I69, Q71, V78, I79, M81, T82, A83, L87, D88, A90, V91, L102, F106, I119, Y122) covers all mutants",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:S85N",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "16,900 ± 1,900 s−1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "S85N restores donor capacity and restores wild-type-like fast exchange (kex 16,900 ± 1,900 s−1).",
+   "evidence_rows": [
+    "NTRC-r25"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors take the slower exchange as evidence that transient S85–D86 and Y101–Q96 side-chain hydrogen bonds lower the transition barrier of activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J28",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global-fit residues not listed per sample; the shared Fig. 4 legend (I5, V6, V9, D10, D11, D12, R16, V18, T29, C30, N35, G36, T47, D49, V50, A64, Q68, I69, Q71, V78, I79, M81, T82, A83, L87, D88, A90, V91, L102, F106, I119, Y122) covers all mutants",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:S85G",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "3,200 ± 900 s−1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "S85G slows activation exchange to kex 3,200 ± 900 s−1.",
+   "evidence_rows": [
+    "NTRC-r26"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors take the slower exchange as evidence that transient S85–D86 and Y101–Q96 side-chain hydrogen bonds lower the transition barrier of activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J29",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global-fit residues not listed per sample; the shared Fig. 4 legend (I5, V6, V9, D10, D11, D12, R16, V18, T29, C30, N35, G36, T47, D49, V50, A64, Q68, I69, Q71, V78, I79, M81, T82, A83, L87, D88, A90, V91, L102, F106, I119, Y122) covers all mutants",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Y101F",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "3,300 ± 800 s−1 (2009 Fig. 4 and 2014 Fig. 1B print the same value, probably the same data set)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Y101F, which removes the Y101–Q96 hydrogen bond, slows activation exchange to kex 3,300 ± 800 s−1.",
+   "evidence_rows": [
+    "NTRC-r27",
+    "NTRC-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors take the slower exchange as evidence that transient S85–D86 and Y101–Q96 side-chain hydrogen bonds lower the transition barrier of activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J30",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global-fit residues not listed per sample; the shared Fig. 4 legend (I5, V6, V9, D10, D11, D12, R16, V18, T29, C30, N35, G36, T47, D49, V50, A64, Q68, I69, Q71, V78, I79, M81, T82, A83, L87, D88, A90, V91, L102, F106, I119, Y122) covers all mutants",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Q96N",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "3,800 ± 600 s−1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Q96N slows activation exchange to kex 3,800 ± 600 s−1.",
+   "evidence_rows": [
+    "NTRC-r28"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors take the slower exchange as evidence that transient S85–D86 and Y101–Q96 side-chain hydrogen bonds lower the transition barrier of activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J31",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Global-fit residues not listed per sample; the shared Fig. 4 legend (I5, V6, V9, D10, D11, D12, R16, V18, T29, C30, N35, G36, T47, D49, V50, A64, Q68, I69, Q71, V78, I79, M81, T82, A83, L87, D88, A90, V91, L102, F106, I119, Y122) covers all mutants",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:S85D/Y101F",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; 0.75 mM protein; Mg2+ not stated; isolated receiver domain",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion plus independently measured exchange-free transverse relaxation; global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "2,800 ± 700 s−1",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The double mutant S85D/Y101F exchanges with kex 2,800 ± 700 s−1, similar to either single mutant.",
+   "evidence_rows": [
+    "NTRC-r29"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors take the slower exchange as evidence that transient S85–D86 and Y101–Q96 side-chain hydrogen bonds lower the transition barrier of activation.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J32",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "a subset of amides clustered around Y101 (Fig. 1D/E, shown only in the figure)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "around conserved Y101"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:S85D",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; Mg2+ not stated; isolated receiver domain; 0.75 mM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion (28–1000 Hz) plus independently measured exchange-free TROSY transverse relaxation (R20β)",
+    "observable": "R2β(1000 Hz) above independently measured R20β",
+    "fit_model": "none",
+    "kex": "faster than the activation process; not quantified",
+    "pB": "not separable",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Because activation exchange in S85D is slow enough to separate, a second faster process unsuppressed by 1000 Hz CPMG is seen at amides around Y101.",
+   "evidence_rows": [
+    "NTRC-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J33",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "a subset of amides clustered around Y101 (Fig. 1D/E, shown only in the figure)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "around conserved Y101"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Y101F",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; Mg2+ not stated; isolated receiver domain; 0.75 mM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion (28–1000 Hz) plus independently measured exchange-free TROSY transverse relaxation (R20β)",
+    "observable": "R2β(1000 Hz) above independently measured R20β",
+    "fit_model": "none",
+    "kex": "faster than the activation process; not quantified",
+    "pB": "not separable",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Because activation exchange in Y101F is slow enough to separate, a second faster process unsuppressed by 1000 Hz CPMG is seen at amides around Y101.",
+   "evidence_rows": [
+    "NTRC-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J34",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     12,
+     13,
+     16,
+     30,
+     40,
+     41,
+     54,
+     60,
+     68,
+     78,
+     87,
+     88,
+     106,
+     107,
+     108,
+     110,
+     114,
+     115
+    ],
+    "residues_author": "D12, S13, R16, C30, L40, A41, D54, M60, Q68, V78, L87, D88, F106, D107, I108, E110, L114, V115 (complete Fig. 2A dispersion legend)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Y101L",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; Mg2+ not stated; isolated receiver domain; 0.3 mM (diluted to avoid transient aggregation)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion, global two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "2,200 ± 300 s−1 (global fast-form Carver–Richards two-state fit)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Y101L keeps inactive/active exchange (kex 2,200 ± 300 s−1, similar to Y101F) at 18 listed residues, with the equilibrium shifted toward the inactive state.",
+   "evidence_rows": [
+    "NTRC-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors conclude the aromatic side chain is not needed for activation exchange.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J35",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "all measured amides except S13 (residue-wide comparison shown only in the figure)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Y101L",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; Mg2+ not stated; isolated receiver domain; 0.3 mM",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion (28–1000 Hz) plus independently measured exchange-free TROSY transverse relaxation (R20β)",
+    "observable": "R2β(1000 Hz) versus independent R20β",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": "15N TROSY CPMG 28–1000 Hz at 600 MHz, 25 °C, compared with independently measured exchange-free R20β; detects exchange too fast to be suppressed by 1000 Hz CPMG but large enough to raise R2; cannot see ps-ns motion, exchange with negligible Rex, or exchange already captured by the dispersion curve"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Second (Y101-linked) process only: In Y101L the CPMG plateau matches the exchange-free R2 at every amide except S13, so the second faster process seen near Y101 in other forms is absent, while the slower activation exchange remains.",
+   "evidence_rows": [
+    "NTRC-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors take its loss as evidence that the second process is Y101 rotamer exchange.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J36",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     13
+    ],
+    "residues_author": "S13 (next to Mg2+-coordinating D10 and D11, which are named only as neighbours)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "loop near the D54 phosphorylation site",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Y101L",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; Mg2+ not stated; isolated receiver domain; sodium from the phosphate buffer",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion (28–1000 Hz) plus independently measured exchange-free TROSY transverse relaxation (R20β)",
+    "observable": "R2β(1000 Hz) above independent R20β at one residue",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "S13 alone keeps a significant R2 discrepancy in Y101L; the authors suggest sodium binding and release near the phosphorylation site, which no sodium titration or buffer control has tested.",
+   "evidence_rows": [
+    "NTRC-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J37",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     6,
+     10,
+     12,
+     53,
+     64,
+     78,
+     81,
+     82,
+     96
+    ],
+    "residues_author": "V6, D10, D12, S53, A64, V78, M81, T82, Q96 (complete Fig. 4A dispersion legend)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "helix 4 / switch region",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Y101L",
+    "binding_state": "bound:BeF3− (phosphorylation mimic)",
+    "conditions": "25 °C (298 K); pH 6.75; 50 mM sodium phosphate, 10% D2O; Mg2+ not stated; isolated receiver domain; 0.3 mM (diluted to avoid transient aggregation)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N TROSY CPMG relaxation dispersion, two-state fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "1,500 ± 600 s−1 (single two-state fit)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "25 °C (298 K)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "BeF3−-bound Y101L exchanges with kex 1,500 ± 600 s−1 at nine listed residues, comparable to BeF3−-bound wild type.",
+   "evidence_rows": [
+    "NTRC-r18"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors read the comparable rates as evidence against obligatory aromatic stabilization of the active state.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J38",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "not given in the abstract",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:partially active mutant (identity not given in the abstract)",
+    "binding_state": "apo",
+    "conditions": "not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR backbone relaxation (abstract only)",
+    "observable": "microsecond backbone dynamics (as stated)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The 2001 abstract includes a partially active mutant among three states with microsecond dynamics, but names neither the mutation nor any rate or residue.",
+   "evidence_rows": [
+    "NTRC-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J39",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     7,
+     17
+    ],
+    "residues_author": "W7, W17 (fluorescence probes)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:D86N",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); 5 μM; GdmCl ≥ 3.2 M, extrapolated to 0 M; buffer not restated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Stopped-flow fluorescence unfolding kinetics",
+    "observable": "unfolding rate ku",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Unfolding kinetics of D86N were measured to cross-check the dispersion energetics, but no rate is transcribed in the evidence row.",
+   "evidence_rows": [
+    "NTRC-r32"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J40",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     7,
+     17
+    ],
+    "residues_author": "W7, W17 (fluorescence probes)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122)",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:D86N/A89T",
+    "binding_state": "apo",
+    "conditions": "25 °C (298 K); 5 μM; GdmCl ≥ 3.2 M, extrapolated to 0 M; buffer not restated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Stopped-flow fluorescence unfolding kinetics",
+    "observable": "unfolding rate ku",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Unfolding kinetics of D86N/A89T were measured to cross-check the dispersion energetics, but no rate is transcribed in the evidence row.",
+   "evidence_rows": [
+    "NTRC-r33"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J41",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL; entry D86)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C, MTSSL at C86",
+    "binding_state": "apo",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "nitroxide rotational correlation time from line shape",
+    "fit_model": "none",
+    "kex": "τR between 2.5 and 3 ns (label rotation, not backbone exchange)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In unphosphorylated full-length NtrC the position-86 spin label moves fast (τR 2.5–3 ns), which reports label-site mobility rather than backbone exchange; this is nitroxide side-chain mobility, not a backbone order parameter of the receiver domain.",
+   "evidence_rows": [
+    "NTRC-r45"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J42",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL; entry D86)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C, MTSSL at C86",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated)",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "nitroxide rotational correlation time from line shape",
+    "fit_model": "none",
+    "kex": "τR near 10 ns (label rotation)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Phosphorylation slows the position-86 label in full-length NtrC to τR near 10 ns, so the site gains tertiary contacts; the label still reorients on the nanosecond scale; this is nitroxide side-chain mobility, not a backbone order parameter of the receiver domain.",
+   "evidence_rows": [
+    "NTRC-r46"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors conclude phosphorylation creates contacts that immobilize the position-86 label and reduce its solvent accessibility.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J43",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     89
+    ],
+    "residues_author": "position 89 (engineered C89 with MTSSL; entry A89)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/A89C, MTSSL at C89",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated)",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line-shape change on phosphorylation",
+    "fit_model": "none",
+    "kex": "no τR given for the phosphorylated sample",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The helix-4 label at position 89 also loses mobility on phosphorylation, less than position 86, but no correlation time is given.",
+   "evidence_rows": [
+    "NTRC-r47"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J44",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     115
+    ],
+    "residues_author": "position 115 (engineered C115 with MTSSL; entry V115)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/V115C, MTSSL at C115",
+    "binding_state": "apo",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line shape (highly immobilized)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The position-115 label is highly immobilized, but labelling there abolishes transcriptional activation, so the reading may reflect a perturbed construct rather than native mobility.",
+   "evidence_rows": [
+    "NTRC-r48"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J45",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     30
+    ],
+    "residues_author": "C30 (natural cysteine, MTSSL-labelled)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C364A, natural C30 labelled with MTSSL",
+    "binding_state": "apo",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line shape",
+    "fit_model": "none",
+    "kex": "τ ≈ 5 ns (label rotation)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The C30 label moves somewhat slowly (τ ≈ 5 ns), but labelling C30 abolishes ATPase activity, so it cannot stand for native receiver mobility.",
+   "evidence_rows": [
+    "NTRC-r50"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J46",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL; entry D86)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP–receiver-domain fusion C30V/D86C (55 kDa), MTSSL at C86",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated; compared with unphosphorylated)",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); MBP–N-terminal domain fusion",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "nitroxide rotational correlation time",
+    "fit_model": "none",
+    "kex": "τR ≈ 1.5 ns in both phosphorylated and unphosphorylated samples",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the isolated receiver-domain fusion the position-86 label stays very mobile (τR ≈ 1.5 ns) and does not change on phosphorylation, so the full-length immobilization needs the rest of the protein; this says nothing against the domain's own conformational exchange; this is nitroxide side-chain mobility, not a backbone order parameter of the receiver domain.",
+   "evidence_rows": [
+    "NTRC-r51"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J47",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL); S160F is a background mutation",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C/S160F (oligomerization bypass), MTSSL at C86",
+    "binding_state": "apo",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line shape (mobile)",
+    "fit_model": "none",
+    "kex": "no τR given",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the S160F bypass construct without DNA the unphosphorylated position-86 label is mobile even though this construct forms active oligomers; this is nitroxide side-chain mobility, not a backbone order parameter of the receiver domain.",
+   "evidence_rows": [
+    "NTRC-r52"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J48",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL); S160F is a background mutation",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C/S160F (oligomerization bypass), MTSSL at C86",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated)",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line shape (immobilized)",
+    "fit_model": "none",
+    "kex": "no τR given",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Phosphorylation immobilizes the position-86 label in the S160F construct without DNA, so the restriction follows phosphorylation rather than oligomerization; no correlation time is given.",
+   "evidence_rows": [
+    "NTRC-r53"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors conclude phosphorylation creates contacts that immobilize the position-86 label and reduce its solvent accessibility.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J49",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL); S160F is a background mutation",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C/S160F (oligomerization bypass), MTSSL at C86",
+    "binding_state": "bound:enhancer DNA (12.5 μM fragment)",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line shape (mobile)",
+    "fit_model": "none",
+    "kex": "no τR given",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "With enhancer DNA but no phosphorylation the position-86 label in the S160F construct stays mobile; this is nitroxide side-chain mobility, not a backbone order parameter of the receiver domain.",
+   "evidence_rows": [
+    "NTRC-r54"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J50",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL); S160F is a background mutation",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-full-length NtrC C30V/C364A/D86C/S160F (oligomerization bypass), MTSSL at C86",
+    "binding_state": "bound:phosphoryl group on D54 plus enhancer DNA",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 25 μM dimer unless stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line shape (immobilized)",
+    "fit_model": "none",
+    "kex": "no τR given",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "With enhancer DNA, phosphorylation again produces the immobilized line shape at position 86; no correlation time is given.",
+   "evidence_rows": [
+    "NTRC-r55"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors conclude phosphorylation creates contacts that immobilize the position-86 label and reduce its solvent accessibility.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "NTRC-J51",
+   "entry_id": "4762",
+   "region": {
+    "residues_entry": [
+     86
+    ],
+    "residues_author": "position 86 (engineered C86 with MTSSL)",
+    "numbering_note": "Entry numbering equals author numbering for the 124-residue receiver domain (residue types checked at I5, V9, D10-D12, S13, C30, D54, I55, Q68, V78, T82, H84, S85, D86, D88, A89, Y94, Q96, F99, Y101, P105, L114, V115, Y122); the EPR/cleavage probe is an engineered cysteine carrying a label, so the entry residue type differs from the measured side chain",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:MBP-NtrC C30V/C364A/D86C/Δ444–469 (monomer-favouring), MTSSL at C86",
+    "binding_state": "bound:phosphoryl group on D54 (phosphorylated; compared with unphosphorylated)",
+    "conditions": "22–23 °C; pH 7.8; modified B buffer (50 mM Tris-acetate, 50 mM KCl, 5% glycerol, 0.1 mM EDTA, no DTT); 50 μM monomer (compared with 10 μM)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "continuous-wave EPR line shape of an MTSSL spin label (not DEER)",
+    "observable": "line-shape change",
+    "fit_model": "none",
+    "kex": "no τR given",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "22–23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The monomer-favouring truncation shows only a weak phosphorylation effect that shrinks at lower concentration, so it may come from residual dimer and the contacts are probably intermolecular.",
+   "evidence_rows": [
+    "NTRC-r56"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

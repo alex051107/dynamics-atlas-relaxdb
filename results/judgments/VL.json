@@ -1,0 +1,208 @@
+{
+ "protein_summary": {
+  "entry_id": "VL",
+  "per_window": {
+   "ps-ns": "unresolved: the RelaxDB source paper (Constantine et al. 1993, abstract only) reports low-amplitude picosecond librations at all characterised residues, nanosecond motion at 15 residues, and overall low ps-ns flexibility with more motion in turns, hypervariable loops and parts of strands A, B and G; no values or residue list (VL-J3, VL-VL_20261020152957-r1).",
+   "us-ms": "unresolved: the same abstract reports significant R2 exchange contributions at 24 residues, read as us-ms motion and partly attributed to nearby aromatic-ring motion; no residue list, rate, regime or dispersion (VL-J4, VL-VL_20261020152957-r2).",
+   "slower_than_ms": "unresolved (search_insufficient): no slow-exchange row; the source abstract mentions 1H-2H exchange rates but no row carries them (VL-J5).",
+   "undetermined": "From one 1994 abstract: the isolated VL self-associates weakly (Kd 2.5 ± 0.7 mM) in a rapid monomer/dimer equilibrium, which is binding kinetics, not conformational exchange (VL-J1, r1); its solution structure matches the Fab/digoxin crystal VL to 1.05 Å backbone RMSD, with subtle differences in CDR2, CDR3 and strands A, F and G (VL-J2, r2, structure_only)."
+  },
+  "wt_apo_answer": "Not established: the RelaxDB source paper (doi:10.1002/prot.340150307), read only as an abstract, says the free isolated 26-10 VL has significant R2 exchange contributions at 24 unnamed residues on the microsecond-to-millisecond timescale, with nearby aromatic-ring motion proposed for some of them, and low ps-ns flexibility apart from 15 residues with nanosecond motion; no residue list, rate, population, regime or sample condition is available, and the domain is partly dimeric at NMR concentrations (Kd 2.5 ± 0.7 mM), so no site or rate can be given.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "The 1993 backbone-dynamics paper (doi:10.1002/prot.340150307) is now in the evidence as an abstract only; can its full text (order parameters, the 24 residues with R2 exchange terms, sample conditions) be obtained, since it is the likely RelaxDB source?",
+   "At NMR concentrations the isolated VL is partly dimeric (Kd 2.5 mM): should the atlas treat the RelaxDB sample as one state, or flag relaxation and R2 exchange values as possibly raised by self-association?"
+  ],
+  "buffer_note": "The 1994 structure abstract (VL-r1, VL-r2) and the 1993 dynamics abstract (VL-VL_20261020152957-r1, r2) give no temperature, pH, buffer, concentration or ligand state, so no condition transfers to any judgment and no verdict above unresolved is possible. The isolated VL is in a rapid monomer/dimer equilibrium at NMR concentrations, so relaxation and R2 exchange values of this sample may include an association contribution. Method searches used only the exact name 'Ig kappa chain V-II region 26-10' with Mus musculus and returned zero hits for every class; the 1993 paper entered through a re-read of the RelaxDB source, not through those searches. Second reads flagged no row in either case."
+ },
+ "judgments": [
+  {
+   "judgment_id": "VL-J1",
+   "entry_id": "VL",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain (no residue list)",
+    "numbering_note": "Entry numbering is the 113-residue isolated 26-10 VL (UniProt P01631; equals 1MAJ/1MAK chain A); the abstract gives no residue numbers, so nothing is mapped.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "unknown",
+    "conditions": "isolated 26-10 VL at NMR concentration (monomer/dimer equilibrium, Kd 2.5 ± 0.7 mM); ligand occupancy, temperature, pH, buffer and protein concentration not given in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "analytical ultracentrifugation and unspecified NMR observations (abstract only)",
+    "observable": "monomer/dimer association equilibrium",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: the abstract reports weak self-association (Kd 2.5 ± 0.7 mM) and a rapid monomer/dimer equilibrium under the NMR conditions, an intermolecular process with no rate, population or residue list, not a conformational exchange of the domain.",
+   "evidence_rows": [
+    "VL-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VL-J2",
+   "entry_id": "VL",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "CDR2, CDR3, beta-strands A, F and G, and localized hydrophobic-packing regions (no residue numbers in the abstract)",
+    "numbering_note": "Entry numbering is the 113-residue isolated 26-10 VL (UniProt P01631; equals 1MAJ/1MAK chain A); the abstract gives no residue numbers, so nothing is mapped.",
+    "functional_site": "CDR2 and CDR3 (complementarity-determining regions)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: isolated VL solution ensemble compared with VL paired with VH in the 26-10 Fab crystal",
+    "binding_state": "mixed",
+    "conditions": "solution NMR ensemble of the isolated VL (930 distance, 113 dihedral and 46 H-bond restraints; ligand occupancy not stated) versus X-ray VL in the Fab/digoxin complex (PDB not named); conditions not given in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "comparison of the mean energy-minimized DIANA solution structure with the Fab/digoxin crystal VL",
+    "observable": "structure difference (backbone 1.05 Å, heavy-atom 1.56 Å RMSD)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the isolated VL keeps the Fab-bound fold, with subtle differences in CDR2, CDR3 and strands A, F and G that the authors read as minor adjustments on VL-VH association; a static difference across quaternary and ligand states gives no rate, population or interconversion.",
+   "evidence_rows": [
+    "VL-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VL-J3",
+   "entry_id": "VL",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "all characterised residues (ps librations); 15 unnamed residues with nanosecond motion; turns, hypervariable loops and parts of strands A, B and G called more flexible",
+    "numbering_note": "Entry numbering is the 113-residue isolated 26-10 VL (UniProt P01631; equals 1MAJ/1MAK chain A); the abstract names no residue numbers, so nothing is mapped.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "recombinant isolated 26-10 VL; no ligand mentioned for the NMR sample; temperature, pH, buffer, field and concentration not given in the abstract; at NMR concentrations the domain is in a rapid monomer/dimer equilibrium (VL-J1)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 and 1H-15N NOE by 2D inverse-detected 1H-15N NMR, model-free spectral densities (abstract only)",
+    "observable": "S2 and effective correlation times (values not in the abstract)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The RelaxDB source paper was found but read only as an abstract: every characterised residue shows low-amplitude picosecond librations, 15 residues move on the nanosecond timescale, and the domain is called relatively inflexible on the ps-ns scale with more motion in the turns, hypervariable loops and parts of strands A, B and G; no order parameter, residue list or sample condition can be checked, so the ps-ns verdict stays unresolved.",
+   "evidence_rows": [
+    "VL-VL_20261020152957-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VL-J4",
+   "entry_id": "VL",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "24 unnamed residues with significant R2 exchange contributions; for several, nearby aromatic rings are proposed as the source",
+    "numbering_note": "Entry numbering is the 113-residue isolated 26-10 VL; the abstract names no residues.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "recombinant isolated 26-10 VL; no ligand mentioned for the NMR sample; temperature, pH, buffer, field and concentration not given in the abstract; rapid monomer/dimer equilibrium at NMR concentrations (VL-J1)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "exchange contributions to 15N R2 from the model-free analysis of 15N T1/T2/NOE (abstract only); no dispersion experiment",
+    "observable": "Rex",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The abstract of the RelaxDB source paper reports significant R2 exchange contributions at 24 residues, which the authors read as microsecond-to-millisecond motion and, for several residues, attribute to nearby aromatic-ring motion rather than backbone exchange; no residue list, rate, population, field dependence or regime is available, and the monomer/dimer equilibrium (VL-J1) could also add to R2, so the us-ms verdict stays unresolved.",
+   "evidence_rows": [
+    "VL-VL_20261020152957-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VL-J5",
+   "entry_id": "VL",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering is the 113-residue isolated 26-10 VL (UniProt P01631; equals 1MAJ/1MAK chain A); the abstract gives no residue numbers, so nothing is mapped.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "isolated 26-10 VL, free, no VH or digoxin; not applicable (no measurement in the evidence rows)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (no HDX, EXSY or other slow-exchange row)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures slower-than-millisecond exchange in the isolated VL; the RelaxDB source abstract mentions measured 1H-2H amide exchange rates correlated with hydrogen bonding and solvent distance, but no evidence row carries them and no opening rate or regime is stated, so this remains a search gap.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

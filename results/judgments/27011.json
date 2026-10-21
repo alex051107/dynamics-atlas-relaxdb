@@ -1,0 +1,376 @@
+{
+ "protein_summary": {
+  "entry_id": "27011",
+  "per_window": {
+   "ps-ns": "dynamic_in_window. The free domain at 25 °C is ordered with local fast motion: S2 drops in the HII-HIII loop E42-E44 and the beta-sheet V28-T30/E61-I63 (SIGA-J1, r2), both termini carry a ~1 ns second internal mode (J2), and D46 has tau_e 0.9 ± 0.2 ns (J3). Second-mode times in the ordered regions are poorly determined (J4, unresolved). Per-residue values are figure-only.",
+   "us-ms": "dynamic_in_window. Model-free Rex at three fields places exchange in helix I and the regions packed against it (J5, r2); 15N CPMG fits a two-state process, kex ~3,500 (printed as Hz), pB 1.5%, 15N shift differences 2-6 ppm, largest at the end of helix I, in helix II and the beta-sheet (J6, r3). Both residue sets are figure-only, so the region stays unlocalized. A 2023 abstract reports a temperature-dependent partially unfolded minor state (J7, r1, undetermined window).",
+   "slower_than_ms": "search_insufficient: no H/D exchange or other slow measurement (J8).",
+   "undetermined": "J7 (abstract-only minor state). Not judged: the RDC/NOE structure ensemble 5MWW (r4, dominant conformation only), the computational placement of 5MWW in the RNAP channel, which the authors say needs minimal rearrangement (r5, modelled, not measured), and the T. maritima versus E. coli homolog fold comparison (r6, homolog, no target rate)."
+  },
+  "wt_apo_answer": "Yes: the free wild-type domain 1.1 (author 1-71 plus LE-His6, 25 °C, buffer and pH not stated) shows 15N CPMG dispersion fit by a two-state model with kex about 3,500 (printed as Hz) and a 1.5% minor state, with the largest shift differences (2-6 ppm) at the end of helix I, in helix II and in the beta-sheet; the residue set is figure-only, so the region is unlocalized, and the minor state's structure is unknown.",
+  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. BMRB 27011, which the 2017 paper names as the deposition of its relaxation rates and order parameters, holds R1, R2 and NOE lists at 600, 850 and 950 MHz for up to 70 residues at 298.2 K, pH 6.6 and 10 mM ionic strength (the pH appears only in the deposition). In all three R2 lists the error column exceeds the value in most rows (46 of 67, 67 of 70, 43 of 69), so the columns may be swapped or mislabelled; R1 and NOE values are listed but no R2/R1 screen was run.",
+  "open_conflicts": [
+   "Not a conflict yet: the 2023 abstract gives 4% of molecules in the partially unfolded minor state at room temperature (J7, r1), against 1.5% at 25 °C by CPMG in 2017 (J6, r3); the same process cannot be assumed from an abstract.",
+   "Minor-state structure: the authors speculate it may resemble the T. maritima fold (r3, r6) and give no evidence for it."
+  ],
+  "questions_for_gina": [
+   "Are the deposited 27011 R2 values and errors swapped (error larger than value in most rows), and should the RelaxDB labels for this entry be recomputed or flagged?",
+   "Is the 2023 Proteins paper on the transitionally occupied state (r1) worth retrieving in full to place its minor state against the 2017 CPMG result?"
+  ],
+  "buffer_note": "The 2017 paper gives 25 °C but no buffer or pH in the main text (the deposition lists pH 6.6, 10 mM ionic strength). kex is printed as '~3,500 Hz'; it is kept as printed. The construct carries a non-native LE plus His6 tail (entry 72-73 = LE). Figure 2 and Figure 3 residue profiles are figure-only, so no complete residue list exists for Rex, S2 or dispersion."
+ },
+ "judgments": [
+  {
+   "judgment_id": "SIGA-J1",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": [
+     28,
+     29,
+     30,
+     42,
+     43,
+     44,
+     61,
+     62,
+     63
+    ],
+    "residues_author": "HII-HIII loop E42-E44 and the beta-sheet strands V28-T30 and E61-I63 (the authors' element boundaries from the structure section; per-residue S2 values are figure-only, Figure 2A)",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (methanol-calibrated); pH and buffer not stated in the main article; isolated domain 1.1 (author 1-71 + LE + His6), no RNAP or DNA; 0.8 mM 13C,15N or 0.6 mM 15N sample, not assigned per experiment",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 (CPMG-train R2, 0.83 ms spacing), steady-state NOE and cross-correlated relaxation at 600, 850 and 950 MHz; model-free analysis in relax, prolate diffusion (1/6Diso 6.13 ns, D||/Dperp 2.23)",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600, 850 and 950 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Order parameters drop in the loop between helices II and III and in the beta-sheet, the flexible parts of the otherwise ordered free domain; the size of the drop is only shown in Figure 2.",
+   "evidence_rows": [
+    "SIGA-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SIGA-J2",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71
+    ],
+    "residues_author": "terminal regions; mapped to the authors' mainly unstructured N-terminus A1-T11 and C-terminus Q58-D71 (which residues carry the ~1 ns mode is figure-only, Figure 2C)",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (methanol-calibrated); pH and buffer not stated in the main article; isolated domain 1.1 (author 1-71 + LE + His6), no RNAP or DNA; 0.8 mM 13C,15N or 0.6 mM 15N sample, not assigned per experiment",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 (CPMG-train R2, 0.83 ms spacing), steady-state NOE and cross-correlated relaxation at 600, 850 and 950 MHz; model-free analysis in relax, prolate diffusion (1/6Diso 6.13 ns, D||/Dperp 2.23); extended model with a second internal mode",
+    "observable": "S2 and slow internal correlation time tau_s",
+    "fit_model": "per-residue",
+    "kex": "tau_s ~1 ns",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600, 850 and 950 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "A second internal motion with tau_s about 1 ns is well defined at both termini, on top of the global tumbling time of 6.13 ns, so the tails move on the nanosecond scale.",
+   "evidence_rows": [
+    "SIGA-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SIGA-J3",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": [
+     46
+    ],
+    "residues_author": "D46 (Figure 2B caption, value beyond the plotted range)",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (methanol-calibrated); pH and buffer not stated in the main article; isolated domain 1.1 (author 1-71 + LE + His6), no RNAP or DNA; 0.8 mM 13C,15N or 0.6 mM 15N sample, not assigned per experiment",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 (CPMG-train R2, 0.83 ms spacing), steady-state NOE and cross-correlated relaxation at 600, 850 and 950 MHz; model-free analysis in relax, prolate diffusion (1/6Diso 6.13 ns, D||/Dperp 2.23)",
+    "observable": "effective internal correlation time tau_e",
+    "fit_model": "per-residue",
+    "kex": "tau_e 0.9 ± 0.2 ns",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600, 850 and 950 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "D46, at the start of helix III, has an internal correlation time of 0.9 ± 0.2 ns, a slow internal motion still within the ps-ns window.",
+   "evidence_rows": [
+    "SIGA-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SIGA-J4",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": [
+     19,
+     21,
+     28,
+     33,
+     37,
+     45
+    ],
+    "residues_author": "E21 (1.2 ± 1.2 ns), E33 (0.8 ± 0.7 ns), R37 (0.7 ± 0.5 ns) beyond the Figure 2B range; L19, V28 and S45 named only for tau_s standard deviations of 1.6 ns, 1.8 ns and 334 ps",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (methanol-calibrated); pH and buffer not stated in the main article; isolated domain 1.1 (author 1-71 + LE + His6), no RNAP or DNA; 0.8 mM 13C,15N or 0.6 mM 15N sample, not assigned per experiment",
+    "is_wt_apo": true
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "15N R1, R2 (CPMG-train R2, 0.83 ms spacing), steady-state NOE and cross-correlated relaxation at 600, 850 and 950 MHz; model-free analysis in relax, prolate diffusion (1/6Diso 6.13 ns, D||/Dperp 2.23); extended model with a second internal mode",
+    "observable": "internal correlation times tau_e / tau_s",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600, 850 and 950 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the ordered regions the second internal motion improves the fits but its time is poorly determined: the named values at E21, E33 and R37 carry errors of 70-100% and L19, V28 and S45 are named only for their uncertainties.",
+   "evidence_rows": [
+    "SIGA-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SIGA-J5",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "many residues in helix I (F12-R26, especially its ends) and nearby regions: the C-terminal part of helix II (Y31-F41), the beta-sheet and its vicinity; residue list and Rex values figure-only (Figure 2D)",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (methanol-calibrated); pH and buffer not stated in the main article; isolated domain 1.1 (author 1-71 + LE + His6), no RNAP or DNA; 0.8 mM 13C,15N or 0.6 mM 15N sample, not assigned per experiment",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Rex term in model-free fits of 15N R1, R2 and NOE at three fields (field dependence of R2)",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600, 850 and 950 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The model-free fits need a significant exchange term at many residues, which the authors place in helix I and the regions packed against it, the first sign of microsecond-millisecond exchange in the free domain.",
+   "evidence_rows": [
+    "SIGA-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SIGA-J6",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "largest 15N shift differences at the end of helix I, in helix II and in beta-sheet II; E21 and D46 are named only for pB standard deviations of 0.087 and 0.089; the residue-wise set is figure-only (Figure 3)",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": "",
+    "residue_basis": "global_fit_unlocalized"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C (methanol-calibrated); pH and buffer not stated in the main article; isolated domain 1.1 (author 1-71 + LE + His6), no RNAP or DNA; 0.8 mM 13C,15N or 0.6 mM 15N sample, not assigned per experiment",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion at 600, 850 and 950 MHz, nuCPMG 111-2000 Hz; relax dispersion autoanalysis",
+    "observable": "dispersion amplitude",
+    "fit_model": "two-state; residue-wise estimates summarised by the authors as one representative rate",
+    "kex": "~3,500 (printed as Hz)",
+    "pB": "1.5% (representative value)",
+    "delta_omega": "2-6 ppm (15N)",
+    "field": "600, 850 and 950 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Dispersion confirms two-state exchange in the free domain with a fairly uniform kex of about 3,500 and a 1.5% minor state whose 15N shifts differ by 2-6 ppm, mostly at the end of helix I, in helix II and in the beta-sheet; the minor-state structure is unknown and the per-residue fits are figure-only.",
+   "evidence_rows": [
+    "SIGA-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SIGA-J7",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "minor state with reduced helix I and helix III secondary structure (abstract wording)",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: B. subtilis SigA domain 1.1, boundaries and tag not stated in the abstract",
+    "binding_state": "apo",
+    "conditions": "not available from the abstract; population said to increase with temperature",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "specialised NMR characterisation of a minor conformer (pulse sequence not stated in the abstract)",
+    "observable": "minor-state population",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "about 4% (abstract: 4% of molecules at room temperature)",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A 2023 abstract reports a transiently occupied, partially unfolded minor state holding 4% of molecules at room temperature, a population that rises with temperature, but without the full text the method, construct and rate cannot be checked or tied to the 1.5% CPMG state.",
+   "evidence_rows": [
+    "SIGA-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SIGA-J8",
+   "entry_id": "27011",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals author numbering: author 1-71 = entry 1-71 = UniProt P06224 2-72; entry 72-73 are the cloning-derived LE before the His6 tag (checked F12, L19, E21, R26, V28, Y31, E33, R37, F41, E42, S45, D46, E57, E61, I63, D71).",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement in the evidence rows)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (HDX-MS query with restrictive name and species terms returned 0 hits; exchange-broadening, time-resolved and multitemperature crystallography queries gave no rows, 2026-10-17)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures amide H/D exchange, folding or any slower-than-millisecond process of the domain, and the searches were too narrow to call this not measured.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

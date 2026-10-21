@@ -1,0 +1,1070 @@
+{
+ "protein_summary": {
+  "entry_id": "BLAC_CPMG",
+  "per_window": {
+   "ps-ns": "Free WT at 298 K in MES: rigid backbone (average S2 above 0.9, tau_c 13.81 ns) with local flexibility at Val80 (S2 0.57) and two loops (J4, J5; r2). Clavulanate adduct loses rigidity at the helix 2/7 interface (J10). K234R gains flexibility at Ile247 and G132N around Ser70 (J13, J16; r8).",
+   "us-ms": "dynamic_in_window for free WT at 298 K in phosphate-free MES: two-field group fit of eight active-site amides gives kex (8.6 ± 0.6) x 10^2 s-1, pB and delta omega not determinable (J1; r1, r4 restates it). Four anion-site amides (Ser70, Ser130, Thr235, Thr237) stay broadened beyond detection in MES at pH 6.0 and 6.4 and after phosphate titration (J2; r18, r1, r7). K234R removes the dispersion (J12); G132N extends broadening (J15); avibactam adduct speeds exchange to about 3,400 s-1 (J7); clavulanate adduct keeps it with more broadening (J8). Double mutants in phosphate show no dispersion (J21, J22).",
+   "slower_than_ms": "no_evidence_in_window for free WT: CEST at 298 and 288 K finds nothing in 20-200 s-1 (J3; r2). G132N exchanges at 88 ± 6 s-1 with pB 40% (J14; r6); directed-evolution mutants show peak doubling (J19); clavulanate-adduct doubling is unresolved (J9). Free and clavulanate-bound WT do not interconvert on the chemical-shift timescale (r18; 0.3 mM BlaC with 1.5 mM clavulanate in 100 mM MES or sodium phosphate, pH 6.4, 298 K), a covalent-chemistry rate, not conformational exchange.",
+   "undetermined": "MD of WT (5 x 1 us) shows an active site dominated by state A and 604 ns residence of the Phe68-Asn245 contact; states A' and B appear only in the D233A/D246A variants, with B more populated in D246A (J6, md_only). Sulbactam reaction times in crystals (10-90 ms) are ligand reaction, not exchange (J11, unresolved). Mutant crystal structures show alternate conformations or disorder (G132N J17, directed evolution J20, I105R J24); the I105Y-S130G alternates are suspected crystal or pH 4.5 artefacts (J23). Pro107 variants show fast closed/open exchange coupled to dimerisation (J25)."
+  },
+  "wt_apo_answer": "Yes: at 298 K in 94 mM MES pH 6.4 without phosphate, free wild-type BlaC exchanges on the low-millisecond scale around the active site, with a two-field group fit of eight amides giving kex (8.6 ± 0.6) x 10^2 s-1 and no determinable population or shift difference; the four anion-site amides Ser70, Ser130, Thr235 and Thr237 (entry 43, 101, 210, 212) are broadened beyond detection, which the authors calculate would require, if it were the same 860 s-1 process, a minor state above 15% with a shift difference above 0.1 ppm (1H) and/or 1 ppm (15N); CEST at 288 and 298 K finds no slower exchange in the 20-200 s-1 range.",
+  "open_conflicts": [
+   "Origin of the four missing anion-site amides: Elings 2020 links them to the 860 s-1 process via a Bloch-McConnell estimate (pB above 15% with delta omega above 0.1 ppm 1H and/or 1 ppm 15N), while the same paper cannot determine pB from dispersion and Elings 2021 says only that 'another process' than phosphate exchange is responsible (J1 vs J2); one process or two is unresolved.",
+   "Functional role: Elings 2020 suggests the 860 s-1 exchange may matter for catalysis because it exceeds kcat 111 s-1; Elings 2021 finds no dispersion in the active K234R mutant and concludes millisecond dynamics are not required (J1 vs J12).",
+   "Open versus closed apo state: a cached SAXS study of free BlaC (Sagar 2017, sources_cache/BLAC_CPMG/PMC5524718.txt) proposes an open apo shape, while Elings 2020 finds tau_c matching the closed crystal structure and no evidence for an open state (J5); the SAXS study has no evidence row, so the conflict is recorded but not judged.",
+   "Crystal alternates versus solution: G132N crystal double conformations match NMR state populations (J17 vs J14), but I105Y-S130G crystal double conformations have no NMR counterpart (J23 vs J21)."
+  ],
+  "questions_for_gina": [
+   "Which data set produced the RelaxDB BLAC_CPMG labels ('Rex > 2 Hz from 850 Hz data')? Elings 2020 free-state relaxation data are BMRB 27888 (94 mM MES pH 6.4, 298 K), but the papers use Rex thresholds of 3 s-1 (2020) and 5 s-1 (2021), and the four anion-site amides cannot carry labels; is 27888 the source?",
+   "The wild-type NMR evidence is all in MES (20 mM pH 6.0 in 2017; 94 mM pH 6.4 in 2020/2021), while every 2024-2025 mutant study used 100 mM phosphate, which binds the active site (KD 27 ± 11 mM). Should mutant-versus-WT dispersion comparisons across these buffers be treated as not comparable, and is MES itself (a sulfonate anion) a concern for the anion-site broadening?"
+  ],
+  "buffer_note": "Key apo WT NMR samples are phosphate-free: 20 mM MES pH 6.0 with 1 mM DTT (Elings 2017, r18) and 94 mM sodium MES pH 6.4 (Elings 2020/2021, r1-r8). Phosphate binds the active site specifically (KD 27 ± 11 mM; NaCl control showed no comparable shifts, r18), but titrating it neither restores nor explains the four missing anion-site amides (off-rate above 2 x 10^4 s-1, r7). Untested condition: no study compares MES with another non-anionic buffer, so an MES-sulfonate contribution at the anion site is neither shown nor excluded. All 2024-2025 mutant NMR (r10, r12, r16, r19; directed-evolution assignments were transferred from the 2017 WT data, BMRB 27067) used 100 mM sodium phosphate pH 6.4-6.5 with the active site occupied by phosphate, so their dispersion results are not like-for-like with the WT MES data. Crystal data used phosphate (G132N, sulbactam at pH 4.1) or acetate/zinc at pH 4.5 (I105Y-S130G). Anion-site context: Elings 2020 notes that in every published BlaC crystal structure the side chains of the four invisible residues (Ser70, Ser130, Thr235, Thr237) hydrogen-bond either a ligand carboxylate or a buffer phosphate or acetate ion, and Elings 2017 reports that 29 published structures have this site occupied by phosphate or a ligand carboxylate. Anions in a nominally inert buffer change behaviour: with 100 mM Na2SO4 added to MES, 50% recovery from clavulanate inhibition took 2.0 ± 0.5 h versus 13.8 ± 0.8 h in MES alone (100 uM BlaC, 1:5 clavulanate; Elings 2017 Table 3), and the authors state sulfate accelerates clavulanate hydrolysis, less than phosphate."
+ },
+ "judgments": [
+  {
+   "judgment_id": "BLAC-J1",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     41,
+     42,
+     44,
+     141,
+     143,
+     145,
+     190,
+     193
+    ],
+    "residues_author": "Eight active-site backbone amides in the two-field (14.1 and 20.0 T) group fit: F68, C69, T71, E166, E168, N170, T215 and A218 (listed in Elings et al. 2021 SI Table S3, 'Peaks used in grouped fit', wild type, footnote: data and fit from Elings et al. 2020; the 2020 paper shows them only in Fig. 4 and Fig. S5). Deposited 850 MHz Rex (BMRB 27888, saveframe CPMG_Free_850, R2,eff 25 minus 1000 s-1) for these eight: 4.0, 5.0, 8.9, 6.3, 7.1, 7.5, 17.2 and 9.8 s-1; at 600 MHz (CPMG_Free_600): 0.4, 1.9, 3.8, 2.1, 2.5, 3.2, 5.2 and 2.5 s-1. Amides with Rex > 3 s-1 are centred on the active site (Fig. 3).",
+    "numbering_note": "Ambler numbering in the source; entry = Ambler - 27 for 29-83 (F68 41, C69 42, T71 44) and - 25 for 146-238 (E166 141, E168 143, N170 145, T215 190, A218 193); residue types checked against the entry sequence. BMRB 27888 Seq_ID equals entry numbering (same 266-residue sequence with the extra Gly1). Offsets elsewhere: - 29 for 86-145, insertion 145A-D, - 26 for 240-252, - 27 for 254-293.",
+    "functional_site": "active site",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC; 1.0 mM (20 T) and 0.8 mM (14 T) 15N BlaC for CPMG",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "TROSY 15N CPMG relaxation dispersion at 14.1 T (600 MHz) and 20.0 T (850 MHz), 40 ms constant-time element",
+    "observable": "Rex (R2,eff at nuCPMG 25 s-1 minus 1,000 s-1), dispersion amplitude",
+    "fit_model": "cluster",
+    "kex": "(8.6 ± 0.6) x 10^2 s-1 (two-field group fit of eight active-site amides)",
+    "pB": "not determined (authors: excited-state population could not be determined with any accuracy)",
+    "delta_omega": "not determined",
+    "field": "14.1 T and 20.0 T",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 298 K in phosphate-free MES buffer the free wild-type enzyme shows active-site millisecond exchange that a two-field group fit of eight amides (F68, C69, T71, E166, E168, N170, T215, A218; 2021 SI Table S3) puts at about 860 per second, with population and shift difference left undetermined; the same eight carry 4-17 s-1 Rex at 850 MHz in BMRB 27888.",
+   "evidence_rows": [
+    "BLAC-r1",
+    "BLAC-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors note the rate exceeds the fastest reported kcat (111 ± 4 s-1, nitrocefin), so the motion may be relevant for catalysis (Elings 2020); the 2021 K234R result argues it is not required (BLAC-J12).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J2",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     43,
+     101,
+     210,
+     212
+    ],
+    "residues_author": "Ser70, Ser130, Thr235, Thr237: the four non-proline amides at hydrogen-bonding distance from the active-site anion; missing in both the tagged (2017) and untagged (2020/2021) samples",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site; anion (phosphate) binding site"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Two conditions, same result: (a) 298 K; pH 6.0; 20 mM MES, 1 mM DTT, 6% D2O; His-tagged BlaC, about 0.35 mM (Elings 2017); (b) 298 K; pH 6.4; 94 mM sodium MES, 6% D2O; untagged BlaC (Elings 2020/2021). No phosphate except as titrant.",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Backbone assignment and 1H-15N HSQC/TROSY-HSQC peak census at 850 MHz; phosphate titration 0-250 mM with NaCl control (2017); TITAN line-shape analysis of phosphate binding (2021)",
+    "observable": "line broadening beyond detection (unassignable amides)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In both buffer conditions the four anion-site amides of the free wild-type enzyme stay broadened beyond detection, also after phosphate titration; the phosphate off-rate above 2 x 10^4 s-1 was measured on K234R, with the authors stating wild type is the same, and is too fast to explain the broadening, so an unidentified intermediate exchange process is inferred without a rate.",
+   "evidence_rows": [
+    "BLAC-r18",
+    "BLAC-r1",
+    "BLAC-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J3",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "All observable backbone amides (example profile Fig. S6 of Elings 2020)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K and 288 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC; 0.8 mM 15N",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CEST",
+    "observable": "CEST dip",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "not stated in text",
+    "temperature": "298 K and 288 K",
+    "detection_window": "15N CEST at 298 K and 288 K, B1 8 and 25 Hz, 0.8 s irradiation, 15N offsets 100.5-130 ppm in 0.5 ppm steps; authors give the sensitive range as exchange at 20-200 s-1. A minor state with a small 15N shift difference or a very low population would be missed (the 2021 paper notes small-shift amides gave no CEST profile even for the G132N exchange). Amides broadened beyond detection (Ser70, Ser130, Thr235, Thr237) cannot report."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "CEST at 298 K and at 288 K found no exchange for any residue of the free wild-type enzyme in the 20-200 per second range.",
+   "evidence_rows": [
+    "BLAC-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J4",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     53
+    ],
+    "residues_author": "Val80 (helix 2, side chain facing the helix 2/helix 7 interface)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 and {1H}-15N NOE at 14.1 and 20 T; Lipari-Szabo model-free analysis with anisotropic diffusion",
+    "observable": "S2, NOE",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T and 20.0 T",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Val80 is the only amide fitted with an extra fast-motion term, giving the lowest order parameter in the protein (S2 = 0.57 ± 0.02, Sf2 = 0.79 ± 0.03).",
+   "evidence_rows": [
+    "BLAC-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J5",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole backbone; some flexibility in the loop between beta-strands 1 and 2 and the loop between helices 7 and 8 (residues not listed in the text)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N T1, T2 and {1H}-15N NOE at 14.1 and 20 T; Lipari-Szabo model-free analysis with anisotropic diffusion",
+    "observable": "S2, NOE",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T and 20.0 T",
+    "temperature": "298 K",
+    "detection_window": "Backbone 15N T1/T2/NOE at 14.1 and 20 T, 298 K; reports amplitude of sub-tau_c motion (tau_c 13.81 ± 0.04 ns). Average S2 above 0.9 (lowest value 0.57 at Val80, recorded separately) bounds the amplitude of ps-ns backbone motion; it says nothing about us-ms exchange."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Apart from Val80 and two loops, the free wild-type backbone is rigid on the ps-ns scale, with average S2 above 0.9 and an overall correlation time of 13.81 ns that matches the closed crystal structure.",
+   "evidence_rows": [
+    "BLAC-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J6",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     43,
+     46,
+     101,
+     147,
+     154,
+     208,
+     209,
+     220,
+     41,
+     219
+    ],
+    "residues_author": "Ser70, Lys73, Ser130, Asp172, Asp179, Asp233, Lys234, Asp246 (WT, r15); Phe68-Asn245 contact (WT residence times, r16); Phe68-Asn245 contact and Ser130 dihedral compared in D233A and D246A; Thr216 is left out because its Lys234-Thr216 hydrogen bond occurs only in the variant state A'",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site and second shell"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Simulation: 25 °C; protonation for pH 7.0 with either Asp233 or Asp246 protonated; TIP3P water, 100 mM NaCl; WT from phosphate-free 2GDN; D233A and D246A modelled by side-chain deletion",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "All-atom MD, five replicates of 1 us per protonation case",
+    "observable": "MD fluctuation; distance distributions",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "WT: state A dominant in the active-site distance correlations; states A' and B appear only in the D233A/D246A variant simulations (A' in both, B more populated in D246A)",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C (simulation)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "MD of the wild-type enzyme (5 x 1 us per protonation case) shows a stable Asp172-Asp179 hydrogen bond and an active site dominated by state A, with the Phe68-Asn245 contact switching 35 times at 604 ns mean residence; states A' and B appear only in the D233A and D246A variants (contact switching 16 times at 412 ns and 165 times at 156 ns), and the authors say the simulations cannot be linked directly to millisecond catalysis.",
+   "evidence_rows": [
+    "BLAC-r15",
+    "BLAC-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J7",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "19 backbone amides in a single-field global fit, mainly in the loops containing Ser130 and Ile105 around the binding site (Fig. S10)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:avibactam (carbamyl adduct)",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; 2 mM avibactam; 0.4 mM 15N BlaC",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "TROSY 15N CPMG relaxation dispersion, single field",
+    "observable": "Rex, dispersion amplitude; additional broadening beyond detection",
+    "fit_model": "two-state global",
+    "kex": "(3.4 ± 0.2) x 10^3 s-1 (single-field global fit of 19 amides)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Avibactam-bound wild-type BlaC shows larger and faster active-site exchange than the free enzyme, about 3,400 per second from a single-field fit, with more amides broadened beyond detection.",
+   "evidence_rows": [
+    "BLAC-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors argue the increase in dynamics on inhibitor binding speaks against conformational selection.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J8",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     143,
+     246
+    ],
+    "residues_author": "Glu168 and Asp273 show dispersion profiles resembling the resting-state process; slight Rex elevation near the Ile105 loop and the base of the omega loop; many resting-state exchanging amides broadened beyond detection",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "omega loop (Glu168)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:clavulanic acid adduct",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; 100 mM clavulanic acid; 0.4 mM 15N BlaC; molten-globule-like background appears over days",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "TROSY 15N CPMG relaxation dispersion, single field; 29 of 208 profiles excluded as technical outliers",
+    "observable": "Rex, dispersion amplitude; broadening beyond detection",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the clavulanate adduct the resting-state millisecond exchange appears to persist while more active-site amides broaden beyond detection, but peak splitting and slow sample degradation prevented a rate fit.",
+   "evidence_rows": [
+    "BLAC-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J9",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "At least 21 amides around the active site and in the alpha domain split into two or more peaks of similar intensity (Fig. 5)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site; alpha domain"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:clavulanic acid adduct",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; 100 mM clavulanic acid",
+    "is_wt_apo": false
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "1H-15N TROSY-HSQC with HNCA",
+    "observable": "peak doubling",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "doubled peaks at relative occupancy 42% ± 3%",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Peak doubling in the clavulanate adduct points to at least one extra slow process (authors: kex below 100 s-1), but no exchange between the doubled states could be measured, so it may be slow exchange or two non-exchanging species.",
+   "evidence_rows": [
+    "BLAC-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J10",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Several residues in and near loops and termini, and six residues at the helix 2/helix 7 packing interface in the alpha domain (not listed in text)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "alpha domain"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:clavulanic acid adduct",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; 100 mM clavulanic acid (raises viscosity)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N T1, T2 and {1H}-15N NOE at 20 T",
+    "observable": "T2, NOE",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The clavulanate adduct loses ps-ns rigidity at the helix 2/7 interface and in loops, shown by longer T2 and lower NOE than the free enzyme.",
+   "evidence_rows": [
+    "BLAC-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J11",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Guardian residues named Gln112 and Arg173 in the source, plus Ser70 and Ser128; source numbering does not match Ambler residue types, so not mapped",
+    "numbering_note": "Source numbering inconsistent with Ambler: Ambler 112 is His and 173 is Pro in 2GDN; entry positions left unmapped.",
+    "functional_site": "active site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:sulbactam (time-resolved, non-covalent then trans-enamine)",
+    "conditions": "Room temperature mix-and-inject in microcrystals grown from 2.4 M ammonium phosphate pH 4.1; active-site phosphate in the reference structure; 150 mM sulbactam; 2.2-2.7 A",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Mix-and-inject serial femtosecond crystallography (3-700 ms) with SVD of difference density",
+    "observable": "structure difference over time",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "trans-enamine occupancy 85% (B) and 86% (D)",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "room temperature",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Reaction time, not conformational exchange: in crystals grown from 2.4 M ammonium phosphate at pH 4.1, sulbactam appears and reacts over about 10-25 ms with a second structural relaxation at 80-90 ms, so these times describe ligand reaction in the lattice, not motion of the free enzyme.",
+   "evidence_rows": [
+    "BLAC-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J12",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "None named for the CPMG result: dispersion is absent in K234R (Fig. 6a, red), and Fig. 6e-g compare profiles of three residues across WT and both mutants; Lys234 is the substitution site. Thr235 becoming observable in K234R comes from the HSQC spectrum, not from the CPMG data.",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:K234R",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC; 0.28-0.38 mM 15N",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "TROSY 15N CPMG relaxation dispersion, single field",
+    "observable": "Rex (R2,eff at 25 minus 1,000 s-1)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": "TROSY 15N CPMG at 20.0 T, 298 K, 40 ms element, nuCPMG about 25-1,000 s-1; detects exchange on roughly the 0.1-10 ms scale with sizable 15N shift differences; authors state middle-to-low microsecond motions would not be picked up."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The K234R mutant shows no relaxation dispersion at 298 K, so the wild-type 860 per second active-site process is absent or outside the CPMG window in this variant.",
+   "evidence_rows": [
+    "BLAC-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "Authors conclude millisecond exchange is not required for catalysis because K234R still hydrolyses several beta-lactams.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J13",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     221
+    ],
+    "residues_author": "Ile247 (beta-strand 4, amide hydrogen bonded to the Lys234 carbonyl in WT)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:K234R",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Steady-state {1H}-15N heteronuclear NOE, 4 s saturation",
+    "observable": "NOE",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In K234R the Ile247 amide shows a very low NOE, a local gain of ps-ns flexibility, while the rest of the protein stays as rigid as wild type.",
+   "evidence_rows": [
+    "BLAC-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J14",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Grouped-fit residues in Table S3 (not read); doubled peaks around the active site and the mutation; CEST shows exchange directly for Gly238 and Asp246; Ala164 shown as example doubled peak",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "mutant:G132N",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC; 0.38 mM (20.0 T) and 0.54 mM (22.3 T)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Two-field TROSY 15N CPMG (20.0 and 22.3 T) with Bloch-McConnell grouped fits; 15N CEST; TROSY-HSQC at five temperatures 279-298 K",
+    "observable": "dispersion amplitude, peak doubling, CEST dip",
+    "fit_model": "two-state global",
+    "kex": "88 ± 6 s-1 (grouped two-field fits; consistent with < 100 s-1 from split-peak separations)",
+    "pB": "state B 40% ± 2% at 298 K from 10 peak pairs; fixed at 0.4 or 0.6 in the dispersion fits",
+    "delta_omega": "15N |delta omega| per residue fitted; correlates with observed split-peak 15N differences (Fig. 6h)",
+    "field": "20.0 T and 22.3 T",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "G132N populates two nearly equal states exchanging at about 88 per second at 298 K, seen by peak doubling, two-field CPMG and CEST, with the major state inverting at lower temperature.",
+   "evidence_rows": [
+    "BLAC-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J15",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     141,
+     75,
+     76,
+     77,
+     79,
+     101,
+     102,
+     104,
+     105,
+     106,
+     107,
+     108
+    ],
+    "residues_author": "Glu166, Ser104-Val108, Ser130-Leu137 (prolines and the mutated Asn132 omitted from the entry list), in addition to the four amides missing in WT",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D). Pro107 (78) omitted as proline; residue 132 (entry 103) is the mutation site.",
+    "functional_site": "active site; gatekeeper loop; omega loop (Glu166)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G132N",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N TROSY-HSQC peak census",
+    "observable": "line broadening beyond detection",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In G132N the undetectable region spreads from four amides to Glu166, the 104-108 loop and the 130-137 stretch, which the authors read as one or more additional exchange processes without a rate.",
+   "evidence_rows": [
+    "BLAC-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J16",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Region around Ser70, at least for one of the two G132N forms (residues not listed in text)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:G132N",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.4; 94 mM sodium MES, 6% D2O; no phosphate; untagged BlaC",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Steady-state {1H}-15N heteronuclear NOE, 4 s saturation",
+    "observable": "NOE",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "20.0 T (850 MHz)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "G132N gains fast motion around Ser70 for at least one of its two forms, while Val80 becomes more rigid than in wild type.",
+   "evidence_rows": [
+    "BLAC-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J17",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     75,
+     76,
+     101,
+     189,
+     190,
+     191
+    ],
+    "residues_author": "Ser104-Ile105 cis peptide; Ser104 and Ser130 side chains and the 214-216 loop in two conformations",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:G132N",
+    "binding_state": "apo",
+    "conditions": "Crystal grown at 293 K in Morpheus buffer pH 6.5 with 100 mM sodium phosphate added; vitrified in liquid nitrogen; active-site phosphate present; 1.6 A; PDB 7A74",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray crystallography compared with wild-type 5NJ2 chain A",
+    "observable": "structure difference; alternate conformations",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "cryogenic data collection",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The G132N crystal shows two conformations for Ser104, Ser130 and the 214-216 loop with occupancies the authors match to the NMR states, but a crystal cannot assign a rate.",
+   "evidence_rows": [
+    "BLAC-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J18",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     140,
+     141,
+     143,
+     144,
+     145,
+     146,
+     147
+    ],
+    "residues_author": "Omega-loop amides Glu165-Asp172 missing (Pro167 omitted; mutated in these variants)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "omega loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:directed-evolution variants carrying P167S, D240G, T208I, T216A, I105F, D176G, D172A, S104G and H184R in combination",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.5; 100 mM sodium phosphate with 1 mM TSP, 6% D2O; 850 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N TROSY-HSQC signal-loss analysis with HNCA",
+    "observable": "line broadening beyond detection",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "850 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the omega-loop-disrupted directed-evolution mutants the omega-loop amides vanish, which the authors assign to intermediate-fast exchange of about 100 per second without a fit.",
+   "evidence_rows": [
+    "BLAC-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J19",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Many amides across the protein, pattern changing with each successive mutation (Fig. 4-6)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "mutant:directed-evolution variants carrying P167S, D240G, T208I, T216A, I105F, D176G, D172A, S104G and H184R in combination",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.5; 100 mM sodium phosphate with 1 mM TSP, 6% D2O; 850 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N TROSY-HSQC peak-doubling census",
+    "observable": "peak doubling",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "850 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Successive directed-evolution mutants show peak doubling for many amides, read as two or more states exchanging well below 50 per second, with populations not quantified.",
+   "evidence_rows": [
+    "BLAC-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J20",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     140,
+     141,
+     142,
+     143,
+     144,
+     145,
+     146,
+     147,
+     75,
+     76
+    ],
+    "residues_author": "Omega loop Glu165-Asp172 progressively disordered; gatekeeper loop (Gly104, Ile105) displaced",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "omega loop; gatekeeper loop"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:P167S/D240G, P167S/D240G/D172A/S104G and P167S/D240G/D172A/S104G/H184R",
+    "binding_state": "apo",
+    "conditions": "Crystals grown at 20 °C at pH 6.07, 5.5 and 6.3 (cacodylate/citrate, Bis-Tris/ammonium sulfate, MES/citrate); flash frozen; 1.3-1.6 A; PDB 9HIT, 9HCK, 9HJ2",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray crystallography compared with wild-type 2GDN",
+    "observable": "structure difference; missing electron density",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "cryogenic data collection",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Along one evolutionary branch the omega loop opens and loses density while the rest of the fold is unchanged, which shows disorder but no rate.",
+   "evidence_rows": [
+    "BLAC-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J21",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole protein; S130, E166 and I105 named as context (Fig. 7, Fig. S5)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:I105Y-S130G",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.4; 100 mM sodium phosphate, 8% D2O; about 0.6 mM 15N; N-terminal His tag with TEV site",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion; 1H-15N TROSY-HSQC inspection",
+    "observable": "dispersion amplitude; peak doubling",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "850 MHz",
+    "temperature": "25 °C",
+    "detection_window": "15N CPMG at 850 MHz and 25 °C in 100 mM phosphate (active-site ligand present); nuCPMG range not stated in the row; detects roughly 0.1-10 ms exchange with sizable 15N shifts; authors allow faster (ns) motion. Slow regime: some possible peak splitting in TROSY-HSQC, unclear whether unassigned amides or second states (Fig. S5a), left unresolved."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The I105Y-S130G double mutant shows no significant relaxation dispersion at 25 °C in phosphate buffer, and possible split peaks in the slow regime remain unexplained.",
+   "evidence_rows": [
+    "BLAC-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J22",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole protein (Fig. 7, Fig. S5)",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:I105G-G132N",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.4; 100 mM sodium phosphate, 8% D2O; about 0.7 mM 15N; N-terminal His tag with TEV site",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion; 1H-15N TROSY-HSQC inspection",
+    "observable": "dispersion amplitude; absence of peak doubling",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "850 MHz",
+    "temperature": "25 °C",
+    "detection_window": "15N CPMG at 850 MHz and 25 °C in 100 mM phosphate; nuCPMG range not stated in the row; detects roughly 0.1-10 ms exchange with sizable 15N shifts. TROSY-HSQC shows no slow exchange below 100 s-1 (Fig. S5b); population limit not stated."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The I105G-G132N double mutant shows neither relaxation dispersion nor slow-exchange peak doubling at 25 °C in phosphate buffer, unlike the single G132N mutant in MES.",
+   "evidence_rows": [
+    "BLAC-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J23",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     43,
+     76,
+     98,
+     99,
+     100,
+     101,
+     188,
+     189,
+     190,
+     191,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62
+    ],
+    "residues_author": "Ser70, Tyr105, loops 127-130, 213-216 and 86-91 in two conformations",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "active site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:I105Y-S130G",
+    "binding_state": "apo",
+    "conditions": "Crystal at 20 °C, pH 4.5, sodium acetate with zinc chloride, acetate in the active site, glycerol-cryoprotected and measured frozen; 1.3 A; PDB 9QI3",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "X-ray crystallography compared with wild-type 2GDN",
+    "observable": "alternate conformations",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "cryogenic data collection",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Loop and side-chain double conformations in the I105Y-S130G crystal were not reproduced by solution NMR, and the authors suggest the crystal or the pH 4.5 acetate conditions induced them.",
+   "evidence_rows": [
+    "BLAC-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J24",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": [
+     76
+    ],
+    "residues_author": "Arg105 side chain unresolved in the avibactam complex, turned away from the active site in the resting and clavulanate structures",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "gatekeeper residue"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:I105R",
+    "binding_state": "bound:avibactam carbamyl adduct",
+    "conditions": "Crystal structures 9QI5, 9QI6, 9QI7 (conditions in source); NMR of the same variant at 25 °C, pH 6.4, 100 mM sodium phosphate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray crystallography (free, clavulanate trans-enamine and avibactam adduct)",
+    "observable": "missing side-chain density",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In I105R the gatekeeper arginine side chain becomes disordered when the avibactam adduct is bound, evidence of disorder without a rate.",
+   "evidence_rows": [
+    "BLAC-r14"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "BLAC-J25",
+   "entry_id": "BLAC_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Pro107 mutation site (nearby amides broadened beyond detection) and linear shifts throughout the substrate-binding pocket; individual residues shown only in Fig. 7. Asp101-Gln111 is the region unresolved in the P107T crystal structure (8R88), not an NMR residue list. Pro226 and Pro258 variants are comparators with localized effects only.",
+    "numbering_note": "Ambler numbering in the source; entry positions from residue-by-residue alignment of 2GDN chain A (Ambler-numbered) to the entry sequence. The offset is not constant: entry = Ambler - 27 for 68-80, - 29 for 101-137, - 25 for 164-238, - 26 for 240-247 (Ambler gaps at 84-85, 239 and 253; BlaC G-G-G-T insertion 145A-D).",
+    "functional_site": "substrate-binding pocket"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:Pro107 variants (P107T, P107A, P107G), His-tagged; Pro226 and Pro258 variants are comparators with localized structural effects and no exchange claimed",
+    "binding_state": "apo",
+    "conditions": "pH 6.4; 100 mM sodium phosphate for NMR; PBS pH 7.4 for stability tests; 25 and 37 °C aggregation follow-up",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N spectra of proline variants with SEC-MALS; P107T crystal structure (8R88)",
+    "observable": "linear chemical shift trend, broadening beyond detection near the mutation site, doubled peaks (P107A, P107G)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "fraction of open state differs per variant, inferred from position along the linear shift trend; not quantified",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Only the Pro107 variants shift along a line between closed and open local conformations in fast exchange, coupled to dimerisation, with no rate or population measured; the Pro226 and Pro258 variants show localized effects only.",
+   "evidence_rows": [
+    "BLAC-r19"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

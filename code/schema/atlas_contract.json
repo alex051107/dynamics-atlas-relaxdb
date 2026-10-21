@@ -1,0 +1,63 @@
+{
+  "version": "atlas_contract_v1",
+  "note": "Worker output contract. The scorer (~/dynamics_atlas_eval/eval/score.py) enforces it. Change only by asking Alex/Claude; the improver may not edit this file.",
+  "files_per_case": {
+    "rows.jsonl": "one JSON object per (paper, experiment, condition) evidence row",
+    "coverage.json": "{\"classes\": {<method_class>: {\"status\": \"found\"|\"searched_not_found\", \"row_ids\": [...], \"queries\": [{\"channel\", \"query\", \"hits\", \"date\"}]}}}",
+    "summary.md": "one page (<= 600 words) for Gina, plain scientific English, inline row ids like [r3]",
+    "not_read_in_full.json": "[{\"doi\", \"title\", \"reason\"}] papers relevant but only abstract/paywalled",
+    "search_log.jsonl": "{\"ts\", \"channel\", \"query\", \"hits\", \"selected\": [...]}",
+    "blockers.json": "[{\"what\", \"why\"}] optional"
+  },
+  "row_fields": {
+    "row_id": "r1, r2, ... unique within the case",
+    "entry_id": "RelaxDB entry id from the input card",
+    "doi": "lowercase DOI, or empty if none (then pmid or url in title field)",
+    "pmid": "optional",
+    "year": "publication year",
+    "title": "paper title",
+    "source_file": "path relative to sources_cache/ of the TEXT derivative (.txt/.md/.xml/.html) the anchor comes from",
+    "access": ["full_text", "si", "abstract_only"],
+    "method_class": [
+      "nmr_relaxation_dispersion",
+      "nmr_spin_relaxation",
+      "nmr_exchange_broadening",
+      "nmr_ensemble_restraints",
+      "xray_multitemp_ensemble",
+      "time_resolved_structural",
+      "fret",
+      "epr_deer",
+      "hdx_ms",
+      "md_simulation",
+      "pdb_structure_comparison",
+      "other"
+    ],
+    "experiment": "specific measurement, e.g. 15N CPMG at 600/800 MHz",
+    "temperature": "as reported, with unit",
+    "ph": "as reported",
+    "buffer": "as reported; name phosphate explicitly when present",
+    "ligand_or_partner": "bound ligand/cofactor/partner/metal state, or apo",
+    "construct_or_mutation": "construct boundaries, tags, mutations, species",
+    "other_conditions": "field strengths, pressure, deuteration, labels/tags, etc.",
+    "residues_author": "residues in the paper's numbering WITH one-letter type, e.g. K73, Y106, A30-K38",
+    "residues_entry": "same residues as positions in the RelaxDB entry sequence (same order), e.g. 73, 106, 30-38; empty if mapping unknown",
+    "dynamics_type": "e.g. us-ms exchange, ps-ns flexibility, domain closure, ligand-coupled",
+    "timescale": "value + unit + parameter name (kex, tau_ex, k_AB, ...) + model, exactly as reported",
+    "population": "value + which state, exactly as reported",
+    "alt_state_structure": "PDB id or structural description of an alternate state and how it was obtained",
+    "author_claim": "the authors' conclusion in one sentence",
+    "stance": ["supports_dynamics", "no_dynamics_in_window", "unclear_second_process", "artefact_suspected"],
+    "artefact_note": "required when stance is artefact_suspected or a confound applies (phosphate buffer with a phosphate/nucleotide/nucleic-acid binder, paramagnetic/lanthanide tag motion, EDTA vs Mg, phospho-mimic vs phosphorylation, deuteration/temperature differences)",
+    "species_relation": ["target", "same_protein_other_construct", "homolog"],
+    "anchor": "verbatim quote of >= 8 words copied from source_file that supports the row",
+    "locator": "Figure/Table/page/section where the anchor and numbers are"
+  },
+  "rules": [
+    "Every number in timescale/population/temperature/ph must appear in source_file.",
+    "abstract_only rows carry no numbers in timescale/population.",
+    "Every single residue in residues_author carries its one-letter type; residues_entry must place that type at that position of the entry sequence.",
+    "coverage.json answers all 11 named classes with found or searched_not_found (with at least one query and hit count); never leave a class unsearched.",
+    "summary.md cites only existing row ids and uses no internal jargon (claim ceiling, source-bounded, packet, replay, gold).",
+    "Homolog evidence stays in homolog rows; never attach a homolog's number to the target."
+  ]
+}

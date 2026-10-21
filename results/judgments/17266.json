@@ -1,0 +1,246 @@
+{
+ "protein_summary": {
+  "entry_id": "17266",
+  "per_window": {
+   "ps-ns": "unresolved: a 2011 backbone 15N relaxation study of the isolated apo domain exists (SILB-J1, r1; the 2L55 deposition lists T1, T2, T1rho and NOE at 298 K, pH 6.0), but only the abstract is readable and it gives no values or flexible residues.",
+   "us-ms": "unresolved: no dispersion or exchange-broadening study was found, and the T2/T1rho data that could show exchange sit in the unread full text (SILB-J2, r1). The RelaxDB missing peaks cannot be read as exchange from this evidence.",
+   "slower_than_ms": "unresolved (search_insufficient): HDX-MS, time-resolved, multitemperature crystallography, FRET and EPR searches returned zero hits (SILB-J3); closed-access full texts not checked.",
+   "undetermined": "No dynamics judgment possible. The metal-bound (Ag+/Cu+) state has no dynamics evidence (SILB-J4, r1). The 2016 paper studies a different construct, the N-terminal plus membrane-proximal domains (SILB-J5, r2), and its finding that the C-terminal site fills first is binding, not motion (SILB-J6, r2)."
+  },
+  "wt_apo_answer": "Unknown: the isolated wild-type apo SilB C-terminal domain was studied by backbone 15N relaxation (T1, T2, T1rho and NOE listed in the 2L55 deposition, 298 K, pH 6.0), but only the 2011 abstract is readable here and it reports no result, so no ps-ns flexibility, us-ms exchange, residue, rate or population can be stated.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "Is the RelaxDB 17266 data set the 2011 apo sample (298 K, pH 6.0, 50 mM MES per 2L55), or was relaxation also recorded with Ag+ or Cu+ bound?",
+   "For the residues with missing peaks in the RelaxDB set, does the 2011 paper attribute them to exchange broadening, overlap, or solvent exchange?"
+  ],
+  "buffer_note": "Both SilB papers (10.1021/bi200005k and 10.1021/acs.biochem.6b00022) are closed access here and were read as abstracts only (C-priority rows), so every judgment is capped at indirect evidence. Sample conditions for the apo relaxation data come from the 2L55 deposition metadata (298 K, pH 6.0, 50 mM MES, 1 mM U-15N protein, 90% H2O/10% D2O), not from the article; metal-bound and apo samples, and the separate N-terminal constructs of the 2016 paper, are different sample states and are not combined. No oligomeric state is reported in the evidence rows; the deposition contains one chain."
+ },
+ "judgments": [
+  {
+   "judgment_id": "SILB-J1",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none reported in the abstract",
+    "numbering_note": "Entry 1-82 = UniProt Q58AF3 440-521 (entry n = UniProt n + 439), per row SILB-r1; author numbering in the article not read",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "From the 2L55 deposition record that row SILB-r1 cites for the method, not from the article: 298 K; pH 6.0; 50 mM MES; ionic strength 50 (units not given); 1 mM U-15N protein; 90% H2O/10% D2O; no metal listed and the entry keywords say 'apo form'; Varian 600 and 800 MHz spectrometers listed (field per experiment not given)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "15N backbone spin relaxation (deposition lists T1, T2, T1rho and heteronuclear NOE)",
+    "observable": "S2 / R1 / R2 / NOE (values not available)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz listed in the deposition",
+    "temperature": "298 K (deposition)",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The 2011 paper measured backbone relaxation of the isolated C-terminal domain, but only its abstract is readable and it reports no relaxation values, order parameters or flexible residues, so fast backbone motion can be neither confirmed nor excluded.",
+   "evidence_rows": [
+    "SILB-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J2",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none reported in the abstract",
+    "numbering_note": "Entry 1-82 = UniProt Q58AF3 440-521 (entry n = UniProt n + 439), per row SILB-r1; author numbering in the article not read",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "From the 2L55 deposition record that row SILB-r1 cites for the method, not from the article: 298 K; pH 6.0; 50 mM MES; ionic strength 50 (units not given); 1 mM U-15N protein; 90% H2O/10% D2O; no metal listed and the entry keywords say 'apo form'; Varian 600 and 800 MHz spectrometers listed (field per experiment not given)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "15N T2 and T1rho relaxation listed in the 2L55 deposition; no CPMG, CEST or exchange-broadening study found",
+    "observable": "possible Rex in R2/R1rho (values not available)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 800 MHz listed in the deposition",
+    "temperature": "298 K (deposition)",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The abstract of the only relaxation study names no exchange contribution, the searches for relaxation dispersion and exchange broadening of SilB returned zero hits, and the missing peaks in the RelaxDB set cannot be assigned to exchange without the article, so microsecond-millisecond exchange is unknown, not absent.",
+   "evidence_rows": [
+    "SILB-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J3",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none reported in the abstract",
+    "numbering_note": "Entry 1-82 = UniProt Q58AF3 440-521 (entry n = UniProt n + 439), per row SILB-r1; author numbering in the article not read",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement found)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (Europe PMC searches for HDX-MS, time-resolved structural methods, multitemperature crystallography, FRET and EPR/DEER of SilB, 2026-10-15, all zero hits)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The name- and organism-restricted searches for hydrogen exchange, time-resolved or multitemperature structural work, FRET and EPR on SilB found nothing, but the two closed-access full texts were not checked for such data, so slower-than-millisecond motion is unknown, not shown to be unmeasured.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J4",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "metal site residues identified from 15N- and 13C-edited HSQC (not listed in the abstract)",
+    "numbering_note": "Entry 1-82 = UniProt Q58AF3 440-521 (entry n = UniProt n + 439), per row SILB-r1; author numbering in the article not read",
+    "functional_site": "Ag+/Cu+ binding site (per abstract; residues not given)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ag+ or Cu+",
+    "conditions": "not stated in the abstract; whether any relaxation data were recorded on the metal-bound domain is unknown",
+    "is_wt_apo": false
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "15N- and 13C-edited HSQC metal-binding experiments (per abstract)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The abstract reports that the domain binds Ag+ and Cu+ and maps the metal site by HSQC, but gives no dynamics measurement of the metal-bound state, which is a different sample state from the apo relaxation sample and stays unjudged until the full text is read.",
+   "evidence_rows": [
+    "SILB-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J5",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none (different construct; no residues in the abstract)",
+    "numbering_note": "Construct outside the entry sequence (SilB N-terminal domain plus membrane-proximal domain); boundaries unresolved",
+    "functional_site": "N-terminal Ag+ binding site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:SilB N-terminal domain connected to the membrane-proximal domain (boundaries, tags unresolved)",
+    "binding_state": "unknown",
+    "conditions": "not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "NMR (dynamics probe not named in the abstract)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The 2016 abstract reports NMR structure and dynamics for a different SilB construct that does not contain the entry's C-terminal domain, names no probe, motion or timescale, and so says nothing direct about the entry.",
+   "evidence_rows": [
+    "SILB-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "SILB-J6",
+   "entry_id": "17266",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "C-terminal metal site in a two-site construct (residues not given)",
+    "numbering_note": "Two-site construct boundaries unresolved; mapping to entry residues not possible from the abstract",
+    "functional_site": "C-terminal Ag+/Cu+ site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:SilB construct carrying both the N-terminal and C-terminal metal sites (boundaries unresolved)",
+    "binding_state": "bound:Ag+ (titration)",
+    "conditions": "not stated in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR and fluorescence titration (per abstract); ITC on single-site constructs",
+    "observable": "order of metal-site saturation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: NMR and fluorescence show the C-terminal site fills before the N-terminal one during Ag+ titration, which is a metal-binding result, not a conformational motion and not a transfer rate.",
+   "evidence_rows": [
+    "SILB-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

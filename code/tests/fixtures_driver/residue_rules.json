@@ -1,0 +1,8 @@
+[
+ {"basis":"author_listed","residues":[1,2],"error":false},
+ {"basis":"per_residue","residues":[1,2],"error":false},
+ {"residues":"unlocalized","error":false},
+ {"residues":[1,2],"error":true},
+ {"basis":"global_fit_unlocalized","residues":[1,2],"error":true},
+ {"basis":"invalid","residues":[1,2],"error":true}
+]

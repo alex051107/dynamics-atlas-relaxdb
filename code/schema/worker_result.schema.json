@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["entry_id", "status", "source_paper_doi", "n_rows", "notes"],
+  "properties": {
+    "entry_id": {"type": "string"},
+    "status": {"type": "string", "enum": ["done", "partial", "blocked"]},
+    "source_paper_doi": {"type": "string", "description": "DOI of the paper that reported the RelaxDB dataset for this entry, or empty if not found"},
+    "n_rows": {"type": "integer"},
+    "notes": {"type": "string", "description": "<= 60 words: what limited this run (access, ambiguity, time)"}
+  }
+}

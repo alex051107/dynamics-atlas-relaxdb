@@ -1,0 +1,1794 @@
+{
+ "protein_summary": {
+  "entry_id": "AZURIN",
+  "per_window": {
+   "ps-ns": "Not resolved for any wild-type state. No row gives per-residue order parameters for oxidised Cu(II) azurin (J1, search_insufficient). The RelaxDB source paper's abstract (copper azurin, oxidation state not stated) reports fast internal motion in the loop 103-108 and the turn 74-77 and an average S2 of 0.85 ± 0.05 elsewhere, including the copper site (J37, C-r1, unresolved). Reduced Cu(I) azurin has only an abstract that calls H117 and the hydrophobic patch mobile and N47-V49 relatively rigid (J17, r16, r17). The homologous CuA domain is rigid on this scale in apo and holo forms (r47, r48, not judged).",
+   "us-ms": "Reference Cu(II): not measured (J2). Reduced Cu(I) at pH about 5, 50 mM phosphate: two slow processes seen by 15N CPMG at three fields, one around H35 (D11, G37, G88-G90; kA 11.7 ± 2.4 s-1, 0.39 ± 0.07% at 44.8 °C; J12, r9), tied by the authors to H35 protonation and a peptide flip, and one in the copper loops (N47, W48, F111-T113, G116, H117, L120, K122; kA 4.1 ± 0.1 s-1, 0.45 ± 0.02%; J13, r10); residues in between sense both (J14, r11); per-residue kA 0.44-9.55 s-1 at 35.4 °C (J15, r12); 29 named amides pass across 25.7-44.8 °C (J16, r13-r15). Apo at 298 K, pH 7.0: 17 amides around the metal site broadened out by intermediate exchange (J18, r44), dispersion at M44, I87 and two more regions (J19, r45), none at T61 (J20, r46); high-pH 1H broadening of histidines, abstract only (J22). Homolog apo CuA shows the same pattern (J36). The RelaxDB source paper's abstract adds exchange broadening around H35 in copper azurin of unstated oxidation state, with the rate placed in the slower-than-ms window (J38).",
+   "slower_than_ms": "Not measured for the oxidised wild type as such (J3). The RelaxDB source paper (abstract only) gives an average exchange rate of 45 ± 6 s-1 at 41 °C by exchange spectroscopy for the residues around H35, attributed to H35 protonation/deprotonation, and says the pH 5.5 and pH 9.0 crystal conformations coexist in solution and interconvert slowly (J38, C-r2, unresolved; oxidation state not stated). The Cu(I) forward rates of 4-12 s-1 are reported within the CPMG analysis and stay in the us-ms window. Single-molecule ET-rate fluctuations over tens to hundreds of seconds (J33) are electron-transfer kinetics, not conformational.",
+   "undetermined": "Static and indirect items, none counted as exchange: oxidised crystals at two pH values with a P36-G37 flip (J4, abstract); DEPC histidine accessibility (J5); femtosecond coherences and charge transfer (J6, photophysics); holo fluorescence heterogeneity (J7, abstract); forced unfolding by steered MD and AFM (J8, J9, J26, J27); ionic-liquid and electrode studies (J10, J11); two apo crystal forms (J21, abstract); W48 phosphorescence and acrylamide quenching in apo and Cd forms (J23, J24, J29); 3 μs MD of apo and Zn azurin with loop fluctuation and water entry (J25, J30, md_only); Fe-, Zn-, Co- and Ni-substituted crystals (J28, J31, J32, J40); temperature-jump slow phase of the azurin/cytochrome c551 mixture assigned to H35 (J39, C-r3, abstract); Ru- and Re-labelled constructs (J34, J35, ET and photophysics). Not judged (mutants, engineered loops or metal sites, static crystals, chemical or ET assays): phosphorescence of I7S, F110S, C3A/C26A, F110A, F29A and Y108A (r3-r8, r22-r25, r28-r43); fluorescence anisotropy of I7S and F110S (r18, r19); C112A and C26A polyproteins and reduced-disulfide MD (r55, r56, r58); C3S and C3S/S100P folding (r68, r69); type-zero C112D/M121L EXAFS (r86); M121A Fe-azide ligand exchange (r89, binding kinetics); CuA homolog relaxation (r47, r48); p28 peptide and docking MD (AZURIN-AZURIN_20261020003349-r3, r5, r6); W48/W108 hydration MD (AZURIN-AZURIN_20261020003349-r4); Y72F/Y108F radical decay (AZURIN-AZURIN_20261020003349-r9); H46E/M121H iron nitrosyl (AZURIN-AZURIN_20261020003349-r10, r11); H117A/M121H crystals (AZURIN-AZURIN_20261020003349-r12, r13); GPLGS and junction MD abstracts (AZURIN-AZURIN_20261020003349-r14, r15); N47D/S/L KC-RPMD (AZURIN-AZURIN_20261020003349-r17-r19); DEPC mutants (AZURIN-AZURIN_20261020003349-r31-r33); I7S and F110S crystals (AZURIN-AZURIN_20261020003349-r38, r39); and all AZURIN-AZURIN_20261020005254-rows (M121A, T21R1 spin label, redox-tuning, nitrotyrosine, M121E, loop-shortened, C112D/M121X, Ru crystal, thermostability, W48M, F114A, H117G, N47D, H20/Y48, crosslinked dimers, CuA and loop-length chimeras), including the abstract-only multitemperature B-factor study whose construct is unresolved (AZURIN-AZURIN_20261020005254-r22). Also not judged, from the 2026-10-20 re-read (C-rN): N42C disulfide dimer electron self-exchange (C-r4, ET kinetics); oxidised apo-H117G and apo-H46G crystals (C-r6, r7, mutants); M44K EPR/ESEEM (C-r9, mutant, not DEER); classical and QM/MM excited-state MD of the Re124W and Re126WW photosensitiser constructs, including a 6% trajectory occupancy of a dmp-away orientation and sub-picosecond solvent response (C-r10 to r13, engineered constructs, chromophore motion)."
+  },
+  "wt_apo_answer": "Copper-free wild-type azurin (298 K, pH 7.0, 100 mM phosphate, 2 mM DTT) does show microsecond-millisecond exchange around the metal site: 17 amides (A1-C3, G9-D11, N18, H35-L39, G45, H46, G88-E91) are broadened out by intermediate exchange and CPMG dispersion appears at M44, I87 and neighbouring regions, but no rate or population is reported; for the copper-bound forms, no exchange measurement exists for oxidised Cu(II) azurin, and only reduced Cu(I) azurin has rates (minor states of 0.39% and 0.45% at 44.8 °C, pH about 5). The RelaxDB source paper (doi:10.1021/bi990624l, abstract only, oxidation state not stated) adds slow exchange around H35 at 45 ± 6 s-1 (41 °C), read by the authors as interconversion of the pH 5.5 and pH 9.0 crystal conformations in solution (J38, unresolved).",
+  "open_conflicts": [
+   "Not a conflict but a state contrast: apo-azurin loses 17 amides to intermediate exchange, while the authors cite a full Cu(I) HSQC (all non-proline residues but A1); the apo (pH 7.0, 100 mM phosphate, DTT) and Cu(I) (pH about 5, 50 mM phosphate) samples also differ in pH and buffer, so metal state and pH are confounded.",
+   "Residue 116: the CPMG paper's Table 2 prints 'Cys 116' while the entry sequence has G116; the judgments follow the sequence (row AZURIN-r10 still prints C116).",
+   "H35 process rate: the 1999 RelaxDB source abstract gives an average exchange rate of 45 ± 6 s-1 at 41 °C from exchange spectroscopy (C-r2, J38, oxidation state and pH not stated), whereas the 2003 Cu(I) CPMG fit at 44.8 °C gives kA 11.7 ± 2.4 s-1 with a 0.39% minor state (r9, J12), which implies a total exchange rate in the thousands per second; the two may be different states, pH values or models, and only the 2003 paper was read in full."
+  ],
+  "questions_for_gina": [
+   "Which azurin sample is the RelaxDB entry: oxidised Cu(II), reduced Cu(I), or apo? The RelaxDB source paper (doi:10.1021/bi990624l) was read only as an abstract, which does not state the oxidation state; the missing-peak annotations would fit paramagnetic Cu(II) broadening or the apo intermediate exchange (BMRB 18254, apo, pH 7.0) equally well.",
+   "Should the H35 process count as conformational exchange, given that the 1999 source calls it H35 protonation/deprotonation interconverting the pH 5.5 and 9.0 crystal conformations at 45 ± 6 s-1 (41 °C), and the 2003 Cu(I) CPMG paper links its minor population to the protonated fraction of H35?"
+  ],
+  "buffer_note": "Every NMR dynamics sample is in phosphate: 50 mM, pH about 5 for Cu(I) CPMG (r9-r15) and 100 mM, pH 7.0 with 2 mM DTT for apo (r44-r46); no row tests a phosphate effect or a buffer change. The apo protein was made by KCN dialysis. Phosphorescence work (r1-r43) uses 2 mM Tris-HCl pH 7.5 at 20 °C with Cd(II) or Zn(II) standing in for copper. The RelaxDB source paper (C-r1, C-r2) is abstract-only: no pH, buffer or oxidation state, 41 °C for the exchange-spectroscopy rate. Row-id shorthand: A-rN = AZURIN-AZURIN_20261020003349-rN, B-rN = AZURIN-AZURIN_20261020005254-rN, C-rN = AZURIN-AZURIN_20261020143153-rN. Second reads of the C rows flagged nothing (Codex left nine and Claude five unverified)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "AZURIN-J1",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no Cu(II) spin-relaxation data in the evidence",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(II)",
+    "conditions": "oxidised holo azurin; no NMR sample conditions in any row",
+    "is_wt_apo": false
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "15N R1/R2/NOE or order-parameter analysis (none found for Cu(II))",
+    "observable": "S2",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row gives per-residue order parameters for oxidised wild-type azurin: the Cu(I) rows are abstract-only (J17), and the RelaxDB source paper's abstract (J37) reports fast motion in the loop 103-108 and the turn 74-77 with an average S2 of 0.85 ± 0.05 for copper azurin of unstated oxidation state; the searches covered only the selected papers.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J2",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no Cu(II) exchange data in the evidence",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(II)",
+    "conditions": "oxidised holo azurin; no NMR sample conditions in any row",
+    "is_wt_apo": false
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "relaxation dispersion or exchange broadening (none found for Cu(II))",
+    "observable": "Rex",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Every dispersion and exchange-broadening row on azurin is reduced Cu(I) (J12-J16), copper-free (J18-J20, J22) or copper azurin of unstated oxidation state (J38, abstract only); nothing measures microsecond-millisecond exchange in the oxidised protein as such, and the search reached only the selected papers.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J3",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no Cu(II) slow-exchange data in the evidence",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(II)",
+    "conditions": "oxidised holo azurin",
+    "is_wt_apo": false
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "hydrogen exchange, CEST/ZZ-exchange or real-time methods (none found for Cu(II))",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The HDX, time-resolved structural and multitemperature searches returned no rate for the oxidised wild type; the one slow rate in the evidence, 45 ± 6 s-1 at 41 °C from exchange spectroscopy around H35, is abstract-only on copper azurin of unstated oxidation state (J38), and the DEPC histidine-modification assay (J5) gives a reactivity, not a motion rate.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J4",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     35,
+     36,
+     37
+    ],
+    "residues_author": "H35, P36, G37",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "H35 protonation site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(II)",
+    "conditions": "oxidised recombinant wild-type crystal soaked first at acidic, then at alkaline pH (title: pH 5.5 and 9.0); abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "paired X-ray structures of one crystal at two pH values",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: protonating H35 goes with a P36-G37 peptide-bond flip (H35 donates an H-bond to the P36 carbonyl at low pH and accepts one from G37 NH at high pH), two pH endpoints with no rate or solution population.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r34",
+    "AZURIN-AZURIN_20261020003349-r35"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J5",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     46,
+     117
+    ],
+    "residues_author": "H46, H117 (copper-ligand histidines)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "copper site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu (oxidation state not stated)",
+    "conditions": "25 °C; pH 8.0; 25 mM sodium phosphate; 40 μM protein; 400 equivalents DEPC; UV-visible spectra every 2 min for 40 min",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "DEPC histidine-modification assay followed by UV-visible absorbance",
+    "observable": "chemical modification",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "One histidine, most likely the non-ligating H83, is modified within 2 min while the copper ligands H46 and H117 stay unmodified for 40 min; failure to react reflects coordination and nucleophilicity as well as access, so no motion or rate follows.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r30"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J6",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "copper site and its surroundings (no residue assignment for the 29 cm-1 mode)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(II)",
+    "conditions": "commercial azurin in ammonium acetate (pH and concentration not reported), 770 μM, 620 nm pump, 74 fs pulses (r53); species and construct not stated in the r80 abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "femtosecond transient absorption with HSVD/Fourier analysis (r53); transient absorption and impulsive Raman (r80, abstract)",
+    "observable": "vibrational coherence",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Photophysics: optically launched wavepackets (29 cm-1 mode, period 1150 fs, mean decoherence 550 fs) and charge-transfer relaxation report excited-state nuclear motion, not exchange between ground-state conformers.",
+   "evidence_rows": [
+    "AZURIN-r53",
+    "AZURIN-r80"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J7",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "tryptophan W48 fluorescence (no residue list)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu (holo)",
+    "conditions": "E. coli-expressed holo azurin compared with apo and non-reconstitutable azurin*; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "time-resolved intrinsic fluorescence decay",
+    "observable": "fluorescence lifetime heterogeneity",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the authors attribute heterogeneous holo fluorescence decay most likely to conformational heterogeneity rather than azurin* contamination, but decay components do not show interconversion or a rate.",
+   "evidence_rows": [
+    "AZURIN-r85"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J8",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole chain under terminal pulling (r63 names C112, H117, H46, G45, M121 as constrained ligands)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(II)",
+    "conditions": "steered MD from 4AZU: constant force 250-350 pN, CHARMM36, NAMD 2.10, 6-20 ns (r57); constant velocity 0.0001 Å/fs, CHARMM27, NAMD 2.9, 300 K, TIP3P, copper bonds harmonically restrained or released (r62-r64)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "steered molecular dynamics (forced unfolding)",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Forced-unfolding simulations with imposed copper-ligand restraints map strand-rupture order (90% of 19 runs unfold from the C-terminus at constant force) but say nothing about equilibrium motion of the folded protein.",
+   "evidence_rows": [
+    "AZURIN-r57",
+    "AZURIN-r62",
+    "AZURIN-r63",
+    "AZURIN-r64"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J9",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "azurin modules under force; intermediates assigned to Cu-C112 and Cu-H46 rupture (r54)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:WT azurin in an (Azu-I27)4 polyprotein (r54) or an N-terminally His6-tagged heptamer (r60)",
+    "binding_state": "bound:Cu (incomplete loading in r54; Cu(II) in r60)",
+    "conditions": "room temperature; pH 7.2, 50 mM sodium phosphate, 150 mM NaCl, 400 nm/s (r54); pH 7.4, 20 mM Tris-HCl, 400 nm/s (r60)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "single-molecule AFM constant-velocity unfolding",
+    "observable": "force-extension intermediates",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Force spectroscopy reports unfolding pathways (about 80% of r54 events and 77 ± 2% of r60 holo molecules pass an intermediate), which are trajectory fractions under force, not native-state conformers or exchange.",
+   "evidence_rows": [
+    "AZURIN-r54",
+    "AZURIN-r60"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J10",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no residues named",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(II)",
+    "conditions": "aqueous imidazolium (1-octyl-3-methylimidazolium chloride, r50) or tetramethylguanidinium amino-acid (r81) ionic liquids; abstracts only; species stated only in metadata",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "temperature-jump transient IR (r50); simulations of folded and unfolded protein (r81)",
+    "observable": "unfolding relaxation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: ionic liquids destabilise azurin and speed its unfolding-refolding relaxation, a perturbed folding landscape rather than native-state exchange, and no rate is extracted.",
+   "evidence_rows": [
+    "AZURIN-r50",
+    "AZURIN-r81"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J11",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "no residues named",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:azurin films or monolayers on electrodes",
+    "binding_state": "unknown",
+    "conditions": "conductive AFM under cyclic load (r82, r83); fast-scan voltammetry in water-doped choline dihydrogen phosphate melt with temperature and pressure varied (r84); abstracts only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "conductive AFM, deformation MD and protein-film voltammetry",
+    "observable": "conductance or electron-transfer response",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstracts only: electrode-bound azurin shows delayed conductance under load, anomalous electron transfer near glassy electrolyte relaxation, and voltammetric hysteresis on pyrolytic graphite that disappears on thiol-modified gold; these are electron-transport, interface and contact-mechanics effects, not conformational dynamics.",
+   "evidence_rows": [
+    "AZURIN-r82",
+    "AZURIN-r83",
+    "AZURIN-r84",
+    "AZURIN-AZURIN_20261020143153-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J12",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     11,
+     37,
+     88,
+     89,
+     90
+    ],
+    "residues_author": "Region 'near His 35' (Table 2): D11, G37, G88, S89, G90",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "H35 protonation site and the P36-G37 peptide plane",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "44.8 °C (global fits); pH about 5; 50 mM phosphate; 1 mM uniformly 15N azurin, reduced Cu(I) under H2/Pt black, ≤0.2% oxidised protein in the sealed tube; 8% D2O",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-relaxation-time CPMG at three fields, joint Carver-Richards two-state fit of the region",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "not printed; forward rate kA 11.7 ± 2.4 s-1 and keq = kB/kA 254 ± 31 at 44.8 °C (Table 3)",
+    "pB": "0.39 ± 0.07% (44.8 °C)",
+    "delta_omega": "",
+    "field": "11.7, 14.1 and 18.8 T",
+    "temperature": "44.8 °C (dispersion also recorded at 25.7 and 35.4 °C)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 44.8 °C the amides around H35 share one exchange process with a 0.39% minor state and a forward rate of 11.7 s-1; the authors tie it to H35 protonation coupled to a peptide-plane flip, and the minor population matches the protonated fraction expected from the H35 pKa at pH about 5.",
+   "evidence_rows": [
+    "AZURIN-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J13",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     47,
+     48,
+     111,
+     112,
+     113,
+     116,
+     117,
+     120,
+     122
+    ],
+    "residues_author": "Region 'near copper' (Table 2): N47, W48, F111, C112, T113, residue 116 (printed 'Cys 116'; entry G116), H117, L120, K122",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "copper-binding loops (ligands C112, H117)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "44.8 °C (global fits); pH about 5; 50 mM phosphate; 1 mM uniformly 15N azurin, reduced Cu(I) under H2/Pt black, ≤0.2% oxidised protein in the sealed tube; 8% D2O",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-relaxation-time CPMG at three fields, joint Carver-Richards two-state fit of the region",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "not printed; forward rate kA 4.1 ± 0.1 s-1 and keq = kB/kA 222 ± 7 at 44.8 °C (Table 3)",
+    "pB": "0.45 ± 0.02% (44.8 °C)",
+    "delta_omega": "",
+    "field": "11.7, 14.1 and 18.8 T",
+    "temperature": "44.8 °C (dispersion also recorded at 25.7 and 35.4 °C)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Reduced azurin's copper-binding loops share a second, slower process (forward rate 4.1 s-1, minor state 0.45% at 44.8 °C) whose structure is unknown; the authors rule out exchange with oxidised protein because a 0.45% Cu(II) fraction would exceed the 0.2% absorbance limit and would raise R2 of the minor state.",
+   "evidence_rows": [
+    "AZURIN-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors suggest a low-energy rearrangement of the copper site that may be needed for efficient electron transfer (abstract).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J14",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     10,
+     44,
+     45,
+     46,
+     87
+    ],
+    "residues_author": "Region 'between copper and His 35': N10, M44, G45, H46, I87",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "44.8 °C (global fits); pH about 5; 50 mM phosphate; 1 mM uniformly 15N azurin, reduced Cu(I) under H2/Pt black, ≤0.2% oxidised protein in the sealed tube; 8% D2O",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG at three fields, joint two-state fit of the region",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global (authors call the model an oversimplification)",
+    "kex": "",
+    "pB": "about 0.85% apparent (44.8 °C)",
+    "delta_omega": "",
+    "field": "11.7, 14.1 and 18.8 T",
+    "temperature": "44.8 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Residues between H35 and the copper exchange with rate constants like the H35 region but an apparent minor state of about 0.85%, roughly the sum of both processes; the authors read this as sensing both and call the two-state fit too simple.",
+   "evidence_rows": [
+    "AZURIN-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J15",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     9,
+     37,
+     42,
+     45,
+     46,
+     47,
+     48,
+     58,
+     71,
+     87,
+     89,
+     90,
+     111,
+     112,
+     113,
+     117,
+     123,
+     124
+    ],
+    "residues_author": "Table 1, 18 residues with well-defined kA: G90, G45, G37, S89, I87, H46, W48, T113, N47, C112, H117, F111, G9, D71, N42, T124, G123, G58",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "25.7, 35.4 and 44.8 °C; pH about 5; 50 mM phosphate; 1 mM 15N reduced azurin, ≤0.2% oxidised; 8% D2O",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG at three fields, per-residue Carver-Richards fits",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "per-residue",
+    "kex": "per residue only: at 35.4 °C kA 0.44-9.55 s-1 and kB 498-2010 s-1 (Results text)",
+    "pB": "around 1% for most residues",
+    "delta_omega": "",
+    "field": "11.7, 14.1 and 18.8 T",
+    "temperature": "35.4 °C values quoted; fits at 25.7, 35.4 and 44.8 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Per-residue fits give forward rates of 0.44-9.55 s-1 and reverse rates of 498-2010 s-1 at 35.4 °C and sort the 18 residues into three kinetic groups: a fast H35-side group, a slower copper-side group and an outer group with temperature-insensitive kA.",
+   "evidence_rows": [
+    "AZURIN-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J16",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     9,
+     10,
+     11,
+     37,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     50,
+     58,
+     61,
+     71,
+     82,
+     87,
+     88,
+     89,
+     90,
+     111,
+     112,
+     113,
+     116,
+     117,
+     120,
+     122,
+     123,
+     124
+    ],
+    "residues_author": "Figure 1A positions 9-11, 37, 42-48, 50, 58, 61, 71, 82, 87-90, 111-113, 116-117, 120, 123-124 plus K122 from Table 2 (caption says 30; 29 are named)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "25.7, 35.4 and 44.8 °C; pH about 5; 50 mM phosphate; 1 mM 15N reduced azurin, ≤0.2% oxidised; 8% D2O",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG at three fields and three temperatures; statistical selection of exchanging residues",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.7, 14.1 and 18.8 T",
+    "temperature": "25.7, 35.4 and 44.8 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "About a third of reduced azurin, 29 named amides around the copper site and H35, passes the exchange criteria at two or more of the three temperatures, so the set is not proof that each residue exchanges at every temperature.",
+   "evidence_rows": [
+    "AZURIN-r13",
+    "AZURIN-r14",
+    "AZURIN-r15"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J17",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     47,
+     48,
+     49,
+     117
+    ],
+    "residues_author": "H117 (surface copper ligand) and N47-V49 (electron pathway)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "hydrophobic patch; electron-transfer pathway"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu(I)",
+    "conditions": "reduced azurin; multiple fields and temperatures; abstract only, conditions not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "multifield 15N spin relaxation with model-free analysis",
+    "observable": "S2 and exchange terms",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the hydrophobic patch and H117 are mobile, N47-V49 stays relatively rigid, and slower regional exchange is also mentioned, but no order parameters, temperatures or residue lists can be checked.",
+   "evidence_rows": [
+    "AZURIN-r16",
+    "AZURIN-r17"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J18",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     1,
+     2,
+     3,
+     9,
+     10,
+     11,
+     18,
+     35,
+     37,
+     38,
+     39,
+     45,
+     46,
+     88,
+     89,
+     90,
+     91
+    ],
+    "residues_author": "Missing non-proline amides: A1-C3, G9-D11, N18, H35-L39 (P36 excluded), G45, H46, G88-E91",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "metal-binding region"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.0; 100 mM phosphate; 2 mM DTT; about 1 mM 15N or 13C/15N protein; copper removed by KCN dialysis",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC peak loss relative to Cu(I)-azurin",
+    "observable": "line broadening (missing peaks)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 900 MHz (per-experiment assignment not stated)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In copper-free azurin 17 amides around the metal site are missing, which the authors assign to intermediate exchange on the chemical-shift timescale; their Cu(I) comparison (literature) shows a peak for every non-proline residue but A1.",
+   "evidence_rows": [
+    "AZURIN-r44"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J19",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     44,
+     87
+    ],
+    "residues_author": "Named dispersion examples M44 and I87 (the full set of three regions is figure-only, Fig. 4C)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "metal-binding region",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.0; 100 mM phosphate; 2 mM DTT; about 1 mM 15N or 13C/15N protein; copper removed by KCN dialysis",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-time CPMG relaxation dispersion (ΔR2 profile, fits to Eq. S2)",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 900 MHz (per-experiment assignment not stated)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Apo-azurin shows dispersion in three regions next to the missing amides, which the authors read as one shared process and as higher metal-region mobility than in Cu(I)-azurin; no rate or population is given in the main text.",
+   "evidence_rows": [
+    "AZURIN-r45"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J20",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     61
+    ],
+    "residues_author": "T61 (shown as a residue in a region with no exchange, Fig. 4C inset)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.0; 100 mM phosphate; 2 mM DTT; about 1 mM 15N or 13C/15N protein; copper removed by KCN dialysis",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N constant-time CPMG relaxation dispersion",
+    "observable": "Rex (flat profile)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 and 900 MHz (per-experiment assignment not stated)",
+    "temperature": "298 K",
+    "detection_window": "15N constant-time CPMG at 298 K, pH 7.0 (field not assigned; the CuA ΔR2 in the same paper uses 33 vs 966 Hz, the azurin νCPMG range is not stated): blind to exchange much faster than about 10^3-10^4 s-1, to processes with small Δω or pB, and to motions slower than the CPMG delay range."
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "T61 is the authors' example of a flat dispersion profile, so the T61 region shows no microsecond-millisecond exchange in this one apo sample.",
+   "evidence_rows": [
+    "AZURIN-r46"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J21",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     46,
+     117
+    ],
+    "residues_author": "H46, H117 (copper-ligand histidines; form 2 has a solvent molecule and a surface-directed H117)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "copper site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "apo-azurin crystal at 1.85 Å; abstract only",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "comparison of two crystallographic apo forms with the holo structure",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: two apo crystal forms differ at the copper ligands (form 1 like holo without copper, form 2 with water in the site and H117 turned out), which the authors propose may reflect a solution equilibrium; no rate.",
+   "evidence_rows": [
+    "AZURIN-r65"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J22",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     35,
+     46,
+     117
+    ],
+    "residues_author": "H35, H46, H117 (1H resonances)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "copper site"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "apo-azurin; high and low pH (values not available); abstract only",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "pH-dependent 1H NMR line broadening",
+    "observable": "line broadening",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: histidine resonances broaden at high pH, which the authors read as interchange of the two apo forms, and sharpen at low pH, perhaps from faster exchange; no rate, model or spectra could be checked.",
+   "evidence_rows": [
+    "AZURIN-r66",
+    "AZURIN-r67"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J23",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     48
+    ],
+    "residues_author": "W48 (sole tryptophan, buried in the core)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "hydrophobic core"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "20 °C; pH 7.5; 2 mM Tris-HCl; deoxygenated; 2-5 μM protein; copper removed with cyanide/EDTA and chromatography; with and without 2 M sucrose (r2)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "intrinsic W48 phosphorescence lifetime",
+    "observable": "triplet lifetime (local rigidity proxy)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Photophysics: apo W48 decays single-exponentially with τ 0.63 s (0.63 ± 0.02 s in the cavity-mutant paper) and 2 M sucrose changes it only modestly; the lifetime reports how rigid the indole surroundings are, not a motional timescale.",
+   "evidence_rows": [
+    "AZURIN-r1",
+    "AZURIN-r2",
+    "AZURIN-r20"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J24",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     48
+    ],
+    "residues_author": "W48",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "hydrophobic core"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "20 °C; pH 7.5; 2 mM Tris-HCl; deoxygenated; 2-5 μM protein; acrylamide titration",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "acrylamide quenching of W48 phosphorescence (Stern-Volmer lifetime slope)",
+    "observable": "bimolecular quenching constant",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Acrylamide reaches the buried W48 with kq 3.2 ± 0.5 × 10^1 M-1 s-1, which the authors attribute to structural fluctuations of the native fold rather than global unfolding, but kq is a bimolecular constant, not a conformational rate.",
+   "evidence_rows": [
+    "AZURIN-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J25",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     48,
+     56,
+     57,
+     110,
+     112,
+     116,
+     117,
+     118,
+     119,
+     120,
+     121
+    ],
+    "residues_author": "High-fluctuation intervals G9-Q14, H35-H46, M56-Q57, F110-M121 subsets, W48 and the ligand residues (Fig. 8 caption)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "metal-binding loops"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "MD of wild-type apo structure 1E65 (the paper's experiments use Y72F/Y108F): AMBER18/ff14SB, 300 K, TIP3P, NPT, 3 μs",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "all-atom molecular dynamics, Cα RMSF and torsion analysis",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In 3 μs of simulation the apo loops and metal site fluctuate more than in Zn-azurin, a transient cavity opens between H46 and H117 and water occasionally enters; no physical exchange rate follows from the trajectory.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J26",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole chain under terminal pulling",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "steered MD from 1E65: 300 K, TIP3P, CHARMM27, NAMD 2.9, pulling 0.0001 Å/fs",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "constant-velocity steered molecular dynamics",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Forced unfolding at high pulling speed shows a local first and a collective second rupture, which describes the unfolding path under force, not equilibrium motion of the folded apo protein.",
+   "evidence_rows": [
+    "AZURIN-r61"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J27",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "azurin modules under force",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:N-terminally His6-tagged azurin heptamer",
+    "binding_state": "apo",
+    "conditions": "room temperature; pH 7.4; 20 mM Tris-HCl; 400 nm/s; copper absent by optical check",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "single-molecule AFM constant-velocity unfolding",
+    "observable": "force-extension intermediates",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "56 ± 3% of apo unfolding events pass an intermediate and 44 ± 3% are two-state, which are pathway fractions under force, not native conformer populations.",
+   "evidence_rows": [
+    "AZURIN-r59"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J28",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     117
+    ],
+    "residues_author": "H117 orientation in chains A/D (metal-free) versus B/C (about 30% Fe)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "metal site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "crystals of an iron-substitution preparation: pH 5.2-5.4, 3.0-3.5 M ammonium sulfate, 0.5 M LiNO3, 0.1 M sodium acetate",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "comparison of crystal chains with different metal occupancy",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In metal-free chains H117 swings away and water fills the site, as in some apo crystal chains, while Fe-containing chains keep the Cu-azurin geometry; the authors allow that packing selects the ligand pose, and static chains give no rate.",
+   "evidence_rows": [
+    "AZURIN-r87",
+    "AZURIN-r88"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J29",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     48
+    ],
+    "residues_author": "W48",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "hydrophobic core"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cd(II)",
+    "conditions": "20 °C; pH 7.5; 2 mM Tris-HCl; deoxygenated; 2-5 μM protein; Cd(II) used because Cu quenches Trp phosphorescence",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "W48 phosphorescence lifetime and acrylamide quenching",
+    "observable": "triplet lifetime; quenching constant",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Photophysics: Cd-azurin gives τav 0.55 ± 0.01 s and kq 0.8 ± 0.2 M-1 s-1, so Cd binding lowers quencher access relative to apo (3.2 × 10^1), but neither number is a conformational rate.",
+   "evidence_rows": [
+    "AZURIN-r26",
+    "AZURIN-r27"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J30",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     48,
+     56,
+     57,
+     110,
+     112,
+     116,
+     117,
+     118,
+     119,
+     120,
+     121
+    ],
+    "residues_author": "Same analysed residue set as the apo run (Fig. 8)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "metal-binding loops"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Zn(II)",
+    "conditions": "MD of wild-type Zn structure 1E67: AMBER18/ff14SB with MCPB parameters for G45/H46/C112/H117, 300 K, TIP3P, NPT, 3 μs",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "all-atom molecular dynamics, Cα RMSF",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "With Zn bound the loops fluctuate less than in apo-azurin, yet water still occasionally passes into the protein during 3 μs; no rate follows.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J31",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     45,
+     121
+    ],
+    "residues_author": "G45, M121 (ligand geometry)",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "metal site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Zn(II)",
+    "conditions": "zinc azurin (azurin*), a by-product of E. coli expression; crystal; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "crystal structure comparison with copper azurin",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: zinc keeps the fold but sits in a distorted tetrahedral site with a shifted nearby backbone, a static metal-substitution difference.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r36"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J32",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     45,
+     121
+    ],
+    "residues_author": "G45, M121",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "metal site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Co(II)",
+    "conditions": "cobalt-substituted azurin crystal and Co-EPR; abstract only",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "crystal structure and Co-EPR",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: Co(II) adopts a distorted tetrahedral geometry instead of copper's trigonal bipyramid, a static difference with no timescale.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r37"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J33",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "dye on N42C; copper redox state read out by FRET",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:N42C azurin labelled with ATTO647N and biotin-PEG, surface-tethered",
+    "binding_state": "mixed",
+    "conditions": "pH 7.4 PBS; 200 μM hexacyanoferrate mediator; 100 mV vs SCE; Cu(I)/Cu(II) cycling; 635 nm excitation",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "single-molecule FRET redox reporting with change-point and autocorrelation analysis",
+    "observable": "redox dwell times",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Electron-transfer kinetics: bright and dark dwell times (mean 0.14 and 0.81 s) and ET-rate fluctuations correlated over tens to hundreds of seconds are redox and association events, not a conformational exchange of the protein.",
+   "evidence_rows": [
+    "AZURIN-r77",
+    "AZURIN-r78",
+    "AZURIN-r79"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J34",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     47,
+     83,
+     113
+    ],
+    "residues_author": "N47, H83 (Ru site), T113 for KC-RPMD (r16); pathway residues for r1/r2 only in SI",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": "electron-transfer pathway"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:WT-sequence azurin with Ru(bpy)2(im) bound at H83",
+    "binding_state": "bound:Ru(II)/Cu(II) label pair",
+    "conditions": "NAMD/ff14SB MD at 250 and 290 K (r1, r2); KC-RPMD with GROMOS 53a6, 300 K, at least 20 ns reactant and 4 ns dividing-surface sampling (r16)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "molecular dynamics and ring-polymer MD of electron transfer",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Simulated thermal fluctuations change donor-acceptor tunnelling paths, and ET-associated compression breaks the N47 H-bond network, but the Ru label moves with the protein and the motion is conditioned on electron transfer.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r1",
+    "AZURIN-AZURIN_20261020003349-r2",
+    "AZURIN-AZURIN_20261020003349-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J35",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Re-carbonyl labels at H83, H107, H109, H124 or H126 on various Trp/Tyr backgrounds",
+    "numbering_note": "Entry numbering equals mature-chain author numbering (A1-K128); checked D11, G37, G45, H46, N47, W48, G88, S89, G90, C112, G116, H117, M121, K122.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:Re(I)(CO)3(diimine)-labelled azurin variants (Re126WW, Re126FW, Re126WF, Re124, His83/107/109/124/126)",
+    "binding_state": "mixed",
+    "conditions": "mostly D2O, 20 mM KPi, pD about 7.1, about 1-1.8 mM (dimerising) for TRIR; Cu(I) or Cu(II); several abstracts",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "time-resolved IR, phosphorescence Stokes shift and QM/MM MD after photoexcitation",
+    "observable": "excited-state spectral relaxation",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Photophysics and electron transfer: picosecond-nanosecond components (for example 8 and 530 ps) mix label and solvent relaxation, vibrational cooling and charge separation in concentrated, partly dimerised samples, so none is a protein conformational rate.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020003349-r20",
+    "AZURIN-AZURIN_20261020003349-r21",
+    "AZURIN-AZURIN_20261020003349-r22",
+    "AZURIN-AZURIN_20261020003349-r23",
+    "AZURIN-AZURIN_20261020003349-r24",
+    "AZURIN-AZURIN_20261020003349-r25",
+    "AZURIN-AZURIN_20261020003349-r26",
+    "AZURIN-AZURIN_20261020003349-r27",
+    "AZURIN-AZURIN_20261020003349-r28",
+    "AZURIN-AZURIN_20261020003349-r29",
+    "AZURIN-r51",
+    "AZURIN-r52",
+    "AZURIN-r70",
+    "AZURIN-r71",
+    "AZURIN-r72",
+    "AZURIN-r73",
+    "AZURIN-r74",
+    "AZURIN-r75",
+    "AZURIN-r76"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J36",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "apo CuA domain Q91, M160, G162 (homolog numbering; no mapping to azurin)",
+    "numbering_note": "Homolog numbering (starts at 43); no residue mapping to azurin.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:Thermus thermophilus ba3 oxidase CuA domain (homolog)",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.0; 100 mM phosphate; 2 mM DTT; about 1 mM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-time CPMG (ΔR2 between 33 and 966 Hz)",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the homologous apo CuA domain the ligand region exchanges on the microsecond-millisecond scale and the motion is lost when copper binds, the same pattern the authors then find in apo-azurin (J18, J19).",
+   "evidence_rows": [
+    "AZURIN-r49"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_homolog",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J37",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     74,
+     75,
+     76,
+     77,
+     103,
+     104,
+     105,
+     106,
+     107,
+     108
+    ],
+    "residues_author": "loop 103-108 and turn 74-77 (fast internal motion); remaining backbone and copper site rigid, average S2 0.85 ± 0.05",
+    "numbering_note": "Entry numbering is the mature chain A1-K128 (UniProt P00282 precursor 21-148); the abstract's residue numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu (oxidation state not stated in the abstract)",
+    "conditions": "solution; temperature, pH and buffer not in the abstract (the exchange measurement of the same paper is at 41 °C)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N backbone relaxation with order-parameter analysis (abstract only)",
+    "observable": "S2 (average 0.85 ± 0.05 for the rigid remainder; per-residue values not in the abstract)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only, from the RelaxDB source paper: in copper azurin the loop 103-108 and the turn 74-77 show fast internal motion while the rest of the backbone, including the copper site, is rigid with an average S2 of 0.85 ± 0.05; the oxidation state, conditions, per-residue values and missing-peak annotations cannot be checked (sources_cache/AZURIN_case10_01_abstract.txt).",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020143153-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J38",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     35
+    ],
+    "residues_author": "a number of residues surrounding the His35 side chain (not listed in the abstract)",
+    "numbering_note": "Entry numbering is the mature chain A1-K128 (UniProt P00282 precursor 21-148); the abstract's residue numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Cu (oxidation state not stated in the abstract)",
+    "conditions": "solution; 41 °C for the exchange-spectroscopy rate; pH and buffer not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N exchange broadening and NMR exchange spectroscopy (abstract only); not CPMG, CEST or R1rho",
+    "observable": "line broadening and exchange-spectroscopy cross-peaks",
+    "fit_model": "other",
+    "kex": "45 ± 6 s-1 (average exchange rate at 41 °C, abstract)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "41 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only, from the RelaxDB source paper: residues around H35 are exchange-broadened, exchange spectroscopy gives an average rate of 45 ± 6 s-1 at 41 °C, and the authors attribute the process to H35 protonation/deprotonation and conclude that the pH 5.5 and pH 9.0 crystal conformations coexist in solution and interconvert slowly; the method gives a rate in the tens-of-milliseconds range, but the residue list, oxidation state, pH and populations cannot be checked, and the evidence row records neither the rate nor the slow-interconversion statement.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020143153-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J39",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     35
+    ],
+    "residues_author": "His35",
+    "numbering_note": "Entry numbering is the mature chain A1-K128 (UniProt P00282 precursor 21-148); the abstract's residue numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "equilibrium mixture of wild-type azurin and cytochrome c551 (both redox states present); temperature-jump relaxation; conditions not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "temperature-jump relaxation of an azurin/cytochrome c551 equilibrium mixture, with H35 and M44 mutants as comparators (abstract only)",
+    "observable": "slow relaxation phase",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the slow temperature-jump phase of the wild-type azurin/cytochrome c551 mixture is assigned to a conformational relaxation involving H35, with no rate, amplitude or residue set in the abstract and the assignment resting on H35F/L/Q mutant comparisons; it is a lead for the H35 process (J38), not a measurement of azurin alone.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020143153-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "AZURIN-J40",
+   "entry_id": "AZURIN",
+   "region": {
+    "residues_entry": [
+     45,
+     121
+    ],
+    "residues_author": "Gly45 carbonyl and Met121 S-delta (axial ligands)",
+    "numbering_note": "Entry numbering is the mature chain A1-K128 (UniProt P00282 precursor 21-148); the abstract's residue numbers map without offset.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ni(II)",
+    "conditions": "crystal, 0.205 nm resolution; conditions not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "X-ray structure of Ni(II)-azurin compared with Cu(II) and Zn(II) azurin (abstract only)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: nickel keeps the fold and changes only the metal site, binding the G45 carbonyl more strongly while the M121 S-delta distance opens to 0.330 nm, a distorted tetrahedral centre between the Cu(II) and Zn(II) geometries; a static metal-substitution difference with no timescale.",
+   "evidence_rows": [
+    "AZURIN-AZURIN_20261020143153-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

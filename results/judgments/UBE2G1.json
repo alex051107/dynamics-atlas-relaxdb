@@ -1,0 +1,209 @@
+{
+ "protein_summary": {
+  "entry_id": "UBE2G1",
+  "per_window": {
+   "ps-ns": "unresolved (search_insufficient): no row reads the RelaxDB R1/R2/NOE set or any order parameter of UBE2G1 (UBE2G1-J3).",
+   "us-ms": "unresolved (search_insufficient): no dispersion, CEST, R1rho or exchange-broadening row (UBE2G1-J4).",
+   "slower_than_ms": "unresolved (search_insufficient): no slow-exchange measurement (UBE2G1-J5).",
+   "undetermined": "UbV.G1.1-bound 6D68 superposes on apo 2AWF with backbone RMSD 0.66 Å (UBE2G1-J2, r4, structure_only, no_evidence_in_window); the 2015 abstract implicates the Y102-G103-Y104 acidic loop in binding donor ubiquitin in an oxyester conjugate (UBE2G1-J1, r1, unresolved). Not judged: r2 and r3 (two-state and one-state ubiquitin on the Ube2r1 paralog, abstract only); r5 to r8 (E1 charging and discharge gel assays of wild type and S26R with UbV.G1.1: product accumulation, not conformational motion)."
+  },
+  "wt_apo_answer": "Unknown: no evidence row measures dynamics of free full-length human UBE2G1 in any window (UBE2G1-J3 to J5, search_insufficient); the only structural evidence is a static crystal comparison showing that backside UbV.G1.1 binding leaves the backbone almost unchanged (RMSD 0.66 Å to apo 2AWF), and the only NMR row is an abstract about a ubiquitin-conjugate interaction.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "Which paper and sample underlie the RelaxDB UBE2G1 R1/R2/NOE set? The card has no BMRB id; the screen set aside 'NMR assignment of human ubiquitin conjugating enzyme Ubc7' (J Biomol NMR 2005, doi:10.1007/s10858-005-1257-7) as the UBE2G2 paralog without an abstract, and UBC7 is also listed as a UBE2G1 alias in the search query.",
+   "Should a full read of the 2015 JBC paper (doi:10.1074/jbc.m114.624809) be requested, since its Ube2g1 oxyester NMR is the only solution data on this enzyme in the evidence?"
+  ],
+  "buffer_note": "The 2015 rows (r1-r3) are abstract-only and give no conditions. The 2020 rows (r4-r8) are full text: crystal at 20 °C, pH 8.0 in PEG1500/SPG; charging assays at 30 °C, pH 7.5, 20 mM HEPES, 100 mM NaCl, 5 mM MgCl2 with ATP; discharge adds apyrase, lysine and 25 mM EDTA. Construct boundaries differ: entry and 6D68 are full length (1-170), apo 2AWF and the assay protein are 8-160. Second read flagged r6; adjudication B confirmed the row and its corrected partner field (S26R is the sample, compromised for backside binding) is in the CSV."
+ },
+ "judgments": [
+  {
+   "judgment_id": "UBE2G1-J1",
+   "entry_id": "UBE2G1",
+   "region": {
+    "residues_entry": [
+     102,
+     103,
+     104
+    ],
+    "residues_author": "acidic-loop motif Y102-G103-Y104 (Y102G/Y104G mutant compared)",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104). 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the assay construct are residues 8-160.",
+    "functional_site": "acidic loop (donor-ubiquitin interaction)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: Ube2g1 oxyester-linked to 15N ubiquitin K48R, wild type and Y102G/Y104G (active-site substitution and species not stated in the abstract)",
+    "binding_state": "bound: covalently attached donor ubiquitin K48R (oxyester thioester mimic)",
+    "conditions": "not given in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NMR comparison of ubiquitin oxyesters (experiment not stated in the abstract)",
+    "observable": "ubiquitin-acidic-loop interaction (no motion observable named)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: NMR of wild-type and Y102G/Y104G Ube2g1 ubiquitin oxyesters, with assays, implicates the acidic loop in binding the attached donor ubiquitin; no spectral change, exchange regime, rate or conditions are given for Ube2g1, and the two-state exchange in the same abstract belongs to ubiquitin on Ube2r1.",
+   "evidence_rows": [
+    "UBE2G1-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "UBE2G1-J2",
+   "entry_id": "UBE2G1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "global backbone superposition of the UBE2G1 chain",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104). 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the assay construct are residues 8-160.",
+    "functional_site": "backside (UbV.G1.1 binding surface)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: 6D68 full-length UBE2G1 (1-170 plus Ser) bound to UbV.G1.1, compared with apo 2AWF (residues 8-160 plus tag)",
+    "binding_state": "bound: UbV.G1.1 (backside; strand-exchanged 2:2 complex), compared with apo crystal 2AWF",
+    "conditions": "crystals grown at 20 °C, pH 8.0, 25% PEG1500, 0.1 M SPG buffer, 20% glycerol cryoprotectant; 2.35 Å; 2AWF conditions not in the row",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "crystal-structure backbone superposition (6D68 versus 2AWF)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Two static crystal structures, one bound to an engineered UbV and one apo, compared by global backbone RMSD (0.66 Å); this sees only a binding-induced change in the averaged crystal conformation and cannot see motion on any timescale, local loop changes hidden by the global RMSD, or solution exchange."
+   },
+   "verdict": "unresolved",
+   "reason": "Backside binding of UbV.G1.1 leaves the UBE2G1 backbone almost unchanged relative to apo 2AWF (RMSD 0.66 Å, 'virtually no differences'); a static cross-construct comparison, not evidence against motion. Two static structures (one bound) define no detection window, so this cannot count as 'not detected' (batch-3 review).",
+   "evidence_rows": [
+    "UBE2G1-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "UBE2G1-J3",
+   "entry_id": "UBE2G1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104). 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the assay construct are residues 8-160.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "full-length human UBE2G1, free, no ubiquitin, UbV or E3; not applicable (no measurement in the evidence rows)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (no row reports 15N R1/R2/NOE, order parameters or MD of UBE2G1)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The RelaxDB card lists an R1/R2/NOE set but no BMRB id, and no evidence row reads it; the relaxation searches (UBE2G1 names and aliases, Homo sapiens) returned zero hits, so absence is a search gap.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "UBE2G1-J4",
+   "entry_id": "UBE2G1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104). 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the assay construct are residues 8-160.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "full-length human UBE2G1, free, no ubiquitin, UbV or E3; not applicable (no measurement in the evidence rows)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (no dispersion, CEST, R1rho or exchange-broadening row on UBE2G1)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures microsecond-millisecond exchange of free UBE2G1; the dispersion and broadening searches returned zero hits, so this is a search gap.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "UBE2G1-J5",
+   "entry_id": "UBE2G1",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering equals UniProt P62253 (full-length 1-170; checked S26, Y102, G103, Y104). 6D68 holds 1-170 plus an N-terminal Ser; apo 2AWF and the assay construct are residues 8-160.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "full-length human UBE2G1, free, no ubiquitin, UbV or E3; not applicable (no measurement in the evidence rows)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (no HDX, EXSY or other slow-exchange row on UBE2G1)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures slower-than-millisecond exchange of free UBE2G1.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

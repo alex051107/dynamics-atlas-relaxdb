@@ -1,0 +1,1360 @@
+{
+ "protein_summary": {
+  "entry_id": "KRAS_CPMG",
+  "reference_state": "Ras has no nucleotide-free apo form. For this entry the reference state (is_wt_apo true) is WT K-Ras4B 1-169 loaded with nucleotide (GDP or GTP; GMPPNP rows are marked as analogue) with Mg2+ bound and no protein partner, inhibitor or fragment. binding_state names the nucleotide (bound:GDP·Mg, bound:GTP·Mg, bound:GMPPNP·Mg); Mg2+-free, partner-bound and C118S-background samples are not the reference.",
+  "per_window": {
+   "ps-ns": "dynamic_in_window in both nucleotide states (NASR, 298 K, HEPES): GTP·Mg WT has mobile termini and C-terminal loops, a moderately mobile Switch II and a restrained Switch I (KRAS-J9, r4); GDP·Mg WT has large Switch I (E31, Y32) and Switch II (G60-S65) motions placed at 10 ns to 1 us (KRAS-J10, r7). Mg2+-free G12C-GDP makes D30-Y40 ps-flexible (KRAS-J19, r25). Not judged: mutant NASR rows r5, r6, r8, r9 (WT-like except G60 and A59).",
+   "us-ms": "GTP·Mg WT: dynamic_in_window, one global process near 400 s-1 with 8-10% state 1 at 25 °C in two HEPES laboratories and in PBS/EDTA (KRAS-J1 r1, J2 r26, J3 r17 r118); GMPPNP·Mg WT shows a synchronized effector-lobe methyl cluster (KRAS-J8, r84). GDP·Mg WT: no millisecond minor state in HEPES without EDTA (KRAS-J6, r10); methyl CPMG flat but faster effector-lobe exchange by adiabatic dispersion (KRAS-J7, r83); the 2.8-3.8% Mg2+-free-like state seen only in PBS with 10 mM EDTA is artefact_suspected (KRAS-J4 r13, J5 r21). Mutants follow the same pattern (KRAS-J14-J18, J20-J23). RBD-bound GTP·Mg exchange is quenched (KRAS-J12); GDP·Mg + RBD exchange is binding kinetics, not counted (KRAS-J13).",
+   "slower_than_ms": "not_measured for the reference state (KRAS-J11): time-resolved structural and EPR/DEER searched with no hits. Not judged: smFRET of membrane-anchored, dye-labelled full-length G12V in nanodiscs (r34; 10 ms bins, no rate stated).",
+   "undetermined": "31P of C118S-background K-Ras at 278 K: about 90% or more state 2 with native GTP, much more state 1 with GppNHp (KRAS-J25, r38 r44); G12D HDX deprotection, unresolved (KRAS-J24, r29); MD of WT GDP·Mg, GTP·Mg and Mg2+-free GDP (KRAS-J26 r51 r52 r53 r60 r67, J27 r119); multi-temperature WT-GDP crystals, preprint (KRAS-J28, r89). Not judged: mutant 31P rows r39-r43, r45-r50 (C118S background, inhibitor r50); mutant and other-construct MD r54-r59, r61-r66, r68-r73, r99-r105, r120-r122; crystal and other-construct structures r35-r37, r74-r82, r97, r98, r111, xiang2026-r12; ligand- or partner-bound WT structures r78, r79; G13D RDC ensemble r33; membrane PRE r88; abstract-only rows r106-r110; G12C multi-temperature crystals r90; B-Raf RBD-observed rows xiang2026-r5, r7 (partner observed, appendix-only); G12D+RBD rows xiang2026-r3, r11; H-Ras and other homolog rows r91-r96, r112-r117 (homolog only)."
+  },
+  "wt_apo_answer": "GTP·Mg: yes, free WT K-Ras with native GTP exchanges at 25 °C between a dominant state 2 and a GDP-like state 1 across Switch I, Switch II and the P-loop with kex about 400 s-1 and 8-10% state 1 (400 ± 12 s-1, p1 10.15 ± 0.47% and 414 ± 3 s-1, 9.6 ± 0.1% in HEPES; 404 ± 54 s-1, pE 7.8 ± 0.2% in PBS/EDTA). GDP·Mg: no millisecond minor state is seen at 298 K in HEPES without EDTA, the switches instead move on 10 ns-1 us scales with faster-than-CPMG effector-lobe exchange in methyl data, and the 2.8-3.8% Mg2+-free-like state (kex 164 ± 28 s-1 CPMG, 267 ± 20 s-1 CEST) reported in PBS with 10 mM EDTA is a suspected EDTA vs Mg artefact.",
+  "open_conflicts": [
+   "CPMG versus CEST on the same PBS/EDTA GDP samples: kex 164 vs 267 s-1 (WT), 99 vs 214 (G12C), 345 vs 668 (G12D), 172 vs 492 (G12V); the authors call them in fair agreement and read one dominant process, but the rates differ by up to about threefold (r13-r16, r21-r24).",
+   "GTP-state exchange model: amide data are fitted as one global two-state process (r1, r17, r26), while GMPPNP methyl data show a synchronized effector-lobe cluster plus allosteric methyls with non-uniform temperature dependence (r84), and state-1 mutants T35S and V29G retain extra or faster processes (r28, r86, r87); whether free WT has more than one process is not settled by these rows."
+  ],
+  "questions_for_gina": [
+   "The RelaxDB KRAS_CPMG labels match the Hansen 2023 WT K-Ras·GTP·Mg sample (20 mM HEPES pH 7.0, 298 K, 600/850 MHz): the seven unlabelled non-proline residues ('.' at Y64; N at Y32, I55, S65, M72, T87, N116) are exactly the seven non-proline residues without a per-residue Δϖ in that paper's WT GTP source data, and all 45 residues with |Δϖ| > 0.5 ppm are labelled exchange (145 of 158 residues agree at 0.5 ppm, 154 of 158 at 0.4 ppm). The GDP samples fit worse (Pálfy 2022 GDP CPMG fit set: 119 of 158 agree; Hansen 2023 GDP shows no millisecond exchange and is fully assigned), and the Pálfy 2022 GTP sample lacks Switch II assignments that the labels carry. Can you confirm the labels come from Hansen 2023 WT GTP, and should GTP·Mg then be the headline reference state?",
+   "We mark the Palfy 2022 GDP minor state (Mg2+-free-like shifts, PBS with 10 mM EDTA) as a suspected EDTA vs Mg artefact because HEPES samples without EDTA show no millisecond state for GDP; do you agree, or do you know of a measurement that shows it in Mg2+-saturated K-Ras-GDP?"
+  ],
+  "buffer_note": "All Palfy 2022 NMR samples (r13-r25, r118) used PBS pH 7.4 with 10 mM EDTA and 15 mM MgCl2 (5 mM nominal Mg2+ excess; free Mg2+ not measured) and no EDTA-free or phosphate-free control. Hansen 2023 (r1-r12), Rennella (r26-r28), the methyl studies (r30-r32, r83-r87), the 31P study (r38-r50) and Xiang 2026 used HEPES without phosphate or EDTA in the final sample. The GTP exchange agrees across buffers (404 ± 54 vs 400 ± 12 and 414 ± 3 s-1); only the GDP minor state depends on the PBS/EDTA buffer, and its Mg2+-free-like shifts make incomplete Mg2+ occupancy the suspected cause (inference, untested by any source)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "KRAS-J1",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     8,
+     9,
+     11,
+     12,
+     13,
+     16,
+     17,
+     20,
+     21,
+     29,
+     30,
+     31,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     43,
+     54,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     73,
+     74,
+     79,
+     93,
+     95,
+     97,
+     98,
+     103,
+     112,
+     149
+    ],
+    "residues_author": "The 29 (15N CPMG), 22 (1HN CPMG) and 28 (15N CEST) residues of the global fit (Table 1, Rex > 5 s-1) are not listed in the SI (Tables S1-S3) or the source data. Entry residues are those with WT K-Ras·GTP |Δϖ| > 0.5 ppm (the dashed line of Fig. 3a) in Source Data Fig. 3 (MOESM5, sheet WT, per-residue Δϖ from the final fit with kex and p1 fixed): V8, V9, A11, G12, G13, K16, S17, T20, I21, V29, D30, E31, D33, T35, I36, E37, D38, S39, Y40, Q43, D54, L56, D57, T58, A59, G60, Q61, E62, E63, A66, M67, R68, D69, Q70, Y71, R73, T74, L79, I93, H95, R97, E98, V103, V112, R149. This set contains every residue the text names for the largest Switch I, Switch II and P-loop shift changes that is assigned in WT (Y64 and M72 are unassigned in WT·GTP). Non-proline residues without a Δϖ value: Y32, I55, Y64, S65, M72, T87, N116. Example profiles T35, I36, E62, Y71 (Fig. 2).",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169); source-data residue letters checked against the entry for all 158 residues; the N-terminal tag Ala is residue 0 and is excluded.",
+    "functional_site": "Switch I; Switch II; P-loop",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES pH 7.0, 5 mM MgCl2, 5 mM beta-mercaptoethanol, 5% D2O; 650-750 uM protein; native GTP (10 mM); EDTA removed before MgCl2; fresh samples used for at most 3 days",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Joint 15N CPMG, 1HN CPMG and 15N CEST, ChemEx global two-state fit",
+    "observable": "Rex (dispersion amplitude); CEST minor dips",
+    "fit_model": "two-state global",
+    "kex": "400 ± 12 s-1 (k21 state 2 to 1 = 40.6 ± 2.2 s-1; k12 = 359 ± 11 s-1; bootstrap)",
+    "pB": "p1 (excited state 1) = 10.15 ± 0.47%",
+    "delta_omega": "residue-specific; excited-state shifts GDP-like and random-coil-like in Switch I (Fig. 3; not copied)",
+    "field": "CPMG 600 and 850 MHz; CEST 850 MHz (B1 28 Hz, 150 ms)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Free WT K-Ras with native GTP and Mg2+ exchanges as one cooperative process involving Switch I, Switch II and the P-loop at kex 400 ± 12 s-1 with 10.15 ± 0.47% of a GDP-like, partly disordered excited state 1; 45 residues have fitted |Δϖ| above 0.5 ppm (Source Data Fig. 3, sheet WT).",
+   "evidence_rows": [
+    "KRAS-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors relate the more accessible excited state of WT (higher k21 and p1 than G12C and G12D) to differences in GTPase activity and signaling; k21 is far faster than intrinsic hydrolysis (kcat < 4 × 10-5 s-1).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J2",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "15N probes in Fig. 3B (five residues, not named in text)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "25 °C; pH 7; 20 mM HEPES, 5 mM TCEP; 10 mM native GTP, 5 mM MgCl2; 400 uM 15N KRAS (His6-SUMO removed); EDTA removed before MgCl2",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-time CPMG with CW 1H decoupling, two-site fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "414 ± 3 s-1",
+    "pB": "state-1 population 9.6 ± 0.1%",
+    "delta_omega": "",
+    "field": "14.1 T (600 MHz)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "A second laboratory reproduces the GTP state-1/state-2 exchange at 25 °C with kex 414 ± 3 s-1 and 9.6 ± 0.1% state 1.",
+   "evidence_rows": [
+    "KRAS-r26"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors identify state 1 as the effector-binding-deficient conformation whose population Q61R lowers.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J3",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     2,
+     6,
+     7,
+     9,
+     12,
+     14,
+     17,
+     19,
+     20,
+     21,
+     23,
+     25,
+     26,
+     28,
+     29,
+     32,
+     39,
+     40,
+     41,
+     43,
+     44,
+     45,
+     51,
+     52,
+     74,
+     75,
+     80,
+     89,
+     90,
+     92,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98,
+     101,
+     102,
+     111,
+     113,
+     114,
+     119,
+     131,
+     135,
+     141,
+     144,
+     147,
+     149,
+     152,
+     153,
+     157,
+     159,
+     161,
+     164,
+     165
+    ],
+    "residues_author": "WT column of SI Table S6 (Pálfy 2022, GTP-bound CPMG global fit, per-residue |Δδ EG|): 55 residues with values, T2, L6, V7, V9, G12, V14, S17, L19, T20, I21, L23, Q25, N26, F28, V29, Y32, S39, Y40, R41, Q43, V44, V45, C51, L52, T74, G75, C80, S89, F90, D92, I93, H94, H95, Y96, R97, E98, K101, R102, M111, L113, V114, D119, Q131, R135, F141, T144, K147, R149, V152, D153, Y157, L159, R161, R164, K165. A further 34 residues are marked *** (unassigned because of severe exchange broadening): V8, A11, G13, Q22, D30, E31, D33, I36, E37, D38, D54, I55, L56, D57, T58, A59, G60, Q61, E62, E63, Y64, S65, A66, M67, R68, D69, Q70, Y71, M72, R73, T87, I100, V103, V112; these cover nearly all of Switch II (D54-R73) and Switch I D30-E31, D33, I36-D38. Non-flat residues span the effector lobe plus alpha3, beta5 and beta6-L10-alpha5 (Fig. 1B).",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169); residue letters in Table S6 checked against the entry (position 12 is printed V12 in the shared variant table; WT has G12).",
+    "functional_site": "effector lobe; allosteric lobe",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "25 °C; pH 7.4; PBS pH 7.4, 10 mM EDTA, 15 mM MgCl2 (5 mM nominal excess over EDTA), 3 mM NaN3, 10% D2O, 1% DSS; 1 mM protein; 100 mM native GTP",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation-compensated constant-time CPMG (40 ms, nuCPMG 25-1000 Hz), joint 600/800 MHz Carver-Richards-Jones fit; exchange broadening in the same spectra",
+    "observable": "Rex (dispersion amplitude); line broadening",
+    "fit_model": "two-state global",
+    "kex": "404 ± 54 s-1 (kGE 32 ± 4 s-1; kEG 373 ± 52 s-1)",
+    "pB": "pE 7.8 ± 0.2%",
+    "delta_omega": "|Δδ EG| per residue (Fig. 4; not copied)",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In phosphate/EDTA buffer the GTP state shows one dominant slow process (kex 404 ± 54 s-1, pE 7.8 ± 0.2%) that matches the HEPES results within error; SI Table S6 lists 55 WT residues in the fit and 34 Switch-region residues broadened beyond assignment.",
+   "evidence_rows": [
+    "KRAS-r17",
+    "KRAS-r118"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors suggest the minor GTP-state conformation resembles Sos-bound Ras.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J4",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     4,
+     5,
+     6,
+     9,
+     10,
+     11,
+     12,
+     15,
+     16,
+     20,
+     21,
+     22,
+     27,
+     29,
+     30,
+     32,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     52,
+     53,
+     54,
+     55,
+     56,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     72,
+     73,
+     74,
+     75,
+     76,
+     78,
+     79,
+     82,
+     94,
+     97,
+     101,
+     104,
+     141,
+     156,
+     160,
+     168
+    ],
+    "residues_author": "WT column of SI Table S4 (Pálfy 2022, GDP-bound CPMG global fit, per-residue |Δδ EG|): 56 residues with values, Y4, K5, L6, V9, G10, A11, G12, G15, K16, T20, I21, Q22, H27, V29, D30, Y32, D33, T35, I36, E37, D38, S39, Y40, L52, L53, D54, I55, L56, T58, A59, G60, Q61, E62, E63, Y64, S65, A66, M67, R68, D69, M72, R73, T74, G75, E76, F78, L79, F82, H94, R97, K101, K104, F141, F156, V160, E168. Y32 and S65 profiles shown (Fig. 1A, 2).",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169); residue letters in Table S4 checked against the entry (position 12 is printed V12 in the shared variant table; WT has G12).",
+    "functional_site": "Switch I; Switch II; effector lobe",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "25 °C; pH 7.4; PBS pH 7.4, 10 mM EDTA, 15 mM MgCl2 (5 mM nominal excess over EDTA), 3 mM NaN3, 10% D2O, 1% DSS; 1 mM protein; 5 mM GDP",
+    "is_wt_apo": true
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "15N relaxation-compensated constant-time CPMG (40 ms, nuCPMG 25-1000 Hz), joint 600/800 MHz Carver-Richards-Jones fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "164 ± 28 s-1 (kGE 4.6 ± 0.8 s-1; kEG 159 ± 32 s-1)",
+    "pB": "pE 2.8 ± 0.2%",
+    "delta_omega": "|Δδ EG| per residue (Fig. 2; not copied)",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The GDP minor state (kex 164 ± 28 s-1, pE 2.8 ± 0.2%) has Mg2+-free-like shifts and appears only in PBS with 10 mM EDTA, while HEPES samples without EDTA show no millisecond state, so incomplete Mg2+ occupancy (EDTA vs Mg) is a suspected artefact that no source tests; SI Table S4 lists the 56 WT residues in that fit.",
+   "evidence_rows": [
+    "KRAS-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors propose a pre-formed Mg2+-free-like, Sos-compatible state that prepares K-Ras for nucleotide exchange.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J5",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     32,
+     33,
+     35,
+     37,
+     38,
+     57,
+     58,
+     64,
+     74,
+     75
+    ],
+    "residues_author": "Y32, D33, T35, E37, D38 (Switch I), D57, T58, Y64, T74, G75 (Switch II): residues with numeric fitted Δδ EG in the WT column of Table 2",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "298 K; pH 7.4; PBS pH 7.4, 10 mM EDTA, 15 mM MgCl2 (5 mM nominal excess over EDTA), 3 mM NaN3, 10% D2O, 1% DSS; 1 mM protein; 5 mM GDP",
+    "is_wt_apo": true
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "15N CEST (B1 25 Hz, 400 ms saturation, 0.5 ppm steps), global two-state fit",
+    "observable": "CEST minor dip",
+    "fit_model": "two-state global",
+    "kex": "267 ± 20 s-1",
+    "pB": "pE 3.8 ± 0.1%",
+    "delta_omega": "fitted Δδ EG match Mg2+-bound vs Mg2+-free shift differences (R2 0.999; Table 2)",
+    "field": "600 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "CEST in the same PBS/EDTA buffer fits a 3.8 ± 0.1% minor state whose shifts equal the Mg2+-free protein, on the same ten residues that show a single dip in HEPES without EDTA, so partial Mg2+ loss (EDTA vs Mg) is the suspected cause.",
+   "evidence_rows": [
+    "KRAS-r21"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J6",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     32,
+     33,
+     35,
+     37,
+     38,
+     57,
+     58,
+     64,
+     74,
+     75
+    ],
+    "residues_author": "Y32, D33, T35, E37, D38 (Switch I), D57, T58, Y64, T74, G75 (Switch II) shown in SI Fig. S4",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES, 5 mM MgCl2, 5 mM GDP, 5 mM beta-mercaptoethanol, 5% D2O; 650-750 uM protein; no EDTA or phosphate",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CEST (15N STCW CPMG also listed in SI Table S1)",
+    "observable": "CEST profile: one principal dip",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "CEST 850 MHz",
+    "temperature": "298 K",
+    "detection_window": "15N CEST at 850 MHz, B1 42 Hz, 150 ms saturation, 298 K, on the ten Switch I/II residues listed; CPMG field and nuCPMG range not stated in the row; cannot exclude a minor state with lower population, small 15N shift difference, or exchange outside the CEST range"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "In HEPES without EDTA the authors find no significantly populated millisecond excited state for GDP-bound WT on the residues where the PBS/EDTA sample fits a 3.8% state.",
+   "evidence_rows": [
+    "KRAS-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J7",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     36,
+     55
+    ],
+    "residues_author": "I36 and I55 give well-determined adiabatic rates; I21 and I24 also exchange but with large uncertainty; 11 Ile methyls flat by CPMG (< 3 s-1); allosteric-lobe methyls show no clear exchange (Fig. 1C, SI Figs. S2A, S4-S5)",
+    "numbering_note": "Ile delta1 methyl probes; source numbering matches the entry",
+    "functional_site": "Switch I (I36); effector lobe"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "CPMG at 25 °C; adiabatic data at three temperatures (values not in main text); 20 mM HEPES pH 7.4, 150 mM NaCl, 5 mM MgCl2, 2 mM TCEP; about 250 uM U-[15N,2H], 13CH3-delta1-Ile protein",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C SQ- and MQ-CPMG plus 13C adiabatic R1rho/R2rho relaxation dispersion",
+    "observable": "Rex (CPMG, flat); adiabatic relaxation dispersion",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "CPMG 700 MHz; adiabatic 800 or 850 MHz",
+    "temperature": "25 °C (CPMG); three temperatures (adiabatic)",
+    "detection_window": "CPMG part: 13C SQ-CPMG (20 ms constant time, nuCPMG 100-1000 Hz) and MQ-CPMG at 700 MHz, 25 °C, flat (< 3 s-1); this window misses exchange faster than CPMG, which the adiabatic experiment then detects"
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Methyl CPMG is flat for GDP-bound WT, but adiabatic dispersion, which reaches faster exchange, detects effector-lobe motion with very different rates at I36 and I55; flat CPMG and detected adiabatic exchange are a detection-window difference, not a conflict.",
+   "evidence_rows": [
+    "KRAS-r83"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J8",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     21,
+     24,
+     36,
+     55,
+     100,
+     139,
+     142
+    ],
+    "residues_author": "I21, I24, I36, I55 (effector lobe; similar kex and Arrhenius slopes) and I100, I139, I142 (allosteric lobe; slow, not similar to one another); 7 of 11 methyls disperse at 25 °C (Fig. 1)",
+    "numbering_note": "Ile delta1 methyl probes; source numbering matches the entry",
+    "functional_site": "Switch I (I36); effector lobe; allosteric lobe"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GMPPNP·Mg",
+    "conditions": "25 °C plus two further temperatures (values in Fig. 1); 20 mM HEPES pH 7.4, 150 mM NaCl, 5 mM MgCl2, 2 mM TCEP; about 250 uM U-[15N,2H], 13CH3-delta1-Ile protein; GMPPNP (non-hydrolysable GTP analogue)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C SQ-CPMG on Ile delta1 methyls, per-methyl two-site fits with Arrhenius restraint and fixed Δω",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "cluster",
+    "kex": "per-methyl rates in Fig. 1C-D only (not stated in text)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "25 °C and two other temperatures",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "GMPPNP-bound WT shows a synchronized effector-lobe cluster (I21, I24, I36, I55) and slow but non-uniform allosteric methyls, which the authors assign to state-1/state-2 exchange because state-1 mutants quench it.",
+   "evidence_rows": [
+    "KRAS-r84"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors use these dynamics to explain and predict RAF1-RBD binding affinities of KRAS mutants.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J9",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     107,
+     108,
+     109,
+     122,
+     123
+    ],
+    "residues_author": "E107-V109 and S122-R123 loops and both termini mobile; Switch II moderately mobile (several S2(NASR) < 0.65); Switch I restricted (S2(NASR) > 0.68) (Fig. 4a)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch II"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES pH 7.0, 5 mM MgCl2, 5 mM beta-mercaptoethanol, 5% D2O; 650-750 uM protein; native GTP; 0.5-1.5 uM 20 nm anionic silica nanoparticles",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1/R2 with and without silica nanoparticles (NASR) and model-free analysis",
+    "observable": "S2 (NASR)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "850 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "GTP-bound WT has mobile termini and C-terminal loops, a moderately mobile Switch II and a restrained Switch I, and NASR and model-free S2 agree, which places these motions in the sub-ns range.",
+   "evidence_rows": [
+    "KRAS-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J10",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     31,
+     32,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65
+    ],
+    "residues_author": "Switch I E31, Y32 (S2(NASR) 0.50-0.61) and Switch II G60-S65 (S2(NASR) 0.21-0.37); termini and E107-V109, S122-R123 loops also mobile (Fig. 4b)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES, 5 mM MgCl2, 5 mM GDP, 5 mM beta-mercaptoethanol, 5% D2O; 0.5-1.5 uM silica nanoparticles",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1/R2 with and without silica nanoparticles (NASR) compared with model-free S2",
+    "observable": "S2 (NASR) vs S2 (model-free)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "850 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "GDP-bound WT has large-amplitude Switch I and Switch II motions that NASR sees and model-free analysis misses, which the authors place at 10 ns to 1 us, the slow edge of this window and below the CPMG/CEST range.",
+   "evidence_rows": [
+    "KRAS-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J11",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg or GTP·Mg (reference state)",
+    "conditions": "not applicable (no measurement found)",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "none (time-resolved structural and EPR/DEER methods searched with no hits; one HDX-MS row is a G12D-vs-WT difference)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The workbook search covered time-resolved structural methods and EPR/DEER for KRAS and found none, and the only HDX row compares G12D with WT without assigning any process to WT.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J12",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "all residues with CPMG profiles (Fig. S2)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GTP·Mg + B-Raf RBD 155-227 (equimolar, stable complex)",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES, 100 mM NaCl, 10 mM GTP, 5 mM MgCl2, 2 mM TCEP, 5% D2O; about 0.7 mM complex; fresh sample",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CPMG relaxation dispersion",
+    "observable": "Rex (dispersion amplitude): no detectable dispersion",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "850 MHz",
+    "temperature": "298 K",
+    "detection_window": "15N CPMG at 850 MHz, 298 K, T_CPMG 30 ms, nuCPMG 25 Hz-2 kHz; could not see exchange with populations or shift differences below detection or rates outside the CPMG range"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Equimolar RBD quenches the state-1/state-2 exchange of free GTP-bound WT, leaving one dominant rigid complex state; this is a binding-state difference, not a conflict.",
+   "evidence_rows": [
+    "KRAS-xiang2026-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors read the quenching as RBD stabilizing the effector-competent state 2.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J13",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "41 profiles in the global fit (Table S2); H27, Y32, T35, I36, E37, S39, A66, Y71, M72, G75 shown; HSQC broadening at V29, Y32, A66, Y71, M72",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II (RBD-binding surface)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg + B-Raf RBD 155-227 (transient, substoichiometric)",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES pH 7.0, 100 mM NaCl, 5 mM MgCl2, 2 mM TCEP, 5% D2O (no phosphate); 5 mM GDP; 0.60 mM K-Ras.GDP + 0.15 mM unlabeled RBD (CEST/CPMG); 4:1 K-Ras:RBD (HSQC)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Joint 15N CEST and ST-CW CPMG (40 ms, nuCPMG 25 Hz-2 kHz), ChemEx global two-state fit; HSQC line broadening on RBD addition",
+    "observable": "CEST minor dips; Rex; line broadening",
+    "fit_model": "two-state global",
+    "kex": "167.7 ± 5.9 s-1 (binding exchange: koff 156.6 s-1, kon,app 11.1 s-1)",
+    "pB": "pb 6.62 ± 0.12% RBD-bound K-Ras.GDP",
+    "delta_omega": "RBD-bound shifts correlate with RBD-bound K-Ras.GTP (Pearson R 0.98)",
+    "field": "850 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: the exchange is transient RBD binding to GDP-bound WT (KD 1.56 ± 0.24 mM, residence time 6.39 ± 0.23 ms), not a K-Ras conformational process, and is not counted in any window answer.",
+   "evidence_rows": [
+    "KRAS-xiang2026-r1",
+    "KRAS-xiang2026-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors propose that GDP-bound K-Ras forms a specific, active-like complex with B-Raf RBD.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J14",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "global fits: G12C 31 (15N CPMG) and 31 (CEST) residues; G12D 50, 22 (1HN CPMG), 50; residues not listed; T35, I36, E62, Y71 shown",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II; P-loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G12C; G12D (separate samples)",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES pH 7.0, 5 mM MgCl2, 5 mM beta-mercaptoethanol, 5% D2O; 650-750 uM protein; native GTP",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Joint 15N CPMG (+1HN CPMG for G12D) and 15N CEST, ChemEx global two-state fit",
+    "observable": "Rex; CEST minor dips",
+    "fit_model": "two-state global",
+    "kex": "G12C 326 ± 11 s-1 (k21 22.7 ± 0.9); G12D 301 ± 17 s-1 (k21 27.1 ± 2.0)",
+    "pB": "G12C p1 6.97 ± 0.17%; G12D p1 9.00 ± 0.44%",
+    "delta_omega": "",
+    "field": "CPMG 600/850 MHz; CEST 850 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "G12C and G12D keep the WT GTP state-1/state-2 exchange with slower k21 and lower p1 than WT.",
+   "evidence_rows": [
+    "KRAS-r2",
+    "KRAS-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J15",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     32,
+     33,
+     35,
+     37,
+     38,
+     57,
+     58,
+     64,
+     74,
+     75
+    ],
+    "residues_author": "Y32, D33, T35, E37, D38, D57, T58, Y64, T74, G75 (SI Fig. S4)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G12C; G12D (separate samples)",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "298 K; pH 7.0; 20 mM HEPES, 5 mM MgCl2, 5 mM GDP, 5 mM beta-mercaptoethanol, 5% D2O; no EDTA or phosphate",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N CEST (CPMG also listed)",
+    "observable": "CEST profile: one principal dip",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "CEST 850 MHz",
+    "temperature": "298 K",
+    "detection_window": "15N CEST at 850 MHz, B1 44 Hz (G12C) and 45 Hz (G12D), 150 ms saturation, 298 K, ten Switch I/II residues; cannot exclude low-population, small-shift or out-of-range exchange"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "GDP-bound G12C and G12D in HEPES without EDTA show no significantly populated millisecond state, as for WT.",
+   "evidence_rows": [
+    "KRAS-r11",
+    "KRAS-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J16",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "non-flat residues, not listed (Fig. 1A, 2)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II; P-loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G12C; G12D; G12V (separate samples)",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "25 °C; pH 7.4; PBS pH 7.4, 10 mM EDTA, 15 mM MgCl2 (5 mM nominal excess over EDTA), 3 mM NaN3, 10% D2O, 1% DSS; 1 mM protein; 5 mM GDP",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "15N constant-time CPMG (40 ms, nuCPMG 25-1000 Hz), joint 600/800 MHz Carver-Richards-Jones fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "G12C 99 ± 26 s-1; G12D 345 ± 47 s-1; G12V 172 ± 35 s-1",
+    "pB": "G12C 2.4 ± 0.2%; G12D 1.7 ± 0.2%; G12V 1.5 ± 0.2%",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The mutant GDP minor states come from the same PBS/EDTA preparation as the WT one and are absent for G12C and G12D in HEPES without EDTA, so the same EDTA vs Mg artefact is suspected.",
+   "evidence_rows": [
+    "KRAS-r14",
+    "KRAS-r15",
+    "KRAS-r16"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J17",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     32,
+     33,
+     35,
+     37,
+     38,
+     57,
+     58,
+     74,
+     75
+    ],
+    "residues_author": "G12C: T35, E37, D38, T58; G12D: Y32, D33, E37, D38, D57, T74, G75; G12V: Y32, E37, D38, T74, G75 (numeric fitted Δδ EG, Table 2)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G12C; G12D; G12V (separate samples)",
+    "binding_state": "bound:GDP·Mg",
+    "conditions": "298 K; pH 7.4; PBS pH 7.4, 10 mM EDTA, 15 mM MgCl2 (5 mM nominal excess over EDTA), 3 mM NaN3, 10% D2O, 1% DSS; 1 mM protein; 5 mM GDP",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "15N CEST (B1 25 Hz, 400 ms saturation), global two-state fit per variant",
+    "observable": "CEST minor dip",
+    "fit_model": "two-state global",
+    "kex": "G12C 214 ± 61 s-1; G12D 668 ± 60 s-1; G12V 492 ± 56 s-1",
+    "pB": "G12C 1.3 ± 0.1%; G12D 2.0 ± 0.1%; G12V 1.5 ± 0.1%",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "CEST on the same PBS/EDTA mutant GDP samples fits Mg2+-free-like minor states at rates up to about three times the CPMG values, under the same suspected EDTA vs Mg artefact.",
+   "evidence_rows": [
+    "KRAS-r22",
+    "KRAS-r23",
+    "KRAS-r24"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J18",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "non-flat residues, not listed; most of Switch II and parts of Switch I broadened (Fig. 1B)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II; P-loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G12C; G12D; G12V (separate samples)",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "25 °C; pH 7.4; PBS pH 7.4, 10 mM EDTA, 15 mM MgCl2 (5 mM nominal excess over EDTA), 3 mM NaN3, 10% D2O, 1% DSS; 1 mM protein; 100 mM native GTP",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-time CPMG (40 ms, nuCPMG 25-1000 Hz), joint 600/800 MHz Carver-Richards-Jones fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "G12C 500 ± 67 s-1; G12D 332 ± 42 s-1; G12V 312 ± 51 s-1",
+    "pB": "G12C 4.5 ± 0.3%; G12D 8.4 ± 0.3%; G12V 5.9 ± 0.3%",
+    "delta_omega": "",
+    "field": "600 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In PBS/EDTA all three GTP-bound mutants show the WT-like slow process; the GTP result agrees with HEPES data, so the buffer concern applies to the GDP state only.",
+   "evidence_rows": [
+    "KRAS-r18",
+    "KRAS-r19",
+    "KRAS-r20"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J19",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "residues_author": "D30-Y40 (Switch I)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "mutant:G12C",
+    "binding_state": "bound:GDP without Mg2+ (EDTA, no added MgCl2)",
+    "conditions": "298 K; pH 7.4; PBS, 10 mM EDTA, no added MgCl2, 10% D2O; Mg2+ absence and GDP presence checked by MS",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2, {1H}-15N NOE; Lipari-Szabo model-free and reduced spectral density",
+    "observable": "S2, tau_e, J(omega_H)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Without Mg2+, most of Switch I (D30-Y40) becomes highly flexible on the ps timescale (R2/R1 8.7 vs 14.8 average; NOE 0.54 vs 0.77), and no slow contribution is seen in this analysis.",
+   "evidence_rows": [
+    "KRAS-r25"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J20",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "15N probes in Fig. 3B",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "Switch I; Switch II"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:Q61R",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "25 °C; pH 7; 20 mM HEPES, 5 mM TCEP; 10 mM native GTP, 5 mM MgCl2; 400 uM protein",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N CPMG, two-site fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "",
+    "pB": "state-1 population 1.8%",
+    "delta_omega": "",
+    "field": "14.1 T",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Q61R keeps the WT state-1/state-2 process (same fitted shift differences) but lowers state 1 from 9.6% to 1.8%.",
+   "evidence_rows": [
+    "KRAS-r27"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J21",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     12,
+     13,
+     54,
+     74
+    ],
+    "residues_author": "G12, G13 and distal D54, T74 compared",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "P-loop; Switch I; Switch II"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:T35S",
+    "binding_state": "bound:GTP·Mg",
+    "conditions": "25 °C; pH 7; 20 mM HEPES, 5 mM TCEP; 10 mM native GTP, 5 mM MgCl2; 400 uM protein",
+    "is_wt_apo": false
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "15N CPMG, comparison of fitted shift differences with WT and Q61R",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "other",
+    "kex": "about 1,700 s-1 (fitted rate of the additional process)",
+    "pB": "",
+    "delta_omega": "",
+    "field": "14.1 T",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "T35S, which sits mostly in state 1, shows a faster second process whose shift differences at G12, G13 and distal D54, T74 do not match state-1/state-2 exchange, so state 1 itself is heterogeneous; atomic states unidentified.",
+   "evidence_rows": [
+    "KRAS-r28"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J22",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Ile delta1 methyls in effector and allosteric lobes (Fig. 1d; reported only when 25 °C amplitudes exceed error)",
+    "numbering_note": "Ile delta1 methyl probes; source numbering matches the entry",
+    "functional_site": "effector lobe; allosteric lobe"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:G13D (Gly-KRAS4B 1-169)",
+    "binding_state": "bound:GMPPNP·Mg",
+    "conditions": "20, 25 and 30 °C; pH 7.4; 20 mM HEPES, 150 mM NaCl, 5 mM MgCl2, 2 mM TCEP; U-[15N,2H], 13CH3-delta1-Ile; about 250 uM",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C methyl CPMG and adiabatic relaxation dispersion, per-methyl two-site Arrhenius fits across the three temperatures",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "cluster",
+    "kex": "per-methyl rates at 20, 25, 30 °C in Fig. 1d only (not stated in rows)",
+    "pB": "not separable at one temperature; combined Arrhenius fit has elevated chi2 (not used)",
+    "delta_omega": "",
+    "field": "700 MHz",
+    "temperature": "20, 25, 30 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "GMPPNP-bound G13D methyls in both lobes exchange in a synchronized way at all three temperatures; the population is not reliable because the combined two-state Arrhenius fit has elevated chi2.",
+   "evidence_rows": [
+    "KRAS-r30",
+    "KRAS-r31",
+    "KRAS-r32"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J23",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": [
+     21,
+     24,
+     55,
+     100
+    ],
+    "residues_author": "V29G: residual CPMG dispersion at I21, I24, I55, I100 (Fig. 2A, 2C); T35S: CPMG flat, faster exchange detected by adiabatic dispersion (Figs. S10-S11); T35A: CPMG flat, no adiabatic data",
+    "numbering_note": "Ile delta1 methyl probes; source numbering matches the entry",
+    "functional_site": "effector lobe; allosteric lobe"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:T35A; T35S; V29G (separate samples)",
+    "binding_state": "bound:GMPPNP·Mg",
+    "conditions": "25 °C (CPMG); further temperatures for V29G and T35S (values in figures); 20 mM HEPES pH 7.4, 150 mM NaCl, 5 mM MgCl2, 2 mM TCEP; about 250 uM U-[15N,2H], 13CH3-delta1-Ile protein",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "13C SQ-CPMG on Ile delta1 methyls; adiabatic R1rho/R2rho for T35S",
+    "observable": "Rex (dispersion amplitude); adiabatic relaxation dispersion",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "CPMG 700 MHz; adiabatic 800 or 850 MHz",
+    "temperature": "25 °C and others",
+    "detection_window": "T35A and T35S CPMG: 13C SQ-CPMG, 20 ms constant time, nuCPMG 100-1000 Hz, 700 MHz, 25 °C, no ms-us dispersion above 3 s-1; misses exchange faster than CPMG (seen by adiabatic dispersion for T35S) and was not followed by adiabatic data for T35A"
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "State-1-stabilizing mutations quench the large WT GMPPNP dispersions, but V29G keeps residual exchange in both lobes and T35S exchanges faster than the CPMG window, so state 1 has substates; T35A shows nothing by CPMG alone.",
+   "evidence_rows": [
+    "KRAS-r85",
+    "KRAS-r86",
+    "KRAS-r87"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors correlate the temperature-dependent exchange of WT, V29G and T35S with their RAF1-RBD binding affinities.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J24",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "peptides around the P-loop and alpha1 (Fig. 5D)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "P-loop"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:G12D",
+    "binding_state": "bound:GMPPNP·Mg",
+    "conditions": "23 °C; pHread 7.1; 20 mM HEPES, 150 mM NaCl, 5 mM MgCl2; 93.7% D2O; labelling 10 s to 4 h",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Differential HDX-MS, G12D versus WT",
+    "observable": "HDX uptake difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "23 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "G12D takes up more deuterium than WT around the P-loop and alpha1, consistent with local deprotection, but labelling times are not conformational lifetimes and no WT process is assigned.",
+   "evidence_rows": [
+    "KRAS-r29"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J25",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "gamma-phosphate 31P resonances gamma1 (state 1) and gamma2 (state 2)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": "nucleotide gamma-phosphate; Switch I"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:C118S (nominal WT background, extra N-terminal Gly)",
+    "binding_state": "bound:GTP·Mg (r38); bound:GppNHp·Mg (r44)",
+    "conditions": "278 K; pH 7.3; 20 mM HEPES, 150 mM NaCl, 2 mM MgCl2; 93% H2O/7% D2O; native GTP or GppNHp",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1D 31P NMR at 202 MHz",
+    "observable": "separate gamma1/gamma2 peaks (intensity populations called qualitative by the authors)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "GTP: about 90% or more state 2; GppNHp: significant state 1 (qualitative, not digitized)",
+    "delta_omega": "",
+    "field": "202 MHz 31P",
+    "temperature": "278 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Native GTP-bound C118S K-Ras holds about 90% or more state 2, consistent with the CPMG populations, while GppNHp raises state 1 markedly, so analogue-loaded samples cannot stand in for native GTP; 31P gives no rate.",
+   "evidence_rows": [
+    "KRAS-r38",
+    "KRAS-r44"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J26",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "switch regions and substates (no residue list in rows)",
+    "numbering_note": "models from PDB 2PMX (r51, r52) and 4OBE (r53, r60)",
+    "functional_site": "Switch I; Switch II"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP·Mg (r51, r53); bound:GTP·Mg (r52, r60, r67)",
+    "conditions": "in silico: 300 K, ff99SB, 3 x 20 ns per state (r51, r52); 310 K, OPLS-AA, 140 mM KCl, 2 us per replica (r53, r60), with a Markov-state model built only for the GTP-bound system (r60), none for GDP-bound r53; microsecond MD (r67)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Explicit-solvent MD with PCA and residue-interaction networks; Markov-state model for GTP-bound WT only (r60)",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "300 K; 310 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "GDP- and GTP-bound WT simulations sample switch substates and a broader ensemble than H-Ras, but simulation length and force field set no experimental rate or population.",
+   "evidence_rows": [
+    "KRAS-r51",
+    "KRAS-r53",
+    "KRAS-r52",
+    "KRAS-r60",
+    "KRAS-r67"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J27",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "beta2/beta3 hub, Switch I and Switch II (Fig. 7)",
+    "numbering_note": "4OBE-based model",
+    "functional_site": "Switch I; Switch II"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP without Mg2+ (Mg2+ removed in silico)",
+    "conditions": "310 K; OPC water; physiological NaCl; ff99SBildn*; 2,000 ns trajectories",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Explicit-solvent MD of the Mg2+-depleted GDP state",
+    "observable": "MD fluctuation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "310 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Removing Mg2+ in simulation weakens the beta2/beta3 hub and opens the switches, which fits the Mg2+-free-like PBS/EDTA minor state but does not show whether that state forms in Mg2+-saturated K-Ras.",
+   "evidence_rows": [
+    "KRAS-r119"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "KRAS-J28",
+   "entry_id": "KRAS_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "functional and allosteric sites (no residue list copied; preprint text has inconsistencies)",
+    "numbering_note": "Source numbering matches the entry sequence (K-Ras4B 1-169; checked G12, G13, V29, Y32, D33, T35, I36, E37, D38, D57, T58, Q61, E62, Y64, Y71, T74, G75); N-terminal tag residues are not numbered",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:GDP (Mg2+ not stated in the row)",
+    "conditions": "crystals at multiple temperatures; GDP",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Multi-temperature X-ray crystallography",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "multiple (not stated in row)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Temperature-dependent crystal conformations expose flexible functional and allosteric sites in GDP-bound WT, but this is an unreviewed preprint and crystals give no timescale.",
+   "evidence_rows": [
+    "KRAS-r89"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

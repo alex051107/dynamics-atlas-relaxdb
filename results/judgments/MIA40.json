@@ -1,0 +1,568 @@
+{
+ "protein_summary": {
+  "entry_id": "MIA40",
+  "per_window": {
+   "ps-ns": "search_insufficient for the entry construct (MIA40-J2). No row reports MIA40 relaxation; the 2009 structure paper, read only as an abstract, calls the N-terminal lid rigid without naming the probe or window (J1, r1, full-length construct).",
+   "us-ms": "search_insufficient (J3). No dispersion or exchange measurement of MIA40 exists in any redox or binding state; CPMG and relaxation in the ALR papers concern ALR.",
+   "slower_than_ms": "search_insufficient (J4).",
+   "undetermined": "Substrate- and partner-bound states, each a bound-state comparison without a MIA40 rate: trapped C53S complexes with Cox17 (secondary structure unchanged, CPC and cleft perturbed; J5, r2), the Tim9 ITS peptide (J6, r3) and CRAC sf-ALR (J9, r6, r7). Reduced-CPC MIA40 is oxidised by long-form ALR and partly by short-form ALR at 298 K, redox chemistry rather than conformational exchange (J7, J8; r4, r5). The N-terminal AIF-interaction region shields the active site in the inactive SPS background: its removal or the AIA-A mutation shifts active-site and core aromatic resonances (F68, F72, F91) and extends the SAXS shape (J10-J12; r9-r11), and a SAXS-restrained MD ensemble of an AIF fusion allows an unengaged N-terminal fragment (J13, r12, md_only). Artefact lead: the redox-active truncated core forms persistent intermolecular disulfides (J14, r13). Not judged: in-cell and in-mitochondria NMR of the redox state (r8, r14, abstracts), MitoBloCK negative-control titrations (r15) and ITC binding to mutant AIF (r16)."
+  },
+  "wt_apo_answer": "Not measured: for the free, oxidised MIA40 folded domain (UniProt 41-106) no row reports relaxation, dispersion or exchange broadening, so neither µs-ms exchange nor its absence is shown; the 2009 structure paper, read only as an abstract, calls the N-terminal lid rigid without a stated method or window.",
+  "open_conflicts": [],
+  "questions_for_gina": [
+   "The input card gives no BMRB id; is the RelaxDB MIA40 set the folded-domain part (41-106) of a full-length MIA40 relaxation measurement from Banci et al. 2009 (2K3J), and in which CPC redox state?",
+   "Should the bound-state chemical-shift maps (Cox17, Tim9 peptide, ALR adducts) and the SPS/AIA-A construct comparisons be counted as alternate-state evidence at all, given that none measures a MIA40 rate?"
+  ],
+  "buffer_note": "The measured samples differ from the entry in construct (full length with GSFT, C53S trapping mutant, C53S/C55S SPS, AIA-A, ΔN, AIF fusion), redox state (reduced versus oxidised CPC) and binding state, so no row describes the entry reference state. Buffers are phosphate/EDTA (2010, 2011 papers) or HEPES with 5 mM TCEP (2025 paper); TCEP keeps SPS samples reduced at non-structural cysteines. Several residue maps are figure-only, so only author-named residues are listed."
+ },
+ "judgments": [
+  {
+   "judgment_id": "MIA40-J1",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "alpha-helical hairpin core and N-terminal lid of the 66-residue folded domain (no residue numbers in the abstract)",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": "CPC active site next to the hydrophobic substrate-binding cleft (abstract)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:full-length human MIA40 (2K3J entity: GSFT prefix + residues 1-142); the entry is its 66-residue folded domain",
+    "binding_state": "apo",
+    "conditions": "Not stated in the abstract; 2K3J deposition: 298 K, pH 7.0, ionic strength 50; CPC redox state of any relaxation sample not stated",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "Solution NMR structure study (probe behind 'rigid' not named in the abstract)",
+    "observable": "not stated",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Abstract only: the method, field, temperature and timescale behind the word 'rigid' are not given, so no window can be stated; nothing here tests µs-ms exchange."
+   },
+   "verdict": "unresolved",
+   "reason": "Abstract only: the folded domain is an alpha-helical hairpin core held by two structural disulfides with a rigid N-terminal lid; the evidence and window behind 'rigid' are unread.",
+   "evidence_rows": [
+    "MIA40-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J2",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free entry folded domain (41-106), oxidised (two structural disulfides), no substrate or partner; the 2K3J structure deposition lists 298 K, pH 7.0, ionic strength 50; no relaxation sample is described in the rows",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none in the evidence rows",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "RelaxDB holds an R1/R2/NOE set for this entry, but no row reports MIA40 relaxation, and the 2009 structure paper that may hold it was read only as an abstract.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J3",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free entry folded domain (41-106), oxidised (two structural disulfides), no substrate or partner; the 2K3J structure deposition lists 298 K, pH 7.0, ionic strength 50; no relaxation sample is described in the rows",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none in the evidence rows",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures dispersion, CEST, R1rho or assigned exchange broadening for MIA40 in any redox or binding state; the CPMG and relaxation data in the ALR papers belong to ALR.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J4",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole domain",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "Free entry folded domain (41-106), oxidised (two structural disulfides), no substrate or partner; the 2K3J structure deposition lists 298 K, pH 7.0, ionic strength 50; no relaxation sample is described in the rows",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none in the evidence rows",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row gives hydrogen exchange, folding or another slower-than-ms rate for MIA40.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J5",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": [
+     15,
+     48,
+     51
+    ],
+    "residues_author": "C55, V88, F91 named; CPC and hydrophobic cleft largely affected (full map figure-only, Figure 2A)",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": "CPC motif and hydrophobic substrate-binding cleft",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:C53S (full-length human MIA40 with GSFT remnant)",
+    "binding_state": "bound:human Cox17 C26/36/55S, disulfide-linked through Cox17 C45 to MIA40 C55",
+    "conditions": "pH 7.0; 50 mM KPi, 0.5 mM EDTA for coupling, purified complex in phosphate buffer; NMR temperature not verified",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "NOE-based structure of the trapped complex (2L0Y) and 1H-15N chemical-shift mapping against free MIA40 (2K3J)",
+    "observable": "chemical-shift perturbation and structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "In the trapped Cox17 complex the MIA40 secondary structure is unchanged and only the CPC and cleft environment shifts, while the substrate folds a helix (Cox17 48-62); a bound-state comparison with no MIA40 motion or rate.",
+   "evidence_rows": [
+    "MIA40-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "The authors present MIA40 as a chaperone that induces folding of the substrate ITS helix in the hydrophobic cleft.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J6",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": [
+     15
+    ],
+    "residues_author": "C55 (docking site); binding-site map figure-only (Figure 2C)",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": "hydrophobic substrate-binding cleft",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:C53S (full-length human MIA40)",
+    "binding_state": "bound:yeast Tim9 ITS peptide RLYSNLVERC, disulfide-linked to MIA40 C55",
+    "conditions": "pH 7.0; phosphate buffer; NMR temperature not verified",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N chemical-shift mapping and HADDOCK docking of the covalent peptide complex",
+    "observable": "chemical-shift perturbation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The Tim9 ITS peptide binds the same cleft as Cox17 and folds into a helix; MIA40 shift changes mark binding, not a MIA40 conformational process.",
+   "evidence_rows": [
+    "MIA40-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J7",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": [
+     13,
+     15
+    ],
+    "residues_author": "C53, C55 (CPC)",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": "CPC redox-active site",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:human MIA40 with two structural disulfides and a reduced CPC (construct boundaries not restated)",
+    "binding_state": "bound:long-form ALR C154A/C165A (titrated, unlabelled)",
+    "conditions": "298 K; reduced CPC at the start; buffer of the titration not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC titration of 15N MIA40 with ALR",
+    "observable": "peak intensities of reduced versus oxidised reference spectra",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Redox chemistry: long-form ALR turns reduced-CPC MIA40 into the oxidised reference spectrum with no extra complex peak; a change of chemical species, not conformational exchange.",
+   "evidence_rows": [
+    "MIA40-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J8",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": [
+     13,
+     15
+    ],
+    "residues_author": "C53, C55 (CPC)",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": "CPC redox-active site",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:human MIA40 with two structural disulfides and a reduced CPC (construct boundaries not restated)",
+    "binding_state": "bound:short-form ALR C74A/C85A (titrated, unlabelled)",
+    "conditions": "298 K; reduced CPC at the start; buffer of the titration not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC titration of 15N MIA40 with ALR",
+    "observable": "peak intensities of reduced versus oxidised reference spectra",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Redox chemistry: short-form ALR oxidises reduced-CPC MIA40 only partly, less effectively than long-form ALR (supplementary comparison not retrieved); not conformational exchange.",
+   "evidence_rows": [
+    "MIA40-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J9",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "perturbed hydrophobic-cleft residues shown only in Figure 3B/D (no residue list in the text); C55 is the intermolecular disulfide site, not a reported perturbed resonance",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": "hydrophobic substrate-binding cleft"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:C53S (human MIA40)",
+    "binding_state": "bound:CRAC sf-ALR C71S or C74S, disulfide-linked through MIA40 C55 (two MIA40 per ALR dimer)",
+    "conditions": "312 and 308 K reported for the complex/free comparison (allocation to spectra not stated); buffer not confirmed for the complex",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N TROSY-HSQC chemical-shift mapping of the trapped adducts with alternate 15N labelling",
+    "observable": "chemical-shift perturbation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "ALR's shuttle segment perturbs the same MIA40 cleft that binds substrates (substrate mimicry); a binding surface in trapped mutant adducts, no MIA40 rate or second state.",
+   "evidence_rows": [
+    "MIA40-r6",
+    "MIA40-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J10",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "active-site resonances of the catalytic core (figure-only, Figure 3C)",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence). The paper gives the truncation as 40-142 (Methods, Figure 1) or 45-142 (Figure 3).",
+    "functional_site": "CPC active site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:C53S/C55S (SPS); full-length 1-142 compared with N-terminally truncated ΔN-SPS (40-142 or 45-142)",
+    "binding_state": "apo",
+    "conditions": "pH 7.0; 25 mM HEPES, 75 mM NaCl, 5 mM TCEP; 30-200 µM; 10% D2O; 600 MHz; temperature not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC comparison of full-length and truncated constructs",
+    "observable": "chemical-shift perturbation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Removing the N-terminal AIF-interaction region shifts active-site resonances of the inactive SPS core, which the authors read as an intramolecular shield over the substrate cleft; a construct comparison with no rate or population, and the entry construct itself lacks this N-terminal region.",
+   "evidence_rows": [
+    "MIA40-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J11",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": [
+     28,
+     32,
+     51
+    ],
+    "residues_author": "F68, F72, F91 named; further perturbed residues and a glycine hinge figure-only (Figure 3E-F)",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": "hydrophobic substrate-binding cleft; proposed CPC-lid hinge",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:I12A/F14A/H20A (AIA-A) + C53S/C55S, full length, compared with full-length SPS",
+    "binding_state": "apo",
+    "conditions": "pH 7.0; 25 mM HEPES, 75 mM NaCl, 5 mM TCEP; 600 MHz; temperature not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC comparison mapped on 2K3J",
+    "observable": "chemical-shift perturbation",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Disrupting the N-terminal contact perturbs core aromatics F68, F72 and F91 and a glycine hinge, which the authors read as displacement of the shield and possible lid reorientation; mutant comparison, no measured motion.",
+   "evidence_rows": [
+    "MIA40-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J12",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "whole protein shape; the change originates in the N-terminal region outside the entry",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "mutant:I12A/F14A/H20A (AIA-A), full length, compared with full-length wild type",
+    "binding_state": "apo",
+    "conditions": "10 °C (SAXS); concentration series 0.6-7.3 mg/mL; SEC-MALS in 25 mM HEPES pH 7.5, 150 mM NaCl, 5 mM TCEP",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "SAXS P(r) and SEC-MALS",
+    "observable": "solution shape (P(r), size)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The AIA-A mutant is more extended than wild-type CHCHD4, consistent with loss of the intramolecular N-terminal contact; a shape change between constructs, no opening rate or population.",
+   "evidence_rows": [
+    "MIA40-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J13",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "CHCHD4 1-45 fragment in the fusion; only author 41-45 (entry 1-5) overlaps the entry",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence).",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:AIF(104-613) W196A-linker-CHCHD4(1-45) chimeric fusion, dimeric, FAD bound",
+    "binding_state": "bound:AIF (covalent fusion)",
+    "conditions": "10 °C SAXS constraint; simulation temperature not stated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "BilboMD constrained MD conformers with minimal-ensemble search against SAXS",
+    "observable": "MD/SAXS ensemble",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A two-model SAXS ensemble of the fusion favours the CHCHD4 N-terminal fragment bound to AIF and allows an unengaged fragment in the minor model; model-dependent, engineered fusion, and the fragment lies outside the entry except residues 41-45.",
+   "evidence_rows": [
+    "MIA40-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "MIA40-J14",
+   "entry_id": "MIA40",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "intermolecular disulfides of the truncated construct",
+    "numbering_note": "Entry 1-66 = human MIA40/CHCHD4 (UniProt Q8N4Q1) 41-106; entry = author - 40 (C53 = 13, C55 = 15, F68 = 28, F72 = 32, V88 = 48, F91 = 51; checked against the entry sequence). The truncation is reported as 40-142 or 45-142.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:ΔN-CHCHD4 (40-142 or 45-142) with intact CPC",
+    "binding_state": "apo",
+    "conditions": "pH 7.5; 25 mM HEPES, 150 mM NaCl; SEC without and with 5 mM beta-ME; room temperature TCEP pretreatment",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "Analytical SEC and non-reducing SDS-PAGE",
+    "observable": "self-association (disulfide-linked species)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Without its N-terminus the redox-active core forms persistent intermolecular disulfides, so a truncated, CPC-intact sample like the entry construct can self-associate; a sample-state lead for any relaxation data, not a motion.",
+   "evidence_rows": [
+    "MIA40-r13"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

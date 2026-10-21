@@ -1,0 +1,570 @@
+{
+ "protein_summary": {
+  "entry_id": "VHR_CPMG",
+  "per_window": {
+   "ps-ns": "not_measured: the spin-relaxation search found no R1/NOE/S2 study of VHR, and the 2020 paper reports none (VHR-J10).",
+   "us-ms": "dynamic_in_window: apo WT at 25 °C, nine VI and acid-loop amides fit one process with kex 1530 ± 200 s-1 and pA 98.8 ± 0.1% (VHR-J1, r1); a Hahn-echo survey of the same apo state adds exchange at the alpha7 site and other residues, 14 in all (VHR-J2, r2). Tungstate-bound WT keeps a similar profile (VHR-J3, r3). N74A mutant data show more broadening in apo and tungstate-bound forms (VHR-J4, J5; r4, r5; inference_from_mutant). A 2017 qualitative statement of acid-loop motion has no retrievable data and stays unresolved (VHR-J6, r8, indirect). Single temperature only; the RelaxDB source dissertation was not read (VHR-J12, search_insufficient).",
+   "slower_than_ms": "not_measured: HDX-MS, EPR/DEER, smFRET, time-resolved and multitemperature structural methods and CEST were searched with no hits (VHR-J11).",
+   "undetermined": "Apo crystals 8TK6/9DJ9 at 100 K superpose closely in the acid loop and P-loop (VHR-J8, r10, r11, structure_only, no_evidence_in_window). The F17 complex shifts the VI E-loop (A63-N72) by up to 1.4 Å and moves R125 (VHR-J9, r9, unresolved). Tungstate-bound MD over 150 ns shows a more open acid loop in WT than in N74A (VHR-J7, r6, md_only). Not judged: alanine-scan CSP mapping (r7, mutants, no timescale); F19 distal-site crystal (r12); ligand-observed 19F CPMG screen in PBS (r13, reports fragment binding, not protein exchange); SA3 complex of the 3-185 construct versus C124S peptide complex (r14); peptide-orientation MD (r15); cross-linking dimerization, abstract only (r16); C124S peptide complex, abstract only (r17)."
+  },
+  "wt_apo_answer": "Yes: at 25 °C (pH 6.5, phosphate-free Bis-Tris propane buffer, deuterated sample) free wild-type VHR exchanges on the millisecond scale in the variable insert (A63, R66, N72) and the acid loop (K89, D92, E95, F96, L98, S99), which fit one shared process with kex 1530 ± 200 s-1 and a minor-state population of about 1.2% (pA 98.8 ± 0.1%); the minor state's structure is unknown and its shifts do not match the tungstate-bound state, and no other temperature or method has measured it.",
+  "open_conflicts": [
+   "Same apo 25 °C CPMG data, two models: separate fits give acid loop kex 1400 ± 200 s-1, pA 98.9 ± 0.1% and VI kex 2100 ± 460 s-1, pA 98.5 ± 0.4%, while the authors prefer one combined fit (kex 1530 ± 200 s-1, pA 98.8 ± 0.1%) on AIC/F-test grounds (r1); the coupling claim rests on that model choice.",
+   "Same apo sample, two exchange methods: Hahn-echo Rex agrees with CPMG Rex within error for seven of eight shared residues but not for D92, and Hahn-echo flags six residues (R36, Y78, R119, C124, G161, D164) that were not in the CPMG fit (r1, r2).",
+   "CPMG constant relaxation time for the same 2020 experiment: 40 ms in the publisher PDF (Methods) versus 30 ms in the cached PMC author-manuscript text; r1 now records both."
+  ],
+  "questions_for_gina": [
+   "Which data set is the RelaxDB VHR_CPMG entry: the 2020 paper's 700 μM deuterated apo sample at 25 °C (600/700/800 MHz), or a different dissertation sample (Table 7.10.3, 800 MHz only)? If different, what temperature and buffer did it use?",
+   "Should the atlas carry the combined VI + acid-loop fit (kex 1530 s-1) as the WT apo answer, or keep the separate acid-loop (1400 s-1) and VI (2100 s-1) fits as equally valid until a second temperature or method tests the coupling?"
+  ],
+  "buffer_note": "All 2020 NMR samples (r1-r5) used 20 mM Bis-Tris propane, 100 mM NaCl, 1 mM TCEP, 1 mM EDTA, 7% D2O and NaN3 printed as '2%' (the 2017 preparation lists 0.02%; not corrected), pH 6.5; the Hahn-echo samples were 700 or 965 μM enzyme, not mapped to each state. The apo samples (r1, r2, r5) had no added phosphate, so phosphate binding is not a concern for the apo exchange; the authors' own titration shows phosphate binds the P-loop and perturbs shifts out to the VI and alpha7. Untested conditions: a single temperature (25 °C), EDTA throughout, perdeuteration, and no buffer comparison. The 19F fragment screen (r13) ran in PBS, and the crystals (r9-r12) are at 100 K in Bis-Tris/NH4F/PEG, and a phosphate-bound structure (8TK4) was also solved."
+ },
+ "judgments": [
+  {
+   "judgment_id": "VHR-J1",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": [
+     63,
+     66,
+     72,
+     89,
+     92,
+     95,
+     96,
+     98,
+     99
+    ],
+    "residues_author": "Combined global fit of nine amides: VI residues A63, R66, N72 and acid-loop residues K89, D92, E95, F96, L98, S99 (Fig. 3)",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "variable insert (VI, residues 62-82, allosteric site) and acid loop (residues 88-99, catalytic acid D92)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.5; 20 mM Bis-Tris propane, 100 mM NaCl, 1 mM TCEP, 1 mM EDTA, 7% D2O, NaN3 (concentration caveat in buffer_note); no phosphate; 700 μM 2H/15N-labelled enzyme",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N relaxation-compensated CPMG relaxation dispersion at three fields, two-site Carver-Richards fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "1530 ± 200 s-1 (combined VI + acid-loop fit, the authors' preferred model)",
+    "pB": "about 1.2% (reported as pA = 98.8 ± 0.1%)",
+    "delta_omega": "|ΔωN| 930 ± 100 (A63), 1340 ± 170 (R66), 1810 ± 290 (N72), 1030 ± 80 (K89), 840 ± 160 (D92), 1740 ± 320 (E95), 1150 ± 120 (F96), 1610 ± 240 (L98), 700 ± 90 (S99) s-1",
+    "field": "600, 700 and 800 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 25 °C the substrate-free wild-type enzyme shows millisecond exchange in the variable insert and the acid loop, and the nine residues fit one shared process with kex 1530 ± 200 s-1 and a minor state of about 1.2%, whose structure is unknown and does not match the tungstate-bound state (Fig. 8).",
+   "evidence_rows": [
+    "VHR-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors conclude that the VI is linked to the acid loop by coupled millisecond motions and that disrupting this communication (N74A) alters normal catalytic function.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J2",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": [
+     36,
+     63,
+     66,
+     72,
+     78,
+     89,
+     92,
+     95,
+     96,
+     98,
+     119,
+     124,
+     161,
+     164
+    ],
+    "residues_author": "Apo WT residues with Hahn-echo Rex > 4.57 s-1: R36, A63, R66, N72, Y78, K89, D92, E95, F96, L98, R119, C124, G161, D164 (Results text; Fig. 4A; Table S1)",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "acid loop; VI loop; alpha7 allosteric site (G161, D164); P-loop nucleophile C124"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.5; 20 mM Bis-Tris propane, 100 mM NaCl, 1 mM TCEP, 1 mM EDTA, 7% D2O, NaN3 (concentration caveat in buffer_note); no phosphate; 700 or 965 μM enzyme (see buffer_note)",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "TROSY Hahn-echo exchange measurement (alpha, zz, beta spectra), 48.6 ms relaxation delay",
+    "observable": "Rex: 6.7 ± 2.7 (R36), 9.8 ± 1.0 (A63), 12.9 ± 2.6 (R66), 24.6 ± 3.6 (N72), 4.7 ± 0.6 (Y78), 9.2 ± 0.6 (K89; Table S1 prints 9.3 ± 0.6), 10.7 ± 1.6 (D92), 24.5 ± 2.2 (E95), 10.0 ± 2.5 (F96), 15.1 ± 1.5 (L98), 4.9 ± 1.4 (R119), 4.6 ± 1.4 (C124), 5.7 ± 1.1 (G161), 5.5 ± 0.6 (D164) s-1; threshold 4.57 s-1 (2σ above 10% trimmed mean)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "spectrometers at 600, 700 or 800 MHz listed; field of the Hahn-echo data not stated",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "A single-condition Hahn-echo survey of the apo enzyme finds exchange broadening at 14 residues, eight of which match the CPMG set within error (D92 excepted), and it adds the alpha7 site (G161, D164), R36, Y78, R119 and C124 without giving a rate.",
+   "evidence_rows": [
+    "VHR-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J3",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": [
+     13,
+     19,
+     62,
+     65,
+     66,
+     72,
+     73,
+     74,
+     89,
+     90,
+     93,
+     94,
+     95,
+     96,
+     97,
+     99,
+     101,
+     158,
+     161,
+     164,
+     168,
+     169
+    ],
+    "residues_author": "Tungstate-bound WT residues with elevated Rex: N13, G19, A62, G65, R66, N72, T73, N74, K89, A90, T93, Q94, E95, F96, N97, S99, Y101, R158, G161, D164, A168, Q169 (some observable only with tungstate)",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "active site, recognition loop, VI, alpha7"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:tungstate (product analogue, saturating)",
+    "conditions": "25 °C; pH 6.5; 20 mM Bis-Tris propane, 100 mM NaCl, 1 mM TCEP, 1 mM EDTA, 7% D2O, NaN3 (concentration caveat in buffer_note); no phosphate; 700 or 965 μM enzyme (see buffer_note)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "TROSY Hahn-echo exchange measurement, 48.6 ms relaxation delay",
+    "observable": "Rex above the 4.57 s-1 threshold (values in Table S1, not copied)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "not stated for the Hahn-echo data",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "With saturating tungstate the exchange profile resembles the apo one with slightly higher Rex at some residues, and the authors attribute the larger residue count mainly to peaks that only become observable when tungstate is bound.",
+   "evidence_rows": [
+    "VHR-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J4",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": [
+     19,
+     34,
+     40,
+     41,
+     45,
+     73,
+     124,
+     134,
+     163,
+     164
+    ],
+    "residues_author": "Tungstate-bound N74A: Rex above WT at N41, A45, T73, N163, D164; significant flexibility at G19, T34, G40, N41, A45, C124, L134; Rex not determined for 11 of 15 listed VI residues and all 11 listed acid-loop residues (Table S1 dashes; main text: 'most of the residues in the VI and acid loop in N74A remain exchange-broadened')",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "VI; recognition region; P-loop C124"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:N74A",
+    "binding_state": "bound:tungstate",
+    "conditions": "25 °C; pH 6.5; 20 mM Bis-Tris propane, 100 mM NaCl, 1 mM TCEP, 1 mM EDTA, 7% D2O, NaN3 (concentration caveat in buffer_note); no phosphate; 700 or 965 μM enzyme (see buffer_note)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "TROSY Hahn-echo exchange measurement, 48.6 ms relaxation delay",
+    "observable": "Rex, tungstate WT vs tungstate N74A (Table S1, s-1): N41 3.5 ± 2.5 vs 10.9 ± 0.8; A45 1.3 ± 2.5 vs 9.1 ± 2.6; T73 6.5 ± 0.6 vs 47.7 ± 19.1; N163 2.6 ± 2.5 vs 7.3 ± 1.5; D164 5.4 ± 0.7 vs 14.4 ± 1.1. Table S1 N74A column has dashes (Rex not determined) for 11 of 15 listed VI residues (62-81; only T73, F77, Y78, S81 quantified) and all 11 listed acid-loop residues (88-99)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "not stated for the Hahn-echo data",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In tungstate-bound N74A, Rex is equal to or above WT where it can be measured and the VI and acid loop stay exchange-broadened, which the authors read as more conformational motion, a mutant result that bears on WT only by inference.",
+   "evidence_rows": [
+    "VHR-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J5",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": [
+     66,
+     71,
+     72,
+     88,
+     90,
+     92,
+     100,
+     130,
+     161
+    ],
+    "residues_author": "Apo N74A amides broadened beyond detection: R66, V71, N72, I88, A90, D92, A100, R130, G161 (Results text; Fig. S2)",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "VI; acid loop; P-loop R130"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "mutant:N74A",
+    "binding_state": "apo",
+    "conditions": "25 °C; pH 6.5; 20 mM Bis-Tris propane, 100 mM NaCl, 1 mM TCEP, 1 mM EDTA, 7% D2O, NaN3 (concentration caveat in buffer_note); no phosphate; 2H/15N-labelled",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H-15N HSQC comparison with WT (peak loss)",
+    "observable": "line broadening beyond detection",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Mutating N74 in the VI broadens nine VI, acid-loop and active-site peaks beyond detection in the apo enzyme, which the authors take as enhanced millisecond motion, but peak loss gives no rate or population and is mutant evidence only.",
+   "evidence_rows": [
+    "VHR-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "Table 1 (pNPP, 25 °C), WT vs N74A: kcat 4.6 ± 0.1 vs 3.4 ± 0.3 s-1 (about 26% lower; the text prints 'slight (21%)'), Km 2.0 ± 0.1 vs 4.7 ± 1.1 mM, kcleav 19 ± 3 vs 7.9 ± 0.8 s-1, khydr 3.3 ± 0.1 vs 1.17 ± 0.03 s-1; the authors conclude the allosteric mutant affects both catalytic and substrate-binding steps.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J6",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "acid loop (no residues, rates or conditions given; SI Fig. 1 not retrieved)",
+    "numbering_note": "",
+    "functional_site": "acid loop"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "unknown",
+    "conditions": "not stated; SI Fig. 1 not retrieved",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "solution NMR (type not stated in main text)",
+    "observable": "qualitative statement of millisecond acid-loop motion",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A 2017 paper from the same group states that unpublished solution NMR data show millisecond acid-loop motion, but the cited SI figure was not retrieved, so the claim has no recoverable sample, method or rate.",
+   "evidence_rows": [
+    "VHR-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J7",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": [
+     89,
+     90,
+     91,
+     92,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98,
+     99,
+     125
+    ],
+    "residues_author": "acid loop (89-99) opening and R125 side chain (RMSF over the last 100 ns, Fig. 5); hydrogen-bond network around N74 (Fig. 6)",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "acid loop; P-loop R125; VI N74"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:tungstate (placed in the P-loop)",
+    "conditions": "MD, 310 K, periodic water box with 150 mM NaCl, CHARMM36/NAMD, 150 ns per system; WT compared with in-silico N74A and K50A; starting from 1VHR",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "classical MD, one trajectory per system",
+    "observable": "MD fluctuation (RMSF, acid-loop opening)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "310 K (simulation)",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In 150 ns simulations of tungstate-bound enzyme the WT and K50A acid loops sample a more open geometry while N74A stays more closed, which gives no rate and cannot be matched to the millisecond apo CPMG process.",
+   "evidence_rows": [
+    "VHR-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "md_only",
+   "function_link": "The authors suggest the reduced acid-loop motion in N74A could hinder substrate entry or product exit and so correlate with lower activity.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J8",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Whole-chain superposition of apo form 1 chains A and B (8TK6) and apo form 2 (9DJ9); acid-loop D92 and P-loop C124 shown (SI Fig. S6)",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "acid loop; P-loop"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "crystals at 100 K; pH 6.5; 100 mM Bis-Tris, 50 mM NH4F, 26.7-28% PEG-4000; form 1 P1 (F04 cocrystallization, no fragment density), form 2 P21 (F05 soak, no fragment density)",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "cryogenic X-ray crystallography, superposition of three apo chains in two lattices",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "100 K",
+    "detection_window": "Three apo chains at 100 K in two crystal forms; only conformations that crystallize and survive cooling are visible, so a 1.2% solution minor state or slow loop opening would not appear"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The first empty-pocket apo structures superpose closely in the acid loop and P-loop (the figure labels only S17-Y23 and the termini as divergent, with no text comment), which does not exclude the low-population state seen by CPMG.",
+   "evidence_rows": [
+    "VHR-r10",
+    "VHR-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J9",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": [
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     72,
+     125
+    ],
+    "residues_author": "E-loop A63-N72 (labelled at M69) deviates by up to 1.4 Å and R125 side chain changes conformation in the F17 complex versus apo-VHR (Fig. 7D)",
+    "numbering_note": "Entry numbering equals author numbering for full-length human VHR (checked: A63, R66, N72, N74, K89, D92, E95, F96, L98, S99, C124, G161, D164)",
+    "functional_site": "E-loop within the VI; P-loop R125; F17 binds the active site"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:fragment F17",
+    "conditions": "crystal at 100 K; pH 6.5; 100 mM Bis-Tris, 50 mM NH4F, PEG; PDB 8TK2 compared with apo 8TK6/9DJ9",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "cryogenic X-ray crystallography, F17-bound versus apo structure comparison",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "100 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The VI E-loop that carries CPMG residues A63, R66 and N72 shifts by up to 1.4 Å when fragment F17 binds, which shows this loop can change geometry, but a ligand-induced crystal difference gives no apo population or rate and does not identify the CPMG minor state.",
+   "evidence_rows": [
+    "VHR-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J10",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement found)",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "none (NMR spin relaxation searched: R1/NOE/order-parameter query, Europe PMC, 2026-10-11)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The workbook search for 15N R1, NOE and order-parameter studies of VHR found none, and the one fully read relaxation paper reports only CPMG and Hahn-echo exchange, so there is no fast-timescale measurement for the free enzyme.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J11",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement found)",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "none (HDX-MS, EPR/DEER, smFRET, time-resolved structural, multitemperature crystallography and CEST within the relaxation-dispersion query searched)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The workbook searched HDX-MS, EPR/DEER, smFRET, time-resolved and multitemperature structural methods and CEST for VHR and found no measurement of a process slower than milliseconds in the free enzyme.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VHR-J12",
+   "entry_id": "VHR_CPMG",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "RelaxDB source data set (dissertation Table 7.10.3, 800 MHz)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "unknown: dissertation not read (ProQuest landing page only)",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "15N CPMG (per RelaxDB curator note: Rex = R2(50) - mean(R2_1400, R2_1600) at 800 MHz)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 MHz (curator note)",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The dissertation that RelaxDB cites as the source of these dispersions was not retrieved, so any further temperatures, samples or fits it holds are outside the evidence, and its equivalence to the 2020 paper's 25 °C data is unverified.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

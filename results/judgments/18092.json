@@ -1,0 +1,392 @@
+{
+ "protein_summary": {
+  "entry_id": "18092",
+  "per_window": {
+   "ps-ns": "dynamic_in_window: at 298 K, pH 6.8 the free isolated N-domain has its lowest S2 in loops 30-33, 64, 106-108, 122-123 and the termini (R18092-J1, r1), with nanosecond internal motion at 30-31, 64 and 122-123 (1.05 ± 0.05 ns; J2, r1). Per-residue S2 values are in an unread supplement.",
+   "us-ms": "dynamic_in_window (indirect): single-field model-free Rex at I45, D54-G57, K63, N67 and E134-A135 around helices alpha2 and alpha3 (J3, r1); no dispersion, rate or population.",
+   "slower_than_ms": "unresolved (search_insufficient): no row gives a slow rate, and the method searches used the viral identity on the card (J8).",
+   "undetermined": "Two resolved peak sets, minor 10-20% (about 5:1), placed by the authors at the interface of the beta-sheet core with helices alpha2 and alpha3 (J4, r2): slow on the chemical-shift timescale but no rate. Missing N86 and weak R65, E103, T133 amides are attributed to water exchange (J5, artefact_suspected). Crystal versus solution: remote loops 29-33, 61-64 and 101-105 differ, read as intrinsic (J6), while 115-123, 41-42 and 89-91 are likely construct effects (J7); both unresolved, structure_only. Not judged: r3 (RDC/NOE-restrained ensemble 2LLX, spread is not a motional amplitude); r5 and r6 (mouse full-length and C-domain eRF1 crystals bound to MoMLV RT or RNase H; other construct and partner, and r6 residues lie outside the entry)."
+  },
+  "wt_apo_answer": "Yes, without a rate: at 298 K, pH 6.8 in 10 mM sodium phosphate, the free isolated eRF1 N-domain (the entry construct with a His6 tag) shows a second peak set for several residues with a 10-20% minor conformer (about 5:1), proposed to reorient helices alpha2 and alpha3 around the NIKS loop, and single-field model-free Rex at I45, D54-G57, K63, N67 and E134-A135; no exchange rate is measured and the minor conformer is not shown to be the Rex process.",
+  "open_conflicts": [
+   "Not a conflict but an open link: the Rex residues (J3) and the doubled-peak conformer (J4) both sit around helices alpha2 and alpha3, but the source does not show that they are one process (r1, r2)."
+  ],
+  "questions_for_gina": [
+   "The card's UniProt P03355 is the Moloney murine leukemia virus Gag-Pol polyprotein, not this sequence; the entry sequence is human eRF1 N-domain 1-142 plus LE (P62495), and the 2012 paper deposits its R1/R2/NOE under BMRB 18092. Should the entry be relabelled and the method searches rerun under human eRF1 names?",
+   "Should the 5:1 peak doubling count as an alternate apo state when no exchange cross-peaks or rate are reported and causes such as proline isomerization or sample heterogeneity were not tested?"
+  ],
+  "buffer_note": "All NMR rows (r1-r4) are one sample type: about 1 mM isolated N-domain with C-terminal His6 in 10 mM sodium phosphate, 25 mM NaCl, about 2 mM beta-mercaptoethanol, pH 6.8, 298 K; relaxation at 600 MHz only. This domain recognizes mRNA and no buffer-substitution control exists, so a phosphate effect is possible but not shown. Supporting Figs. S1, S4 and S5 (doubled-peak spectra, per-residue S2/Rex, model selection) were not readable. The source organism of the evidence is Homo sapiens (eRF1, UniProt P62495); the mouse eRF1 rows r5 and r6 are a sequence-identical homolog in other constructs. No deposition readback file exists for 18092. Second read flagged no row."
+ },
+ "judgments": [
+  {
+   "judgment_id": "R18092-J1",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": [
+     30,
+     31,
+     32,
+     33,
+     64,
+     106,
+     107,
+     108,
+     122,
+     123
+    ],
+    "residues_author": "lowest S2 at loops 30-33, 64, 106-108 and 122-123 (S2 < 0.75 coloured in Fig. 2A), plus N- and C-terminal residues without stated boundaries",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": "GTS loop (31-33, stop-codon decoding) and the NIKS-loop region (S64)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: isolated human eRF1 N-domain, native 1-142 plus LE (the entry sequence) with a C-terminal His6 tag",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.8; 10 mM sodium phosphate, 25 mM NaCl, about 2 mM beta-mercaptoethanol; about 1 mM protein in 90% H2O/10% D2O; isolated N-domain, no mRNA, ribosome or other eRF1 domains",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and 1H-15N NOE at 600 MHz; model-free analysis (RelaxFit) with an axially symmetric diffusion tensor",
+    "observable": "S2",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz (Varian Inova)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The free isolated N-domain has its largest fast backbone motion in loops 30-33, 64, 106-108 and 122-123 and at the termini; per-residue S2 values are only in Supporting Fig. S4, which was not readable.",
+   "evidence_rows": [
+    "R18092-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors propose that this plasticity, including the GTS and NIKS loops, may be essential for stop codon recognition.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R18092-J2",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": [
+     30,
+     31,
+     64,
+     122,
+     123
+    ],
+    "residues_author": "residues 30-31, 64 and 122-123 move with a correlation time of about 1 ns",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": "GTS loop (G31) and the NIKS-loop region (S64)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct: isolated human eRF1 N-domain, native 1-142 plus LE (the entry sequence) with a C-terminal His6 tag",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.8; 10 mM sodium phosphate, 25 mM NaCl, about 2 mM beta-mercaptoethanol; about 1 mM protein in 90% H2O/10% D2O; isolated N-domain, no mRNA, ribosome or other eRF1 domains",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and 1H-15N NOE at 600 MHz; model-free analysis with two internal motions",
+    "observable": "internal correlation times 1.05 ± 0.05 ns and < 50 ps (overall tumbling 11.04 ± 0.16 ns, D∥/D⊥ 1.6 ± 0.1)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz (Varian Inova)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The preferred model-free model needs two internal motions (1.05 ± 0.05 ns and < 50 ps), and the authors name 30-31, 64 and 122-123 as moving on the nanosecond scale.",
+   "evidence_rows": [
+    "R18092-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R18092-J3",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": [
+     45,
+     54,
+     55,
+     56,
+     57,
+     63,
+     67,
+     134,
+     135
+    ],
+    "residues_author": "I45, D54-G57, K63, N67, E134-A135 (substantial Rex, red in Fig. 2A)",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": "helices alpha2 and alpha3 flanking the NIKS loop (61-64)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct: isolated human eRF1 N-domain, native 1-142 plus LE (the entry sequence) with a C-terminal His6 tag",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.8; 10 mM sodium phosphate, 25 mM NaCl, about 2 mM beta-mercaptoethanol; about 1 mM protein in 90% H2O/10% D2O; isolated N-domain, no mRNA, ribosome or other eRF1 domains",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and 1H-15N NOE at a single field; Rex term from model-free analysis; no dispersion recorded",
+    "observable": "Rex",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz (Varian Inova)",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Model-free fits at one field give substantial exchange terms at I45, D54-G57, K63, N67 and E134-A135, which the authors call millisecond rearrangements around helices alpha2 and alpha3; there is no dispersion, rate or population, and the Rex values are only in the unread Supporting Fig. S4.",
+   "evidence_rows": [
+    "R18092-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "The authors link the plasticity of helices alpha2 and alpha3 and the NIKS loop to stop codon recognition (proposed).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R18092-J4",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "several residues with duplicate peak sets (figure-only, Fig. 2B and Supporting Fig. S1); largest shift differences at the interface of the beta-sheet core with helices alpha2 and alpha3; N111 side-chain shifts differ",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": "helices alpha2 and alpha3 with the NIKS loop between them"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: isolated human eRF1 N-domain, native 1-142 plus LE (the entry sequence) with a C-terminal His6 tag",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.8; 10 mM sodium phosphate, 25 mM NaCl, about 2 mM beta-mercaptoethanol; about 1 mM protein in 90% H2O/10% D2O; isolated N-domain, no mRNA, ribosome or other eRF1 domains",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N-1H HSQC peak doubling; minor-conformer peaks assigned from 3D heteronuclear spectra including NOESY",
+    "observable": "second resolved peak set (two conformers)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "10-20% minor (major 80-90%; intensity ratio about 5:1); spectral estimate, not a fitted population",
+    "delta_omega": "",
+    "field": "600 and 800 MHz used in the study; HSQC field not stated",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Several residues of the free domain give two peak sets in a 5:1 ratio, which the authors read as two conformations, slow on the chemical-shift timescale and possibly differing in the orientation of helices alpha2 and alpha3; no exchange rate, exchange cross-peak or full residue list is reported and other causes of doubling were not tested.",
+   "evidence_rows": [
+    "R18092-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors suggest the switch in helix orientation may be essential for stop codon recognition.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R18092-J5",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": [
+     65,
+     86,
+     103,
+     133
+    ],
+    "residues_author": "N86 amide not observed; R65, E103 and T133 amides weak",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: isolated human eRF1 N-domain, native 1-142 plus LE (the entry sequence) with a C-terminal His6 tag",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.8; 10 mM sodium phosphate, 25 mM NaCl, about 2 mM beta-mercaptoethanol; about 1 mM protein in 90% H2O/10% D2O; isolated N-domain, no mRNA, ribosome or other eRF1 domains",
+    "is_wt_apo": true
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "15N-1H HSQC",
+    "observable": "missing or weak amide peaks",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors attribute the missing N86 amide and the weak R65, E103 and T133 amides to fast exchange with water, which is amide solvent exchange rather than internal motion; no test separates the two.",
+   "evidence_rows": [
+    "R18092-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R18092-J6",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": [
+     29,
+     30,
+     31,
+     32,
+     33,
+     61,
+     62,
+     63,
+     64,
+     101,
+     102,
+     103,
+     104,
+     105
+    ],
+    "residues_author": "loops 29-33, 61-64 and 101-105, far from the M- and C-domains",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": "GTS loop (31-33) and NIKS tetrapeptide (61-64), implicated in stop codon decoding",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: N-domain within the published full-length human eRF1 crystal structure (PDB not named in the row), compared with the isolated N-domain solution ensemble 2LLX",
+    "binding_state": "mixed",
+    "conditions": "solution ensemble at 298 K, pH 6.8, 10 mM sodium phosphate, 25 mM NaCl; crystal conditions not given in the row",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "comparison of the 20-structure solution ensemble (2LLX) with the crystal N-domain",
+    "observable": "structure difference (overall backbone RMSD 1.8 ± 0.1 Å)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "These loops, far from the missing M- and C-domains, differ strongly between crystal and solution and the authors read that as real conformational difference overlapping the relaxation-mobile regions; a static comparison across constructs and environments gives no rate or population.",
+   "evidence_rows": [
+    "R18092-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R18092-J7",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": [
+     41,
+     42,
+     89,
+     90,
+     91,
+     115,
+     116,
+     117,
+     118,
+     119,
+     120,
+     121,
+     122,
+     123
+    ],
+    "residues_author": "loop 115-123 (largest RMSD) and the C terminus; secondary changes at 41-42 and 89-91",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct: N-domain within the published full-length human eRF1 crystal structure (PDB not named in the row), compared with the isolated N-domain solution ensemble 2LLX",
+    "binding_state": "mixed",
+    "conditions": "solution ensemble at 298 K, pH 6.8, 10 mM sodium phosphate, 25 mM NaCl; crystal conditions not given in the row",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "comparison of the 20-structure solution ensemble (2LLX) with the crystal N-domain",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The authors think the 115-123 loop and C-terminal differences come from removing the neighbouring M- and C-domains, with 41-42 and 89-91 following as secondary effects, so this is a construct effect rather than evidence of motion.",
+   "evidence_rows": [
+    "R18092-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R18092-J8",
+   "entry_id": "18092",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry 1-142 equals native human eRF1 1-142 (UniProt P62495; checked G29-S33, P41, K42, I45, D54-G57, N61-N67, N86, P89-N91, C97, V101-K108, N111, E115-S123, C127, T133-A135); entry 143-144 are the construct residues LE, and the NMR sample also carries His6 after them.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "other construct: isolated human eRF1 N-domain, native 1-142 plus LE (the entry sequence) with a C-terminal His6 tag",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 6.8; 10 mM sodium phosphate, 25 mM NaCl, about 2 mM beta-mercaptoethanol; about 1 mM protein in 90% H2O/10% D2O; isolated N-domain, no mRNA, ribosome or other eRF1 domains",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (no HDX, EXSY/ZZ-exchange, EPR, smFRET or time-resolved row on human eRF1)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures a slow rate, and the method searches used the card's viral identity (Gag-Pol, Moloney murine leukemia virus), so absent classes are search gaps for human eRF1.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

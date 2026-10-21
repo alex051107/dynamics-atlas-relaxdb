@@ -1,0 +1,359 @@
+{
+ "protein_summary": {
+  "entry_id": "15521",
+  "per_window": {
+   "ps-ns": "unresolved, abstract only. The C-terminal part of helix III is more flexible than its N-terminal part and R53 looks like a hinge in the free homeodomain at 286 K, 11.7 T (R15521-J3, r1).",
+   "us-ms": "unresolved, abstract only. Slow conformational exchange at Y25 (entry 26) by both relaxation analyses (J1) and at K21, Q22, I38, H52 (entry 22, 23, 39, 53) by spectral density mapping only (J2); no dispersion, rate or population.",
+   "slower_than_ms": "unresolved, abstract only. Amide H/D exchange rates point to a local fluctuation at N51-R53 (J5, r3).",
+   "undetermined": "Helix III extension 51-59 less rigid with a kink at 51-53 (J4, r2); protease resistance of the C terminus at neutral pH (J6) and its increased accessibility after DNA binding (J7); DNA-bound human NKX2-1 crystal (J8). Not judged: r4 (database survey of other proteins), r5 (equilibrium thermal unfolding by CD/DSC at pH 5.0), r6 and r7 (3.5 ns MD of modelled DNA complexes, abstract only, no dynamics result)."
+  },
+  "wt_apo_answer": "Possibly, but only from an abstract: in the free rat TTF-1 homeodomain at 286 K (11.7 T) 15N relaxation analysis assigns slow conformational exchange to Y25 (entry Y26) by both model-free and spectral density mapping, and to K21, Q22, I38 and H52 by spectral density mapping only, with no dispersion, rate or population.",
+  "deposition_readback": "Deposition-derived; same numbers RelaxDB labels were computed from; not literature confirmation. BMRB 15521 holds 500 MHz T1, T2 and NOE for 65 residues with metadata pH 4.3 and 286 K, the field and temperature of the abstract-only relaxation study; no source names the accession. R2/R1 above 8.08 flags K22, Q23 and I39 (author K21, Q22, I38), three of the four RSDM-only exchange residues. Y26 (author Y25) has the largest R2, 26.3 s-1 against about 12-14 s-1 in the helices, but NOE 0.53, so the screen calls it fast; H53 (author H52) has NOE 0.63. NOE below 0.65 marks R2-L8, H53, R54 and M57-Q68 plus L17, K25-L27, E31, M38 and Q45. Median R2/R1 over NOE >= 0.65 residues (7.2) gives about 9.5 ns by the rigid-rotor formula, near the abstract's 9.85-10.51 ns.",
+  "open_conflicts": [
+   "C-terminal region: disordered or less rigid by NMR under acidic conditions (r2) versus protease-inaccessible at neutral pH (r9); the proteolysis abstract names the pH difference and the methods measure different things, so this is kept as a condition difference."
+  ],
+  "questions_for_gina": [
+   "Is BMRB 15521 (500 MHz, 286 K, pH 4.3) the data set of the 2008 relaxation study, and can its full text be read so Y25 and the RSDM-only exchange residues can be judged above abstract level?",
+   "Should the deposited R2 of Y26 (26.3 s-1 with NOE 0.53) be read as exchange despite the low NOE, given that the abstract assigns slow exchange to Y25 by both methods?"
+  ],
+  "buffer_note": "Every rat TTF-1 homeodomain row except the human crystal is abstract-only, so no verdict above unresolved is possible. NMR on this domain was done under acidic conditions (pH 4.3 in the deposition), proteolysis at neutral pH and calorimetry at pH 5.0; the domain unfolds at 32 °C without salt (r5), so temperature and salt matter. R15521-r1 lists its conditions as not specified, yet the abstract gives 286 K and 11.7 T; the judgments use those values. Second read flagged no row."
+ },
+ "judgments": [
+  {
+   "judgment_id": "R15521-J1",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": [
+     26
+    ],
+    "residues_author": "Y25",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "286 K; 11.7 T (500 MHz 1H); isolated 15N-labelled rat TTF-1 homeodomain in aqueous solution, no DNA; pH and buffer not given in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and {1H}-15N NOE; model-free and reduced spectral density mapping",
+    "observable": "Rex (slow conformational exchange term)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.7 T",
+    "temperature": "286 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Both model-free and spectral density analyses assign slow conformational exchange to Y25, but only the abstract was read, so no Rex value, residue table or model selection can be checked.",
+   "evidence_rows": [
+    "R15521-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J2",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": [
+     22,
+     23,
+     39,
+     53
+    ],
+    "residues_author": "K21, Q22, I38, H52",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": "",
+    "residue_basis": "per_residue"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "286 K; 11.7 T (500 MHz 1H); isolated 15N-labelled rat TTF-1 homeodomain in aqueous solution, no DNA; pH and buffer not given in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and NOE; reduced spectral density mapping only",
+    "observable": "Rex (slow conformational exchange term)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.7 T",
+    "temperature": "286 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Only the spectral density analysis, not model-free, finds an exchange contribution at K21, Q22, I38 and H52, which the abstract links to fraying at helix C-termini; abstract only and method dependent.",
+   "evidence_rows": [
+    "R15521-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J3",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "C-terminal fragment of helix III (limits not given); R53 intermediate motional freedom; very flexible N- and C-terminal residues",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": "helix III (DNA-recognition helix)"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "286 K; 11.7 T (500 MHz 1H); isolated 15N-labelled rat TTF-1 homeodomain in aqueous solution, no DNA; pH and buffer not given in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and NOE; model-free and reduced spectral density mapping",
+    "observable": "S2 / spectral densities",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "11.7 T",
+    "temperature": "286 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Both analyses find the C-terminal part of helix III more flexible than its N-terminal part, with R53 as a possible hinge between the flexible termini and the core; abstract only, no S2 values or limits.",
+   "evidence_rows": [
+    "R15521-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J4",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": [
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60
+    ],
+    "residues_author": "N51-Q59 (helix III C-terminal extension); kink or tightening at N51-R53",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": "helix III (DNA-recognition helix)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "1H NMR solution structure; conditions not given in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "1H NMR NOEs, restrained modelling and backbone amide H/D exchange",
+    "observable": "structure difference (rigidity, helix discontinuity)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The helix III extension 51-59 is structured but less rigid than the rest of the helix, with a discontinuity at 51-53; abstract only and structural, so no timescale or alternate state.",
+   "evidence_rows": [
+    "R15521-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J5",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": [
+     52,
+     53,
+     54
+    ],
+    "residues_author": "N51-H52-R53",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": "helix III (DNA-recognition helix)",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "quantitative backbone amide H/D exchange by 1H NMR; conditions not given in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "backbone amide 1H/2H isotope exchange rates by 1H NMR",
+    "observable": "HDX rate",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Measured amide exchange rates point to a local fluctuation at N51-R53 that kinks or tightens helix III; the rates themselves are not in the abstract, so neither an opening rate nor a population can be read.",
+   "evidence_rows": [
+    "R15521-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J6",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "C-terminal region (no residue list in the abstract)",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "limited proteolysis with mass spectrometry at neutral pH; isolated homeodomain, no DNA; other conditions not in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "limited proteolysis / MS peptide mapping",
+    "observable": "protease accessibility",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Limited proteolysis at neutral pH reports protease accessibility over the digestion time, not backbone motion at any NMR timescale; digestion times, coverage and conditions are not in the abstract."
+   },
+   "verdict": "unresolved",
+   "reason": "At neutral pH the C-terminal region resists proteases, unlike the disorder seen by NMR under acidic conditions; the abstract itself notes the pH difference, so this is a condition and method difference, not proof that either result is wrong.",
+   "evidence_rows": [
+    "R15521-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J7",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "C-terminal region (no residue list in the abstract)",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:target DNA oligonucleotide",
+    "conditions": "limited proteolysis / MS; conditions not in the abstract",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "limited proteolysis / MS comparison, free versus DNA-bound",
+    "observable": "protease accessibility",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "DNA binding makes the C-terminal region more accessible to proteases, which the authors read as its displacement from the core; abstract only, a bound-state difference with no rate or atomic state.",
+   "evidence_rows": [
+    "R15521-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "R15521-J8",
+   "entry_id": "15521",
+   "region": {
+    "residues_entry": [
+     13,
+     36,
+     46,
+     52,
+     55
+    ],
+    "residues_author": "Q12, A35, V45, N51, Y54 (named in the text; full set figure-only)",
+    "numbering_note": "Entry = author + 1 (1FTT numbering); checked K21, Q22, Y25, I38, N51, H52, R53 and Q59 against the entry sequence.",
+    "functional_site": "DNA-binding interface",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:human NKX2-1 residues 163-222 (sequence equals entry 4-63), MBP tag cleaved",
+    "binding_state": "bound:19 bp palindromic DNA duplex",
+    "conditions": "crystals at 293 K, diffraction after flash-cooling; EDTA used for tag cleavage, MgCl2 in the crystallization reservoir",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "crystal structure compared with NKX2-5 and other NKX2-1-DNA complexes",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The DNA-bound human homeodomain shares the fold and recognition mode of related complexes; differences lie in DNA conformation and binding-site organization, and effects on dynamics remain a proposal.",
+   "evidence_rows": [
+    "R15521-r8"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

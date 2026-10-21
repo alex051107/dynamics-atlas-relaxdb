@@ -1,0 +1,48 @@
+{
+"entry": "BLVRB_CPMG",
+"accession": "P30043",
+"core": [
+[
+1,
+9
+],
+[
+16,
+33
+],
+[
+41,
+73
+],
+[
+85,
+108
+],
+[
+115,
+206
+]
+],
+"mobile": [
+[
+10,
+15
+],
+[
+34,
+40
+],
+[
+74,
+84
+],
+[
+109,
+114
+]
+],
+"open": "8ELL:A",
+"closed": "1HDO:A",
+"verify_numbering": true,
+"note": "Mobile = the three apo-CPMG active-site loops named in BLVRB-r1 ('loops 10-15, 76-82, 109-114 (Fig. 7b legend)'; 76-82 widened to 74-84 to take the whole beta4-alpha4 R78-clamp loop, 8ELL helix/strand records: beta4 70-73, alpha4 85-102) plus 34-40 (BLVRB-J14: 'R35, R39 and the R78 clamp' remodelled between apo and NADP+-bound crystals; D36/S37/R39 exchange only in holo, BLVRB-r2). Core = the rest of the Rossmann fold. 'open' = apo cryo crystal 8ELL chain A (BLVRB-r37 / BLVRB-J14: apo-cryo and apo-RT 8ELM compared with holo); 'closed' = NADP+ complex 1HDO chain A (alt_apo_states_v0 structure_match, BLVRB-r37). The authors describe the apo/holo difference at R35, R39, R78 as side-chain remodelling, so a Calpha comparison may be weakly informative. Numbering: all 26 depositions use author = UniProt numbering (checked T12, R35, R39, R78, S111, T164, Y205 in every chain); no renumbering."
+}

@@ -1,0 +1,48 @@
+{
+ "entry": "CYPA_CPMG",
+ "accession": "P62937",
+ "core": [
+  [
+   2,
+   64
+  ],
+  [
+   85,
+   100
+  ],
+  [
+   111,
+   115
+  ],
+  [
+   123,
+   164
+  ]
+ ],
+ "mobile": [
+  [
+   65,
+   84
+  ],
+  [
+   101,
+   110
+  ],
+  [
+   116,
+   122
+  ]
+ ],
+ "open": "4YUG:A",
+ "closed": "6BTA:A",
+ "verify_numbering": true,
+ "altlocs": true,
+ "sidechain_chi1": [
+  55,
+  61,
+  98,
+  99,
+  113
+ ],
+ "note": "Author numbering = Met1 = 1 (CYPA-J1 numbering_note). Mobile Calpha segments: 65-84 (the group-II loop of CYPA-r1: D66, F67, T68, N71, G74, K76, S77, K82), 101-110 (loop after beta 97-100: A103, G109/S110 of the group-I caption) and 116-122 (loop before helix 119-123: E120 and the 119-122 residues at the slow-exchange limit, CYPA-J4/J21); 4YUG helix/strand records: strands 5-12, 15-24, 55-57, 61-64, 97-100, 112-115, 128-134, 156-164, helices 29-42, 119-123, 135-144. The group-I state is a side-chain rotamer network (R55, M61, L98, S99, F113; CYPA-r7 'buried and active-site alternate rotamers'), so their Calpha stay in the core and the state is read from chi1 ('sidechain_chi1') and from every altloc ('altlocs'). The rows cite 3K0N (WT, 288 K) and 3K0O (S99T) (CYPA-r7, r9, r62); neither is in the 150 downloaded files (newest by release date), so 'open' = 4YUG chain A, the 100 K multiconformer model in which the S99/F113 network is single-state (CYPA-r13: 'network is single-state at 100-180 K'), and 'closed' = 6BTA chain A, S99T/C115S at 273 K, standing in for 3K0O: CYPA-r9 says the S99T major conformer 'recapitulates features of the WT minor conformer'; C115S is an extra mutation whose effect was not checked, and 6BTA's paper was not read (unverified stand-in). The 240-310 K multiconformer series 4YUJ-4YUN, 4YUO/5F66 (273 K), 4YUP (XFEL 273 K), 6U5C-6U5E (RT XFEL 291 K) and the 5KUL-5KV7 100 K / 278 K series are the ambient-temperature apo crystals of CYPA-r16-r21 and later work. Composite altloc rows (X) take altloc X at every mobile residue where it exists; the authors' qFit/Ringer models assign letters per residue, so a row X is not a coupled conformer. In the K-Ras tri-complexes (8TB*, 9BF*-9BG*, 9CT*, 36O*) CypA is the partner of the K-Ras chain and is classed as complex."
+}

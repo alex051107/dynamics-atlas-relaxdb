@@ -1,0 +1,12 @@
+[
+  {"doi":"", "title":"KRAS conformational exchange", "abstract":"We measured KRAS CPMG relaxation dispersion.", "expected_tier":"A", "expected_relation":"target", "expected_methods":["nmr_relaxation_dispersion"]},
+  {"doi":"", "title":"Dynamics of a KRAS mutant", "abstract":"We measured CEST and R1rho in a KRAS mutant.", "expected_tier":"A", "expected_relation":"same_protein_other_construct", "expected_methods":["nmr_relaxation_dispersion"]},
+  {"doi":"", "title":"KRAS flexibility", "abstract":"We measured R1, R2 and heteronuclear NOE in KRAS.", "expected_tier":"A", "expected_relation":"target", "expected_methods":["nmr_spin_relaxation"]},
+  {"doi":"", "title":"KRAS crystal conformers", "abstract":"Multitemperature crystal structures reveal alternate conformers.", "expected_tier":"B", "expected_relation":"target", "expected_methods":["xray_multitemp_ensemble"]},
+  {"doi":"", "title":"KRAS distances", "abstract":"We used FRET and DEER to measure conformational changes.", "expected_tier":"B", "expected_relation":"target", "expected_methods":["fret","epr_deer"]},
+  {"doi":"", "title":"KRAS simulations", "abstract":"MD simulations only, without new experimental measurements.", "expected_tier":"C", "expected_relation":"target", "expected_methods":["md_simulation"]},
+  {"doi":"", "title":"N-Ras exchange", "abstract":"N-Ras, a KRAS paralog, was measured with CPMG.", "expected_tier":"C", "expected_relation":"homolog", "expected_methods":["nmr_relaxation_dispersion"]},
+  {"doi":"", "title":"Review of KRAS dynamics", "abstract":"This review discusses published KRAS NMR measurements.", "expected_tier":"C", "expected_relation":"target", "expected_methods":[]},
+  {"doi":"", "title":"RNase A measurements", "abstract":"We measured RNase A CPMG relaxation dispersion, not KRAS.", "expected_tier":"X", "expected_relation":"not_this_protein", "expected_methods":["nmr_relaxation_dispersion"]},
+  {"doi":"", "title":"KRAS exchange broadening and PRE", "abstract":"We measured exchange broadening, PRE and RDC in KRAS.", "expected_tier":"A", "expected_relation":"target", "expected_methods":["nmr_exchange_broadening","nmr_ensemble_restraints"]}
+]

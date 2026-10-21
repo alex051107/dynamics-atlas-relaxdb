@@ -1,0 +1,436 @@
+{
+ "protein_summary": {
+  "entry_id": "VILD6",
+  "per_window": {
+   "ps-ns": "Reference state unresolved (search_insufficient, VILD6-J2). In calcium-bound D6-HP at 25 °C, pH 7.0, 750 MHz, the D6 region 1-105 relaxes as a structured domain (VILD6-J6, measured_not_detected, figure only) except F84, which has a low R2 and NOE below 0.6 and is called unstructured (VILD6-J5, dynamic_in_window, inference_from_mutant); other construct with calcium, so not the reference state.",
+   "us-ms": "Reference state unresolved (search_insufficient, VILD6-J3). In calcium-bound D6-HP the P68-D72 loop and E85 are missing from the HSQC and the authors propose intermediate exchange (VILD6-J7, dynamic_in_window, inference_from_mutant); the A60-E62 gap is unexplained; no rate or population.",
+   "slower_than_ms": "unresolved (search_insufficient): no slow or hydrogen-exchange measurement of D6 in any construct (VILD6-J4).",
+   "undetermined": "Calcium-linked conformational response of isolated V6 centred on the long helix, from the 2013 abstract only (VILD6-J1, r26, unresolved). Calcium removal from D6-HP makes about a quarter of D6 amides disappear or shift, in the first 80 residues, with aggregation as an unresolved alternative (VILD6-J8, unclear_second_process, unresolved). Other domain, not counted: VILD6-r1 to r25 are all on the villin headpiece (HP35, HP67, HP24 and their mutants) and give no D6 judgment."
+  },
+  "wt_apo_answer": "Unknown for calcium-free isolated D6: no evidence row measures it in any window (VILD6-J2 to J4). The RelaxDB source paper (doi:10.1021/bi700110v), read in full, measured the larger D6-HP construct in 5 mM calcium at 25 °C, pH 7.0: there the D6 region is structured on the ps-ns scale apart from F84, the P68-D72 loop and E85 are missing from the HSQC with intermediate exchange proposed, and calcium removal perturbs the first 80 residues with aggregation as a confound; none of this is a rate, population or reference-state measurement (VILD6-J5 to J8).",
+  "deposition_readback": "BMRB 18046 (cross-referenced by PDB 2LLF) was screened: no relaxation lists are deposited; the only deposited sample conditions are pH 7, 1 atm, 273 K (outputs/deposition/VILD6.json).",
+  "open_conflicts": [
+   "Not a conflict but a construct and state gap: the entry sequence is the 107-residue isolated D6, while the RelaxDB source paper measured relaxation only on the 208-residue D6-HP construct in 5 mM calcium; every new judgment is therefore other-construct, calcium-bound evidence."
+  ],
+  "questions_for_gina": [
+   "The RelaxDB VILD6 relaxation set appears to come from D6-HP (208 residues) in 5 mM CaCl2 at 25 °C, pH 7.0 (doi:10.1021/bi700110v), while the entry sequence is the isolated 107-residue D6: should the entry's reference state be calcium-bound D6 within D6-HP rather than calcium-free isolated V6?",
+   "Should calcium-free and calcium-bound D6 be carried as separate sample states, given that calcium removal from D6-HP changes a quarter of the D6 amide peaks and the protein then aggregates within hours?"
+  ],
+  "buffer_note": "The RelaxDB source paper rows (VILD6-VILD6_20261020153804-r1 to r3) are on D6-HP, not isolated D6: 1.1 mM protein, 25 °C, pH 7.0 (uncorrected for D2O), 20 mM d18-PIPES, 10 mM d10-DTT, 0.01% NaN3, 10% D2O, 5 mM CaCl2, relaxation at 750 MHz and the HSQC at 800 MHz; phosphate was used only in early purification. The calcium-free HSQC conditions are not stated separately and calcium-poor D6-HP aggregates within hours. VILD6-r26 (2013 abstract) is the only row on isolated V6 and carries no conditions; it separates isolated V6 (monomeric at any calcium level) from V6-HP, which needs calcium to stay monomeric. VILD6-r1 to r25 are villin headpiece constructs, a separate C-terminal domain, listed only as context. Searches used 'Villin-1 D6 domain', 'Villin-1' or 'VIL1' with Gallus gallus but not V6 or domain 6, so absent method classes for D6 are search gaps. Second reads of the new rows flagged nothing (one row left unverified by each reader)."
+ },
+ "judgments": [
+  {
+   "judgment_id": "VILD6-J1",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "the long alpha-helix and the adjacent residues (no residue list in the abstract)",
+    "numbering_note": "Entry numbering is the 107-residue isolated V6 construct, identical to 2LLF chain A (P1-Y107); the abstract gives no residue numbers. Headpiece rows use HP35/HP67/HP24 numbering, which does not map onto this construct.",
+    "functional_site": "long alpha-helix and adjacent residues (calcium-sensitive elements)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:Ca2+ (calcium titration from micromolar to millimolar; the 2LLF NMR structure is calcium-bound)",
+    "conditions": "isolated chicken V6 (107 residues, 2LLF chain A), monomeric at all calcium levels; tryptophan fluorescence gives two calcium Kd values (22 uM and 2.8 mM); temperature, pH and buffer not available (abstract only)",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "solution NMR across calcium concentrations; calcium-bound solution structure (2LLF)",
+    "observable": "calcium-dependent conformational response (structure difference)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Per its abstract, the conformation of isolated V6 responds most to micromolar calcium, and the long helix with its neighbours forms the calcium-sensitive elements, extended in the calcium-bound structure; this is an equilibrium, ligand-driven structural change with no rate, population, residue list or timescale, and the full text was not readable.",
+   "evidence_rows": [
+    "VILD6-r26"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "The authors relate the calcium-sensitive long helix to calcium activation of F-actin severing, analogous to the gelsolin helix-straightening mechanism (proposed, not measured).",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VILD6-J2",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering is the 107-residue isolated V6 construct, identical to 2LLF chain A (P1-Y107); the abstract gives no residue numbers. Headpiece rows use HP35/HP67/HP24 numbering, which does not map onto this construct.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "isolated chicken V6, calcium-free; not applicable (no measurement in the evidence rows); the calcium state of the RelaxDB R1/R2/NOE sample is not established",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (no D6 row reports 15N R1/R2/NOE, order parameters or MD; the only D6 paper, the 2013 calcium study, was read as abstract only)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The RelaxDB source paper (doi:10.1021/bi700110v) is now read in full, but its 15N R1/R2/NOE set is on calcium-bound D6-HP, not the calcium-free isolated domain (VILD6-J5, J6); no row measures ps-ns motion of calcium-free D6, and the method searches never used the names V6 or domain 6, so the reference state is unknown rather than absent.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VILD6-J3",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering is the 107-residue isolated V6 construct, identical to 2LLF chain A (P1-Y107); the abstract gives no residue numbers. Headpiece rows use HP35/HP67/HP24 numbering, which does not map onto this construct.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "isolated chicken V6, calcium-free; not applicable (no measurement in the evidence rows); the calcium state of the RelaxDB R1/R2/NOE sample is not established",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (relaxation-dispersion and exchange-broadening queries returned 0 hits, 2026-10-17; the case's CPMG and broadening rows are all headpiece; no D6 dispersion, CEST, R1rho or line-broadening row)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "No row measures microsecond-to-millisecond exchange in calcium-free isolated D6; the only D6 exchange sign is missing amides in calcium-bound D6-HP that the authors attribute to intermediate exchange (VILD6-J7), the other CPMG data in the case are on the villin headpiece, and the searches ('Villin-1 D6 domain', 'Villin-1' or 'VIL1' with Gallus gallus) did not use the paper's own names V6 or domain 6.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VILD6-J4",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "Entry numbering is the 107-residue isolated V6 construct, identical to 2LLF chain A (P1-Y107); the abstract gives no residue numbers. Headpiece rows use HP35/HP67/HP24 numbering, which does not map onto this construct.",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "isolated chicken V6, calcium-free; not applicable (no measurement in the evidence rows); the calcium state of the RelaxDB R1/R2/NOE sample is not established",
+    "is_wt_apo": true
+   },
+   "direction": "search_insufficient",
+   "detection": {
+    "method": "none (HDX-MS, EPR/DEER, smFRET, time-resolved and multitemperature crystallography queries returned 0 hits, 2026-10-17)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The evidence holds no slow-exchange, hydrogen-exchange or time-resolved measurement of D6 in any construct; the calcium-free peak loss in D6-HP (VILD6-J8) has no rate and is confounded by aggregation, and zero-hit searches that never used the names V6 or domain 6 are too narrow to call this not measured.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VILD6-J5",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": [
+     84
+    ],
+    "residues_author": "Phe84",
+    "numbering_note": "Entry numbering (isolated D6, 1-107) equals the authors' D6-HP numbering 1-208 for positions 1-107 (UniProt 619-725); the linker (105-145) and headpiece (145-206) lie outside the entry.",
+    "functional_site": ""
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:D6-HP, the C-terminal 208 residues of chicken villin (D6 + 40-residue linker + headpiece), wild-type sequence",
+    "binding_state": "bound:Ca2+ (5 mM CaCl2)",
+    "conditions": "1.1 mM D6-HP, 25 °C, pH 7.0 (uncorrected for D2O), 20 mM d18-PIPES, 10 mM d10-DTT, 0.01% NaN3, 10% D2O, 5 mM CaCl2; no actin; 13C/15N labelled, not perdeuterated",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and 1H-15N NOE at 750 MHz with Lipari-Szabo model-free S2 (FAST-Modelfree); 144 of 176 assigned backbone peaks analysed, 32 excluded for low intensity or overlap",
+    "observable": "R1, R2, NOE and S2 profiles (figure only; no per-residue numbers transcribed)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "750 MHz",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In calcium-bound D6-HP the D6 residue F84 stands out with a low R2 and a 1H-15N NOE well below 0.6, and the model-free analysis left it unassigned, so the authors call it unstructured; the paper gives no internal correlation time, and this is the larger D6-HP construct with calcium, not the calcium-free isolated domain.",
+   "evidence_rows": [
+    "VILD6-VILD6_20261020153804-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VILD6-J6",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     72,
+     73,
+     74,
+     75,
+     76,
+     77,
+     78,
+     79,
+     80,
+     81,
+     82,
+     83,
+     85,
+     86,
+     87,
+     88,
+     89,
+     90,
+     91,
+     92,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98,
+     99,
+     100,
+     101,
+     102,
+     103,
+     104,
+     105
+    ],
+    "residues_author": "positions 1-105 of D6-HP (structured region per the authors) excluding F84; the 32 peaks dropped for low intensity or overlap and the unassigned residues are not covered",
+    "numbering_note": "Entry numbering (isolated D6, 1-107) equals the authors' D6-HP numbering 1-208 for positions 1-107 (UniProt 619-725); the linker (105-145) and headpiece (145-206) lie outside the entry.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "other construct:D6-HP, the C-terminal 208 residues of chicken villin (D6 + 40-residue linker + headpiece), wild-type sequence",
+    "binding_state": "bound:Ca2+ (5 mM CaCl2)",
+    "conditions": "1.1 mM D6-HP, 25 °C, pH 7.0 (uncorrected for D2O), 20 mM d18-PIPES, 10 mM d10-DTT, 0.01% NaN3, 10% D2O, 5 mM CaCl2; no actin; 13C/15N labelled, not perdeuterated",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and 1H-15N NOE at 750 MHz with Lipari-Szabo model-free S2 (FAST-Modelfree); 144 of 176 assigned backbone peaks analysed, 32 excluded for low intensity or overlap",
+    "observable": "R1, R2, NOE and S2 profiles (figure only; no per-residue numbers transcribed)",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "750 MHz",
+    "temperature": "25 °C",
+    "detection_window": "15N R1/R2/NOE at 750 MHz, 25 °C, pH 7.0, 5 mM Ca2+: the D6 region 1-105 shows the R1, R2, NOE and S2 profile of a structured domain (figure only, no S2 values transcribed); this reports no large-amplitude sub-ns motion at the analysed amides and says nothing about us-ms exchange or about the 32 excluded and the unassigned residues"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "Apart from F84 the D6 region of calcium-bound D6-HP (positions 1-105) behaves as a structured domain in the 750 MHz relaxation and order-parameter profiles, with the disordered linker starting around position 105; the profiles are figure-only, the sample is the larger construct with calcium, and the result does not rule out slower exchange.",
+   "evidence_rows": [
+    "VILD6-VILD6_20261020153804-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VILD6-J7",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": [
+     68,
+     69,
+     70,
+     71,
+     72,
+     85
+    ],
+    "residues_author": "Pro68-Asp72 (longest unassigned stretch) and Glu85; Ala60-Gln61-Glu62 are also unassigned but the authors call that gap unexplained",
+    "numbering_note": "Entry numbering (isolated D6, 1-107) equals the authors' D6-HP numbering 1-208 for positions 1-107 (UniProt 619-725); the linker (105-145) and headpiece (145-206) lie outside the entry.",
+    "functional_site": "solvent-exposed loop (by analogy with gelsolin G6, as stated by the authors)"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "other construct:D6-HP, the C-terminal 208 residues of chicken villin (D6 + 40-residue linker + headpiece), wild-type sequence",
+    "binding_state": "bound:Ca2+ (5 mM CaCl2)",
+    "conditions": "1.1 mM D6-HP, 25 °C, pH 7.0 (uncorrected for D2O), 20 mM d18-PIPES, 10 mM d10-DTT, 0.01% NaN3, 10% D2O, 5 mM CaCl2; no actin; 13C/15N labelled, not perdeuterated; HSQC in Figure 3 at 800 MHz",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "missing or weak 15N-HSQC assignments in calcium-bound D6-HP (800 MHz HSQC); no exchange experiment",
+    "observable": "line broadening (missing and weak peaks)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 MHz (HSQC)",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The authors propose intermediate structural exchange on the NMR timescale for the P68-D72 loop (the counterpart of a solvent-exposed loop in gelsolin G6) and for E85, because these amides are missing and their flanking peaks are weak; the A60-E62 gap inside the long helix is left unexplained, three of the eleven internally unassigned residues are prolines, no rate or population exists, and the sample is calcium-bound D6-HP rather than the calcium-free isolated domain.",
+   "evidence_rows": [
+    "VILD6-VILD6_20261020153804-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "VILD6-J8",
+   "entry_id": "VILD6",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "about one quarter of D6 backbone amides disappear or shift; the authors localise the effect to the first 80 residues of D6, with positions 81-105, the linker and the headpiece insensitive; no residue list",
+    "numbering_note": "Entry numbering (isolated D6, 1-107) equals the authors' D6-HP numbering 1-208 for positions 1-107 (UniProt 619-725); the linker (105-145) and headpiece (145-206) lie outside the entry.",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:D6-HP, the C-terminal 208 residues of chicken villin (D6 + 40-residue linker + headpiece), wild-type sequence",
+    "binding_state": "apo",
+    "conditions": "calcium-free D6-HP compared with 1.1 mM D6-HP in 5 mM CaCl2 (25 °C, pH 7.0, 20 mM d18-PIPES); the calcium-free HSQC composition, temperature and field are not stated separately; calcium-poor D6-HP aggregates within hours (gel filtration control at 1.5 mM, 10 mM Tris, 150 mM NaCl, 5 mM DTT, pH 7.5, 4 °C)",
+    "is_wt_apo": false
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "comparison of 15N-HSQC spectra with and without 5 mM calcium, with gel filtration as an aggregation control",
+    "observable": "line broadening and chemical-shift changes (peak loss)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Removing calcium makes about one quarter of the D6 amide peaks of D6-HP disappear or shift, concentrated in the first 80 residues, which the authors read as calcium being needed to fold this region; because calcium-poor D6-HP aggregates within hours, the peak loss cannot be separated into conformational exchange, local unfolding or oligomerisation, and no rate or population follows.",
+   "evidence_rows": [
+    "VILD6-VILD6_20261020153804-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "inference_from_mutant",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}

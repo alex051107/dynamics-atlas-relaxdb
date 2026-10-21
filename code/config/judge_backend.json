@@ -1,0 +1,6 @@
+{
+  "backend": "codex_subagent",
+  "protocol": "order_v1",
+  "independence": "same_model_family_fresh_context",
+  "timeout_seconds": 1200
+}

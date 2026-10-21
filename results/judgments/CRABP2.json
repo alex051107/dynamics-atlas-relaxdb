@@ -1,0 +1,687 @@
+{
+ "protein_summary": {
+  "entry_id": "CRABP2",
+  "per_window": {
+   "ps-ns": "dynamic_in_window (J6, r3): at 298 K in phosphate buffer the free protein has more fast backbone motion than the complex in the R59-E62 and V76/D77 portal loops, and the K101 betaG-betaH loop is flexible; mean NOE 0.82 ± 0.05, tauc 10.4 ns, no order parameters. Bound state kept apart: K101 loop still flexible (J7, r4), portal-loop motion quenched (J8, r3/r4).",
+   "us-ms": "dynamic_in_window: free CRABP2 at 298 K, pH 7.4, 1.0 mM shows exchange across the portal and gap regions; a 16-residue core group fits kex 320 ± 40 s-1, pB 0.2 ± 0.03 (J1, r5), further residues exchange at similar but unshared rates (J2, r6), and 14 amides are broadened beyond assignment (J3, r9, indirect). With atRA the core process is not detected (J4, r7); a residual fluctuation at nine residues of the complex is unresolved because it overlaps the dimer interface (J5, r8). Single temperature, single paper.",
+   "slower_than_ms": "not_measured (J14): HDX-MS, EPR/DEER, FRET, time-resolved and multitemperature structural methods and CEST were searched with no hits.",
+   "undetermined": "Free protein: 1998 abstract reports weak or missing pocket HSQC peaks (J9, r1) and a disordered apo NMR ensemble at A32-P39 and T57-E62 with a wider entrance than the holo crystal (J10, r2), both unresolved. Apo 2FS6 and holo 2FR3 crystal pockets are near-identical (J11, r12, structure_only). The complex self-associates (Kd about 1.0 mM), an intermolecular process (J12, r10). SPR atRA kon/koff are binding kinetics (J13, r11). Not judged: r13-r15 (retinal Schiff-base fluorescence lifetimes in engineered KFVQ mutants at pH 3; chromophore photophysics), r16 (MD of the engineered M9 mutant), r17 (zonal-elution transient CRABP-II/RAR-gamma encounter of a His-tagged construct; partner binding), r18 (cellular photocrosslinking to NR2F1; contact capture), r19 (bound-ligand NOE conformation, abstract; ligand, not protein), r20 (CRABP-I paralog ligand motion, abstract)."
+  },
+  "wt_apo_answer": "Yes: at 298 K (pH 7.4, 20 mM sodium phosphate, 150 mM NaCl, 1.0 mM protein) free human CRABP2 exchanges on the microsecond-millisecond scale across its portal and gap regions; a core group (K8, L19, L22, K30-A32, R59, E73, Q74, V76, T114, T131, Y134, plus a misnumbered 'Thr51-Ile53') fits one two-state process with kex 320 ± 40 s-1 and a minor-state population of 0.2 ± 0.03, the minor state differs from the atRA-bound structure but is otherwise unknown, and atRA suppresses the process; one paper, one temperature.",
+  "deposition_readback": "None: the input lists no BMRB id and outputs/deposition/CRABP2.json does not exist. The 2019 paper verified the apo assignments of BMRB 4186.",
+  "open_conflicts": [
+   "Apo pocket structure: the 1998 abstract reports a disordered apo NMR ensemble (A32-P39, T57-E62) with a wider ligand entrance than the holo crystal (r2), while the 2019 paper finds the apo 2FS6 and holo 2FR3 crystal pockets near-identical (r12); the restraint-scarcity reading of the 1998 ensemble is a row caveat, not a statement of either paper. Not a conflict of judgments (different methods, no rate), but the structure of the exchanging state stays open.",
+   "Core-group numbering: the 2019 text lists 'Thr51-Ile53' (betaC), but entry positions 51-53 are Y51-I52-K53 (T54 follows); Table S1 was not retrieved, so these positions are left out of J1 and J4 (r5, r7)."
+  ],
+  "questions_for_gina": [
+   "Which sample is the RelaxDB CRABP2 entry: the 2019 Biochemistry R1/R2/NOE set (900 MHz, 298 K, pH 7.4 phosphate, 1.0 mM apo), or another deposition? The input lists no BMRB id.",
+   "Which three residues does 'Thr51-Ile53' in the 2019 core group mean? No Thr-x-Ile stretch exists near betaC in the entry sequence (D48-T49-F50-Y51-I52-K53-T54); Table S1 of that paper would settle it."
+  ],
+  "buffer_note": "All 2019 NMR relaxation, CPMG and assignment samples (r3-r9) used 20 mM sodium phosphate pH 7.4, 150 mM NaCl, 5 mM DTT, 10% D2O, 1.0 mM protein, 298 K; no phosphate-free control, but no row identifies CRABP2 as a phosphate binder. The concentration series (r10) used pH 6.8, 50 mM NaCl, 0.5 mM TCEP. The atRA complex self-associates (apparent Kd about 1.0 ± 0.2 mM), so the 1.0 mM bound-state relaxation and residual dispersion include dimer contributions; the authors report no concentration-dependent CSPs for free CRABP2, and the 1998 abstract calls apo-CRABPII largely monomeric, so the apo exchange is not attributed to dimerisation. Only one temperature (298 K) was measured. The 2019 supplement (Table S1, Figs. S1-S6) was not retrieved."
+ },
+ "judgments": [
+  {
+   "judgment_id": "CRABP2-J1",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     8,
+     19,
+     22,
+     30,
+     31,
+     32,
+     59,
+     73,
+     74,
+     76,
+     114,
+     131,
+     134
+    ],
+    "residues_author": "Core group fit to one parameter set: Lys8, Leu19, Leu22, Lys30-Ala32, Thr51-Ile53, Arg59, Glu73, Gln74, Val76, Thr114, Thr131, Tyr134 (Results; Fig. 5B,C; Table S1 not retrieved)",
+    "numbering_note": "Entry numbering equals author numbering for human CRABP2 residues 1-137 without the initiator Met (checked K8, L19, L22, K30-A32, T54, R59-E62, E73, Q74, V76, D77, K101, T114, T131, R132, Y134). The paper's 'Thr51-Ile53' does not fit: entry 51-53 is Y51-I52-K53, so these three positions are left out.",
+    "functional_site": "portal (alpha1-loop-alpha2, betaC-betaD and betaE-betaF loops) and gap (betaD, betaE) regions, as named by the authors",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 15N-labelled protein; Thio6His6 tag removed by TEV",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-time CPMG relaxation dispersion at 800 and 900 MHz, Trelax 30 ms, nuCPMG 0 and 66.7-1000 Hz (11 points), Carver-Richards two-state fits, groups refined by BIC",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "two-state global",
+    "kex": "320 ± 40 s-1 (shared fit of the core group)",
+    "pB": "0.2 ± 0.03",
+    "delta_omega": "",
+    "field": "800 and 900 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "At 298 K free CRABP2 shows microsecond-millisecond exchange in the portal and gap regions, and a core group of 13 mappable residues fits one two-state process with kex 320 ± 40 s-1 and pB 0.2 ± 0.03; the authors' CPMG shifts do not match the atRA-bound shifts, so the minor state is not the ligand-bound structure, and its own structure is unknown.",
+   "evidence_rows": [
+    "CRABP2-r5"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors conclude the fluctuation is not an opening step needed for atRA binding (binding is limited by atRA release from detergent), and propose that it matters for regulation because the nuclear-localisation residues K20, R29, K30, the RAR-binding surface and the dimer surface all fluctuate in the free protein and are quenched by atRA.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J2",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "Residues outside the core group that disperse but do not fit the shared parameters; shown only as black spheres in Fig. 5B, no residue list in the text. The authors exclude betaG, betaH and the betaG-betaH loop from the exchanging regions (Fig. 5A).",
+    "numbering_note": "Entry numbering equals author numbering for human CRABP2 residues 1-137 without the initiator Met (checked K8, L19, L22, K30-A32, T54, R59-E62, E73, Q74, V76, D77, K101, T114, T131, R132, Y134). The paper's 'Thr51-Ile53' does not fit: entry 51-53 is Y51-I52-K53, so these three positions are left out.",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 15N-labelled protein; Thio6His6 tag removed by TEV",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N constant-time CPMG relaxation dispersion at 800 and 900 MHz, Trelax 30 ms, nuCPMG 0 and 66.7-1000 Hz (11 points), Carver-Richards two-state fits, groups refined by BIC; individual fits compared with the core-group fit",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "per-residue",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 and 900 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "Many other residues of the free protein show exchange at generally similar rates that the core-group parameters cannot explain, which the authors read as further fluctuations on the same timescale; no residue list, rate or population is given, so the core kex and pB are not assigned to them.",
+   "evidence_rows": [
+    "CRABP2-r6"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J3",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     13,
+     16,
+     29,
+     34,
+     35,
+     36,
+     38,
+     41,
+     56,
+     57,
+     58,
+     60,
+     115,
+     133
+    ],
+    "residues_author": "Residues not sequence-specifically assigned in free CRABP2 because of line broadening: Glu13, Glu16, Arg29, Ala34-Ala36, Lys38, Val41, Thr56-Val58, Thr60, Asn115, Val133",
+    "numbering_note": "Entry numbering equals author numbering (checked E13, E16, R29, A34-A36, K38, V41, T56-V58, T60, N115, V133).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 13C/15N-labelled protein; assignment at 900 MHz",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Triple-resonance backbone assignment and 2D 1H-15N HSQC at 900 MHz",
+    "observable": "line broadening (missing amide peaks)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "900 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "In the same free-protein sample, 14 amides are too broad to assign, and the authors place them next to residues with intermediate-timescale exchange; missing peaks give no rate or population, so this supports the exchange map but adds no parameters.",
+   "evidence_rows": [
+    "CRABP2-r9"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J4",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     8,
+     19,
+     22,
+     30,
+     31,
+     32,
+     59,
+     73,
+     74,
+     76,
+     114,
+     131,
+     134
+    ],
+    "residues_author": "Core group fit to one parameter set: Lys8, Leu19, Leu22, Lys30-Ala32, Thr51-Ile53, Arg59, Glu73, Gln74, Val76, Thr114, Thr131, Tyr134 (Results; Fig. 5B,C; Table S1 not retrieved)",
+    "numbering_note": "Entry numbering equals author numbering for human CRABP2 residues 1-137 without the initiator Met (checked K8, L19, L22, K30-A32, T54, R59-E62, E73, Q74, V76, D77, K101, T114, T131, R132, Y134). The paper's 'Thr51-Ile53' does not fit: entry 51-53 is Y51-I52-K53, so these three positions are left out.",
+    "functional_site": "",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:all-trans retinoic acid",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 15N-labelled atRA:CRABP2 complex (1.5-fold atRA excess, then SEC); Thio6His6 tag removed by TEV",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N constant-time CPMG relaxation dispersion at 800 and 900 MHz, Trelax 30 ms, nuCPMG 0 and 66.7-1000 Hz (11 points), Carver-Richards two-state fits, groups refined by BIC (repeat on the complex)",
+    "observable": "Rex (dispersion amplitude); R2 at the highest refocusing field",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 and 900 MHz",
+    "temperature": "298 K",
+    "detection_window": "15N CPMG at 800 and 900 MHz, 298 K, Trelax 30 ms, nuCPMG 66.7-1000 Hz: no dispersion for the core residues, and R2 at 1000 Hz is not raised relative to other residues, so neither exchange inside this pulsing range nor broadening from faster exchange is seen; exchange with a very small population or shift difference, or slower than the 30 ms delay, would not register"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "With atRA bound the principal exchange is nearly fully quenched: the core residues show no dispersion and no raised R2 at high pulsing rates under the same buffer, temperature and concentration as the free protein.",
+   "evidence_rows": [
+    "CRABP2-r7"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "The authors link the quenching to an Arg59-Gln74 hydrogen bond in the complex that locks betaD and the betaE-betaF loop into one unit.",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J5",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     10,
+     11,
+     12,
+     19,
+     38,
+     122,
+     123,
+     124,
+     132
+    ],
+    "residues_author": "Residual fluctuation in the complex: Ile10-Ser12 (betaA), Leu19 (alpha1), Lys38 (alpha2-betaB), Thr122-Thr124 (betaI), Arg132 (betaJ); curves in Fig. S4, not retrieved",
+    "numbering_note": "Entry numbering equals author numbering (checked I10, R11, S12, L19, K38, T122, M123, T124, R132).",
+    "functional_site": ""
+   },
+   "time_window": "us-ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:all-trans retinoic acid",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 15N-labelled atRA:CRABP2 complex (1.5-fold atRA excess, then SEC); Thio6His6 tag removed by TEV",
+    "is_wt_apo": false
+   },
+   "direction": "unclear_second_process",
+   "detection": {
+    "method": "15N constant-time CPMG relaxation dispersion at 800 and 900 MHz, Trelax 30 ms, nuCPMG 0 and 66.7-1000 Hz (11 points), Carver-Richards two-state fits, groups refined by BIC (repeat on the complex)",
+    "observable": "Rex (dispersion amplitude)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "800 and 900 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "A faster fluctuation distinct from the free-protein process persists at nine residues of the complex, but Fig. S4 was not retrieved and no rate is given; four of the nine (I10, R11, L19, K38) lose intensity on concentrating the complex, which dimerises with Kd about 1.0 ± 0.2 mM, and the sample was 1.0 mM, so monomer-dimer exchange cannot be told apart from an internal motion.",
+   "evidence_rows": [
+    "CRABP2-r8",
+    "CRABP2-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J6",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     59,
+     60,
+     61,
+     62,
+     76,
+     77,
+     101
+    ],
+    "residues_author": "betaC-betaD loop Arg59-Glu62 and betaE-betaF loop Val76, Asp77 (R1 changes on atRA binding); betaG-betaH loop including Lys101 (flexible in both states); Fig. 3",
+    "numbering_note": "Entry numbering equals author numbering (checked R59, T60, T61, E62, V76, D77, K101).",
+    "functional_site": "portal loops; SUMOylation site K101",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 15N-labelled protein; Thio6His6 tag removed by TEV",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and steady-state {1H}-15N NOE at 900 MHz",
+    "observable": "R1, R2, heteronuclear NOE (no order parameters)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "900 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The free protein has more fast backbone motion than the complex in the betaC-betaD (R59-E62) and betaE-betaF (V76, D77) portal loops, and the betaG-betaH loop with K101 is flexible; the evidence is a comparison of R1 with the complex rather than an order-parameter fit, the mean NOE is 0.82 ± 0.05 (0.81 ± 0.06 bound), and tauc is 10.4 ns.",
+   "evidence_rows": [
+    "CRABP2-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J7",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     101
+    ],
+    "residues_author": "betaG-betaH connecting loop including the SUMOylation site Lys101 (other loop residues not listed)",
+    "numbering_note": "Entry numbering equals author numbering (checked K101).",
+    "functional_site": "SUMOylation site K101",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:all-trans retinoic acid",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 15N-labelled atRA:CRABP2 complex (1.5-fold atRA excess, then SEC); Thio6His6 tag removed by TEV",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "15N R1, R2 and steady-state {1H}-15N NOE at 900 MHz",
+    "observable": "R1, R2, heteronuclear NOE (no order parameters)",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "900 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "dynamic_in_window",
+   "reason": "The betaG-betaH loop with K101 stays flexible on the fast timescale when atRA is bound; the loop's other residues are not listed.",
+   "evidence_rows": [
+    "CRABP2-r4"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J8",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     59,
+     60,
+     61,
+     62,
+     76,
+     77
+    ],
+    "residues_author": "betaC-betaD loop Arg59-Glu62 and betaE-betaF loop Val76, Asp77 (Fig. 3)",
+    "numbering_note": "Entry numbering equals author numbering (checked R59, T60, T61, E62, V76, D77).",
+    "functional_site": "portal loops",
+    "residue_basis": "author_listed"
+   },
+   "time_window": "ps-ns",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:all-trans retinoic acid",
+    "conditions": "298 K; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 5 mM DTT, 10% D2O; 1.0 mM 15N-labelled atRA:CRABP2 complex (1.5-fold atRA excess, then SEC); Thio6His6 tag removed by TEV",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "15N R1, R2 and steady-state {1H}-15N NOE at 900 MHz, compared with the free protein",
+    "observable": "R1 change relative to apo",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "900 MHz",
+    "temperature": "298 K",
+    "detection_window": "15N R1/R2/NOE at 900 MHz, 298 K, 1.0 mM complex with tauc 15.1 ns: senses internal motions faster than overall tumbling; the authors read the R1 change as quenching relative to the free protein, not as zero motion, and the slower tumbling of the self-associating complex also changes R1 and R2"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "On atRA binding the authors see the fast motion of the R59-E62 and V76/D77 portal loops quenched, while the overall R2 rise and R1 drop come mainly from slower tumbling of a self-associating complex (tauc 15.1 versus 10.4 ns).",
+   "evidence_rows": [
+    "CRABP2-r4",
+    "CRABP2-r3"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J9",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "16 of the 21 binding-pocket residues with weak or no HSQC cross-peaks; individual residues not listed in the abstract",
+    "numbering_note": "",
+    "functional_site": "ligand-binding pocket"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3; other conditions not in the abstract; HSQC recorded with minimal water saturation or dephasing",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "2D 1H-15N HSQC",
+    "observable": "weak or missing amide peaks",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The 1998 abstract reports dynamic disorder in the free protein's ligand pocket from weak or absent HSQC peaks, without a residue list, rate or timescale, and only the abstract was read.",
+   "evidence_rows": [
+    "CRABP2-r1"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J10",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62
+    ],
+    "residues_author": "Ala32-Pro39 (second helix to alpha2-betaB) and Thr57-Glu62 (betaC-betaD loop), disordered in the apo NMR ensemble; the ligand entrance is wider than in the holo crystal",
+    "numbering_note": "Entry numbering equals author numbering (checked A32, P39, T57, E62).",
+    "functional_site": "ligand entrance (second helix, betaC-betaD and betaE-betaF loops)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "pH 7.3 solution NMR ensemble (25 conformers) compared with the holo crystal structure; other conditions not in the abstract",
+    "is_wt_apo": true
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Solution NMR structure (2382 restraints) compared with the atRA-bound crystal structure",
+    "observable": "structure difference; ensemble spread",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "The free solution ensemble is disordered at A32-P39 and T57-E62 and has a wider ligand entrance than the holo crystal, but this is an abstract, gives no rate, and the evidence-row caveat (r2, r12) notes that ensemble spread in these regions can reflect restraint scarcity.",
+   "evidence_rows": [
+    "CRABP2-r2"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J11",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     9,
+     19,
+     31,
+     54,
+     59,
+     63,
+     77,
+     119,
+     121,
+     132,
+     134
+    ],
+    "residues_author": "Binding-pocket residues discussed in the 2FS6 versus 2FR3 comparison: Arg132, Tyr134, Leu19, Ile31, Thr54, Arg59, Asp77, Leu121, Ile9, Ile63, Leu119",
+    "numbering_note": "Entry numbering equals author numbering (checked I9, L19, I31, T54, R59, I63, D77, L119, L121, R132, Y134).",
+    "functional_site": "atRA-binding pocket"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "mixed",
+    "conditions": "Published crystal structures: apo PDB 2FS6 and atRA-bound PDB 2FR3, different space groups; crystal construct, temperature and buffer not given in the row",
+    "is_wt_apo": false
+   },
+   "direction": "measured_not_detected",
+   "detection": {
+    "method": "X-ray crystal structure comparison (published structures re-examined)",
+    "observable": "structure difference",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": "Two static crystal structures, one per state: only the dominant conformer that crystallises is seen, so a solution minor state (the CPMG pB 0.2 state) would not appear, and no rate can be measured"
+   },
+   "verdict": "no_evidence_in_window",
+   "reason": "The apo and atRA-bound crystal pockets are near-identical, so the crystal structures do not show the alternate state that solution NMR detects; surface side-chain differences are put down to different crystal packing.",
+   "evidence_rows": [
+    "CRABP2-r12"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "structure_only",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J12",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": [
+     3,
+     8,
+     10,
+     11,
+     19,
+     20,
+     25,
+     26,
+     28,
+     30,
+     31,
+     33,
+     35,
+     38,
+     58,
+     59,
+     63,
+     101,
+     102,
+     103,
+     104,
+     110,
+     114,
+     115,
+     121,
+     130,
+     131,
+     135
+    ],
+    "residues_author": "HSQC responders on concentrating the complex: CSPs V26, L28, V58 (largest), I10, K20, N25, K30, I31, V33, A35, R59, N115; intensity loss I10, R11, N115, T131, F3, K8, L19, K38, I63, T110, T114, L121, C130, V135; intensity gain K101-G104. Crystal contacts D116, I120, T122, V133 excluded (adjudicated).",
+    "numbering_note": "Entry numbering equals author numbering (checked F3, I10, R11, N25, V26, L28, V58, N115, T131, K101-G104).",
+    "functional_site": "dimer interface (alpha2, betaC-betaD loop, betaA, betaH-betaI loop, betaJ)"
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "bound:all-trans retinoic acid",
+    "conditions": "298 K; pH 6.8; 20 mM sodium phosphate, 50 mM NaCl, 0.5 mM TCEP, 5% D2O; atRA:CRABP2 complex at 10-800 μM; 600 MHz (differs from the relaxation samples)",
+    "is_wt_apo": false
+   },
+   "direction": "artefact_suspected",
+   "detection": {
+    "method": "2D 1H-15N HSQC concentration series at 600 MHz",
+    "observable": "chemical shift perturbation and peak intensity versus concentration",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "600 MHz",
+    "temperature": "298 K",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Concentration-dependent shifts and intensity changes report weak self-association of the complex (apparent Kd about 1.0 ± 0.2 mM, unsaturated), an intermolecular equilibrium and not intramolecular dynamics; it is recorded because it can contaminate the 1.0 mM bound-state relaxation and dispersion data (J5, J7, J8).",
+   "evidence_rows": [
+    "CRABP2-r10"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "direct_measurement",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J13",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none (whole protein immobilised by its His6 tag)",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "undetermined",
+   "sample_state": {
+    "construct": "other construct:N-terminal His6-tagged CRABP2 immobilised on a Ni-NTA SPR sensor",
+    "binding_state": "mixed",
+    "conditions": "25 °C; pH 7.4; 20 mM sodium phosphate, 150 mM NaCl, 0.5 mM TCEP, 0.05% Tween 20; 125, 250 and 500 nM atRA analyte",
+    "is_wt_apo": false
+   },
+   "direction": "detected",
+   "detection": {
+    "method": "Surface plasmon resonance, mass-transport-limited binding model",
+    "observable": "kon, koff",
+    "fit_model": "other",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "25 °C",
+    "detection_window": ""
+   },
+   "verdict": "unresolved",
+   "reason": "Binding kinetics: kon (6.92 ± 2.32) x 10^5 M-1 s-1 and koff (4.01 ± 1.08) x 10^-3 s-1 describe atRA association and release, limited by atRA transfer out of detergent, and are not conformational dynamics or comparable with the CPMG kex.",
+   "evidence_rows": [
+    "CRABP2-r11"
+   ],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  },
+  {
+   "judgment_id": "CRABP2-J14",
+   "entry_id": "CRABP2",
+   "region": {
+    "residues_entry": "unlocalized",
+    "residues_author": "none",
+    "numbering_note": "",
+    "functional_site": ""
+   },
+   "time_window": "slower_than_ms",
+   "sample_state": {
+    "construct": "WT",
+    "binding_state": "apo",
+    "conditions": "not applicable (no measurement found)",
+    "is_wt_apo": true
+   },
+   "direction": "not_measured",
+   "detection": {
+    "method": "none (HDX-MS, EPR/DEER, FRET, time-resolved structural, multitemperature or ensemble crystallography, and CEST within the relaxation-dispersion query searched)",
+    "observable": "",
+    "fit_model": "none",
+    "kex": "",
+    "pB": "",
+    "delta_omega": "",
+    "field": "",
+    "temperature": "",
+    "detection_window": ""
+   },
+   "verdict": "not_measured",
+   "reason": "The case searched HDX-MS, EPR/DEER, FRET, time-resolved and multitemperature structural methods and CEST for CRABP2 and found no measurement of a conformational process slower than milliseconds in the free protein; the SPR koff is ligand release, not a conformational rate.",
+   "evidence_rows": [],
+   "conflicts_with": [],
+   "evidence_strength": "indirect",
+   "function_link": "",
+   "relaxdb_relation": "pending_legend"
+  }
+ ]
+}
