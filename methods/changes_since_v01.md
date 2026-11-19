@@ -14,8 +14,8 @@ stateDiagram-v2
 
     NovSweep --> Unified131: 19 Nov 2026 (Current draft)
     Unified131: Unified 131-Protein Atlas (ATLAS_131.md)
-    Unified131: 12-tab clickable Expert Review Workbook
-    Unified131: Scope cleanup (28 association) & lossless quotes
+    Unified131: 15-tab Workbook + Queryable SQLite + CLI
+    Unified131: 37,131 BMRB vals + 386 S3 SI DOIs + Quality gates
 
     Unified131 --> GinaLock: Expert sign-off on 4 rules
     GinaLock --> Release02: Release 0.2 (locked next pass + PDB/BMRB scaling)

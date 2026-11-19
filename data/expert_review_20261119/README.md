@@ -1,36 +1,55 @@
-# Expert Review Workbook (12 Tabs, Clickable Navigation)
+# Expert Review Workbook (15 Tabs) & Queryable SQLite Database
 
-Download the workbook directly from GitHub: **[`RelaxDB_expert_review_DRAFT.xlsx`](RelaxDB_expert_review_DRAFT.xlsx)** (3.7 MB).
+Download directly from GitHub:
+- **15-tab clickable Excel workbook**: **[`RelaxDB_expert_review_DRAFT.xlsx`](RelaxDB_expert_review_DRAFT.xlsx)** (4.4 MB)
+- **Companion strict-typed SQLite database**: **[`RelaxDB_expert_review_DRAFT.sqlite`](RelaxDB_expert_review_DRAFT.sqlite)** (24.0 MB)
+- **Zero-dependency query CLI**: **[`query_atlas.py`](query_atlas.py)** (Python standard library only)
 
-This workbook reorganizes the frozen November 18 extraction baseline (`131` open RelaxDB entries, `771` entry-paper records, `752` distinct DOIs, `19,958 original` measurements; kept distinct from the `+ 31 = 19,989` November 19 supplemental branch rows) into a scientist-first, clickable Excel view. Every comparison row links via native Excel hyperlinks to its supporting observations, sample cards, and verbatim paper quotes. Independent expert trial reading by Gina is still pending.
+This package reorganizes the frozen November 18 extraction baseline (`131` open RelaxDB entries, `771` entry-paper records, `752` distinct DOIs, `19,958 original` measurements; kept distinct from the `+ 31 = 19,989` November 19 supplemental branch rows) into both a clickable Excel view and a queryable relational + full-text database. Independent expert trial reading by Gina is still pending.
 
-## Sheet structure (12 tabs)
+## Query the database in 1 command (Soojung's 3 target questions)
+
+```bash
+# 1. All experimental evidence at one protein + residue (with offset warnings, scopes, gaps & live BMRB values)
+python3 data/expert_review_20261119/query_atlas.py residue FKBP 59
+python3 data/expert_review_20261119/query_atlas.py residue 50020 1133
+
+# 2. Cross-protein conformational exchange (excludes association/crystal/MD & quarantined rows)
+python3 data/expert_review_20261119/query_atlas.py exchange --min-kex 50 --limit 20
+
+# 3. Measurements & exact sample conditions supporting a transition for one protein
+python3 data/expert_review_20261119/query_atlas.py transition FKBP
+
+# 4. Direct BMRB relaxation values, full-text quote/note search, and executive quality audit
+python3 data/expert_review_20261119/query_atlas.py bmrb 27888
+python3 data/expert_review_20261119/query_atlas.py search "precipitated AND elevated AND temperature"
+python3 data/expert_review_20261119/query_atlas.py audit
+```
+
+## Sheet structure (15 tabs)
 
 | Tab | Rows | Role |
 |---|---:|---|
-| `Start_Here` | Overview | One-page orientation, pilot jumps, and `physical_scope` definitions |
-| `Protein_overview` | `131` | One row per open RelaxDB entry, separating direct evidence, same-UniProt twin leads, and unread entries, with clickable jumps to `Region_comparisons` |
+| `Start_Here` | Overview | One-page orientation, pilot jumps, quality/BMRB/SI shortcuts, and `physical_scope` definitions |
+| `Protein_overview` | `131` | One row per open RelaxDB entry, now with numbering-offset warnings, phosphate-only flags, Dyna-1 missing-peak counts, BMRB recoveries, quarantined rows, and figure-only gaps |
 | `Region_comparisons` | `109` | Question-driven comparisons (`Protein x Region x Window x Sample State`) with native hyperlinks to every listed observation |
-| `Observations` | `396` | Atomic source-quoted evidence rows with explicit `physical_scope`, construct, buffer/T/pH/solvent conditions, `Samples` links, and DOI links |
-| `Review_notes` | `9` | Documented issues, fixes applied, version boundary, and open expert rulings |
-| `Measurements` | `19,958 original` | Lossless raw extraction table; leading-`=` quotes (`X3892`, `X11706`) restored as literal text (`0` formula cells) |
-| `Samples` | `4,131 + 2` | Lossless raw sample cards plus `2` source-verified Barstar split cards (`S1_HyperW`, `S2_CLEANEX`) |
+| `Observations` | `396` | Atomic source-quoted evidence rows with `physical_scope`, `signal_class`, `verification_tier`, ECO evidence codes, `data_validity_flag`, `Samples` links, and DOI links |
+| `Data_quality_audit` | `9` | Executive audit ledger (`DQA_01..DQA_09`) documenting every automated quarantine, offset, phosphate, Dyna-1, BMRB, and SI check |
+| `BMRB_recovered` | `68` | Full-atlas live BMRB v2 API recovery: `62 / 68` entries with `37,131` per-residue values (`10,426` NOE, `10,944` T1, `11,179` T2, `168` T1rho, `2,826` S2, `1,588` Rex with `983` positive `Rex > 0`), standardized `R1/R2`, `33` `Auth-Seq` offsets, and `16` deposit-anomaly flags |
+| `SI_S3_inventory` | `386` | Tier-2 AWS Open Data PMC S3 inventory across all `386` distinct gap DOIs (`346` OA PMCIDs, `242` S3 asset-ready, `43` direct SI spreadsheets, `12` verified dynamics Excel files including `HTPDZ`, `UVRDTD`, and `FSIB`) |
+| `Review_notes` | `10` | Documented issues, fixes applied, 3-tier figure/SI/BMRB recovery policy (`RN_10`), version boundary, and open expert rulings |
+| `Measurements` | `19,958 original` | Lossless raw extraction table (`0` formula cells) plus 6 rightmost sanitized columns (`17,876` clean + `2,082` quarantined with blank clean-numeric cells so Excel never averages quarantined rows) |
+| `Samples` | `4,131 + 2` | Lossless raw sample cards plus `2` Barstar split cards (`S1_HyperW`, `S2_CLEANEX`) and rightmost phosphate, superseded, and dynamics-reference flags |
 | `States` | `794` | Lossless raw conformational state PDB mappings |
-| `Residue_sets` | `515` | Lossless raw author-named dynamic residue regions |
+| `Residue_sets` | `515` | Lossless raw author-named dynamic residue regions plus rightmost Dyna-1 `signal_class` (`74` `EXCHANGE_BROADENED_MISSING_PEAK`) |
 | `Papers` | `771` | Lossless raw per-paper audit summaries |
-| `Gaps` | `944` | Lossless raw figure-only and missing-SI gaps |
+| `Gaps` | `944` | Lossless raw figure-only and missing-SI gaps plus rightmost 3-tier triage, detected BMRB ID, resolved PMCID, and S3 SI asset status |
 | `Second_reader_only` | `35` | Lossless raw blind second-reader candidates |
 
-## Six source-verified pilot and control walkthroughs (top rows of `Region_comparisons`)
+## What this upgrade fixed and proved
 
-1. **BARSTAR (`CMP_BARSTAR_01..02`)**: Separates HyperW NMR (`~1.8% H2O` in `D2O`, `pD 7`, `S1_HyperW`) from lyophilized and reconstituted CLEANEX-PM (`90% H2O`, `pH 7`, `S2_CLEANEX`) at `50 °C` while leaving the original raw `S1` row untouched.
-2. **FKBP12 (`CMP_FKBP_01..03`)**: Separates `25 °C` WT NMR `Trp59` reorientation (`20%` NOE admixture, `tau_e = 1.5 ns`, `S2 = 0.63`) from `100 K` `C22V/G89P` crystal `4N19` (`0.29 / 0.71`, `crystal`) and CHARMM27 MD (`7.9%` WT / `59.6%` `V101I`, `simulation`), and labels the same-lab `80s`-loop `Gly89` series (`12%` WT / `67%` `G89A`, `C22V` ZZ-exchange) as `Single_lab_linked_series` (`n = 1` lab lineage).
-3. **PLEXINB1 (`CMP_PLEXINB1_01..02`)**: Moves the `approximately 90%` dimer fraction (`10.1021/jp310142f`) out of conformational exchange into `association` while keeping `T83` `Rex = 7.0 s-1` in `solution_conformational_exchange`.
-4. **TEM-1 / `16392` (`CMP_16392_01`)**: Positive control retaining genuine relaxation-dispersion values (`pB = 1.05%`, `kex = 98 s-1`) in `solution_conformational_exchange`.
-5. **DmsD / `18257` & Murine vWFA2 / `50020` (`CMP_18257_01`, `CMP_50020_01`)**: Zero-numeric qualitative controls showing how entries with `0` printed numbers (`Fig. 1b` / `Fig. 2F` figure-only) still trace verified dynamic regions (`63` doubled peaks near helix 5 in DmsD; `N1133`/`T1208` ps-ns loop flexibility in vWFA2) back to source papers.
-
-## Audit fixes verified before upload
-
-- **Physical-scope cleanup (`396` observations)**: `solution_conformational_exchange` (`201`), `other_experimental` (`110`), `unresolved` (`30`), `association` (`28`, including `20` binding/unbinding and monomer-dimer kinetics rows moved out of exchange across `51416`, `50233`, `27888`, `CHEA`/`CHEAYBD`, `CSPA`, `CYPA_CPMG`, and `HTPDZ`), `simulation` (`20`), `crystal` (`7`).
-- **No unverified multi-source claims**: `0` unverified rows claim `Direct_multi_source_support`; multi-DOI rows awaiting full PDF independence checks are tagged `Multi_DOI_pending_independence_audit` (`8`), and same-lab series are tagged `Single_lab_linked_series` (`2`).
-- **Lossless export and determinism**: All `7` raw sheets preserve `100%` of original baseline rows (`0` missing/changed), leading-`=` quotes survive both `openpyxl` and LibreOffice Calc roundtrips as literal strings, and rebuilding twice from the same inputs produces `0` cell or hyperlink differences.
+1. **ChEMBL-style non-destructive cleaning and SQLite quarantine (`19,958 original` exact partition)**: `17,876` clean numeric rows (`69` ranges like `AQADK 2,000-7,000` and `15` flattened scientific strings like `CI2 (31±2)x102 -> 3100` rescued) plus `2,082` quarantined rows (`1,875` contradictory other-construct deposit flags blocked by a SQLite `CHECK` constraint, `12` PDF exponent traps like Ubiquitin `6470` `'104' ps`, and `195` non-numeric strings).
+2. **Full-atlas Tier-1 BMRB recovery (`37,131` exact values across `62 / 68` entries)**: Recovers `55 / 55` numeric open RelaxDB entries (including all `22` zero-numeric entries and all `3` paywalled entries `15795`, `18477`, `50734`) and exposes `16` upstream BMRB deposit traps (`18477` copy-pasted `R2` as `NOE`, `18257` raw unnormalized NOE intensities, `17701`/`50734` ms mislabeled as `s`, `5154`/`7056`/`18758` inverted `s`/`s-1`).
+3. **Tier-2 AWS S3 SI harvest proof (`386` gap DOIs)**: `346 / 386` (`89.6%`) resolve to Open Access PMCIDs, `242` (`62.7%`) have directly downloadable assets on AWS S3, and `43` carry machine-readable SI spreadsheets. Parsing `20 / 20` prioritized spreadsheets recovered `12` real dynamics tables (`HTPDZ` `PMC11535027` with `10` NMR relaxation/CPMG sheets, `UVRDTD` `PMC7585439` with `7` NMR sheets, `FSIB` `PMC10232571` with `140` `HetNOE/T1/T2` rows, plus `6` HDX-MS and `3` NMR CSP spreadsheets).
+4. **Tier-3 honest figure rule (`RN_10`)**: Live inspection of `50020` (`PMC7137805` Fig. 2F) and `BARSTAR` (`PMC7304870` Fig. 5B) confirmed that vision models accurately read isolated outliers (`N1133 ~0.16` vs exact `0.160`) and qualitative ranges (`BARSTAR` `kHN ~0.2-30 s-1`), but misread dense unlabelled log-scale scatter plots (`±1-3` residues, `8-15%` log-Y error). Dense per-residue coordinates are therefore fetched from Tier 1 BMRB or Tier 2 SI spreadsheets first, with axis-calibrated `WebPlotDigitizer` reserved strictly for prioritized true figure-only targets.
+5. **Lossless export and determinism**: `check_expert_review.py delivery` passes (`0` lost rows across all `7` raw sheets, `0` formula cells in `Measurements`), and rebuilding twice produces `0` XML byte differences across all `15` sheets.

@@ -85,6 +85,17 @@ flowchart LR
 
 **Why checks missed it.** Keyword matching on `quantity = population` or `kex` does not separate intermolecular association from intramolecular conformational exchange, and opening an Excel workbook with cached formula values drops uncached strings starting with `=`.
 
-**Fixed now (19 Nov) in the 12-tab Expert Review Workbook.**
+**Fixed now (19 Nov) in the 15-tab Expert Review Workbook & companion SQLite DB.**
 1. **Fixed in [`data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx`](../data/expert_review_20261119/README.md):** Added a 6-bucket `physical_scope` filter (`solution_conformational_exchange`, `association`, `crystal`, `simulation`, `other_experimental`, `unresolved`) that moves `PLEXINB1` `~90%` dimer and all `20` binding/oligomer kinetics rows into `association` while preserving genuine exchange (`16392` `1.05%` / `98 s-1`, `PLEXINB1` `T83` `Rex = 7.0 s-1`).
-2. **Fixed in lossless export:** Forced literal text storage (`data_type = 's'`) on every quote starting with `=`, verified across `openpyxl` and LibreOffice Calc roundtrips (`0` lost rows across all `7` raw sheets; `0` unverified multi-source claims).
+2. **Fixed in lossless export:** Forced literal text storage (`data_type = 's'`) on every quote and comparator starting with `=`, verified across `openpyxl` and LibreOffice Calc roundtrips (`0` lost rows across all `7` raw sheets; `0` formula cells in `Measurements`).
+
+---
+
+## Bug 7. Uncleaned numeric/unit traps, contradictory deposit flags, and missed Tier-1/Tier-2 raw tables
+
+**Real failure.** Deep schema auditing caught three systematic traps in raw extraction and gap handling. First, `1,875` rows marked a mutant or other construct as `same_sample_as_deposit = yes`, and `207` values contained comma-thousands (`6,500`), ranges (`2,000-7,000`), flattened scientific notation (`(31 ± 2) × 102`), or PDF exponent traps (`104` ps for `10^4` ps in Ubiquitin `6470`). Second, text-only reading logged hundreds of `figure_only` gaps even when exact per-residue tables already existed in BMRB or Open Access supplementary Excel files. Third, raw BMRB deposits themselves contained `16` data traps (`18477` duplicated its `R2` table as `NOE`, `18257` uploaded unnormalized NOE peak intensities, and `17701`/`50734`/`5154`/`7056`/`18758` mislabeled `ms`, `s`, and `s-1`).
+
+**Fixed now (19 Nov) in the 15-tab workbook and companion SQLite database.**
+1. **ChEMBL-style cleaning and strict SQLite quarantine:** Appended clean numeric, canonical unit, and `data_validity_flag` columns to `Measurements`, left clean numeric cells blank on all `2,082` quarantined rows, and enforced a SQLite `CHECK` constraint blocking contradictory deposit flags at write time.
+2. **Full-atlas Tier-1 BMRB recovery (`BMRB_recovered`):** Pulled `68` open-atlas BMRB IDs live (`62` with data, `37,131` per-residue values, `983` positive `Rex > 0`, `33` `Auth-Seq` offsets), including all `55 / 55` numeric open entries and all `3` paywalled BMRB entries (`15795`, `18477`, `50734`), while flagging and isolating all `16` deposit anomalies.
+3. **Tier-2 AWS S3 SI inventory and Tier-3 figure policy (`SI_S3_inventory`, `Review_notes RN_10`):** Audited all `386` distinct gap DOIs (`346` OA PMCIDs, `242` S3 asset-ready, `43` direct spreadsheets) and parsed `20 / 20` prioritized spreadsheets (`12` verified dynamics tables including `HTPDZ`, `UVRDTD`, and `FSIB`). Locked a 3-tier figure policy so vision models only summarize isolated outliers and ranges rather than guessing dense scatter coordinates.
