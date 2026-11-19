@@ -1,36 +1,45 @@
 ---
-title: "Dynamics Atlas v3 Workflow (Model-Checked Gaps), bug 1"
+title: "Dynamics Atlas Workflow: Today (19 Nov 2026) vs v4 Locked Gates, bug 1"
 config:
   markdownAutoWrap: false
   state:
     useMaxWidth: false
 ---
 stateDiagram-v2
-  classDef plainWrong fill:#f4f6f7,stroke:#c0392b,stroke-width:4px,color:#7b241c
+  %% second model (fix): v4 locked workflow
+  classDef plainFixed fill:#f4f6f7,stroke:#1e8449,stroke-width:4px,color:#145a32
   classDef group1 fill:#dbeafe,stroke:#6e757f,color:#1b2631
   classDef group1Path fill:#dbeafe,stroke:#1f3a93,stroke-width:4px,color:#1b2631
-  classDef group3 fill:#fef3c7,stroke:#7f7a64,color:#1b2631
-  classDef group3Wrong fill:#fef3c7,stroke:#c0392b,stroke-width:4px,color:#7b241c
+  classDef group2 fill:#e0e7ff,stroke:#707480,color:#1b2631
+  classDef group2Path fill:#e0e7ff,stroke:#1f3a93,stroke-width:4px,color:#1b2631
+  classDef group5 fill:#fee2e2,stroke:#7f7171,color:#1b2631
+  classDef group5Fixed fill:#fee2e2,stroke:#1e8449,stroke-width:4px,color:#145a32
   state "Legend" as legend {
-    state "Preparing / reading" as legendGroup1
-    state "Gap: sample binding unchecked" as legendGroup3
-    state "Breaks expert/completeness gate today" as legendWrong
+    state "Extraction & checks" as legendGroup1
+    state "Verified draft" as legendGroup2
+    state "Broken rule (gap today)" as legendGroup5
+    state "Blocked by v4 locked workflow" as legendFixed
   }
   class legendGroup1 group1
-  class legendGroup3 group3
-  class legendWrong plainWrong
-  state "JSON drafted (unchecked)" as s0
-  state "Local full text staged" as s1
-  state "Queued open entry" as s2
-  state "Quote & table checks<br/>passed" as s3
-  state "Quote & table checks<br/>passed; Draft workbook<br/>built" as s4
+  class legendGroup2 group2
+  class legendGroup5 group5
+  class legendFixed plainFixed
+  state "131-protein Atlas built<br/>(upstream sample binding<br/>unchecked)" as s0
+  state "Consistency gate passed<br/>(131 pages, 0 leaks, 9<br/>method groups)" as s1
+  state "Open RelaxDB entry queued" as s2
+  state "Open full texts staged<br/>(128/131 covered)" as s3
+  state "Paper JSON drafted<br/>(unverified)" as s4
+  state "Verbatim quotes & tables<br/>verified (776/776)" as s5
   [*] --> s2
-  s2 --> s1 : 1. Stage local PMC full text<br/>[Program: DOI match, exclude<br/>12 held-out entries]
-  s1 --> s0 : 2. Read full text once [Reader<br/>LLM: fixed brief, verbatim<br/>quotes]
-  s0 --> s3 : 3. Check quotes & tables<br/>[Program: text match + leakage<br/>check, no binding check]
-  s3 --> s4 : 4. Build merged workbook<br/>[Program: does not enforce<br/>condition binding]
-  class s0 group1Path
-  class s1 group1Path
+  s2 --> s3 : 1. Stage open full texts<br/>[Program: exclude 12 held-out<br/>entries]
+  s3 --> s4 : 2. Extract paper into fixed<br/>JSON [Reader LLM: verbatim<br/>quotes]
+  s4 --> s5 : 3. Verify quotes & table rows<br/>[Program: 776/776 pass]
+  s5 --> s1 : 4. Check links, counts, leaks<br/>& diagrams [Program: fixed<br/>rules]
+  s1 --> s0 : 5. Build 131-protein Atlas &<br/>10-tab workbook [Program]
+  s5 --> s5 : with v4 locked workflow, Check<br/>links, counts, leaks &<br/>diagrams [Program: fixed<br/>rules] cannot happen at step 4
+  class s0 group5Fixed
+  class s1 group2Path
   class s2 group1Path
   class s3 group1Path
-  class s4 group3Wrong
+  class s4 group1Path
+  class s5 group1Path

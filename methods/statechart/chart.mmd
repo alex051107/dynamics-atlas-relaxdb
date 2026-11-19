@@ -1,70 +1,74 @@
 ---
-title: "Dynamics Atlas v3 Workflow (Model-Checked Gaps)"
+title: "Dynamics Atlas Workflow: Today (19 Nov 2026) vs v4 Locked Gates"
 config:
   markdownAutoWrap: false
   state:
     useMaxWidth: false
 ---
 stateDiagram-v2
-  classDef plainWrong fill:#f4f6f7,stroke:#c0392b,stroke-width:4px,color:#7b241c
+  %% second model (fix): v4 locked workflow
+  classDef plainFixed fill:#f4f6f7,stroke:#1e8449,stroke-width:4px,color:#145a32
   classDef group0 fill:#e5e7eb,stroke:#737476,color:#1b2631
   classDef group1 fill:#dbeafe,stroke:#6e757f,color:#1b2631
   classDef group2 fill:#e0e7ff,stroke:#707480,color:#1b2631
-  classDef group3 fill:#fef3c7,stroke:#7f7a64,color:#1b2631
-  classDef group3Wrong fill:#fef3c7,stroke:#c0392b,stroke-width:4px,color:#7b241c
-  classDef group4 fill:#fee2e2,stroke:#7f7171,color:#1b2631
-  classDef group4Wrong fill:#fee2e2,stroke:#c0392b,stroke-width:4px,color:#7b241c
-  classDef group5 fill:#d1fae5,stroke:#697d73,color:#1b2631
-  classDef group5Wrong fill:#d1fae5,stroke:#c0392b,stroke-width:4px,color:#7b241c
+  classDef group2Fixed fill:#e0e7ff,stroke:#1e8449,stroke-width:4px,color:#145a32
+  classDef group4 fill:#bbf7d0,stroke:#5e7c68,color:#1b2631
+  classDef group4Fixed fill:#bbf7d0,stroke:#1e8449,stroke-width:4px,color:#145a32
+  classDef group5 fill:#fee2e2,stroke:#7f7171,color:#1b2631
+  classDef group5Fixed fill:#fee2e2,stroke:#1e8449,stroke-width:4px,color:#145a32
   state "Legend" as legend {
     state "Held-out (blocked)" as legendGroup0
-    state "Preparing / reading" as legendGroup1
-    state "Blind check ran" as legendGroup2
-    state "Gap: sample binding unchecked" as legendGroup3
-    state "Gap: shared unreviewed" as legendGroup4
-    state "Expert approved" as legendGroup5
-    state "Breaks expert/completeness gate today" as legendWrong
+    state "Extraction & checks" as legendGroup1
+    state "Verified draft" as legendGroup2
+    state "Release ready" as legendGroup4
+    state "Broken rule (gap today)" as legendGroup5
+    state "Blocked by v4 locked workflow" as legendFixed
   }
   class legendGroup0 group0
   class legendGroup1 group1
   class legendGroup2 group2
-  class legendGroup3 group3
   class legendGroup4 group4
   class legendGroup5 group5
-  class legendWrong plainWrong
-  state "Held-out test entry<br/>(blocked by program)" as s0
-  state "JSON drafted (unchecked)" as s1
-  state "Local full text staged" as s2
-  state "Queued open entry" as s3
-  state "Quote & table checks<br/>passed" as s4
-  state "Quote & table checks<br/>passed; 10% blind check<br/>adjudicated" as s5
-  state "Quote & table checks<br/>passed; 10% blind check<br/>adjudicated; Unread full<br/>texts integrated" as s6
-  state "Quote & table checks<br/>passed; 10% blind check<br/>adjudicated; Unread full<br/>texts integrated; Draft<br/>workbook built" as s7
-  state "Quote & table checks<br/>passed; 10% blind check<br/>adjudicated; Unread full<br/>texts integrated; Draft<br/>workbook built; Shared for<br/>expert review" as s8
-  state "Quote & table checks<br/>passed; 10% blind check<br/>adjudicated; Unread full<br/>texts integrated; Draft<br/>workbook built; Shared for<br/>expert review; Expert<br/>signed off" as s9
-  state "Quote & table checks<br/>passed; Draft workbook<br/>built" as s10
-  state "Quote & table checks<br/>passed; Draft workbook<br/>built; Shared for expert<br/>review" as s11
-  [*] --> s0
-  [*] --> s3
-  s3 --> s2 : Stage local PMC full text<br/>[Program: DOI match, exclude<br/>12 held-out entries]
-  s2 --> s1 : Read full text once [Reader<br/>LLM: fixed brief, verbatim<br/>quotes]
-  s1 --> s4 : Check quotes & tables<br/>[Program: text match + leakage<br/>check, no binding check]
-  s4 --> s5 : Blind-read 10% sample<br/>[Second-family LLM + curator<br/>adjudication]
-  s4 --> s10 : Build merged workbook<br/>[Program: does not enforce<br/>condition binding]
-  s5 --> s6 : Read remaining 988 Nov-12 DOIs<br/>& Kosmos [NOT DONE YET]
-  s10 --> s11 : Share draft link with Gina<br/>[Project lead]
-  s6 --> s7 : Build merged workbook<br/>[Program: does not enforce<br/>condition binding]
-  s7 --> s8 : Share draft link with Gina<br/>[Project lead]
-  s8 --> s9 : Validate definitions & spots<br/>[NMR Expert Gina, NOT DONE<br/>YET]
-  class s0 group0
-  class s1 group1
-  class s2 group1
-  class s3 group1
-  class s4 group1
-  class s5 group2
-  class s6 group2
-  class s7 group3Wrong
-  class s8 group4Wrong
-  class s9 group5Wrong
-  class s10 group3Wrong
-  class s11 group4Wrong
+  class legendFixed plainFixed
+  state "131-protein Atlas built<br/>(sample binding checked)" as s0
+  state "131-protein Atlas built<br/>(upstream sample binding<br/>unchecked)" as s1
+  state "3 paywalled + 336 Kosmos +<br/>168 early records closed" as s2
+  state "Consistency gate passed<br/>(131 pages, 0 leaks, 9<br/>method groups)" as s3
+  state "Gina locked 4 boundary<br/>rules (ready for v4 sweep)" as s4
+  state "Held-out entry (12 blocked<br/>by program)" as s5
+  state "Open RelaxDB entry queued" as s6
+  state "Open full texts staged<br/>(128/131 covered)" as s7
+  state "Paper JSON drafted<br/>(unverified)" as s8
+  state "Promoted early (missing<br/>expert sign-off or<br/>backlog)" as s9
+  state "Release 0.2 promoted<br/>(expert approved + backlog<br/>closed)" as s10
+  state "Single-condition sample<br/>gate passed" as s11
+  state "Verbatim quotes & tables<br/>verified (776/776)" as s12
+  [*] --> s5
+  [*] --> s6
+  s6 --> s7 : Stage open full texts<br/>[Program: exclude 12 held-out<br/>entries]
+  s7 --> s8 : Extract paper into fixed JSON<br/>[Reader LLM: verbatim quotes]
+  s8 --> s12 : Verify quotes & table rows<br/>[Program: 776/776 pass]
+  s12 --> s3 : Check links, counts, leaks &<br/>diagrams [Program: fixed<br/>rules]
+  s3 --> s1 : Build 131-protein Atlas &<br/>10-tab workbook [Program]
+  s1 --> s4 : Lock 4 boundary rules [NMR<br/>Expert Gina, NOT DONE YET]
+  s1 --> s9 : Promote draft branch to<br/>Release 0.2 [Project lead]
+  s4 --> s2 : Close 3 paywalled + 336 Kosmos<br/>+ 168 re-reads [NOT DONE YET]
+  s12 --> s11 : with v4 locked workflow, Check<br/>1 condition per sample +<br/>closed method enum [v4 Program<br/>gate]
+  s11 --> s3 : with v4 locked workflow, Check<br/>links, counts, leaks &<br/>diagrams [Program: fixed<br/>rules]
+  s3 --> s0 : with v4 locked workflow, Build<br/>131-protein Atlas & 10-tab<br/>workbook [Program]
+  s0 --> s4 : with v4 locked workflow, Lock<br/>4 boundary rules [NMR Expert<br/>Gina, NOT DONE YET]
+  s2 --> s10 : with v4 locked workflow,<br/>Promote draft branch to<br/>Release 0.2 [Project lead]
+  s12 --> s12 : with v4 locked workflow, Check<br/>links, counts, leaks &<br/>diagrams [Program: fixed<br/>rules] cannot happen at step 4<br/>of bug 1 or 2
+  class s0 group2Fixed
+  class s1 group5Fixed
+  class s2 plainFixed
+  class s3 group2
+  class s4 plainFixed
+  class s5 group0
+  class s6 group1
+  class s7 group1
+  class s8 group1
+  class s9 group5Fixed
+  class s10 group4Fixed
+  class s11 group2Fixed
+  class s12 group1

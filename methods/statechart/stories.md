@@ -1,24 +1,30 @@
-## 1. Quote & table checks passed; Draft workbook built
+## 1. 131-protein Atlas built (upstream sample binding unchecked)
 
-Rule broken: Invariant 3 (expected broken - Gap 1): Program checks verify quotes, not whether sample solvent/ratio belongs to the measured state.
-Why: Workbook builds before sample-condition binding is verified (quote checks pass even when solvent/ratio is swapped).
-In the model, one step leads into this bug: "Build merged workbook [Program: does not enforce condition binding]". The steps below are the shortest path that TLC found.
+Rule broken: Rule 3 (BROKEN today -> FIXED in v4): Upstream single-condition-per-sample gate must pass before building atlas/workbook.
+Why: Atlas and workbook can be built before an automated upstream check blocks merged multi-condition sample cards (fixed manually for BARSTAR on 19 Nov, not yet blocked in v4 extractor).
+In the model, one step leads into this bug: "Build 131-protein Atlas & 10-tab workbook [Program]".
 
-0. Start: Queued open entry
-1. Stage local PMC full text [Program: DOI match, exclude 12 held-out entries]. Now: Local full text staged
-2. Read full text once [Reader LLM: fixed brief, verbatim quotes]. Now: JSON drafted (unchecked)
-3. Check quotes & tables [Program: text match + leakage check; no binding check]. Now: Quote & table checks passed
-4. Build merged workbook [Program: does not enforce condition binding]. Now: Quote & table checks passed; Draft workbook built
+0. Start: Open RelaxDB entry queued
+1. Stage open full texts [Program: exclude 12 held-out entries]. Now: Open full texts staged (128/131 covered)
+2. Extract paper into fixed JSON [Reader LLM: verbatim quotes]. Now: Paper JSON drafted (unverified)
+3. Verify quotes & table rows [Program: 776/776 pass]. Now: Verbatim quotes & tables verified (776/776)
+4. Check links, counts, leaks & diagrams [Program: fixed rules]. Now: Consistency gate passed (131 pages, 0 leaks, 9 method groups)
+5. Build 131-protein Atlas & 10-tab workbook [Program]. Now: 131-protein Atlas built (upstream sample binding unchecked)
 
-## 2. Quote & table checks passed; Draft workbook built; Shared for expert review
+With v4 locked workflow, step 4 (Check links, counts, leaks & diagrams [Program: fixed rules]) cannot happen, so you stay at: Verbatim quotes & tables verified (776/776).
 
-Rule broken: Invariant 4 (expected broken - Gap 2): Draft can be shared before expert NMR review and before unread full-text sources are integrated.
-Why: Draft can be shared while 988 earlier DOIs (244 full text) remain unread and before Gina's expert review.
-In the model, one step leads into this bug: "Share draft link with Gina [Project lead]". The steps below are the shortest path that TLC found.
+## 2. Promoted early (missing expert sign-off or backlog)
 
-0. Start: Queued open entry
-1. Stage local PMC full text [Program: DOI match, exclude 12 held-out entries]. Now: Local full text staged
-2. Read full text once [Reader LLM: fixed brief, verbatim quotes]. Now: JSON drafted (unchecked)
-3. Check quotes & tables [Program: text match + leakage check; no binding check]. Now: Quote & table checks passed
-4. Build merged workbook [Program: does not enforce condition binding]. Now: Quote & table checks passed; Draft workbook built
-5. Share draft link with Gina [Project lead]. Now: Quote & table checks passed; Draft workbook built; Shared for expert review
+Rule broken: Rule 4 (BROKEN today -> FIXED in v4): Cannot promote to Release 0.2 before Gina locks the 4 rules and closes remaining backlog.
+Why: No code gate prevents promoting the draft before Gina locks the 4 boundary rules and before the 3 paywalled PDFs, 336 Kosmos rows, and 168 early re-reads are closed.
+In the model, one step leads into this bug: "Promote draft branch to Release 0.2 [Project lead]". The steps below are the shortest path that TLC found.
+
+0. Start: Open RelaxDB entry queued
+1. Stage open full texts [Program: exclude 12 held-out entries]. Now: Open full texts staged (128/131 covered)
+2. Extract paper into fixed JSON [Reader LLM: verbatim quotes]. Now: Paper JSON drafted (unverified)
+3. Verify quotes & table rows [Program: 776/776 pass]. Now: Verbatim quotes & tables verified (776/776)
+4. Check links, counts, leaks & diagrams [Program: fixed rules]. Now: Consistency gate passed (131 pages, 0 leaks, 9 method groups)
+5. Build 131-protein Atlas & 10-tab workbook [Program]. Now: 131-protein Atlas built (upstream sample binding unchecked)
+6. Promote draft branch to Release 0.2 [Project lead]. Now: Promoted early (missing expert sign-off or backlog)
+
+With v4 locked workflow, step 4 (Check links, counts, leaks & diagrams [Program: fixed rules]) cannot happen, so you stay at: Verbatim quotes & tables verified (776/776).

@@ -1,62 +1,31 @@
 {
   "view": "customer",
-  "modelStates": 23,
-  "modelTransitions": 37,
-  "chartStates": 12,
-  "chartTransitions": 10,
+  "second": {
+    "role": "fix",
+    "label": "v4 locked workflow",
+    "lacks": []
+  },
+  "modelStates": 12,
+  "modelTransitions": 12,
+  "chartStates": 13,
+  "chartTransitions": 14,
   "chartStatus": {
-    "works": 11,
-    "wrong": 12,
-    "fixed": 0,
+    "works": 6,
+    "wrong": 0,
+    "fixed": 7,
     "mixed": 0,
-    "after": 0
+    "after": 0,
+    "worse": 0
   },
   "mixedStatus": [],
   "cover": {
     "drawn": true,
-    "states": 23,
-    "transitions": 37,
-    "leftOutStates": [
-      "JSON drafted (unchecked); Unread full texts integrated",
-      "Local full text staged; Unread full texts integrated",
-      "Queued open entry; Unread full texts integrated",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off",
-      "Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off",
-      "Quote & table checks passed; Unread full texts integrated",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off"
-    ],
+    "states": 13,
+    "transitions": 16,
+    "leftOutStates": [],
     "leftOutTransitions": [
-      "JSON drafted (unchecked) --> JSON drafted (unchecked); Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "JSON drafted (unchecked); Unread full texts integrated --> Quote & table checks passed; Unread full texts integrated: Check quotes & tables [Program: text match + leakage check; no binding check]",
-      "Local full text staged --> Local full text staged; Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Local full text staged; Unread full texts integrated --> JSON drafted (unchecked); Unread full texts integrated: Read full text once [Reader LLM: fixed brief, verbatim quotes]",
-      "Queued open entry --> Queued open entry; Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Queued open entry; Unread full texts integrated --> Local full text staged; Unread full texts integrated: Stage local PMC full text [Program: DOI match, exclude 12 held-out entries]",
-      "Quote & table checks passed --> Quote & table checks passed; Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Quote & table checks passed; 10% blind check adjudicated --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built: Build merged workbook [Program: does not enforce condition binding]",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review: Share draft link with Gina [Project lead]",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off: Validate definitions & spots [NMR Expert Gina; NOT DONE YET]",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Quote & table checks passed; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built: Blind-read 10% sample [Second-family LLM + curator adjudication]",
-      "Quote & table checks passed; Draft workbook built --> Quote & table checks passed; Unread full texts integrated; Draft workbook built: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Quote & table checks passed; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review: Blind-read 10% sample [Second-family LLM + curator adjudication]",
-      "Quote & table checks passed; Draft workbook built; Shared for expert review --> Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off: Validate definitions & spots [NMR Expert Gina; NOT DONE YET]",
-      "Quote & table checks passed; Draft workbook built; Shared for expert review --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off: Blind-read 10% sample [Second-family LLM + curator adjudication]",
-      "Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
-      "Quote & table checks passed; Unread full texts integrated --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated: Blind-read 10% sample [Second-family LLM + curator adjudication]",
-      "Quote & table checks passed; Unread full texts integrated --> Quote & table checks passed; Unread full texts integrated; Draft workbook built: Build merged workbook [Program: does not enforce condition binding]",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built: Blind-read 10% sample [Second-family LLM + curator adjudication]",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review: Share draft link with Gina [Project lead]",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review: Blind-read 10% sample [Second-family LLM + curator adjudication]",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Validate definitions & spots [NMR Expert Gina; NOT DONE YET]",
-      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Blind-read 10% sample [Second-family LLM + curator adjudication]"
+      "3 paywalled + 336 Kosmos + 168 early records closed --> Promoted early (missing expert sign-off or backlog): Promote draft branch to Release 0.2 [Project lead]",
+      "Gina locked 4 boundary rules (ready for v4 sweep) --> Promoted early (missing expert sign-off or backlog): Promote draft branch to Release 0.2 [Project lead]"
     ]
   },
   "chartGroups": [
@@ -66,64 +35,253 @@
       "states": 1
     },
     {
-      "name": "Preparing / reading",
+      "name": "Extraction & checks",
       "color": "#dbeafe",
       "states": 4
     },
     {
-      "name": "Blind check ran",
+      "name": "Verified draft",
       "color": "#e0e7ff",
-      "states": 2
+      "states": 3
     },
     {
-      "name": "Gap: sample binding unchecked",
-      "color": "#fef3c7",
-      "states": 2
+      "name": "Release ready",
+      "color": "#bbf7d0",
+      "states": 1
     },
     {
-      "name": "Gap: shared unreviewed",
+      "name": "Broken rule (gap today)",
       "color": "#fee2e2",
       "states": 2
-    },
-    {
-      "name": "Expert approved",
-      "color": "#d1fae5",
-      "states": 1
     }
   ],
-  "mixedGroups": [],
+  "mixedGroups": [
+    "3 paywalled + 336 Kosmos + 168 early records closed",
+    "Gina locked 4 boundary rules (ready for v4 sweep)"
+  ],
   "classes": [
     {
       "n": 1,
-      "end": "Quote & table checks passed; Draft workbook built",
-      "invariant": "NoUncheckedConditionBinding",
-      "rule": "Invariant 3 (expected broken - Gap 1): Program checks verify quotes, not whether sample solvent/ratio belongs to the measured state.",
-      "cause": "Workbook builds before sample-condition binding is verified (quote checks pass even when solvent/ratio is swapped).",
-      "readerSteps": 4,
-      "modelSteps": 5,
-      "counterexamples": 4,
+      "end": "131-protein Atlas built (upstream sample binding unchecked)",
+      "invariant": "NoUncheckedSampleBinding",
+      "rule": "Rule 3 (BROKEN today -> FIXED in v4): Upstream single-condition-per-sample gate must pass before building atlas/workbook.",
+      "cause": "Atlas and workbook can be built before an automated upstream check blocks merged multi-condition sample cards (fixed manually for BARSTAR on 19 Nov, not yet blocked in v4 extractor).",
+      "readerSteps": 5,
+      "modelSteps": 6,
+      "counterexamples": 1,
       "lastSteps": [
-        "Build merged workbook [Program: does not enforce condition binding]"
+        "Build 131-protein Atlas & 10-tab workbook [Program]"
       ],
       "startsHere": false,
-      "fix": null
+      "fix": "Verbatim quotes & tables verified (776/776)"
     },
     {
       "n": 2,
-      "end": "Quote & table checks passed; Draft workbook built; Shared for expert review",
-      "invariant": "NoReleaseWithoutExpertAndCoverage",
-      "rule": "Invariant 4 (expected broken - Gap 2): Draft can be shared before expert NMR review and before unread full-text sources are integrated.",
-      "cause": "Draft can be shared while 988 earlier DOIs (244 full text) remain unread and before Gina's expert review.",
-      "readerSteps": 5,
-      "modelSteps": 6,
-      "counterexamples": 4,
+      "end": "Promoted early (missing expert sign-off or backlog)",
+      "invariant": "NoReleaseWithoutExpertAndBacklog",
+      "rule": "Rule 4 (BROKEN today -> FIXED in v4): Cannot promote to Release 0.2 before Gina locks the 4 rules and closes remaining backlog.",
+      "cause": "No code gate prevents promoting the draft before Gina locks the 4 boundary rules and before the 3 paywalled PDFs, 336 Kosmos rows, and 168 early re-reads are closed.",
+      "readerSteps": 6,
+      "modelSteps": 7,
+      "counterexamples": 3,
       "lastSteps": [
-        "Share draft link with Gina [Project lead]"
+        "Promote draft branch to Release 0.2 [Project lead]"
       ],
       "startsHere": false,
-      "fix": null
+      "fix": "Verbatim quotes & tables verified (776/776)"
     }
   ],
   "codeLike": [],
+  "uncited": {
+    "methods/statechart/WorkflowCurrent.tla": [
+      {
+        "line": 33,
+        "action": "StageOpenTexts",
+        "condition": "~sealed"
+      },
+      {
+        "line": 39,
+        "action": "ExtractPaper",
+        "condition": "~sealed"
+      },
+      {
+        "line": 39,
+        "action": "ExtractPaper",
+        "condition": "staged = \"OpenTextReady\""
+      },
+      {
+        "line": 45,
+        "action": "VerifyQuotesAndTables",
+        "condition": "~sealed"
+      },
+      {
+        "line": 51,
+        "action": "RunConsistencyGate",
+        "condition": "~sealed"
+      },
+      {
+        "line": 51,
+        "action": "RunConsistencyGate",
+        "condition": "extracted = \"QuoteChecked\""
+      },
+      {
+        "line": 58,
+        "action": "BuildUnifiedAtlas",
+        "condition": "~sealed"
+      },
+      {
+        "line": 58,
+        "action": "BuildUnifiedAtlas",
+        "condition": "extracted = \"QuoteChecked\""
+      },
+      {
+        "line": 58,
+        "action": "BuildUnifiedAtlas",
+        "condition": "consistencyGate"
+      },
+      {
+        "line": 64,
+        "action": "LockExpertRules",
+        "condition": "~sealed"
+      },
+      {
+        "line": 64,
+        "action": "LockExpertRules",
+        "condition": "atlasBuilt"
+      },
+      {
+        "line": 70,
+        "action": "CloseExternalBacklog",
+        "condition": "~sealed"
+      },
+      {
+        "line": 70,
+        "action": "CloseExternalBacklog",
+        "condition": "ginaRules"
+      },
+      {
+        "line": 77,
+        "action": "PromoteToRelease",
+        "condition": "~sealed"
+      },
+      {
+        "line": 77,
+        "action": "PromoteToRelease",
+        "condition": "atlasBuilt"
+      }
+    ],
+    "methods/statechart/WorkflowV4Fixed.tla": [
+      {
+        "line": 31,
+        "action": "StageOpenTexts",
+        "condition": "~sealed"
+      },
+      {
+        "line": 36,
+        "action": "ExtractPaper",
+        "condition": "~sealed"
+      },
+      {
+        "line": 36,
+        "action": "ExtractPaper",
+        "condition": "staged = \"OpenTextReady\""
+      },
+      {
+        "line": 41,
+        "action": "VerifyQuotesAndTables",
+        "condition": "~sealed"
+      },
+      {
+        "line": 47,
+        "action": "EnforceConditionGate",
+        "condition": "~sealed"
+      },
+      {
+        "line": 47,
+        "action": "EnforceConditionGate",
+        "condition": "extracted = \"QuoteChecked\""
+      },
+      {
+        "line": 52,
+        "action": "RunConsistencyGate",
+        "condition": "~sealed"
+      },
+      {
+        "line": 52,
+        "action": "RunConsistencyGate",
+        "condition": "extracted = \"QuoteChecked\""
+      },
+      {
+        "line": 52,
+        "action": "RunConsistencyGate",
+        "condition": "conditionGate"
+      },
+      {
+        "line": 57,
+        "action": "BuildUnifiedAtlas",
+        "condition": "~sealed"
+      },
+      {
+        "line": 57,
+        "action": "BuildUnifiedAtlas",
+        "condition": "extracted = \"QuoteChecked\""
+      },
+      {
+        "line": 57,
+        "action": "BuildUnifiedAtlas",
+        "condition": "conditionGate"
+      },
+      {
+        "line": 57,
+        "action": "BuildUnifiedAtlas",
+        "condition": "consistencyGate"
+      },
+      {
+        "line": 62,
+        "action": "LockExpertRules",
+        "condition": "~sealed"
+      },
+      {
+        "line": 62,
+        "action": "LockExpertRules",
+        "condition": "atlasBuilt"
+      },
+      {
+        "line": 67,
+        "action": "CloseExternalBacklog",
+        "condition": "~sealed"
+      },
+      {
+        "line": 67,
+        "action": "CloseExternalBacklog",
+        "condition": "ginaRules"
+      },
+      {
+        "line": 72,
+        "action": "PromoteToRelease",
+        "condition": "~sealed"
+      },
+      {
+        "line": 72,
+        "action": "PromoteToRelease",
+        "condition": "atlasBuilt"
+      },
+      {
+        "line": 72,
+        "action": "PromoteToRelease",
+        "condition": "conditionGate"
+      },
+      {
+        "line": 72,
+        "action": "PromoteToRelease",
+        "condition": "ginaRules"
+      },
+      {
+        "line": 72,
+        "action": "PromoteToRelease",
+        "condition": "backlogClosed"
+      }
+    ]
+  },
   "brokenProperties": []
 }

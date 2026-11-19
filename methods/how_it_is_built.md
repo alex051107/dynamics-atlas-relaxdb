@@ -38,14 +38,26 @@ On October 13 we designed a 7-step deterministic pipeline (`Astra` architecture 
 
 ---
 
-## 3. Formal verification of the extraction workflow
+## 3. Formal verification of the current vs `v4` workflow
 
-To make remaining risks unmistakable before expert review, we modeled the November extraction workflow in TLA+ ([`WorkflowV3.tla`](statechart/WorkflowV3.tla)). TLC exhaustively checked all `23` reachable states and `37` transitions.
+We modeled our actual **19 November 2026 workflow** in TLA+ ([`WorkflowCurrent.tla`](statechart/WorkflowCurrent.tla)) and checked it against the proposed **`v4` locked workflow** ([`WorkflowV4Fixed.tla`](statechart/WorkflowV4Fixed.tla)). TLC exhaustively checked both models (`13` chart states and `14` transitions from `12` model states; `6` states work today, `0` stay broken under `v4`, and `7` are fixed or newly unlocked under `v4`).
 
-![Formally checked workflow state machine](../figures/formal_statechart.png)
+![Formally checked workflow state machine comparing today vs v4 locked gates](../figures/formal_statechart.png)
 
-- **Three invariants proved across all `23` states.** `TypeOK` confirms all state variables stay well-typed. `NoSealedEntryRead` proves the `12` held-out entries never leave blocked state. `OnlyQuoteCheckedInWorkbook` proves only quote-verified rows enter the workbook.
-- **Two expected gaps proved reachable.** `NoUncheckedConditionBinding` fails in `5` steps because the `v3` extractor had no hard gate stopping dual-condition sample merges like Barstar. `NoReleaseWithoutExpertAndCoverage` fails in `6` steps because `3` paywalled source papers, `336` Kosmos rows, `168` early un-reread records, and `v3` expert sign-off remain open. Exact counterexample traces live in [`statechart/stories.md`](statechart/stories.md).
+- **Three invariants hold today.** `TypeOK` keeps all state variables well-typed. `NoSealedEntryRead` proves the `12` held-out entries never leave blocked state. `OnlyVerifiedInAtlas` proves only quote-checked and consistency-checked records enter [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md).
+- **Two open gaps today are proved fixed by `WorkflowV4Fixed.tla`.** `NoUncheckedSampleBinding` breaks in `5` steps today ([`bug-1.png`](statechart/bug-1.png)) because upstream extraction still lacks an automated single-condition-per-sample gate (we fixed `BARSTAR` manually on November 19). `NoReleaseWithoutExpertAndBacklog` breaks in `6` steps today ([`bug-2.png`](statechart/bug-2.png)) because no code gate blocks promoting to Release `0.2` before Gina locks the 4 rules and before the `3` paywalled PDFs, `336` Kosmos rows, and `168` early re-reads are closed. Full traces live in [`statechart/stories.md`](statechart/stories.md).
+
+| Step | What is checked | Who decides | Evidence file | Status |
+|---|---|---|---|---|
+| Stage open full texts | Exclude `12` held-out entries; match DOIs | Program (fixed rule) | `data/v3_draft_20261118/coverage_gap_audit.csv` | Done (`128 / 131`) |
+| Extract paper into fixed JSON | Read full text into samples, values, states, regions, gaps | Reader LLM (fixed brief) | `data/v3_draft_20261118/RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx` | Done (`776` records) |
+| Verify quotes & table rows | Verbatim quote match + numeric containment + table accounting | Program (fixed rule) | `methods/quality.md`, `supplemental_20261119.json` | Done (`776 / 776` + `55 / 55`) |
+| Enforce single-condition sample gate + closed method enum | Reject mixed solvent/pH/T samples and unmapped methods upstream | Program (`v4` fixed rule) | `methods/statechart/WorkflowV4Fixed.tla` | **NOT DONE YET** (`BARSTAR` fixed manually) |
+| Check links, counts, leaks & diagrams | `131` atlas pages, `0` sealed/path leaks, `0` stale counts, valid Mermaid | Program (fixed rule) | `methods/check_review_consistency.py` | Done (`PASS`) |
+| Build unified 131-protein Atlas & workbook | Separate solution exchange, bulk relaxation, and MD/cryo-X-ray | Program (fixed rule) | `atlas/ATLAS_131.md`, `data/v3_draft_20261118/` | Done (`131 / 131`) |
+| Lock 4 boundary rules | Domain/method scope, MD/crystal split, sample split, UniProt merge | NMR Expert Gina | `REVIEW_GUIDE.md` | **NOT DONE YET** |
+| Close external literature backlog | Fetch `3` paywalled PDFs, `336` Kosmos rows, re-read `168` early records | Curator + Program | `data/v3_draft_20261118/coverage_gap_audit.csv` | **NOT DONE YET** |
+| Promote draft branch to Release `0.2` | Final release promotion onto `main` | Project lead | `CHANGELOG.md` | **NOT DONE YET** |
 
 ---
 
