@@ -67,6 +67,15 @@ BANNED_PROSE_PHRASES = [
     (re.compile(r"\bdoes not mean\b", re.I), "defensive phrase 'does not mean'"),
 ]
 
+# Internal batch/version/TLA+ jargon banned from reader-facing prose and statechart labels
+# (folder/file paths inside markdown link targets (...) or inline code paths containing '/' are ignored)
+BANNED_INTERNAL_JARGON = re.compile(
+    r"(?<!-)\b(B1|B2|B3|B5|v3|v4|0\.2-draft|Release 0\.3|Nov-12|Nov 12|Gap 1|Gap 2|"
+    r"TypeOK|NoSealedEntryRead|OnlyVerifiedInAtlas|NoUncheckedSampleBinding|"
+    r"NoReleaseWithoutExpertAndBacklog|EnforceConditionGate|"
+    r"expected_rows|out_of_reach|KEY_FORMAT|A/B/C/X)\b"
+)
+
 MAX_PROSE_SENTENCE_WORDS = 48
 
 
@@ -88,6 +97,20 @@ def check_mermaid_blocks(rel: str, text: str, errors: list[str]) -> int:
                         "(quote as [\"...\"])"
                     )
     return len(blocks)
+
+
+def check_internal_jargon(rel: str, text: str, errors: list[str]) -> None:
+    for lineno, raw in enumerate(text.splitlines(), 1):
+        # Strip markdown link targets (...), URLs, and inline backtick file paths containing '/'
+        s = re.sub(r"\]\([^)]+\)", "]", raw)
+        s = re.sub(r"https?://\S+", "", s)
+        s = re.sub(r"`[^`]*[/\\][^`]*`", "", s)
+        hits = BANNED_INTERNAL_JARGON.findall(s)
+        if hits:
+            errors.append(
+                f"{rel}:{lineno}: confusing internal jargon {sorted(set(hits))} in reader-facing text "
+                "(use plain English: 'October baseline', 'current draft', 'next extraction pass')"
+            )
 
 
 def check_prose_clarity(rel: str, text: str, errors: list[str]) -> None:
@@ -174,6 +197,13 @@ def main() -> int:
                 f"{rel}: missing inline Mermaid diagram (add a stateDiagram-v2 or flowchart answering this page's core logic)"
             )
         check_prose_clarity(rel, txt, errors)
+        check_internal_jargon(rel, txt, errors)
+
+    # Also check rendered statechart Mermaid labels for internal jargon
+    sc_rel = "methods/statechart/chart.mmd"
+    sc_p = REPO / sc_rel
+    if sc_p.exists():
+        check_internal_jargon(sc_rel, sc_p.read_text(encoding="utf-8"), errors)
 
     if errors:
         print(f"FAIL: {len(errors)} review consistency / clarity issues found:")
