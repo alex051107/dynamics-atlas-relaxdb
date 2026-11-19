@@ -65,7 +65,7 @@ We split RelaxDB's `143` proteins into `131` open development entries and `12` h
 | [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md) | Five real audit failure modes, root causes, and planned validation tests | New (19 Nov 2026) |
 | [`methods/changes_since_v01.md`](methods/changes_since_v01.md) | Timeline from Sept 29 / Oct 21 to Nov 19 and roadmap to Release `0.3` | New (19 Nov 2026) |
 | [`methods/quality.md`](methods/quality.md) | Full batch metrics, answer-key scores, blind checks, and prevalence caveats | Updated (19 Nov 2026) |
-| [`data/v3_draft_20261118/`](data/v3_draft_20261118/README.md) | Nine-tab Excel workbook (`19,958` rows), `proteins_summary.csv`, `coverage_gap_audit.csv` | Draft (18 Nov 2026) |
+| [`data/v3_draft_20261118/`](data/v3_draft_20261118/README.md) | Ten-tab Excel workbook (`Start_Here`, `Proteins`, `Exchange_Highlights` [`567` rows], lossless `Measurements` [`19,958` rows]), `proteins_summary.csv`, `coverage_gap_audit.csv` | Draft (updated 19 Nov 2026) |
 | [`atlas/README.md`](atlas/README.md) & [`atlas/proteins/`](atlas/README.md) | **Release `0.1` (`21 Oct 2026`).** `42` alternate APO synthesis pages (`13 yes, 18 possible, 11 unknown`) | Preserved intact |
 | [`data/*.csv`, `data/structures/`](data/DATA_DICTIONARY.md) | **Release `0.1` (`21 Oct 2026`).** Slice 1 tables, RelaxDB data issues, `10` CPMG structure overlays | Preserved intact |
 | [`code/`](code/README.md) | **Release `0.1` (`21 Oct 2026`).** Alternate APO pipeline scripts (November extraction scripts live in the external run ledger) | Unchanged |
