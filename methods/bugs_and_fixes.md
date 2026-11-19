@@ -76,3 +76,15 @@ flowchart LR
 **Fixed now (19 Nov) vs next-pass gate.**
 1. **Fixed in branch:** Reconciled the October baseline with November reads, read the `4` open-access untouched entries (`15451`, `5841`, `5687`, `CMTIV`) plus IscU `PNAS 2011` (`7432`), and logged BMRB/PubMed dossiers for the only `3` remaining paywalled entries (`15795`, `18477`, `50734`). Unified coverage is now `128 / 131` (`97.7%`).
 2. **Queued for next pass:** Triage clinical/imaging noise before reading the `336`-row Kosmos package, pull institutional PDFs for the `3` paywalled entries, and report prevalence-adjusted agreement (`valuated-paper recall` and Gwet's `AC1`) separately on valued vs zero-row strata in [`quality.md`](quality.md).
+
+---
+
+## Bug 6. Physical-scope leaks (oligomer/binding rows) and Excel leading-`=` quote loss
+
+**Real failure.** Two further defects surfaced during our independent replay check of the ten-tab export. First, `PLEXINB1` (`10.1021/jp310142f`) printed `approximately 90%` for the monomer-dimer fraction, and `20` additional titration/lineshape rows (`51416`, `50233`, `27888`, `CHEA`/`CHEAYBD`, `CSPA`, `CYPA_CPMG` substrate `koff`, `HTPDZ`) measured intermolecular binding or dimerization rather than conformational exchange. Second, two verbatim quotes starting with `=` (`=204 ns...` in `6470` and `= 6.5 ± 0.5...` in `GPIIA`) were stored as Excel formulas and disappeared as empty cells when reopened.
+
+**Why checks missed it.** Keyword matching on `quantity = population` or `kex` does not separate intermolecular association from intramolecular conformational exchange, and opening an Excel workbook with cached formula values drops uncached strings starting with `=`.
+
+**Fixed now (19 Nov) in the 12-tab Expert Review Workbook.**
+1. **Fixed in [`data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx`](../data/expert_review_20261119/README.md):** Added a 6-bucket `physical_scope` filter (`solution_conformational_exchange`, `association`, `crystal`, `simulation`, `other_experimental`, `unresolved`) that moves `PLEXINB1` `~90%` dimer and all `20` binding/oligomer kinetics rows into `association` while preserving genuine exchange (`16392` `1.05%` / `98 s-1`, `PLEXINB1` `T83` `Rex = 7.0 s-1`).
+2. **Fixed in lossless export:** Forced literal text storage (`data_type = 's'`) on every quote starting with `=`, verified across `openpyxl` and LibreOffice Calc roundtrips (`0` lost rows across all `7` raw sheets; `0` unverified multi-source claims).

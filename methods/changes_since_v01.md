@@ -14,8 +14,8 @@ stateDiagram-v2
 
     NovSweep --> Unified131: 19 Nov 2026 (Current draft)
     Unified131: Unified 131-Protein Atlas (ATLAS_131.md)
-    Unified131: Bugs fixed (Barstar, 5687, 9 method groups)
-    Unified131: 128/131 covered + 3 paywalled dossiers
+    Unified131: 12-tab clickable Expert Review Workbook
+    Unified131: Scope cleanup (28 association) & lossless quotes
 
     Unified131 --> GinaLock: Expert sign-off on 4 rules
     GinaLock --> Release02: Release 0.2 (locked next pass + PDB/BMRB scaling)
@@ -32,7 +32,7 @@ stateDiagram-v2
 | **Oct 22 meeting & Bindwell survey** | Team agreed to split source-grounded extraction from synthesis and adapt Bindwell's per-paper `rubric.json` benchmark. Surveys (`Oct 13-20`) compared Elicit, PaperQA2/3, Kosmos, OpenScholar, and Asta. | Established gold-key scoring, deterministic quote checks, and Step-1-only isolation for external retrieval tools. | Schema standardization and Gina's sign-off still waited. |
 | **Earlier wide candidate table** *(external workspace)* | `127` entries, `1,437` DOIs, `3,977` evidence rows. | Broad candidate intake testing open and citing literature. | Mixed `744` abstract-only DOIs with `full_text`; `219` of the `244` non-November full-text DOIs turned out to be October baseline papers. |
 | **Nov 18 raw extraction sweep** | `104` open entries (`752` DOIs, `771` records) extracted into a raw 9-tab workbook. | `85 / 86` core rates on 4 keyed papers (`102 / 102` Table 1 XML cells on arginine kinase); explicit `Gaps` and `States`. | Left the October baseline disconnected, dropped per-protein pages, and exposed `BARSTAR` condition misbinding, `5687` `'x'` collapse, and `85` free-text method strings. |
-| **Nov 19 Unified 131-Protein Draft** *(current branch)* | [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md) (`131` protein pages), rebuilt 10-tab workbook (`19,989` rows, `575` exchange highlights, `776` records / `757` DOIs), `REVIEW_GUIDE.md`, `walkthrough_ets1.md`, `4` deep case studies, automated consistency gate. | **Fixed** `BARSTAR` `S1`/`S2`, `5687` separation + read (`1P68`), `85 -> 9` controlled `method_group` + `4` `row_tier`, read OA entries `15451`, `5841`, `CMTIV`, and IscU `7432` (`+8` ZZ-exchange rows), bringing unified coverage to **`128 / 131` (`97.7%`)**. | `3` paywalled BMRB entries (`15795`, `18477`, `50734`), `336` Kosmos rows, `168` older un-reread records, Step 6 PDB/BMRB scaling beyond `10` CPMG entries, and Gina's sign-off on the 4 rules remain open. |
+| **Nov 19 Unified 131-Protein Draft** *(current branch)* | [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md) (`131` protein pages), [`data/expert_review_20261119/`](../data/expert_review_20261119/README.md) 12-tab clickable Expert Review Workbook (`Protein_overview -> Region_comparisons -> Observations -> Samples`, lossless `19,958 original` + `31 = 19,989` branch reconciliation), `REVIEW_GUIDE.md`, `walkthrough_ets1.md`, `4` deep case studies, automated consistency gate. | **Fixed** `BARSTAR` `S1_HyperW`/`S2_CLEANEX` split, `5687` separation + read (`1P68`), `PLEXINB1` + `20` binding/oligomer rows moved to `association`, leading-`=` quotes restored as literal text, same-lab series downgraded from multi-source claims, and OA reads (`15451`, `5841`, `CMTIV`, IscU `7432`) bringing unified coverage to **`128 / 131` (`97.7%`)**. | `3` paywalled BMRB entries (`15795`, `18477`, `50734`), `336` Kosmos rows, `168` older un-reread records, Step 6 PDB/BMRB scaling beyond `10` CPMG entries, and Gina's sign-off on the 4 rules remain open. |
 
 ---
 
