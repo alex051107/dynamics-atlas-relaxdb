@@ -1,40 +1,49 @@
 # Changes since Release 0.1 (`21 October -> 19 November 2026`)
 
-This page traces how Dynamics Atlas moved from **Release 0.1** (hand-curated alternate APO synthesis on `42` proteins), through our October 22 meeting with Gina and Soojung and a November 12 wide candidate table, to the **November 19 expert-review branch (`review/expert-check-20261119`)**.
+This page tracks how Dynamics Atlas evolved from **Release 0.1** (`42` hand-curated alternate APO proteins) to our **Unified 131-Protein Draft (`review/expert-check-20261119`)**, and what remains for Release `0.2` and `0.3`.
+
+```mermaid
+stateDiagram-v2
+    [*] --> R01: 21 Oct 2026
+    R01: Release 0.1 (42 proteins)
+    R01: Scientist synthesis + 10 CPMG PDB overlays
+
+    R01 --> V3Raw: 13-18 Nov 2026
+    V3Raw: v3 Paper Sweep (104 entries, 752 DOIs)
+    V3Raw: Strong quote checks, but disconnected from R0.1
+
+    V3Raw --> Unified131: 19 Nov 2026 (Current branch)
+    Unified131: Unified 131-Protein Atlas (ATLAS_131.md)
+    Unified131: Bugs fixed (BARSTAR, 5687, 9 method groups)
+    Unified131: 128/131 covered + 3 paywalled dossiers
+
+    Unified131 --> GinaLock: Expert sign-off on 4 rules
+    GinaLock --> R02: Release 0.2/0.3 (v4 sweep + PDB/BMRB for all 131)
+```
 
 ---
 
 ## 1. Chronology from collaborator meetings to today
 
-| Milestone | Scope & artifact | What improved | What regressed or remained undone |
+| Milestone | Scope & artifact | What improved | What regressed or remained open |
 |---|---|---|---|
-| **Sept 29 meeting & Slack notes** | Defined goal with Gina and Soojung (`10 CPMG -> 133 -> broader`), five required fields (residues, alternate states, experiments, timescale, % populations), and cross-method scope (CPMG/CEST, crystallography, FRET, EPR/DEER, MD). | Set clear scientist requirements and requested evidence + conflicts preserved per protein. | Left definition of alternate APO vs all-timescale dynamics open until pilot examples reached Gina. |
+| **Sept 29 meeting & Slack notes** | Defined goal with Gina and Soojung (`10 CPMG -> 133 -> broader`), five required fields (residues, alternate states, experiments, timescale, % populations), and cross-method scope (CPMG/CEST, crystallography, FRET, EPR/DEER, MD). | Set clear scientist requirements and requested evidence + conflicts preserved per protein. | Left alternate APO vs all-timescale boundaries open until pilot examples reached Gina. |
 | **Release 0.1 (`21 Oct 2026`)** | `42` RelaxDB proteins (`10` CPMG + `32` others): [`atlas/proteins/`](../atlas/README.md) (`13 yes, 18 possible, 11 unknown`), `data/*.csv`, `data/structures/` (`10` CPMG PDB overlays), raw BMRB checks (`data/relaxdb_data_issues.md`). | Produced scientist-first verdicts per protein, dual re-reads + adjudication, and structural state comparisons. | Covered `42 / 131` open proteins; slow to scale across dense multi-paper entries. |
-| **Oct 22 meeting & architecture / Bindwell survey** | Team agreed to split source-grounded observation extraction from reasoning (`Action items`), test NSF ACCESS open-weight budgets, and adapt Bindwell's per-paper `rubric.json` evaluation method. Surveys (`Oct 13–20`) compared Elicit, PaperQA2/3, Kosmos, OpenScholar, and Asta. | Established gold-key evaluation criteria, deterministic quote verification design, and Step-1-only isolation for external retrieval platforms. | Schema standardization and Gina's sign-off on the 10-protein examples still waited. |
-| **Nov 12 draft table** *(external workspace)* | `127` entries, `1,437` DOIs, `3,977` evidence rows. | Broad candidate intake testing what open/citing literature reported dynamics. | Mixed `744` abstract-only DOIs with `full_text`; `988` of these DOIs (`244` full text) have not yet entered our strict extraction pass. |
-| **Nov 18–19 expert checkpoint (`review/expert-check-20261119`)** | `104 / 131` open entries (`752` full-text DOIs, `771` records, `19,958` rows; `12` held-out entries excluded) plus `REVIEW_GUIDE.md`, `walkthrough_ets1.md`, `4` worked protein previews, `4` centered architecture/bug/statechart figures. | `85 / 86` core rates on 4 keyed papers (`102 / 102` Table 1 XML cells on arginine kinase); explicit `Gaps` (`944`) and `States` (`794`); honest exposure of 5 real bugs (`BARSTAR`, `CHEA`, `DBD82`, `16392`, coverage gaps). | Dropped per-protein synthesis at table scale (restored for 4 previews here); unchecked sample-condition binding (`Bug 1`); mid-run rule drift and `168` early un-reread records (`Bug 3`); `988` Nov-12 DOIs + `336` Kosmos rows + `23` unread entries still paused; **zero Gina review yet**. |
+| **Oct 22 meeting & Bindwell survey** | Team agreed to split source-grounded extraction from synthesis and adapt Bindwell's per-paper `rubric.json` benchmark. Surveys (`Oct 13-20`) compared Elicit, PaperQA2/3, Kosmos, OpenScholar, and Asta. | Established gold-key scoring, deterministic quote checks, and Step-1-only isolation for external retrieval tools. | Schema standardization and Gina's sign-off still waited. |
+| **Nov 12 draft table** *(external workspace)* | `127` entries, `1,437` DOIs, `3,977` evidence rows. | Broad candidate intake testing open and citing literature. | Mixed `744` abstract-only DOIs with `full_text`; `219` of the `244` non-`v3` full-text DOIs turned out to be Release `0.1` papers. |
+| **Nov 18 `v3` raw sweep** | `104` open entries (`752` DOIs, `771` records) extracted into a raw 9-tab workbook. | `85 / 86` core rates on 4 keyed papers (`102 / 102` Table 1 XML cells on arginine kinase); explicit `Gaps` and `States`. | Left Release `0.1` disconnected, dropped per-protein pages, and exposed `BARSTAR` condition misbinding, `5687` `'x'` collapse, and `85` free-text method strings. |
+| **Nov 19 Unified 131-Protein Draft** *(current branch)* | [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md) (`131` protein pages), rebuilt 10-tab workbook (`19,989` rows, `575` exchange highlights, `776` records / `757` DOIs), `REVIEW_GUIDE.md`, `walkthrough_ets1.md`, `4` worked previews, `check_review_consistency.py`. | **Fixed** `BARSTAR` `S1`/`S2`, `5687` separation + read (`1P68`), `85 -> 9` controlled `method_group` + `4` `row_tier`, read OA entries `15451`, `5841`, `CMTIV`, and IscU `7432` (`+8` ZZ-exchange rows), bringing unified coverage to **`128 / 131` (`97.7%`)**. | `3` paywalled BMRB entries (`15795`, `18477`, `50734`), `336` Kosmos rows, `168` early un-reread `v3` records, Step 6 PDB/BMRB scaling beyond `10` CPMG entries, and Gina's sign-off on the 4 rules remain open. |
 
 ---
 
-## 2. Summary of real gains vs regressions
+## 2. Gains locked in vs open work
 
 ### Gains we keep going into `v4`
-1. **Per-paper answer-key calibration.** Against 4 manually verified paper keys (`arginine kinase`, `CRABP2`, `p38 gamma`, `IscU`), the extractor recovered `85 / 86` core rates and populations with `0` ungrounded numbers, matching `102 / 102` numeric Table 1 cells of arginine kinase against PMC XML.
-2. **Explicit accounting of figure-only and SI gaps (`944` items).** Instead of quietly dropping unprintable plots, the `Gaps` tab names where missing data live (`Figures`, `BMRB`, unavailable SI).
-3. **Hard test-set isolation.** All `12` held-out evaluation entries are physically blocked before staging (`NoSealedEntryRead` proved in `WorkflowV3.tla`).
+1. **Per-paper answer-key calibration.** Against 4 manually verified keys (`arginine kinase`, `CRABP2`, `p38 gamma`, `IscU`), the extractor recovered `85 / 86` core rates and populations with `0` fabricated values (`102 / 102` arginine kinase Table 1 cells exact vs PMC XML).
+2. **Unified 131-protein atlas structure.** Every open RelaxDB protein now has one readable page in [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md) separating solution exchange (Section 1), bulk relaxation (Section 2), and MD/cryo-X-ray (Section 3).
+3. **Hard test-set isolation and automated consistency gates.** All `12` held-out entries stay physically blocked (`NoSealedEntryRead` proved in `WorkflowV3.tla`), and [`check_review_consistency.py`](check_review_consistency.py) blocks stale counts, broken links, path leaks, and malformed diagrams.
 
-### Regressions exposed and documented for Gina before scaling
-1. **Per-protein synthesis and structure/BMRB anchoring fell behind Step 3.** Release `0.1` delivered biological syntheses and `PDB` structure comparisons (`data/structures/`). The November sweep stopped at raw spreadsheet rows (`19,958`), so a single SI table (`1,879` rows in TEM-1) hides `4` Ω-loop CEST rows.
-2. **Sample-condition binding was not verified mechanically.** Substring checks cannot detect when two experiments (`BARSTAR` HyperW `~1.8% H2O` vs CLEANEX `90% H2O`) merge into one `sample` block (`Bug 1`).
-3. **Uncontrolled schema and mid-run drift.** Duplicate RelaxDB IDs (`CHEA` vs `CHEAYBD`), `'x'` placeholder collapse (`5687` onto `50332`), uncontrolled `method` strings (`md_simulation` vs `molecular_dynamics`, `FRET` vs `fret`, 4 `DEER` labels), and `168` early un-reread records leave cross-entry counts uneven (`Bug 2`, `Bug 3`).
-
----
-
-## 3. Four-step plan to Release `0.3` (after Gina's ruling)
-
-We intentionally paused reading the remaining `244` full-text DOIs and downloading the `336` Kosmos rows until Gina resolves [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md). Once settled:
-
-1. **Freeze `v4` contract and canonical IDs.** Index once per verified `UniProt` ID (preserving `domain` tags), close `method` and `scope` enums, enforce `1` condition per `sample` ID, and block placeholder `'x'`.
-2. **Enforce condition-binding checks in code.** Apply mixed-solvent / temperature / stoichiometry cross-checks across **all** records (retroactively scanning `B1–B3` too) and verify with planted condition-swap tests.
-3. **Close coverage debt with cheap triage first.** Filter clinical/imaging noise before full-text reading on the `244` unread full-text DOIs, download the `336`-row Kosmos package, re-run the `168` early records under the frozen contract, and reserve second-family reads for valued or borderline papers.
-4. **Restore Step 5 and Step 6 across all open entries.** Separate `PerResidueRelaxation` from `ExchangeProcesses`, align numbering to UniProt, generate per-protein syntheses matching [`CYPA_CPMG.md`](../atlas/proteins/CYPA_CPMG.md), and reconnect PDB ensemble comparisons and raw BMRB checks.
+### Remaining items gated on Gina's review
+1. **Upstream `v4` schema enforcement.** Lock Gina's 4 rules from [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md) into closed `method`/`scope` enums, mandatory single-condition sample splitting, and canonical UniProt indexing.
+2. **Close the final external literature backlog.** Fetch institutional PDFs for the `3` paywalled entries (`15795`, `18477`, `50734`), pull and triage the `336`-row Kosmos package, and re-read the `168` early `v3` records under the frozen `v4` schema.
+3. **Extend Step 6 (PDB overlays and raw BMRB checks).** Scale the Release `0.1` structural superposition (`data/structures/`) and BMRB residue-numbering checks from the `10` CPMG entries across all Tier 1 and Tier 2 proteins.

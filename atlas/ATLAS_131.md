@@ -1,6 +1,27 @@
 # Dynamics Atlas: Complete 131-Protein Directory (Unified Draft)
 
-Every open RelaxDB protein entry (`131 / 131`; `12` held-out benchmark entries remain excluded) now has a dedicated, evidence-grounded protein-level page in [`atlas/all_proteins/`](all_proteins/16392.md) unifying **Release `0.1` (`42` expert-reviewed proteins)**, **`v3` full-text extraction (`104` entries)**, and our **`2026-11-19` supplemental reads & bug fixes (`15451`, `5841`, `5687`, `CMTIV`, `7432`, and `BARSTAR` `S1`/`S2` split)**.
+Every open RelaxDB protein (`131 / 131`) now has a dedicated protein-level page in [`atlas/all_proteins/`](all_proteins/16392.md). The `12` held-out benchmark entries remain physically excluded. This directory unifies **Release `0.1` (`42` expert-reviewed proteins)**, **`v3` full-text extraction (`104` entries)**, and our **`2026-11-19` bug fixes and open-access reads (`15451`, `5841`, `5687`, `CMTIV`, `7432`, plus `BARSTAR` `S1`/`S2` split)**.
+
+```mermaid
+flowchart LR
+    Pool["143 RelaxDB Entries"] --> Sealed["12 Held-Out (Blocked)"]
+    Pool --> Open["131 Open Entries"]
+
+    Open --> Src1["108 entries: v3 + 19 Nov OA reads"]
+    Open --> Src2["17 entries: Release 0.1 expert pages"]
+    Open --> Src3["3 entries: Twin UniProt links"]
+    Open --> Src4["3 entries: Paywalled BMRB dossiers"]
+
+    Src1 --> Unified["131 Unified Protein Pages"]
+    Src2 --> Unified
+    Src3 --> Unified
+    Src4 --> Unified
+
+    Unified --> T1["Tier 1: 42 Exchange rates or pops"]
+    Unified --> T2["Tier 2: 57 Relaxation, HDX, DEER, FRET"]
+    Unified --> T3["Tier 3: 29 Regions, PDBs, R0.1 unknown, 0-row"]
+    Unified --> T4["Tier 4: 3 Paywalled BMRB abstracts"]
+```
 
 | Coverage summary | Entries | Notes |
 |---|---:|---|

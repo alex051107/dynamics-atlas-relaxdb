@@ -1,8 +1,21 @@
 # Bugs found in audit and how we fix them
 
-During our November 2026 audit of `771` checked extraction records across `131` open RelaxDB entries, we found five concrete failure modes. Every example below occurred on real papers and passed our basic verbatim-quote check without raising an error.
+During our November 2026 audit across `131` open RelaxDB entries, we found five concrete failure modes. Every failure below occurred on real papers and slipped past our verbatim-quote checker without raising an error.
 
-> **Status update (`19 November 2026`).** Concrete data-layer fixes for **Bug 1 (`BARSTAR` `S1`/`S2` split)**, **Bug 2 (`5687` `'x'` separation + read, twin UniProt cross-links in `ATLAS_131.md`)**, **Bug 3 (`85` raw methods mapped into `9` controlled `method_group` buckets + `4` `row_tier` classes)**, **Bug 4 (`Exchange_Highlights` tab + separated atlas sections)**, and **Bug 5 (reconciling `219/244` Nov-12 full-text DOIs with Release `0.1` + reading OA entries `15451`, `5841`, `5687`, `CMTIV`, and `7432` IscU PNAS 2011)** are now **applied and verified in this review branch** ([`supplemental_20261119.json`](../data/v3_draft_20261118/supplemental_reads/supplemental_20261119.json), `55 / 55` verbatim quotes checked). Schema-level `v4` enforcement rules remain queued pending Gina's sign-off on [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md).
+> **Status on 19 November 2026.** Concrete data-layer fixes for all five issues are now applied and verified in this branch ([`supplemental_20261119.json`](../data/v3_draft_20261118/supplemental_reads/supplemental_20261119.json), `55 / 55` verbatim quotes checked). `BARSTAR` `S1` is split into `S1` and `S2`. `5687` is separated from `50332` and read (`1P68`). All `85` raw method labels map cleanly into `9` controlled `method_group` buckets and `4` `row_tier` classes. `128 / 131` open entries now have full-text, Release `0.1`, or twin-UniProt coverage, with `131` unified protein pages in [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md). Upstream `v4` schema gates remain queued behind Gina's sign-off on [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md).
+
+## What current checks catch vs what slips through
+
+```mermaid
+flowchart LR
+    Paper["Full-text paper"] --> Extract["Per-paper extraction"]
+    Extract --> QCheck["Quote & table checker (776/776 PASS)"]
+    QCheck -->|Catches| Catch["Fabricated numbers & skipped tables"]
+    QCheck -->|Misses| Slip["Condition misbinding, duplicate IDs, method drift"]
+    Slip --> Fix19["19 Nov data fixes: BARSTAR S1/S2, 5687 read, 9 method groups, ATLAS_131"]
+    Fix19 --> Gate["check_review_consistency.py (PASS)"]
+    Gate --> V4["v4 schema gates after Gina signs off"]
+```
 
 ![Four real audit failures and the exact fixes planned for v4](../figures/known_bugs_and_fixes.png)
 
@@ -10,57 +23,56 @@ During our November 2026 audit of `771` checked extraction records across `131` 
 
 ## Bug 1. Sample-condition misbinding passes substring quote checks
 
-**Real failure.** In Barstar (`BARSTAR`, [`10.1021/jacs.0c00807`](https://doi.org/10.1021/jacs.0c00807), `PMC7304870`), the authors measured hyperpolarized-water (`HyperW`) HMQC at `50 °C` in buffered `D2O` (`pD 7`, resulting in `~1.8% H2O` after injection), lyophilized that sample to dryness, and reconstituted it in `90% H2O` (`pH 7`) for CLEANEX-PM amide exchange. Yet sample card `S1` collapsed both experiments into one row reading `pD 7 (HyperW, D2O); pH 7 (CLEANEX, ~1.8% H2O)`. A related weakness appeared in Ets-1 ([`walkthrough_ets1.md`](../atlas/walkthrough_ets1.md)), where `31 °C` backbone and `13 °C` arginine experiments shared one `temperature` field. Earlier in October, `~50` of `53` audited errors were similarly sample or condition misbindings. See [`atlas/v3_previews/16392_and_BARSTAR.md`](../atlas/v3_previews/16392_and_BARSTAR.md).
+**Real failure.** In Barstar (`BARSTAR`, [`10.1021/jacs.0c00807`](https://doi.org/10.1021/jacs.0c00807), `PMC7304870`), the authors measured HyperW HMQC at `50 °C` in `D2O` (`pD 7`, `~1.8% H2O` post-injection). They then lyophilized that sample and reconstituted it in `90% H2O` (`pH 7`) for CLEANEX-PM. Our original sample card `S1` merged both into one string (`pD 7 (HyperW, D2O); pH 7 (CLEANEX, ~1.8% H2O)`). A related issue appeared in Ets-1 ([`walkthrough_ets1.md`](../atlas/walkthrough_ets1.md)), where `31 °C` backbone and `13 °C` arginine experiments shared one `temperature` field.
 
-**Why current checks missed it.** Deterministic quote verification only checks whether quoted substrings appear inside the paper text. It does not test whether a solvent fraction, buffer, pH, temperature, or ligand stoichiometry belongs to the specific method row that points to it. Although an extra script caught `53` mixed-solvent / reconstitution warnings across the `305` Gemini papers, the earlier `466` Claude records never ran that scanner.
+**Why checks missed it.** Substring verification only tests whether quoted words exist in the paper. It does not check whether a solvent fraction, pH, temperature, or stoichiometry belongs to the specific method row pointing to it.
 
-**Planned fix and verification test.**
-1. Encode a hard rule in the next schema requiring **one experimental condition per `sample` ID** (splitting whenever `% H2O/% D2O`, `pH/pD`, temperature, salt, or ligand concentration changes).
-2. Run the mixed-solvent / reconstitution check across **all** batches, blocking merged dual-condition sample strings in code.
-3. Verify the gate using a planted condition-swap test (swapping `~1.8% H2O` onto `CLEANEX` must fail validation before the record can enter any table).
+**Fixed now (19 Nov) vs `v4` gate.**
+1. **Fixed in branch:** Split `BARSTAR` `10.1021/jacs.0c00807` into `S1` (HyperW, `pD 7`, `D2O -> ~1.8% H2O`) and `S2` (CLEANEX-PM, `pH 7`, `90% H2O`), backed by verbatim quotes from `PMC7304870`.
+2. **Queued for `v4`:** Require one experimental condition per `sample` ID in schema validation, run the mixed-solvent scanner across every batch, and test it with a planted condition-swap fixture.
 
 ---
 
 ## Bug 2. Duplicate RelaxDB entries and placeholder UniProt collapse
 
-**Real failure.** RelaxDB lists *E. coli* chemotaxis protein CheA (`P07363`) under two separate entry IDs, `CHEA` and `CHEAYBD` ([`CHEA_CHEAYBD.md`](../atlas/v3_previews/CHEA_CHEAYBD.md)). Seven overlapping papers extracted separately for both entries diverged sharply: on [`10.1073/pnas.2218467120`](https://doi.org/10.1073/pnas.2218467120), `CHEA` kept `11` HDX-MS rows while `CHEAYBD` kept `37`; on [`10.1007/s00723-018-1070-6`](https://doi.org/10.1007/s00723-018-1070-6), `CHEA` tagged *T. maritima* CheA as `homolog` while `CHEAYBD` tagged the same rows `same_protein_other_construct`; and the foundational `15N` linker dataset [`10.1021/bi951960e`](https://doi.org/10.1021/bi951960e) (`1,052` rows) sat only under `CHEA` while `CHEAYBD` missed it. Four more UniProt twin pairs exist (`BLAC_CPMG`/`27888`, `AQADK`/`AQADK_CPMG`, `ARGKIN`/`ARGKIN_CPMG`, `HTPDZ`/`HTPDZ_CPMG`). Worse, the workbook summary script grouped missing-UniProt placeholder string `'x'` as a real protein ID, falsely collapsing entry `5687` (`Four helix bundle`) onto `50332` (`Iron-compound ABC transporter`).
+**Real failure.** RelaxDB filed *E. coli* CheA (`P07363`) under two entries, `CHEA` and `CHEAYBD` ([`CHEA_CHEAYBD.md`](../atlas/v3_previews/CHEA_CHEAYBD.md)). Reading both separately produced `11` vs `37` HDX-MS rows on [`10.1073/pnas.2218467120`](https://doi.org/10.1073/pnas.2218467120) and conflicting `homolog` tags on [`10.1007/s00723-018-1070-6`](https://doi.org/10.1007/s00723-018-1070-6). The foundational `15N` linker study ([`10.1021/bi951960e`](https://doi.org/10.1021/bi951960e), `1,052` rows) sat only under `CHEA`. Worse, the original summary builder treated placeholder `'x'` as a real UniProt ID, falsely collapsing entry `5687` (`Four helix bundle`) onto `50332` (`Iron-compound ABC transporter`).
 
-**Why current checks missed it.** Extraction keyed files by `(entry, DOI)` rather than canonical `UniProt` accession, and table generation did not reject placeholder strings like `'x'`.
+**Why checks missed it.** Extraction keyed outputs by `(entry, DOI)` instead of verified `UniProt` accession, and the builder did not reject placeholder strings like `'x'`.
 
-**Planned fix and verification test.**
-1. Canonicalize all paper ingestion and synthesis by verified `UniProt` accession (verified via sequence identity, as in Release `0.1`), carrying RelaxDB's `entry` and domain (`DBD` vs `LBD`; `YBD` vs full `CheA`) as metadata columns rather than duplicate extraction targets.
-2. Add an explicit validator rejecting non-accession placeholders (`'x'`, blank, `'unknown'`) before summary grouping.
+**Fixed now (19 Nov) vs `v4` gate.**
+1. **Fixed in branch:** Separated `5687` from `50332`, read `5687`'s deposited paper (`10.1073/pnas.1835644100`, PDB `1P68`), and cross-linked every shared-UniProt pair (`CHEA`/`CHEAYBD` plus 6 other twin pairs) across `Proteins` and `atlas/all_proteins/`.
+2. **Queued for `v4`:** Index ingestion once per sequence-verified `UniProt` accession (carrying RelaxDB `entry` and `domain` as metadata) and block non-accession placeholders (`'x'`, blank) in code.
 
 ---
 
-## Bug 3. Uncontrolled method names, scope drift, and un-reread earlier records
+## Bug 3. Uncontrolled method names, scope drift, and un-reread early records
 
-**Real failure.** In Glucocorticoid receptor ([`DBD82.md`](../atlas/v3_previews/DBD82.md)), `19` raw rows span target rat `DBD` ZZ-exchange, human `LBD` CPMG dispersion, MD clusters, live-cell FCS diffusion (`ms`), EMSA DNA dissociation (`min`), and COS-1 cell FRET. Across the full workbook (`19,958` rows), `method` uses free-text strings (`md_simulation` `49`, `molecular_dynamics` `25`, `FRET` `10` vs `fret` `3`, `epr_deer` / `epr_deer_distance` / `deer_epr_distance` / `epr_distance_deer`, and three X-ray strings). Meanwhile, prompt rules on figure captions, approximate prose values, and conformational state PDBs shifted three times during batch reading (`67/108` edited during human reread, adding `~139` of `204` final states), while `168` early records (`78` source papers + `90` early PMC records) were never re-read under those updated rules.
+**Real failure.** In Glucocorticoid receptor ([`DBD82.md`](../atlas/v3_previews/DBD82.md)), `19` rows span rat `DBD` ZZ-exchange, human `LBD` CPMG dispersion, MD clusters, live-cell FCS (`ms`), EMSA DNA off-rates (`min`), and cell FRET. Across all `19,989` measurement rows, the raw `method` field carries `85` free-text variants (`md_simulation` vs `molecular_dynamics`, `FRET` vs `fret`, four `DEER` strings, three X-ray strings). Prompt rules also shifted mid-run (`67/108` edited during reread), leaving `168` earlier records (`78` source papers + `90` early PMC records) un-reread under newer state rules.
 
-**Why current checks missed it.** Schema validation checked field presence, not a closed controlled vocabulary for `method` or domain/mechanism scope.
+**Why checks missed it.** Schema checks verified non-empty strings instead of enforcing a closed enum for `method` and mechanism scope.
 
-**Planned fix and verification test.**
-1. Wait for Gina's ruling on [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md) (`Rank 1` and `Rank 2`), then encode an explicit `method` enum and scope enum into code validation (`ExperimentalDynamics` separated cleanly from `MD` and cellular/intermolecular `Auxiliary` kinetics).
-2. Freeze **one** specification before extraction starts and re-process the `168` older records under it.
+**Fixed now (19 Nov) vs `v4` gate.**
+1. **Fixed in branch:** Mapped all `85` raw `method` strings (with `0` unmapped) into `9` controlled `method_group` buckets and `4` `row_tier` classes across both Excel and all `131` protein pages, keeping MD and cryo-X-ray strictly separated in Section 3.
+2. **Queued for `v4`:** After Gina rules on `Rank 1` and `Rank 2`, freeze one closed `method` enum upstream and re-read the `168` early records under it.
 
 ---
 
 ## Bug 4. Massive bulk SI tables drown rare mechanistic exchange parameters
 
-**Real failure.** In TEM-1 β-lactamase (`16392`, [`16392_and_BARSTAR.md`](../atlas/v3_previews/16392_and_BARSTAR.md)), `1,879` per-residue SI spin-relaxation rows (`10.1021/bi060414q`, using construct numbering starting at `26` instead of Ambler numbering) represent `98.3%` of the protein's `1,912` rows, burying the `4` WT Ω-loop CEST rows (`1.05 ± 0.03%`, `kex = 98 ± 6 s−1`) and `13` `G238S` CPMG dispersion rows across `8` open/closed crystal structures.
+**Real failure.** In TEM-1 β-lactamase (`16392`, [`16392_and_BARSTAR.md`](../atlas/v3_previews/16392_and_BARSTAR.md)), one SI spin-relaxation table (`10.1021/bi060414q`) contributes `1,879` per-residue rows using construct numbering offset `+25` from Ambler numbering. Those baseline rows make up `98.3%` of the protein's `1,912` rows and visually bury the `4` WT Ω-loop CEST rows (`1.05 ± 0.03%`, `kex = 98 ± 6 s−1`) and `13` `G238S` CPMG dispersion rows.
 
-**Why current checks missed it.** Row-level checks treat every extracted row identically, without distinguishing dense per-residue baseline arrays from fitted slow-exchange kinetic models.
+**Why checks missed it.** Row-level checks treat every extracted row identically, without separating dense per-residue arrays from fitted exchange models.
 
-**Planned fix and verification test.**
-1. Separate `PerResidueRelaxation` (`R1/R2/NOE/S2/τe/Rex` per site) from `ExchangeProcesses` (`kex/kAB/pB/Δω` tied to conformational PDB states) and from `ProteinSummary` synthesis cards (restoring the Release `0.1` layout).
-2. Add residue-number mapping from construct numbering to canonical UniProt sequence positions, plus BMRB numerical cross-checks as implemented for the `10` CPMG entries in `0.1`.
+**Fixed now (19 Nov) vs `v4` gate.**
+1. **Fixed in branch:** Added `Exchange_Highlights` (`575` rows across `38` proteins) right after `Proteins` in the workbook, and separated `Experimental conformational exchange` (Section 1) from aggregated bulk relaxation summaries (Section 2) on all `131` protein pages.
+2. **Queued for `v4`:** Add canonical UniProt residue-number alignment and BMRB numerical cross-checks across all open entries.
 
 ---
 
-## Bug 5. Incomplete paper coverage and blind-check prevalence bias
+## Bug 5. Disconnected coverage accounting and blind-check prevalence bias
 
-**Real failure.** Across `131` open entries, `23` (`22` unread + `5687` `'x'` bug) have `0` papers read in the `v3` sweep, `988` DOIs from our November 12 candidate table (`244` marked full text, `205` with open PMC links) remain unread under the strict schema, and `336` Kosmos-reported full-text rows (`321` matched abstract-only candidates locally) remain undownloaded. Furthermore, `96.7%` (`295/305`) of the latest batch contained `0` in-scope numeric rows, meaning raw agreement metrics appear artificially high even though all `4` blind disagreements occurred inside the rare non-NMR valued subset (`DBD82`).
+**Real failure.** Before November 19, `v3` and Release `0.1` sat in disconnected silos. That split hid the fact that `14` entries and `219` of the `244` Nov-12 full-text DOIs were already curated in Release `0.1`, leaving only `7` truly untouched entries. Meanwhile, `96.7%` (`295/305`) of the Gemini batch printed zero numeric rows, so raw agreement hid the fact that all `4` blind disagreements landed in the small valued non-NMR subset (`DBD82`).
 
-**Planned fix and verification test.**
-1. Run a low-cost triage gate first to exclude clinical/cell/non-target papers before running full extraction on the unread `244` full-text DOIs and Kosmos package.
-2. Report prevalence-adjusted agreement (`valuated-paper recall`, condition-binding error rate, and Gwet's `AC1`) separately on valued vs zero-row strata in [`quality.md`](quality.md).
+**Fixed now (19 Nov) vs `v4` gate.**
+1. **Fixed in branch:** Reconciled Release `0.1` with `v3`, read the `4` open-access untouched entries (`15451`, `5841`, `5687`, `CMTIV`) plus IscU `PNAS 2011` (`7432`), and logged BMRB/PubMed dossiers for the only `3` remaining paywalled entries (`15795`, `18477`, `50734`). Unified coverage is now `128 / 131` (`97.7%`).
+2. **Queued for `v4`:** Triage clinical/imaging noise before reading the `336`-row Kosmos package, pull institutional PDFs for the `3` paywalled entries, and report prevalence-adjusted agreement (`valuated-paper recall` and Gwet's `AC1`) separately on valued vs zero-row strata in [`quality.md`](quality.md).
