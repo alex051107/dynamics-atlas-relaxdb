@@ -1,13 +1,13 @@
 # Dynamics Atlas: Complete 131-Protein Directory (Unified Draft)
 
-Every open RelaxDB protein (`131 / 131`) now has a dedicated protein-level page in [`atlas/all_proteins/`](all_proteins/16392.md). The `12` held-out benchmark entries remain physically excluded. This directory unifies **Release `0.1` (`42` expert-reviewed proteins)**, **`v3` full-text extraction (`104` entries)**, and our **`2026-11-19` bug fixes and open-access reads (`15451`, `5841`, `5687`, `CMTIV`, `7432`, plus `BARSTAR` `S1`/`S2` split)**.
+Every open RelaxDB protein (`131 / 131`) now has a dedicated protein-level page in [`atlas/all_proteins/`](all_proteins/16392.md). The `12` held-out benchmark entries remain physically excluded. This directory unifies **Release `0.1` (`42` expert-reviewed proteins)**, **November full-text extraction (`104` entries)**, and our **`2026-11-19` bug fixes and open-access reads (`15451`, `5841`, `5687`, `CMTIV`, `7432`, plus `BARSTAR` `S1`/`S2` split)**.
 
 ```mermaid
 flowchart LR
     Pool["143 RelaxDB Entries"] --> Sealed["12 Held-Out (Blocked)"]
     Pool --> Open["131 Open Entries"]
 
-    Open --> Src1["108 entries: v3 + 19 Nov OA reads"]
+    Open --> Src1["108 entries: Nov + 19 Nov OA reads"]
     Open --> Src2["17 entries: Release 0.1 expert pages"]
     Open --> Src3["3 entries: Twin UniProt links"]
     Open --> Src4["3 entries: Paywalled BMRB dossiers"]
@@ -33,7 +33,7 @@ flowchart LR
 
 ## Tier 1. Experimental conformational exchange rates or populations
 
-| Entry | Protein | UniProt | Release 0.1 | v3 papers | Exch. rows | Total rows | PDBs | Notes |
+| Entry | Protein | UniProt | Release 0.1 | Nov papers | Exch. rows | Total rows | PDBs | Notes |
 |---|---|---|---|---:|---:|---:|---:|---|
 | [`ARGKIN`](all_proteins/ARGKIN.md) | Arginine Kinase | `P51541` |  | 1 | 131 | 162 | 1 | Twin UniProt P51541 (Release 0.1 page under ARGKIN_CPMG) |
 | [`AQADK_CPMG`](all_proteins/AQADK_CPMG.md) | AqAdK | `O66490` | [`possible`](proteins/AQADK_CPMG.md) | 1 | 63 | 65 | 2 | Twin UniProt O66490 (shared with AQADK) |
@@ -70,9 +70,9 @@ flowchart LR
 | [`EGLC`](all_proteins/EGLC.md) | Eglin C | `P01051` |  | 3 | 1 | 18 | 1 |  |
 | [`ISDHN2`](all_proteins/ISDHN2.md) | Iron-regulated surface determinant pro | `Q2FG07` |  | 5 | 1 | 8 | 3 |  |
 | [`4762`](all_proteins/4762.md) | Nitrogen regulation protein (NtrC) | `P41789` | [`yes`](proteins/4762.md) | 0 | 0 | 0 | 0 |  |
-| [`ARGKIN_CPMG`](all_proteins/ARGKIN_CPMG.md) | Arginine Kinase | `P51541` | [`yes`](proteins/ARGKIN_CPMG.md) | 0 | 0 | 0 | 0 | Twin UniProt P51541 (Release 0.1 page; v3 read under ARGKIN) |
+| [`ARGKIN_CPMG`](all_proteins/ARGKIN_CPMG.md) | Arginine Kinase | `P51541` | [`yes`](proteins/ARGKIN_CPMG.md) | 0 | 0 | 0 | 0 | Twin UniProt P51541 (Release 0.1 page; Nov read under ARGKIN) |
 | [`BLVRB_CPMG`](all_proteins/BLVRB_CPMG.md) | BLVRB | `P30043` | [`yes`](proteins/BLVRB_CPMG.md) | 0 | 0 | 0 | 0 |  |
-| [`HTPDZ_CPMG`](all_proteins/HTPDZ_CPMG.md) | Serine protease HTRA2, mitochondrial | `O43464` | [`yes`](proteins/HTPDZ_CPMG.md) | 0 | 0 | 0 | 0 | Twin UniProt O43464 (Release 0.1 page; v3 read under HTPDZ) |
+| [`HTPDZ_CPMG`](all_proteins/HTPDZ_CPMG.md) | Serine protease HTRA2, mitochondrial | `O43464` | [`yes`](proteins/HTPDZ_CPMG.md) | 0 | 0 | 0 | 0 | Twin UniProt O43464 (Release 0.1 page; Nov read under HTPDZ) |
 | [`KRAS_CPMG`](all_proteins/KRAS_CPMG.md) | K-Ras4B | `P01116` | [`yes`](proteins/KRAS_CPMG.md) | 0 | 0 | 0 | 0 |  |
 | [`RFAHTD`](all_proteins/RFAHTD.md) | Transcription antitermination protein  | `P0AFW0` | [`yes`](proteins/RFAHTD.md) | 0 | 0 | 0 | 0 |  |
 | [`RNASE_CPMG`](all_proteins/RNASE_CPMG.md) | RNase A | `P61824` | [`yes`](proteins/RNASE_CPMG.md) | 0 | 0 | 0 | 0 |  |
@@ -80,7 +80,7 @@ flowchart LR
 
 ## Tier 2. Quantitative relaxation, HDX, DEER, FRET, or exchange detected
 
-| Entry | Protein | UniProt | Release 0.1 | v3 papers | Exch. rows | Total rows | PDBs | Notes |
+| Entry | Protein | UniProt | Release 0.1 | Nov papers | Exch. rows | Total rows | PDBs | Notes |
 |---|---|---|---|---:|---:|---:|---:|---|
 | [`6838`](all_proteins/6838.md) | Beta-lactamase PSE-4 | `P16897` | [`possible`](proteins/6838.md) | 1 | 0 | 3024 | 0 |  |
 | [`VCPTH`](all_proteins/VCPTH.md) | Peptidyl-tRNA hydrolase | `P0A7D1` | [`possible`](proteins/VCPTH.md) | 1 | 0 | 1310 | 3 |  |
@@ -133,7 +133,7 @@ flowchart LR
 | [`ACRIIA4`](all_proteins/ACRIIA4.md) | anti-CRISPR protein AcrIIA4 | `A0A247D711` |  | 4 | 0 | 1 | 3 |  |
 | [`MIA40`](all_proteins/MIA40.md) | Mitochondrial intermembrane space impo | `Q8N4Q1` | [`unknown`](proteins/MIA40.md) | 1 | 0 | 1 | 1 |  |
 | [`15521`](all_proteins/15521.md) | Thyroid TF 1 Homeodomain | `P23441` | [`possible`](proteins/15521.md) | 0 | 0 | 0 | 0 |  |
-| [`BLAC_CPMG`](all_proteins/BLAC_CPMG.md) | BLAC | `P9WKD3` | [`possible`](proteins/BLAC_CPMG.md) | 0 | 0 | 0 | 0 | Twin UniProt P9WKD3 (Release 0.1 page; v3 read under 27888) |
+| [`BLAC_CPMG`](all_proteins/BLAC_CPMG.md) | BLAC | `P9WKD3` | [`possible`](proteins/BLAC_CPMG.md) | 0 | 0 | 0 | 0 | Twin UniProt P9WKD3 (Release 0.1 page; Nov read under 27888) |
 | [`CHEY_CPMG`](all_proteins/CHEY_CPMG.md) | CheY | `P0AE67` | [`possible`](proteins/CHEY_CPMG.md) | 0 | 0 | 0 | 0 |  |
 | [`CXCL8`](all_proteins/CXCL8.md) | Interleukin-8 | `P10145` | [`possible`](proteins/CXCL8.md) | 0 | 0 | 0 | 0 |  |
 | [`REV1CT`](all_proteins/REV1CT.md) | DNA repair protein REV1 | `Q9UBZ9` | [`possible`](proteins/REV1CT.md) | 0 | 0 | 0 | 0 |  |
@@ -142,7 +142,7 @@ flowchart LR
 
 ## Tier 3. Qualitative dynamic regions, PDB states, Release 0.1 unknown, twin links, or 0-numeric full text
 
-| Entry | Protein | UniProt | Release 0.1 | v3 papers | Exch. rows | Total rows | PDBs | Notes |
+| Entry | Protein | UniProt | Release 0.1 | Nov papers | Exch. rows | Total rows | PDBs | Notes |
 |---|---|---|---|---:|---:|---:|---:|---|
 | [`ORC2WH`](all_proteins/ORC2WH.md) | Origin recognition complex subunit 2 | `Q13416` |  | 4 | 0 | 2 | 3 |  |
 | [`17018`](all_proteins/17018.md) | Death-associated protein 6 | `Q4VX54` |  | 14 | 0 | 0 | 6 |  |
@@ -161,7 +161,7 @@ flowchart LR
 | [`5154`](all_proteins/5154.md) | Metalloproteinase inhibitor 1 | `P01033` |  | 8 | 0 | 0 | 2 |  |
 | [`5687`](all_proteins/5687.md) | Four helix bundle | `x` |  | 1 | 0 | 0 | 1 | FIXED 2026-11-19: separated from 50332 ('x' bug) & read PNAS 2003 (1P68) |
 | [`A3VI`](all_proteins/A3VI.md) | Collagen alpha-3(VI) chain | `P12111` |  | 7 | 0 | 0 | 0 |  |
-| [`AQADK`](all_proteins/AQADK.md) | Adenylate kinase | `O66490` |  | 0 | 0 | 0 | 0 | Twin UniProt O66490 covered under AQADK_CPMG (Release 0.1 + v3) |
+| [`AQADK`](all_proteins/AQADK.md) | Adenylate kinase | `O66490` |  | 0 | 0 | 0 | 0 | Twin UniProt O66490 covered under AQADK_CPMG (Release 0.1 + Nov) |
 | [`BLOT5`](all_proteins/BLOT5.md) | Mite allergen Blo t 5 | `O96870` |  | 3 | 0 | 0 | 0 |  |
 | [`CIN1D1`](all_proteins/CIN1D1.md) | Cellophane-induced protein 1, domain 1 | `A8W3P3` | [`unknown`](proteins/CIN1D1.md) | 0 | 0 | 0 | 0 |  |
 | [`CIN1D2`](all_proteins/CIN1D2.md) | Cellophane-induced protein 1, domain 2 | `A8W3P3` |  | 0 | 0 | 0 | 0 | Twin UniProt A8W3P3 covered under CIN1D1 (Release 0.1) |
@@ -176,7 +176,7 @@ flowchart LR
 
 ## Tier 4. Paywalled BMRB source papers (3 entries)
 
-| Entry | Protein | UniProt | Release 0.1 | v3 papers | Exch. rows | Total rows | PDBs | Notes |
+| Entry | Protein | UniProt | Release 0.1 | Nov papers | Exch. rows | Total rows | PDBs | Notes |
 |---|---|---|---|---:|---:|---:|---:|---|
 | [`15795`](all_proteins/15795.md) | MBF1 of Trichoderma reesei | `G0RLX7` |  | 0 | 0 | 0 | 0 | Paywalled BMRB source (doi:10.1002/prot.22344, PMID 19137618); dossier logg |
 | [`18477`](all_proteins/18477.md) | Dolichyl-phosphooligosaccharide-protei | `O30195` |  | 0 | 0 | 0 | 0 | Paywalled BMRB source (doi:10.1016/j.str.2012.10.011, PMID 23177926); abstr |

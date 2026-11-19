@@ -1,10 +1,10 @@
 # Expert review guide (15 minutes)
 
-This guide is for NMR specialist review before we run our `v4` schema sweep. Release `0.1` (`42` proteins) had dual review, while all new `v3` extraction rows still need expert sign-off. We already fixed the concrete data bugs we found (`BARSTAR` sample split, `5687` ID fix, controlled method groups, and building all `131` protein pages in [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)). Now we need your ruling on two things: whether our extraction logic is sound, and how to settle four scientific boundary rules.
+This guide is for NMR specialist review before we run our next full literature pass. The October baseline (`42` proteins on `main`) had dual review, while all new November rows still need expert sign-off. We already fixed the concrete data bugs we caught (`BARSTAR` sample split, `5687` ID fix, controlled method groups, and building all `131` protein pages in [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)). Now we need your ruling on two questions: whether our paper-reading logic is sound, and how to settle four scientific boundary rules.
 
 ---
 
-## How your 4 decisions unlock `v4`
+## How your 4 decisions unlock the next pass
 
 ```mermaid
 flowchart TD
@@ -12,8 +12,8 @@ flowchart TD
     Q1 --> Q2["Rank 2: FKBP 100 K crystal and MD populations"]
     Q2 --> Q3["Rank 3: BARSTAR and Ets-1 sample-splitting rule"]
     Q3 --> Q4["Rank 4: CheA UniProt merge + TEM-1 bulk table split"]
-    Q4 --> Lock["Lock v4 schema enums and hard validators"]
-    Lock --> Finish["Close 3 paywalled PDFs + 336 Kosmos + 168 early re-reads"]
+    Q4 --> Lock["Lock automated checks and closed method list"]
+    Lock --> Finish["Close 3 paywalled PDFs + 336 Kosmos + 168 older re-reads"]
     Finish --> R02["Promote unified 131-protein Atlas to Release 0.2"]
 ```
 
@@ -28,7 +28,7 @@ After our October 22 meeting, we split **source-grounded extraction** from **pro
 3. Send stratified subsets to an independent second model family (`Claude`, `GPT`, or `Gemini`) to catch missed values and boundary disputes.
 4. Synthesize verified paper records into one page per protein ([`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)) linked to deposited PDB structures and raw BMRB tables.
 
-**Where automated checks stop.** Deterministic checks catch fabricated numbers and dropped tables (`776 / 776` records pass). They do **not** catch physical attribution errors when both strings appear in the same paper. For example, our earlier Barstar record merged HyperW NMR (`pD 7, ~1.8% H2O`) with CLEANEX NMR (`pH 7, 90% H2O`) into one sample card `S1`. We fixed that Barstar record on November 19, and [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md) documents all five failure classes along with the code gates planned for `v4`.
+**Where automated checks stop.** Deterministic checks catch fabricated numbers and dropped tables (`776 / 776` records pass). They do **not** catch physical attribution errors when both strings appear in the same paper. For example, our earlier Barstar record merged HyperW NMR (`pD 7, ~1.8% H2O`) with CLEANEX NMR (`pH 7, 90% H2O`) into one sample card `S1`. We fixed that Barstar record on November 19, and [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md) lists all five failure classes alongside the automated gates planned for the next pass.
 
 **Question 1 for you.** Does reading one paper at a time into separated `samples`, `measurements`, `states`, `residue sets`, and `gaps`, followed by second-model spot checks, match how you would audit automated extraction? What single physical safeguard are we still missing?
 
@@ -36,7 +36,7 @@ After our October 22 meeting, we split **source-grounded extraction** from **pro
 
 ## 2. Check one full paper from text to table
 
-Before judging aggregate tables, inspect one complete paper end to end to check whether any step misreads the science.
+Before judging aggregate tables, inspect one complete paper end to end to verify whether any step misreads the science.
 
 ![Walkthrough of murine Ets-1 paper from full text to audited record](figures/single_paper_walkthrough.png)
 
@@ -50,7 +50,7 @@ Open **[`atlas/walkthrough_ets1.md`](atlas/walkthrough_ets1.md)** (murine Ets-1,
 
 ## 3. Judge four worked protein cases (ranked from most uncertain to clearest)
 
-All `131` open proteins now have individual pages in [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md), and the workbook holds `19,989` lossless rows (`575` exchange highlights). Below are the 4 deep worked cases ([`atlas/v3_previews/`](atlas/v3_previews/README.md)) ordered by how uncertain we are about the right scientific rule.
+All `131` open proteins now have individual pages in [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md), and the workbook holds `19,989` lossless rows (`575` exchange highlights). Below are the 4 deep case studies ([`atlas/v3_previews/`](atlas/v3_previews/README.md)) ordered by how uncertain we are about the right scientific rule.
 
 ### Rank 1 (most uncertain). Domain and method boundaries in [`DBD82.md`](atlas/v3_previews/DBD82.md)
 
@@ -70,15 +70,15 @@ Human FKBP12 (`30` papers, `391` raw rows) spans five measurement types. Solutio
 
 In Barstar (`10.1021/jacs.0c00807`), the authors ran HyperW NMR at `50 °C` in `pD 7` (`~1.8% H2O` post-injection), lyophilized the sample, and dissolved it in `90% H2O` (`pH 7`) for CLEANEX. Our original sample card blended both experiments into `S1`. We split `S1` into `S1` (HyperW) and `S2` (CLEANEX) on November 19.
 
-**What we ask you.** Confirm that our `v4` schema should require a separate `sample` record whenever solvent isotopic composition (`% H2O` vs `% D2O`), `pH/pD`, temperature, or ligand ratio changes between measurements.
+**What we ask you.** Confirm that our next pass should enforce a separate `sample` record whenever solvent isotopic composition (`% H2O` vs `% D2O`), `pH/pD`, temperature, or ligand ratio changes between measurements.
 
 ### Rank 4 (layout and deduplication choice). Duplicate entries and bulk SI tables
 
-- **Duplicate entries ([`CHEA_CHEAYBD.md`](atlas/v3_previews/CHEA_CHEAYBD.md)).** RelaxDB filed *E. coli* CheA (`P07363`) under both `CHEA` and `CHEAYBD`. Extracting both separately caused `11` vs `37` row divergence on the same HDX-MS paper, conflicting `homolog` tags, and missing backbone data (`1,052` rows in `CHEA` absent from `CHEAYBD`). Six other UniProt pairs exist across the dataset. Confirm indexing `v4` once per canonical `UniProt` ID while preserving domain tags.
+- **Duplicate entries ([`CHEA_CHEAYBD.md`](atlas/v3_previews/CHEA_CHEAYBD.md)).** RelaxDB filed *E. coli* CheA (`P07363`) under both `CHEA` and `CHEAYBD`. Extracting both separately caused `11` vs `37` row divergence on the same HDX-MS paper, conflicting `homolog` tags, and missing backbone data (`1,052` rows in `CHEA` absent from `CHEAYBD`). Six other UniProt pairs exist across the dataset. Confirm indexing future passes once per canonical `UniProt` ID while preserving domain tags.
 - **Bulk relaxation vs exchange kinetics ([`16392_and_BARSTAR.md`](atlas/v3_previews/16392_and_BARSTAR.md), Part A).** In TEM-1 (`16392`), `1,879` per-residue SI spin-relaxation rows (offset `+25` from Ambler numbering) visually bury `4` Ω-loop CEST rows (`1.05%, 98 s−1`) and `13` `G238S` CPMG dispersion rows. We already separated them in `Exchange_Highlights` and `ATLAS_131.md`. Confirm keeping bulk per-residue `R1/R2/NOE/S2` lists separate from mechanistic exchange tables in future releases.
 
 ---
 
 ## Supporting architecture and bug records
 
-For our 7-step architecture and comparison with Bindwell, Elicit, and PaperQA/Kosmos, read [`methods/how_it_is_built.md`](methods/how_it_is_built.md). For concrete failure modes already fixed vs queued for `v4`, read [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md).
+For our 7-step workflow and comparison with Bindwell, Elicit, and PaperQA/Kosmos, read [`methods/how_it_is_built.md`](methods/how_it_is_built.md). For concrete failure modes already fixed vs queued for the next pass, read [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md).

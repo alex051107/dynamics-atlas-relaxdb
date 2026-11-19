@@ -2,7 +2,7 @@
 
 During our November 2026 audit across `131` open RelaxDB entries, we found five concrete failure modes. Every failure below occurred on real papers and slipped past our verbatim-quote checker without raising an error.
 
-> **Status on 19 November 2026.** Concrete data-layer fixes for all five issues are now applied and verified in this branch ([`supplemental_20261119.json`](../data/v3_draft_20261118/supplemental_reads/supplemental_20261119.json), `55 / 55` verbatim quotes checked). `BARSTAR` `S1` is split into `S1` and `S2`. `5687` is separated from `50332` and read (`1P68`). All `85` raw method labels map cleanly into `9` controlled `method_group` buckets and `4` `row_tier` classes. `128 / 131` open entries now have full-text, Release `0.1`, or twin-UniProt coverage, with `131` unified protein pages in [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md). Upstream `v4` schema gates remain queued behind Gina's sign-off on [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md).
+> **Status on 19 November 2026.** Concrete data-layer fixes for all five issues are now applied and verified in this branch ([`supplemental_20261119.json`](../data/v3_draft_20261118/supplemental_reads/supplemental_20261119.json), `55 / 55` verbatim quotes checked). `BARSTAR` `S1` is split into `S1` and `S2`. `5687` is separated from `50332` and read (`1P68`). All `85` raw method labels map cleanly into `9` controlled `method_group` buckets and `4` `row_tier` classes. `128 / 131` open entries now have full-text, October baseline, or twin-UniProt coverage, with `131` unified protein pages in [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md). Upstream automated gates for the next extraction pass remain queued behind Gina's sign-off on [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md).
 
 ## What current checks catch vs what slips through
 
@@ -13,11 +13,11 @@ flowchart LR
     QCheck -->|Catches| Catch["Fabricated numbers & skipped tables"]
     QCheck -->|Misses| Slip["Condition misbinding, duplicate IDs, method drift"]
     Slip --> Fix19["19 Nov data fixes: BARSTAR S1/S2, 5687 read, 9 method groups, ATLAS_131"]
-    Fix19 --> Gate["check_review_consistency.py (PASS)"]
-    Gate --> V4["v4 schema gates after Gina signs off"]
+    Fix19 --> Gate["Automated consistency & clarity gate (PASS)"]
+    Gate --> NextPass["Locked upstream gates after Gina signs off"]
 ```
 
-![Four real audit failures and the exact fixes planned for v4](../figures/known_bugs_and_fixes.png)
+![Four real audit failures and the exact fixes planned for the next pass](../figures/known_bugs_and_fixes.png)
 
 ---
 
@@ -27,9 +27,9 @@ flowchart LR
 
 **Why checks missed it.** Substring verification only tests whether quoted words exist in the paper. It does not check whether a solvent fraction, pH, temperature, or stoichiometry belongs to the specific method row pointing to it.
 
-**Fixed now (19 Nov) vs `v4` gate.**
+**Fixed now (19 Nov) vs next-pass gate.**
 1. **Fixed in branch:** Split `BARSTAR` `10.1021/jacs.0c00807` into `S1` (HyperW, `pD 7`, `D2O -> ~1.8% H2O`) and `S2` (CLEANEX-PM, `pH 7`, `90% H2O`), backed by verbatim quotes from `PMC7304870`.
-2. **Queued for `v4`:** Require one experimental condition per `sample` ID in schema validation, run the mixed-solvent scanner across every batch, and test it with a planted condition-swap fixture.
+2. **Queued for next pass:** Require one experimental condition per `sample` ID in schema validation, run the mixed-solvent scanner across every paper, and test it with a planted condition-swap fixture.
 
 ---
 
@@ -39,21 +39,21 @@ flowchart LR
 
 **Why checks missed it.** Extraction keyed outputs by `(entry, DOI)` instead of verified `UniProt` accession, and the builder did not reject placeholder strings like `'x'`.
 
-**Fixed now (19 Nov) vs `v4` gate.**
+**Fixed now (19 Nov) vs next-pass gate.**
 1. **Fixed in branch:** Separated `5687` from `50332`, read `5687`'s deposited paper (`10.1073/pnas.1835644100`, PDB `1P68`), and cross-linked every shared-UniProt pair (`CHEA`/`CHEAYBD` plus 6 other twin pairs) across `Proteins` and `atlas/all_proteins/`.
-2. **Queued for `v4`:** Index ingestion once per sequence-verified `UniProt` accession (carrying RelaxDB `entry` and `domain` as metadata) and block non-accession placeholders (`'x'`, blank) in code.
+2. **Queued for next pass:** Index ingestion once per sequence-verified `UniProt` accession (carrying RelaxDB `entry` and `domain` as metadata) and block non-accession placeholders (`'x'`, blank) in code.
 
 ---
 
-## Bug 3. Uncontrolled method names, scope drift, and un-reread early records
+## Bug 3. Uncontrolled method names, scope drift, and un-reread older records
 
-**Real failure.** In Glucocorticoid receptor ([`DBD82.md`](../atlas/v3_previews/DBD82.md)), `19` rows span rat `DBD` ZZ-exchange, human `LBD` CPMG dispersion, MD clusters, live-cell FCS (`ms`), EMSA DNA off-rates (`min`), and cell FRET. Across all `19,989` measurement rows, the raw `method` field carries `85` free-text variants (`md_simulation` vs `molecular_dynamics`, `FRET` vs `fret`, four `DEER` strings, three X-ray strings). Prompt rules also shifted mid-run (`67/108` edited during reread), leaving `168` earlier records (`78` source papers + `90` early PMC records) un-reread under newer state rules.
+**Real failure.** In Glucocorticoid receptor ([`DBD82.md`](../atlas/v3_previews/DBD82.md)), `19` rows span rat `DBD` ZZ-exchange, human `LBD` CPMG dispersion, MD clusters, live-cell FCS (`ms`), EMSA DNA off-rates (`min`), and cell FRET. Across all `19,989` measurement rows, the raw `method` field carries `85` free-text variants (`md_simulation` vs `molecular_dynamics`, `FRET` vs `fret`, four `DEER` strings, three X-ray strings). Prompt rules also shifted mid-run (`67/108` edited during reread), leaving `168` older paper records (`78` source papers + `90` early PMC records) un-reread under newer state rules.
 
 **Why checks missed it.** Schema checks verified non-empty strings instead of enforcing a closed enum for `method` and mechanism scope.
 
-**Fixed now (19 Nov) vs `v4` gate.**
+**Fixed now (19 Nov) vs next-pass gate.**
 1. **Fixed in branch:** Mapped all `85` raw `method` strings (with `0` unmapped) into `9` controlled `method_group` buckets and `4` `row_tier` classes across both Excel and all `131` protein pages, keeping MD and cryo-X-ray strictly separated in Section 3.
-2. **Queued for `v4`:** After Gina rules on `Rank 1` and `Rank 2`, freeze one closed `method` enum upstream and re-read the `168` early records under it.
+2. **Queued for next pass:** After Gina rules on `Rank 1` and `Rank 2`, freeze one closed `method` list upstream and re-read the `168` older records under it.
 
 ---
 
@@ -63,16 +63,16 @@ flowchart LR
 
 **Why checks missed it.** Row-level checks treat every extracted row identically, without separating dense per-residue arrays from fitted exchange models.
 
-**Fixed now (19 Nov) vs `v4` gate.**
+**Fixed now (19 Nov) vs next-pass gate.**
 1. **Fixed in branch:** Added `Exchange_Highlights` (`575` rows across `38` proteins) right after `Proteins` in the workbook, and separated `Experimental conformational exchange` (Section 1) from aggregated bulk relaxation summaries (Section 2) on all `131` protein pages.
-2. **Queued for `v4`:** Add canonical UniProt residue-number alignment and BMRB numerical cross-checks across all open entries.
+2. **Queued for next pass:** Add canonical UniProt residue-number alignment and BMRB numerical cross-checks across all open entries.
 
 ---
 
 ## Bug 5. Disconnected coverage accounting and blind-check prevalence bias
 
-**Real failure.** Before November 19, `v3` and Release `0.1` sat in disconnected silos. That split hid the fact that `14` entries and `219` of the `244` Nov-12 full-text DOIs were already curated in Release `0.1`, leaving only `7` truly untouched entries. Meanwhile, `96.7%` (`295/305`) of the Gemini batch printed zero numeric rows, so raw agreement hid the fact that all `4` blind disagreements landed in the small valued non-NMR subset (`DBD82`).
+**Real failure.** Before November 19, our November extraction and our October baseline sat in disconnected silos. That split hid the fact that `14` entries and `219` of the `244` earlier full-text DOIs were already curated in the October baseline, leaving only `7` truly untouched entries. Meanwhile, `96.7%` (`295/305`) of the Gemini pass printed zero numeric rows, so raw agreement hid the fact that all `4` blind disagreements landed in the small valued non-NMR subset (`DBD82`).
 
-**Fixed now (19 Nov) vs `v4` gate.**
-1. **Fixed in branch:** Reconciled Release `0.1` with `v3`, read the `4` open-access untouched entries (`15451`, `5841`, `5687`, `CMTIV`) plus IscU `PNAS 2011` (`7432`), and logged BMRB/PubMed dossiers for the only `3` remaining paywalled entries (`15795`, `18477`, `50734`). Unified coverage is now `128 / 131` (`97.7%`).
-2. **Queued for `v4`:** Triage clinical/imaging noise before reading the `336`-row Kosmos package, pull institutional PDFs for the `3` paywalled entries, and report prevalence-adjusted agreement (`valuated-paper recall` and Gwet's `AC1`) separately on valued vs zero-row strata in [`quality.md`](quality.md).
+**Fixed now (19 Nov) vs next-pass gate.**
+1. **Fixed in branch:** Reconciled the October baseline with November reads, read the `4` open-access untouched entries (`15451`, `5841`, `5687`, `CMTIV`) plus IscU `PNAS 2011` (`7432`), and logged BMRB/PubMed dossiers for the only `3` remaining paywalled entries (`15795`, `18477`, `50734`). Unified coverage is now `128 / 131` (`97.7%`).
+2. **Queued for next pass:** Triage clinical/imaging noise before reading the `336`-row Kosmos package, pull institutional PDFs for the `3` paywalled entries, and report prevalence-adjusted agreement (`valuated-paper recall` and Gwet's `AC1`) separately on valued vs zero-row strata in [`quality.md`](quality.md).
