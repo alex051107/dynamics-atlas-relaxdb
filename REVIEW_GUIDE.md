@@ -1,6 +1,6 @@
 # Expert review guide (15 minutes)
 
-This guide is for NMR specialist review before we run our next full literature pass. The October baseline (`42` proteins on `main`) had dual review, while all new November rows still need expert sign-off. We already fixed the concrete data bugs we caught (`BARSTAR` sample split, `5687` ID fix, controlled method groups, and building all `131` protein pages in [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)). Now we need your ruling on two questions: whether our paper-reading logic is sound, and how to settle four scientific boundary rules.
+This guide is for NMR specialist review before we run our next full literature pass. The October baseline (`42` proteins on `main`) had dual review, while all new November rows still need expert sign-off. For spreadsheet inspection, open the new 12-tab clickable workbook **[`data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx`](data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx)** ([summary](data/expert_review_20261119/README.md)), which links `Protein_overview -> Region_comparisons -> Observations -> Samples` with source-verified walkthroughs (`BARSTAR`, `FKBP`, `PLEXINB1`, `16392`, `18257`, `50020`). We already fixed the concrete data bugs we caught (`BARSTAR` sample split, `5687` ID fix, controlled method groups, association-scope cleanup, and building all `131` protein pages in [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)). Now we need your ruling on two questions: whether our paper-reading logic is sound, and how to settle four scientific boundary rules.
 
 ---
 

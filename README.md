@@ -34,11 +34,12 @@ stateDiagram-v2
 
 ## Start here (15-minute review path for Gina and Soojung)
 
-1. **[`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)** is the main **131-Protein Dynamics Atlas**. Entries are grouped into 4 evidence tiers with MD simulations and cryo-X-ray separated from solution exchange.
-2. **[`REVIEW_GUIDE.md`](REVIEW_GUIDE.md)** lists the 4 scientific boundary rules we need Gina to settle before running the next pass.
-3. **[`atlas/walkthrough_ets1.md`](atlas/walkthrough_ets1.md)** walks through one full paper from raw text to extracted rows (murine Ets-1, *Biochemistry* 2016).
-4. **[`atlas/v3_previews/README.md`](atlas/v3_previews/README.md)** collects 4 deep case studies (`FKBP12`, `GR / DBD82`, `CheA`, `TEM-1 & Barstar`) illustrating those 4 rules.
-5. **[`methods/how_it_is_built.md`](methods/how_it_is_built.md)** and **[`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md)** explain our 7-step workflow and clearly separate bugs **already fixed** from automated gates planned for the next pass.
+1. **[`data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx`](data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx)** ([notes](data/expert_review_20261119/README.md)) is the **12-tab clickable Expert Review Workbook** (`Start_Here -> Protein_overview -> Region_comparisons -> Observations -> Samples`). It opens with 6 source-verified pilot and control walkthroughs (`BARSTAR`, `FKBP`, `PLEXINB1`, `16392`, `18257`, `50020`), fixes binding/oligomer scope leaks (`28` rows in `association`), and preserves `100%` of raw baseline rows.
+2. **[`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)** is the web-browsable **131-Protein Dynamics Atlas**. Entries are grouped into 4 evidence tiers with MD simulations and cryo-X-ray separated from solution exchange.
+3. **[`REVIEW_GUIDE.md`](REVIEW_GUIDE.md)** lists the 4 scientific boundary rules we need Gina to settle before running the next pass.
+4. **[`atlas/walkthrough_ets1.md`](atlas/walkthrough_ets1.md)** walks through one full paper from raw text to extracted rows (murine Ets-1, *Biochemistry* 2016).
+5. **[`atlas/v3_previews/README.md`](atlas/v3_previews/README.md)** collects 4 deep case studies (`FKBP12`, `GR / DBD82`, `CheA`, `TEM-1 & Barstar`) illustrating those 4 rules.
+6. **[`methods/how_it_is_built.md`](methods/how_it_is_built.md)** and **[`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md)** explain our 7-step workflow and clearly separate bugs **already fixed** from automated gates planned for the next pass.
 
 ---
 
@@ -100,6 +101,7 @@ We keep the three atlas views cleanly separated so nothing overlaps:
 | [`methods/changes_since_v01.md`](methods/changes_since_v01.md) | Timeline from the October baseline to today and steps to Release `0.2` | Updated (19 Nov 2026) |
 | [`methods/quality.md`](methods/quality.md) | Answer-key scores, blind checks, and prevalence caveats | Updated (19 Nov 2026) |
 | [`methods/check_review_consistency.py`](methods/check_review_consistency.py) | Automated gate checking counts, links, leaks, Mermaid syntax, and plain language | New (19 Nov 2026) |
+| [`data/expert_review_20261119/`](data/expert_review_20261119/README.md) | **12-tab clickable Expert Review Workbook** (`Protein_overview`, `Region_comparisons`, `Observations`, `Review_notes`, plus 7 lossless raw tables on the `19,958 original` baseline) | New (19 Nov 2026) |
 | [`data/v3_draft_20261118/`](data/v3_draft_20261118/README.md) | Ten-tab Excel workbook (`Start_Here`, `Proteins`, `Exchange_Highlights` [`575` rows], lossless `Measurements` [`19,989` rows]), CSV summaries, and verified supplemental JSON | Current draft (19 Nov 2026) |
 | [`atlas/README.md`](atlas/README.md) & [`atlas/proteins/`](atlas/README.md) | **October baseline (`21 Oct 2026`).** `42` alternate APO synthesis pages (`13 yes, 18 possible, 11 unknown`) | Preserved intact |
 | [`data/*.csv`, `data/structures/`](data/DATA_DICTIONARY.md) | **October baseline (`21 Oct 2026`).** Curated tables, RelaxDB card audit, `10` CPMG structure overlays | Preserved intact |
