@@ -1,6 +1,13 @@
 # The atlas: one page per protein
 
-Slice 1 of the Dynamics Atlas: alternate APO states. Each page gives the states of the free protein, the evidence, matching structures and open questions.
+> **Expert review checkpoint (`19 November 2026`).**  
+> Before expanding across all `131` open entries, read our **[full single-paper walkthrough (`walkthrough_ets1.md`)](walkthrough_ets1.md)** and **[four worked protein synthesis previews (`v3_previews/`)](v3_previews/README.md)** (`FKBP`, `DBD82`, `CHEA/CHEAYBD`, `16392` and `BARSTAR`). They translate raw extraction rows back into the synthesis style below and isolate the four borderline decisions we ask Gina to rule on.
+
+---
+
+## Release 0.1 (`21 October 2026`): Alternate APO states
+
+Slice 1 of the Dynamics Atlas: alternate APO states. Each page gives the states of the free protein, the evidence, matching structures and open questions (`42` proteins).
 
 | Protein | Entry | Call | Strict two-peak reading | Where |
 |---|---|---|---|---|

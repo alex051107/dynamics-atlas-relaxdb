@@ -1,0 +1,36 @@
+---
+title: "Dynamics Atlas v3 Workflow (Model-Checked Gaps), bug 1"
+config:
+  markdownAutoWrap: false
+  state:
+    useMaxWidth: false
+---
+stateDiagram-v2
+  classDef plainWrong fill:#f4f6f7,stroke:#c0392b,stroke-width:4px,color:#7b241c
+  classDef group1 fill:#dbeafe,stroke:#6e757f,color:#1b2631
+  classDef group1Path fill:#dbeafe,stroke:#1f3a93,stroke-width:4px,color:#1b2631
+  classDef group3 fill:#fef3c7,stroke:#7f7a64,color:#1b2631
+  classDef group3Wrong fill:#fef3c7,stroke:#c0392b,stroke-width:4px,color:#7b241c
+  state "Legend" as legend {
+    state "Preparing / reading" as legendGroup1
+    state "Gap: sample binding unchecked" as legendGroup3
+    state "Breaks expert/completeness gate today" as legendWrong
+  }
+  class legendGroup1 group1
+  class legendGroup3 group3
+  class legendWrong plainWrong
+  state "JSON drafted (unchecked)" as s0
+  state "Local full text staged" as s1
+  state "Queued open entry" as s2
+  state "Quote & table checks<br/>passed" as s3
+  state "Quote & table checks<br/>passed; Draft workbook<br/>built" as s4
+  [*] --> s2
+  s2 --> s1 : 1. Stage local PMC full text<br/>[Program: DOI match, exclude<br/>12 held-out entries]
+  s1 --> s0 : 2. Read full text once [Reader<br/>LLM: fixed brief, verbatim<br/>quotes]
+  s0 --> s3 : 3. Check quotes & tables<br/>[Program: text match + leakage<br/>check, no binding check]
+  s3 --> s4 : 4. Build merged workbook<br/>[Program: does not enforce<br/>condition binding]
+  class s0 group1Path
+  class s1 group1Path
+  class s2 group1Path
+  class s3 group1Path
+  class s4 group3Wrong

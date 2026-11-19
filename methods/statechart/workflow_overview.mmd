@@ -1,0 +1,53 @@
+flowchart LR
+    classDef program fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a,stroke-width:2px
+    classDef reader fill:#ede9fe,stroke:#6d28d9,color:#4c1d95,stroke-width:2px
+    classDef second fill:#d1fae5,stroke:#047857,color:#064e3b,stroke-width:2px
+    classDef person fill:#fef3c7,stroke:#b45309,color:#78350f,stroke-width:2px
+    classDef notdone fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d,stroke-width:2px,stroke-dasharray: 5 5
+    classDef blocked fill:#e5e7eb,stroke:#4b5563,color:#1f2937,stroke-width:1px
+
+    subgraph Done ["Completed Through 18 Nov 2026 (Draft Workbook)"]
+      direction TB
+      S0(["1. RelaxDB Pool: 143 entries<br/>Program: 131 open vs 12 held-out"]):::program
+      S_SEAL["Held-out Test Set (12 entries)<br/>Blocked by program"]:::blocked
+      S1["2. Stage Local Full Text<br/>Program: 752 open DOIs from PMC XML"]:::program
+      S2["3. Read Each Paper Once<br/>Reader LLM: 466 Claude + 305 Gemini"]:::reader
+      S3["4. Check Quotes, Tables & Leaks<br/>Program (fixed rules): 771/771 pass<br/>Missing: sample binding & unified schema"]:::program
+      S4["5. 10% Blind Spot Check<br/>Second-family LLM + curator<br/>Nov 18 (30 papers): 29/29 new values"]:::second
+      S5["6. Merged Draft Workbook<br/>Program: 771 records, 19,958 rows<br/>104/131 open entries (sample + buffer)"]:::program
+      S6["7. 4 Worked Protein Previews<br/>Curated Markdown synthesis cards<br/>FKBP, DBD82, CheA, TEM-1/Barstar"]:::person
+
+      S0 -->|"12 held-out"| S_SEAL
+      S0 -->|"131 open"| S1
+      S1 -->|"752 unique DOIs"| S2
+      S2 -->|"771 JSONs"| S3
+      S3 -->|"Retry fails"| S2
+      S3 -->|"Quote check OK"| S5
+      S3 -->|"10% sample"| S4
+      S4 -->|"Repairs"| S3
+      S5 -->|"4 test cases"| S6
+    end
+
+    subgraph Open ["Open Gaps & NOT DONE YET (To Reach v0.3)"]
+      direction TB
+      G_UNREAD["UNREAD SOURCES (NOT DONE)<br/>988 Nov-12 DOIs (244 full text)<br/>336 Kosmos rows (321 abstract-only)<br/>22 entries still have 0 papers"]:::notdone
+      G_BIND["MISSING GATE (NOT DONE)<br/>Controlled schema + sample binding check<br/>Deduplicate twin entries (CheA 114 rows)<br/>Synthesize remaining 78+ valued entries"]:::notdone
+      G_GINA["NMR EXPERT REVIEW (NOT DONE)<br/>Gina checks 4 worked cards & decides:<br/>MD/non-NMR cutoff & comparability rules"]:::notdone
+      G_BMRB["NEXT RELEASE & BMRB CHECK (NOT DONE)<br/>Screen + double-extract unread 244 DOIs<br/>Cross-check rates vs BMRB raw data"]:::notdone
+    end
+
+    S1 -.->|"Gap"| G_UNREAD
+    S5 -.->|"Gap"| G_BIND
+    S6 -->|"Ready for review"| G_GINA
+    G_UNREAD -.-> G_BMRB
+    G_BIND -.-> G_BMRB
+    G_GINA -->|"Unlocks v0.3"| G_BMRB
+
+    subgraph Legend ["Legend (Decider)"]
+      direction TB
+      L1["Blue: Program (fixed rule)"]:::program
+      L2["Purple: Reader LLM (judgment)"]:::reader
+      L3["Green: Second-family LLM (sample)"]:::second
+      L4["Amber: Human Curator"]:::person
+      L5["Dashed Red: NOT DONE YET"]:::notdone
+    end

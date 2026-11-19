@@ -1,0 +1,129 @@
+{
+  "view": "customer",
+  "modelStates": 23,
+  "modelTransitions": 37,
+  "chartStates": 12,
+  "chartTransitions": 10,
+  "chartStatus": {
+    "works": 11,
+    "wrong": 12,
+    "fixed": 0,
+    "mixed": 0,
+    "after": 0
+  },
+  "mixedStatus": [],
+  "cover": {
+    "drawn": true,
+    "states": 23,
+    "transitions": 37,
+    "leftOutStates": [
+      "JSON drafted (unchecked); Unread full texts integrated",
+      "Local full text staged; Unread full texts integrated",
+      "Queued open entry; Unread full texts integrated",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off",
+      "Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off",
+      "Quote & table checks passed; Unread full texts integrated",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off"
+    ],
+    "leftOutTransitions": [
+      "JSON drafted (unchecked) --> JSON drafted (unchecked); Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "JSON drafted (unchecked); Unread full texts integrated --> Quote & table checks passed; Unread full texts integrated: Check quotes & tables [Program: text match + leakage check; no binding check]",
+      "Local full text staged --> Local full text staged; Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Local full text staged; Unread full texts integrated --> JSON drafted (unchecked); Unread full texts integrated: Read full text once [Reader LLM: fixed brief, verbatim quotes]",
+      "Queued open entry --> Queued open entry; Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Queued open entry; Unread full texts integrated --> Local full text staged; Unread full texts integrated: Stage local PMC full text [Program: DOI match, exclude 12 held-out entries]",
+      "Quote & table checks passed --> Quote & table checks passed; Unread full texts integrated: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Quote & table checks passed; 10% blind check adjudicated --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built: Build merged workbook [Program: does not enforce condition binding]",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review: Share draft link with Gina [Project lead]",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off: Validate definitions & spots [NMR Expert Gina; NOT DONE YET]",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Quote & table checks passed; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built: Blind-read 10% sample [Second-family LLM + curator adjudication]",
+      "Quote & table checks passed; Draft workbook built --> Quote & table checks passed; Unread full texts integrated; Draft workbook built: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Quote & table checks passed; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review: Blind-read 10% sample [Second-family LLM + curator adjudication]",
+      "Quote & table checks passed; Draft workbook built; Shared for expert review --> Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off: Validate definitions & spots [NMR Expert Gina; NOT DONE YET]",
+      "Quote & table checks passed; Draft workbook built; Shared for expert review --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; 10% blind check adjudicated; Draft workbook built; Shared for expert review; Expert signed off: Blind-read 10% sample [Second-family LLM + curator adjudication]",
+      "Quote & table checks passed; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Read remaining 988 Nov-12 DOIs & Kosmos [NOT DONE YET]",
+      "Quote & table checks passed; Unread full texts integrated --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated: Blind-read 10% sample [Second-family LLM + curator adjudication]",
+      "Quote & table checks passed; Unread full texts integrated --> Quote & table checks passed; Unread full texts integrated; Draft workbook built: Build merged workbook [Program: does not enforce condition binding]",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built: Blind-read 10% sample [Second-family LLM + curator adjudication]",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review: Share draft link with Gina [Project lead]",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review: Blind-read 10% sample [Second-family LLM + curator adjudication]",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review --> Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Validate definitions & spots [NMR Expert Gina; NOT DONE YET]",
+      "Quote & table checks passed; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off --> Quote & table checks passed; 10% blind check adjudicated; Unread full texts integrated; Draft workbook built; Shared for expert review; Expert signed off: Blind-read 10% sample [Second-family LLM + curator adjudication]"
+    ]
+  },
+  "chartGroups": [
+    {
+      "name": "Held-out (blocked)",
+      "color": "#e5e7eb",
+      "states": 1
+    },
+    {
+      "name": "Preparing / reading",
+      "color": "#dbeafe",
+      "states": 4
+    },
+    {
+      "name": "Blind check ran",
+      "color": "#e0e7ff",
+      "states": 2
+    },
+    {
+      "name": "Gap: sample binding unchecked",
+      "color": "#fef3c7",
+      "states": 2
+    },
+    {
+      "name": "Gap: shared unreviewed",
+      "color": "#fee2e2",
+      "states": 2
+    },
+    {
+      "name": "Expert approved",
+      "color": "#d1fae5",
+      "states": 1
+    }
+  ],
+  "mixedGroups": [],
+  "classes": [
+    {
+      "n": 1,
+      "end": "Quote & table checks passed; Draft workbook built",
+      "invariant": "NoUncheckedConditionBinding",
+      "rule": "Invariant 3 (expected broken - Gap 1): Program checks verify quotes, not whether sample solvent/ratio belongs to the measured state.",
+      "cause": "Workbook builds before sample-condition binding is verified (quote checks pass even when solvent/ratio is swapped).",
+      "readerSteps": 4,
+      "modelSteps": 5,
+      "counterexamples": 4,
+      "lastSteps": [
+        "Build merged workbook [Program: does not enforce condition binding]"
+      ],
+      "startsHere": false,
+      "fix": null
+    },
+    {
+      "n": 2,
+      "end": "Quote & table checks passed; Draft workbook built; Shared for expert review",
+      "invariant": "NoReleaseWithoutExpertAndCoverage",
+      "rule": "Invariant 4 (expected broken - Gap 2): Draft can be shared before expert NMR review and before unread full-text sources are integrated.",
+      "cause": "Draft can be shared while 988 earlier DOIs (244 full text) remain unread and before Gina's expert review.",
+      "readerSteps": 5,
+      "modelSteps": 6,
+      "counterexamples": 4,
+      "lastSteps": [
+        "Share draft link with Gina [Project lead]"
+      ],
+      "startsHere": false,
+      "fix": null
+    }
+  ],
+  "codeLike": [],
+  "brokenProperties": []
+}

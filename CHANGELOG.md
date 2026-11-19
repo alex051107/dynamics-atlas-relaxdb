@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2-draft, 19 November 2026 (`review/expert-check-20261119`)
+
+Expert-review checkpoint bridging the scaled November full-text extraction sweep (`104 / 131` open entries; `12` held-out entries excluded) back to readable protein syntheses and clear scope questions for Gina before running `v4`:
+
+- Added [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md) and [`atlas/walkthrough_ets1.md`](atlas/walkthrough_ets1.md): 15-minute expert checklist, full single-paper audit of murine Ets-1 (`doi:10.1021/acs.biochem.6b00460`, including blind-caught `14.8 ns` row and self-audited sample temperature note), and 4 ranked boundary decisions (`DBD82`, `FKBP`, `BARSTAR`, `CHEA/16392`).
+- Added [`figures/`](figures/): four centered 2x-DPI figures covering the unified 7-step architecture ([`pipeline_architecture.png`](figures/pipeline_architecture.png)), Ets-1 walkthrough ([`single_paper_walkthrough.png`](figures/single_paper_walkthrough.png)), four audit bugs and fixes ([`known_bugs_and_fixes.png`](figures/known_bugs_and_fixes.png)), and the formal workflow state machine ([`formal_statechart.png`](figures/formal_statechart.png)).
+- Added [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md) and updated [`methods/how_it_is_built.md`](methods/how_it_is_built.md), [`methods/changes_since_v01.md`](methods/changes_since_v01.md), and [`methods/quality.md`](methods/quality.md) with external system comparisons (Bindwell, Elicit, FutureHouse PaperQA2/Kosmos, Asta, OpenScholar), formal TLA+/TLC verification (`methods/statechart/`), batch metrics (`771` records, `752` unique DOIs, `19,958` measurement rows), and known unclosed gaps (`988` unread Nov-12 DOIs including `244` full text, `336` Kosmos rows, `168` early un-reread records, `5687/50332` `'x'` collapse, `BARSTAR` condition conflation, and uncontrolled `method` labels).
+- Added [`atlas/v3_previews/`](atlas/v3_previews/README.md) (`FKBP`, `DBD82`, `CHEA/CHEAYBD`, `16392 & BARSTAR`) and [`data/v3_draft_20261118/`](data/v3_draft_20261118/README.md) (`RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx`, `proteins_summary.csv`, `coverage_gap_audit.csv`).
+- Preserved all `42` Release `0.1` alternate APO protein pages (`atlas/proteins/`), structure tables (`data/structures/`), and pipeline scripts (`code/`) untouched on `main`.
+
 ## 0.1 — 21 October 2026
 
 First release organised as an atlas: one page for each protein, machine-readable tables and separate method pages.

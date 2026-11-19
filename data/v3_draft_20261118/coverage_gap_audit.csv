@@ -1,0 +1,16 @@
+pool_or_metric,count,denominator_or_unit,status_as_of_2026_11_18,notes
+Total RelaxDB proteins,143,entries,split_enforced,131 open development entries; 12 held-out test entries excluded from extraction and table
+Open entries with >= 1 paper read in v3,104,131 open entries,completed_in_v3,Covers 771 entry-paper records across 752 unique DOIs
+Open entries with >= 1 numeric dynamics row,82,131 open entries,completed_in_v3,Raw count before filtering out MD simulations or binding-off kinetics
+Open entries with printed exchange rate or population,38,131 open entries,completed_in_v3,"kex, kAB, kBA, kopen, kclose, pB, population"
+Open entries with >= 1 conformational state PDB,78,131 open entries,completed_in_v3,794 total state rows across workbook
+Open entries with >= 1 author-named dynamic region,92,131 open entries,completed_in_v3,515 total residue_set rows across workbook
+Open entries read with 0 numeric rows,22,131 open entries,completed_in_v3,Each paper includes an explicit exclusion reason in Papers sheet
+Open entries mapped to twin entry (same UniProt),4,131 open entries,covered_via_twin,"BLAC_CPMG (P9WKD3 -> 27888), AQADK (O66490 -> AQADK_CPMG), ARGKIN_CPMG (P51541 -> ARGKIN), HTPDZ_CPMG (O43464 -> HTPDZ)"
+Open entries falsely collapsed via placeholder UniProt 'x',1,131 open entries,card_bug_in_summary,Entry 5687 (Four helix bundle) was grouped onto 50332 (Iron-compound ABC transporter) because both cards use placeholder UniProt 'x'
+Open entries with 0 papers processed in v3,22,131 open entries,unread_or_no_local_fulltext,Plus entry 5687 (effectively 23 unread entries total once 'x' placeholder bug is separated)
+Total candidate citations pooled,11682,candidate_records,discovered_not_all_read,129 candidate files from Phase A discovery searches
+DOIs read in v3 workbook (B1-B5 merged),752,unique_DOIs,completed_in_v3,"78 B1 + 388 B2/B3 Claude Sonnet + 305 B5 Gemini = 771 entry-paper records / 19,958 measurement rows"
+DOIs in Nov 12 table but NOT read in v3,988,unique_DOIs,not_done_yet_in_v3,"244 marked full_text in Nov 12 (205 with PMC URL) + 744 abstract_only; accounted for 1,973 Nov-12 evidence rows"
+Kosmos reported fulltext rows,336,reported_rows,not_downloaded,321 matched abstract-only candidates locally; ZIP full-text package not yet downloaded
+Early B1/B2 v3 records not re-read under Nov 17 rules,168,entry_paper_records,older_rules_unreread,78 B1 source papers + 90 early B2 records not re-checked for caption/approximate/state-PDB refinements

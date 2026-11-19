@@ -1,8 +1,41 @@
 # Quality
 
-This page says how far to trust the atlas, with numbers.
+This page says how far to trust the atlas, with numbers, separating **Release 0.2-draft (`v3` paper extraction)** from the **Release 0.1 (`21 October 2026`)** baseline.
 
-## Pre-registered test on 20 proteins
+## Release 0.2-draft (18–19 November 2026): v3 Paper-by-Paper Extraction Checks
+
+### Coverage & batch provenance (`771` records, `752` unique DOIs, `19,958` rows)
+
+| Batch | Reader model(s) | Records read | Zero-row records | Measurement rows | State PDB rows | Residue-set rows | Verification applied |
+|---|---|---|---|---|---|---|---|
+| **B1 (`v3_sonnet`)** | Claude Sonnet | `78` | `12` (`15.4%`) | `18,811` | `87` | `241` | Deterministic quote & table checks (`100%` of records); **not re-read under Nov-17 state/scope rules** |
+| **B2 + B3 (`v3_sonnet_b2`)** | Claude Sonnet | `388` | `280` (`72.2%`) | `1,077` | `417` | `198` | Quote & table checks; main-session reread of all `108` `B3` records (`67/108` edited, `~139` of `204` final states added after reader); `90` early `B2` records **not re-read under Nov-17 rules** |
+| **B5 (`v3_b5`)** | Gemini (`248 pro`, `57 flash`) | `305` | `295` (`96.7%`) | `64` *(across `10` papers)* | `290` | `74` | Deterministic quote/table/identity/condition checks (`0` hard failures; `53` `W1_RECONSTITUTION_CHECK` warnings, `3` `W_EMPTY_SAMPLES`, `3` `W_DEPOSIT_PDB_CHECK`) + stratified `30`-paper blind `Claude Sonnet 5.5` check |
+
+*(Note: summing raw JSON `expected_rows` gives `18,811 + 1,077 + 64 = 19,952`; the workbook `Measurements` tab holds `19,958` rows because `CRABP2__10.1021_acs.biochem.9b00672` contributed `14` workbook rows vs `8` in its main JSON.)*
+
+### Answer-key and cross-model consistency checks in `v3`
+
+| Check | What it measured | Observed result | Critical limit / caveat |
+|---|---|---|---|
+| **4 hand-built paper keys** (`arginine kinase`, `CRABP2`, `p38 gamma`, `IscU`) | Recall & precision on core printed rates/populations | **`85 / 86` core values**, `0` invented values outside keys | Tested on `4` NMR-rich benchmark papers only; does not test condition binding across multi-experiment methods sections |
+| **Independent GPT spot-check (`1 + 8 + 2` papers)** | Cross-model recall vs main reader | `163 / 165` on arginine kinase (`102 / 102` Table 1 cells vs XML); `203 / 213` values and `8 / 8` states on `8` papers; `35` GPT-only candidate rows logged in `Second_reader_only` | Does not verify sample-condition binding; `35` `Second_reader_only` rows remain unmerged pending human arbitration |
+| **B3 blind Haiku check (`13` records, `2026-11-17`)** | All `7` valued `B3` records (`CHEAYBD` skipped as identical to `CHEA`) + `6` zero-row records | Found **`2` real record errors** (`1` missed `tau_m = 14.8 ns` in `5991`, fixed; `1` unsupported state `1CLL` added during main-session reread of `17881`, removed) vs `4` Haiku false-alarm values and `2` false-alarm states | Did **not** diff sample/condition fields (`samples` list was not compared), `residue_sets`, `out_of_reach`, or the other `95` `B3` records; state-PDB rule changed three times during `B3` (`67/108` edited afterward) |
+| **B5 stratified blind check (`30` papers with `Claude Sonnet 5.5`, `2026-11-18`)** | All `10` valued `B5` papers + `10` keyword zero-row + `10` general zero-row | **`29 / 29`** newly printed non-cited Claude values matched; **`100%`** Claude state recall (`+46` verified Gemini states); **`20 / 20`** Stratum 2+3 zero-row agreement; **`30 / 30`** experimental NMR/HDX/relaxometry agreement; **`26 / 30`** raw zero-vs-valued agreement | **Prevalence-bias warning.** Because `96.7%` (`295/305`) of `B5` papers are non-valued (`mostly clinical/cellular/binding`), high overall zero-row agreement is easy to achieve by saying zero. Disagreements concentrated in **4 non-NMR `DBD82` papers** (`FCS`, `MD`, `EMSA t1/2`, `cell FRET`), showing prompt ambiguity outside NMR (`4` B5 records repaired after adjudication: downgraded non-NMR kinetics to `minor` and fixed `4` fold/ratio rows in `FKBP` `bpc.2014.06.004`) |
+
+### What `v3` checks still DO NOT guarantee (why this is a draft, not a validated release)
+
+- **Zero expert NMR sign-off.** Neither the `v3` workbook rows nor the `4` synthesis previews have been reviewed by an NMR expert yet.
+- **No automated sample-condition binding check (`Gap 1`).** Substring checks pass whenever quotes exist anywhere in the paper, even if two experiments (`BARSTAR` `10.1021/jacs.0c00807` `~1.8% H2O` HyperW vs `90% H2O` CLEANEX) were collapsed into one sample row, or when construct tags diverge across identical papers (`CHEA` vs `CHEAYBD`). Although `audit_b5_all.py` raised `53` `W1_RECONSTITUTION_CHECK` warnings in `B5`, the earlier `466` `B1–B3` records were never scanned by it.
+- **Incomplete literature coverage (`Gap 2`).** `22` open entries (`+1` entry `5687` falsely collapsed onto `50332` via placeholder `'x'`) have `0` papers read in `v3`, **`988` DOIs from the `12 Nov` draft (`244` marked full text)** and **`336` Kosmos rows** remain unread, and **`168` early `B1/B2` records** have not been re-read under Nov-17 rules.
+- **Cross-batch inclusion inconsistency.** Non-NMR kinetics (`FCS ms`, `EMSA` DNA-off `t1/2`, cell-`FRET`) and MD clusters were kept in some `B5`/`B3` records (`minor` or `md_simulation` / `molecular_dynamics`) while omitted in earlier records. Furthermore, `method` labels lack a controlled vocabulary (`md_simulation` vs `molecular_dynamics`, `FRET` vs `fret`, four `EPR/DEER` variants, and three X-ray crystallography strings), reinforcing why `v4` needs a strict schema enum.
+- **No raw BMRB / chemical-shift cross-validation.** Unlike the BMRB readbacks logged in [`../data/relaxdb_data_issues.md`](../data/relaxdb_data_issues.md) during `0.1`, `v3` text rows have not been compared against raw BMRB `R1/R2/NOE/CPMG` tables.
+
+---
+
+## Release 0.1 (21 October 2026): Pre-registered Alternate APO Checks
+
+### Pre-registered test on 20 proteins
 
 Before we ran 20 RelaxDB-133 proteins, we wrote down seven checks and their limits. We did not change the limits after the results.
 
