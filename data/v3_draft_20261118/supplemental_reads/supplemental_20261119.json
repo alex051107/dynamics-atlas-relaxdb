@@ -1,0 +1,884 @@
+{
+  "generated_at": "2026-11-19",
+  "purpose": "Bug fixes (BARSTAR S1/S2 split) + newly read open-access PMC full texts for previously untouched RelaxDB entries (15451, 5687, 5841, CMTIV) and IscU (7432 PNAS 2011) + BMRB/PubMed abstract dossiers for the 3 paywalled BMRB entries (15795, 18477, 50734).",
+  "sample_fixes": [
+    {
+      "entry": "BARSTAR",
+      "doi": "10.1021/jacs.0c00807",
+      "reason": "Fixed conflated sample S1 that mixed HyperW NMR (pD 7 in D2O, ~1.8% H2O post-injection) with CLEANEX-PM reference NMR (reconstituted in 90% H2O, pH 7).",
+      "replacement_samples": [
+        {
+          "entry": "BARSTAR",
+          "DOI": "10.1021/jacs.0c00807",
+          "sample": "S1",
+          "protein": "Barstar",
+          "construct": "C40A/C82A double mutant, 89 residues, 15N-labeled",
+          "species relation": "target",
+          "ligand state": "apo",
+          "temperature": "50 °C",
+          "pH": "pD 7",
+          "buffer": "50 mM sodium phosphate in D2O (~1.8% H2O after hyperpolarized water injection; 1.3-1.6 mM protein)",
+          "field (MHz)": "600 (14.1 T)",
+          "same as deposit": "no",
+          "note": "HyperW NMR sample (split from conflated S1 in 2026-11-19 bug fix). Deposit card lists 298.5 K (possible placeholder); paper measures at 50 °C (323 K).",
+          "location in paper": "Methods, Barstar preparation",
+          "quote": "For the HyperW experiments, lyophilized barstar was reconstituted in a D2O buffer (50 mM sodium phosphate, pD 7) at a concentration of ∼4 mM. For their subsequent analysis, 130–140 μL aliquots of this solution were placed in a 5 mm NMR tube. Following the hyperpolarized water injection, the sample was thus diluted to 1.3–1.6 mM protein."
+        },
+        {
+          "entry": "BARSTAR",
+          "DOI": "10.1021/jacs.0c00807",
+          "sample": "S2",
+          "protein": "Barstar",
+          "construct": "C40A/C82A double mutant, 89 residues, 15N-labeled",
+          "species relation": "target",
+          "ligand state": "apo",
+          "temperature": "50 °C",
+          "pH": "pH 7",
+          "buffer": "50 mM sodium phosphate reconstituted in 90% H2O (1.6 mM protein)",
+          "field (MHz)": "600 (14.1 T)",
+          "same as deposit": "no",
+          "note": "CLEANEX-PM reference high-H2O sample (split from conflated S1 in 2026-11-19 bug fix). Post-injection sample was lyophilized to dryness and reconstituted in 90% H2O.",
+          "location in paper": "Methods, Barstar preparation",
+          "quote": "For the reference, high protonated water content sample, a post-injection sample was lyophilized to dryness and subsequently reconstituted in the same volume of 90% H2O to give rise to the same final protein concentration of 1.6 mM."
+        }
+      ]
+    }
+  ],
+  "new_records": [
+    {
+      "entry": "15451",
+      "protein": "GA-binding protein alpha chain",
+      "doi": "10.1016/j.jmb.2008.01.054",
+      "pmcid": "PMC2486348",
+      "read_mode": "full_text",
+      "title": "Identification and structural characterization of a CBP/p300-binding domain from the ETS family transcription factor GABP alpha",
+      "record": "15451__10.1016_j.jmb.2008.01.054",
+      "overview": "NMR solution structure (PDB 2JUO; BMRB 15451) and 15N heteronuclear backbone relaxation of the murine GABPα OST domain (residues 35-121). Reports isotropic tumbling time τc = 5.9 ± 0.04 ns at 30 °C, well-ordered core (36-115), and three flexible loops (61-63, 87-91, 101-104) with highest ps-ns mobility in S4/S5.",
+      "reader_notes": "BMRB 15451 primary deposited paper. Per-residue T1, T2, NOE, and S2 plots are in Supplemental Figure S3 (logged under Gaps). Temperature is 30 °C (303 K) vs 298.0 K on RelaxDB card.",
+      "tables_excluded": "Table 1: NMR structure restraints and ARIA/CNS ensemble statistics (not dynamics).",
+      "samples": [
+        {
+          "sample": "S1",
+          "protein": "GABPα OST domain",
+          "construct": "murine GABPα(35-121) with N-terminal Gly-Ser-His remnant and C-terminal non-native Trp122",
+          "species relation": "target",
+          "ligand state": "apo",
+          "temperature": "30 °C (303 K)",
+          "pH": "7.0",
+          "buffer": "20 mM sodium phosphate (pH 7.0), 50 mM NaCl, 2 mM DTT, ~10% D2O (~1-1.5 mM protein)",
+          "field (MHz)": "500, 600, and 800",
+          "same as deposit": "no",
+          "note": "Deposit lists 298.0 K, 500 MHz, pH 7.0; paper acquires spectra at 30 °C (303 K) at 500/600/800 MHz.",
+          "location in paper": "Methods",
+          "quote": "The purified proteins, with an N-terminal Gly-Ser-His remaining from the cleavage site, were concentrated to ∼ 1 to 1.5 mM in NMR sample buffer (20 mM sodium phosphate (pH 7.0), 50 mM NaCl, 2 mM DTT, ∼10 % D2O) using a 5 kDa cut-off Amicon Ultrafiltration device (Millipore). Spectra were recorded at 30 °C using Varian 500 MHz Unity, 600 MHz Inova, or 800 MHz Inova NMR spectrometers"
+        }
+      ],
+      "measurements": [
+        {
+          "quantity": "tau_c",
+          "value": "5.9",
+          "unit": "ns",
+          "uncertainty": "± 0.04",
+          "residues or group": "well-ordered amides in GABPα(35-121) OST domain",
+          "weight": "core",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N heteronuclear T1, T2, and {1H}-15N NOE backbone relaxation",
+          "fit": "isotropic rotational tumbling time from T1 and T2",
+          "location in paper": "Results, Structure and dynamics of the OST domain",
+          "quote": "The isotropic tumbling time, τc, of the fragment was calculated to be 5.9 ± 0.04 ns at 30 °C from the T1 and T2 relaxation values of well-ordered amides in the OST domain."
+        }
+      ],
+      "states": [
+        {
+          "PDB": "2JUO",
+          "state": "Monomeric GABPα(35-121) OST domain solution NMR ensemble (BMRB 15451)",
+          "location in paper": "Methods / Deposition",
+          "quote": "The atomic coordinates of the GABPα(35−121) ensemble (accession code: 2JUO) have been deposited in the Research Collaboratory for Structural Bioinformatics Protein Databank"
+        }
+      ],
+      "residue_sets": [
+        {
+          "process": "ps-ns backbone flexibility in loops (highest in S4/S5 loop)",
+          "residues": "61-63 (helix-S2 loop), 87-91 (S3/S4 loop), 101-104 (S4/S5 loop)",
+          "sample": "S1",
+          "location in paper": "Results, Structure and dynamics of the OST domain",
+          "quote": "In contrast, besides the N- and C-terminal tails, there are three relatively flexible loop regions: residues 61−63 between the helix and strand S2, residues 87−91 between strands S3 and S4, and residues 101−104 between strands S4 and S5. Among these, the exposed S4/S5 loop has the highest degree of flexibility on the psec-nsec timescale, as revealed by reduced heteronuclear NOE values and model free order parameters."
+        },
+        {
+          "process": "well-ordered core domain",
+          "residues": "36-115 (including S5 bulge Leu111-Glu112 and distorted helix 48-59)",
+          "sample": "S1",
+          "location in paper": "Results, Structure and dynamics of the OST domain",
+          "quote": "The structured core of the protein, corresponding to the minimal OST domain (residues 36−115), is well ordered, and no significant changes in backbone mobility were found for the bulge in S5 or within the distorted helix."
+        },
+        {
+          "process": "disordered flanking segments in longer construct GABPα(1-169)",
+          "residues": "1-34 and 122-169",
+          "sample": "S1",
+          "location in paper": "Results",
+          "quote": "the new domain was localized approximately to residues 35−121, whereas the flanking residues 1−34 and 122−169 exhibited chemical shifts and 15N relaxation properties diagnostic of a random coil polypeptide."
+        }
+      ],
+      "gaps": [
+        {
+          "kind": "value not readable from the text",
+          "what": "Per-residue 15N T1, T2, heteronuclear NOE, and Lipari-Szabo S2 for GABPα(35-121)",
+          "why": "plotted in Supplemental Figure S3 only (not printed in main text)"
+        }
+      ]
+    },
+    {
+      "entry": "5841",
+      "protein": "Kinase associated protein phosphatase",
+      "doi": "10.1021/bi050414a",
+      "pmcid": "PMC2813517",
+      "read_mode": "full_text",
+      "title": "PhosphoThr Peptide Binding Globally Rigidifies Much of the FHA Domain from Arabidopsis Receptor Kinase-Associated Protein Phosphatase",
+      "record": "5841__10.1021_bi050414a",
+      "overview": "Exact BMRB 5841 (free) and 6474 (pT868-bound) 15N relaxation (500 and 600 MHz, 25 °C) and CPMG dispersion (600 MHz, 22 °C) study of Arabidopsis KAPP KI-FHA (180-313). Free KI-FHA has τm = 7.57 ± 0.08 ns and average non-terminal S2 = 0.902; pT868 peptide binding increases τm to 10.70 ± 0.07 ns and average S2 to 0.946 while dampening ns loop motions; µs-ms exchange broadening persists across a 6-stranded β-sheet core and peaks at Ser256 (7/8 loop).",
+      "reader_notes": "BMRB 5841 primary relaxation source paper. Per-residue S2, Rex, and τe are plotted in Figures 4-5 and deposited in BMRB 5841/6474.",
+      "tables_excluded": "Table 1: Lipari-Szabo model-free spectral density equations (definitions, not measured values).",
+      "samples": [
+        {
+          "sample": "S1",
+          "protein": "Arabidopsis KAPP KI-FHA domain",
+          "construct": "WT residues 180-313 with N-terminal Gly-Pro-Leu-Gly-Ser linker (residues 177-179)",
+          "species relation": "target",
+          "ligand state": "apo (free)",
+          "temperature": "25 °C (298 K)",
+          "pH": "6.3",
+          "buffer": "20 mM sodium phosphate (pH 6.3), 120 mM NaCl, 7% D2O (0.33-0.6 mM protein)",
+          "field (MHz)": "500 and 600 (11.74 and 14.1 T)",
+          "same as deposit": "yes",
+          "note": "Exact BMRB 5841 free KI-FHA sample (298 K, 500/600 MHz, pH 6.3).",
+          "location in paper": "Materials and Methods",
+          "quote": "Purified KI-FHA was exchanged into 20 mM sodium phosphate (pH 6.3), 120 mM NaCl and 7% D2O for NMR. NMR samples of KI-FHA were 0.33 to 0.6 mM, the solubility limit."
+        },
+        {
+          "sample": "S2",
+          "protein": "Arabidopsis KAPP KI-FHA domain",
+          "construct": "WT residues 180-313 with N-terminal Gly-Pro-Leu-Gly-Ser linker",
+          "species relation": "target",
+          "ligand state": "bound to CLV1 pT868 peptide (residues 863-875, 1.5- to 3.5-fold excess; 94-98% saturated)",
+          "temperature": "25 °C (298 K)",
+          "pH": "6.3",
+          "buffer": "20 mM sodium phosphate (pH 6.3), 120 mM NaCl, 7% D2O",
+          "field (MHz)": "500 and 600 (11.74 and 14.1 T)",
+          "same as deposit": "no",
+          "note": "pT868-bound complex deposited as BMRB 6474 (different ligand state from free BMRB 5841).",
+          "location in paper": "Results and Table 2",
+          "quote": "15N NMR relaxation parameters of KI-FHA, free and bound to an excess of a 13-mer pThr peptide from CLAVATA1 (CLV1), were determined at 298 K, at both 500 MHz and 600 MHz"
+        },
+        {
+          "sample": "S3",
+          "protein": "Arabidopsis KAPP KI-FHA domain",
+          "construct": "WT residues 180-313 with N-terminal Gly-Pro-Leu-Gly-Ser linker",
+          "species relation": "target",
+          "ligand state": "free and pT868-bound",
+          "temperature": "22 °C (295 K)",
+          "pH": "6.3",
+          "buffer": "20 mM sodium phosphate (pH 6.3), 120 mM NaCl, 7% D2O",
+          "field (MHz)": "600 (14.1 T)",
+          "same as deposit": "no",
+          "note": "Relaxation dispersion collected at 22 °C (3 K below the 25 °C R1/R2/NOE datasets).",
+          "location in paper": "Materials and Methods",
+          "quote": "Relaxation dispersion experiments were collected at 22 °C at 600 MHz."
+        }
+      ],
+      "measurements": [
+        {
+          "quantity": "tau_m",
+          "value": "7.57",
+          "unit": "ns",
+          "uncertainty": "± 0.08",
+          "residues or group": "fine-filtered rigid core (n=43, free KI-FHA, 600 MHz)",
+          "weight": "core",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R1/R2/NOE at 500 and 600 MHz; TENSOR2 fit to PDB 1MZK",
+          "fit": "axially symmetric oblate diffusion (D∥/D⊥ = 0.81 ± 0.07)",
+          "location in paper": "Results, Hydrodynamics of KI-FHA; Table 2",
+          "quote": "The free state is estimated to have τm of 7.57 ± 0.08 nsec with D∥/D⊥ = 0.81 ± 0.07 (oblate)"
+        },
+        {
+          "quantity": "tau_m",
+          "value": "10.70",
+          "unit": "ns",
+          "uncertainty": "± 0.07",
+          "residues or group": "fine-filtered rigid core (n=42, pT868-bound KI-FHA, 600 MHz)",
+          "weight": "core",
+          "sample": "S2",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R1/R2/NOE at 500 and 600 MHz; TENSOR2 fit to PDB 1MZK",
+          "fit": "axially symmetric diffusion (D∥/D⊥ = 1.21 ± 0.06)",
+          "location in paper": "Table 2",
+          "quote": "ROW: | 14.1 | 84 | 0.80 | 1.41 | 16.9 E | 42 | 0.80 | 1.35 | 16.4 E | 10.70±0.07 | 1.21±0.06"
+        },
+        {
+          "quantity": "S2",
+          "value": "0.902",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "average non-terminal backbone amides (free KI-FHA)",
+          "weight": "core",
+          "sample": "S1",
+          "method": "nmr_model_free",
+          "method description": "Two-field (500 and 600 MHz) Lipari-Szabo model-free with AIC model selection",
+          "fit": "mean across non-terminal residues",
+          "location in paper": "Results, Model-free dynamics",
+          "quote": "Excluding the termini, S2 values appear to average 0.902 and 0.946 for the free and pT868-bound states of KI-FHA, respectively."
+        },
+        {
+          "quantity": "S2",
+          "value": "0.946",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "average non-terminal backbone amides (pT868-bound KI-FHA)",
+          "weight": "core",
+          "sample": "S2",
+          "method": "nmr_model_free",
+          "method description": "Two-field (500 and 600 MHz) Lipari-Szabo model-free with AIC model selection",
+          "fit": "mean across non-terminal residues (ΔS2 bound-free = 0.042, median 0.036 ± 0.037)",
+          "location in paper": "Results, Model-free dynamics",
+          "quote": "Excluding the termini, S2 values appear to average 0.902 and 0.946 for the free and pT868-bound states of KI-FHA, respectively."
+        },
+        {
+          "quantity": "NOE",
+          "value": "0.76",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=46, free KI-FHA, 11.74 T)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N{1H} steady-state NOE at 500 MHz (11.74 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | Free | 11.74 | 83 | 0.76 | 2.07 | 11.6 | 46 | 0.76 | 2.05 | 11.5 | |"
+        },
+        {
+          "quantity": "R1",
+          "value": "2.05",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=46, free KI-FHA, 11.74 T)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R1 at 500 MHz (11.74 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | Free | 11.74 | 83 | 0.76 | 2.07 | 11.6 | 46 | 0.76 | 2.05 | 11.5 | |"
+        },
+        {
+          "quantity": "R2",
+          "value": "11.5",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=46, free KI-FHA, 11.74 T)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R2 at 500 MHz (11.74 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | Free | 11.74 | 83 | 0.76 | 2.07 | 11.6 | 46 | 0.76 | 2.05 | 11.5 | |"
+        },
+        {
+          "quantity": "NOE",
+          "value": "0.79",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=43, free KI-FHA, 14.1 T)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N{1H} steady-state NOE at 600 MHz (14.1 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | | 14.1 | 80 | 0.78 | 1.89 | 12.6 | 43 | 0.79 | 1.85 | 12.3 | 7.57±0.08 | 0.81±0.07"
+        },
+        {
+          "quantity": "R1",
+          "value": "1.85",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=43, free KI-FHA, 14.1 T)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R1 at 600 MHz (14.1 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | | 14.1 | 80 | 0.78 | 1.89 | 12.6 | 43 | 0.79 | 1.85 | 12.3 | 7.57±0.08 | 0.81±0.07"
+        },
+        {
+          "quantity": "R2",
+          "value": "12.3",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=43, free KI-FHA, 14.1 T)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R2 at 600 MHz (14.1 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | | 14.1 | 80 | 0.78 | 1.89 | 12.6 | 43 | 0.79 | 1.85 | 12.3 | 7.57±0.08 | 0.81±0.07"
+        },
+        {
+          "quantity": "NOE",
+          "value": "0.72",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=39, pT868-bound KI-FHA, 11.74 T)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N{1H} steady-state NOE at 500 MHz (11.74 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | Bound to pT868D | 11.74 | 57 | 0.75 | 1.91 | 14.4 | 39 | 0.72 | 1.87 | 14.2 | |"
+        },
+        {
+          "quantity": "R1",
+          "value": "1.87",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=39, pT868-bound KI-FHA, 11.74 T)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R1 at 500 MHz (11.74 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | Bound to pT868D | 11.74 | 57 | 0.75 | 1.91 | 14.4 | 39 | 0.72 | 1.87 | 14.2 | |"
+        },
+        {
+          "quantity": "R2",
+          "value": "14.2",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=39, pT868-bound KI-FHA, 11.74 T)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R2 at 500 MHz (11.74 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | Bound to pT868D | 11.74 | 57 | 0.75 | 1.91 | 14.4 | 39 | 0.72 | 1.87 | 14.2 | |"
+        },
+        {
+          "quantity": "NOE",
+          "value": "0.80",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=42, pT868-bound KI-FHA, 14.1 T, 98% sat)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N{1H} steady-state NOE at 600 MHz (14.1 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | 14.1 | 84 | 0.80 | 1.41 | 16.9 E | 42 | 0.80 | 1.35 | 16.4 E | 10.70±0.07 | 1.21±0.06"
+        },
+        {
+          "quantity": "R1",
+          "value": "1.35",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=42, pT868-bound KI-FHA, 14.1 T, 98% sat)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R1 at 600 MHz (14.1 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | 14.1 | 84 | 0.80 | 1.41 | 16.9 E | 42 | 0.80 | 1.35 | 16.4 E | 10.70±0.07 | 1.21±0.06"
+        },
+        {
+          "quantity": "R2",
+          "value": "16.4",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "fine-filtered average (n=42, pT868-bound KI-FHA, 14.1 T, 98% sat)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_spin_relaxation",
+          "method description": "15N R2 at 600 MHz (14.1 T)",
+          "fit": "trimmed average",
+          "location in paper": "Table 2",
+          "quote": "ROW: | 14.1 | 84 | 0.80 | 1.41 | 16.9 E | 42 | 0.80 | 1.35 | 16.4 E | 10.70±0.07 | 1.21±0.06"
+        }
+      ],
+      "states": [
+        {
+          "PDB": "1MZK",
+          "state": "Free Arabidopsis KAPP KI-FHA domain solution NMR structure",
+          "location in paper": "Results, Hydrodynamics of KI-FHA",
+          "quote": "The trustworthy, fine-filtered data from 600 MHz with cryogenic probe were fitted to the NMR structure of free KI-FHA (PDB accession code 1MZK)"
+        }
+      ],
+      "residue_sets": [
+        {
+          "process": "µs-ms conformational exchange broadening (binding-state independent)",
+          "residues": "Ser256 (largest Rex, 7/8 loop), 7/8 β-hairpin, β10, 9/10 loop, plus contiguous hydrophobic swath across 6-stranded β-sheet (Leu184, Val186, Leu194, Leu218, Ile281, Val289, Val291)",
+          "sample": "S1",
+          "location in paper": "Discussion, Significance of µsec to msec fluctuations",
+          "quote": "The largest line broadening evidence of fluctuations on the µsec to msec scale occurs at Ser256 of the 7/8 loop (Figure 4b, Figure 5b, Figure 7). Neighboring residues of the 7/8 β–hairpin, β10, and the 9/10 loop also display line broadening evidence of conformational exchange on the µsec to msec scale"
+        },
+        {
+          "process": "ns-scale recognition-loop mobility (diminished upon pT868 peptide binding)",
+          "residues": "Ser216 (3/4 loop); Asp222, Glu224, Lys228 (4/5 loop); Ser260, Gly265-Arg267 (8/9 loop); Thr286 (10/11 loop)",
+          "sample": "S1",
+          "location in paper": "Discussion",
+          "quote": "Several non-conserved residues of the recognition loops are more flexible than average: Ser216 (3/4 loop); Asp222, Glu224, Lys228 (4/5 loop); Ser260, Gly265 - Arg267 (8/9 loop); and Thr286 (10/11 loop). The mobility of these in the free state appears to be on the nsec scale"
+        }
+      ],
+      "gaps": [
+        {
+          "kind": "value not readable from the text",
+          "what": "Per-residue S2, Rex, and τe for free and pT868-bound KI-FHA",
+          "why": "plotted in Figures 4 and 5 and deposited under BMRB 5841 and 6474 (Table S1 in ACS supplement)"
+        }
+      ]
+    },
+    {
+      "entry": "5687",
+      "protein": "Four helix bundle",
+      "doi": "10.1073/pnas.1835644100",
+      "pmcid": "PMC263778",
+      "read_mode": "full_text",
+      "title": "Solution structure of a de novo protein from a designed combinatorial library",
+      "record": "5687__10.1073_pnas.1835644100",
+      "overview": "Primary NMR solution structure (PDB 1P68) of de novo designed 102-residue four-helix bundle S-824 (BMRB 5687). Shows well-ordered native-like helical bundle contrasting with fluctuating 74-residue first-generation molten globules, with flexible glycine-rich interhelical turns; no numeric relaxation rates printed in this structure paper.",
+      "reader_notes": "BMRB 5687 primary structure paper (companion to 10.1110/ps.0228003, PMC2312408). Fixes false collapse of entry 5687 onto 50332 caused by placeholder UniProt 'x'.",
+      "tables_excluded": "Table 1: NMR structural restraint and CNS ensemble RMSD statistics (not dynamics).",
+      "samples": [
+        {
+          "sample": "S1",
+          "protein": "De novo four-helix bundle S-824",
+          "construct": "102-residue binary-patterned synthetic protein S-824",
+          "species relation": "target",
+          "ligand state": "apo",
+          "temperature": "25 °C (298 K)",
+          "pH": "4.0 (from companion ps.0228003)",
+          "buffer": "50 mM sodium acetate-acetic acid buffer, pH 4.0 (companion ps.0228003)",
+          "field (MHz)": "600",
+          "same as deposit": "yes",
+          "note": "Matches BMRB 5687 (298 K, 500/600 MHz).",
+          "location in paper": "Materials and Methods, NMR Spectroscopy",
+          "quote": "Spectra were collected at 25°C by using a Varian INOVA 600 MHz spectrometer equipped with a triple-resonance probe and pulse-field gradients."
+        }
+      ],
+      "measurements": [],
+      "states": [
+        {
+          "PDB": "1P68",
+          "state": "Well-ordered de novo four-helix bundle S-824 solution NMR structure",
+          "location in paper": "Data deposition",
+          "quote": "The atomic coordinates have been deposited in the Protein Data Bank, www.rcsb.org (PDB ID code 1P68)."
+        }
+      ],
+      "residue_sets": [
+        {
+          "process": "designed flexible interhelical turns",
+          "residues": "glycine-rich interhelical turns connecting the four 21-residue α-helices",
+          "sample": "S1",
+          "location in paper": "Results and Discussion",
+          "quote": "The interhelical turns in the second generation sequences were designed to be relatively flexible by incorporating multiple glycines in each turn."
+        }
+      ],
+      "gaps": [
+        {
+          "kind": "no dynamics values printed in paper",
+          "what": "15N backbone relaxation rates (T1, T2, NOE) for S-824",
+          "why": "not printed in PNAS 2003 (10.1073/pnas.1835644100) or Protein Sci 2003 (10.1110/ps.0228003); deposited in BMRB 5687 only"
+        }
+      ]
+    },
+    {
+      "entry": "CMTIV",
+      "protein": "Inhibitor of trypsin and hageman factor",
+      "doi": "10.1002/pro.5560070114",
+      "pmcid": "PMC2143810",
+      "read_mode": "abstract_only",
+      "title": "NMR studies of internal dynamics of serine proteinase protein inhibitors: binding loop mobility of intact and reactive-site hydrolyzed CMTI-III and CMTI-V",
+      "record": "CMTIV__10.1002_pro.5560070114",
+      "overview": "PMC holds a scanned PDF without machine-readable body text; the official PMC abstract prints comparative average 15N model-free order parameters (S2) for intact rCMTI-V and reactive-site-cleaved rCMTI-V* (Lys44-Asp45, Khyd = 9 at 25 °C), citing the earlier Biochemistry 1996 primary relaxation study (10.1021/bi952466d, paywalled).",
+      "reader_notes": "Marked abstract_only because PMC2143810 body is a scanned image PDF. Companion Protein Sci 2001 full text (PMC2249841, 10.1110/ps.26801) reports denaturation thermodynamics of disulfide and R50/R52 binding-loop mutants with no new relaxation rates.",
+      "tables_excluded": "None (abstract_only).",
+      "samples": [
+        {
+          "sample": "S1",
+          "protein": "Recombinant Cucurbita maxima trypsin inhibitor V (rCMTI-V)",
+          "construct": "WT intact rCMTI-V (~7 kDa)",
+          "species relation": "target",
+          "ligand state": "apo (intact)",
+          "temperature": "25 °C (298 K)",
+          "pH": "not printed in abstract",
+          "buffer": "not printed in abstract",
+          "field (MHz)": "not printed in abstract",
+          "same as deposit": "unclear",
+          "note": "Abstract_only; comparative values cited from prior 15N relaxation study (10.1021/bi952466d).",
+          "location in paper": "Abstract",
+          "quote": "These two inhibitors have different binding loop-scaffold interactions and different Khyd values--2.4 (CMTI-III) and 9 (CMTI-V)--at 25 degrees C."
+        },
+        {
+          "sample": "S2",
+          "protein": "Reactive-site hydrolyzed rCMTI-V*",
+          "construct": "rCMTI-V cleaved at Lys44-Asp45 scissile bond",
+          "species relation": "same_protein_other_construct",
+          "ligand state": "cleaved (I*)",
+          "temperature": "25 °C (298 K)",
+          "pH": "not printed in abstract",
+          "buffer": "not printed in abstract",
+          "field (MHz)": "not printed in abstract",
+          "same as deposit": "no",
+          "note": "Reactive-site hydrolyzed form rCMTI-V* (Lys44-Asp45 cleaved).",
+          "location in paper": "Abstract",
+          "quote": "The reactive-site peptide bond (P1-P1') is that between Arg5 and Ile6 in CMTI-III, and that between Lys44 and Asp45 in CMTI-V."
+        }
+      ],
+      "measurements": [
+        {
+          "quantity": "S2",
+          "value": "0.83",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "backbone NH average (intact rCMTI-V; abstract_only summary)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_model_free",
+          "method description": "15N T1, T2, NOE model-free order parameter (abstract summary of prior CMTI-V data)",
+          "fit": "backbone average",
+          "location in paper": "Abstract",
+          "quote": "The backbones of rCMTI-III [(S2) = 0.71] and rCMTI-III* [(S2) = 0.63] are more flexible than those of rCMTI-V [(S2) = 0.83] and rCMTI-V* [(S2) = 0.85]."
+        },
+        {
+          "quantity": "S2",
+          "value": "0.85",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "backbone NH average (cleaved rCMTI-V*; abstract_only summary)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_model_free",
+          "method description": "15N T1, T2, NOE model-free order parameter (abstract summary)",
+          "fit": "backbone average",
+          "location in paper": "Abstract",
+          "quote": "The backbones of rCMTI-III [(S2) = 0.71] and rCMTI-III* [(S2) = 0.63] are more flexible than those of rCMTI-V [(S2) = 0.83] and rCMTI-V* [(S2) = 0.85]."
+        },
+        {
+          "quantity": "S2",
+          "value": "0.70",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "binding loop P4-P1 average (intact rCMTI-V; abstract_only)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_model_free",
+          "method description": "15N model-free average S2 across binding loop P4-P1",
+          "fit": "loop average",
+          "location in paper": "Abstract",
+          "quote": "The binding loop residues, P4-P1, in the two proteins show the following average order parameters: 0.57 (rCMTI-III) and 0.44 (rCMTI-III*); 0.70 (rCMTI-V) and 0.40 (rCMTI-V*)."
+        },
+        {
+          "quantity": "S2",
+          "value": "0.40",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "binding loop P4-P1 average (cleaved rCMTI-V*; abstract_only)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_model_free",
+          "method description": "15N model-free average S2 across binding loop P4-P1 after Lys44-Asp45 cleavage",
+          "fit": "loop average",
+          "location in paper": "Abstract",
+          "quote": "The binding loop residues, P4-P1, in the two proteins show the following average order parameters: 0.57 (rCMTI-III) and 0.44 (rCMTI-III*); 0.70 (rCMTI-V) and 0.40 (rCMTI-V*)."
+        },
+        {
+          "quantity": "S2",
+          "value": "0.73",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "binding loop P1'-P4' average (intact rCMTI-V; abstract_only)",
+          "weight": "minor",
+          "sample": "S1",
+          "method": "nmr_model_free",
+          "method description": "15N model-free average S2 across binding loop P1'-P4'",
+          "fit": "loop average",
+          "location in paper": "Abstract",
+          "quote": "The P1'-P4' residues, on the other hand, are associated with (S2) values of 0.56 (rCMTI-III) and 0.47 (rCMTI-III*); and 0.73 (rCMTI-V) and 0.83 (rCMTI-V*)."
+        },
+        {
+          "quantity": "S2",
+          "value": "0.83",
+          "unit": "dimensionless",
+          "uncertainty": "",
+          "residues or group": "binding loop P1'-P4' average (cleaved rCMTI-V*; abstract_only)",
+          "weight": "minor",
+          "sample": "S2",
+          "method": "nmr_model_free",
+          "method description": "15N model-free average S2 across binding loop P1'-P4'",
+          "fit": "loop average",
+          "location in paper": "Abstract",
+          "quote": "The P1'-P4' residues, on the other hand, are associated with (S2) values of 0.56 (rCMTI-III) and 0.47 (rCMTI-III*); and 0.73 (rCMTI-V) and 0.83 (rCMTI-V*)."
+        }
+      ],
+      "states": [],
+      "residue_sets": [
+        {
+          "process": "flexible protease-binding loop (sharply mobilized at P4-P1 upon Lys44-Asp45 hydrolysis)",
+          "residues": "P4-P1 and P1'-P4' around scissile bond Lys44-Asp45 (modulated by Arg50 and Arg52 hydrogen bonds)",
+          "sample": "S1",
+          "location in paper": "Abstract",
+          "quote": "The binding loop residues, P4-P1, in the two proteins show the following average order parameters: 0.57 (rCMTI-III) and 0.44 (rCMTI-III*); 0.70 (rCMTI-V) and 0.40 (rCMTI-V*)."
+        }
+      ],
+      "gaps": [
+        {
+          "kind": "paywalled or scanned full text",
+          "what": "Per-residue 15N T1, T2, NOE, and S2 for rCMTI-V and rCMTI-V*",
+          "why": "PMC2143810 is a scanned PDF without machine-readable body text; primary 1996 study (doi:10.1021/bi952466d) is behind ACS paywall"
+        }
+      ]
+    },
+    {
+      "entry": "7432",
+      "protein": "Iron-sulfur cluster assembly scaffold protein IscU",
+      "doi": "10.1073/pnas.1114372109",
+      "pmcid": "PMC3258623",
+      "read_mode": "full_text",
+      "title": "Disordered form of the scaffold protein IscU is the substrate for iron-sulfur cluster assembly on cysteine desulfurase",
+      "record": "7432__10.1073_pnas.1114372109",
+      "overview": "2D NMR ZZ-exchange and H/D exchange on E. coli apo-IscU showing slow S <-> D interconversion (70% S / 30% D at pH 8, 25 °C; lifetimes 1.3 s and 0.50 s) and direct modulation of directional rates by 0.1 eq IscS at pH 7.5, 25 °C (S->D increases 0.77 to 1.1 s-1; D->S decreases 2.0 to 1.5 s-1). Identifies S-favoring (D39A, N90A, S107A, E111A) and D-favoring (K89A, N90D) variants.",
+      "reader_notes": "Recovered from the 25 unread Nov-12 open-access PMC full-text queue. Adds direct ZZ-exchange directional rates for apo-IscU and apo-IscU + 0.1 eq IscS.",
+      "tables_excluded": "None (all printed rates are in Abstract, Discussion, and Fig. 2 caption).",
+      "samples": [
+        {
+          "sample": "S1",
+          "protein": "E. coli apo-IscU",
+          "construct": "WT apo-IscU (U-15N)",
+          "species relation": "target",
+          "ligand state": "apo",
+          "temperature": "25 °C (298 K)",
+          "pH": "7.5",
+          "buffer": "50 mM Tris·HCl (pH 7.5), 0.5 mM EDTA, 5 mM DTT, 7% D2O, 0.7 mM DSS, 0.02% NaN3",
+          "field (MHz)": "600 or 800",
+          "same as deposit": "no",
+          "note": "ZZ-exchange S<->D rate sample at pH 7.5, 25 °C (BMRB 7432 deposit is pH 8.0, 298 K).",
+          "location in paper": "Materials and Methods, NMR Spectroscopy",
+          "quote": "The samples for the signal assignments of the S and D states of WT apo-IscU and the exchange rate determination between the S and D states of WT apo-IscU were prepared in 50 mM Tris·HCl buffer at pH 7.5 containing 0.5 mM EDTA and 5 mM DTT."
+        },
+        {
+          "sample": "S2",
+          "protein": "E. coli apo-IscU + IscS",
+          "construct": "WT apo-IscU (U-15N) + 0.1 equivalent unlabeled E. coli IscS",
+          "species relation": "target",
+          "ligand state": "substoichiometric IscS (0.1 eq)",
+          "temperature": "25 °C (298 K)",
+          "pH": "7.5",
+          "buffer": "50 mM Tris·HCl (pH 7.5), 0.5 mM EDTA, 5 mM DTT, 7% D2O",
+          "field (MHz)": "600 or 800",
+          "same as deposit": "no",
+          "note": "Substoichiometric IscS shifts S<->D transition rates toward D state.",
+          "location in paper": "Figure 2 caption",
+          "quote": "Blue symbols are for IscU alone; green symbols are for IscU plus 0.1 equivalent of IscS. From the initial slopes, the S → D exchange rate increased from 0.77 s-1 for IscU alone to 1.1 s-1 for IscU in the presence of IscS; the D → S exchange rate decreased from 2.0 s-1 for IscU alone to 1.5 s-1 for IscU in the presence of IscS."
+        },
+        {
+          "sample": "S3",
+          "protein": "E. coli apo-IscU",
+          "construct": "WT apo-IscU (U-15N)",
+          "species relation": "target",
+          "ligand state": "apo",
+          "temperature": "25 °C (298 K)",
+          "pH": "8.0",
+          "buffer": "aqueous buffer at pH 8",
+          "field (MHz)": "600 or 800",
+          "same as deposit": "yes",
+          "note": "Matches deposit pH 8 and 25 °C (298 K).",
+          "location in paper": "Abstract",
+          "quote": "At pH 8 and 25 °C, approximately 70% of the protein is S, and the lifetimes of the states are 1.3 s (S) and 0.50 s (D)."
+        }
+      ],
+      "measurements": [
+        {
+          "quantity": "kAB",
+          "value": "0.77",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "Asn26 and Glu95 (S -> D transition, apo-IscU alone)",
+          "weight": "core",
+          "sample": "S1",
+          "method": "nmr_zz_exchange",
+          "method description": "2D 1H-15N ZZ-exchange spectroscopy initial slope analysis",
+          "fit": "initial slope of exchange cross-peak / diagonal volume vs mixing time",
+          "location in paper": "Figure 2 caption",
+          "quote": "From the initial slopes, the S → D exchange rate increased from 0.77 s-1 for IscU alone to 1.1 s-1 for IscU in the presence of IscS; the D → S exchange rate decreased from 2.0 s-1 for IscU alone to 1.5 s-1 for IscU in the presence of IscS."
+        },
+        {
+          "quantity": "kBA",
+          "value": "2.0",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "Asn26 (D -> S transition, apo-IscU alone)",
+          "weight": "core",
+          "sample": "S1",
+          "method": "nmr_zz_exchange",
+          "method description": "2D 1H-15N ZZ-exchange spectroscopy initial slope analysis",
+          "fit": "initial slope of exchange cross-peak / diagonal volume vs mixing time",
+          "location in paper": "Figure 2 caption",
+          "quote": "From the initial slopes, the S → D exchange rate increased from 0.77 s-1 for IscU alone to 1.1 s-1 for IscU in the presence of IscS; the D → S exchange rate decreased from 2.0 s-1 for IscU alone to 1.5 s-1 for IscU in the presence of IscS."
+        },
+        {
+          "quantity": "kAB",
+          "value": "1.1",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "Asn26 and Glu95 (S -> D transition, apo-IscU + 0.1 eq IscS)",
+          "weight": "core",
+          "sample": "S2",
+          "method": "nmr_zz_exchange",
+          "method description": "2D 1H-15N ZZ-exchange spectroscopy initial slope analysis",
+          "fit": "initial slope of exchange cross-peak / diagonal volume vs mixing time",
+          "location in paper": "Figure 2 caption",
+          "quote": "From the initial slopes, the S → D exchange rate increased from 0.77 s-1 for IscU alone to 1.1 s-1 for IscU in the presence of IscS; the D → S exchange rate decreased from 2.0 s-1 for IscU alone to 1.5 s-1 for IscU in the presence of IscS."
+        },
+        {
+          "quantity": "kBA",
+          "value": "1.5",
+          "unit": "s-1",
+          "uncertainty": "",
+          "residues or group": "Asn26 (D -> S transition, apo-IscU + 0.1 eq IscS)",
+          "weight": "core",
+          "sample": "S2",
+          "method": "nmr_zz_exchange",
+          "method description": "2D 1H-15N ZZ-exchange spectroscopy initial slope analysis",
+          "fit": "initial slope of exchange cross-peak / diagonal volume vs mixing time",
+          "location in paper": "Figure 2 caption",
+          "quote": "From the initial slopes, the S → D exchange rate increased from 0.77 s-1 for IscU alone to 1.1 s-1 for IscU in the presence of IscS; the D → S exchange rate decreased from 2.0 s-1 for IscU alone to 1.5 s-1 for IscU in the presence of IscS."
+        },
+        {
+          "quantity": "population",
+          "value": "~70",
+          "unit": "%",
+          "uncertainty": "",
+          "residues or group": "global structured state S (WT apo-IscU at pH 8, 25 °C)",
+          "weight": "core",
+          "sample": "S3",
+          "method": "nmr_spectrum_slow_exchange",
+          "method description": "2D 1H-15N HSQC slow-exchange peak populations",
+          "fit": "relative peak intensities (70% S / 30% D)",
+          "location in paper": "Abstract and Discussion",
+          "quote": "At pH 8 and 25 °C, approximately 70% of the protein is S, and the lifetimes of the states are 1.3 s (S) and 0.50 s (D)."
+        },
+        {
+          "quantity": "population",
+          "value": "30",
+          "unit": "%",
+          "uncertainty": "",
+          "residues or group": "global disordered state D (WT apo-IscU at pH 8, 25 °C)",
+          "weight": "core",
+          "sample": "S3",
+          "method": "nmr_spectrum_slow_exchange",
+          "method description": "2D 1H-15N HSQC slow-exchange peak populations",
+          "fit": "relative peak intensities (70% S / 30% D)",
+          "location in paper": "Discussion",
+          "quote": "WT apo-IscU exists in equilibrium between its S and D states, and the relative levels were 70% S and 30% D under the experimental conditions of Fig. 1."
+        },
+        {
+          "quantity": "tau_ex",
+          "value": "1.3",
+          "unit": "s",
+          "uncertainty": "",
+          "residues or group": "state S lifetime (WT apo-IscU at pH 8, 25 °C)",
+          "weight": "core",
+          "sample": "S3",
+          "method": "nmr_zz_exchange",
+          "method description": "2D NMR exchange state lifetime",
+          "fit": "state lifetime",
+          "location in paper": "Abstract",
+          "quote": "At pH 8 and 25 °C, approximately 70% of the protein is S, and the lifetimes of the states are 1.3 s (S) and 0.50 s (D)."
+        },
+        {
+          "quantity": "tau_ex",
+          "value": "0.50",
+          "unit": "s",
+          "uncertainty": "",
+          "residues or group": "state D lifetime (WT apo-IscU at pH 8, 25 °C)",
+          "weight": "core",
+          "sample": "S3",
+          "method": "nmr_zz_exchange",
+          "method description": "2D NMR exchange state lifetime",
+          "fit": "state lifetime",
+          "location in paper": "Abstract",
+          "quote": "At pH 8 and 25 °C, approximately 70% of the protein is S, and the lifetimes of the states are 1.3 s (S) and 0.50 s (D)."
+        }
+      ],
+      "states": [
+        {
+          "PDB": "3LVL",
+          "state": "X-ray crystal structure of E. coli IscU:IscS complex (captures minor ordered IscU state)",
+          "location in paper": "Figure 2 caption",
+          "quote": "X-ray crystal structure (Protein Data Bank ID code 3LVL) of the IscU:IscS complex"
+        }
+      ],
+      "residue_sets": [
+        {
+          "process": "disordered N-terminal tail (disordered in both S and D states and in IscU:IscS complex)",
+          "residues": "N-terminal residues of apo-IscU; mobile Trp76 side chain",
+          "sample": "S1",
+          "location in paper": "Figure 4 caption and Results",
+          "quote": "In both states, the N-terminal residues (represented in red) are disordered, and a single set of NMR signals is observed."
+        }
+      ],
+      "gaps": [
+        {
+          "kind": "value not readable from the text",
+          "what": "Per-residue H/D exchange rates of apo-IscU(N90A) with/without IscS",
+          "why": "plotted in Supplemental Figure S3 only (not printed in main text)"
+        }
+      ]
+    }
+  ],
+  "paywalled_bmrb_dossiers": {
+    "15795": {
+      "entry": "15795",
+      "protein": "MBF1 of Trichoderma reesei",
+      "uniprot": "G0RLX7",
+      "bmrb_title": "NMR structure of the c-terminal domain of a multiprotein bridging factor 1 (MBF1) of Trichoderma reesei",
+      "primary_doi": "10.1002/prot.22344",
+      "primary_pmid": "19137618",
+      "year": "2009",
+      "paper_title": "Solution structure of the C-terminal domain of multiprotein bridging factor 1 (MBF1) of Trichoderma reesei",
+      "access_status": "paywalled_full_text (no PMCID; Wiley)",
+      "abstract_summary": "PubMed record carries no abstract text; BMRB 15795 deposits 500 MHz, 298 K NMR structure/relaxation data for the C-terminal HTH domain of T. reesei MBF1."
+    },
+    "18477": {
+      "entry": "18477",
+      "protein": "Dolichyl-phosphooligosaccharide-protein glycotransferase 2",
+      "uniprot": "O30195",
+      "bmrb_title": "NMR dynamics in the C-terminal globular domain of oligosaccharyltransferase",
+      "primary_doi": "10.1016/j.str.2012.10.011",
+      "primary_pmid": "23177926",
+      "year": "2013",
+      "paper_title": "Crystallographic and NMR evidence for flexibility in oligosaccharyltransferases and its catalytic significance",
+      "access_status": "paywalled_full_text (no PMCID; Elsevier Structure); companion HS-AFM paper 10.1016/j.jmb.2020.09.017 (PMID 33010307) also paywalled",
+      "abstract_summary": "15N NMR relaxation characterizes solution flexibility in a mobile segment containing the +2 Ser/Thr-binding pocket of the archaeal OST C-terminal globular domain; restricting flexibility by engineered disulfide crosslinking abolishes enzymatic activity and cleavage restores activity. Companion HS-AFM study (JMB 2020, doi:10.1016/j.jmb.2020.09.017) reports two-state real-time exchange dynamics in membrane-embedded archaeal OST where sugar donor LLO shifts the equilibrium to compact state 1."
+    },
+    "50734": {
+      "entry": "50734",
+      "protein": "Selenoprotein W",
+      "uniprot": "A0A2K3D6Z3",
+      "bmrb_title": "NMR backbone resonance assignment of the selenoprotein SelW1 (oxidized) from Chlamydomonas reinhardtii",
+      "primary_doi": "10.1016/j.bbapap.2021.140685",
+      "primary_pmid": "34216797",
+      "year": "2021",
+      "paper_title": "Structural and biophysical characterization of the selenoprotein SelW1 from Chlamydomonas reinhardtii",
+      "access_status": "paywalled_full_text (no PMCID; Elsevier BBA Proteins and Proteomics)",
+      "abstract_summary": "U14C mutant of Chlamydomonas SelW1 adopts a thioredoxin fold with an intramolecular disulfide bond (thermally stable up to 70 °C). Both reduced and oxidized forms show two additional sets of resonances for terminal residues and essentially identical dynamic behavior."
+    }
+  }
+}

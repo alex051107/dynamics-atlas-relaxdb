@@ -2,6 +2,8 @@
 
 During our November 2026 audit of `771` checked extraction records across `131` open RelaxDB entries, we found five concrete failure modes. Every example below occurred on real papers and passed our basic verbatim-quote check without raising an error.
 
+> **Status update (`19 November 2026`).** Concrete data-layer fixes for **Bug 1 (`BARSTAR` `S1`/`S2` split)**, **Bug 2 (`5687` `'x'` separation + read, twin UniProt cross-links in `ATLAS_131.md`)**, **Bug 3 (`85` raw methods mapped into `9` controlled `method_group` buckets + `4` `row_tier` classes)**, **Bug 4 (`Exchange_Highlights` tab + separated atlas sections)**, and **Bug 5 (reconciling `219/244` Nov-12 full-text DOIs with Release `0.1` + reading OA entries `15451`, `5841`, `5687`, `CMTIV`, and `7432` IscU PNAS 2011)** are now **applied and verified in this review branch** ([`supplemental_20261119.json`](../data/v3_draft_20261118/supplemental_reads/supplemental_20261119.json), `55 / 55` verbatim quotes checked). Schema-level `v4` enforcement rules remain queued pending Gina's sign-off on [`REVIEW_GUIDE.md`](../REVIEW_GUIDE.md).
+
 ![Four real audit failures and the exact fixes planned for v4](../figures/known_bugs_and_fixes.png)
 
 ---

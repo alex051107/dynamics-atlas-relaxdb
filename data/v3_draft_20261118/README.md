@@ -8,9 +8,10 @@ Use this folder alongside the **worked protein synthesis previews** in [`atlas/v
 
 | File | Contents | Rows |
 |---|---|---|
-| [`RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx`](RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx) | Review-ready ten-tab workbook built losslessly from `771` checked entry-paper JSON records (`752` unique DOIs) | `19,958` measurements + `567` exchange highlights across `10` tabs |
-| [`proteins_summary.csv`](proteins_summary.csv) | Exact CSV export of the workbook `Proteins` tab (sorted by richness, with `status`, `audit_flag`, and fixed `5687` gap) | `131` data rows |
-| [`coverage_gap_audit.csv`](coverage_gap_audit.csv) | Transparent accounting of open entries, duplicate-UniProt pairs, unread Nov-12 DOIs (`988`), Kosmos (`336`), and un-reread early batches (`168`) | `15` metrics |
+| [`RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx`](RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx) | Review-ready ten-tab workbook unifying `771` `v3` records + `5` verified `2026-11-19` reads (`776` total; `757` unique DOIs) and Release `0.1` calls | `19,989` measurements + `575` exchange highlights across `10` tabs |
+| [`proteins_summary.csv`](proteins_summary.csv) | Exact CSV export of the workbook `Proteins` tab (sorted by richness, with `status`, `release_01_call`, `audit_flag`, and fixed `5687` & `BARSTAR`) | `131` data rows |
+| [`coverage_gap_audit.csv`](coverage_gap_audit.csv) | Transparent accounting of unified `128 / 131` coverage, `3` paywalled BMRB entries, reconciled Nov-12 DOIs (`219 / 244` in Release `0.1`), Kosmos (`336`), and `168` early records | `13` metrics |
+| [`supplemental_reads/supplemental_20261119.json`](supplemental_reads/supplemental_20261119.json) | Quote-verified (`55 / 55`) JSON of the `BARSTAR` `S1`/`S2` bug fix, newly read OA papers (`15451`, `5841`, `5687`, `CMTIV`, `7432`), and `3` paywalled BMRB dossiers (`15795`, `18477`, `50734`) | `5` new papers + `1` sample fix + `3` dossiers |
 
 ## Workbook tabs (`RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx`)
 

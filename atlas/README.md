@@ -1,7 +1,7 @@
 # The atlas: one page per protein
 
-> **Expert review checkpoint (`19 November 2026`).**  
-> Before expanding across all `131` open entries, read our **[full single-paper walkthrough (`walkthrough_ets1.md`)](walkthrough_ets1.md)** and **[four worked protein synthesis previews (`v3_previews/`)](v3_previews/README.md)** (`FKBP`, `DBD82`, `CHEA/CHEAYBD`, `16392` and `BARSTAR`). They translate raw extraction rows back into the synthesis style below and isolate the four borderline decisions we ask Gina to rule on.
+> **Unified 131-Protein Dynamics Atlas (`19 November 2026`).**  
+> Browse all **`131` open RelaxDB entries** in **[`ATLAS_131.md`](ATLAS_131.md)** (one page per protein in `all_proteins/`, unifying Release `0.1`, `v3`, and `2026-11-19` supplemental reads & bug fixes). For the focused expert check, also inspect our **[single-paper walkthrough (`walkthrough_ets1.md`)](walkthrough_ets1.md)** and **[four worked borderline cases (`v3_previews/`)](v3_previews/README.md)** (`FKBP`, `DBD82`, `CHEA/CHEAYBD`, `16392` and `BARSTAR`).
 
 ---
 
