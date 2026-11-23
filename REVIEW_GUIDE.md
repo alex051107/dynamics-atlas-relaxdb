@@ -2,6 +2,11 @@
 
 This guide is for NMR specialist review before we run our next full literature pass. The October baseline (`42` proteins on `main`) had dual review, while all new November rows still need expert sign-off. For spreadsheet and database inspection, open the **16-tab clickable workbook** **[`data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx`](data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx)** and its companion **queryable SQLite database** ([`README & CLI`](data/expert_review_20261119/README.md)). It links `Protein_overview -> Region_comparisons -> Observations -> Samples`, adds `Data_quality_audit`, `BMRB_recovered` (`37,131` direct values), `SI_S3_inventory` (`386` gap DOIs), and `Figure_S3_links` (`2,114` public NIH S3 figure URLs, no key needed), and opens with 6 verified walkthroughs (`BARSTAR`, `FKBP`, `PLEXINB1`, `16392`, `18257`, `50020`). Now we need your ruling on two questions: whether our paper-reading logic is sound, and how to settle four scientific boundary rules.
 
+For the clean measurements, 17,864 rows are retained and 2,094 are quarantined. A shared accession links entries for inspection; it does not pool their evidence. Check retrieval, model processing and release separately before using an asset.
+
+Figure counts by license (figures/distinct DOIs): CC0 22/2; CC-BY 1,578/174; CC-BY-NC 163/22; CC-BY-NC-SA 4/1; CC-BY-NC-ND 201/25; publisher_oa 125/15; untagged 21/3.
+
+
 ---
 
 ## How your 4 decisions unlock the next pass
