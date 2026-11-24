@@ -1,0 +1,11 @@
+digraph evidence {
+  graph [rankdir=TB, bgcolor="transparent", pad=.25, nodesep=.27, ranksep=.45, fontname="DejaVu Sans", label="DYNAMICS ATLAS  /  EVIDENCE STATES", labelloc=t, fontsize=17, fontcolor="#152e43"];
+  node [shape=box, style="rounded,filled", color="#aec4d4", fillcolor="#eff6fc", fontcolor="#152e43", fontname="DejaVu Sans", margin=".17,.13"];
+  edge [color="#57768d", arrowsize=.72];
+  a [label="Available evidence + release definition"];
+  b [label="YES\nSufficient support", fillcolor="#d5ece6", color="#78a99d"];
+  c [label="POSSIBLE\nSuggestive evidence", fillcolor="#f5f0e4", color="#b6a578"];
+  d [label="UNKNOWN\nInsufficient evidence or access", fillcolor="#edf0f4", color="#acb6c3"];
+  e [label="Reassess if evidence or definition changes"];
+  a -> {b c d}; {b c d} -> e;
+}

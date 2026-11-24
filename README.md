@@ -4,6 +4,8 @@ A database of protein conformational states that existing experiments already sh
 
 Release 0.1, 21 October 2026. Work in progress.
 
+[Portfolio case study](PORTFOLIO.md) · [Architecture and evidence states](docs/portfolio/architecture.md)
+
 ## What the atlas is for
 
 Proteins move between shapes, and some of these shapes matter for function. Experiments, mainly NMR, have measured many such states. The results sit in the text and tables of papers. No database collects them as states.

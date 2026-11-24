@@ -1,0 +1,8 @@
+flowchart TB
+  A["Available evidence + release definition"]
+  A --> B["Yes: sufficient support"]
+  A --> C["Possible: suggestive evidence"]
+  A --> D["Unknown: insufficient evidence or access"]
+  B --> E["Reassess if evidence or definition changes"]
+  C --> E
+  D --> E

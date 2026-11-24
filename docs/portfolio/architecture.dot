@@ -1,0 +1,11 @@
+digraph architecture {
+  graph [rankdir=TB, bgcolor="transparent", pad=.25, nodesep=.36, ranksep=.42, fontname="DejaVu Sans", label="DYNAMICS ATLAS  /  ARCHITECTURE", labelloc=t, fontsize=17, fontcolor="#152e43"];
+  node [shape=box, style="rounded,filled", color="#aec4d4", fillcolor="#eff6fc", fontcolor="#152e43", fontname="DejaVu Sans", margin=".20,.13"];
+  edge [color="#57768d", arrowsize=.72];
+  a [label="Protein identity"]; b [label="Literature selection"]; c [label="Structured evidence rows"];
+  d [label="Two model re-reads"]; e [label="Source adjudication"]; f [label="Model review"];
+  g [label="Evidence-linked atlas\npages and tables", fillcolor="#d5ece6", color="#78a99d"];
+  h [label="Deposited-structure\ncomparisons", fillcolor="#f5f0e4", color="#b6a578"];
+  {rank=same; a;b;c} {rank=same;d;e;f} {rank=same;h;g}
+  a -> b -> c; c -> d; d -> e -> f; f -> g; h -> g;
+}
