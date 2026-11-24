@@ -6,6 +6,10 @@ Release 0.1, 21 October 2026. Work in progress.
 
 [Portfolio case study](PORTFOLIO.md) · [Evidence workflow](docs/portfolio/workflow.svg)
 
+![Dynamics Atlas v0.1 graphical abstract: published experimental reports are checked against candidate claims and organized into 42 evidence-linked protein records](docs/portfolio/graphical-abstract.webp)
+
+*Figure 1. From experimental reports to an evidence-linked atlas of alternate states in unbound proteins. Reading 11 source papers in full reduced unknown calls from 19 to 11 in this 42-protein slice.*
+
 ## What the atlas is for
 
 Proteins move between shapes, and some of these shapes matter for function. Experiments, mainly NMR, have measured many such states. The results sit in the text and tables of papers. No database collects them as states.

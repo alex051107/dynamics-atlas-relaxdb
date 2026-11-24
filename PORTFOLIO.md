@@ -4,6 +4,12 @@
 
 [Browse the atlas](atlas/README.md) · [Data dictionary](data/DATA_DICTIONARY.md) · [Quality report](methods/quality.md)
 
+![Dynamics Atlas v0.1 graphical abstract: published experimental reports are checked against candidate claims and organized into 42 evidence-linked protein records](docs/portfolio/graphical-abstract.webp)
+
+*Figure 1. From experimental reports to an evidence-linked atlas of alternate states in unbound proteins. Reading 11 source papers in full reduced unknown calls from 19 to 11 in this 42-protein slice.*
+
+## Detailed workflow
+
 ![Workflow: identify the protein, build and verify evidence, apply classification rules, and publish the atlas](docs/portfolio/workflow.svg)
 
 ## What shipped
