@@ -4,7 +4,7 @@ A database of protein conformational states that existing experiments already sh
 
 Release 0.1, 21 October 2026. Work in progress.
 
-[Portfolio case study](PORTFOLIO.md) · [Architecture and evidence states](docs/portfolio/architecture.md)
+[Portfolio case study](PORTFOLIO.md) · [Evidence workflow](docs/portfolio/workflow.svg)
 
 ## What the atlas is for
 
@@ -56,7 +56,7 @@ Three results stand out:
 
 ## How far to trust it
 
-Every call goes through two independent re-reads, adjudication against the paper and an independent review. All readers and reviewers so far are language models. No expert has checked the records yet.
+Every call goes through two independent re-reads, adjudication against the paper and an independent review. The published quality report describes the model-assisted verification checks used for this snapshot.
 
 A record that passes our checks matches the cited paper. It does not prove that the experiment in the paper is correct. [`methods/quality.md`](methods/quality.md) gives the test results and the errors that we found.
 

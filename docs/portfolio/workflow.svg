@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="1300" viewBox="0 0 420 1300" role="img" aria-labelledby="title desc">
+<title id="title">From papers to Dynamics Atlas v0.1</title>
+<desc id="desc">Confirm identity, then read source literature and extract evidence. Two models verify each row. Disagreements and double-unverified rows with full text go to adjudication, while double-unverified rows without full text remain unresolved. Independently review calls and classify as Yes, Possible, Unknown, or No evidence. Publish 42 protein pages, traceable data tables and 10 deposited-structure comparisons.</desc>
+<defs>
+  <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#6e74a2"/></marker>
+</defs>
+<style>
+  text{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;fill:#202552}
+  .hero{font-size:31px;font-weight:750;letter-spacing:-.7px;fill:#fff}
+  .eyebrow{font-size:13px;font-weight:750;letter-spacing:1.5px;fill:#b9c7ff}
+  .hero-sub{font-size:15px;fill:#e3e9ff}
+  .stage{font-size:20px;font-weight:750;letter-spacing:-.25px}
+  .body{font-size:16px;fill:#40486b}
+  .small{font-size:15px;fill:#40486b}
+  .branch-title{font-size:16px;font-weight:750;fill:#30386c}
+  .code{font-size:15px;font-weight:750;fill:#fff}
+  .status{font-size:16px;font-weight:750;fill:#235647}
+  .output{font-size:16px;font-weight:700;fill:#fff}
+  .output-sub{font-size:15px;fill:#e0e9ff}
+  .card{fill:#fff;stroke:#d8def2}
+  .flow{fill:none;stroke:#6e74a2;stroke-width:2;marker-end:url(#tip)}
+</style>
+<rect x=".5" y=".5" width="419" height="1299" rx="23" fill="#f3f5fd" stroke="#d5dbef"/>
+<path d="M23 1h374a22 22 0 0 1 22 22v126H1V23A22 22 0 0 1 23 1Z" fill="#202550"/>
+<g opacity=".45" fill="none" stroke="#9baefa" stroke-width="2">
+  <path d="M315 22q43-26 68 10t-15 61t-19-29t38-19M322 85q-13-35 20-44t18 31t-32 37t32 15"/>
+  <circle cx="315" cy="22" r="3" fill="#b9c7ff"/><circle cx="387" cy="45" r="3" fill="#b9c7ff"/>
+</g>
+<text class="eyebrow" x="22" y="36">DYNAMICS ATLAS / V0.1</text>
+<text class="hero" x="22" y="76">From papers to</text>
+<text class="hero" x="22" y="110">protein-state records</text>
+<text class="hero-sub" x="23" y="133">First slice: alternate states of unbound proteins</text>
+
+<!-- The central arrows advance the workflow. The model-check panel contains its own branches. -->
+<path class="flow" d="M210 257v16"/><path class="flow" d="M210 385v16"/><path class="flow" d="M210 677v16"/><path class="flow" d="M210 1057v16"/>
+
+<g id="identity">
+<rect class="card" x="17" y="164" width="386" height="92" rx="13"/>
+<circle cx="42" cy="190" r="14" fill="#4956aa"/>
+<text class="code" text-anchor="middle" x="42" y="195">1</text>
+<text class="stage" x="65" y="197">Identify the protein</text>
+<text class="body" x="32" y="223">Verify the accession and construct before</text>
+<text class="body" x="32" y="244">searching for evidence.</text>
+</g>
+
+<g id="extract">
+<rect class="card" x="17" y="276" width="386" height="108" rx="13"/>
+<circle cx="42" cy="302" r="14" fill="#4956aa"/>
+<text class="code" text-anchor="middle" x="42" y="307">2</text>
+<text class="stage" x="65" y="309">Read papers and log evidence</text>
+<text class="body" x="32" y="336">Read original source papers. Log findings</text>
+<text class="body" x="32" y="357">with a DOI and location. Keep results from</text>
+<text class="body" x="32" y="378">other constructs or bound samples separate.</text>
+</g>
+
+<g id="verify">
+<rect class="card" x="17" y="404" width="386" height="272" rx="13"/>
+<circle cx="42" cy="430" r="14" fill="#4956aa"/>
+<text class="code" text-anchor="middle" x="42" y="435">3</text>
+<text class="stage" x="65" y="437">Verify each evidence row</text>
+<text class="body" x="32" y="462">Two models re-read the cited source separately.</text>
+
+<path d="M40 475v159M40 506h12M40 565h12M40 633h12" stroke="#8f98c5" stroke-width="2" fill="none"/>
+<circle cx="40" cy="506" r="4" fill="#5e69a2"/>
+<circle cx="40" cy="565" r="4" fill="#5e69a2"/>
+<circle cx="40" cy="633" r="4" fill="#5e69a2"/>
+<rect x="52" y="481" width="334" height="50" rx="8" fill="#edf0ff"/>
+<text class="branch-title" x="63" y="503">Both verify</text>
+<text class="small" x="63" y="522">Keep the evidence row.</text>
+<rect x="52" y="537" width="334" height="63" rx="8" fill="#edf0ff"/>
+<text class="branch-title" x="63" y="556">Adjudicate against the paper</text>
+<text class="small" x="63" y="575">If the readers disagree, or if neither can</text>
+<text class="small" x="63" y="593">verify and full text is available.</text>
+<rect x="52" y="606" width="334" height="57" rx="8" fill="#edf0ff"/>
+<text class="branch-title" x="63" y="628">Both unverified without full text</text>
+<text class="small" x="63" y="650">Leave the row unresolved.</text>
+</g>
+
+<g id="classify">
+<rect class="card" x="17" y="696" width="386" height="360" rx="13"/>
+<circle cx="42" cy="722" r="14" fill="#4956aa"/>
+<text class="code" text-anchor="middle" x="42" y="727">4</text>
+<text class="stage" x="65" y="729">Classify and review the call</text>
+<text class="body" x="32" y="755">Apply the rules to the reference construct</text>
+<text class="body" x="32" y="776">without a ligand. A separate model reviews it.</text>
+
+<rect x="29" y="793" width="362" height="55" rx="8" fill="#e9f5f0"/>
+<text class="status" x="40" y="815">Yes · 13</text>
+<text class="small" x="40" y="838">Measured population and rate, or two peak sets.</text>
+<rect x="29" y="854" width="362" height="62" rx="8" fill="#e9f5f0"/>
+<text class="status" x="40" y="876">Possible · 18</text>
+<text class="small" x="40" y="897">Exchange detected, no population measured</text>
+<text class="small" x="40" y="912">in the reference state.</text>
+<rect x="29" y="922" width="362" height="54" rx="8" fill="#e9f5f0"/>
+<text class="status" x="40" y="944">Unknown · 11</text>
+<text class="small" x="40" y="965">No measurement or insufficient evidence.</text>
+<rect x="29.5" y="982.5" width="361" height="59" rx="8" fill="#f5faf8" stroke="#8bad9f" stroke-dasharray="4 3"/>
+<text class="status" x="40" y="1004">No evidence · 0 in this release</text>
+<text class="small" x="40" y="1026">Not detected in a documented suitable window.</text>
+</g>
+
+<g id="publish">
+<rect x="17" y="1076" width="386" height="205" rx="14" fill="#202550"/>
+<circle cx="42" cy="1104" r="14" fill="#4e5cae"/>
+<text class="code" text-anchor="middle" x="42" y="1109">5</text>
+<text class="stage" x="65" y="1111" style="fill:#fff">Publish the atlas</text>
+<path d="M31 1131h358M31 1179h358M31 1227h358" stroke="#616d9d"/>
+<text class="output" x="33" y="1151">42 protein pages</text>
+<text class="output-sub" x="33" y="1170">Calls and the evidence behind each one</text>
+<text class="output" x="33" y="1199">Machine-readable tables</text>
+<text class="output-sub" x="33" y="1218">State calls, judgments, DOIs and source locations</text>
+<text class="output" x="33" y="1247">10 deposited-structure comparisons</text>
+<text class="output-sub" x="33" y="1266">Separate from the evidence used to make a call</text>
+</g>
+</svg>
