@@ -8,14 +8,47 @@
 
 ## Active workflow gate
 
+![Formally checked post-Anthropic Dynamics Atlas workflow from 12 open Batch 1 proteins to broad scaling](figures/formal_statechart.png)
+
+TLC exhaustively verified [`WorkflowPostAnthropic.tla`](methods/statechart/WorkflowPostAnthropic.tla) across `13` chart states and `14` transitions (`15` model states; `13` allowed states, `0` broken safety rules; [`summary.json`](methods/statechart/summary.json)). A companion reachability check confirms scaling approval is reachable in `6` steps ([`reachability_stories.md`](methods/statechart/reachability_stories.md)).
+
+**Four rules proved on the locked workflow:**
+1. **Held-out isolation (code-enforced).** The `12` held-out test entries never enter staging, Anthropic extraction, QC, expert review, or broad scaling.
+2. **Deterministic QC before review (code-enforced).** Raw Claude output never reaches expert sign-off without passing verbatim quote, unit, oligomer-vs-pB, and 5-slot condition checks.
+3. **Strict-abstain boundary (human/process gate).** Output run under the 1-week strict-abstain fallback stays marked `abstain` and is never labeled expert-approved before Gina reviews.
+4. **Evidence and expert gate before scaling (human/process gate).** Scaling toward ~`8,000` candidates never starts until Batch 1 runs on open proteins, passes deterministic QC, and completes Gina's sign-off.
+
+**Two unguarded manual shortcuts audited today:** Checking [`WorkflowPostAnthropicRisk.tla`](methods/statechart/WorkflowPostAnthropicRisk.tla) against the locked workflow (`15` chart states, `28` transitions from `25` model states; `0` stay broken once locked) flags two shortcuts that code does not yet lock. One launches ~`8,000` scaling before Batch 1 QC and sign-off ([`bug-1.png`](methods/statechart/bug-1.png), `9` counterexamples). The other marks a 1-week strict-abstain batch expert-approved without Gina ([`bug-2.png`](methods/statechart/bug-2.png), `2` counterexamples). Full traces live in [`methods/statechart/stories.md`](methods/statechart/stories.md).
+
+**What this model leaves out:** The model verifies gate order and label separation only. It does not model paper paywalls, unverified RelaxDB-to-UniProt sequence mismatches, raster figure readability, prompt drift inside Claude, or actual API dollar cost.
+
+| Step | What is checked | Who decides (fixed rule vs judgment) | Evidence file | Status |
+|---|---|---|---|---|
+| **1. Exclude held-out & stage Batch 1** | Block `12` held-out entries; stage `12` open Batch 1 proteins and `3` proposed rules | Program (fixed rule) | [`data/batch1_open_proteins_draft.json`](data/batch1_open_proteins_draft.json), [`PROPOSED_RULES_20261126.md`](PROPOSED_RULES_20261126.md) | **Done** |
+| **2A. Lock 3 boundary rules** | Rule `keep`, `re-scope`, or `insufficient` on `AQADK`, `Plexin-B1`, and `TEM-1 vs BRD4` | NMR Expert Gina (judgment) | [`PROPOSED_RULES_20261126.md`](PROPOSED_RULES_20261126.md) | **NOT DONE YET** |
+| **2B. 1-week strict-abstain fallback** | If no ruling arrives after 1 week, start Batch 1 marked `abstain` (not signed off) | Fixed timer rule | [`atlas_pipeline/ACTIVE_EXTRACTION_PROMPT.md`](atlas_pipeline/ACTIVE_EXTRACTION_PROMPT.md) | **NOT DONE YET** |
+| **3. Run Batch 1 extraction** | Extract quantitative rows and qualitative observations from `12` open proteins using one canonical prompt | Anthropic / Claude (fixed prompt) | [`ANTHROPIC_HANDOFF.md`](ANTHROPIC_HANDOFF.md) | **NOT DONE YET** |
+| **4. Run deterministic Python QC** | Verify verbatim quotes, physical units, oligomer-vs-pB guard, 5-slot conditions, and log cost; quarantine failures | Program (fixed rule) | [`atlas_pipeline/schema.py`](atlas_pipeline/schema.py), [`atlas_pipeline/compare.py`](atlas_pipeline/compare.py) | **Code built; Batch 1 NOT DONE YET** |
+| **5. Expert spot-check & sign-off** | Spot-check Batch 1 review cards and resolve any `abstain` default records | NMR Expert Gina (judgment) | [`ANTHROPIC_HANDOFF.md`](ANTHROPIC_HANDOFF.md) | **NOT DONE YET** |
+| **6. Approve broad scaling** | Review Batch 1 QC metrics, expert sign-off, and dollar cost before scaling toward ~`8,000` proteins | Project Lead (judgment) | [`methods/statechart/summary.json`](methods/statechart/summary.json) | **NOT DONE YET** |
+
+<details>
+<summary>Quick-glance Mermaid route (click to expand)</summary>
+
 ```mermaid
 stateDiagram-v2
-    [*] --> ProposedRules: 3 edge-case rules awaiting expert review
-    ProposedRules --> SmallOpenBatch: Gina signs off (or 1-week strict-abstain default)
-    SmallOpenBatch --> DeterministicQC: Anthropic runs 12-protein Batch 1
-    DeterministicQC --> ScaleDecision: Verify quotes, units, 5-slot conditions, cost
-    ScaleDecision --> [*]: Project lead approves scaling toward broader candidate list
+    [*] --> HeldOutBlocked: 12 held-out entries physically excluded
+    [*] --> Batch1Staged: Today (12 open proteins + 3 proposed rules staged)
+    Batch1Staged --> RulesLocked: Gina rules on 3 cases (NOT DONE YET)
+    Batch1Staged --> StrictAbstain: 1-week fallback marked abstain (NOT DONE YET)
+    RulesLocked --> Batch1Extracted: Anthropic runs 12 open proteins (NOT DONE YET)
+    StrictAbstain --> Batch1Extracted: Anthropic runs in abstain mode (NOT DONE YET)
+    Batch1Extracted --> QCPassed: Deterministic quote, unit, and 5-slot QC (NOT DONE YET)
+    QCPassed --> ExpertSignedOff: Gina spot-checks cards and resolves abstain (NOT DONE YET)
+    ExpertSignedOff --> ScaleApproved: Lead approves scaling toward ~8,000 candidates (NOT DONE YET)
 ```
+
+</details>
 
 ---
 

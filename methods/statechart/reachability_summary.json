@@ -1,0 +1,67 @@
+{
+  "view": "customer",
+  "modelStates": 15,
+  "modelTransitions": 15,
+  "chartStates": 13,
+  "chartTransitions": 14,
+  "chartStatus": {
+    "works": 12,
+    "wrong": 1,
+    "fixed": 0,
+    "mixed": 0,
+    "after": 0
+  },
+  "mixedStatus": [],
+  "chartGroups": [
+    {
+      "name": "Program: held-out block",
+      "color": "#e5e7eb",
+      "states": 1
+    },
+    {
+      "name": "Program: fixed QC",
+      "color": "#ccfbf1",
+      "states": 6
+    },
+    {
+      "name": "Gina: NMR judgment",
+      "color": "#fef3c7",
+      "states": 2
+    },
+    {
+      "name": "1-week fallback",
+      "color": "#ffedd5",
+      "states": 1
+    },
+    {
+      "name": "Anthropic: Claude",
+      "color": "#dbeafe",
+      "states": 2
+    },
+    {
+      "name": "Lead: go/no-go",
+      "color": "#dcfce7",
+      "states": 1
+    }
+  ],
+  "mixedGroups": [],
+  "classes": [
+    {
+      "n": 1,
+      "end": "Scale ~8,000 approved (NOT DONE YET)",
+      "invariant": "GoalNotYetReached",
+      "rule": "Reachability probe (used only with --expect-broken in WorkflowPostAnthropicGoal.cfg): proves broad scaling is reachable.",
+      "cause": null,
+      "readerSteps": 6,
+      "modelSteps": 7,
+      "counterexamples": 2,
+      "lastSteps": [
+        "Review QC, sign-off, and cost; approve ~8,000 scale [Lead, judgment, NOT DONE YET]"
+      ],
+      "startsHere": false,
+      "fix": null
+    }
+  ],
+  "codeLike": [],
+  "brokenProperties": []
+}

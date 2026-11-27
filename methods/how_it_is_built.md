@@ -38,26 +38,25 @@ On October 13 we designed a 7-step deterministic workflow (`Astra` architecture 
 
 ---
 
-## 3. Formal verification of today's workflow vs the locked next pass
+## 3. Formal verification of the post-Anthropic Batch 1 workflow (27 November 2026)
 
-We modeled our **19 November 2026 workflow** in TLA+ ([`WorkflowCurrent.tla`](statechart/WorkflowCurrent.tla)) and checked it against the **locked next-pass workflow** ([`WorkflowV4Fixed.tla`](statechart/WorkflowV4Fixed.tla)). TLC exhaustively checked both models (`13` chart states and `14` transitions from `12` model states; `6` states work today, `0` stay broken under the locked workflow, and `7` are fixed or newly unlocked).
+We modeled our **post-Anthropic Batch 1 to ~8,000 scale workflow** in TLA+ ([`WorkflowPostAnthropic.tla`](statechart/WorkflowPostAnthropic.tla)) and audited two unguarded manual process shortcuts ([`WorkflowPostAnthropicRisk.tla`](statechart/WorkflowPostAnthropicRisk.tla)) against it. TLC exhaustively checked the locked model (`13` chart states and `14` transitions from `15` model states; `13` allowed states, `0` broken safety rules; [`summary.json`](statechart/summary.json)) and confirmed scaling approval is reachable in `6` steps ([`reachability_stories.md`](statechart/reachability_stories.md)).
 
-![Formally checked workflow state machine comparing today vs locked next-pass gates](../figures/formal_statechart.png)
+![Formally checked post-Anthropic Dynamics Atlas workflow from 12 open Batch 1 proteins to broad scaling](../figures/formal_statechart.png)
 
-- **Three safety rules hold today.** All workflow state fields remain valid. The `12` held-out test entries never enter staging, extraction, or the atlas. Only quote-checked and consistency-checked records enter [`atlas/ATLAS_131.md`](../atlas/ATLAS_131.md).
-- **Two open gaps today are proved blocked by the locked next-pass workflow.** First, upstream extraction can still build an atlas before an automated single-condition-per-sample gate blocks merged samples ([`bug-1.png`](statechart/bug-1.png), seen earlier in Barstar and fixed manually on November 19). Second, no code gate blocks promoting the draft branch to Release `0.2` before Gina locks the 4 rules and before the `3` paywalled PDFs, `336` Kosmos rows, and `168` older re-reads are closed ([`bug-2.png`](statechart/bug-2.png)). Step-by-step traces live in [`statechart/stories.md`](statechart/stories.md).
+- **Two rules are code-enforced today.** The `12` held-out test entries never enter staging, Anthropic extraction, QC, expert review, or broad scaling (`atlas_pipeline/schema.py`, `methods/check_review_consistency.py`). Raw Claude output never reaches expert sign-off without passing deterministic quote, physical unit, oligomer-vs-pB, and 5-slot condition checks.
+- **Two manual shortcuts today are proved blocked by the locked workflow (`15` chart states, `28` transitions from `25` model states; `0` stay broken once locked).** First, no code lock stops launching ~`8,000` scaling before Batch 1 deterministic QC and Gina's spot-check finish ([`bug-1.png`](statechart/bug-1.png), `9` counterexamples). Second, no code lock stops marking a 1-week strict-abstain Batch 1 output as expert-approved without Gina's review ([`bug-2.png`](statechart/bug-2.png), `2` counterexamples). Full traces live in [`statechart/stories.md`](statechart/stories.md).
+- **What the model leaves out.** The statechart checks gate order and label separation only. It does not cover paper paywalls, unverified RelaxDB-to-UniProt sequence mismatches, raster plot readability, prompt adherence drift, or API dollar cost.
 
 | Step | What is checked | Who decides | Evidence file | Status |
 |---|---|---|---|---|
-| Stage open full texts | Exclude `12` held-out test entries; match DOIs | Program (fixed rule) | `data/v3_draft_20261118/coverage_gap_audit.csv` | Done (`128 / 131`) |
-| Extract paper into fixed template | Read full text into samples, values, states, regions, gaps | Reader LLM (fixed brief) | `data/v3_draft_20261118/RelaxDB_dynamics_from_papers_DRAFT_20261118.xlsx` | Done (`776` records) |
-| Verify quotes & table rows | Verbatim quote match + numeric containment + table accounting | Program (fixed rule) | `methods/quality.md`, `supplemental_20261119.json` | Done (`776 / 776` + `55 / 55`) |
-| Check single-condition samples + closed method list | Reject mixed solvent/pH/T samples and unmapped methods upstream | Program (next-pass fixed rule) | `methods/statechart/WorkflowV4Fixed.tla` | **NOT DONE YET** (`BARSTAR` fixed manually) |
-| Check links, counts, leaks & diagrams | `131` atlas pages, `0` sealed/path leaks, `0` stale counts, valid Mermaid | Program (fixed rule) | `methods/check_review_consistency.py` | Done (`PASS`) |
-| Build unified 131-protein Atlas & workbook | Separate solution exchange, bulk relaxation, and MD/cryo-X-ray | Program (fixed rule) | `atlas/ATLAS_131.md`, `data/v3_draft_20261118/` | Done (`131 / 131`) |
-| Lock 4 boundary rules | Domain/method scope, MD/crystal split, sample split, UniProt merge | NMR Expert Gina | `REVIEW_GUIDE.md` | **NOT DONE YET** |
-| Close external literature backlog | Fetch `3` paywalled PDFs, `336` Kosmos rows, re-read `168` older records | Curator + Program | `data/v3_draft_20261118/coverage_gap_audit.csv` | **NOT DONE YET** |
-| Promote draft branch to Release `0.2` | Final release promotion onto `main` | Project lead | `CHANGELOG.md` | **NOT DONE YET** |
+| Exclude held-out & stage Batch 1 | Block `12` held-out entries; stage `12` open proteins and `3` proposed rules | Program (fixed rule) | `data/batch1_open_proteins_draft.json`, `PROPOSED_RULES_20261126.md` | **Done** |
+| Lock 3 boundary rules | `keep`, `re-scope`, or `insufficient` on `AQADK`, `Plexin-B1`, `TEM-1 vs BRD4` | NMR Expert Gina (judgment) | `PROPOSED_RULES_20261126.md` | **NOT DONE YET** |
+| 1-week strict-abstain fallback | Run Batch 1 marked `abstain` (not signed off) if no ruling arrives after 1 week | Fixed timer rule | `atlas_pipeline/ACTIVE_EXTRACTION_PROMPT.md` | **NOT DONE YET** |
+| Extract 12 open Batch 1 proteins | Capture quantitative rows and qualitative observations under one canonical prompt | Anthropic / Claude (fixed prompt) | `ANTHROPIC_HANDOFF.md` | **NOT DONE YET** |
+| Run deterministic Python QC | Check verbatim quotes, units, oligomer guard, 5-slot conditions, and log cost | Program (fixed rule) | `atlas_pipeline/schema.py`, `atlas_pipeline/compare.py` | **Code built; Batch 1 NOT DONE YET** |
+| Spot-check Batch 1 & sign off | Review Batch 1 cards and resolve any `abstain` default records | NMR Expert Gina (judgment) | `ANTHROPIC_HANDOFF.md` | **NOT DONE YET** |
+| Approve scaling toward ~`8,000` | Review Batch 1 QC metrics, expert sign-off, and cost before scaling | Project Lead (judgment) | `methods/statechart/summary.json` | **NOT DONE YET** |
 
 ---
 

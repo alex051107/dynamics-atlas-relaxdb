@@ -1,0 +1,97 @@
+{
+  "view": "customer",
+  "second": {
+    "role": "fix",
+    "label": "locked workflow",
+    "lacks": []
+  },
+  "modelStates": 25,
+  "modelTransitions": 38,
+  "chartStates": 15,
+  "chartTransitions": 28,
+  "chartStatus": {
+    "works": 13,
+    "wrong": 0,
+    "fixed": 2,
+    "mixed": 0,
+    "after": 0,
+    "worse": 0
+  },
+  "mixedStatus": [],
+  "chartGroups": [
+    {
+      "name": "Program: held-out block",
+      "color": "#e5e7eb",
+      "states": 1
+    },
+    {
+      "name": "Program: fixed QC",
+      "color": "#ccfbf1",
+      "states": 6
+    },
+    {
+      "name": "Gina: NMR judgment",
+      "color": "#fef3c7",
+      "states": 2
+    },
+    {
+      "name": "1-week fallback",
+      "color": "#ffedd5",
+      "states": 1
+    },
+    {
+      "name": "Anthropic: Claude",
+      "color": "#dbeafe",
+      "states": 2
+    },
+    {
+      "name": "Lead: go/no-go",
+      "color": "#dcfce7",
+      "states": 1
+    },
+    {
+      "name": "Unguarded shortcut",
+      "color": "#fee2e2",
+      "states": 2
+    }
+  ],
+  "mixedGroups": [],
+  "classes": [
+    {
+      "n": 1,
+      "end": "Scaled early (missing Batch 1 QC or sign-off)",
+      "invariant": "NoScaleWithoutEvidenceAndExpertCheck",
+      "rule": "Scaling toward ~8,000 candidate proteins never starts until Batch 1 runs on open proteins, passes deterministic QC, and receives Gina's expert sign-off.",
+      "cause": "No code lock prevents launching broad ~8,000-protein scaling in Slack before Batch 1 deterministic QC and Gina's spot-check finish.",
+      "readerSteps": 3,
+      "modelSteps": 4,
+      "counterexamples": 9,
+      "lastSteps": [
+        "Review QC, sign-off, and cost; approve ~8,000 scale [Lead, judgment, NOT DONE YET]"
+      ],
+      "startsHere": false,
+      "fix": "Core prompt locked by Gina (NOT DONE YET)"
+    },
+    {
+      "n": 2,
+      "end": "Abstain batch mislabeled expert-approved",
+      "invariant": "NoAbstainLabeledSignedOff",
+      "rule": "Output run under the 1-week strict-abstain fallback stays marked abstain and is never labeled expert-approved before Gina reviews.",
+      "cause": "No code lock prevents marking a 1-week strict-abstain Batch 1 output as expert-approved before Gina reviews it.",
+      "readerSteps": 5,
+      "modelSteps": 6,
+      "counterexamples": 2,
+      "lastSteps": [
+        "Mark abstain batch expert-approved without Gina [Unguarded shortcut]"
+      ],
+      "startsHere": false,
+      "fix": "Batch 1 QC passed, abstain (NOT DONE YET)"
+    }
+  ],
+  "codeLike": [],
+  "uncited": {
+    "WorkflowPostAnthropicRisk.tla": [],
+    "WorkflowPostAnthropic.tla": []
+  },
+  "brokenProperties": []
+}

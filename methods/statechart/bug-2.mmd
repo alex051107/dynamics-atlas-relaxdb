@@ -1,48 +1,49 @@
 ---
-title: "Dynamics Atlas Workflow: Today (19 Nov 2026) vs Locked Next Pass, bug 2"
+title: "Dynamics Atlas: Unguarded Process Shortcuts vs Locked Workflow, bug 2"
 config:
   markdownAutoWrap: false
   state:
     useMaxWidth: false
 ---
 stateDiagram-v2
-  %% second model (fix): locked next-pass workflow
+  %% second model (fix): locked workflow
   classDef plainFixed fill:#f4f6f7,stroke:#1e8449,stroke-width:4px,color:#145a32
-  classDef group1 fill:#dbeafe,stroke:#6e757f,color:#1b2631
-  classDef group1Path fill:#dbeafe,stroke:#1f3a93,stroke-width:4px,color:#1b2631
-  classDef group2 fill:#e0e7ff,stroke:#707480,color:#1b2631
-  classDef group2Path fill:#e0e7ff,stroke:#1f3a93,stroke-width:4px,color:#1b2631
-  classDef group5 fill:#fee2e2,stroke:#7f7171,color:#1b2631
-  classDef group5Fixed fill:#fee2e2,stroke:#1e8449,stroke-width:4px,color:#145a32
+  classDef group1 fill:#ccfbf1,stroke:#667e79,color:#1b2631
+  classDef group1Path fill:#ccfbf1,stroke:#1f3a93,stroke-width:4px,color:#1b2631
+  classDef group3 fill:#ffedd5,stroke:#80776b,color:#1b2631
+  classDef group3Path fill:#ffedd5,stroke:#1f3a93,stroke-width:4px,color:#1b2631
+  classDef group4 fill:#dbeafe,stroke:#6e757f,color:#1b2631
+  classDef group4Path fill:#dbeafe,stroke:#1f3a93,stroke-width:4px,color:#1b2631
+  classDef group6 fill:#fee2e2,stroke:#7f7171,color:#1b2631
+  classDef group6Fixed fill:#fee2e2,stroke:#1e8449,stroke-width:4px,color:#145a32
   state "Legend" as legend {
-    state "Extraction & checks" as legendGroup1
-    state "Verified draft" as legendGroup2
-    state "Broken rule (open gap today)" as legendGroup5
-    state "Blocked by locked next-pass workflow" as legendFixed
+    state "Program: fixed QC" as legendGroup1
+    state "1-week fallback" as legendGroup3
+    state "Anthropic: Claude" as legendGroup4
+    state "Unguarded shortcut" as legendGroup6
+    state "Blocked by locked workflow" as legendFixed
   }
   class legendGroup1 group1
-  class legendGroup2 group2
-  class legendGroup5 group5
+  class legendGroup3 group3
+  class legendGroup4 group4
+  class legendGroup6 group6
   class legendFixed plainFixed
-  state "131-protein Atlas built<br/>(upstream sample binding<br/>unchecked)" as s0
-  state "Consistency checks passed<br/>(131 pages, 0 leaks, clean<br/>methods)" as s1
-  state "Open RelaxDB entry queued" as s2
-  state "Open full texts staged<br/>(128/131 covered)" as s3
-  state "Promoted early (missing<br/>expert sign-off or<br/>backlog)" as s4
-  state "Structured paper record<br/>drafted (unverified)" as s5
-  state "Verbatim quotes & tables<br/>verified (776/776)" as s6
-  [*] --> s2
-  s2 --> s3 : 1. Stage open full texts<br/>[Program: exclude 12 held-out<br/>entries]
-  s3 --> s5 : 2. Extract paper into fixed<br/>template [Reader LLM: verbatim<br/>quotes]
-  s5 --> s6 : 3. Verify quotes & table rows<br/>[Program: 776/776 pass]
-  s6 --> s1 : 4. Check links, counts, leaks<br/>& plain language [Program:<br/>fixed rules]
-  s1 --> s0 : 5. Build 131-protein Atlas &<br/>10-tab workbook [Program]
-  s0 --> s4 : 6. Promote draft branch to<br/>Release 0.2 [Project lead]
-  s6 --> s6 : with locked next-pass<br/>workflow, Check links, counts,<br/>leaks & plain language<br/>[Program: fixed rules] cannot<br/>happen at step 4
-  class s0 group5Fixed
-  class s1 group2Path
-  class s2 group1Path
+  state "1-week strict-abstain<br/>active (NOT DONE YET)" as s0
+  state "Abstain batch mislabeled<br/>expert-approved" as s1
+  state "Batch 1 JSON, abstain (NOT<br/>DONE YET)" as s2
+  state "Batch 1 QC passed, abstain<br/>(NOT DONE YET)" as s3
+  state "Candidate protein enters<br/>gate" as s4
+  state "TODAY: 12 Batch 1 proteins<br/>+ 3 rules staged (DONE)" as s5
+  [*] --> s4
+  s4 --> s5 : 1. Exclude 12 held-out, stage<br/>12 open proteins + 3 rules<br/>[Program, fixed rule, DONE]
+  s5 --> s0 : 2. No ruling after 1 week:<br/>strict-abstain default [Fixed<br/>rule, NOT DONE YET]
+  s0 --> s2 : 3. Extract 12 open proteins<br/>with canonical prompt<br/>[Anthropic, fixed prompt, NOT<br/>DONE YET]
+  s2 --> s3 : 4. Verify quotes, units,<br/>5-slot match + log cost<br/>[Program, fixed rule, NOT DONE<br/>YET]
+  s3 --> s1 : 5. Mark abstain batch<br/>expert-approved without Gina<br/>[Unguarded shortcut]
+  s3 --> s3 : with locked workflow, Mark<br/>abstain batch expert-approved<br/>without Gina [Unguarded<br/>shortcut] cannot happen at<br/>step 5
+  class s0 group3Path
+  class s1 group6Fixed
+  class s2 group4Path
   class s3 group1Path
-  class s4 group5Fixed
+  class s4 group1Path
   class s5 group1Path
-  class s6 group1Path

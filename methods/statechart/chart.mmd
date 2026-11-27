@@ -1,74 +1,70 @@
 ---
-title: "Dynamics Atlas Workflow: Today (19 Nov 2026) vs Locked Next Pass"
+title: "Dynamics Atlas: Post-Anthropic Batch 1 to ~8,000 Scale Workflow (27 Nov 2026)"
 config:
   markdownAutoWrap: false
   state:
     useMaxWidth: false
 ---
 stateDiagram-v2
-  %% second model (fix): locked next-pass workflow
-  classDef plainFixed fill:#f4f6f7,stroke:#1e8449,stroke-width:4px,color:#145a32
   classDef group0 fill:#e5e7eb,stroke:#737476,color:#1b2631
-  classDef group1 fill:#dbeafe,stroke:#6e757f,color:#1b2631
-  classDef group2 fill:#e0e7ff,stroke:#707480,color:#1b2631
-  classDef group2Fixed fill:#e0e7ff,stroke:#1e8449,stroke-width:4px,color:#145a32
-  classDef group4 fill:#bbf7d0,stroke:#5e7c68,color:#1b2631
-  classDef group4Fixed fill:#bbf7d0,stroke:#1e8449,stroke-width:4px,color:#145a32
-  classDef group5 fill:#fee2e2,stroke:#7f7171,color:#1b2631
-  classDef group5Fixed fill:#fee2e2,stroke:#1e8449,stroke-width:4px,color:#145a32
+  classDef group1 fill:#ccfbf1,stroke:#667e79,color:#1b2631
+  classDef group2 fill:#fef3c7,stroke:#7f7a64,color:#1b2631
+  classDef group3 fill:#ffedd5,stroke:#80776b,color:#1b2631
+  classDef group4 fill:#dbeafe,stroke:#6e757f,color:#1b2631
+  classDef group5 fill:#dcfce7,stroke:#6e7e74,color:#1b2631
   state "Legend" as legend {
-    state "Held-out (blocked)" as legendGroup0
-    state "Extraction & checks" as legendGroup1
-    state "Verified draft" as legendGroup2
-    state "Release ready" as legendGroup4
-    state "Broken rule (open gap today)" as legendGroup5
-    state "Blocked by locked next-pass workflow" as legendFixed
+    state "Program: held-out block" as legendGroup0
+    state "Program: fixed QC" as legendGroup1
+    state "Gina: NMR judgment" as legendGroup2
+    state "1-week fallback" as legendGroup3
+    state "Anthropic: Claude" as legendGroup4
+    state "Lead: go/no-go" as legendGroup5
   }
   class legendGroup0 group0
   class legendGroup1 group1
   class legendGroup2 group2
+  class legendGroup3 group3
   class legendGroup4 group4
   class legendGroup5 group5
-  class legendFixed plainFixed
-  state "131-protein Atlas built<br/>(sample binding checked)" as s0
-  state "131-protein Atlas built<br/>(upstream sample binding<br/>unchecked)" as s1
-  state "3 paywalled + 336 Kosmos +<br/>168 older records closed" as s2
-  state "Consistency checks passed<br/>(131 pages, 0 leaks, clean<br/>methods)" as s3
-  state "Gina locked 4 boundary<br/>rules (ready for next<br/>pass)" as s4
-  state "Held-out test entry (12<br/>blocked by program)" as s5
-  state "Open RelaxDB entry queued" as s6
-  state "Open full texts staged<br/>(128/131 covered)" as s7
-  state "Promoted early (missing<br/>expert sign-off or<br/>backlog)" as s8
-  state "Release 0.2 promoted<br/>(expert approved + backlog<br/>closed)" as s9
-  state "Single-condition sample<br/>gate passed" as s10
-  state "Structured paper record<br/>drafted (unverified)" as s11
-  state "Verbatim quotes & tables<br/>verified (776/776)" as s12
-  [*] --> s5
+  state "1-week strict-abstain<br/>active (NOT DONE YET)" as s0
+  state "Batch 1 JSON, abstain (NOT<br/>DONE YET)" as s1
+  state "Batch 1 QC + Gina sign-off<br/>(NOT DONE YET)" as s2
+  state "Batch 1 QC + metrics<br/>logged (NOT DONE YET)" as s3
+  state "Batch 1 QC passed, abstain<br/>(NOT DONE YET)" as s4
+  state "Batch 1 raw JSON returned<br/>(NOT DONE YET)" as s5
+  state "Candidate protein enters<br/>gate" as s6
+  state "Core prompt locked by Gina<br/>(NOT DONE YET)" as s7
+  state "Held-out test entry (12<br/>physically blocked)" as s8
+  state "QC failed, abstain repair<br/>(NOT DONE YET)" as s9
+  state "QC failed, repair needed<br/>(NOT DONE YET)" as s10
+  state "Scale ~8,000 approved (NOT<br/>DONE YET)" as s11
+  state "TODAY: 12 Batch 1 proteins<br/>+ 3 rules staged (DONE)" as s12
   [*] --> s6
-  s6 --> s7 : Stage open full texts<br/>[Program: exclude 12 held-out<br/>entries]
-  s7 --> s11 : Extract paper into fixed<br/>template [Reader LLM: verbatim<br/>quotes]
-  s11 --> s12 : Verify quotes & table rows<br/>[Program: 776/776 pass]
-  s12 --> s3 : Check links, counts, leaks &<br/>plain language [Program: fixed<br/>rules]
-  s3 --> s1 : Build 131-protein Atlas &<br/>10-tab workbook [Program]
-  s1 --> s4 : Lock 4 boundary rules [NMR<br/>Expert Gina, NOT DONE YET]
-  s1 --> s8 : Promote draft branch to<br/>Release 0.2 [Project lead]
-  s4 --> s2 : Close 3 paywalled + 336 Kosmos<br/>+ 168 older re-reads [NOT DONE<br/>YET]
-  s12 --> s10 : with locked next-pass<br/>workflow, Check 1 condition<br/>per sample + closed method<br/>list [Next-pass program gate]
-  s10 --> s3 : with locked next-pass<br/>workflow, Check links, counts,<br/>leaks & plain language<br/>[Program: fixed rules]
-  s3 --> s0 : with locked next-pass<br/>workflow, Build 131-protein<br/>Atlas & 10-tab workbook<br/>[Program]
-  s0 --> s4 : with locked next-pass<br/>workflow, Lock 4 boundary<br/>rules [NMR Expert Gina, NOT<br/>DONE YET]
-  s2 --> s9 : with locked next-pass<br/>workflow, Promote draft branch<br/>to Release 0.2 [Project lead]
-  s12 --> s12 : with locked next-pass<br/>workflow, Check links, counts,<br/>leaks & plain language<br/>[Program: fixed rules] cannot<br/>happen at step 4 of bug 1 or 2
-  class s0 group2Fixed
-  class s1 group5Fixed
-  class s2 plainFixed
-  class s3 group2
-  class s4 plainFixed
-  class s5 group0
+  [*] --> s8
+  s6 --> s12 : Exclude 12 held-out, stage 12<br/>open proteins + 3 rules<br/>[Program, fixed rule, DONE]
+  s12 --> s7 : Review 3 cases and lock core<br/>prompt [Gina, judgment, NOT<br/>DONE YET]
+  s12 --> s0 : No ruling after 1 week:<br/>strict-abstain default [Fixed<br/>rule, NOT DONE YET]
+  s7 --> s5 : Extract 12 open proteins with<br/>canonical prompt [Anthropic,<br/>fixed prompt, NOT DONE YET]
+  s0 --> s1 : Extract 12 open proteins with<br/>canonical prompt [Anthropic,<br/>fixed prompt, NOT DONE YET]
+  s5 --> s10 : Reject bad quote, unit,<br/>oligomer, or condition<br/>[Program, fixed rule, NOT DONE<br/>YET]
+  s5 --> s3 : Verify quotes, units, 5-slot<br/>match + log cost [Program,<br/>fixed rule, NOT DONE YET]
+  s1 --> s9 : Reject bad quote, unit,<br/>oligomer, or condition<br/>[Program, fixed rule, NOT DONE<br/>YET]
+  s1 --> s4 : Verify quotes, units, 5-slot<br/>match + log cost [Program,<br/>fixed rule, NOT DONE YET]
+  s10 --> s5 : Extract 12 open proteins with<br/>canonical prompt [Anthropic,<br/>fixed prompt, NOT DONE YET]
+  s3 --> s2 : Spot-check Batch 1 cards +<br/>resolve abstain [Gina,<br/>judgment, NOT DONE YET]
+  s9 --> s1 : Extract 12 open proteins with<br/>canonical prompt [Anthropic,<br/>fixed prompt, NOT DONE YET]
+  s4 --> s2 : Spot-check Batch 1 cards +<br/>resolve abstain [Gina,<br/>judgment, NOT DONE YET]
+  s2 --> s11 : Review QC, sign-off, and cost,<br/>approve ~8,000 scale [Lead,<br/>judgment, NOT DONE YET]
+  class s0 group3
+  class s1 group4
+  class s2 group2
+  class s3 group1
+  class s4 group1
+  class s5 group4
   class s6 group1
-  class s7 group1
-  class s8 group5Fixed
-  class s9 group4Fixed
-  class s10 group2Fixed
-  class s11 group1
+  class s7 group2
+  class s8 group0
+  class s9 group1
+  class s10 group1
+  class s11 group5
   class s12 group1
