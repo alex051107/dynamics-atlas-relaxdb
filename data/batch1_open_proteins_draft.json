@@ -1,0 +1,104 @@
+{
+  "status": "DRAFT_OPEN_BATCH1",
+  "generated_date": "2026-11-26",
+  "purpose": "Stratified 12-protein open sample (not used in prompt tuning or CPMG pilot development) for initial Anthropic Batch 1 extraction and deterministic QC.",
+  "uniprot_verification_note": "UniProt accessions below are carried from RelaxDB metadata and marked from_relaxdb_unverified_sequence until sequence-verified against canonical UniProt isoforms.",
+  "entries": [
+    {
+      "entry": "11080",
+      "protein": "peptidylprolyl isomerase",
+      "uniprot_from_relaxdb": "O74049",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_Rex_only",
+      "prior_papers_read": 1
+    },
+    {
+      "entry": "15255",
+      "protein": "Diphtheria toxin repressor",
+      "uniprot_from_relaxdb": "P0DJL7",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_Rex_only",
+      "prior_papers_read": 1
+    },
+    {
+      "entry": "5518",
+      "protein": "Ovomucoid",
+      "uniprot_from_relaxdb": "P68436",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_Rex_only",
+      "prior_papers_read": 2
+    },
+    {
+      "entry": "5839",
+      "protein": "Immunoglobulin G-binding protein G",
+      "uniprot_from_relaxdb": "P06654",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_Rex_only",
+      "prior_papers_read": 1
+    },
+    {
+      "entry": "17018",
+      "protein": "Death-associated protein 6",
+      "uniprot_from_relaxdb": "Q4VX54",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_qualitative_regions_only",
+      "prior_papers_read": 14
+    },
+    {
+      "entry": "18758",
+      "protein": "Ubiquitin activating enzyme E1",
+      "uniprot_from_relaxdb": "Q02053",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_qualitative_regions_only",
+      "prior_papers_read": 5
+    },
+    {
+      "entry": "19153",
+      "protein": "Cation-independent mannose-6-phosphate receptor",
+      "uniprot_from_relaxdb": "P11717",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_qualitative_regions_only",
+      "prior_papers_read": 12
+    },
+    {
+      "entry": "19189",
+      "protein": "Fatty acid-binding protein, liver",
+      "uniprot_from_relaxdb": "P07148",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_qualitative_regions_only",
+      "prior_papers_read": 10
+    },
+    {
+      "entry": "17881",
+      "protein": "Calmodulin 1",
+      "uniprot_from_relaxdb": "P62157",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_rate_or_population",
+      "prior_papers_read": 46
+    },
+    {
+      "entry": "18092",
+      "protein": "Eukaryotic release factor 1",
+      "uniprot_from_relaxdb": "P03355",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_rate_or_population",
+      "prior_papers_read": 1
+    },
+    {
+      "entry": "19127",
+      "protein": "Endolysin",
+      "uniprot_from_relaxdb": "P03706",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_rate_or_population",
+      "prior_papers_read": 3
+    },
+    {
+      "entry": "26513",
+      "protein": "Tyrosine-Phosphatase A",
+      "uniprot_from_relaxdb": "P9WIA1",
+      "uniprot_status": "from_relaxdb_unverified_sequence",
+      "evidence_tier": "Direct_rate_or_population",
+      "prior_papers_read": 6
+    }
+  ]
+}

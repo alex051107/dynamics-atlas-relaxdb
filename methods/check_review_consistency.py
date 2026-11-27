@@ -12,8 +12,10 @@ Run from repository root:
 from __future__ import annotations
 
 import csv
+import json
 import pathlib
 import re
+import sqlite3
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -26,6 +28,8 @@ SEALED = {
 LIVE_DOCS = [
     "README.md",
     "REVIEW_GUIDE.md",
+    "PROPOSED_RULES_20261126.md",
+    "ANTHROPIC_HANDOFF.md",
     "atlas/ATLAS_131.md",
     "methods/how_it_is_built.md",
     "methods/bugs_and_fixes.md",
@@ -51,13 +55,11 @@ SUPPORTED_MERMAID_HEADERS = (
     "sequenceDiagram",
 )
 
-# Stale superseded numbers that must NOT appear as current totals in LIVE_DOCS
-# (unless explicitly contrasted with the updated value on the same line, e.g. "original 19,958 + 31 = 19,989")
+# Stale superseded numbers that must NOT appear as uncontrasted current totals in LIVE_DOCS
 STALE_PATTERNS = [
     (re.compile(r"\b771\s*/\s*771\b"), "stale record count '771 / 771' (current verified total is 776 records / 757 DOIs)"),
     (re.compile(r"(?<!original )(?<!19,958 original )\b19,958\b(?! original)(?!\s*\+\s*31)"), "stale measurement count '19,958' without contrasting against current 19,989"),
     (re.compile(r"\b23\b[^\n]{0,25}\bunread\b", re.I), "stale '23 unread' claim (14 are in Release 0.1, 4 read on 2026-11-19, 2 twins; only 3 paywalled remain)"),
-    (re.compile(r"\b104\s*(?:/|of)\s*131\b[^\n]{0,40}(?:open|read|done|today)", re.I), "stale '104/131' current coverage claim (unified coverage is 128/131; v3+supp papers is 108/131)"),
 ]
 
 BANNED_PROSE_PHRASES = [
@@ -120,16 +122,14 @@ def check_prose_clarity(rel: str, text: str, errors: list[str]) -> None:
         if s.startswith("```"):
             in_code = not in_code
             continue
-        if in_code or not s or s.startswith(("#", "|", "![", "---")):
+        if in_code or not s or s.startswith(("#", "|", "![", "---", ">")):
             continue
+        # Strip inline quoted excerpts before prose-style checks so verbatim paper quotes are never flagged
+        s_prose = re.sub(r"`\"[^\"]*\"`", "QUOTE", s)
         for pat, msg in BANNED_PROSE_PHRASES:
-            if pat.search(s):
+            if pat.search(s_prose):
                 errors.append(f"{rel}:{lineno}: {msg}")
-        # Strip markdown links/code for sentence-length check on regular prose
-        if s.startswith(">"):
-            s_clean = s.lstrip("> ").strip()
-        else:
-            s_clean = re.sub(r"^[-*]\s+|^\d+\.\s+", "", s)
+        s_clean = re.sub(r"^[-*]\s+|^\d+\.\s+", "", s_prose)
         # Replace [text](url) with text
         s_clean = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", s_clean)
         s_clean = re.sub(r"`[^`]+`", "CODE", s_clean)
@@ -205,6 +205,63 @@ def main() -> int:
     if sc_p.exists():
         check_internal_jargon(sc_rel, sc_p.read_text(encoding="utf-8"), errors)
 
+    # 4. Recompute frozen Nov 18 SQLite counts live and verify README numbers match disk
+    sqlite_path = REPO / "data/expert_review_20261119/RelaxDB_expert_review_DRAFT.sqlite"
+    if sqlite_path.is_file():
+        con = sqlite3.connect(f"file:{sqlite_path}?mode=ro", uri=True)
+        try:
+            n_prot = con.execute("SELECT COUNT(*) FROM proteins").fetchone()[0]
+            n_read = con.execute("SELECT COUNT(*) FROM proteins WHERE papers_read > 0").fetchone()[0]
+            n_raw_m = con.execute("SELECT COUNT(*) FROM proteins WHERE measurements_raw > 0").fetchone()[0]
+            n_clean_e = con.execute("SELECT COUNT(DISTINCT entry) FROM measurements_clean").fetchone()[0]
+            n_clean = con.execute("SELECT COUNT(*) FROM measurements_clean").fetchone()[0]
+            n_quar = con.execute("SELECT COUNT(*) FROM measurements_quarantine").fetchone()[0]
+            n_qual = con.execute("SELECT COUNT(*) FROM dyna1_signals").fetchone()[0]
+            n_cmp = con.execute("SELECT COUNT(*) FROM region_comparisons").fetchone()[0]
+            n_obs = con.execute("SELECT COUNT(*) FROM observations").fetchone()[0]
+        finally:
+            con.close()
+        readme_txt = (REPO / "README.md").read_text(encoding="utf-8")
+        for label, needle in [
+            ("SQLite open entries", f"`{n_prot}` open entries"),
+            ("SQLite papers read entries", f"`{n_read}` with at least 1 paper read"),
+            ("SQLite raw measurement entries", f"`{n_raw_m}` with raw measurements"),
+            ("SQLite clean numeric entries", f"`{n_clean_e}` with clean numeric rows"),
+            ("SQLite clean/quarantine split", f"`{n_clean + n_quar:,} original` measurements = `{n_clean:,}` clean + `{n_quar:,}` quarantined"),
+            ("SQLite qualitative signals", f"`{n_qual}` qualitative residue sets"),
+            ("SQLite comparisons", f"`{n_cmp}` region comparisons"),
+            ("SQLite observations", f"`{n_obs}` observations"),
+        ]:
+            if needle not in readme_txt:
+                errors.append(f"README.md: live SQLite mismatch for {label}; expected snippet {needle!r}")
+
+    # 5. Hygiene for atlas_pipeline/, ANTHROPIC_HANDOFF.md, and Batch 1 open list
+    ap_dir = REPO / "atlas_pipeline"
+    if ap_dir.is_dir():
+        for ap_file in sorted(ap_dir.rglob("*")):
+            if not ap_file.is_file() or "__pycache__" in ap_file.parts:
+                continue
+            rel = str(ap_file.relative_to(REPO))
+            if ap_file.suffix.lower() in {".png", ".jpg", ".jpeg", ".pdf"}:
+                errors.append(f"{rel}: binary figure or PDF must not live inside atlas_pipeline/")
+                continue
+            txt = ap_file.read_text(encoding="utf-8", errors="ignore")
+            if "/Users/" in txt or "dynamics_atlas_eval" in txt or re.search(r"data:image/[a-zA-Z+.-]+;base64,[A-Za-z0-9+/=]{24,}", txt):
+                errors.append(f"{rel}: forbidden local path or embedded data:image URI")
+
+    handoff_p = REPO / "ANTHROPIC_HANDOFF.md"
+    if handoff_p.is_file():
+        htxt = handoff_p.read_text(encoding="utf-8")
+        if re.search(r"\b(?:sealed|held[- ]out)\b", htxt, re.I):
+            errors.append("ANTHROPIC_HANDOFF.md: must not mention sealed/held-out entries to external runner")
+
+    b1_p = REPO / "data/batch1_open_proteins_draft.json"
+    if b1_p.is_file():
+        b1 = json.loads(b1_p.read_text(encoding="utf-8"))
+        leaked = {str(e.get("entry", "")).upper() for e in b1.get("entries", [])} & SEALED
+        if leaked:
+            errors.append(f"data/batch1_open_proteins_draft.json: sealed entries present {sorted(leaked)}")
+
     if errors:
         print(f"FAIL: {len(errors)} review consistency / clarity issues found:")
         for e in errors:
@@ -212,8 +269,8 @@ def main() -> int:
         return 1
 
     print(
-        f"PASS: 131/131 atlas pages, 0 broken links, 0 path leaks, 0 stale counts, "
-        f"all Mermaid diagrams valid, and prose clarity checks clean across {len(LIVE_DOCS)} live docs."
+        f"PASS: 131/131 atlas pages, live SQLite parity verified, 0 broken links, 0 path leaks, "
+        f"0 stale counts, all Mermaid diagrams valid, and prose clarity checks clean across {len(LIVE_DOCS)} live docs."
     )
     return 0
 

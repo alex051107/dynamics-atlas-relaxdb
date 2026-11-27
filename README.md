@@ -1,114 +1,79 @@
 # Dynamics Atlas
 
-**Dynamics Atlas** is an open, quote-grounded database of experimental protein conformational dynamics and structural states extracted from published literature. It is built for biophysicists and ensemble-modeling benchmarks.
+**Dynamics Atlas** is an open, quote-grounded database and verification pipeline for experimental protein conformational dynamics extracted from published literature. It captures quantitative exchange parameters and qualitative dynamics observations (dynamic regions, alternate states, and transient pockets) tied to verbatim source quotes and exact sample conditions.
 
-> **Current review draft (`review/expert-check-20261119`).**  
-> Every open RelaxDB protein (`131 / 131`) now has a dedicated page in **[`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)**. The `12` held-out test entries remain physically excluded. This draft unifies our **October baseline** (`42` expert-reviewed pages on `main`) with our **November full-text extraction** (`108` entries, `757` papers) and our November 19 bug fixes. Coverage now reaches **`128 / 131` (`97.7%`)** through full text, the October baseline, or shared UniProt entries. Only **`3`** proteins (`15795`, `18477`, `50734`) sit behind publisher paywalls with their DOIs and abstracts logged. All new November rows await NMR expert sign-off before Release `0.2`.
+> **Current branch (`update/post-anthropic-20261126`).** This branch adds the unified Python contract and QC package ([`atlas_pipeline/`](atlas_pipeline/)), the 2-minute proposed boundary rules ([`PROPOSED_RULES_20261126.md`](PROPOSED_RULES_20261126.md)), the draft Anthropic Batch 1 handoff ([`ANTHROPIC_HANDOFF.md`](ANTHROPIC_HANDOFF.md)), and honest separate snapshot denominators below. `main` (`f8cde2f`) and the frozen 16-tab review branch (`review/expert-check-20261119`) remain untouched. All `12` held-out test entries remain physically excluded.
 
 ---
 
-## Project state at a glance
+## Active workflow gate
 
 ```mermaid
 stateDiagram-v2
-    [*] --> OpenPool: 143 RelaxDB proteins split
-    OpenPool --> HeldOut: 12 test entries blocked
-    OpenPool --> CurrentDraft: 131 open proteins
-
-    state CurrentDraft {
-        [*] --> BugsFixed
-        BugsFixed: Data bugs fixed (19 Nov)
-        BugsFixed: Barstar sample split, 5687 fixed, 9 method groups
-        BugsFixed --> Covered128: 128/131 covered (full text, Oct baseline, or twin)
-        BugsFixed --> Paywalled3: 3/131 paywalled BMRB dossiers logged
-        Covered128 --> AtlasBuilt: 131 protein pages in ATLAS_131.md
-        Paywalled3 --> AtlasBuilt
-    }
-
-    CurrentDraft --> ExpertGate: Waiting on Gina (4 boundary rules)
-    ExpertGate --> NextPass: Rules locked into automated checks
-    NextPass --> Release02: Close 3 paywalled + 336 Kosmos + 168 older re-reads
+    [*] --> ProposedRules: 3 edge-case rules awaiting expert review
+    ProposedRules --> SmallOpenBatch: Gina signs off (or 1-week strict-abstain default)
+    SmallOpenBatch --> DeterministicQC: Anthropic runs 12-protein Batch 1
+    DeterministicQC --> ScaleDecision: Verify quotes, units, 5-slot conditions, cost
+    ScaleDecision --> [*]: Project lead approves scaling toward broader candidate list
 ```
 
 ---
 
-## Start here (15-minute review path for Gina and Soojung)
+## Start here
 
-1. **[`data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx`](data/expert_review_20261119/RelaxDB_expert_review_DRAFT.xlsx)** ([notes & CLI](data/expert_review_20261119/README.md)) is the **16-tab clickable Expert Review Workbook**, paired with a **queryable SQLite database** ([`RelaxDB_expert_review_DRAFT.sqlite`](data/expert_review_20261119/RelaxDB_expert_review_DRAFT.sqlite)) and zero-dependency CLI ([`query_atlas.py`](data/expert_review_20261119/query_atlas.py)). It adds `Data_quality_audit` (`16` audit entries), `BMRB_recovered` (`37,131` live per-residue values across `62 / 68` BMRB deposits), `SI_S3_inventory` (`386` gap DOIs with direct public NIH S3 PDF/Excel/figure links), and `Figure_S3_links` (`2,114` public S3 figure URLs with JATS captions and SPDX licenses; no AWS key required).
-
-Figure counts by license (figures/distinct DOIs): CC0 22/2; CC-BY 1,578/174; CC-BY-NC 163/22; CC-BY-NC-SA 4/1; CC-BY-NC-ND 201/25; publisher_oa 125/15; untagged 21/3.
-
-2. **[`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)** is the web-browsable **131-Protein Dynamics Atlas**. Entries are grouped into 4 evidence tiers with MD simulations and cryo-X-ray separated from solution exchange.
-3. **[`REVIEW_GUIDE.md`](REVIEW_GUIDE.md)** lists the 4 scientific boundary rules we need Gina to settle before running the next pass.
-4. **[`atlas/walkthrough_ets1.md`](atlas/walkthrough_ets1.md)** walks through one full paper from raw text to extracted rows (murine Ets-1, *Biochemistry* 2016).
-5. **[`atlas/v3_previews/README.md`](atlas/v3_previews/README.md)** collects 4 deep case studies (`FKBP12`, `GR / DBD82`, `CheA`, `TEM-1 & Barstar`) illustrating those 4 rules.
-6. **[`methods/how_it_is_built.md`](methods/how_it_is_built.md)** and **[`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md)** explain our 7-step workflow and clearly separate bugs **already fixed** from automated gates planned for the next pass.
+1. **[`PROPOSED_RULES_20261126.md`](PROPOSED_RULES_20261126.md)** (2 minutes for Gina). Three concrete pilot cases (`AQADK`, `Plexin-B1`, `TEM-1 vs BRD4`) with verbatim quotes and proposed default rules. Reply `keep`, `re-scope`, or `insufficient` per case.
+2. **[`ANTHROPIC_HANDOFF.md`](ANTHROPIC_HANDOFF.md)** (draft spec for Batch 1). Points to [`atlas_pipeline/ACTIVE_EXTRACTION_PROMPT.md`](atlas_pipeline/ACTIVE_EXTRACTION_PROMPT.md) as the single rule source, defines sample-level `uniprot_accession` and record-level `document_role`, and links [`data/batch1_open_proteins_draft.json`](data/batch1_open_proteins_draft.json) (`12` open non-pilot proteins).
+3. **[`atlas_pipeline/`](atlas_pipeline/)** (canonical Python contract and QC harness). Pydantic v2 schema (`SampleSpec`, `MeasurementRow`, `QualitativeObservation`, `PaperRecord`), verbatim grounding, physical unit checks, 5-slot condition comparator, vector plot digitization, and SQLite persistence. Run self-contained public tests via `python3 tests/test_atlas_pipeline_public.py`.
+4. **[`REVIEW_GUIDE.md`](REVIEW_GUIDE.md)** and **[`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)**. Full 15-minute deep review path (`Ets-1` walkthrough, `4` case studies, and `131` open protein pages).
 
 ---
 
-## How the pipeline fits together
+## Honest separate denominators (do not pool across snapshots)
+
+RelaxDB contains `143` entries (`131` open entries; `12` held-out test entries physically blocked). Because four distinct snapshots measure different questions and scopes, we report each denominator separately.
+
+| Snapshot | Scope and counts | What it proves vs what remains open |
+|---|---|---|
+| **Frozen Nov 18 audit baseline** ([`RelaxDB_expert_review_DRAFT.sqlite`](data/expert_review_20261119/README.md)) | `131` open entries: `104` with at least 1 paper read, `82` with raw measurements, `79` with clean numeric rows. `19,958 original` measurements = `17,864` clean + `2,094` quarantined. `515` qualitative residue sets (`92` entries), `794` PDB states (`78` entries), `109` region comparisons (`10` source-verified, `99` templates), `396` observations (`16` PDF-audited). | Machine-verified against the repo SQLite (`check_review_consistency.py`). Cleaning counts are not expert sign-off and not paper-level recall. |
+| **Nov 19 supplemental review draft** ([`data/v3_draft_20261118/`](data/v3_draft_20261118/README.md)) | `108 / 131` open entries with November papers read (`776` entry-paper records, `757` distinct DOIs, `19,989` rows = `19,958 original + 31` supplemental rows); `3` paywalled BMRB entries logged (`15795`, `18477`, `50734`). | Fixes `BARSTAR` `S1`/`S2` solvent split, `5687` `'x'` collapse, and `9` controlled `method_group` buckets. New November rows still await NMR expert sign-off. |
+| **Nov 23 local CPMG-10 verification prototype** (`atlas_pipeline/`) | `10 / 10` open RelaxDB-CPMG entries (`12` papers, `66` samples, `809 / 809` verbatim-grounded measurements, `525 / 683` strict 5-slot condition matches, `5 / 5` historical traps blocked, real `AQADK` Fig. S4f vector blind check `45 / 45`). | Proves deterministic grounding, unit checks, and condition scoring on all `10` CPMG entries. Local figure cards stay offline because publisher figure crops are `UNKNOWN_RESTRICTED`; `525 / 683` reflects ligand-state gaps in SI-only reference tables. |
+| **Oct 21 historical baseline** (`main`, [`atlas/proteins/`](atlas/README.md)) | `42` expert-reviewed alternate-APO synthesis pages (`13` yes, `18` possible, `11` unknown) plus `10` CPMG PDB structure overlays (`data/structures/`). | Preserved untouched on `main` as a separate earlier scientific question; not pooled into November extraction totals. |
+
+---
+
+## How the pipeline works
 
 ![Dynamics Atlas, unified 7-step literature pipeline](figures/pipeline_architecture.png)
 
-Our pipeline merges verified literature-curation methods onto deterministic Python checks. Full comparisons live in [`methods/how_it_is_built.md`](methods/how_it_is_built.md).
+Our pipeline combines per-paper gold keys (Bindwell pattern), verbatim quote provenance (Elicit pattern), deterministic Python gates (`atlas_pipeline/`), and expert NMR review. Full design notes live in [`methods/how_it_is_built.md`](methods/how_it_is_built.md) and [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md).
 
-- **Bindwell per-paper gold keys.** We built manual answer keys for four papers (`arginine kinase`, `CRABP2`, `p38 gamma`, `IscU`) before grading extraction. The extractor recovered `85 / 86` core rates and populations (`102 / 102` Table 1 cells exact on arginine kinase).
-- **Elicit cited-cell pattern + table linearization.** Every kept measurement carries sample metadata, section locator, and a verbatim substring quote (`776 / 776` records pass). PMC XML tables are flattened line by line so no table can be skipped silently.
-- **Edison / PaperQA as search probe only.** Published Kosmos benchmarks showed `57.9%` accuracy on synthesis statements. External retrieval tools therefore supply candidate DOIs in Step 1 only and never write database rows directly.
-- **October baseline synthesis & structure overlays.** Our `42` October baseline protein pages (`main`), apo/holo PDB overlays on `10` CPMG proteins, and raw BMRB checks are now connected directly inside [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md).
-
----
-
-## Honest coverage across all `131` open RelaxDB proteins
-
-RelaxDB holds `143` proteins. We block `12` held-out test entries physically and report exact unified coverage across all `131` open entries below.
-
-| Metric | Count | Plain status |
-|---|---:|---|
-| Open proteins with a dedicated Atlas page | `131 / 131` | [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md) + `atlas/all_proteins/<entry>.md` unifying the October baseline and November reads |
-| Covered by full text, October baseline, or twin UniProt | `128 / 131` | `108` with checked November papers (`757` unique DOIs, `19,989` rows) + `17` October-only + `3` shared UniProts |
-| Atlas Tier 1 (experimental exchange rates or pops) | `42 / 131` | Solution NMR/HDX/EPR/FRET rates & pops (`575` rows on `Exchange_Highlights`) + October `yes` calls; MD/cryo-X-ray separated |
-| Atlas Tier 2 (quantitative relaxation/HDX/DEER/FRET) | `57 / 131` | Includes newly read `15451` (`2JUO`, `τc`), `5841` (`1MZK`, `S2/τm/Rex`), and `CMTIV` (`abstract_only` `S2`) |
-| Atlas Tier 3 (qualitative / October `unknown` / 0-row) | `29 / 131` | Includes newly read `5687` (`S-824`, PDB `1P68`, fixed from `'x'` bug) and `3` shared-UniProt links |
-| Atlas Tier 4 (paywalled BMRB source paper only) | `3 / 131` | `15795`, `18477`, `50734` (exact DOIs/PMIDs and BMRB/PubMed abstracts logged) |
-| Remaining paused external backlog | `336` Kosmos + `168` older records | `219` of `244` earlier full-text DOIs were already in the October baseline; IscU `PNAS 2011` (`7432`) added; Kosmos ZIP & `168` older re-reads paused |
-| Expert NMR verification of new November rows | `42` Oct / `0` new | October baseline (`42` proteins) had dual review; all new November rows await Gina's sign-off |
+- **Text and tables:** PMC JATS XML (`lxml`) and PDF main/SI extraction (`PyMuPDF` character offsets + `Docling` structured tables).
+- **Figures:** Deterministic vector XY coordinate extraction for vector scatter plots, vision-assisted or manual reading for raster plots, and explicit abstain when unreadable.
+- **Validation:** Strict Pydantic v2 schema, closed NMR unit dimensions, oligomer/dimer guard on conformational populations, and 5-slot sample/condition matching.
 
 ---
 
-## Four scientific boundary rules we need Gina to settle
-
-1. **Domain vs full-length protein indexing (`DBD82`, `CHEA`).** When a RelaxDB entry names one domain (`DBD82`, `CHEAYBD`), should papers on another domain (`GR LBD`) stay separate or merge under canonical `UniProt` ID with a `domain` tag?
-2. **Inclusion line outside solution NMR (`DBD82`, `FKBP`).** Should `MD` simulations, `100 K` crystal dual occupancies, live-cell `FCS` diffusion, and `EMSA` DNA off-rates stay in a separate auxiliary tier rather than experimental exchange counts?
-3. **Mandatory sample-splitting threshold (`BARSTAR`, `Ets-1`).** Confirm forcing a new `sample` ID whenever solvent isotopic fraction (`~1.8% H2O` vs `90% H2O`), `pH/pD`, temperature, or ligand ratio changes within one paper.
-4. **Separating bulk relaxation arrays from exchange kinetics (`16392`).** Confirm keeping per-residue `R1/R2/NOE/S2` tables split from fitted `kex / pB` exchange tables (as previewed in `Exchange_Highlights` and `ATLAS_131.md`).
-
----
-
-## Where everything lives in this repository
-
-We keep the three atlas views cleanly separated so nothing overlaps:
-- **[`atlas/ATLAS_131.md`](atlas/ATLAS_131.md)** is the main entry point covering all `131` open proteins.
-- **[`atlas/v3_previews/`](atlas/v3_previews/README.md)** holds the `4` deep case studies for Gina's review.
-- **[`atlas/proteins/`](atlas/README.md)** preserves the `42` October baseline pages from `main` untouched.
+## Where everything lives
 
 | Path | Contents | Status |
 |---|---|---|
-| [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md) & `atlas/all_proteins/` | Complete **131-Protein Dynamics Atlas** (one page per open entry) | Current draft (19 Nov 2026) |
-| [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md) | 15-minute expert checklist, decision routing chart, and 4 ranked borderline calls | Current draft (19 Nov 2026) |
-| [`atlas/walkthrough_ets1.md`](atlas/walkthrough_ets1.md) | End-to-end single-paper audit of murine Ets-1 (`doi:10.1021/acs.biochem.6b00460`) | Current draft (19 Nov 2026) |
-| [`atlas/v3_previews/`](atlas/v3_previews/README.md) | Four deep case studies (`FKBP`, `DBD82`, `CHEA/CHEAYBD`, `16392 & BARSTAR`) | Current draft (19 Nov 2026) |
-| [`figures/`](figures/) | Four centered 2x-DPI architecture, walkthrough, bug, and statechart figures | Updated (19 Nov 2026) |
-| [`methods/how_it_is_built.md`](methods/how_it_is_built.md) | External tool comparison, 7-step workflow, and formally verified statechart | Updated (19 Nov 2026) |
-| [`methods/bugs_and_fixes.md`](methods/bugs_and_fixes.md) | Five real audit bugs, fixes already applied, and automated gates for the next pass | Updated (19 Nov 2026) |
-| [`methods/changes_since_v01.md`](methods/changes_since_v01.md) | Timeline from the October baseline to today and steps to Release `0.2` | Updated (19 Nov 2026) |
-| [`methods/quality.md`](methods/quality.md) | Answer-key scores, blind checks, and prevalence caveats | Updated (19 Nov 2026) |
-| [`methods/check_review_consistency.py`](methods/check_review_consistency.py) | Automated gate checking counts, links, leaks, Mermaid syntax, and plain language | New (19 Nov 2026) |
-| [`data/expert_review_20261119/`](data/expert_review_20261119/README.md) | **16-tab clickable Expert Review Workbook + strict-typed SQLite DB + CLI** (`Data_quality_audit`, `BMRB_recovered` [`37,131` vals], `SI_S3_inventory` [`386` DOIs], `Figure_S3_links` [`2,114` public NIH S3 URLs], plus 7 lossless raw tables on `19,958 original` rows) | Updated (22 Nov 2026) |
-| [`data/v3_draft_20261118/`](data/v3_draft_20261118/README.md) | Ten-tab Excel workbook (`Start_Here`, `Proteins`, `Exchange_Highlights` [`575` rows], lossless `Measurements` [`19,989` rows]), CSV summaries, and verified supplemental JSON | Current draft (19 Nov 2026) |
-| [`atlas/README.md`](atlas/README.md) & [`atlas/proteins/`](atlas/README.md) | **October baseline (`21 Oct 2026`).** `42` alternate APO synthesis pages (`13 yes, 18 possible, 11 unknown`) | Preserved intact |
-| [`data/*.csv`, `data/structures/`](data/DATA_DICTIONARY.md) | **October baseline (`21 Oct 2026`).** Curated tables, RelaxDB card audit, `10` CPMG structure overlays | Preserved intact |
-| [`code/`](code/README.md) | **October baseline (`21 Oct 2026`).** Alternate APO pipeline scripts | Unchanged |
-| [`CHANGELOG.md`](CHANGELOG.md) | Full release log from October to today | Updated (19 Nov 2026) |
+| [`PROPOSED_RULES_20261126.md`](PROPOSED_RULES_20261126.md) | 2-minute 3-rule sign-off (`AQADK`, `Plexin-B1`, `TEM-1 vs BRD4`) | Proposed (awaiting Gina) |
+| [`ANTHROPIC_HANDOFF.md`](ANTHROPIC_HANDOFF.md) & [`data/batch1_open_proteins_draft.json`](data/batch1_open_proteins_draft.json) | Draft Batch 1 JSON contract, QC gate, and `12`-protein open sample | Draft |
+| [`atlas_pipeline/`](atlas_pipeline/) & [`tests/test_atlas_pipeline_public.py`](tests/test_atlas_pipeline_public.py) | Canonical Python extraction contract, prompt (`ACTIVE_EXTRACTION_PROMPT.md`), and public tests | Active (`6 / 6` public tests pass) |
+| [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md) & [`atlas/walkthrough_ets1.md`](atlas/walkthrough_ets1.md) | 15-minute deep review checklist and single-paper `Ets-1` walkthrough | Current review draft |
+| [`atlas/ATLAS_131.md`](atlas/ATLAS_131.md) & `atlas/all_proteins/` | `131` open protein pages (`4` case studies in [`atlas/v3_previews/`](atlas/v3_previews/README.md)) | Current review draft |
+| [`methods/`](methods/how_it_is_built.md) | Architecture, audit bug log, quality notes, TLC statechart, and `check_review_consistency.py` | Updated (`26 Nov 2026`) |
+| [`data/expert_review_20261119/`](data/expert_review_20261119/README.md) | Frozen Nov 18 16-tab Excel workbook, SQLite database, and `query_atlas.py` CLI | Frozen audit ledger |
+| [`data/v3_draft_20261118/`](data/v3_draft_20261118/README.md) | Nov 19 10-tab workbook (`19,989` rows) and verified supplemental reads | Frozen Nov 19 draft |
+| [`atlas/proteins/`](atlas/README.md) & [`code/`](code/README.md) | October 21 historical `42`-protein baseline and Release `0.1` scripts | Preserved intact |
 
-This repository never stores copyrighted full texts, private keys, or the `12` held-out test ground truths.
+---
+
+## Appendix: secondary resources (deprioritized for primary review)
+
+Following expert review feedback on 22 November 2026, raw deposited BMRB relaxation arrays and bulk NIH S3 figure links are kept as secondary reference appendices inside [`data/expert_review_20261119/`](data/expert_review_20261119/README.md) rather than primary review entry points:
+
+- **`BMRB_recovered` (`62 / 68` entries, `37,131` raw per-residue values):** Useful for catching upstream deposit unit/offset anomalies (`16` flagged), not a substitute for curated RelaxDB exchange labels.
+- **`SI_S3_inventory` (`386` gap DOIs) and `Figure_S3_links` (`2,114` public NIH AWS S3 figure URLs across `242` OA DOIs):** Public PMC Open Access URLs (`s3://pmc-oa-opendata`, no AWS key required) tagged with per-article SPDX license fields (`CC0` `22/2`, `CC-BY` `1,578/174`, `CC-BY-NC` `163/22`, `CC-BY-NC-SA` `4/1`, `CC-BY-NC-ND` `201/25`, `publisher_oa` `125/15`, `untagged` `21/3`).
+
+This repository never stores copyrighted full texts, copyrighted publisher figure crops, private keys, or the `12` held-out test ground truths.

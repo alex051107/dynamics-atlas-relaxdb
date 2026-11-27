@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RelaxDB-CPMG scientist cards v2</title>
+<style>
+body{font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;margin:0;color:#1d1d1f;background:#fafafa}
+header{padding:24px 40px;background:#fff;border-bottom:1px solid #ddd}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #ddd;padding:8px 40px;font-size:13px;z-index:2}
+nav a{margin-right:14px;color:#0b57d0;text-decoration:none}
+main{padding:16px 40px 60px;max-width:1180px}
+section.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:18px 24px;margin:22px 0}
+h2{margin:0 0 4px} h3{margin:18px 0 6px;font-size:16px}
+.muted{color:#666;font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0}
+th,td{border:1px solid #e3e3e3;padding:4px 6px;text-align:left;vertical-align:top}
+th{background:#f3f3f3}
+mark{background:#ffe066;padding:0 2px}
+.pill{display:inline-block;border-radius:10px;padding:1px 8px;font-size:12px;margin:1px;background:#eef}
+.AGREE_INDEPENDENT{background:#d8f5d0}.CONDITIONAL_DIFF{background:#ffe9c7}.LABEL_SOURCE_ONLY{background:#e4e4ff}
+.REVIEW_SECONDARY{background:#f3d9f7}.NOT_COMPARABLE_ABSTAIN{background:#eee}
+.figs{display:flex;flex-wrap:wrap;gap:14px}
+figure{margin:0;width:470px;border:1px solid #e3e3e3;padding:6px;border-radius:6px;background:#fff}
+figure img{max-width:100%;display:block} figcaption{font-size:12px;color:#444}
+.warn{color:#8a4b00;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>RelaxDB-CPMG scientist cards v2</h1>
+  <p class="muted">Generated {{ meta.generated_at }} by atlas_pipeline.cards (Jinja2 template) from the expert-review SQLite (read-only), live atlas_pipeline extractions, F14 CPMG sprint extractions, curated RelaxDB labels, the Excel States sheet and this run's figure manifest. Every number below is computed from those files at build time; no protein-specific prose is written by hand.</p>
+  <p class="muted">Label alphabet ({{ meta.label_alphabet_provenance }}): exchange-positive = {{ positive_chars }}; strict = {{ strict_chars }}. Figure previews are UNKNOWN_RESTRICTED: internal review only, not cleared for redistribution.</p>
+</header>
+<nav>{% for c in cards %}<a href="#{{ c.entry }}">{{ c.entry }}</a>{% endfor %}</nav>
+<main>
+{% for c in cards %}
+<section class="card" id="{{ c.entry }}">
+  <h2>{{ c.entry }} · {{ c.protein }}</h2>
+  <p class="muted">UniProt {{ c.uniprot or '—' }} · twin entries {{ c.twin_entries | join(', ') or 'none' }} · evidence tier {{ c.evidence_tier or '—' }} · {{ c.n_rows }} measurement rows ({% for k, v in c.rows_by_source.items() %}{{ k }}: {{ v }}{% if not loop.last %}, {% endif %}{% else %}none{% endfor %}) · papers: {{ c.dois | join(', ') or 'none' }}</p>
+
+  <h3>Q1 · Which residues exchange?</h3>
+  <p>RelaxDB label: <b>{{ c.q1.n_positive }}</b> exchange-positive residues of {{ c.sequence_length }} (strict ^/Y: {{ c.q1.n_positive_strict }}). Positive positions: {{ c.q1.positive_ranges or 'none' }}.</p>
+  <p class="muted">Label classes: {% for k, v in c.q1.label_class_counts | dictsort %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %}. Label-source papers (derived from data): {{ c.q1.label_source_dois | join(', ') or 'none identified' }}.</p>
+  {% if c.q1.papers %}
+  <table>
+    <tr><th>paper</th><th>role vs label</th><th>numbering check</th><th>evidence residues</th><th>mapped</th><th>on label-positive</th><th>evidence classes</th></tr>
+    {% for p in c.q1.papers %}
+    <tr>
+      <td>{{ p.doi }}</td><td>{{ p.role }}</td><td>{{ p.offset_status }}</td>
+      <td>{{ p.n_evidence_residues }}</td><td>{{ p.n_mapped }}</td><td>{{ p.n_on_label_positive }}</td>
+      <td>{% for k, v in p.evidence_classes.items() %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  <p class="muted">Recall of label positives: label-source papers {{ c.q1.recall_label_source | fmt }}, independent papers {{ c.q1.recall_independent | fmt }}, provenance unknown {{ c.q1.recall_provenance_unknown | fmt }}; independent agreement {{ c.q1.independent_agreement | fmt }}.</p>
+
+  <h3>Q2 · On what timescale?</h3>
+  {% if c.q2.n %}
+  <p>{{ c.q2.band }}: {{ c.q2.n }} fitted rates, {{ c.q2.rate_min | fmt }}–{{ c.q2.rate_max | fmt }} s⁻¹, τ_ex ≈ {{ c.q2.tau_ex_ms_min | fmt }}–{{ c.q2.tau_ex_ms_max | fmt }} ms.</p>
+  {% else %}
+  <p>{{ c.q2.band }}.</p>
+  {% endif %}
+
+  <h3>Q3 · Fitted rates and populations by condition</h3>
+  {% if c.q3 %}
+  <table>
+    <tr><th>paper</th><th>construct</th><th>ligand</th><th>T</th><th>quantity</th><th>n</th><th>median [min–max] (base unit)</th><th>example quote (value marked)</th><th>span in ingested text</th></tr>
+    {% for g in c.q3[:40] %}
+    <tr>
+      <td>{{ g.doi }}</td><td>{{ g.construct[:60] }}</td><td>{{ g.ligand[:50] }}</td><td>{{ g.temperature }}</td>
+      <td>{{ g.quantity }}{% if g.origin != 'this_paper' %} <span class="warn">(cited from earlier work)</span>{% endif %}</td>
+      <td>{{ g.n_rows }}</td>
+      <td>{{ g.median | fmt }} [{{ g.min | fmt }}–{{ g.max | fmt }}] {{ g.unit_base }}</td>
+      <td>{{ g.example_quote_html[:600] | safe }}<br><span class="muted">{{ g.example_location[:80] }}{% if g.example_residue %} · {{ g.example_residue[:40] }}{% endif %}</span></td>
+      <td class="muted">{{ g.example_span.status }}{% if 'char_start' in g.example_span %} {{ g.example_span.document_role }} {{ g.example_span.char_start }}–{{ g.example_span.char_end }}{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% if c.q3 | length > 40 %}<p class="muted">{{ (c.q3 | length) - 40 }} more condition groups in cpmg_scientist_cards_v2.md.</p>{% endif %}
+  {% else %}
+  <p>No fitted kex, k_AB, k_BA, population or Δω rows in the loaded data.</p>
+  {% endif %}
+  {% if c.verbatim_span_counts %}
+  <p class="muted">Verbatim check of every quote against this run's ingested text: {% for k, v in c.verbatim_span_counts.items() %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+  {% endif %}
+
+  <h3>Q4 · Methods and cross-paper comparison</h3>
+  <p>{% for x in c.q4.methods %}<span class="pill">{{ x.method[:60] }} · {{ x.n_rows }} rows · {{ x.doi }}</span>{% endfor %}</p>
+  <p>{% for k, v in c.q4.comparison_status_counts | dictsort %}<span class="pill {{ k }}">{{ k }} {{ v }}</span>{% endfor %}</p>
+  {% if c.q4.comparisons %}
+  <table>
+    <tr><th>status</th><th>quantity</th><th>paper A · condition</th><th>paper B · condition</th><th>reason codes</th><th>median rel. diff</th></tr>
+    {% for o in c.q4.comparisons %}
+    <tr>
+      <td class="{{ o.status }}">{{ o.status }}</td><td>{{ o.quantity_role }}</td>
+      <td>{{ o.doi_a }}<br><span class="muted">{{ o.condition_a[:120] }}</span></td>
+      <td>{{ o.doi_b or '—' }}<br><span class="muted">{{ o.condition_b[:120] }}</span></td>
+      <td>{{ o.reason_codes | join('; ') }}</td><td>{{ o.median_rel_diff | fmt }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+
+  <h3>Q5 · Alternate-state PDB entries</h3>
+  {% if c.q5 %}
+  <table>
+    <tr><th>PDB</th><th>state</th><th>paper</th><th>via entry</th><th>quote</th></tr>
+    {% for s in c.q5[:14] %}
+    <tr><td>{{ s.pdb }}</td><td>{{ s.state[:120] }}</td><td>{{ s.doi }}</td><td>{{ s.via }}</td><td class="muted">{{ s.quote[:200] }}</td></tr>
+    {% endfor %}
+  </table>
+  {% if c.q5 | length > 14 %}<p class="muted">{{ (c.q5 | length) - 14 }} more rows in the States sheet.</p>{% endif %}
+  {% else %}
+  <p>No alternate-state PDB rows for this entry or its twins in the States sheet.</p>
+  {% endif %}
+
+  <h3>Figures</h3>
+  {% if c.figures %}
+  <p class="muted">{{ c.n_figures_in_manifest }} figure regions in this run's manifest; first {{ c.figures | length }} shown. Crops at 300 DPI; previews are downscaled.</p>
+  <div class="figs">
+    {% for f in c.figures %}
+    <figure>
+      {% if f.thumb %}<img src="{{ f.thumb }}" alt="{{ f.caption_label or f.figure_id }}">{% else %}<p class="warn">crop missing</p>{% endif %}
+      <figcaption><b>{{ f.caption_label or f.figure_id }}</b> · {{ f.classification }} · {{ f.document_role }} p.{{ f.page }} of {{ f.doi }} · {{ f.permission }}<br>{{ f.caption }}</figcaption>
+      {% for d in f.digitized_ok %}
+      <p class="muted">Vector digitisation OK: {{ d.n_points }} points, ink alignment {{ d.alignment | fmt }}, axes {{ d.x_scale }}/{{ d.y_scale }}.</p>
+      {% if d.overlay %}<img src="{{ d.overlay }}" alt="overlay">{% endif %}
+      {% endfor %}
+      {% if f.digitize_abstain and not f.digitized_ok %}<p class="warn">Digitiser abstained: {{ f.digitize_abstain | join('; ') }}</p>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>No local PDF for this entry was processed in this run; see NIH S3 links below where available.</p>
+  {% endif %}
+  {% if c.s3_links %}
+  <p>NIH PMC S3 figure links (matched by entry, twin entry or paper DOI):</p>
+  <ul>
+    {% for l in c.s3_links[:12] %}
+    <li><a href="{{ l.s3_figure_url }}">{{ l.fig_label or l.s3_figure_url }}</a> · {{ l.doi }} · {{ l.license_spdx or 'licence unknown' }} · {{ l.public_release_permission or '' }}</li>
+    {% endfor %}
+  </ul>
+  {% if c.s3_links | length > 12 %}<p class="muted">{{ (c.s3_links | length) - 12 }} more links in the JSON.</p>{% endif %}
+  {% else %}
+  <p class="muted">No NIH S3 figure link matches this entry, its twins or its papers.</p>
+  {% endif %}
+</section>
+{% endfor %}
+</main>
+</body>
+</html>

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.1-draft, 26 November 2026 (`update/post-anthropic-20261126`)
+
+First-principles cleanup aligning the public repository with the post-Anthropic Batch 1 collaboration without altering `main` (`f8cde2f`) or the frozen review branch (`review/expert-check-20261119` @ `c39e120`):
+
+- Added [`atlas_pipeline/`](atlas_pipeline/) as the single canonical Python contract and QC package (`schema.py`, `extract.py`, `ingest.py`, `figures.py`, `compare.py`, `store.py`, `cards.py`, `cli.py`, `adapters.py`, `ACTIVE_EXTRACTION_PROMPT.md`, and Jinja2 template) with zero local hardcoded paths, sample-level `uniprot_accession` / `isoform_version`, first-class `QualitativeObservation` (dynamic regions, alternate states, cryptic pockets with `evidence_level`), unified non-truncated system prompts across SDK/CLI/Batches, and `public_safe=True` HTML rendering stripping all embedded `data:image` URIs.
+- Added [`tests/test_atlas_pipeline_public.py`](tests/test_atlas_pipeline_public.py) (`6 / 6` self-contained synthetic tests passing under both normal Python and `python3 -O`).
+- Added [`PROPOSED_RULES_20261126.md`](PROPOSED_RULES_20261126.md) (`3` verbatim edge cases with proposed strict-abstain defaults awaiting expert sign-off) and [`ANTHROPIC_HANDOFF.md`](ANTHROPIC_HANDOFF.md) + [`data/batch1_open_proteins_draft.json`](data/batch1_open_proteins_draft.json) (`12` stratified open non-pilot entries).
+- Refreshed [`README.md`](README.md), [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md), and [`methods/check_review_consistency.py`](methods/check_review_consistency.py) to separate all four snapshot denominators honestly, recompute frozen SQLite counts live, demote raw BMRB and S3 link inventories to an appendix, and enforce zero `data:image` or local path leaks.
+
 ## 0.2-draft, 19 November 2026 (`review/expert-check-20261119`)
 
 Expert-review checkpoint bridging the scaled November full-text extraction sweep (`104 / 131` open entries; `12` held-out entries excluded) back to readable protein syntheses and clear scope questions for Gina before running `v4`:
